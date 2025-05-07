@@ -1,0 +1,67 @@
+簡化版賣家主頁自訂
+
+✅ 一、資料表設計（儲存每個賣家的頁面設定）
+sql
+複製
+編輯
+CREATE TABLE seller_homepage_configs (
+  id BIGINT PRIMARY KEY AUTO_INCREMENT,
+  seller_id BIGINT NOT NULL,
+  config_json JSON NOT NULL,
+  updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  FOREIGN KEY (seller_id) REFERENCES users(id)
+);
+✅ 二、config_json 格式範例
+json
+複製
+編輯
+{
+  "layout": [
+    {
+      "module": "banner",
+      "enabled": true,
+      "data": {
+        "image_urls": [
+          "https://example.com/image1.jpg",
+          "https://example.com/image2.jpg"
+        ]
+      }
+    },
+    {
+      "module": "recommended_products",
+      "enabled": true,
+      "data": {
+        "product_ids": [101, 102, 103]
+      }
+    },
+    {
+      "module": "store_intro",
+      "enabled": true,
+      "data": {
+        "text": "歡迎來到我們的店鋪！我們專注高品質商品～"
+      }
+    }
+  ]
+}
+✅ 三、前端（概念）
+根據 config_json.layout 中的順序與開關渲染對應模組。
+
+每個模組都是一個 component（React、Vue 或 JSP include 都行）
+
+你可以用以下邏輯跑：
+
+javascript
+複製
+編輯
+config.layout.forEach((section) => {
+  if (section.enabled) {
+    renderModule(section.module, section.data);
+  }
+});
+✅ 四、未來可以擴充的模組
+模組名稱	描述
+banner	顯示圖片輪播
+recommended_products	顯示推薦商品列表
+store_intro	顯示店家介紹文字
+new_arrivals	自動列出最新上架商品
+top_selling	熱銷商品

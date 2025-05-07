@@ -1,0 +1,153 @@
+Table users {
+  id BIGINT [pk, note: '使用者 ID']
+  username VARCHAR(255) [unique, note: '使用者名稱']
+  hash_password VARCHAR(255) [note: '密碼（加密）']
+  hash_salt VARCHAR(255) [note: '加鹽']
+  email VARCHAR(255) [unique, note: '電子郵件']
+  role_id BIGINT [ref: > roles.id, note: '角色 ID']
+  created_at DATETIME [default: `CURRENT_TIMESTAMP`, note: '建立時間']
+  updated_at DATETIME [note: '更新時間']
+  last_login_at DATETIME [note: '最後登入時間']
+  is_active BOOLEAN [note: '是否啟用']
+  completed BOOLEAN [note: '是否驗證']
+}
+
+Table roles {
+  id BIGINT [pk, note: '角色 ID']
+  name VARCHAR(100) [unique, note: '角色名稱']
+  description TEXT [note: '角色描述']
+  created_at DATETIME [default: `CURRENT_TIMESTAMP`, note: '建立時間']
+  updated_at DATETIME [note: '更新時間']
+}
+
+Table permissions {
+  id BIGINT [pk, note: '權限 ID']
+  name VARCHAR(100) [unique, note: '權限名稱']
+  description TEXT [note: '權限描述']
+  created_at DATETIME [default: `CURRENT_TIMESTAMP`]
+  updated_at DATETIME
+}
+
+Table role_permissions {
+  role_id BIGINT [ref: > roles.id]
+  permission_id BIGINT [ref: > permissions.id]
+  assigned_at DATETIME
+  created_at DATETIME
+  updated_at DATETIME
+}
+
+Table login_logs {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id, not null]
+  ip_address VARCHAR(45)
+  user_agent TEXT
+  login_time DATETIME [default: `CURRENT_TIMESTAMP`]
+  success BOOLEAN
+}
+
+Table products {
+  id BIGINT [pk]
+  name VARCHAR(255)
+  description TEXT
+  price DECIMAL(10, 2)
+  stock INT
+  image_url TEXT
+  category_id BIGINT [ref: > categories.id]
+  created_at DATETIME [default: `CURRENT_TIMESTAMP`]
+  updated_at DATETIME
+}
+
+Table categories {
+  id BIGINT [pk]
+  name VARCHAR(100) [unique]
+  parent_id BIGINT [ref: > categories.id]
+  created_at DATETIME [default: `CURRENT_TIMESTAMP`]
+  updated_at DATETIME
+}
+
+Table cart_items {
+  id BIGINT [pk]
+  user_id BIGINT [ref: > users.id, not null]
+  product_id BIGINT [ref: > products.id]
+  quantity INT
+  added_at DATETIME
+  updated_at DATETIME
+}
+
+Table orders {
+  id BIGINT [pk]
+  user_id BIGINT [not null, ref: > users.id]  // 訂單必須參照到一個使用者 (user_id) 並且是非空的
+  seller_id BIGINT [ref: > users.id, not null]
+  order_date DATETIME
+  order_status ENUM('PENDING', 'PAID', 'SHIPPED', 'DELIVERED', 'COMPLETED', 'CANCELLED', 'RETURN_REQUESTED', 'RETURNED')
+  payment_status ENUM('PENDING', 'PAID', 'FAILED', 'REFUNDED')
+  shipment_status ENUM('NOT_SHIPPED', 'SHIPPED', 'IN_TRANSIT', 'DELIVERED', 'RETURNING')
+  shipping_method VARCHAR(100)
+  payment_method VARCHAR(100)
+  tracking_number VARCHAR(255)
+  receiver_name VARCHAR(255)
+  receiver_phone VARCHAR(20)
+  total_amount DECIMAL(10, 2)
+  shipping_address TEXT
+  notes TEXT
+  created_at DATETIME
+  updated_at DATETIME
+}
+
+Table order_items {
+  id BIGINT [pk]
+  order_id BIGINT [not null,ref: > orders.id]
+  product_id BIGINT [not null,ref: > products.id]
+  quantity INT
+  unit_price DECIMAL(10, 2)
+  total_price DECIMAL(10, 2)
+  created_at DATETIME
+  updated_at DATETIME
+}
+
+Table recently_viewed {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id, not null]
+  product_id BIGINT [ref: > products.id]
+  viewed_at DATETIME
+}
+
+Table search_history {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id, not null]
+  keyword VARCHAR(255)
+  searched_at DATETIME
+}
+
+Table recommended_products {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id]
+  product_id BIGINT [ref: > products.id, not null]
+  reason VARCHAR(255)
+  created_at DATETIME
+  updated_at DATETIME
+}
+
+Table product_reviews {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id, not null]
+  product_id BIGINT [not null,ref: > products.id]
+  rating INT
+  comment TEXT
+  created_at DATETIME
+  updated_at DATETIME
+  is_visible BOOLEAN
+  indexes {
+    (user_id, product_id) [unique]
+  }
+}
+
+Table notifications {
+  id BIGINT [pk, increment]
+  user_id BIGINT [ref: > users.id, not null]
+  type VARCHAR(100)
+  message TEXT
+  status ENUM('PENDING', 'READ', 'ARCHIVED')
+  created_at DATETIME
+  updated_at DATETIME
+}

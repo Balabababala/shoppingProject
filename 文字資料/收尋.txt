@@ -1,0 +1,76 @@
+🔢 一、排序評分公式設計（商品排序分數）
+我們以一個簡化版本的打分邏輯為例：
+
+makefile
+
+score = (match_score * 0.4) 
+      + (sales_score * 0.2) 
+      + (rating_score * 0.2) 
+      + (recency_score * 0.2)
+各欄位解釋：
+項目	說明
+match_score	商品名稱與關鍵字的文字相似度（使用 Fulltext 或 LIKE 匹配）
+sales_score	商品銷售量（可根據訂單統計）
+rating_score	商品平均評價（從 product_reviews 算出）
+recency_score	根據上架時間計算（愈新分數愈高）
+
+🧪 二、SQL 實作範例（MySQL）
+以下假設你有 products 表格，並要搜尋「手機」：
+
+sql
+
+SELECT 
+  p.*,
+  -- 文字匹配：MATCH 比 LIKE 快很多（前提是有 FullText Index）
+  MATCH(p.name) AGAINST ('手機') AS match_score,
+
+  -- 銷售量分數（你需先建立一個視圖或 JOIN 訂單項目）
+  COALESCE(sales.total_sales, 0) / 100 AS sales_score,
+
+  -- 平均評價（0~5分轉為 0~1）
+  COALESCE(r.avg_rating, 0) / 5 AS rating_score,
+
+  -- 上架時間新鮮度（近 30 天得分高）
+  CASE 
+    WHEN p.created_at >= NOW() - INTERVAL 7 DAY THEN 1.0
+    WHEN p.created_at >= NOW() - INTERVAL 30 DAY THEN 0.5
+    ELSE 0.2
+  END AS recency_score,
+
+  -- 總評分
+  (
+    MATCH(p.name) AGAINST ('手機') * 0.4 +
+    COALESCE(sales.total_sales, 0) / 100 * 0.2 +
+    COALESCE(r.avg_rating, 0) / 5 * 0.2 +
+    CASE 
+      WHEN p.created_at >= NOW() - INTERVAL 7 DAY THEN 1.0
+      WHEN p.created_at >= NOW() - INTERVAL 30 DAY THEN 0.5
+      ELSE 0.2
+    END * 0.2
+  ) AS total_score
+
+FROM products p
+
+-- 銷售量
+LEFT JOIN (
+  SELECT oi.product_id, SUM(oi.quantity) AS total_sales
+  FROM order_items oi
+  GROUP BY oi.product_id
+) sales ON sales.product_id = p.id
+
+-- 評價平均
+LEFT JOIN (
+  SELECT pr.product_id, AVG(pr.rating) AS avg_rating
+  FROM product_reviews pr
+  GROUP BY pr.product_id
+) r ON r.product_id = p.id
+
+WHERE 
+  MATCH(p.name) AGAINST ('手機' IN NATURAL LANGUAGE MODE)
+
+ORDER BY total_score DESC
+LIMIT 20;
+✅ 使用建議：
+若你有 Elasticsearch 或 OpenSearch，建議後續導入，它比 SQL 適合做全文與排序混合處理。
+
+可以每小時建立一個「商品熱門度快取表」，避免每次查詢都 JOIN 太多表。
