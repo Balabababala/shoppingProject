@@ -1,12 +1,16 @@
-// src/component/CartModal.jsx
+import { useState } from 'react';
 import { Modal, Button, ListGroup } from 'react-bootstrap';
 
 function CartModal({ show, handleClose }) {
-  // 假資料，可之後串後端替換
-  const cartItems = [
+  // cartItems 作為 state 管理
+  const [cartItems, setCartItems] = useState([
     { id: 1, name: '商品A', price: 100 },
     { id: 2, name: '商品B', price: 200 },
-  ];
+  ]);
+
+  const handleDelete = (index) => {
+    setCartItems(cartItems.filter((_, i) => i !== index));
+  };
 
   const total = cartItems.reduce((sum, item) => sum + item.price, 0);
 
@@ -17,9 +21,12 @@ function CartModal({ show, handleClose }) {
       </Modal.Header>
       <Modal.Body>
         <ListGroup>
-          {cartItems.map(item => (
-            <ListGroup.Item key={item.id}>
-              {item.name} - ${item.price}
+          {cartItems.map((item, index) => (
+            <ListGroup.Item key={item.id} className="d-flex justify-content-between align-items-center">
+              <span>{item.name} - ${item.price}</span>
+              <Button variant="outline-danger" size="sm" onClick={() => handleDelete(index)}>
+                ✕
+              </Button>
             </ListGroup.Item>
           ))}
         </ListGroup>
