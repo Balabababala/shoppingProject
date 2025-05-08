@@ -86,8 +86,8 @@ function MyNavbar({ onChangeContent }) {
                 </div>
               </Nav.Link>
               <Nav.Link as={Link} to="/member">會員中心</Nav.Link>
-              <Nav.Link as={Link} to="/notice">通知中心</Nav.Link>
-              <Nav.Link as={Link} to="/login">登錄/註冊</Nav.Link>
+              <Nav.Link as={Link} to="/notificationsPage">通知中心</Nav.Link>
+              <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>
             </Nav>
             <MySearch />
           </Navbar.Collapse>

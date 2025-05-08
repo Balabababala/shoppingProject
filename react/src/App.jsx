@@ -1,13 +1,14 @@
 import { Routes, Route } from 'react-router-dom';
+
 import './css/App.css';
-import MyNavbar from './component/myNavbar';
-import WelcomePage from './component/pages/WelcomePage';           //頁面
-import RecentlyViewedPage from './component/pages/RecentViewPage'; //頁面
-import CartPage from './component/pages/CartPage';                 //頁面
-import MemberPage from './component/pages/MemberPage';             //頁面
-import NoticePage from './component/pages/NoticePage';             //頁面
-import LoginPage from './component/pages/LoginPage';               //頁面
-// 其他你需要的頁面...
+import MyNavbar from './component/myNavbar.jsx';
+import WelcomePage from './component/pages/WelcomePage.jsx';           //頁面
+import RecentlyViewedPage from './component/pages/RecentViewPage.jsx'; //頁面
+import CartPage from './component/pages/CartPage.jsx';                 //頁面
+import MemberPage from './component/pages/MemberPage.jsx';             //頁面
+import NotificationsPage from './component/pages/NotificationsPage.jsx';             //頁面
+import UserLoginPage from './component/pages/UserLoginPage.jsx';       //頁面
+import AdminLoginPage from './component/pages/Admin/AdminLoginPage.jsx';   //頁面
 
 function App() {
   return (
@@ -19,8 +20,9 @@ function App() {
           <Route path="/recent" element={<RecentlyViewedPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/member" element={<MemberPage />} />
-          <Route path="/notice" element={<NoticePage />} />
-          <Route path="/login" element={<LoginPage />} />
+          <Route path="/notificationsPage" element={<NotificationsPage />} />
+          <Route path="/userlogin" element={<UserLoginPage />} />
+          <Route path="/adminlogin" element={<AdminLoginPage />} />{/* 刪除 .jsx 擴展名 */}
         </Routes>
       </main>
     </>
