@@ -1,0 +1,17 @@
+.recent-page {
+  padding: 2rem 1rem;
+}
+
+.recent-page h2 {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.product-card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+}

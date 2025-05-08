@@ -1,0 +1,73 @@
+/* 使容器有足夠的內邊距 */
+.cart-page {
+  padding-top: 50px;  /* 給標題和商品足夠的空間 */
+  padding-bottom: 50px;
+}
+
+/* 商品項目的樣式 */
+.cart-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+/* 商品圖片 */
+.cart-item-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* 商品名稱與價格 */
+.cart-item .ms-3 {
+  margin-left: 20px;
+}
+
+/* 刪除按鈕樣式 */
+.remove-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+/* 結帳區域樣式 */
+.checkout-section {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+  width: 250px;  /* 設置固定寬度 */
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* 增加陰影效果 */
+  z-index: 1000;  /* 保證在其他元素之上 */
+}
+
+.checkout-section h4 {
+  margin-bottom: 15px;
+  font-size: 18px; /* 簡化標題大小 */
+}
+
+.checkout-section .d-flex {
+  margin-bottom: 10px;
+  justify-content: space-between;
+  font-size: 16px; /* 縮小總價字體 */
+}
+
+.checkout-section .btn-primary {
+  width: 100%;
+  padding: 10px;  /* 減小結帳按鈕的高度 */
+  font-size: 14px; /* 減小字體大小 */
+}
+
+/* 當購物車為空時，顯示的文字 */
+.cart-page p {
+  font-size: 18px;
+  color: #555;
+}
