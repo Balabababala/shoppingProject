@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import MyNavbar from './component/myNavbar'
-
+import WelcomePage from './component/pages/WelcomePage'
 function App() {
-  const [mainContent, setMainContent] = useState("歡迎來到首頁");
+  const [mainContent, setMainContent] = useState(<WelcomePage/>);
 
 
   return (
