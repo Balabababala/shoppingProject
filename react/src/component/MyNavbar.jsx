@@ -49,7 +49,7 @@ function MyNavbar({ onChangeContent }) {
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
             <Nav>
               <NavDropdown title="商品分類" id="basic-nav-dropdown">
-                <NavDropdown.Item onClick={() => onChangeContent(<ProductCard product={product} />)}>測試商品卡片</NavDropdown.Item>   
+                <NavDropdown.Item as={Link} to="/member">測試商品卡片</NavDropdown.Item>   
                 <NavDropdown.Item href="#action/3.2">之後串後端資料</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.3">之後串後端資料</NavDropdown.Item>
                 <NavDropdown.Divider />
