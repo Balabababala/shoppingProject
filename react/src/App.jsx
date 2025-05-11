@@ -22,7 +22,7 @@ function App() {
           <Route path="/member" element={<MemberPage />} />
           <Route path="/notificationsPage" element={<NotificationsPage />} />
           <Route path="/userlogin" element={<UserLoginPage />} />
-          <Route path="/adminlogin" element={<AdminLoginPage />} />{/* 刪除 .jsx 擴展名 */}
+          <Route path="/adminlogin" element={<AdminLoginPage />} />
         </Routes>
       </main>
     </>
