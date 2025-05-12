@@ -1,11 +1,11 @@
-package com.example.demo.controller;
+package com.example.demo.repository;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import org.springframework.jdbc.core.RowMapper;
 
-import com.example.demo.model.Entity.Categories;
+import com.example.demo.model.entity.Categories;
 
 public class CategoriesRowMap implements RowMapper<Categories>{
 

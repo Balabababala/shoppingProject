@@ -194,3 +194,31 @@
 2025-05-11T20:52:55.382+08:00  INFO 19260 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2025-05-11T20:52:55.383+08:00  INFO 19260 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2025-05-11T20:52:55.384+08:00  INFO 19260 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-11T20:58:02.993+08:00  INFO 19260 --- [shopping] [RMI TCP Connection(14)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-11T20:58:02.995+08:00  INFO 19260 --- [shopping] [RMI TCP Connection(14)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-11T20:58:02.997+08:00  INFO 19260 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-11T20:58:03.000+08:00  INFO 19260 --- [shopping] [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-11T20:58:03.004+08:00  INFO 19260 --- [shopping] [RMI TCP Connection(14)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-11T20:58:05.349+08:00  INFO 10772 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 10772 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-11T20:58:05.350+08:00  INFO 10772 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-11T20:58:05.744+08:00  INFO 10772 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-11T20:58:05.762+08:00  INFO 10772 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 13 ms. Found 0 JDBC repository interfaces.
+2025-05-11T20:58:06.130+08:00  INFO 10772 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-11T20:58:06.140+08:00  INFO 10772 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-11T20:58:06.140+08:00  INFO 10772 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-11T20:58:06.265+08:00  INFO 10772 --- [shopping] [main] org.apache.jasper.servlet.TldScanner     : At least one JAR was scanned for TLDs yet contained no TLDs. Enable debug logging for this logger for a complete list of JARs that were scanned but no TLDs were found in them. Skipping unneeded JARs during scanning can improve startup time and JSP compilation time.
+2025-05-11T20:58:06.269+08:00  INFO 10772 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-11T20:58:06.270+08:00  INFO 10772 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 889 ms
+2025-05-11T20:58:06.519+08:00  INFO 10772 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-11T20:58:06.647+08:00  INFO 10772 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34136bd1
+2025-05-11T20:58:06.649+08:00  INFO 10772 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-11T20:58:06.755+08:00  INFO 10772 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-11T20:58:06.761+08:00  INFO 10772 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 1.712 seconds (process running for 2.148)
+2025-05-11T20:58:08.155+08:00  INFO 10772 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-11T20:58:08.156+08:00  INFO 10772 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-11T20:58:08.156+08:00  INFO 10772 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2025-05-11T22:05:56.027+08:00  INFO 10772 --- [shopping] [RMI TCP Connection(77)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-11T22:05:56.034+08:00  INFO 10772 --- [shopping] [RMI TCP Connection(77)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-11T22:05:56.038+08:00  INFO 10772 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-11T22:05:56.043+08:00  INFO 10772 --- [shopping] [RMI TCP Connection(77)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-11T22:05:56.047+08:00  INFO 10772 --- [shopping] [RMI TCP Connection(77)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

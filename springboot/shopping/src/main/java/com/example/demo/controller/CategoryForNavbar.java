@@ -19,7 +19,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.Entity.Categories;
+import com.example.demo.model.entity.Categories;
+import com.example.demo.repository.CategoriesRowMap;
+import com.example.demo.repository.CategoryRepository;
 
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -31,15 +33,18 @@ public class CategoryForNavbar  {
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
+	@Autowired
+	private CategoryRepository categoryRepository;
+	
 	@GetMapping("/categoriestomynavbar")
 	public List<Categories> getcatogory()   {
 		
-		String sql = "SELECT * FROM categories WHERE parent_id is NULL ;";
+		
 		Map<String, Object> map = new HashMap<>();
 		
 		CategoriesRowMap rowMapper =new CategoriesRowMap();
 		
-		List<Categories> list=namedParameterJdbcTemplate.query(sql,map,rowMapper);
+		List<Categories> list=categoryRepository.findTopCategories();
 		
 	    return list;
 	}
