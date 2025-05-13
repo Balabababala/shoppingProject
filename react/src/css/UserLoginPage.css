@@ -1,0 +1,16 @@
+/* 在 index.css 或 App.css 中添加以下 CSS */
+body {
+  background-color: #f4f6f9; /* 設置為淡灰色背景 */
+  min-height: 100vh; /* 設置最小高度為 100vh */
+}
+
+.container.login {
+  background-color: rgba(255, 255, 255, 0.9);  /* 為表單區域添加一個半透明的白色背景 */
+  border-radius: 8px;  /* 圓角效果 */
+  padding: 2rem;  /* 添加內邊距 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+  max-width: 400px; /* 設置最大寬度為 400px */
+  width: 100%; /* 確保在小螢幕設備下寬度為 100% */
+  margin-left: auto; /* 表單區域對齊到右邊 */
+  margin-right: 100px; /* 確保右邊距離為 0 */
+}
