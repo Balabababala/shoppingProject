@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.entity.Categories;
+import com.example.demo.model.entity.Category;
 import com.example.demo.repository.CategoriesRowMap;
 import com.example.demo.repository.CategoryRepository;
 
@@ -29,14 +29,14 @@ public class CategoryForNavbar  {
 	private CategoryRepository categoryRepository;
 	
 	@GetMapping("/categoriestomynavbar")
-	public List<Categories> getcatogory()   {
+	public List<Category> getcatogory()   {
 		
 		
 		Map<String, Object> map = new HashMap<>();
 		
 		CategoriesRowMap rowMapper =new CategoriesRowMap();
 		
-		List<Categories> list=categoryRepository.findTopCategories();
+		List<Category> list=categoryRepository.findTopCategories();
 		
 	    return list;
 	}

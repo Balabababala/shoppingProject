@@ -5,7 +5,7 @@ import java.sql.Date;
 import lombok.Data;
 
 @Data
-public class Categories {
+public class Category {
 	Integer id  ;
 	String name ;
     String parentId ;

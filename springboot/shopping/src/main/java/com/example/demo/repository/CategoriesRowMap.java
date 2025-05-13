@@ -7,13 +7,13 @@ import java.sql.SQLException;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
 
-import com.example.demo.model.entity.Categories;
+import com.example.demo.model.entity.Category;
 @Component
-public class CategoriesRowMap implements RowMapper<Categories>{
+public class CategoriesRowMap implements RowMapper<Category>{
 
 	@Override
-	public Categories mapRow(ResultSet rs, int rowNum) throws SQLException {
-		Categories catogories = new Categories();
+	public Category mapRow(ResultSet rs, int rowNum) throws SQLException {
+		Category catogories = new Category();
 		catogories.setId(rs.getInt("id"));
 		catogories.setName(rs.getString("name"));
 		catogories.setParentId(rs.getString("parent_id"));

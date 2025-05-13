@@ -7,22 +7,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.example.demo.dto.LoginDTO;
+import com.example.demo.model.entity.User;
+import com.example.demo.repository.*;
 
 
 @Repository
-public class LoginRepository {
+public class UserRepository {
 
 	 @Autowired
 	    private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	 
 	 
-	 public List<LoginDTO> findByUsername(String username) {
+	 public List<User> findByUsername(String username) {
 	        String sql = "SELECT * FROM users WHERE username=:username";
 	        Map<String, Object> params = new HashMap<>();
 	        params.put("username", username);
 	        
-	        return namedParameterJdbcTemplate.query(sql, params,new LoginRowMap());
+	        return namedParameterJdbcTemplate.query(sql, params,new UserRowMapper());
 	    }
  
 
