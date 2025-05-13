@@ -67,37 +67,6 @@ function LoginPage() {
   }, []);
 
   return (
-<<<<<<< HEAD
-   
-    <Container className="py-5" style={{
-    maxWidth: '400px',
-    padding: '2rem',
-    borderRadius: '1rem',
-    background: 'rgba(255, 255, 255, 0.75)',
-    backdropFilter: 'blur(8px)',
-    boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
-  }}>
-      <h2 className="text-center">{isLogin ? '登錄' : '註冊'}</h2>
-      <Form onSubmit={handleSubmit}>
-        {/* 角色選擇 */}
-        <Form.Group controlId="roleSelect">
-          <Form.Label>選擇身份</Form.Label>
-          <Form.Check
-            type="radio"
-            label="買家"
-            value="buyer"
-            checked={role === 'buyer'}
-            onChange={handleRoleChange}
-          />
-          <Form.Check
-            type="radio"
-            label="賣家"
-            value="seller"
-            checked={role === 'seller'}
-            onChange={handleRoleChange}
-          />
-        </Form.Group>
-=======
     <Container className="py-5 d-flex justify-content-center login">
       <div style={{ maxWidth: '400px', width: '100%' }}>
         <h2 className="text-center mb-4">{isLogin ? '登錄' : '註冊'}</h2>
@@ -130,7 +99,6 @@ function LoginPage() {
               </Col>
             </Row>
           </Form.Group>
->>>>>>> branch 'main' of https://github.com/Balabababala/shoppingProject
 
           {/* 用戶名 */}
           <Form.Group controlId="username">
