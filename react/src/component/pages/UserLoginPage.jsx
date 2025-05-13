@@ -8,6 +8,34 @@ function LoginPage() {
   const [captchaCode, setCaptchaCode] = useState(''); // 用戶輸入的驗證碼
   const [captchaImage, setCaptchaImage] = useState(null); // 驗證碼圖片 URL
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    const data = {
+      role: role, // 角色（買家或賣家）
+      username: event.target.username.value, // 用戶名
+      password: event.target.password.value, // 密碼
+      captchaCode: captchaCode, // 驗證碼
+    };
+    try {
+        // 根據 isLogin 的值選擇不同的 API 請求
+        const url = isLogin 
+        ? 'http://localhost:8080/api/login'
+        : 'http://localhost:8080/api/register';
+
+        const response = await axios.post(url, data, { withCredentials: true }); // 發送 POST 請求
+        // 根據後端返回的結果進行處理
+        if (response.data.success) {
+          alert(isLogin ? '登入成功' : '註冊成功');
+        } else {
+          alert(isLogin ? '登入失敗：' + response.data.message : '註冊失敗：' + response.data.message);
+        }
+      } catch (error) {
+        console.error('Error during form submission', error);
+        alert('提交失敗，請稍後再試');
+      }
+};
+   
   const handleRoleChange = (event) => {
     setRole(event.target.value); // 設置用戶選擇的角色
   };
@@ -16,11 +44,7 @@ function LoginPage() {
     setIsLogin(!isLogin); // 切換登錄/註冊模式
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // 提交邏輯（這部分可根據需求進行後端處理）
-    alert(`Submitted as ${role} in ${isLogin ? 'Login' : 'Register'} mode with captcha: ${captchaCode}`);
-  };
+  
 
   // 加載驗證碼圖片
   const loadCaptcha = () => {
@@ -41,20 +65,22 @@ function LoginPage() {
         {/* 角色選擇 */}
         <Form.Group controlId="roleSelect">
           <Form.Label>選擇身份</Form.Label>
-          <Form.Check
-            type="radio"
-            label="買家"
-            value="buyer"
-            checked={role === 'buyer'}
-            onChange={handleRoleChange}
-          />
-          <Form.Check
-            type="radio"
-            label="賣家"
-            value="seller"
-            checked={role === 'seller'}
-            onChange={handleRoleChange}
-          />
+            <Form.Check
+              type="radio"
+              id="roleSelectBuyer"  // 为每个 radio button 设置唯一的 id
+              label="買家"
+              value="buyer"
+              checked={role === 'buyer'}
+              onChange={handleRoleChange}
+            />
+            <Form.Check
+              type="radio"
+              id="roleSelectSeller"  // 为每个 radio button 设置唯一的 id
+              label="賣家"
+              value="seller"
+              checked={role === 'seller'}
+              onChange={handleRoleChange}
+            />
         </Form.Group>
 
         {/* 用戶名 */}
@@ -85,7 +111,7 @@ function LoginPage() {
         </Form.Group>
 
         {/* 登錄或註冊的提交按鈕 */}
-        <Button variant="primary" type="submit" block>
+        <Button variant="primary" type="submit" className="w-100" >
           {isLogin ? '登錄' : '註冊'}
         </Button>
 

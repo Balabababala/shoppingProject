@@ -46,7 +46,8 @@ public class ApiAuthcode {
 	}
 	
 	private String generateAuthCode() {
-		String chars="0123456789zxcvbnmasdfghjklqwertyuiopZXCVBNMASDFHJKLQWERTYUIOP";
+		String chars="01";
+//		String chars="0123456789zxcvbnmasdfghjklqwertyuiopZXCVBNMASDFHJKLQWERTYUIOP";
 		Random random= new Random();
 		StringBuffer authcode=new StringBuffer();
 		for(int i =0 ;i<4;i++) {
