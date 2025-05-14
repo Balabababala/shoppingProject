@@ -1,4 +1,5 @@
 import { useEffect,useState } from 'react';  // 
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/MyNavbar.css';  // 它專屬的css
 import { Link } from 'react-router-dom'; // 引入 Link
@@ -56,8 +57,6 @@ function MyNavbar({ onChangeContent }) {
               </NavDropdown>
               <Nav.Link as={Link} to="/recent">最近看過</Nav.Link>
               <Nav.Link
-                as={Link}
-                to="/cart"
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className="cart-link"
@@ -81,7 +80,9 @@ function MyNavbar({ onChangeContent }) {
                     ))
                   )}
                   {/* 顯示結帳按鈕 */}
-                  <button className="btn btn-primary">去結帳</button>
+                  <Button as={Link} to="/cart" variant="primary">
+                      去結帳
+                  </Button>
                 </div>
               </Nav.Link>
               <Nav.Link as={Link} to="/member">會員中心</Nav.Link>
