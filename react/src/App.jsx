@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 import './css/App.css';
-import MyNavbar from './component/myNavbar.jsx';
+import MyNavbar from './component/MyNavbar.jsx';
 import WelcomePage from './component/pages/WelcomePage.jsx';           //頁面
 import RecentlyViewedPage from './component/pages/RecentViewPage.jsx'; //頁面
 import CartPage from './component/pages/CartPage.jsx';                 //頁面

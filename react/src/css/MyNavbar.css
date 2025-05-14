@@ -1,49 +1,53 @@
-.mynavbar{
-    background: linear-gradient(90deg, #ffffff, #5bc0ff); /* 白 → 淡藍 */
+/* 導覽列背景 */
+.mynavbar {
+  background: linear-gradient(90deg, #ffffff, #5bc0ff);
 }
-/* 設定購物車顯示區 */
+
+/* 購物車連結容器（觸發區） */
+.cart-link-wrapper {
+  position: relative;
+  display: inline-block; /* 保持與其他 Nav.Link 水平對齊 */
+}
+
+
+/* 購物車下拉區 */
 .cart-dropdown {
-    position: absolute;  /* 絕對定位相對於最近的 position: relative 父元素 */
-    top: 100%;           /* 顯示在購物車按鈕正下方 */
-    left: 0;             /* 左對齊 */
-    width: 250px;        /* 你可以調整寬度 */
-    background-color: white;
-    border: 1px solid #ddd;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    display: none;       /* 預設隱藏 */
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    z-index: 1000;       /* 確保顯示在最上層 */
-  }
+  position: absolute;
+  top: 100%;
   
-  /* 顯示購物車內容 */
-  .cart-dropdown.show {
-    display: block;  /* 顯示購物車 */
-    opacity: 1;      /* 顯示時加上過渡動畫 */
-  }
-  
-  .cart-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .cart-item img {
-    margin-right: 10px;
-  }
-  
-  .cart-item div {
-    font-size: 14px;
-  }
-  
-  .cart-dropdown button {
-    width: 100%;
-    margin-top: 10px;
-  }
-  
-  /* 設定購物車連結的樣式 */
-  .cart-link {
-    position: relative;  /* 讓購物車內容定位相對於此 */
-  }
-  
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* 顯示購物車時 */
+.cart-dropdown.show {
+  display: block;
+  opacity: 1;
+}
+
+/* 購物車商品 */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* 結帳按鈕 */
+.cart-dropdown button {
+  width: 100%;
+  margin-top: 10px;
+}

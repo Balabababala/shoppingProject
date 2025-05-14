@@ -8,7 +8,7 @@ import MySearch from './MySearch.jsx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavDropdown } from 'react-bootstrap';  // 正確導入 NavDropdown
 import MyNavbarCategories from './MyNavbarCategories.jsx';
 function MyNavbar({ onChangeContent }) {
   const [categories, setCategories] = useState([]);
@@ -32,7 +32,7 @@ function MyNavbar({ onChangeContent }) {
   // 顯示購物車內容
   const handleMouseEnter = () => setShowCart(true);
   const handleMouseLeave = () => {
-    setTimeout(() => setShowCart(false), 200);  // 延遲隱藏，給使用者足夠時間去點擊
+    setTimeout(() => setShowCart(false),200);  // 延遲隱藏，給使用者足夠時間去點擊
   };
 
    useEffect(() => {
@@ -56,35 +56,35 @@ function MyNavbar({ onChangeContent }) {
                 <MyNavbarCategories categories={categories} />
               </NavDropdown>
               <Nav.Link as={Link} to="/recent">最近看過</Nav.Link>
-              <Nav.Link
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-                className="cart-link"
-              >
-                購物車
-                {/* 顯示購物車內容 */}
-                <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
-                  {cartItems.length === 0 ? (
-                    <div>購物車是空的</div>
-                  ) : (
-                    cartItems.map((item) => (
-                      <div key={item.id} className="cart-item">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          style={{ width: 50, height: 50 }}
-                        />
-                        <div>{item.name}</div>
-                        <div>${item.price}</div>
-                      </div>
-                    ))
-                  )}
-                  {/* 顯示結帳按鈕 */}
-                  <Button as={Link} to="/cart" variant="primary">
-                      去結帳
-                  </Button>
+              <div
+              className="cart-link-wrapper"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            >
+              <Nav.Link className="cart-link">購物車</Nav.Link>
+
+              <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
+                {cartItems.length === 0 ? (
+                  <div>購物車是空的</div>
+                ) : (
+                  cartItems.map((item) => (
+                    <div key={item.id} className="cart-item">
+                      <img
+                        src={item.imageUrl}
+                        alt={item.name}
+                        style={{ width: 50, height: 50 }}
+                      />
+                      <div>{item.name}</div>
+                      <div>${item.price}</div>
+                    </div>
+                  ))
+                )}
+                <Button as={Link} to="/cart" variant="primary">
+                  去結帳
+                </Button>
                 </div>
-              </Nav.Link>
+            </div>
+             
               <Nav.Link as={Link} to="/member">會員中心</Nav.Link>
               <Nav.Link as={Link} to="/notificationsPage">通知中心</Nav.Link>
               <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>
