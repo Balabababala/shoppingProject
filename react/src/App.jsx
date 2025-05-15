@@ -1,27 +1,27 @@
 import { Routes, Route } from 'react-router-dom';
 
-import './css/App.css';
-import MyNavbar from './component/MyNavbar.jsx';
-import WelcomePage from './component/pages/WelcomePage.jsx';           //頁面
-import RecentlyViewedPage from './component/pages/RecentViewPage.jsx'; //頁面
-import CartPage from './component/pages/CartPage.jsx';                 //頁面
-import MemberPage from './component/pages/MemberPage.jsx';             //頁面
-import NotificationsPage from './component/pages/NotificationsPage.jsx';             //頁面
-import UserLoginPage from './component/pages/UserLoginPage.jsx';       //頁面
-import AdminLoginPage from './component/pages/Admin/AdminLoginPage.jsx';   //頁面
+import "./normal/css/App.css";
+import NormalMyNavbar from './normal/component/MyNavbar.jsx';
+import NormalWelcomePage from './normal/component/pages/WelcomePage.jsx';           //頁面
+import NormalRecentlyViewedPage from './normal/component/pages/RecentViewPage.jsx'; //頁面
+import NormalCartPage from './normal/component/pages/CartPage.jsx';                 //頁面
+import NormalMemberPage from './normal/component/pages/MemberPage.jsx';             //頁面
+import NormalNotificationsPage from './normal/component/pages/NotificationsPage.jsx';//頁面
+import NormalUserLoginPage from './normal/component/pages/UserLoginPage.jsx';       //頁面
+import AdminLoginPage from './Admin/component/pages/AdminLoginPage.jsx';   //頁面
 
 function App() {
   return (
     <>
-      <MyNavbar />
+      <NormalMyNavbar />
       <main className="main-content">
         <Routes>
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="/recent" element={<RecentlyViewedPage />} />
-          <Route path="/cart" element={<CartPage />} />
-          <Route path="/member" element={<MemberPage />} />
-          <Route path="/notificationsPage" element={<NotificationsPage />} />
-          <Route path="/userlogin" element={<UserLoginPage />} />
+          <Route path="/" element={<NormalWelcomePage />} />
+          <Route path="/recent" element={<NormalRecentlyViewedPage />} />
+          <Route path="/cart" element={<NormalCartPage />} />
+          <Route path="/member" element={<NormalMemberPage />} />
+          <Route path="/notificationsPage" element={<NormalNotificationsPage />} />
+          <Route path="/userlogin" element={<NormalUserLoginPage />} />
           <Route path="/adminlogin" element={<AdminLoginPage />} />
         </Routes>
       </main>
