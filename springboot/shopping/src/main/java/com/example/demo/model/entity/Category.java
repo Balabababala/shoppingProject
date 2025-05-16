@@ -1,15 +1,30 @@
 package com.example.demo.model.entity;
 
-import java.sql.Date;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+
+import java.time.LocalDateTime;
 
 import lombok.Data;
 
+@Entity
+@Table(name = "categories")
 @Data
 public class Category {
-	Integer id  ;
-	String name ;
-    String parentId ;
-    Date createdAt ;
-    Date updatedAt;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String name;
+
+    private Long parentId;
+
+    private LocalDateTime createdAt;
+
+    private LocalDateTime updatedAt;
 
 }

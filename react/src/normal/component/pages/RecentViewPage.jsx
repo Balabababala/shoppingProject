@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../css/RecentViewPage.css';
-import ProductList from '../ProductList.jsx'; 
+import RecentList from '../RecentList.jsx';
 
 function RecentlyViewedPage() {
   const recentlyViewedProducts = [
@@ -32,7 +32,7 @@ function RecentlyViewedPage() {
       <h2>最近看過</h2>
       {/* 確保 ProductList 正確接收到 products */}
       {recentlyViewedProducts.length > 0 ? (
-        <ProductList products={recentlyViewedProducts} />
+        <RecentList products={recentlyViewedProducts} />  
       ) : (
         <p>目前沒有最近看過的商品。</p>
       )}

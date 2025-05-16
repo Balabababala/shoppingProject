@@ -1,0 +1,53 @@
+/* 導覽列背景 */
+.mynavbar {
+  background: linear-gradient(90deg, #ffffff, #5bc0ff);
+}
+
+/* 購物車連結容器（觸發區） */
+.cart-link-wrapper {
+  position: relative;
+  display: inline-block; /* 保持與其他 Nav.Link 水平對齊 */
+}
+
+
+/* 購物車下拉區 */
+.cart-dropdown {
+  position: absolute;
+  top: 100%;
+  
+  width: 260px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 10px;
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+/* 顯示購物車時 */
+.cart-dropdown.show {
+  display: block;
+  opacity: 1;
+}
+
+/* 購物車商品 */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cart-item img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+/* 結帳按鈕 */
+.cart-dropdown button {
+  width: 100%;
+  margin-top: 10px;
+}
