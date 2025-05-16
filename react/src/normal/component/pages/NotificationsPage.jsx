@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import { Container, Spinner, Alert } from "react-bootstrap";
+import NotificationList from "../NotificationList";
+import NotificationDetail from "../NotificationDetail";
 
 const Notifications = () => {
   const [notifications, setNotifications] = useState([]);
-  const [loading, setLoading] = useState(true);  // 加入 loading 狀態
-  const [error, setError] = useState(null);     // 加入 error 狀態
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [selectedNotif, setSelectedNotif] = useState(null);
 
   useEffect(() => {
     fetchNotifications();
@@ -12,8 +15,6 @@ const Notifications = () => {
 
   const fetchNotifications = async () => {
     try {
-      console.log("Fetching notifications...");
-
       // 假資料
       const mockData = [
         {
@@ -36,45 +37,38 @@ const Notifications = () => {
         }
       ];
 
-      console.log("Notifications fetched:", mockData);
       setNotifications(mockData);
       setLoading(false);
     } catch (error) {
-      console.error("Failed to fetch notifications:", error);
       setError("無法載入通知");
       setLoading(false);
     }
   };
 
-  if (loading) return <div>載入中...</div>;
-  if (error) return <div>{error}</div>;
+  if (loading) return (
+    <Container className="text-center mt-4">
+      <Spinner animation="border" role="status" />
+      <div>載入中...</div>
+    </Container>
+  );
+
+  if (error) return (
+    <Container className="mt-4">
+      <Alert variant="danger">{error}</Alert>
+    </Container>
+  );
 
   return (
-    <div style={{ padding: "1rem" }}>
-      <h2 style={{ fontSize: "1.5rem", fontWeight: "bold" }}>通知中心</h2>
-      {notifications.length === 0 ? (
-        <p>目前沒有通知。</p>
+    <Container className="mt-4">
+      {!selectedNotif ? (
+        <>
+          <h2 className="mb-4">通知中心</h2>
+          <NotificationList notifications={notifications} onSelect={setSelectedNotif} />
+        </>
       ) : (
-        notifications.map((notif) => (
-          <div
-            key={notif.id}
-            style={{
-              border: "1px solid #ccc",
-              padding: "1rem",
-              marginTop: "1rem",
-              borderRadius: "8px",
-            }}
-          >
-            <p><strong>{notif.type || "系統通知"}</strong></p>
-            <p>{notif.message}</p>
-            <p style={{ color: "gray" }}>
-              狀態：{notif.status}｜建立時間：
-              {new Date(notif.created_at).toLocaleString()}
-            </p>
-          </div>
-        ))
+        <NotificationDetail notification={selectedNotif} onBack={() => setSelectedNotif(null)} />
       )}
-    </div>
+    </Container>
   );
 };
 

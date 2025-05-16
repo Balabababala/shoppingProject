@@ -1,25 +1,31 @@
-
 import React from "react";
+import { Card, Button, ListGroup } from "react-bootstrap";
 
 const OrderDetail = ({ order, onBack }) => {
   if (!order) return null;
 
   return (
-    <div className="mt-4 p-4 border rounded shadow bg-white">
-      <button onClick={onBack} className="mb-2 text-blue-600 underline">← 返回列表</button>
-      <h3 className="text-lg font-semibold mb-2">訂單詳情 - {order.id}</h3>
-      <div>日期：{order.date}</div>
-      <div>狀態：{order.status}</div>
-      <div>總金額：${order.amount}</div>
-      <hr className="my-2" />
-      <ul>
-        {order.items.map((item, index) => (
-          <li key={index}>
-            {item.name} x {item.quantity} = ${item.price * item.quantity}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <Card className="mt-4 shadow">
+      <Card.Header>
+        <Button variant="link" onClick={onBack} className="p-0">
+          ← 返回列表
+        </Button>
+      </Card.Header>
+      <Card.Body>
+        <Card.Title>訂單詳情 - {order.id}</Card.Title>
+        <Card.Text>日期：{order.date}</Card.Text>
+        <Card.Text>狀態：{order.status}</Card.Text>
+        <Card.Text>總金額：${order.amount}</Card.Text>
+        <hr />
+        <ListGroup variant="flush">
+          {order.items.map((item, index) => (
+            <ListGroup.Item key={index}>
+              {item.name} x {item.quantity} = ${item.price * item.quantity}
+            </ListGroup.Item>
+          ))}
+        </ListGroup>
+      </Card.Body>
+    </Card>
   );
 };
 

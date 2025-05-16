@@ -3,7 +3,6 @@ import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/MyNavbar.css';  // 它專屬的css
 import { Link } from 'react-router-dom'; // 引入 Link
-import ProductCard from './ProductCard'; // 產品卡片 測試用 暫時 應該要在推薦
 import MySearch from './MySearch.jsx';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -19,13 +18,13 @@ function MyNavbar({ onChangeContent }) {
       id: 1,
       name: '測試商品1',
       price: 199,
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://picsum.photos/150',
     },
     {
       id: 2,
       name: '測試商品2',
       price: 299,
-      imageUrl: 'https://via.placeholder.com/150',
+      imageUrl: 'https://picsum.photos/150',
     },
   ]);
 
@@ -35,11 +34,12 @@ function MyNavbar({ onChangeContent }) {
     setTimeout(() => setShowCart(false),200);  // 延遲隱藏，給使用者足夠時間去點擊
   };
 
-   useEffect(() => {
-    fetch("http://localhost:8080/categoriestomynavbar")
+  useEffect(() => {
+    fetch("http://localhost:8080/categoriestopmynavbar")
       .then(resp => resp.json())
       .then(data => {
-        setCategories(data); // 假設資料格式為 [{id, name}]
+        const topCategories = data.filter(category => category.parentId === null);
+        setCategories(topCategories);
       })
       .catch(error => console.error("載入分類資料失敗:", error));
   }, []);

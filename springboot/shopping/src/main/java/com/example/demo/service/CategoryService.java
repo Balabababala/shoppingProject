@@ -6,5 +6,4 @@ import com.example.demo.model.entity.Category;
 
 public interface CategoryService {
 	List <Category> getTopCategory();
-	
 }

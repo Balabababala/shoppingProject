@@ -18,7 +18,7 @@ public class CategoryForNavbar  {
 	@Autowired
 	private CategoryServiceImpl categoryServiceImpl;
 	
-	@GetMapping("/categoriestomynavbar")
+	@GetMapping("/categoriestopmynavbar")
 	public List<Category> getcatogory()   {
 	    return categoryServiceImpl.getTopCategory();
 	}
