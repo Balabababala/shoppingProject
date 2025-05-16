@@ -61,7 +61,7 @@ function MyNavbar({ onChangeContent }) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Nav.Link className="cart-link">購物車</Nav.Link>
+              <Nav.Link className="cart-link" as={Link} to="/cart">購物車</Nav.Link>
 
               <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
                 {cartItems.length === 0 ? (
@@ -84,10 +84,12 @@ function MyNavbar({ onChangeContent }) {
                 </Button>
                 </div>
             </div>
-             
-              <Nav.Link as={Link} to="/member">會員中心</Nav.Link>
               <Nav.Link as={Link} to="/notificationsPage">通知中心</Nav.Link>
-              <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>
+              <NavDropdown title="會員中心" id="basic-nav-dropdown">
+                <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>
+                <NavDropdown.Item >我的資料</NavDropdown.Item>
+              </NavDropdown>
+              <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>{/*未登錄顯示登錄/註冊 已登錄顯示會員中心 使用者名稱*/}
             </Nav>
             <MySearch />
           </Navbar.Collapse>
