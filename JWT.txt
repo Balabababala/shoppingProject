@@ -1,0 +1,74 @@
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+
+@RestController
+public class AuthController {
+
+    private final String SECRET = "yourSecretKey";
+
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest, HttpServletResponse response) {
+        // 這裡簡單示範，真實應該驗證帳密
+        if ("user".equals(loginRequest.getUsername()) && "pass".equals(loginRequest.getPassword())) {
+            String jwt = Jwts.builder()
+                    .setSubject(loginRequest.getUsername())
+                    .setIssuedAt(new Date())
+                    .setExpiration(new Date(System.currentTimeMillis() + 3600_000)) // 1 小時
+                    .signWith(SignatureAlgorithm.HS256, SECRET)
+                    .compact();
+
+            Cookie cookie = new Cookie("token", jwt);
+            cookie.setHttpOnly(true);
+            cookie.setSecure(false); // 本地測試可設 false，上線要設 true (HTTPS)
+            cookie.setPath("/");
+            cookie.setMaxAge(3600); // 1 小時
+
+            response.addCookie(cookie);
+
+            return ResponseEntity.ok("登入成功");
+        } else {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("帳號密碼錯誤");
+        }
+    }
+}
+
+jwt 塞到 cookie 塞到resp 給瀏覽器
+
+
+
+
+
+
+
+
+驗證 JWT 範例
+java
+
+Claims claims = Jwts.parser()
+    .setSigningKey("yourSecretKey")
+    .parseClaimsJws(token)
+    .getBody();
+
+String userId = claims.getSubject();
+String role = (String) claims.get("role");
+
+
+Maven
+
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-api</artifactId>
+    <version>0.11.5</version>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-impl</artifactId>
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt-jackson</artifactId> <!-- or jjwt-gson -->
+    <version>0.11.5</version>
+    <scope>runtime</scope>
+</dependency>

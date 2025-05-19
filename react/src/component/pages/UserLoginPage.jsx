@@ -29,7 +29,7 @@ function LoginPage() {
     try {
       // 根據 isLogin 的值選擇不同的 API 請求
       const url = isLogin
-        ? role === 'buyer' ? 'http://localhost:8080/api/buyerlogin':'http://localhost:8080/api/sellerlogin' // 登入 API
+        ? 'http://localhost:8080/api/login' // 登入 API
         : 'http://localhost:8080/api/register'; // 註冊 API
 
       const response = await axios.post(url, data, { withCredentials: true }); // 發送 POST 請求
