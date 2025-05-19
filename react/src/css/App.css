@@ -1,0 +1,29 @@
+ main {
+    padding-top: 80px;
+  }
+
+
+ .animated-bg {
+    animation: rainbowShift 1s infinite linear;
+}
+
+@keyframes rainbowShift {
+  0%   { background-color: red; }
+  16%  { background-color: orange; }
+  33%  { background-color: yellow; }
+  50%  { background-color: green; }
+  66%  { background-color: blue; }
+  83%  { background-color: indigo; }
+  100% { background-color: violet; }
+}
+
+@keyframes flashBang {
+  0% { background-color: white; }
+  100% { background-color: black; }
+}
+
+@keyframes firePulse {
+  0%   { background-color: #ff4500; }
+  50%  { background-color: #ff6347; }
+  100% { background-color: #ff4500; }
+}
