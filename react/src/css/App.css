@@ -4,7 +4,7 @@
 
   .animated-bg {
     /* min-height: 100vh; */
-    animation: rainbowShift 1s infinite linear;
+    /* animation: rainbowShift 1s infinite linear; */
   }
 
   @keyframes bgShift {
