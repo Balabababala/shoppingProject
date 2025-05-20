@@ -43,7 +43,7 @@ CREATE TABLE users (
     updated_at DATETIME COMMENT '更新時間',
     last_login_at DATETIME COMMENT '最後登入時間',
     is_active BOOLEAN COMMENT '是否啟用',
-    completed BOOLEAN COMMENT '是否驗證',
+    is_email_verified BOOLEAN COMMENT '是否驗證',
     FOREIGN KEY (role_id) REFERENCES roles(id)
 );
 

@@ -1,28 +1,27 @@
 package com.example.demo.controller;
 
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dto.LoginDTO;
 import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.UserService;
+import com.example.demo.session.SessionUser;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-import jakarta.websocket.Session;
+
 
 
 //需要 驗證 loginDTO ApiAuthcode 以上成功 做下面
-//需要 塞session loginInfo
+//需要 塞  sessionUser
 
 @RestController
 @RequestMapping("/login")
@@ -38,11 +37,14 @@ public class Login {
 		HttpSession session= req.getSession();
 		//比對
 		if(loginDTO.getUsername().equals(user.getUserName())
-			&&	loginDTO.getPassword().equals(user.getHashPassword())
+			&&	loginDTO.getPassword().equals(user.getHashPassword()) //hashcode 還沒做 記得改
 			&&  loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))) {
-		//塞session loginInfo 還沒建
+		
+			SessionUser sessionUser = new SessionUser(user.getUserName(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
+			session.setAttribute("sessionUser", sessionUser);
 			return ResponseEntity.ok(new ApiResponse<>("登入成功", null));
 		}
+		
 		return ResponseEntity.badRequest().body(new ApiResponse<>("登入失敗", null));
 		
 	}

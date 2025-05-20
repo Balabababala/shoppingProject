@@ -1,0 +1,18 @@
+✅ 實作：在 port 8080 上啟用 HTTPS（TLS）
+🔧 application.properties
+properties
+複製
+編輯
+# 將 HTTPS 啟動在 8080
+server.port=8080
+
+# SSL 設定
+server.ssl.key-store=classpath:keystore.p12
+server.ssl.key-store-password=password
+server.ssl.key-store-type=PKCS12
+server.ssl.key-alias=mycert
+這樣一來：
+
+✅ https://localhost:8080：✅ 可以
+
+❌ http://localhost:8080：❌ 不可（因為是 HTTPS 封包）
