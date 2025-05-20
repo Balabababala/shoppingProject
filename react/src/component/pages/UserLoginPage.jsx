@@ -4,6 +4,7 @@ import axios from 'axios';
 import '../../css/UserLoginPage.css'; // 引入自定義的 CSS 樣式
 
 function LoginPage() {
+  const API_BASE= 'http://localhost:8080';
   // 設置狀態來存儲用戶選擇的角色（買家或賣家）
   const [role, setRole] = useState(null);
 
@@ -17,22 +18,30 @@ function LoginPage() {
   const [captchaImage, setCaptchaImage] = useState(null);
 
   // 表單提交處理函式
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     const data = {
       role: role, // 角色（買家或賣家）
-      username: event.target.username.value, // 用戶名
-      password: event.target.password.value, // 密碼
+      username: e.target.username.value, // 用戶名
+      password: e.target.password.value, // 密碼
       captchaCode: captchaCode, // 驗證碼
     };
     try {
       // 根據 isLogin 的值選擇不同的 API 請求
       const url = isLogin
-        ? 'http://localhost:8080/api/login' // 登入 API
-        : 'http://localhost:8080/api/register'; // 註冊 API
+        ? `${API_BASE}/login` // 登入 API
+        : `${API_BASE}/register`; // 註冊 API
+      
+      const response = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        credentials: 'include', // 
+        body: JSON.stringify(data)
+      });
 
-      const response = await axios.post(url, data, { withCredentials: true }); // 發送 POST 請求
+const result = await response.json();
 
       // 根據後端返回的結果進行處理
       if (response.data.success) {
@@ -58,7 +67,7 @@ function LoginPage() {
 
   // 加載驗證碼圖片
   const loadCaptcha = () => {
-    setCaptchaImage(`http://localhost:8080/api/auth-code?${new Date().getTime()}`); // 使用正確的 URL 加載驗證碼
+    setCaptchaImage(`${API_BASE}/auth-code?${new Date().getTime()}`); // 使用正確的 URL 加載驗證碼
   };
 
   // 在頁面載入時加載驗證碼圖片

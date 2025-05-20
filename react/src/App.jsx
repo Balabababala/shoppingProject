@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import "./css/App.css";
 import MyNavbar from './component/MyNavbar.jsx';
 import WelcomePage from './component/pages/WelcomePage.jsx';              //頁面
+import ProductDetailPage from './component/pages/ProductDetailPage.jsx';              //頁面
 import RecentlyViewedPage from './component/pages/RecentViewPage.jsx';    //頁面
 import CartPage from './component/pages/CartPage.jsx';                    //頁面
 import MemberPage from './component/pages/MemberPage.jsx';                //頁面
@@ -20,6 +21,7 @@ function App() {
       <main className="main-content animated-bg">
         <Routes>
           <Route path="/" element={<WelcomePage />} />
+          <Route path="/product/:id" element={<ProductDetailPage />} />
           <Route path="/recent" element={<RecentlyViewedPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/member" element={<MemberPage />} />

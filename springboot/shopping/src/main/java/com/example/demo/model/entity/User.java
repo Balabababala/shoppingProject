@@ -14,7 +14,7 @@ public class User {
 	@Id
 	private Integer id; 
 	 
-    private String username;
+    private String userName;
     private String hashPassword;
     private String hashSalt;
     private String email;
