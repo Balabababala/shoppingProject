@@ -37,7 +37,7 @@ public class Login {
 		HttpSession session= req.getSession();
 		//比對
 		if(loginDTO.getUsername().equals(user.getUserName())
-			&&	loginDTO.getPassword().equals(user.getHashPassword()) //hashcode 還沒做 記得改
+			&&	loginDTO.getPassword().equals(user.getHashPassword()) //hashcode 還沒做 記得改 123
 			&&  loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))) {
 		
 			SessionUser sessionUser = new SessionUser(user.getUserName(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
