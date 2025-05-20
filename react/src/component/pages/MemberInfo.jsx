@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import '../../css/MemberInfo.css';
+
+// DTO MemberInfoDTO username: String
+//                   fullName: String
+//                   email:    String
+//                   phone:    String
+//                   address:  String
 
 function MemberInfo() {
-  const [member, setMember] = useState(null);
+  const [form, setForm] = useState({});
 
-  // useEffect(() => {
-  //   axios.get('/api/members/me') // 假設 API 可取得目前登入會員
-  //     .then(res => setMember(res.data))
-  //     .catch(err => console.error(err));
-  // }, []);
-
-   useEffect(() => {    //假資料 上面才是
-    // 模擬從伺服器取回資料（延遲 1 秒）
+  useEffect(() => {
     setTimeout(() => {
-      setMember({
+      setForm({
         username: 'john123',
         fullName: '張允豪',
         email: 'john@example.com',
@@ -23,17 +22,89 @@ function MemberInfo() {
     }, 1000);
   }, []);
 
-  if (!member) return <div>載入中...</div>;
+  if (!form.username) return <div>載入中...</div>;
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert('送出資料：' + JSON.stringify(form));
+    // 這裡可呼叫 API
+  };
+
+
+  const getUserData = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/api/memberinfo`, { credentials: 'include' });
+      if (!res.ok) throw new Error('伺服器錯誤');
+      const data = await res.json();
+      setForm(data.data); // 根據實際回傳調整
+     } catch (err) {
+      console.error('取得使用者資料失敗:', err.message);
+      alert('取得使用者資料失敗: ' + err.message);
+    }
+  };//要用的話 useEffect 裡面替換成 getUserData()
+  
 
   return (
     <div>
       <h1>會員個人資料</h1>
-      <p>帳號：{member.username}</p>
-      <p>姓名：{member.fullName}</p>
-      <p>Email：{member.email}</p>
-      <p>電話：{member.phone}</p>
-      <p>地址：{member.address}</p>
-      <button onClick={() => alert('開啟編輯功能')}>編輯資料</button>
+        <form onSubmit={handleSubmit} key={form.username}>
+          <div className="form-row">
+            <label className="form-label">帳號:</label>
+            <input
+              name="username"
+              value={form.username}
+              readOnly
+            />
+          </div>
+
+          <div className="form-row">
+            <label className="form-label">姓名:</label>
+            <input
+              type="text"
+              name="fullName"
+              value={form.fullName}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-row">
+            <label className="form-label">Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-row">
+            <label className="form-label">電話:</label>
+            <input
+              type="text"
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+            />
+          </div>
+
+          <div className="form-row">
+            <label className="form-label">地址:</label>
+            <input
+              type="text"
+              name="address"
+              value={form.address}
+              onChange={handleChange}
+            />
+          </div>
+          <button type="submit">編輯資料</button>
+        </form>
     </div>
   );
 }
