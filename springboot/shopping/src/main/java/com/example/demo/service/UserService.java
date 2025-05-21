@@ -5,5 +5,6 @@ import com.example.demo.model.entity.User;
 
 
 public interface UserService {
-	public User findUserByUserName(String userName);
+	public User findUserByUserName(String username);
+
 }

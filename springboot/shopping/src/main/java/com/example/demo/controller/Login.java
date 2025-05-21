@@ -2,6 +2,8 @@ package com.example.demo.controller;
 
 
 
+import java.time.LocalDateTime;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,17 +34,19 @@ public class Login {
 	UserService userService;
 	
 	@PostMapping
-	public ResponseEntity<ApiResponse<Object>> login(@RequestBody LoginDTO loginDTO,HttpServletRequest req){
-		User user= userService.findUserByUserName(loginDTO.getUserName()); //查找使用者 為空不報錯
-		HttpSession session= req.getSession();
+	public ResponseEntity<ApiResponse<Object>> login(@RequestBody LoginDTO loginDTO,HttpSession session){
+		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
 		//比對
 		try {
-			if(loginDTO.getUserName().equals(user.getUserName())
+			if(loginDTO.getUsername().equals(user.getUsername())
 				&&	PasswordHash.hashPassword(loginDTO.getPassword(),user.getHashSalt()).equals(user.getHashPassword()) //hashcode 做了 
 				&&  loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))) {
 			
-				SessionUser sessionUser = new SessionUser(user.getUserName(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
+				SessionUser sessionUser = new SessionUser(user.getUsername(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
 				session.setAttribute("sessionUser", sessionUser);
+				user.setLastLoginAt(LocalDateTime.now());//更新 最近登入時間
+														 //登入紀錄 還沒建 Entity
+														 //邏輯判斷 最好改到service
 				return ResponseEntity.ok(new ApiResponse<>("登入成功", null));
 			}
 		} catch (Exception e) {
