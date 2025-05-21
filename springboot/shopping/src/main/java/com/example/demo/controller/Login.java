@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.model.dto.LoginDTO;
 import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
+import com.example.demo.service.PasswordHash;
 import com.example.demo.service.UserService;
 import com.example.demo.session.SessionUser;
 
@@ -30,21 +31,23 @@ public class Login {
 	@Autowired
 	UserService userService;
 	
-	
 	@PostMapping
 	public ResponseEntity<ApiResponse<Object>> login(@RequestBody LoginDTO loginDTO,HttpServletRequest req){
-		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
+		User user= userService.findUserByUserName(loginDTO.getUserName()); //查找使用者 為空不報錯
 		HttpSession session= req.getSession();
 		//比對
-		if(loginDTO.getUsername().equals(user.getUserName())
-			&&	loginDTO.getPassword().equals(user.getHashPassword()) //hashcode 還沒做 記得改 123
-			&&  loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))) {
-		
-			SessionUser sessionUser = new SessionUser(user.getUserName(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
-			session.setAttribute("sessionUser", sessionUser);
-			return ResponseEntity.ok(new ApiResponse<>("登入成功", null));
+		try {
+			if(loginDTO.getUserName().equals(user.getUserName())
+				&&	PasswordHash.hashPassword(loginDTO.getPassword(),user.getHashSalt()).equals(user.getHashPassword()) //hashcode 做了 
+				&&  loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))) {
+			
+				SessionUser sessionUser = new SessionUser(user.getUserName(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
+				session.setAttribute("sessionUser", sessionUser);
+				return ResponseEntity.ok(new ApiResponse<>("登入成功", null));
+			}
+		} catch (Exception e) {
+			return ResponseEntity.internalServerError().body(new ApiResponse<>("伺服器錯誤", null));
 		}
-		
 		return ResponseEntity.badRequest().body(new ApiResponse<>("登入失敗", null));
 		
 	}
