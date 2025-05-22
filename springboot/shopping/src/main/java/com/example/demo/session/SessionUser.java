@@ -7,8 +7,9 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class SessionUser {
-	String userName;
-	Integer roleId;
+	String username;
+	Long userId;
+	Long roleId;
 	private Boolean isActive;
     private Boolean isEmailVerified;
 }

@@ -1,0 +1,21 @@
+1.
+先是SPA設計
+	我一開始是用 usestate[content,setContent]
+	然後按鈕 更換 [content,setContent] 來改變畫面訊息
+忘了發生什麼事 (有東西辦不到)
+才改成route
+
+2.
+如果畫面沒顯示
+	大概率是用元件但沒import到對應的東西
+
+3.
+CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
+	Spring 要設定
+		方法1. 對應的Api + @CrossOrigin(origins = {"http://localhost:5173"}, allowCredentials = "true") "http://localhost:5173"是可讓對應的網站取資料   allowCredentials 這是cookie
+		方法2. config 建 class @Configuration implements WebMvcConfigurer @Override addCorsMappings (看專案 太多)
+
+4.useEffect(xxxx,[]) 只有第一次網頁會做
+	所以登入完後 useEffect(userdata.......)不會做
+
+  	結果我是我登入完根本沒丟東西(session)回前端(setUserdat(data.data))(先做一次)

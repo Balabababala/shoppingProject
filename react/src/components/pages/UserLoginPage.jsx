@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext} from 'react';
 import { Form, Button, Col, Row, Container } from 'react-bootstrap'; // 使用 react-bootstrap 來設計表單
+import { useNavigate } from 'react-router-dom';
+import { AppContext } from '../../contexts/AppContext'; // 這是 useEffect 集合
 import axios from 'axios';
 import '../../css/UserLoginPage.css'; // 引入自定義的 CSS 樣式
 
 function LoginPage() {
+
   const API_BASE= 'http://localhost:8080';
+
+  const {setUserData} = useContext(AppContext);
   // 設置狀態來存儲用戶選擇的角色（買家或賣家）
   const [role, setRole] = useState(null);
 
@@ -17,11 +22,12 @@ function LoginPage() {
   // 驗證碼圖片 URL
   const [captchaImage, setCaptchaImage] = useState(null);
 
+  const navigate = useNavigate();
+
   // 表單提交處理函式
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = {
-      role: role, // 角色（買家或賣家）
       username: e.target.username.value, // 用戶名
       password: e.target.password.value, // 密碼
       captchaCode: captchaCode, // 驗證碼
@@ -29,8 +35,8 @@ function LoginPage() {
     try {
       // 根據 isLogin 的值選擇不同的 API 請求
       const url = isLogin
-        ? `${API_BASE}/login` // 登入 API
-        : `${API_BASE}/register`; // 註冊 API
+        ? `${API_BASE}/api/login` // 登入 API
+        : `${API_BASE}/api/register`; // 註冊 API
       
       const response = await fetch(url, {
         method: 'POST',
@@ -40,12 +46,13 @@ function LoginPage() {
         credentials: 'include', // 
         body: JSON.stringify(data)
       });
-
-const result = await response.json();
+    const result = await response.json();
 
       // 根據後端返回的結果進行處理
-      if (response.data.success) {
+      if (result.message=="登入成功" || result.message=="註冊成功") {
         alert(isLogin ? '登入成功' : '註冊成功');
+        setUserData(result.data);
+        navigate('/');
       } else {
         alert(isLogin ? '登入失敗：' + response.data.message : '註冊失敗：' + response.data.message);
       }
@@ -56,9 +63,6 @@ const result = await response.json();
   };
 
   // 處理角色選擇變更
-  const handleRoleChange = (event) => {
-    setRole(event.target.value); // 設置用戶選擇的角色
-  };
 
   // 切換登入/註冊模式
   const toggleForm = () => {
@@ -67,7 +71,7 @@ const result = await response.json();
 
   // 加載驗證碼圖片
   const loadCaptcha = () => {
-    setCaptchaImage(`${API_BASE}/auth-code?${new Date().getTime()}`); // 使用正確的 URL 加載驗證碼
+    setCaptchaImage(`${API_BASE}/api/auth-code?${new Date().getTime()}`); // 使用正確的 URL 加載驗證碼
   };
 
   // 在頁面載入時加載驗證碼圖片
@@ -80,34 +84,6 @@ const result = await response.json();
       <div style={{ maxWidth: '400px', width: '100%' }}>
         <h2 className="text-center mb-4">{isLogin ? '登錄' : '註冊'}</h2>
         <Form onSubmit={handleSubmit}>
-          {/* 角色選擇 */}
-          <Form.Group controlId="roleSelect">
-            <Form.Label>選擇身份</Form.Label>
-            <Row>
-              <Col xs={6}>
-                <Form.Check
-                  type="radio"
-                  id="roleSelectBuyer"
-                  label="買家"
-                  value="buyer"
-                  checked={role === 'buyer'}
-                  onChange={handleRoleChange}
-                  size="sm"
-                />
-              </Col>
-              <Col xs={6}>
-                <Form.Check
-                  type="radio"
-                  id="roleSelectSeller"
-                  label="賣家"
-                  value="seller"
-                  checked={role === 'seller'}
-                  onChange={handleRoleChange}
-                  size="sm"
-                />
-              </Col>
-            </Row>
-          </Form.Group>
 
           {/* 用戶名 */}
           <Form.Group controlId="username">

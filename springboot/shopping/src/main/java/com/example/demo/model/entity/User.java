@@ -12,7 +12,7 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "username", nullable = false, length = 50)
     private String username;
@@ -27,7 +27,7 @@ public class User {
     private String email;
 
     @Column(name = "role_id", nullable = false)
-    private Integer roleId;
+    private Long roleId;
 
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;

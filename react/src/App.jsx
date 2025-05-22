@@ -1,17 +1,17 @@
 import { Routes, Route } from 'react-router-dom';
 
 import "./css/App.css";
-import MyNavbar from './component/MyNavbar.jsx';
-import WelcomePage from './component/pages/WelcomePage.jsx';              //頁面
-import ProductDetailPage from './component/pages/ProductDetailPage.jsx';              //頁面
-import RecentlyViewedPage from './component/pages/RecentViewPage.jsx';    //頁面
-import CartPage from './component/pages/CartPage.jsx';                    //頁面
-import MemberPage from './component/pages/MemberPage.jsx';                //頁面
-import NotificationsPage from './component/pages/NotificationsPage.jsx';  //頁面
-import UserLoginPage from './component/pages/UserLoginPage.jsx';          //頁面
+import MyNavbar from './components/MyNavbar.jsx';
+import WelcomePage from './components/pages/WelcomePage.jsx';              //頁面
+import ProductDetailPage from './components/pages/ProductDetailPage.jsx';              //頁面
+import RecentlyViewedPage from './components/pages/RecentViewPage.jsx';    //頁面
+import CartPage from './components/pages/CartPage.jsx';                    //頁面
+import MemberPage from './components/pages/MemberPage.jsx';                //頁面
+import NotificationsPage from './components/pages/NotificationsPage.jsx';  //頁面
+import UserLoginPage from './components/pages/UserLoginPage.jsx';          //頁面
 import AdminLoginPage from './Admin/component/pages/AdminLoginPage.jsx';  //頁面
-import UserOrderPage from './component/pages/OrderPage.jsx';              //頁面
-import MemberInfoPage from './component/pages/MemberInfo.jsx';            //頁面
+import UserOrderPage from './components/pages/OrderPage.jsx';              //頁面
+import MemberInfoPage from './components/pages/MemberInfo.jsx';            //頁面
 
 function App() {
 

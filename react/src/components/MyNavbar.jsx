@@ -1,4 +1,4 @@
-import { useEffect,useState } from 'react';  // 
+import { useState,useContext  } from 'react';  // 
 import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/MyNavbar.css';  // 它專屬的css
@@ -8,47 +8,26 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { NavDropdown } from 'react-bootstrap';  // 正確導入 NavDropdown
+import { AppContext } from '../contexts/AppContext'; // 這是 useEffect 集合
 import MyNavbarCategories from './MyNavbarCategories.jsx';
-function MyNavbar({ onChangeContent }) {
-  const [categories, setCategories] = useState([]);
-  const [showCart, setShowCart] = useState(false);
-  const [cartItems, setCartItems] = useState([ // 假設這是你的購物車內容
-    
-    {
-      id: 1,
-      name: '測試商品1',
-      price: 199,
-      imageUrl: 'https://picsum.photos/150',
-    },
-    {
-      id: 2,
-      name: '測試商品2',
-      price: 299,
-      imageUrl: 'https://picsum.photos/150',
-    },
-  ]);
 
+function MyNavbar({ onChangeContent }) {
+  const API_BASE='http://localhost:8080/api';
+ 
+  const { userData, cartItems, categories } = useContext(AppContext);
+  const [showCart, setShowCart] = useState(false);
+  
   // 顯示購物車內容
   const handleMouseEnter = () => setShowCart(true);
   const handleMouseLeave = () => {
     setTimeout(() => setShowCart(false),200);  // 延遲隱藏，給使用者足夠時間去點擊
   };
 
-  useEffect(() => {
-    fetch("http://localhost:8080/categoriestopmynavbar")
-      .then(resp => resp.json())
-      .then(data => {
-        const topCategories = data.filter(category => category.parentId === null);
-        setCategories(topCategories);
-      })
-      .catch(error => console.error("載入分類資料失敗:", error));
-  }, []);
-
   return (
     <>
       <Navbar expand="lg" fixed="top" className="mynavbar">
         <Container>
-          <Navbar.Brand as={Link} to="/">左上角的</Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">左上角的</Navbar.Brand>                      {/*商標 回首頁*/}
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
             <Nav>
@@ -61,7 +40,7 @@ function MyNavbar({ onChangeContent }) {
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Nav.Link className="cart-link" as={Link} to="/cart">購物車</Nav.Link>
+              <Nav.Link className="cart-link" as={Link} to={userData===null?"/userlogin":"/cart"}>購物車</Nav.Link>{/*未登入 導向登入頁*/} 
 
               <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
                 {cartItems.length === 0 ? (

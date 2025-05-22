@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.Impl;
 
 import java.util.List;
 
@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.entity.Category;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.service.CategoryService;
 
 @Service
-public class CategoryServiceImpl {
+public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	

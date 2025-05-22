@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/api")
 
 
-public class ApiAuthcode {
+public class AuthcodeController {
 	
 	@GetMapping("/auth-code")
 	public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
@@ -46,7 +46,7 @@ public class ApiAuthcode {
 	}
 	
 	private String generateAuthCode() {
-		String chars="01";
+		String chars="0";
 //		String chars="0123456789zxcvbnmasdfghjklqwertyuiopZXCVBNMASDFHJKLQWERTYUIOP";
 		Random random= new Random();
 		StringBuffer authcode=new StringBuffer();
