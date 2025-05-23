@@ -5,8 +5,8 @@ import lombok.Data;
 //存 使用者登入
 @Data
 @AllArgsConstructor
-public class LoginDTO {
-	String username;
-	String password;
-	String captchaCode;
+public class LoginDto {
+	private String username;
+	private String password;
+	private String captchaCode;
 }

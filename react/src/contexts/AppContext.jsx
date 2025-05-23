@@ -11,7 +11,7 @@ export function AppProvider({ children }) {
 
   // 取分類
   useEffect(() => {
-    fetch(`${API_BASE}/categories-top-mynavbar`)
+    fetch(`${API_BASE}/categories/top-mynavbar`)
       .then(resp => resp.json())
       .then(data => setCategories(data.data))
       .catch(console.error);
@@ -23,7 +23,6 @@ export function AppProvider({ children }) {
       .then(resp => resp.json())
       .then(data => setUserData(data.data))
       .catch(console.error);
-      console.log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
   }, []);
 
   // 取購物車資料 (userData 有時需要存在依賴陣列裡面)

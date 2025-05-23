@@ -12,11 +12,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ShoppingException;
-import com.example.demo.model.dto.LoginDTO;
+import com.example.demo.model.dto.LoginDto;
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.UserService;
-import com.example.demo.session.SessionUser;
+
 import jakarta.servlet.http.HttpSession;
 
 
@@ -33,13 +34,13 @@ public class LoginController {
 	@Autowired
 	UserService userService;
 	
-	@PostMapping
-	public ResponseEntity<ApiResponse<SessionUser>> login(@RequestBody LoginDTO loginDTO,HttpSession session){
+	@PostMapping		//loginPage 用
+	public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginDto loginDTO,HttpSession session){
 		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
 		//比對
 		try {
 			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功
-				SessionUser sessionUser = new SessionUser(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
+				UserDto sessionUser = new UserDto(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
 				session.setAttribute("sessionUser", sessionUser);
 				user.setLastLoginAt(LocalDateTime.now());//更新 最近登入時間
 														 //登入紀錄 還沒建 Entity

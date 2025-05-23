@@ -5,8 +5,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
-import com.example.demo.session.SessionUser;
 
 import jakarta.servlet.http.HttpSession;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,11 +15,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @RestController
 @RequestMapping("/api/user")
-public class UserSessionController {
+public class UserController {
 
-	@GetMapping("me")
-	public ResponseEntity<ApiResponse<SessionUser>> getRole(HttpSession session) {
-		SessionUser sessionUser= (SessionUser)session.getAttribute("sessionUser");
+	@GetMapping("me") //contexts 用
+	public ResponseEntity<ApiResponse<UserDto>> getRole(HttpSession session) {
+		UserDto sessionUser= (UserDto)session.getAttribute("userDto");
 		if(sessionUser==null) {
 			return ResponseEntity.status(401).body(ApiResponse.error("尚未登入"));
 		}

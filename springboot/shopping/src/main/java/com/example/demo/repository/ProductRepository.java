@@ -13,5 +13,6 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	//已有方法 find.... save delete
 	
     // 你可以加自訂的方法，像是：
-	Optional<Product> findById(Long id);
+	Optional<Product> findById(Long id);//對照用 id->name
+	List<Product> findByCategoryId(Long categoryId);
 }

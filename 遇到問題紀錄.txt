@@ -19,3 +19,7 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 	所以登入完後 useEffect(userdata.......)不會做
 
   	結果我是我登入完根本沒丟東西(session)回前端(setUserdat(data.data))(先做一次)
+
+5.分類頁 api 是用product controller (因為要取產品資料 = =)
+
+6.flapMap 用法

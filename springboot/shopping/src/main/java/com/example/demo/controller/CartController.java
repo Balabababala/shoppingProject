@@ -8,10 +8,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.CartDTO;
+import com.example.demo.model.dto.CartDto;
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.CartItemService;
-import com.example.demo.session.SessionUser;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -21,9 +21,9 @@ public class CartController {
 	@Autowired
 	private CartItemService cartItemService; 
 	
-	@GetMapping
-	public ResponseEntity<ApiResponse<List<CartDTO>>> getcart(HttpSession session)   {
-		SessionUser sessionUser= (SessionUser)session.getAttribute("sessionUser");
+	@GetMapping //contexts 用
+	public ResponseEntity<ApiResponse<List<CartDto>>> getcart(HttpSession session)   {
+		UserDto sessionUser= (UserDto)session.getAttribute("sessionUser");
 		return ResponseEntity.ok(ApiResponse.success("取購物車成功", cartItemService.getCart(sessionUser.getUserId())));
 	}
 }

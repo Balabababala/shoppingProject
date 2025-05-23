@@ -1,0 +1,13 @@
+INSERT INTO roles (id, name, description, created_at) VALUES
+(1, 'admin', '系統管理員', NOW()),
+(2, 'seller', '賣家', NOW()),
+(3, 'buyer', '買家', NOW());
+
+
+INSERT INTO categories (id, name, slug, parent_id, created_at) VALUES
+(1, '電子產品', 'electronics', NULL, NOW()),
+(2, '手機', 'mobile-phones', 1, NOW()),
+(3, '筆記型電腦', 'laptops', 1, NOW()),
+(4, '服飾', 'clothing', NULL, NOW()),
+(5, '男裝', 'mens-clothing', 4, NOW()),
+(6, '女裝', 'womens-clothing', 4, NOW());

@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.exception.ShoppingException;
-import com.example.demo.model.dto.LoginDTO;
+import com.example.demo.model.dto.LoginDto;
 import com.example.demo.model.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.PasswordHash;
@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService{
     }
 
 	@Override
-	public boolean isLoginValid(LoginDTO loginDTO, User user, HttpSession session) throws ShoppingException{
+	public boolean isLoginValid(LoginDto loginDTO, User user, HttpSession session) throws ShoppingException{
 		
 			if(!loginDTO.getUsername().equals(user.getUsername())) {
 				throw new ShoppingException("找不到使用者");

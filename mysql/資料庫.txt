@@ -19,6 +19,11 @@
 中階主管（選擇性）	✅ 只能將既有角色分配給員工
 超級管理員		✅ 可新增、編輯、刪除角色與權限
 
+
+id 		都是 Long = BIGINT
+quantity   	都是 Integer= INT
+price		都是 BigDecimal= DECIMAL(10, 2)
+
 create database myshoppingdb
 char set utf8mb4;
 
@@ -79,11 +84,12 @@ CREATE TABLE login_logs (
 );
 
 CREATE TABLE categories (
-    id BIGINT PRIMARY KEY COMMENT '分類 ID',
-    name VARCHAR(100) UNIQUE COMMENT '分類名稱',
+    id BIGINT PRIMARY KEY AUTO_INCREMENT COMMENT '分類 ID',
+    name VARCHAR(100) UNIQUE NOT NULL COMMENT '分類名稱',
+    slug VARCHAR(100) UNIQUE NOT NULL COMMENT '分類 slug，供 URL 使用',
     parent_id BIGINT COMMENT '父分類 ID',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (parent_id) REFERENCES categories(id)
 );
 
@@ -103,7 +109,7 @@ CREATE TABLE products (
 
 
 CREATE TABLE cart_items (
-    id BIGINT PRIMARY KEY COMMENT '購物車項目 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '購物車項目 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     product_id BIGINT NOT NULL COMMENT '產品 ID',
     quantity INT COMMENT '數量',

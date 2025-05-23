@@ -34,44 +34,53 @@ function MyNavbar({ onChangeContent }) {
               <NavDropdown title="商品分類" id="basic-nav-dropdown">
                 <MyNavbarCategories categories={categories} />
               </NavDropdown>
-              <Nav.Link as={Link} to="/recent">最近看過</Nav.Link>
+              <Nav.Link as={Link} to={userData===null?"/userlogin":"/recent"}>最近看過</Nav.Link>
               <div
               className="cart-link-wrapper"
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             >
-              <Nav.Link className="cart-link" as={Link} to={userData===null?"/userlogin":"/cart"}>購物車</Nav.Link>{/*未登入 導向登入頁*/} 
+                <Nav.Link className="cart-link" as={Link} to={userData===null?"/userlogin":"/cart"}>購物車</Nav.Link>{/*未登入 導向登入頁*/} 
 
-              <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
-                {cartItems.length === 0 ? (
-                  <div>購物車是空的</div>
-                ) : (
-                  cartItems.map((item) => (
-                    <div key={item.id} className="cart-item">
-                      <img
-                        src={item.imageUrl}
-                        alt={item.name}
-                        style={{ width: 50, height: 50 }}
-                      />
-                      <div>{item.name}</div>
-                      <div>${item.price}</div>
-                    </div>
-                  ))
-                )}
-                <Button as={Link} to="/cart" variant="primary">
-                  去結帳
-                </Button>
+                <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
+                  {cartItems.length === 0 ? (
+                    <div>購物車是空的</div>
+                  ) : (
+                    cartItems.map((item) => (
+                      <div key={item.id} className="cart-item">
+                        <img
+                          src={item.imageUrl}
+                          alt={item.name}
+                          style={{ width: 50, height: 50 }}
+                        />
+                        <div>{item.name}</div>
+                        <div>${item.price}</div>
+                      </div>
+                    ))
+                  )}
+                  <Button as={Link} to={userData===null?"/userlogin":"/cart"} variant="primary">
+                    去結帳
+                  </Button>
                 </div>
-            </div>
-              <Nav.Link as={Link} to="/notificationsPage">通知中心</Nav.Link>
-              <NavDropdown title="會員中心" id="basic-nav-dropdown">
-                <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>
-                <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
-
-              </NavDropdown>
-              <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>{/*未登錄顯示登錄/註冊 已登錄顯示會員中心 使用者名稱*/}
+              </div>  
+              {/*如果是賣家 要加商品列表 還沒完成*/}
+              {userData!==null&&(
+                <>
+                  <Nav.Link as={Link} to="/notifications">通知中心</Nav.Link>
+                  <NavDropdown title={userData.username} id="basic-nav-dropdown">
+                    <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>  
+                    <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
+                                                                                                                
+                  </NavDropdown>
+                </>
+              )}    
+              {/*未登錄顯示登錄/註冊 已登錄顯示 使用者名稱 完成*/}
+              {userData===null&&(
+              <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>
+              )}       
             </Nav>
-            <MySearch />
+            <MySearch />        
+            
           </Navbar.Collapse>
         </Container>
       </Navbar>

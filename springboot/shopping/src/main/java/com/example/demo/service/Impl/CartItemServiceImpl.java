@@ -6,7 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.dto.CartDTO;
+import com.example.demo.model.dto.CartDto;
 import com.example.demo.repository.CartItemRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CartItemService;
@@ -22,11 +22,11 @@ public class CartItemServiceImpl implements CartItemService{
 	ProductRepository productRepository; 
 	
 	@Override
-	public List<CartDTO> getCart(Long userId) {
+	public List<CartDto> getCart(Long userId) {
 	    return cartItemRepository.findByUserId(userId).stream()
-	        .map(cartItem -> {
+	        .map(cartItem -> { 
 	            return productRepository.findById(cartItem.getProductId())
-	                .map(product -> new CartDTO(product.getName(), cartItem.getQuantity()))
+	                .map(product -> new CartDto(product.getName(),product.getImageUrl(),product.getPrice(), cartItem.getQuantity()))
 	                .orElseThrow(() -> new RuntimeException("找不到商品 ID: " + cartItem.getProductId()));
 	        })
 	        .toList(); // 如果是 Java 16+，可以用 toList()

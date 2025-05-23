@@ -22,7 +22,7 @@ public class CartItem {
     private Long productId;
 
     @Column(nullable = false)
-    private Long quantity;
+    private Integer quantity;
 
     @Column(name = "added_at", nullable = false)
     private LocalDateTime addedAt;

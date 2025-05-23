@@ -22,6 +22,8 @@ public class Category {
     private String name;
 
     private Long parentId;
+    
+    private String slug;
 
     private LocalDateTime createdAt;
 
