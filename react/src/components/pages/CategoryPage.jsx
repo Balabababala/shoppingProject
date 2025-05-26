@@ -1,4 +1,5 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {
@@ -22,9 +23,12 @@ function CategoryTree({ categories, selectedSlug, onSelect }) {
           >
             {cat.name}
           </div>
-          {/* 遞迴渲染子分類 */}
           {cat.children && cat.children.length > 0 && (
-            <CategoryTree categories={cat.children} selectedSlug={selectedSlug} onSelect={onSelect} />
+            <CategoryTree
+              categories={cat.children}
+              selectedSlug={selectedSlug}
+              onSelect={onSelect}
+            />
           )}
         </li>
       ))}
@@ -35,13 +39,17 @@ function CategoryTree({ categories, selectedSlug, onSelect }) {
 function CategoryPage() {
   const BASE_API = "http://localhost:8080/api";
   const { slug } = useParams();
-  const navigate = useNavigate();
 
   const [categoriesTree, setCategoriesTree] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(slug);
   const [products, setProducts] = useState([]);
 
-  // 取得分類樹 (包含多層子分類)
+  // 分頁相關
+  const [currentPage, setCurrentPage] = useState(1);
+  const [inputPage, setInputPage] = useState('');
+  const pageSize = 12;
+
+  // 載入分類樹
   useEffect(() => {
     fetch(`${BASE_API}/categories/${slug}/tree`)
       .then(res => res.json())
@@ -49,29 +57,35 @@ function CategoryPage() {
       .catch(err => console.error('取得分類樹失敗', err));
   }, [slug]);
 
-  // 取得產品
+  // 載入全部商品（依分類）
   useEffect(() => {
-    fetch(`${BASE_API}/products?category=${selectedCategory}`)
+    fetch(`${BASE_API}/products?category=${selectedCategory || ''}`)
       .then(res => res.json())
-      .then(data => setProducts(data.data))
+      .then(data => {
+        setProducts(data.data);
+        setCurrentPage(1); // 回到第一頁
+      })
       .catch(err => console.error('取得商品失敗', err));
   }, [selectedCategory]);
 
-  // 選擇分類
+  const totalPages = Math.ceil(products.length / pageSize);
+  const pagedProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
   const handleSelectCategory = (categorySlug) => {
     setSelectedCategory(categorySlug);
-    // 你也可以改用 navigate 切換網址，例如：
-    // navigate(`/category/${categorySlug}`);
+  };
+
+  const changePage = (page) => {
+    const pageNum = Math.max(1, Math.min(totalPages, page));
+    setCurrentPage(pageNum);
   };
 
   return (
-    <div style={{ maxWidth: 1000, margin: '40px auto', padding: '0 20px', fontFamily: 'Arial, sans-serif' }}>
-      <h1 style={{ borderBottom: '2px solid #333', paddingBottom: 10 }}>分類：{selectedCategory}</h1>
-
-      <div style={{ display: 'flex', gap: 20, marginTop: 20 }}>
-        {/* 左側分類樹選單 */}
-        <aside style={{ minWidth: 250, borderRight: '1px solid #ccc', paddingRight: 15 }}>
-          <h2 style={{ fontSize: 18, marginBottom: 15 }}>所有分類</h2>
+    <div className="container mt-4">
+      <h1 className="mb-4">分類：{selectedCategory || "全部商品"}</h1>
+      <div className="row">
+        <aside className="col-md-3 border-end pe-3">
+          <h5>所有分類</h5>
           <CategoryTree
             categories={categoriesTree}
             selectedSlug={selectedCategory}
@@ -79,46 +93,106 @@ function CategoryPage() {
           />
           <div
             onClick={() => handleSelectCategory(null)}
-            style={{
-              marginTop: 10,
-              cursor: 'pointer',
-              color: selectedCategory === null ? '#007bff' : '#333',
-              fontWeight: selectedCategory === null ? 'bold' : 'normal',
-              userSelect: 'none'
-            }}
+            className={`mt-3 ${selectedCategory === null ? 'fw-bold text-primary' : ''}`}
+            style={{ cursor: 'pointer', userSelect: 'none' }}
           >
             全部商品
           </div>
         </aside>
 
-        {/* 右側商品清單 */}
-        <section style={{ flex: 1 }}>
-          {products.length === 0 ? (
-            <p style={{ fontSize: 18, color: '#666' }}>沒有商品</p>
+        <section className="col-md-9">
+          {pagedProducts.length === 0 ? (
+            <p className="text-muted fs-5">沒有商品</p>
           ) : (
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(220px,1fr))', gap: 20 }}>
-              {products.map(p => (
-                <div key={p.id} style={{
-                  border: '1px solid #ddd',
-                  borderRadius: 8,
-                  padding: 15,
-                  boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-                  backgroundColor: '#fff',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  alignItems: 'center',
-                  textAlign: 'center'
-                }}>
-                  <img
-                    src={p.imageUrl}
-                    alt={p.name}
-                    style={{ width: '100%', height: 150, objectFit: 'cover', borderRadius: 6, marginBottom: 10 }}
-                  />
-                  <h3 style={{ fontSize: 18, margin: '0 0 8px' }}>{p.name}</h3>
-                  <p style={{ fontWeight: 'bold', color: '#2c3e50', fontSize: 16 }}>${p.price}</p>
-                </div>
-              ))}
-            </div>
+            <>
+              <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {pagedProducts.map(p => (
+                  <div key={p.id} className="col">
+                    <div className="card h-100 shadow-sm">
+                      <img
+                        src={p.imageUrl}
+                        className="card-img-top"
+                        alt={p.name}
+                        style={{ height: 150, objectFit: 'cover' }}
+                      />
+                      <div className="card-body text-center">
+                        <h5 className="card-title">{p.name}</h5>
+                        <p className="card-text fw-bold text-primary">${p.price}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* 分頁 */}
+              <nav aria-label="Page navigation" className="mt-4">
+                <ul className="pagination justify-content-center">
+                  <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
+                    <button className="page-link" onClick={() => changePage(currentPage - 1)}>
+                      {'<'}
+                    </button>
+                  </li>
+
+                  {/* 動態產生中間頁碼（最多顯示 5 頁） */}
+                  {Array.from({ length: totalPages }, (_, i) => i + 1)
+                    .filter(p => {
+                      if (totalPages <= 5) return true;
+                      if (p === 1 || p === totalPages) return true;
+                      return Math.abs(p - currentPage) <= 1;
+                    })
+                    .map((p, idx, arr) => {
+                      const prev = arr[idx - 1];
+                      const showEllipsis = prev && p - prev > 1;
+                      return (
+                        <React.Fragment key={p}>
+                          {showEllipsis && (
+                            <li className="page-item disabled">
+                              <span className="page-link">...</span>
+                            </li>
+                          )}
+                          <li className={`page-item ${currentPage === p ? 'active' : ''}`}>
+                            <button className="page-link" onClick={() => changePage(p)}>
+                              {p}
+                            </button>
+                          </li>
+                        </React.Fragment>
+                      );
+                    })}
+
+                  <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
+                    <button className="page-link" onClick={() => changePage(currentPage + 1)}>
+                      {'>'}
+                    </button>
+                  </li>
+                </ul>
+              </nav>
+
+              {/* 頁碼輸入跳轉 */}
+              <div className="d-flex justify-content-center align-items-center mt-3 gap-2">
+                <input
+                  type="number"
+                  min="1"
+                  max={totalPages}
+                  value={inputPage}
+                  onChange={(e) => setInputPage(e.target.value)}
+                  placeholder="輸入頁碼"
+                  className="form-control"
+                  style={{ width: '100px' }}
+                />
+                <button
+                  className="btn btn-outline-primary"
+                  onClick={() => {
+                    const num = parseInt(inputPage, 10);
+                    if (!isNaN(num)) {
+                      changePage(num);
+                      setInputPage('');
+                    }
+                  }}
+                >
+                  跳頁
+                </button>
+              </div>
+            </>
           )}
         </section>
       </div>
