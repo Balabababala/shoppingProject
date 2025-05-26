@@ -1,5 +1,6 @@
 package com.example.demo.mapper;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.example.demo.model.dto.CategoryDto;
@@ -12,7 +13,7 @@ public class CategoryMapper {
             category.getName(),
             category.getParentId(),
             category.getSlug(),
-            List.of() // 預設為空清單，之後手動設定
+            new ArrayList<>()
         );
     }
 }

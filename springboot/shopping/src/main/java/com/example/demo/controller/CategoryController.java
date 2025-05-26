@@ -35,8 +35,7 @@ public class CategoryController  {
 	
 	@GetMapping("/{slug}/tree")  			//CategoryPage 用
 	public ResponseEntity<ApiResponse<List<CategoryDto>>> getCatogoryByParentId(@PathVariable String slug)   {
-		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.buildCategoryTree(slug)));
+		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.buildCategoryTreeBySlug(slug)));
 	}
 
-	
 }
