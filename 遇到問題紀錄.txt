@@ -23,3 +23,17 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 5.分類頁 api 是用product controller (因為要取產品資料 = =)
 
 6.flapMap 用法
+
+7.JPA 注意用詞是 資料表還是Entity
+      ManyToOne
+      @JoinColumn(name ="xxx")  xxx 是資料表的外鍵  寫這行表示它是主控
+
+      @OneToMany(mappedBy= "xxx") xxx  是對應對面Entity 的屬性(是主控)(上面那個的屬性) 
+
+      自己對自己 關聯保留方法(你如果關聯別人 那別人有欄位 自己沒欄位 沒問題 但自己對自己 自己會沒有)
+      @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
+8. MySQL 內建的相似度
+	ALTER TABLE product ADD FULLTEXT(name, description); 
+	被比較的要+ FULLTEXT 全文收旬
+
+

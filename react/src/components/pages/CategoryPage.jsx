@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import ProductCard from '../ProductCard';  // 路徑依實際調整
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {
   if (!categories || categories.length === 0) return null;
@@ -58,8 +59,11 @@ function CategoryPage() {
   }, [slug]);
 
   // 載入全部商品（依分類）
+  // 後端 API 要求 category 參數必須存在，
+  // 沒有分類時請帶空字串 '?category=' 表示全部商品
   useEffect(() => {
-    fetch(`${BASE_API}/products?category=${selectedCategory || ''}`)
+    const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '';
+    fetch(`${BASE_API}/products${categoryQuery}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data);
@@ -68,8 +72,8 @@ function CategoryPage() {
       .catch(err => console.error('取得商品失敗', err));
   }, [selectedCategory]);
 
-  const totalPages = Math.ceil(products.length / pageSize);
-  const pagedProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  const totalPages = products ? Math.ceil(products.length / pageSize) : 0;
+  const pagedProducts = products ? products.slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
 
   const handleSelectCategory = (categorySlug) => {
     setSelectedCategory(categorySlug);
@@ -78,6 +82,11 @@ function CategoryPage() {
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
     setCurrentPage(pageNum);
+  };
+
+  const handleAddToCart = (product) => {
+    // TODO: 實作加入購物車功能，或呼叫上層狀態管理
+    console.log('加入購物車', product);
   };
 
   return (
@@ -108,23 +117,12 @@ function CategoryPage() {
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {pagedProducts.map(p => (
                   <div key={p.id} className="col">
-                    <div className="card h-100 shadow-sm">
-                      <img
-                        src={p.imageUrl}
-                        className="card-img-top"
-                        alt={p.name}
-                        style={{ height: 150, objectFit: 'cover' }}
-                      />
-                      <div className="card-body text-center">
-                        <h5 className="card-title">{p.name}</h5>
-                        <p className="card-text fw-bold text-primary">${p.price}</p>
-                      </div>
-                    </div>
+                    <ProductCard product={p} onAddToCart={handleAddToCart} />
                   </div>
                 ))}
               </div>
 
-              {/* 分頁 */}
+              {/* 分頁區塊保持原本寫法 */}
               <nav aria-label="Page navigation" className="mt-4">
                 <ul className="pagination justify-content-center">
                   <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
@@ -133,7 +131,6 @@ function CategoryPage() {
                     </button>
                   </li>
 
-                  {/* 動態產生中間頁碼（最多顯示 5 頁） */}
                   {Array.from({ length: totalPages }, (_, i) => i + 1)
                     .filter(p => {
                       if (totalPages <= 5) return true;
@@ -167,7 +164,6 @@ function CategoryPage() {
                 </ul>
               </nav>
 
-              {/* 頁碼輸入跳轉 */}
               <div className="d-flex justify-content-center align-items-center mt-3 gap-2">
                 <input
                   type="number"

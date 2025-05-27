@@ -206,3 +206,6 @@ CREATE TABLE notifications (
     updated_at DATETIME COMMENT '更新時間',
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+
+ALTER TABLE products ADD FULLTEXT(name, description);  全文搜尋 給搜尋用的
