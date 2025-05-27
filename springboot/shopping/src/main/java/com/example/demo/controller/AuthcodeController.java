@@ -23,7 +23,7 @@ import jakarta.servlet.http.HttpSession;
 
 
 public class AuthcodeController {
-	
+	//loginpage 用
 	@GetMapping("/auth-code")
 	public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
 	    String code = generateAuthCode(); // 1. 產生驗證碼

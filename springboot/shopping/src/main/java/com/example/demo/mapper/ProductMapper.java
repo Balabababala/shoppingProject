@@ -12,7 +12,7 @@ public class ProductMapper {
         	product.getPrice(),
         	product.getStock(),
         	product.getImageUrl(),
-        	product.getCategoryId()
+        	product.getCategory().getId()
         );
     }
 }

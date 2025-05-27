@@ -21,12 +21,24 @@ public class ProductServiceImpl implements ProductService{
 	CategoryRepository categoryRepository;
 	
 	@Override
+	public List<ProductDto> findAll() {
+		 return categoryRepository.findAll().stream()
+		        .flatMap(category -> 
+	            productRepository.findByCategoryId(category.getId()).stream()
+	                .map(ProductMapper::toDto)
+	        )
+	        .toList();
+	}
+	
+	@Override
 	public List<ProductDto> findByCategoryId(Long categoryId) {
 		productRepository.findByCategoryId(categoryId);
 		return productRepository.findByCategoryId(categoryId).stream()
 															 .map(ProductMapper::toDto)
 															 .toList();
 	}
+	
+	
 	@Override
 	public List<ProductDto> findByCategorySlug(String slug) {
 		 return categoryRepository.findBySlug(slug).stream()
@@ -36,5 +48,21 @@ public class ProductServiceImpl implements ProductService{
 	        )
 	        .toList();
 	}
+
+	
+	@Override 
+	public List<ProductDto> findByKeyword(String keyword) {
+		return productRepository.findByKeywordFullText(keyword).stream()
+																.map(ProductMapper::toDto)
+																.toList();
+	}
+	
+	@Override 
+	public List<ProductDto> findByKeywordFullTextBoolean(String keyword) {
+		return productRepository.findByKeywordFullTextBoolean(keyword).stream()
+																.map(ProductMapper::toDto)
+																.toList();
+	}
+	
 	
 }

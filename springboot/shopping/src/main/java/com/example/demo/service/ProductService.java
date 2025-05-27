@@ -9,6 +9,9 @@ import com.example.demo.model.dto.ProductDto;
 
 
 public interface ProductService {
+	List<ProductDto> findAll();
 	List<ProductDto> findByCategoryId(Long categoryId);
 	List<ProductDto> findByCategorySlug(String slug);
+	List<ProductDto> findByKeyword(String keyword); 
+	List<ProductDto> findByKeywordFullTextBoolean(String keyword);//test
 }

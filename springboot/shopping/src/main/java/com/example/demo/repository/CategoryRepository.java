@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.entity.Category;
@@ -16,5 +17,8 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 	Optional<Category> findBySlug(String slug);       
 	Optional<Category> findById(Long CategoriyId);
 	List<Category> findByParentId(Long parentId);
+	
+	@Query("SELECT c FROM Category c WHERE c.parent.slug = :slug")
+	List<Category> findChildrenBySlug(String slug);
 }
 
