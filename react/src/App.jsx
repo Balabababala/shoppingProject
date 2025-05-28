@@ -20,7 +20,7 @@ function App() {
       <main className="main-content animated-bg">
         <Routes>
           <Route path="/" element={<WelcomePage />} />
-          <Route path="/product/:id" element={<ProductDetailPage />} />
+          <Route path="/products/:id" element={<ProductDetailPage />} />
           <Route path="/recent" element={<RecentlyViewedPage />} />
           <Route path="/cart" element={<CartPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />

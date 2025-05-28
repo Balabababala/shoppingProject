@@ -12,7 +12,8 @@ public class ProductMapper {
         	product.getPrice(),
         	product.getStock(),
         	product.getImageUrl(),
-        	product.getCategory().getId()
+        	product.getCategory().getId(),
+        	UserMapper.toDto(product.getSeller())
         );
     }
 }

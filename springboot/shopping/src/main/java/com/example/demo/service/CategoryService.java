@@ -11,4 +11,5 @@ public interface CategoryService {
 	List <CategoryDto> findTopCategory();
 	CategoryDto findCategoryBySlug(String slug);
 	List<CategoryDto> findChildrenBySlug(String slug);
+	List<Category> findAllCategoryAndDescendantsBySlug(String slug);
 }

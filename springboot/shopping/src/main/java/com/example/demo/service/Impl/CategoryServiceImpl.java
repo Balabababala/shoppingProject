@@ -2,7 +2,9 @@ package com.example.demo.service.Impl;
 
 
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,6 +35,8 @@ public class CategoryServiceImpl implements CategoryService{
 		        .orElseThrow(() -> new RuntimeException("找不到分類 " + slug));
 		return CategoryMapper.toDto(category);
 	}
+	
+	
 	@Override
 	public List<CategoryDto> findChildrenBySlug(String slug) {
 		return categoryRepository.findChildrenBySlug(slug).stream()
@@ -40,7 +44,28 @@ public class CategoryServiceImpl implements CategoryService{
 															.toList();
 	}
 	
+	@Override
+	public List<Category> findAllCategoryAndDescendantsBySlug(String slug) {
+        Optional<Category> rootOpt = categoryRepository.findBySlug(slug);
+        if (rootOpt.isEmpty()) {
+            return List.of();
+        }
+        Category root = rootOpt.get();
+        List<Category> result = new ArrayList<>();
+        result.add(root);
+        fetchChildrenRecursively(root, result);
+        return result;
+    }
 
-		
+    private void fetchChildrenRecursively(Category parent, List<Category> accumulator) {
+        List<Category> children = categoryRepository.findByParentId(parent.getId());
+        if (children.isEmpty()) return;
+        accumulator.addAll(children);
+        for (Category child : children) {
+            fetchChildrenRecursively(child, accumulator);
+        }
+    }
+	
+
 		
 }

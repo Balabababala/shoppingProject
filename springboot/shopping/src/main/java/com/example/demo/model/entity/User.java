@@ -1,6 +1,8 @@
 package com.example.demo.model.entity;
 
 import java.time.LocalDateTime;
+import java.util.List;
+
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -44,5 +46,6 @@ public class User {
     @Column(name = "is_email_verified", nullable = false)
     private Boolean isEmailVerified;
     
-    
+    @OneToMany(mappedBy = "seller")
+    private List<Product> products;
 }

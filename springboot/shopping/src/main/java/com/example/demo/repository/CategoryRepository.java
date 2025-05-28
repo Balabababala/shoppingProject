@@ -17,8 +17,8 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 	Optional<Category> findBySlug(String slug);       
 	Optional<Category> findById(Long CategoriyId);
 	List<Category> findByParentId(Long parentId);
-	
+
 	@Query("SELECT c FROM Category c WHERE c.parent.slug = :slug")
-	List<Category> findChildrenBySlug(String slug);
+	List<Category> findChildrenBySlug(String slug);					//只有兒子 後面給遞迴用的
 }
 

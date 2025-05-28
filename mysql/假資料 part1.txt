@@ -1,13 +1,35 @@
-INSERT INTO roles (id, name, description, created_at) VALUES
-(1, 'admin', '系統管理員', NOW()),
-(2, 'seller', '賣家', NOW()),
-(3, 'buyer', '買家', NOW());
+-- 先清空 categories 表（若已有資料）
+DELETE FROM categories;
 
+-- 插入頂層分類
+INSERT INTO categories (id, name, slug, parent_id)
+VALUES
+(1, 'Electronics', 'electronics', NULL),
+(2, 'Clothing', 'clothing', NULL),
+(3, 'Home & Kitchen', 'home-kitchen', NULL);
 
-INSERT INTO categories (id, name, slug, parent_id, created_at) VALUES
-(1, '電子產品', 'electronics', NULL, NOW()),
-(2, '手機', 'mobile-phones', 1, NOW()),
-(3, '筆記型電腦', 'laptops', 1, NOW()),
-(4, '服飾', 'clothing', NULL, NOW()),
-(5, '男裝', 'mens-clothing', 4, NOW()),
-(6, '女裝', 'womens-clothing', 4, NOW());
+-- 插入第二層分類
+INSERT INTO categories (id, name, slug, parent_id)
+VALUES
+(4, 'Computers', 'computers', 1),
+(5, 'Mobile Phones', 'mobile-phones', 1),
+(6, 'Men', 'men', 2),
+(7, 'Women', 'women', 2),
+(8, 'Furniture', 'furniture', 3),
+(9, 'Kitchen Appliances', 'kitchen-appliances', 3);
+
+-- 插入第三層分類
+INSERT INTO categories (id, name, slug, parent_id)
+VALUES
+(10, 'Laptops', 'laptops', 4),
+(11, 'Desktops', 'desktops', 4),
+(12, 'Smartphones', 'smartphones', 5),
+(13, 'Feature Phones', 'feature-phones', 5),
+下午 04:00 2025/5/28
+(15, 'Pants', 'pants', 6),
+(16, 'Dresses', 'dresses', 7),
+(17, 'Skirts', 'skirts', 7),
+(18, 'Sofas', 'sofas', 8),
+(19, 'Beds', 'beds', 8),
+(20, 'Microwaves', 'microwaves', 9),
+(21, 'Blenders', 'blenders', 9);

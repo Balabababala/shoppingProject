@@ -32,8 +32,11 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 
       自己對自己 關聯保留方法(你如果關聯別人 那別人有欄位 自己沒欄位 沒問題 但自己對自己 自己會沒有)
       @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
-8. MySQL 內建的相似度
+
+8. MySQL 內建的相似度  //沒做出來
 	ALTER TABLE product ADD FULLTEXT(name, description); 
 	被比較的要+ FULLTEXT 全文收旬
+
+9.樹狀結構 我是直接在 mapper 做遞迴(依靠JPA 突然做出來)
 
 

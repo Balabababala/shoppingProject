@@ -14,6 +14,12 @@ function ProductCard({ product, onAddToCart }) {
       <Card.Body>
         <Card.Title>{product.name}</Card.Title>
         <Card.Text>{product.description}</Card.Text>
+
+        {/* 新增顯示賣家 */}
+        {product.sellerUserDto?.username && (
+          <Card.Text className="text-muted">賣家：{product.sellerUserDto.username}</Card.Text>
+        )}
+
         <h5>${product.price}</h5>
         <Button
           variant="primary"

@@ -30,7 +30,7 @@ public class Product {
 
     @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
-
+    
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
@@ -41,5 +41,8 @@ public class Product {
     @JoinColumn(name ="category_id")
     private Category category;
     
-  
+    @ManyToOne
+    @JoinColumn(name ="seller_id")
+    private User seller;
+
 }
