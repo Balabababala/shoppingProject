@@ -44,5 +44,8 @@ public class Product {
     @ManyToOne
     @JoinColumn(name ="seller_id")
     private User seller;
+    
+    @OneToMany(mappedBy = "product")
+    private List<CartItem> cartItems;
 
 }

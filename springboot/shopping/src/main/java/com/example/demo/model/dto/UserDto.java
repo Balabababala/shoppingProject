@@ -3,7 +3,7 @@ package com.example.demo.model.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
+//前後都用
 @Data
 @AllArgsConstructor
 public class UserDto {

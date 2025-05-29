@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.exception.ShoppingException;
-import com.example.demo.model.dto.LoginDto;
+import com.example.demo.model.dto.LoginRequest;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
@@ -35,7 +35,7 @@ public class LoginController {
 	UserService userService;
 	
 	@PostMapping		//loginPage 用
-	public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginDto loginDTO,HttpSession session){
+	public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginRequest loginDTO,HttpSession session){
 		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
 		//比對
 		try {

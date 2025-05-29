@@ -15,12 +15,6 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "user_id", nullable = false)
-    private Long userId;
-
-    @Column(name = "product_id", nullable = false)
-    private Long productId;
-
     @Column(nullable = false)
     private Integer quantity;
 
@@ -30,5 +24,11 @@ public class CartItem {
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 
-  
+    @ManyToOne
+    @JoinColumn(name ="user_id", nullable = false)
+    private User user;
+    
+    @ManyToOne
+    @JoinColumn(name ="product_id", nullable = false)
+    private Product product;
 }

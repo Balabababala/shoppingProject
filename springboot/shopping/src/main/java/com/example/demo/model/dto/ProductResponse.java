@@ -8,10 +8,10 @@ import com.example.demo.model.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
-
+//後端傳前端用
 @Data
 @AllArgsConstructor
-public class ProductDto {
+public class ProductResponse {
 	
     private Long id;
     private String name;

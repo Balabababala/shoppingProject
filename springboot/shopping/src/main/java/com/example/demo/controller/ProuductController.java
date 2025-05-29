@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.ProductDto;
+import com.example.demo.model.dto.ProductResponse;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.ProductService;
 
@@ -28,7 +28,7 @@ public class ProuductController {
 	
 	//?category=xxx categoryPage 用
 	@GetMapping		
-	public ResponseEntity<ApiResponse<List<ProductDto>>> findCategoryById(@RequestParam(defaultValue = "") String category){
+	public ResponseEntity<ApiResponse<List<ProductResponse>>> findCategoryById(@RequestParam(defaultValue = "") String category){
 		if(category.isEmpty()) {
 			return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAll()));//空字串
 		}
@@ -38,13 +38,13 @@ public class ProuductController {
 	
 	//productPage 用
 	@GetMapping("/{id}")
-	public ResponseEntity<ApiResponse<ProductDto>> findById(@PathVariable Long id){
+	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long id){
 		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findById(id)));
 	}
 	
 	//searchPage 用
 	@GetMapping("/search")
-	public ResponseEntity<ApiResponse<List<ProductDto>>> findBykeyWord(@RequestParam String keyword){
+	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword){
 		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByKeywordFullTextBoolean(keyword)));//對應值
 	}
 	

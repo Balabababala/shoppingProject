@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.demo.model.dto.ProductDto;
+import com.example.demo.model.dto.ProductResponse;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CategoryService;
@@ -27,12 +27,12 @@ public class ProductServiceImpl implements ProductService{
 	CategoryService categoryService;
 	
 	@Override
-	public ProductDto findById(Long id) {
+	public ProductResponse findById(Long id) {
 		return ProductMapper.toDto(productRepository.findById(id).get());
 	}
 	
 	@Override
-	public List<ProductDto> findAll() {
+	public List<ProductResponse> findAll() {
 		 return categoryRepository.findAll().stream()
 		        .flatMap(category -> 
 	            productRepository.findByCategoryId(category.getId()).stream()
@@ -44,7 +44,7 @@ public class ProductServiceImpl implements ProductService{
 	
 
 	@Override
-	public List<ProductDto> findCategoryById(Long categoryId) {
+	public List<ProductResponse> findCategoryById(Long categoryId) {
 		productRepository.findByCategoryId(categoryId);
 		return productRepository.findByCategoryId(categoryId).stream()
 															 .map(ProductMapper::toDto)
@@ -53,7 +53,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	
 	@Override
-	public List<ProductDto> findCategoryBySlug(String slug) {		//自己
+	public List<ProductResponse> findCategoryBySlug(String slug) {		//自己
 		 return categoryRepository.findBySlug(slug).stream()
 		        .flatMap(category -> 
 	            productRepository.findByCategoryId(category.getId()).stream()
@@ -64,7 +64,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Transactional
 	@Override
-	public List<ProductDto> findAllCategoryBySlug(String slug) {  	//自己+子子孫孫
+	public List<ProductResponse> findAllCategoryBySlug(String slug) {  	//自己+子子孫孫
 		 return categoryService.findAllCategoryAndDescendantsBySlug(slug).stream()
 		        .flatMap(category -> 
 	            productRepository.findByCategoryId(category.getId()).stream()
@@ -75,14 +75,17 @@ public class ProductServiceImpl implements ProductService{
 
 	
 	@Override 
-	public List<ProductDto> findByKeyword(String keyword) {
+	public List<ProductResponse> findByKeyword(String keyword) {
+		
+		System.out.print(keyword);
 		return productRepository.findByKeywordFullText(keyword).stream()
 																.map(ProductMapper::toDto)
 																.toList();
 	}
 	
 	@Override 
-	public List<ProductDto> findByKeywordFullTextBoolean(String keyword) {
+	public List<ProductResponse> findByKeywordFullTextBoolean(String keyword) {//boolean 狀態才能 用*萬用字元
+		keyword=keyword+'*';
 		return productRepository.findByKeywordFullTextBoolean(keyword).stream()
 																.map(ProductMapper::toDto)
 																.toList();

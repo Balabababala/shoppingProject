@@ -8,6 +8,8 @@ export function AppProvider({ children }) {
   const [userData, setUserData] = useState(null);
   const [cartItems, setCartItems] = useState([]);
   const [categories, setCategories] = useState([]);
+  const [toastMessage, setToastMessage] = useState('');
+
 
   // 取分類
   useEffect(() => {
@@ -35,8 +37,17 @@ export function AppProvider({ children }) {
   }, [userData]);
 
   return (
-    <AppContext.Provider value={{ userData, setUserData, cartItems, categories }}>
-      {children}
-    </AppContext.Provider>
+    <AppContext.Provider value={{
+      userData,
+      setUserData,
+      cartItems,
+      setCartItems,
+      categories,
+      toastMessage,
+      setToastMessage
+    }}>
+    {children}
+</AppContext.Provider>
+
   );
 }

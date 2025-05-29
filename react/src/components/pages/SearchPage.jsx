@@ -1,26 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import ProductCard from './ProductCard';  // 你之前寫的商品卡元件
+import React, { useState, useEffect, useContext } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
+import ProductCard from '../ProductCard';
+import { AppContext } from '../../contexts/AppContext';  // 這行要加
 
 function SearchPage() {
   const BASE_API = "http://localhost:8080/api";
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
 
-  const [keyword, setKeyword] = useState('');
+  const { userData,setToastMessage } = useContext(AppContext);  // 從 Context 拿 setToastMessage
+
+  const keywordParam = searchParams.get('keyword') || '';
+  const [keyword, setKeyword] = useState(keywordParam);
   const [products, setProducts] = useState([]);
 
-  // 分頁狀態
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
   const pageSize = 12;
 
-  // 搜尋結果總頁數
   const totalPages = Math.ceil(products.length / pageSize);
-
-  // 目前頁面商品列表切割
   const pagedProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-  // 取得搜尋結果的函式
   const fetchProducts = (searchKeyword) => {
-    fetch(`${BASE_API}/products?search=${encodeURIComponent(searchKeyword)}`)
+    fetch(`${BASE_API}/products/search?keyword=${encodeURIComponent(searchKeyword)}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data || []);
@@ -32,13 +34,35 @@ function SearchPage() {
       });
   };
 
-  // 搜尋按鈕點擊或 Enter 鍵觸發
-  const handleSearch = () => {
-    if (keyword.trim()) {
-      fetchProducts(keyword.trim());
+  useEffect(() => {
+    if (keywordParam.trim()) {
+      setKeyword(keywordParam);
+      fetchProducts(keywordParam);
     } else {
       setProducts([]);
     }
+  }, [keywordParam]);
+
+  const handleSearch = () => {
+    const trimmed = keyword.trim();
+    if (trimmed) {
+      fetchProducts(trimmed);
+      navigate(`/search?keyword=${encodeURIComponent(trimmed)}`);
+    } else {
+      setProducts([]);
+      navigate('/search');
+    }
+  };
+
+  const handleAddToCart = (product) => {
+          if (!userData) {
+        setToastMessage('請先登入才能加入購物車');
+        return;
+      }
+
+      console.log("加入購物車", product);
+      setToastMessage(`${product.name} 已加入購物車`);
+      // 這裡放你的加入購物車邏輯，例如呼叫 API 還沒放
   };
 
   const changePage = (page) => {
@@ -46,13 +70,9 @@ function SearchPage() {
     setCurrentPage(pageNum);
   };
 
-  const handleAddToCart = (product) => {
-    console.log('加入購物車', product);
-  };
-
-  // Enter 鍵觸發搜尋
   const onKeyDown = (e) => {
     if (e.key === 'Enter') {
+      e.preventDefault();
       handleSearch();
     }
   };
@@ -78,78 +98,51 @@ function SearchPage() {
       ) : (
         <>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {pagedProducts.map(p => (
-              <div key={p.id} className="col">
-                <ProductCard product={p} onAddToCart={handleAddToCart} />
+            {pagedProducts.map(product => (
+              <div key={product.id} className="col">
+                <ProductCard
+                  product={product}
+                  onAddToCart={handleAddToCart}  // 傳入函式，不要加括號喔
+                />
               </div>
             ))}
           </div>
 
           {/* 分頁 */}
-          <nav aria-label="Page navigation" className="mt-4">
-            <ul className="pagination justify-content-center">
-              <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>
-                <button className="page-link" onClick={() => changePage(currentPage - 1)}>
-                  {'<'}
-                </button>
-              </li>
+          <div className="d-flex justify-content-center align-items-center mt-4 gap-2">
+            <button
+              className="btn btn-outline-primary"
+              disabled={currentPage === 1}
+              onClick={() => changePage(currentPage - 1)}
+            >
+              上一頁
+            </button>
 
-              {Array.from({ length: totalPages }, (_, i) => i + 1)
-                .filter(p => {
-                  if (totalPages <= 5) return true;
-                  if (p === 1 || p === totalPages) return true;
-                  return Math.abs(p - currentPage) <= 1;
-                })
-                .map((p, idx, arr) => {
-                  const prev = arr[idx - 1];
-                  const showEllipsis = prev && p - prev > 1;
-                  return (
-                    <React.Fragment key={p}>
-                      {showEllipsis && (
-                        <li className="page-item disabled">
-                          <span className="page-link">...</span>
-                        </li>
-                      )}
-                      <li className={`page-item ${currentPage === p ? 'active' : ''}`}>
-                        <button className="page-link" onClick={() => changePage(p)}>
-                          {p}
-                        </button>
-                      </li>
-                    </React.Fragment>
-                  );
-                })}
-
-              <li className={`page-item ${currentPage === totalPages ? 'disabled' : ''}`}>
-                <button className="page-link" onClick={() => changePage(currentPage + 1)}>
-                  {'>'}
-                </button>
-              </li>
-            </ul>
-          </nav>
-
-          {/* 頁碼輸入跳轉 */}
-          <div className="d-flex justify-content-center align-items-center mt-3 gap-2">
             <input
               type="number"
               min="1"
               max={totalPages}
               value={inputPage}
-              onChange={(e) => setInputPage(e.target.value)}
-              placeholder="輸入頁碼"
-              className="form-control"
-              style={{ width: '100px' }}
-            />
-            <button
-              className="btn btn-outline-primary"
-              onClick={() => {
-                const num = parseInt(inputPage, 10);
-                if (!isNaN(num)) {
-                  changePage(num);
+              placeholder={currentPage}
+              style={{ width: '4rem', textAlign: 'center' }}
+              onChange={e => setInputPage(e.target.value)}
+              onKeyDown={e => {
+                if (e.key === 'Enter') {
+                  const pageNum = Number(inputPage);
+                  if (!isNaN(pageNum)) changePage(pageNum);
                   setInputPage('');
                 }
               }}
+            />
+
+            <span> / {totalPages} 頁</span>
+
+            <button
+              className="btn btn-outline-primary"
+              disabled={currentPage === totalPages}
+              onClick={() => changePage(currentPage + 1)}
             >
-              跳頁
+              下一頁
             </button>
           </div>
         </>

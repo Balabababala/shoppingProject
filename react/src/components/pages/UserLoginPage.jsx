@@ -2,7 +2,6 @@ import React, { useState ,useContext} from 'react';
 import { Form, Button, Col, Row, Container } from 'react-bootstrap'; // 使用 react-bootstrap 來設計表單
 import { useNavigate } from 'react-router-dom';
 import { AppContext } from '../../contexts/AppContext'; // 這是 useEffect 集合
-import axios from 'axios';
 import '../../css/UserLoginPage.css'; // 引入自定義的 CSS 樣式
 
 function LoginPage() {

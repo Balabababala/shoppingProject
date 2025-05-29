@@ -1,24 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
-import "../../css/CartPage.css"; // 你的專屬 CSS 還是可以保留
+import { AppContext } from '../../contexts/AppContext';
+import { Link } from "react-router-dom";  
+import "../../css/CartPage.css";
 
 function CartPage() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "測試商品1",
-      price: 199,
-      quantity: 1,
-      imageUrl: "https://via.placeholder.com/150",
-    },
-    {
-      id: 2,
-      name: "測試商品2",
-      price: 299,
-      quantity: 2,
-      imageUrl: "https://via.placeholder.com/150",
-    },
-  ]);
+  const { cartItems, setCartItems } = useContext(AppContext);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -43,16 +30,26 @@ function CartPage() {
                 <Card className="position-relative">
                   <Row className="g-0 align-items-center">
                     <Col xs={3} md={2}>
-                      <Image
-                        src={item.imageUrl}
-                        alt={item.name}
-                        fluid
-                        rounded
-                      />
+                      <Link to={`/products/${item.id}`}>
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.productName}
+                          fluid
+                          rounded
+                          style={{ cursor: "pointer" }}
+                        />
+                      </Link>
                     </Col>
                     <Col xs={9} md={8}>
                       <Card.Body>
-                        <Card.Title>{item.name}</Card.Title>
+                        <Card.Title>
+                          <Link 
+                            to={`/products/${item.id}`} 
+                            style={{ textDecoration: 'none', color: 'inherit' }}
+                          >
+                            {item.productName}
+                          </Link>
+                        </Card.Title>
                         <Card.Text>單價: ${item.price}</Card.Text>
                         <Card.Text>數量: {item.quantity}</Card.Text>
                         <Card.Text>

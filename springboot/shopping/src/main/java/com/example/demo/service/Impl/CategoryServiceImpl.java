@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.mapper.*;
-import com.example.demo.model.dto.CategoryDto;
+import com.example.demo.model.dto.CategoryResponse;
 import com.example.demo.model.entity.Category;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.service.CategoryService;
@@ -22,7 +22,7 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	
 	@Override
-	public List<CategoryDto> findTopCategory(){
+	public List<CategoryResponse> findTopCategory(){
 	    return categoryRepository.findAll()
 	              .stream()
 	              .filter(category -> category.getParentId() == null) // parentId是Long，可以直接比對null
@@ -30,7 +30,7 @@ public class CategoryServiceImpl implements CategoryService{
 	              .toList();
 	}
 	@Override
-	public CategoryDto findCategoryBySlug(String slug){
+	public CategoryResponse findCategoryBySlug(String slug){
 		Category category = categoryRepository.findBySlug(slug)
 		        .orElseThrow(() -> new RuntimeException("找不到分類 " + slug));
 		return CategoryMapper.toDto(category);
@@ -38,7 +38,7 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	
 	@Override
-	public List<CategoryDto> findChildrenBySlug(String slug) {
+	public List<CategoryResponse> findChildrenBySlug(String slug) {
 		return categoryRepository.findChildrenBySlug(slug).stream()
 															.map(categoty->CategoryMapper.toDto(categoty))
 															.toList();

@@ -2,10 +2,11 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.demo.model.dto.CartDto;
+import com.example.demo.model.dto.CartItemResponse;
 
 
 
 public interface CartItemService {
-	List <CartDto> getCart(Long userId);
+	List <CartItemResponse> getCart(Long userId);
+	void addCartItem(Long userId,Long ProductId,Integer quantity);
 }

@@ -4,16 +4,16 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.demo.model.dto.ProductDto;
+import com.example.demo.model.dto.ProductResponse;
 
 
 
 public interface ProductService {
-	ProductDto findById(Long id);
-	List<ProductDto> findAll();
-	List<ProductDto> findCategoryById(Long categoryId);
-	List<ProductDto> findCategoryBySlug(String slug);
-	List<ProductDto> findAllCategoryBySlug(String slug);
-	List<ProductDto> findByKeyword(String keyword); 
-	List<ProductDto> findByKeywordFullTextBoolean(String keyword);//test
+	ProductResponse findById(Long id);
+	List<ProductResponse> findAll();
+	List<ProductResponse> findCategoryById(Long categoryId);
+	List<ProductResponse> findCategoryBySlug(String slug);
+	List<ProductResponse> findAllCategoryBySlug(String slug);
+	List<ProductResponse> findByKeyword(String keyword); 
+	List<ProductResponse> findByKeywordFullTextBoolean(String keyword);//test
 }

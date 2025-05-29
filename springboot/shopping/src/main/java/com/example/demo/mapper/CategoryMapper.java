@@ -1,11 +1,11 @@
 package com.example.demo.mapper;
 
-import com.example.demo.model.dto.CategoryDto;
+import com.example.demo.model.dto.CategoryResponse;
 import com.example.demo.model.entity.Category;
 
 public class CategoryMapper {
-    public static CategoryDto toDto(Category category) {
-        return new CategoryDto(
+    public static CategoryResponse toDto(Category category) {
+        return new CategoryResponse(
             category.getId(),
             category.getName(),
             category.getParentId(),

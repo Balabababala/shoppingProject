@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.mapper.CategoryMapper;
-import com.example.demo.model.dto.CategoryDto;
+import com.example.demo.model.dto.CategoryResponse;
 import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.repository.CategoryRepository;

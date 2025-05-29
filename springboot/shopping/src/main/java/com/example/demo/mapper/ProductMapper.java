@@ -1,11 +1,11 @@
 package com.example.demo.mapper;
 
-import com.example.demo.model.dto.ProductDto;
+import com.example.demo.model.dto.ProductResponse;
 import com.example.demo.model.entity.Product;
 
 public class ProductMapper {
-	public static ProductDto toDto(Product product) {
-        return new ProductDto(
+	public static ProductResponse toDto(Product product) {
+        return new ProductResponse(
         	product.getId(),
         	product.getName(),
         	product.getDescription(),

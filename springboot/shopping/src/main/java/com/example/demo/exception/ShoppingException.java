@@ -1,6 +1,6 @@
 package com.example.demo.exception;
 
-public class ShoppingException extends Exception{
+public class ShoppingException extends RuntimeException{
 
 	public ShoppingException() {
 		super();

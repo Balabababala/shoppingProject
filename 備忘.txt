@@ -1,0 +1,45 @@
+前端
+	只有做 如果沒登入 會導向登入頁面
+	CartPage       		沒做結帳
+	MemberInfoPage 		沒串真的資料
+	NotificationsPage 	沒串真的資料
+	RecentViewPage  	沒串真的資料
+	CategoryPage 		加入購物車 沒傳Api(還沒寫)
+	SearchPage   		加入購物車 沒傳Api(還沒寫)
+	ProductDetailPage	加入購物車 傳Api(還沒寫)
+	圖相關的 要改(ProductDetailPage)
+
+注意
+	有用ToastMessage 元件 他是獨立的
+	有用AppContent 他是獨立的 可共用
+
+後端
+	基本上依前端功能來做對應功能
+	結構
+        	config   	//目前只有 處理CORS用的設定 
+		controller
+		exception	//雖然先寫了但沒再用
+		filter		//還沒寫
+		mapper		//Entity 轉Dto 方法
+		model
+		repository
+		response	//apiResponse 包 Dto 再給前端 讓前端好處理
+		service
+
+	cartItem Entity ManyToOne->  FOREIGN KEY (user_id) REFERENCES users(id),
+    			ManyToOne->  FOREIGN KEY (product_id) REFERENCES products(id)
+	cartItemRepository  addCartItem(Long userId, Long productId , Integer quantity) 新增 @Query(value="INSERT INTO cart_items(user_id,product_id,quantity,added_at) VALUES(:userId,:productId,:quantity,curdate())")
+
+	cartItemService	    addCartItem(UserDto userDto,ProductDto,Integer quantity)
+
+	DTO已有
+
+
+
+
+
+
+
+
+
+

@@ -8,14 +8,14 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
+//後端傳前端用
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class CategoryDto {
+public class CategoryResponse {
     private Long id;
     private String name;
     private Long parentId;
     private String slug;
-    private List<CategoryDto> children= new ArrayList<>();
+    private List<CategoryResponse> children= new ArrayList<>();
 }
