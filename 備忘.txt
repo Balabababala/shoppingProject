@@ -4,9 +4,6 @@
 	MemberInfoPage 		沒串真的資料
 	NotificationsPage 	沒串真的資料
 	RecentViewPage  	沒串真的資料
-	CategoryPage 		加入購物車 沒傳Api(還沒寫)
-	SearchPage   		加入購物車 沒傳Api(還沒寫)
-	ProductDetailPage	加入購物車 傳Api(還沒寫)
 	圖相關的 要改(ProductDetailPage)
 
 注意
@@ -26,13 +23,6 @@
 		response	//apiResponse 包 Dto 再給前端 讓前端好處理
 		service
 
-	cartItem Entity ManyToOne->  FOREIGN KEY (user_id) REFERENCES users(id),
-    			ManyToOne->  FOREIGN KEY (product_id) REFERENCES products(id)
-	cartItemRepository  addCartItem(Long userId, Long productId , Integer quantity) 新增 @Query(value="INSERT INTO cart_items(user_id,product_id,quantity,added_at) VALUES(:userId,:productId,:quantity,curdate())")
-
-	cartItemService	    addCartItem(UserDto userDto,ProductDto,Integer quantity)
-
-	DTO已有
 
 
 
