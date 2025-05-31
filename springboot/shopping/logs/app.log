@@ -1,31 +1,32 @@
-2025-05-29T10:13:23.599+08:00  INFO 13332 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 13332 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T10:13:23.602+08:00  INFO 13332 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T10:13:24.095+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:13:24.096+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T10:13:24.118+08:00  INFO 13332 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:13:24.119+08:00  INFO 13332 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:13:24.120+08:00  INFO 13332 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:13:24.121+08:00  INFO 13332 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:13:24.122+08:00  INFO 13332 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:13:24.122+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
-2025-05-29T10:13:24.129+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:13:24.129+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T10:13:24.153+08:00  INFO 13332 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
-2025-05-29T10:13:24.430+08:00  INFO 13332 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T10:13:24.439+08:00  INFO 13332 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T10:13:24.440+08:00  INFO 13332 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T10:13:24.469+08:00  INFO 13332 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T10:13:24.469+08:00  INFO 13332 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 841 ms
-2025-05-29T10:13:24.566+08:00  INFO 13332 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T10:13:24.608+08:00  INFO 13332 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T10:13:24.633+08:00  INFO 13332 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T10:13:24.815+08:00  INFO 13332 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T10:13:24.835+08:00  INFO 13332 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T10:13:24.925+08:00  INFO 13332 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6233c6c2
-2025-05-29T10:13:24.926+08:00  INFO 13332 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T10:13:24.956+08:00  WARN 13332 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T10:13:24.956+08:00  WARN 13332 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T10:13:24.967+08:00  INFO 13332 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:36:23.834+08:00  INFO 10796 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 10796 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T14:36:23.838+08:00  INFO 10796 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T14:36:24.200+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:36:24.201+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T14:36:24.233+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.234+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.235+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.236+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.237+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.238+08:00  INFO 10796 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:36:24.239+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JDBC repository interfaces.
+2025-05-31T14:36:24.246+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:36:24.247+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T14:36:24.272+08:00  INFO 10796 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 6 JPA repository interfaces.
+2025-05-31T14:36:24.575+08:00  INFO 10796 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T14:36:24.586+08:00  INFO 10796 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T14:36:24.586+08:00  INFO 10796 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T14:36:24.618+08:00  INFO 10796 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T14:36:24.619+08:00  INFO 10796 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 754 ms
+2025-05-31T14:36:24.714+08:00  INFO 10796 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T14:36:24.742+08:00  INFO 10796 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T14:36:24.761+08:00  INFO 10796 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T14:36:24.925+08:00  INFO 10796 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T14:36:24.944+08:00  INFO 10796 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T14:36:25.047+08:00  INFO 10796 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@dae5e0
+2025-05-31T14:36:25.049+08:00  INFO 10796 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T14:36:25.106+08:00  WARN 10796 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T14:36:25.107+08:00  WARN 10796 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T14:36:25.119+08:00  INFO 10796 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -33,49 +34,50 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T10:13:25.530+08:00  INFO 13332 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T10:13:25.583+08:00  INFO 13332 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:13:25.775+08:00  INFO 13332 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T10:13:26.097+08:00  WARN 13332 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T10:13:26.353+08:00  INFO 13332 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T10:13:26.357+08:00  INFO 13332 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.01 seconds (process running for 3.348)
-2025-05-29T10:13:36.239+08:00  INFO 13332 --- [shopping] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T10:13:36.239+08:00  INFO 13332 --- [shopping] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T10:13:36.240+08:00  INFO 13332 --- [shopping] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-29T10:30:09.501+08:00  INFO 13332 --- [shopping] [RMI TCP Connection(26)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T10:30:09.502+08:00  INFO 13332 --- [shopping] [RMI TCP Connection(26)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T10:30:09.505+08:00  INFO 13332 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T10:30:09.507+08:00  INFO 13332 --- [shopping] [RMI TCP Connection(26)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:30:09.509+08:00  INFO 13332 --- [shopping] [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T10:30:09.512+08:00  INFO 13332 --- [shopping] [RMI TCP Connection(26)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T10:30:11.797+08:00  INFO 1080 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 1080 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T10:30:11.798+08:00  INFO 1080 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T10:30:12.104+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:30:12.105+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T10:30:12.125+08:00  INFO 1080 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:30:12.125+08:00  INFO 1080 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:30:12.126+08:00  INFO 1080 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:30:12.127+08:00  INFO 1080 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:30:12.128+08:00  INFO 1080 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:30:12.128+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
-2025-05-29T10:30:12.134+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:30:12.135+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T10:30:12.156+08:00  INFO 1080 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
-2025-05-29T10:30:12.410+08:00  INFO 1080 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T10:30:12.419+08:00  INFO 1080 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T10:30:12.420+08:00  INFO 1080 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T10:30:12.446+08:00  INFO 1080 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T10:30:12.446+08:00  INFO 1080 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 627 ms
-2025-05-29T10:30:12.528+08:00  INFO 1080 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T10:30:12.554+08:00  INFO 1080 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T10:30:12.572+08:00  INFO 1080 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T10:30:12.716+08:00  INFO 1080 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T10:30:12.732+08:00  INFO 1080 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T10:30:12.815+08:00  INFO 1080 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5f6e2ad9
-2025-05-29T10:30:12.816+08:00  INFO 1080 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T10:30:12.839+08:00  WARN 1080 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T10:30:12.839+08:00  WARN 1080 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T10:30:12.848+08:00  INFO 1080 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:36:25.727+08:00  INFO 10796 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T14:36:25.827+08:00  INFO 10796 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:36:26.028+08:00  INFO 10796 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T14:36:26.359+08:00  WARN 10796 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T14:36:26.643+08:00  INFO 10796 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T14:36:26.648+08:00  INFO 10796 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.071 seconds (process running for 3.538)
+2025-05-31T14:36:30.917+08:00  INFO 10796 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-31T14:36:30.917+08:00  INFO 10796 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-31T14:36:30.918+08:00  INFO 10796 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-31T14:37:26.436+08:00  INFO 10796 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T14:37:26.438+08:00  INFO 10796 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T14:37:26.440+08:00  INFO 10796 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T14:37:26.443+08:00  INFO 10796 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:37:26.444+08:00  INFO 10796 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T14:37:26.448+08:00  INFO 10796 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31T14:37:29.945+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 15192 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T14:37:29.946+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T14:37:30.309+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:37:30.310+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T14:37:30.336+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.337+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.338+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.340+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.340+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.342+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:37:30.343+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
+2025-05-31T14:37:30.356+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:37:30.357+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T14:37:30.385+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 24 ms. Found 6 JPA repository interfaces.
+2025-05-31T14:37:30.667+08:00  INFO 15192 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T14:37:30.677+08:00  INFO 15192 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T14:37:30.678+08:00  INFO 15192 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T14:37:30.709+08:00  INFO 15192 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T14:37:30.709+08:00  INFO 15192 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 738 ms
+2025-05-31T14:37:30.806+08:00  INFO 15192 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T14:37:30.833+08:00  INFO 15192 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T14:37:30.852+08:00  INFO 15192 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T14:37:31.016+08:00  INFO 15192 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T14:37:31.034+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T14:37:31.132+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2c815fdc
+2025-05-31T14:37:31.134+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T14:37:31.162+08:00  WARN 15192 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T14:37:31.162+08:00  WARN 15192 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T14:37:31.172+08:00  INFO 15192 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -83,49 +85,47 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T10:30:13.340+08:00  INFO 1080 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T10:30:13.383+08:00  INFO 1080 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:30:13.560+08:00  INFO 1080 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T10:30:13.836+08:00  WARN 1080 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T10:30:14.062+08:00  INFO 1080 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T10:30:14.066+08:00  INFO 1080 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.471 seconds (process running for 2.759)
-2025-05-29T10:30:16.322+08:00  INFO 1080 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T10:30:16.322+08:00  INFO 1080 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T10:30:16.323+08:00  INFO 1080 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-29T10:31:44.868+08:00  INFO 1080 --- [shopping] [RMI TCP Connection(11)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T10:31:44.870+08:00  INFO 1080 --- [shopping] [RMI TCP Connection(11)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T10:31:44.872+08:00  INFO 1080 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T10:31:44.874+08:00  INFO 1080 --- [shopping] [RMI TCP Connection(11)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:31:44.875+08:00  INFO 1080 --- [shopping] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T10:31:44.878+08:00  INFO 1080 --- [shopping] [RMI TCP Connection(11)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T10:31:46.916+08:00  INFO 5152 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 5152 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T10:31:46.917+08:00  INFO 5152 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T10:31:47.229+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:31:47.230+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T10:31:47.250+08:00  INFO 5152 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:31:47.251+08:00  INFO 5152 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:31:47.251+08:00  INFO 5152 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:31:47.252+08:00  INFO 5152 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:31:47.253+08:00  INFO 5152 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:31:47.253+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T10:31:47.259+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:31:47.260+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T10:31:47.280+08:00  INFO 5152 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
-2025-05-29T10:31:47.518+08:00  INFO 5152 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T10:31:47.526+08:00  INFO 5152 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T10:31:47.526+08:00  INFO 5152 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T10:31:47.551+08:00  INFO 5152 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T10:31:47.551+08:00  INFO 5152 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 610 ms
-2025-05-29T10:31:47.637+08:00  INFO 5152 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T10:31:47.663+08:00  INFO 5152 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T10:31:47.681+08:00  INFO 5152 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T10:31:47.829+08:00  INFO 5152 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T10:31:47.846+08:00  INFO 5152 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T10:31:47.928+08:00  INFO 5152 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f1158ee
-2025-05-29T10:31:47.929+08:00  INFO 5152 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T10:31:47.951+08:00  WARN 5152 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T10:31:47.952+08:00  WARN 5152 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T10:31:47.961+08:00  INFO 5152 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:37:31.757+08:00  INFO 15192 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T14:37:31.817+08:00  INFO 15192 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:37:32.008+08:00  INFO 15192 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T14:37:32.325+08:00  WARN 15192 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T14:37:32.597+08:00  INFO 15192 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T14:37:32.602+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.906 seconds (process running for 3.277)
+2025-05-31T14:38:02.437+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(8)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T14:38:02.438+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(8)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T14:38:02.441+08:00  INFO 15192 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T14:38:02.444+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(8)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:38:02.446+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T14:38:02.451+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(8)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31T14:50:17.632+08:00  INFO 10368 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 10368 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T14:50:17.634+08:00  INFO 10368 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T14:50:18.078+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:50:18.079+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T14:50:18.108+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.109+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.110+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.111+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.112+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.121+08:00  INFO 10368 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:50:18.122+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37 ms. Found 0 JDBC repository interfaces.
+2025-05-31T14:50:18.130+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:50:18.131+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T14:50:18.161+08:00  INFO 10368 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2025-05-31T14:50:18.510+08:00  INFO 10368 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T14:50:18.521+08:00  INFO 10368 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T14:50:18.522+08:00  INFO 10368 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T14:50:18.555+08:00  INFO 10368 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T14:50:18.556+08:00  INFO 10368 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 894 ms
+2025-05-31T14:50:18.673+08:00  INFO 10368 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T14:50:18.705+08:00  INFO 10368 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T14:50:18.727+08:00  INFO 10368 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T14:50:18.916+08:00  INFO 10368 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T14:50:18.942+08:00  INFO 10368 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T14:50:19.061+08:00  INFO 10368 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@34cb0e49
+2025-05-31T14:50:19.063+08:00  INFO 10368 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T14:50:19.097+08:00  WARN 10368 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T14:50:19.097+08:00  WARN 10368 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T14:50:19.110+08:00  INFO 10368 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -133,49 +133,47 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T10:31:48.466+08:00  INFO 5152 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T10:31:48.510+08:00  INFO 5152 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:31:48.687+08:00  INFO 5152 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T10:31:48.960+08:00  WARN 5152 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T10:31:49.184+08:00  INFO 5152 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T10:31:49.188+08:00  INFO 5152 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.485 seconds (process running for 2.776)
-2025-05-29T10:31:51.035+08:00  INFO 5152 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T10:31:51.035+08:00  INFO 5152 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T10:31:51.036+08:00  INFO 5152 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2025-05-29T10:32:12.358+08:00  INFO 5152 --- [shopping] [RMI TCP Connection(6)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T10:32:12.360+08:00  INFO 5152 --- [shopping] [RMI TCP Connection(6)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T10:32:12.367+08:00  INFO 5152 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T10:32:12.369+08:00  INFO 5152 --- [shopping] [RMI TCP Connection(6)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:32:12.370+08:00  INFO 5152 --- [shopping] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T10:32:12.373+08:00  INFO 5152 --- [shopping] [RMI TCP Connection(6)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T10:32:14.201+08:00  INFO 3396 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 3396 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T10:32:14.202+08:00  INFO 3396 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T10:32:14.510+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:32:14.511+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T10:32:14.531+08:00  INFO 3396 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:32:14.532+08:00  INFO 3396 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:32:14.533+08:00  INFO 3396 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:32:14.533+08:00  INFO 3396 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:32:14.534+08:00  INFO 3396 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:32:14.535+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
-2025-05-29T10:32:14.541+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:32:14.541+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T10:32:14.565+08:00  INFO 3396 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 5 JPA repository interfaces.
-2025-05-29T10:32:14.802+08:00  INFO 3396 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T10:32:14.810+08:00  INFO 3396 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T10:32:14.810+08:00  INFO 3396 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T10:32:14.835+08:00  INFO 3396 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T10:32:14.835+08:00  INFO 3396 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 609 ms
-2025-05-29T10:32:14.915+08:00  INFO 3396 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T10:32:14.940+08:00  INFO 3396 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T10:32:14.960+08:00  INFO 3396 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T10:32:15.104+08:00  INFO 3396 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T10:32:15.121+08:00  INFO 3396 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T10:32:15.206+08:00  INFO 3396 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75452aea
-2025-05-29T10:32:15.207+08:00  INFO 3396 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T10:32:15.230+08:00  WARN 3396 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T10:32:15.231+08:00  WARN 3396 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T10:32:15.240+08:00  INFO 3396 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:50:19.799+08:00  INFO 10368 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T14:50:19.870+08:00  INFO 10368 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:50:20.095+08:00  INFO 10368 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T14:50:20.465+08:00  WARN 10368 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T14:50:20.821+08:00  INFO 10368 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T14:50:20.827+08:00  INFO 10368 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.488 seconds (process running for 3.958)
+2025-05-31T14:53:02.317+08:00  INFO 10368 --- [shopping] [RMI TCP Connection(12)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T14:53:02.319+08:00  INFO 10368 --- [shopping] [RMI TCP Connection(12)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T14:53:02.322+08:00  INFO 10368 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T14:53:02.324+08:00  INFO 10368 --- [shopping] [RMI TCP Connection(12)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:53:02.325+08:00  INFO 10368 --- [shopping] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T14:53:02.330+08:00  INFO 10368 --- [shopping] [RMI TCP Connection(12)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31T14:53:06.269+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 15192 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T14:53:06.270+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T14:53:06.639+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:53:06.640+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T14:53:06.669+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.670+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.671+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.672+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.673+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.674+08:00  INFO 15192 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:53:06.674+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 0 JDBC repository interfaces.
+2025-05-31T14:53:06.681+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:53:06.681+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T14:53:06.706+08:00  INFO 15192 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2025-05-31T14:53:06.984+08:00  INFO 15192 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T14:53:06.995+08:00  INFO 15192 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T14:53:06.995+08:00  INFO 15192 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T14:53:07.025+08:00  INFO 15192 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T14:53:07.026+08:00  INFO 15192 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 729 ms
+2025-05-31T14:53:07.123+08:00  INFO 15192 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T14:53:07.155+08:00  INFO 15192 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T14:53:07.175+08:00  INFO 15192 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T14:53:07.344+08:00  INFO 15192 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T14:53:07.361+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T14:53:07.464+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@55071497
+2025-05-31T14:53:07.465+08:00  INFO 15192 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T14:53:07.497+08:00  WARN 15192 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T14:53:07.497+08:00  WARN 15192 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T14:53:07.508+08:00  INFO 15192 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -183,49 +181,47 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T10:32:15.721+08:00  INFO 3396 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T10:32:15.764+08:00  INFO 3396 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:32:15.934+08:00  INFO 3396 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T10:32:16.214+08:00  WARN 3396 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T10:32:16.445+08:00  INFO 3396 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T10:32:16.448+08:00  INFO 3396 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.445 seconds (process running for 2.736)
-2025-05-29T10:32:18.573+08:00  INFO 3396 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T10:32:18.574+08:00  INFO 3396 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T10:32:18.574+08:00  INFO 3396 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-05-29T10:32:59.612+08:00  INFO 3396 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T10:32:59.613+08:00  INFO 3396 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T10:32:59.623+08:00  INFO 3396 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T10:32:59.625+08:00  INFO 3396 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:32:59.626+08:00  INFO 3396 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T10:32:59.629+08:00  INFO 3396 --- [shopping] [RMI TCP Connection(9)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T10:33:01.535+08:00  INFO 5672 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 5672 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T10:33:01.536+08:00  INFO 5672 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T10:33:01.843+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:33:01.844+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T10:33:01.864+08:00  INFO 5672 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:33:01.865+08:00  INFO 5672 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:33:01.866+08:00  INFO 5672 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:33:01.867+08:00  INFO 5672 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:33:01.867+08:00  INFO 5672 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T10:33:01.868+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 0 JDBC repository interfaces.
-2025-05-29T10:33:01.874+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T10:33:01.875+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T10:33:01.894+08:00  INFO 5672 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
-2025-05-29T10:33:02.133+08:00  INFO 5672 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T10:33:02.141+08:00  INFO 5672 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T10:33:02.141+08:00  INFO 5672 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T10:33:02.167+08:00  INFO 5672 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T10:33:02.167+08:00  INFO 5672 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 609 ms
-2025-05-29T10:33:02.251+08:00  INFO 5672 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T10:33:02.276+08:00  INFO 5672 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T10:33:02.293+08:00  INFO 5672 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T10:33:02.436+08:00  INFO 5672 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T10:33:02.452+08:00  INFO 5672 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T10:33:02.535+08:00  INFO 5672 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@da22aa
-2025-05-29T10:33:02.537+08:00  INFO 5672 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T10:33:02.559+08:00  WARN 5672 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T10:33:02.560+08:00  WARN 5672 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T10:33:02.569+08:00  INFO 5672 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:53:08.143+08:00  INFO 15192 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T14:53:08.205+08:00  INFO 15192 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:53:08.415+08:00  INFO 15192 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T14:53:08.780+08:00  WARN 15192 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T14:53:09.099+08:00  INFO 15192 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T14:53:09.105+08:00  INFO 15192 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.09 seconds (process running for 3.481)
+2025-05-31T14:53:10.650+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(7)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T14:53:10.651+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(7)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T14:53:10.655+08:00  INFO 15192 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T14:53:10.659+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(7)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:53:10.660+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T14:53:10.666+08:00  INFO 15192 --- [shopping] [RMI TCP Connection(7)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31T14:58:27.721+08:00  INFO 11788 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 11788 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T14:58:27.722+08:00  INFO 11788 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T14:58:28.088+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:58:28.089+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T14:58:28.113+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.113+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.114+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.115+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.123+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.124+08:00  INFO 11788 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T14:58:28.125+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JDBC repository interfaces.
+2025-05-31T14:58:28.132+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T14:58:28.133+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T14:58:28.158+08:00  INFO 11788 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 6 JPA repository interfaces.
+2025-05-31T14:58:28.481+08:00  INFO 11788 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T14:58:28.491+08:00  INFO 11788 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T14:58:28.492+08:00  INFO 11788 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T14:58:28.522+08:00  INFO 11788 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T14:58:28.523+08:00  INFO 11788 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 775 ms
+2025-05-31T14:58:28.624+08:00  INFO 11788 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T14:58:28.659+08:00  INFO 11788 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T14:58:28.680+08:00  INFO 11788 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T14:58:28.842+08:00  INFO 11788 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T14:58:28.861+08:00  INFO 11788 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T14:58:28.964+08:00  INFO 11788 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2a667f44
+2025-05-31T14:58:28.966+08:00  INFO 11788 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T14:58:28.996+08:00  WARN 11788 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T14:58:28.997+08:00  WARN 11788 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T14:58:29.009+08:00  INFO 11788 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -233,49 +229,50 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T10:33:03.069+08:00  INFO 5672 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T10:33:03.111+08:00  INFO 5672 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T10:33:03.289+08:00  INFO 5672 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T10:33:03.568+08:00  WARN 5672 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T10:33:03.794+08:00  INFO 5672 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T10:33:03.798+08:00  INFO 5672 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.467 seconds (process running for 2.759)
-2025-05-29T10:33:38.309+08:00  INFO 5672 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T10:33:38.310+08:00  INFO 5672 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T10:33:38.310+08:00  INFO 5672 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-05-29T14:44:57.543+08:00  INFO 5672 --- [shopping] [RMI TCP Connection(261)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T14:44:57.566+08:00  INFO 5672 --- [shopping] [RMI TCP Connection(261)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T14:44:57.575+08:00  INFO 5672 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T14:44:57.577+08:00  INFO 5672 --- [shopping] [RMI TCP Connection(261)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T14:44:57.578+08:00  INFO 5672 --- [shopping] [RMI TCP Connection(261)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T14:44:57.580+08:00  INFO 5672 --- [shopping] [RMI TCP Connection(261)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T14:44:59.520+08:00  INFO 10460 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 10460 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T14:44:59.521+08:00  INFO 10460 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T14:44:59.829+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T14:44:59.830+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T14:44:59.849+08:00  INFO 10460 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T14:44:59.850+08:00  INFO 10460 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T14:44:59.851+08:00  INFO 10460 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T14:44:59.851+08:00  INFO 10460 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T14:44:59.852+08:00  INFO 10460 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T14:44:59.852+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T14:44:59.858+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T14:44:59.859+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T14:44:59.882+08:00  INFO 10460 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
-2025-05-29T14:45:00.143+08:00  INFO 10460 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T14:45:00.151+08:00  INFO 10460 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T14:45:00.152+08:00  INFO 10460 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T14:45:00.180+08:00  INFO 10460 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T14:45:00.180+08:00  INFO 10460 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 637 ms
-2025-05-29T14:45:00.267+08:00  INFO 10460 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T14:45:00.307+08:00  INFO 10460 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T14:45:00.328+08:00  INFO 10460 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T14:45:00.504+08:00  INFO 10460 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T14:45:00.523+08:00  INFO 10460 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T14:45:00.606+08:00  INFO 10460 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ac4e690
-2025-05-29T14:45:00.607+08:00  INFO 10460 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T14:45:00.632+08:00  WARN 10460 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T14:45:00.632+08:00  WARN 10460 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T14:45:00.642+08:00  INFO 10460 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+2025-05-31T14:58:29.634+08:00  INFO 11788 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T14:58:29.697+08:00  INFO 11788 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T14:58:29.898+08:00  INFO 11788 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T14:58:30.228+08:00  WARN 11788 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T14:58:30.506+08:00  INFO 11788 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T14:58:30.512+08:00  INFO 11788 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.059 seconds (process running for 3.475)
+2025-05-31T14:58:35.192+08:00  INFO 11788 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-05-31T14:58:35.192+08:00  INFO 11788 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-05-31T14:58:35.193+08:00  INFO 11788 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-31T15:19:13.405+08:00  INFO 11788 --- [shopping] [RMI TCP Connection(31)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T15:19:13.407+08:00  INFO 11788 --- [shopping] [RMI TCP Connection(31)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T15:19:13.410+08:00  INFO 11788 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T15:19:13.414+08:00  INFO 11788 --- [shopping] [RMI TCP Connection(31)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T15:19:13.416+08:00  INFO 11788 --- [shopping] [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T15:19:13.426+08:00  INFO 11788 --- [shopping] [RMI TCP Connection(31)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-05-31T15:19:15.549+08:00  INFO 19712 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 19712 (D:\SOFT\workstation\shoppingProject\springboot\shopping\target\classes started by USER in D:\SOFT\workstation\shoppingProject\springboot\shopping)
+2025-05-31T15:19:15.550+08:00  INFO 19712 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
+2025-05-31T15:19:16.015+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T15:19:16.016+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-05-31T15:19:16.050+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.053+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.054+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.055+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.OrderRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.057+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.058+08:00  INFO 19712 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
+2025-05-31T15:19:16.059+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38 ms. Found 0 JDBC repository interfaces.
+2025-05-31T15:19:16.068+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-05-31T15:19:16.070+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-31T15:19:16.101+08:00  INFO 19712 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 26 ms. Found 6 JPA repository interfaces.
+2025-05-31T15:19:16.453+08:00  INFO 19712 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2025-05-31T15:19:16.464+08:00  INFO 19712 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-05-31T15:19:16.464+08:00  INFO 19712 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
+2025-05-31T15:19:16.497+08:00  INFO 19712 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-05-31T15:19:16.498+08:00  INFO 19712 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 920 ms
+2025-05-31T15:19:16.613+08:00  INFO 19712 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-31T15:19:16.648+08:00  INFO 19712 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
+2025-05-31T15:19:16.670+08:00  INFO 19712 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-31T15:19:16.855+08:00  INFO 19712 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-31T15:19:16.878+08:00  INFO 19712 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-31T15:19:16.988+08:00  INFO 19712 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e50eeb9
+2025-05-31T15:19:16.990+08:00  INFO 19712 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-31T15:19:17.017+08:00  WARN 19712 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-31T15:19:17.018+08:00  WARN 19712 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-31T15:19:17.029+08:00  INFO 19712 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
 	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
 	Database driver: undefined/unknown
 	Database version: 8.0
@@ -283,309 +280,15 @@
 	Isolation level: undefined/unknown
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2025-05-29T14:45:01.183+08:00  INFO 10460 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T14:45:01.228+08:00  INFO 10460 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T14:45:01.391+08:00  INFO 10460 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T14:45:01.693+08:00  WARN 10460 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T14:45:01.917+08:00  INFO 10460 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T14:45:01.920+08:00  INFO 10460 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.603 seconds (process running for 2.899)
-2025-05-29T14:46:12.529+08:00  INFO 10460 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T14:46:12.530+08:00  INFO 10460 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T14:46:12.532+08:00  INFO 10460 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T14:46:12.534+08:00  INFO 10460 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T14:46:12.535+08:00  INFO 10460 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T14:46:12.539+08:00  INFO 10460 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T15:00:04.688+08:00  INFO 5184 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 5184 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T15:00:04.689+08:00  INFO 5184 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T15:00:04.989+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:00:04.990+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T15:00:05.009+08:00  INFO 5184 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:00:05.010+08:00  INFO 5184 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:00:05.010+08:00  INFO 5184 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:00:05.011+08:00  INFO 5184 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:00:05.012+08:00  INFO 5184 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:00:05.012+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T15:00:05.018+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:00:05.019+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T15:00:05.041+08:00  INFO 5184 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 20 ms. Found 5 JPA repository interfaces.
-2025-05-29T15:00:05.274+08:00  INFO 5184 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T15:00:05.283+08:00  INFO 5184 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T15:00:05.284+08:00  INFO 5184 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T15:00:05.308+08:00  INFO 5184 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T15:00:05.308+08:00  INFO 5184 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 597 ms
-2025-05-29T15:00:05.386+08:00  INFO 5184 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T15:00:05.410+08:00  INFO 5184 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T15:00:05.429+08:00  INFO 5184 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T15:00:05.569+08:00  INFO 5184 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T15:00:05.585+08:00  INFO 5184 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T15:00:05.666+08:00  INFO 5184 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7a3643e3
-2025-05-29T15:00:05.667+08:00  INFO 5184 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T15:00:05.689+08:00  WARN 5184 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T15:00:05.690+08:00  WARN 5184 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T15:00:05.699+08:00  INFO 5184 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-29T15:00:06.179+08:00  INFO 5184 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T15:00:06.226+08:00  INFO 5184 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T15:00:06.233+08:00  WARN 5184 --- [shopping] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartItemController': Unsatisfied dependency expressed through field 'cartItemService': Error creating bean with name 'cartItemServiceImpl' defined in file [E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes\com\example\demo\service\Impl\CartItemServiceImpl.class]: Failed to instantiate [com.example.demo.service.Impl.CartItemServiceImpl]: Constructor threw exception
-2025-05-29T15:00:06.234+08:00  INFO 5184 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T15:00:06.235+08:00  INFO 5184 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T15:00:06.241+08:00  INFO 5184 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T15:00:06.242+08:00  INFO 5184 --- [shopping] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
-2025-05-29T15:00:06.248+08:00  INFO 5184 --- [shopping] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
-
-Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2025-05-29T15:00:06.258+08:00 ERROR 5184 --- [shopping] [main] o.s.boot.SpringApplication               : Application run failed
-
-org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'cartItemController': Unsatisfied dependency expressed through field 'cartItemService': Error creating bean with name 'cartItemServiceImpl' defined in file [E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes\com\example\demo\service\Impl\CartItemServiceImpl.class]: Failed to instantiate [com.example.demo.service.Impl.CartItemServiceImpl]: Constructor threw exception
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:788) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:768) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:146) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:509) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1451) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:606) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1221) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1187) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1122) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:987) ~[spring-context-6.2.6.jar:6.2.6]
-	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627) ~[spring-context-6.2.6.jar:6.2.6]
-	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146) ~[spring-boot-3.4.5.jar:3.4.5]
-	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753) ~[spring-boot-3.4.5.jar:3.4.5]
-	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439) ~[spring-boot-3.4.5.jar:3.4.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318) ~[spring-boot-3.4.5.jar:3.4.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1362) ~[spring-boot-3.4.5.jar:3.4.5]
-	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1351) ~[spring-boot-3.4.5.jar:3.4.5]
-	at com.example.demo.ShoppingApplication.main(ShoppingApplication.java:12) ~[classes/:na]
-Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'cartItemServiceImpl' defined in file [E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes\com\example\demo\service\Impl\CartItemServiceImpl.class]: Failed to instantiate [com.example.demo.service.Impl.CartItemServiceImpl]: Constructor threw exception
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1349) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1234) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:569) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1739) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1627) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:785) ~[spring-beans-6.2.6.jar:6.2.6]
-	... 22 common frames omitted
-Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.example.demo.service.Impl.CartItemServiceImpl]: Constructor threw exception
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:222) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:122) ~[spring-beans-6.2.6.jar:6.2.6]
-	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateBean(AbstractAutowireCapableBeanFactory.java:1343) ~[spring-beans-6.2.6.jar:6.2.6]
-	... 33 common frames omitted
-Caused by: java.lang.Error: Unresolved compilation problems: 
-	Cannot infer type argument(s) for <R> map(Function<? super T,? extends R>)
-	The method getProductId() is undefined for the type CartItem
-
-	at com.example.demo.service.Impl.CartItemServiceImpl.<init>(CartItemServiceImpl.java:26) ~[classes/:na]
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[na:na]
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[na:na]
-	at org.springframework.beans.BeanUtils.instantiateClass(BeanUtils.java:196) ~[spring-beans-6.2.6.jar:6.2.6]
-	... 35 common frames omitted
-
-2025-05-29T15:09:06.352+08:00  INFO 17016 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 17016 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T15:09:06.353+08:00  INFO 17016 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T15:09:06.656+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:09:06.657+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T15:09:06.676+08:00  INFO 17016 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:09:06.677+08:00  INFO 17016 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:09:06.677+08:00  INFO 17016 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:09:06.678+08:00  INFO 17016 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:09:06.679+08:00  INFO 17016 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:09:06.679+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T15:09:06.685+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:09:06.686+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T15:09:06.705+08:00  INFO 17016 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 17 ms. Found 5 JPA repository interfaces.
-2025-05-29T15:09:06.946+08:00  INFO 17016 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T15:09:06.954+08:00  INFO 17016 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T15:09:06.954+08:00  INFO 17016 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T15:09:06.979+08:00  INFO 17016 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T15:09:06.979+08:00  INFO 17016 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 604 ms
-2025-05-29T15:09:07.063+08:00  INFO 17016 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T15:09:07.088+08:00  INFO 17016 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T15:09:07.106+08:00  INFO 17016 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T15:09:07.247+08:00  INFO 17016 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T15:09:07.263+08:00  INFO 17016 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T15:09:07.345+08:00  INFO 17016 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@ac4e690
-2025-05-29T15:09:07.346+08:00  INFO 17016 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T15:09:07.368+08:00  WARN 17016 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T15:09:07.369+08:00  WARN 17016 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T15:09:07.378+08:00  INFO 17016 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-29T15:09:07.860+08:00  INFO 17016 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T15:09:07.906+08:00  INFO 17016 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T15:09:08.037+08:00  INFO 17016 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T15:09:08.345+08:00  WARN 17016 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T15:09:08.570+08:00  INFO 17016 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T15:09:08.574+08:00  INFO 17016 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.419 seconds (process running for 2.709)
-2025-05-29T15:15:22.244+08:00  INFO 17016 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T15:15:22.244+08:00  INFO 17016 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T15:15:22.244+08:00  INFO 17016 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-05-29T15:16:00.596+08:00  WARN 17016 --- [shopping] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 1452, SQLState: 23000
-2025-05-29T15:16:00.596+08:00 ERROR 17016 --- [shopping] [http-nio-8080-exec-6] o.h.engine.jdbc.spi.SqlExceptionHelper   : Cannot add or update a child row: a foreign key constraint fails (`myshoppingdb`.`cart_items`, CONSTRAINT `cart_items_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`))
-2025-05-29T15:16:32.092+08:00  INFO 17016 --- [shopping] [RMI TCP Connection(17)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T15:16:32.093+08:00  INFO 17016 --- [shopping] [RMI TCP Connection(17)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T15:16:32.096+08:00  INFO 17016 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T15:16:32.097+08:00  INFO 17016 --- [shopping] [RMI TCP Connection(17)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T15:16:32.098+08:00  INFO 17016 --- [shopping] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T15:16:32.101+08:00  INFO 17016 --- [shopping] [RMI TCP Connection(17)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T15:17:30.175+08:00  INFO 6532 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 6532 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T15:17:30.176+08:00  INFO 6532 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T15:17:30.481+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:17:30.482+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T15:17:30.502+08:00  INFO 6532 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:17:30.502+08:00  INFO 6532 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:17:30.503+08:00  INFO 6532 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:17:30.504+08:00  INFO 6532 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:17:30.504+08:00  INFO 6532 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T15:17:30.505+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T15:17:30.511+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T15:17:30.511+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T15:17:30.530+08:00  INFO 6532 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
-2025-05-29T15:17:30.769+08:00  INFO 6532 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T15:17:30.777+08:00  INFO 6532 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T15:17:30.777+08:00  INFO 6532 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T15:17:30.802+08:00  INFO 6532 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T15:17:30.802+08:00  INFO 6532 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 604 ms
-2025-05-29T15:17:30.884+08:00  INFO 6532 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T15:17:30.909+08:00  INFO 6532 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T15:17:30.926+08:00  INFO 6532 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T15:17:31.071+08:00  INFO 6532 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T15:17:31.087+08:00  INFO 6532 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T15:17:31.168+08:00  INFO 6532 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d1cfe4
-2025-05-29T15:17:31.170+08:00  INFO 6532 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T15:17:31.192+08:00  WARN 6532 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T15:17:31.193+08:00  WARN 6532 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T15:17:31.202+08:00  INFO 6532 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-29T15:17:31.703+08:00  INFO 6532 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T15:17:31.751+08:00  INFO 6532 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T15:17:31.923+08:00  INFO 6532 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T15:17:32.210+08:00  WARN 6532 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T15:17:32.431+08:00  INFO 6532 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T15:17:32.435+08:00  INFO 6532 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.46 seconds (process running for 2.751)
-2025-05-29T15:17:35.298+08:00  INFO 6532 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T15:17:35.298+08:00  INFO 6532 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T15:17:35.299+08:00  INFO 6532 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
-2025-05-29T16:10:26.606+08:00  INFO 6532 --- [shopping] [RMI TCP Connection(63)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T16:10:26.608+08:00  INFO 6532 --- [shopping] [RMI TCP Connection(63)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T16:10:26.618+08:00  INFO 6532 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T16:10:26.620+08:00  INFO 6532 --- [shopping] [RMI TCP Connection(63)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T16:10:26.621+08:00  INFO 6532 --- [shopping] [RMI TCP Connection(63)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T16:10:26.622+08:00  INFO 6532 --- [shopping] [RMI TCP Connection(63)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T16:10:30.524+08:00  INFO 13356 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 13356 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T16:10:30.525+08:00  INFO 13356 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T16:10:30.828+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T16:10:30.829+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T16:10:30.849+08:00  INFO 13356 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:10:30.850+08:00  INFO 13356 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:10:30.851+08:00  INFO 13356 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:10:30.851+08:00  INFO 13356 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:10:30.852+08:00  INFO 13356 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:10:30.852+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T16:10:30.858+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T16:10:30.859+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T16:10:30.878+08:00  INFO 13356 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
-2025-05-29T16:10:31.117+08:00  INFO 13356 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T16:10:31.125+08:00  INFO 13356 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T16:10:31.126+08:00  INFO 13356 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T16:10:31.151+08:00  INFO 13356 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T16:10:31.151+08:00  INFO 13356 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 604 ms
-2025-05-29T16:10:31.238+08:00  INFO 13356 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T16:10:31.263+08:00  INFO 13356 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T16:10:31.280+08:00  INFO 13356 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T16:10:31.425+08:00  INFO 13356 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T16:10:31.441+08:00  INFO 13356 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T16:10:31.527+08:00  INFO 13356 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1d1cfe4
-2025-05-29T16:10:31.528+08:00  INFO 13356 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T16:10:31.551+08:00  WARN 13356 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T16:10:31.551+08:00  WARN 13356 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T16:10:31.560+08:00  INFO 13356 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-29T16:10:32.059+08:00  INFO 13356 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T16:10:32.108+08:00  INFO 13356 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T16:10:32.242+08:00  INFO 13356 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T16:10:32.557+08:00  WARN 13356 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T16:10:32.782+08:00  INFO 13356 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T16:10:32.785+08:00  INFO 13356 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.461 seconds (process running for 2.755)
-2025-05-29T16:11:06.580+08:00  INFO 13356 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
-2025-05-29T16:11:06.581+08:00  INFO 13356 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-05-29T16:11:06.584+08:00  INFO 13356 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-05-29T16:11:06.585+08:00  INFO 13356 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T16:11:06.587+08:00  INFO 13356 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2025-05-29T16:11:06.590+08:00  INFO 13356 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2025-05-29T16:11:08.197+08:00  INFO 16388 --- [shopping] [main] com.example.demo.ShoppingApplication     : Starting ShoppingApplication using Java 21.0.6 with PID 16388 (E:\eclipse-workspace\shoppingProject\springboot\shopping\target\classes started by NTPU in E:\eclipse-workspace\shoppingProject\springboot\shopping)
-2025-05-29T16:11:08.198+08:00  INFO 16388 --- [shopping] [main] com.example.demo.ShoppingApplication     : No active profile set, falling back to 1 default profile: "default"
-2025-05-29T16:11:08.502+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T16:11:08.502+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
-2025-05-29T16:11:08.521+08:00  INFO 16388 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CartItemRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:11:08.522+08:00  INFO 16388 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.CategoryRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:11:08.523+08:00  INFO 16388 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.LoginLogRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:11:08.523+08:00  INFO 16388 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.ProductRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:11:08.524+08:00  INFO 16388 --- [shopping] [main] .RepositoryConfigurationExtensionSupport : Spring Data JDBC - Could not safely identify store assignment for repository candidate interface com.example.demo.repository.UserRepository; If you want this repository to be a JDBC repository, consider annotating your entities with one of these annotations: org.springframework.data.relational.core.mapping.Table.
-2025-05-29T16:11:08.524+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
-2025-05-29T16:11:08.530+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
-2025-05-29T16:11:08.531+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2025-05-29T16:11:08.550+08:00  INFO 16388 --- [shopping] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 16 ms. Found 5 JPA repository interfaces.
-2025-05-29T16:11:08.789+08:00  INFO 16388 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
-2025-05-29T16:11:08.797+08:00  INFO 16388 --- [shopping] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-05-29T16:11:08.797+08:00  INFO 16388 --- [shopping] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.40]
-2025-05-29T16:11:08.822+08:00  INFO 16388 --- [shopping] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-05-29T16:11:08.822+08:00  INFO 16388 --- [shopping] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 604 ms
-2025-05-29T16:11:08.902+08:00  INFO 16388 --- [shopping] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2025-05-29T16:11:08.926+08:00  INFO 16388 --- [shopping] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.13.Final
-2025-05-29T16:11:08.945+08:00  INFO 16388 --- [shopping] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
-2025-05-29T16:11:09.087+08:00  INFO 16388 --- [shopping] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
-2025-05-29T16:11:09.103+08:00  INFO 16388 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2025-05-29T16:11:09.188+08:00  INFO 16388 --- [shopping] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@312a738d
-2025-05-29T16:11:09.189+08:00  INFO 16388 --- [shopping] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2025-05-29T16:11:09.211+08:00  WARN 16388 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
-2025-05-29T16:11:09.211+08:00  WARN 16388 --- [shopping] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
-2025-05-29T16:11:09.220+08:00  INFO 16388 --- [shopping] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
-	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
-	Database driver: undefined/unknown
-	Database version: 8.0
-	Autocommit mode: undefined/unknown
-	Isolation level: undefined/unknown
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2025-05-29T16:11:09.710+08:00  INFO 16388 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2025-05-29T16:11:09.755+08:00  INFO 16388 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2025-05-29T16:11:09.924+08:00  INFO 16388 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
-2025-05-29T16:11:10.202+08:00  WARN 16388 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2025-05-29T16:11:10.428+08:00  INFO 16388 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
-2025-05-29T16:11:10.432+08:00  INFO 16388 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 2.432 seconds (process running for 2.717)
-2025-05-29T16:11:14.538+08:00  INFO 16388 --- [shopping] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-05-29T16:11:14.538+08:00  INFO 16388 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-05-29T16:11:14.539+08:00  INFO 16388 --- [shopping] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-05-31T15:19:17.680+08:00  INFO 19712 --- [shopping] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-31T15:19:17.745+08:00  INFO 19712 --- [shopping] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T15:19:17.925+08:00  INFO 19712 --- [shopping] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-05-31T15:19:18.316+08:00  WARN 19712 --- [shopping] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-31T15:19:18.623+08:00  INFO 19712 --- [shopping] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-05-31T15:19:18.629+08:00  INFO 19712 --- [shopping] [main] com.example.demo.ShoppingApplication     : Started ShoppingApplication in 3.348 seconds (process running for 3.76)
+2025-05-31T15:19:20.463+08:00  INFO 19712 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-05-31T15:19:20.465+08:00  INFO 19712 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-05-31T15:19:20.467+08:00  INFO 19712 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-05-31T15:19:20.469+08:00  INFO 19712 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-05-31T15:19:20.471+08:00  INFO 19712 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-05-31T15:19:20.478+08:00  INFO 19712 --- [shopping] [RMI TCP Connection(2)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

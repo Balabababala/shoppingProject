@@ -29,12 +29,13 @@ public class CategoryServiceImpl implements CategoryService{
 	              .map(CategoryMapper::toDto)
 	              .toList();
 	}
-	@Override
-	public CategoryResponse findCategoryBySlug(String slug){
-		Category category = categoryRepository.findBySlug(slug)
-		        .orElseThrow(() -> new RuntimeException("找不到分類 " + slug));
-		return CategoryMapper.toDto(category);
-	}
+	
+//	@Override
+//	public CategoryResponse findCategoryBySlug(String slug){
+//		Category category = categoryRepository.findBySlug(slug)
+//		        .orElseThrow(() -> new RuntimeException("找不到分類 " + slug));
+//		return CategoryMapper.toDto(category);
+//	}
 	
 	
 	@Override

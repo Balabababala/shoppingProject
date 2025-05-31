@@ -8,7 +8,7 @@ function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { userData, setCartItems, setToastMessage } = useContext(AppContext);
+  const {userData, setCartItems, setToastMessage } = useContext(AppContext);
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -38,10 +38,7 @@ function ProductDetailPage() {
       setToastMessage("請先登入才能加入購物車！");
       navigate('/userlogin');
       return;
-    }
-    
-
-    
+    } 
     // 數量檢查，限制最小1，最大不超過庫存（如果有庫存限制）
     let qty = parseInt(quantity, 10);
     if (isNaN(qty) || qty < 1) qty = 1;

@@ -5,7 +5,7 @@
 	NotificationsPage 	沒串真的資料
 	RecentViewPage  	沒串真的資料
 	圖相關的 要改(ProductDetailPage)
-
+	註冊還沒做
 注意
 	有用ToastMessage 元件 他是獨立的
 	有用AppContent 他是獨立的 可共用
@@ -25,10 +25,21 @@
 
 
 
+CheckoutUserInfoResponse //讓結帳能直接填會員資料
+OrderRequest		 //結帳 丟資料給後端 建訂單用 呼叫 service
+
+ 
+OrderService    //+      呼叫Repository
+CartItemService //改	 呼叫Repository
+ProductService  //改	 呼叫Repository
 
 
+OrderRepository    //+ 	建訂單
+CartItemRepository //改 清購物車
+ProductRepository  //改 減庫存
 
-
+Entity  Order	   //+
+Entity  OrderItem
 
 
 

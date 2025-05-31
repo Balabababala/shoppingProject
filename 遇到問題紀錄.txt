@@ -28,10 +28,9 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
       ManyToOne
       @JoinColumn(name ="xxx")  xxx 是資料表的外鍵  寫這行表示它是主控
 
-      @OneToMany(mappedBy= "xxx") xxx  是對應對面Entity 的屬性(是主控)(上面那個的屬性) 
+      @OneToMany(mappedBy= "xxx") xxx  是對面Entity 的屬性(上面那個的屬性) 
 
-      自己對自己 關聯保留方法(你如果關聯別人 那別人有欄位 自己沒欄位 沒問題 但自己對自己 自己會沒有)
-      @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
+      關聯後  欄位保留方法 因為它會不知道是哪個來管(新增 更新)   @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
 
 8. MySQL 內建的相似度  //沒做出來
 	ALTER TABLE product ADD FULLTEXT(name, description); 

@@ -2,12 +2,16 @@ package com.example.demo.model.entity;
 
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+@Table(name = "cart_items")
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
-@Table(name = "cart_items")  // 可以根據實際資料表名稱調整
 @Data
 public class CartItem {
 
@@ -15,6 +19,12 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "user_id", insertable = false, updatable = false)
+    private Long userId;
+    
+    @Column(name = "product_id", insertable = false, updatable = false)
+    private Long productId ;
+    
     @Column(nullable = false)
     private Integer quantity;
 

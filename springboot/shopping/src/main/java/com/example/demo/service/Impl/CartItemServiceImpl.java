@@ -36,4 +36,9 @@ import com.example.demo.model.dto.CartItemResponse;
 			}
 			cartItemRepository.addCartItemIfExist(userId, ProductId, quantity);
 		}
+
+		@Override
+		public void deleteAllCartItemByUser(Long userId) {
+			cartItemRepository.deleteByUserId(userId);
+		} 
 	}

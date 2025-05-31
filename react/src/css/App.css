@@ -2,10 +2,12 @@
     padding-top: 80px;
   }
 
+  
+/* 
 
   .animated-bg {
-    /* min-height: 100vh; */
-    /* animation: rainbowShift 1s infinite linear; */
+    min-height: 100vh;
+    animation: rainbowShift 1s infinite linear;
   }
 
   @keyframes bgShift {
@@ -25,5 +27,5 @@
     66%  { background-color: blue; }
     83%  { background-color: indigo; }
     100% { background-color: violet; }
-  }
+  } */
 

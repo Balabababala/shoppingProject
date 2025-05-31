@@ -16,6 +16,9 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	//已有方法 find.... save delete
 	
     // 你可以加自訂的方法，像是：
+	//清空購物車用
+	void deleteByUserId(Long userId);
+	
 	List<CartItem> findByUserId(Long userId);
 	
 	//判斷購物車是否已有商品

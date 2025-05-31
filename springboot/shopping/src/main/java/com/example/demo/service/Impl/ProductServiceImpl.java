@@ -26,6 +26,13 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	CategoryService categoryService;
 	
+	
+	@Transactional
+	@Override
+	public void minusProductByid(Long id, Integer quantity) {
+		productRepository.minusById(id, quantity);
+	}
+
 	@Override
 	public ProductResponse findById(Long id) {
 		return ProductMapper.toDto(productRepository.findById(id).get());
@@ -42,26 +49,6 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	
-
-	@Override
-	public List<ProductResponse> findCategoryById(Long categoryId) {
-		productRepository.findByCategoryId(categoryId);
-		return productRepository.findByCategoryId(categoryId).stream()
-															 .map(ProductMapper::toDto)
-															 .toList();
-	}
-	
-	
-	@Override
-	public List<ProductResponse> findCategoryBySlug(String slug) {		//自己
-		 return categoryRepository.findBySlug(slug).stream()
-		        .flatMap(category -> 
-	            productRepository.findByCategoryId(category.getId()).stream()
-	                .map(ProductMapper::toDto)
-	        )
-	        .toList();
-	}
-	
 	@Transactional
 	@Override
 	public List<ProductResponse> findAllCategoryBySlug(String slug) {  	//自己+子子孫孫
@@ -74,14 +61,14 @@ public class ProductServiceImpl implements ProductService{
 	}
 
 	
-	@Override 
-	public List<ProductResponse> findByKeyword(String keyword) {
-		
-		System.out.print(keyword);
-		return productRepository.findByKeywordFullText(keyword).stream()
-																.map(ProductMapper::toDto)
-																.toList();
-	}
+//	@Override 
+//	public List<ProductResponse> findByKeyword(String keyword) {
+//		
+//		System.out.print(keyword);
+//		return productRepository.findByKeywordFullText(keyword).stream()
+//																.map(ProductMapper::toDto)
+//																.toList();
+//	}
 	
 	@Override 
 	public List<ProductResponse> findByKeywordFullTextBoolean(String keyword) {//boolean 狀態才能 用*萬用字元
