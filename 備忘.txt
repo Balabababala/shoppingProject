@@ -24,22 +24,17 @@
 		service
 
 
+結帳功能
 
 CheckoutUserInfoResponse //讓結帳能直接填會員資料
 OrderRequest		 //結帳 丟資料給後端 建訂單用 呼叫 service
-
+OredeMapper 	         //OrderRequest 轉Entity
  
-OrderService    //+      呼叫Repository
-CartItemService //改	 呼叫Repository
-ProductService  //改	 呼叫Repository
 
-
-OrderRepository    //+ 	建訂單
-CartItemRepository //改 清購物車
-ProductRepository  //改 減庫存
-
-Entity  Order	   //+
-Entity  OrderItem
+OrderService    //+      呼叫Repository  建訂單邏輯
+OrderItemService//+	 呼叫Repository  V CartItem 轉 orderItem
+CartItemService //改	 呼叫Repository  V 寫依賣家分 Map<Long,List<cartItem>> 
+ProductService  //改	 呼叫Repository  V -數量  
 
 
 

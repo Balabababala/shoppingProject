@@ -1,8 +1,7 @@
 package com.example.demo.service;
 
-import com.example.demo.model.entity.Order;
+import com.example.demo.model.dto.OrderRequest;
 
 public interface OrderService {
-
-	void CreateOrder(Order order);
+	void createOrder(OrderRequest orderRequest,Long BuyerId);  //建訂單用所有邏輯在這
 }

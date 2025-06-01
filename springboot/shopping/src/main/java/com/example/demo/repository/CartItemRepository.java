@@ -21,6 +21,10 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	
 	List<CartItem> findByUserId(Long userId);
 	
+	//防n+1用的
+	@Query(value = "SELECT c.* FROM cart_item c JOIN product p ON c.product_id = p.id WHERE c.user_id = :userId", nativeQuery = true)
+	List<CartItem> findByUserIdWithProduct(@Param("userId") Long userId);
+	
 	//判斷購物車是否已有商品
 	List<CartItem> findByUserIdAndProductId(Long userId,Long productId );
 	

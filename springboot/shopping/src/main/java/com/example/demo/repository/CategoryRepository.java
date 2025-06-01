@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.entity.Category;
@@ -18,7 +19,7 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 	Optional<Category> findById(Long CategoriyId);
 	List<Category> findByParentId(Long parentId);
 
-	@Query("SELECT c FROM Category c WHERE c.parent.slug = :slug")
-	List<Category> findChildrenBySlug(String slug);					//只有兒子 後面給遞迴用的
+	@Query(value = "SELECT * FROM category c JOIN category p ON c.parent_id = p.id WHERE p.slug = :slug", nativeQuery = true)
+	List<Category> findChildrenBySlug(@Param("slug") String slug);//只有兒子 後面給遞迴用的
 }
 

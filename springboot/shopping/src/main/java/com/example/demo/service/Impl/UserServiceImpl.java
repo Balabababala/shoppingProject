@@ -10,6 +10,7 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.PasswordHash;
 import com.example.demo.service.UserService;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpSession;
 
 @Service
@@ -46,6 +47,12 @@ public class UserServiceImpl implements UserService{
 		
 		
 		return true;
+	}
+
+	@Override
+	public User findUserById(Long id) {
+		return userRepository.findById(id)
+	            .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
 	}
 
 
