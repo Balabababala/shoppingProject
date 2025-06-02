@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 
-import java.util.Optional;
+
 
 import com.example.demo.exception.ShoppingException;
 import com.example.demo.model.dto.LoginRequest;
@@ -11,9 +11,7 @@ import jakarta.servlet.http.HttpSession;
 
 
 public interface UserService {
-	//repository
-	Optional<User> findById(Long Id);
-	User findByUsername(String username);
+
 	
 	//邏輯
 	User findUserByUserName(String username);

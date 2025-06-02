@@ -14,19 +14,7 @@ import com.example.demo.model.entity.OrderItem;
 
 
 public interface CartItemService {
-	//repository
 	
-	void deleteByUserId(Long userId);
-	
-	List<CartItem> findByUserId(Long userId);
-	
-	List<CartItem> findByUserIdWithProduct(Long userId);
-	
-	List<CartItem> findByUserIdAndProductId(Long userId,Long productId );
-
-	void addCartItem(Long userId,Long productId ,Integer quantity);
-
-	void addCartItemIfExist(Long userId,Long productId , Integer quantity);
 
 	
 	//邏輯

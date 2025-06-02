@@ -9,6 +9,9 @@ import com.example.demo.model.entity.User;
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
+	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	Optional<User> findById(Long Id);
 	User findByUsername(String username);
+	// 你可以加自訂的方法，像是：
+	
 }

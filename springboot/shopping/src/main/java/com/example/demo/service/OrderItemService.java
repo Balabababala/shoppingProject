@@ -9,8 +9,7 @@ import com.example.demo.model.entity.OrderItem;
 
 
 public interface OrderItemService {
-	//repository
-	void save(OrderItem orderItem);
+
 
 	//邏輯
 	void addOrderItem(List<OrderItem> orderItems);		      //把orderItems丟到資料庫 建訂單用的

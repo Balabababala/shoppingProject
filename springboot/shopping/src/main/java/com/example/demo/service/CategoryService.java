@@ -11,12 +11,7 @@ import com.example.demo.model.entity.Category;
 
 
 public interface CategoryService {
-	//repository
-	List<Category> findAll();
-	Optional<Category> findBySlug(String slug);       
-	Optional<Category> findById(Long CategoriyId);
-	List<Category> findByParentId(Long parentId);
-	List<Category> findChildrenBySlug(String slug);
+
 	
 	//邏輯
 	List <CategoryResponse> findTopCategory();									//navbar 用的 只顯示最上層 分類

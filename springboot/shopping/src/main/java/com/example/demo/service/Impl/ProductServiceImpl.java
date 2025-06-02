@@ -27,25 +27,23 @@ public class ProductServiceImpl implements ProductService{
 	@Autowired
 	CategoryService categoryService;
 	
-	
 	//repository
 	
-	@Override
 	public void minusById(Long id, int quantity) {
 		productRepository.minusById	(id,quantity);
 	}
 
-	@Override
+
 	public Optional<Product> findById(Long id) {
 		return productRepository.findById(id);
 	}
 
-	@Override
+
 	public List<Product> findByCategoryId(Long categoryId) {
 		return productRepository.findByCategoryId(categoryId);
 	}
 
-	@Override
+
 	public List<Product> findByKeywordFullTextBoolean(String keyword) {
 		return productRepository.findByKeywordFullTextBoolean(keyword);
 	}

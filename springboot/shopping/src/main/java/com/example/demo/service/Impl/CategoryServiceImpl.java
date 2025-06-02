@@ -24,32 +24,26 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	//repository
 
-	@Override
 	public Optional<Category> findBySlug(String slug) {
 		return categoryRepository.findBySlug(slug);
 	}
 
-	@Override
 	public List<Category> findAll() {
 		return categoryRepository.findAll();
 	}
 
-	@Override
 	public Optional<Category> findById(Long CategoriyId) {
 		return categoryRepository.findById(CategoriyId);
 	}
 
-	@Override
 	public List<Category> findByParentId(Long parentId) {
 		return categoryRepository.findByParentId(parentId);
 	}
 
-	@Override
 	public List<Category> findChildrenBySlug(String slug) {
 		return categoryRepository.findChildrenBySlug(slug);
 	}
 
-	
 	//邏輯
 
 	@Override

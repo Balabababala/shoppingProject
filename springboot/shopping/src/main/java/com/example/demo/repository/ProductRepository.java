@@ -15,17 +15,17 @@ import com.example.demo.model.entity.Product;
 
 @Repository
 public interface ProductRepository extends JpaRepository <Product, Long>{
-	//已有方法 find.... save delete
+	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	
-    // 你可以加自訂的方法，像是：
+	Optional<Product> findById(Long id);//對照用 id->name
+	List<Product> findByCategoryId(Long categoryId);
+	
+	// 你可以加自訂的方法，像是：
 	@Modifying
 	@Transactional
 	@Query(value ="UPDATE products SET stock= stock- :quantity  WHERE id=:id", nativeQuery = true)
 	void minusById(@Param("id")Long id, @Param("quantity") int quantity);
 	
-	
-	Optional<Product> findById(Long id);//對照用 id->name
-	List<Product> findByCategoryId(Long categoryId);
 	
 //	//MySQL 內建的相似度比較
 //	@Query(value = "SELECT *, MATCH(name, description) AGAINST (:keyword IN NATURAL LANGUAGE MODE) AS score "

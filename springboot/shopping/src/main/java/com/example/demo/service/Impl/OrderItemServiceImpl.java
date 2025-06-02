@@ -21,7 +21,7 @@ public class OrderItemServiceImpl implements OrderItemService{
 	
 	//repository
 	
-	@Override
+
 	public void save(OrderItem orderItem) {
 		orderItemRepository.save(orderItem);
 	}

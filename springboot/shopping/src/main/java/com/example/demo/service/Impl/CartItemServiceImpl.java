@@ -32,32 +32,26 @@ public class CartItemServiceImpl implements CartItemService{
 
 	//repository	
 	
-	@Override
 	public void deleteByUserId(Long userId) {
 		cartItemRepository.deleteByUserId(userId);
 	}
 
-	@Override
 	public List<CartItem> findByUserId(Long userId) {
 		return cartItemRepository.findByUserId(userId);
 	}
-
-	@Override
 	
 	public List<CartItem> findByUserIdWithProduct(Long userId){
 		return cartItemRepository.findByUserIdWithProduct(userId);
 	}
-	@Override
+
 	public List<CartItem> findByUserIdAndProductId(Long userId, Long productId) {
 		return cartItemRepository.findByUserIdAndProductId(userId,productId);
 	}
 	
-	@Override
 	public void addCartItem(Long userId,Long productId ,Integer quantity) {
 		cartItemRepository.addCartItem(userId, productId, quantity);
 	};
 
-	@Override
 	public void addCartItemIfExist(Long userId, Long productId, Integer quantity) {
 		cartItemRepository.addCartItemIfExist(userId, productId, quantity);
 	}
