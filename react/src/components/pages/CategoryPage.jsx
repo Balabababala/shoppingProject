@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import ProductCard from '../ProductCard';  // 路徑依實際調整
+import CartEnabledProductCard from '../CartEnabledProductCard';
+
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {
   if (!categories || categories.length === 0) return null;
@@ -84,10 +85,7 @@ function CategoryPage() {
     setCurrentPage(pageNum);
   };
 
-  const handleAddToCart = (product) => {
-    // TODO: 實作加入購物車功能，或呼叫上層狀態管理
-    console.log('加入購物車', product);
-  };
+  
 
   return (
     <div className="container mt-4">
@@ -117,7 +115,7 @@ function CategoryPage() {
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {pagedProducts.map(p => (
                   <div key={p.id} className="col">
-                    <ProductCard product={p} onAddToCart={handleAddToCart} />
+                    <CartEnabledProductCard product={p} />
                   </div>
                 ))}
               </div>

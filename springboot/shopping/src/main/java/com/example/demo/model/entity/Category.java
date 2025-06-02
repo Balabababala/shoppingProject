@@ -15,10 +15,14 @@ import jakarta.persistence.GenerationType;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table(name = "categories")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class Category {
 
@@ -28,7 +32,7 @@ public class Category {
 
     private String name;
     
-    @Column(name = "parent_id", insertable = false, updatable = false)
+    @Column(name = "parent_id", insertable = false, updatable = false) // 自己對自己 保留方法
     private Long parentId;
     
     private String slug;

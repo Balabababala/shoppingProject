@@ -1,13 +1,16 @@
 package com.example.demo.model.entity;
 
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
 import lombok.Data;
-
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "login_logs")
+@NoArgsConstructor
+@AllArgsConstructor
 @Data
 public class LoginLog {
 
@@ -30,17 +33,6 @@ public class LoginLog {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-
-    // Constructors
-    public LoginLog() {}
-
-    public LoginLog(User user, String ipAddress, String userAgent, Boolean success) {
-        this.user = user;
-        this.ipAddress = ipAddress;
-        this.userAgent = userAgent;
-        this.success = success;
-        this.loginTime = LocalDateTime.now(); // 若 DB 有自動填，也可省略
-    }
 
    
 }

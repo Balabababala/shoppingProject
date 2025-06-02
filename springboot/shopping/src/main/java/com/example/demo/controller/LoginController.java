@@ -40,11 +40,11 @@ public class LoginController {
 		//比對
 		try {
 			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功
-				UserDto sessionUser = new UserDto(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
-				session.setAttribute("sessionUser", sessionUser);
+				UserDto userDto = new UserDto(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
+				session.setAttribute("sessionUser", userDto);
 				user.setLastLoginAt(LocalDateTime.now());//更新 最近登入時間
 														 //登入紀錄 還沒建 Entity
-				return ResponseEntity.ok(ApiResponse.success("登入成功", sessionUser));
+				return ResponseEntity.ok(ApiResponse.success("登入成功", userDto));
 			}
 			return ResponseEntity.badRequest().body(ApiResponse.error("登入失敗"));
 		} catch (ShoppingException e) {

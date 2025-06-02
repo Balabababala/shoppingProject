@@ -27,14 +27,12 @@ char set utf8mb4;
 
 use myshoppingdb;
 
-
 CREATE TABLE roles(
    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '角色 ID',
    name VARCHAR(255) NOT NULL UNIQUE COMMENT '角色名稱',
    description VARCHAR(255) COMMENT '描述',
    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間'
 );
-
 
 CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '使用者 ID',
@@ -44,14 +42,14 @@ CREATE TABLE users (
     email VARCHAR(255) UNIQUE COMMENT '電子郵件',
     role_id BIGINT NOT NULL COMMENT '角色 ID',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     last_login_at DATETIME COMMENT '最後登入時間',
     is_active BOOLEAN COMMENT '是否啟用',
     is_email_verified BOOLEAN COMMENT '是否驗證'
 );
 
 CREATE TABLE login_logs (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '登錄紀錄 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '登錄紀錄 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     ip_address VARCHAR(45) COMMENT 'IP 地址',
     user_agent TEXT COMMENT '使用者代理',
@@ -61,7 +59,7 @@ CREATE TABLE login_logs (
 );
 
 CREATE TABLE categories (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '分類 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '分類 ID',
     name VARCHAR(100) UNIQUE NOT NULL COMMENT '分類名稱',
     slug VARCHAR(100) UNIQUE NOT NULL COMMENT '分類 slug，供 URL 使用',
     parent_id BIGINT COMMENT '父分類 ID',
@@ -80,32 +78,30 @@ CREATE TABLE products (
     category_id BIGINT NOT NULL COMMENT '分類 ID',
     seller_id BIGINT NOT NULL COMMENT '賣家 ID',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (category_id) REFERENCES categories(id),
-    FOREIGN KEY (seller_id) REFERENCES users(id) -- 或 sellers(id)
+    FOREIGN KEY (seller_id) REFERENCES users(id)
 );
-
-
 
 CREATE TABLE cart_items (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '購物車項目 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     product_id BIGINT NOT NULL COMMENT '產品 ID',
     quantity INT COMMENT '數量',
-    added_at DATETIME COMMENT '加入時間',
-    updated_at DATETIME COMMENT '更新時間',
+    added_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '加入時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 CREATE TABLE orders (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '訂單 ID',
-    user_id BIGINT NOT NULL COMMENT '使用者 ID',
+    buyer_id BIGINT NOT NULL COMMENT '使用者 ID',
     seller_id BIGINT NOT NULL COMMENT '賣方 ID',
     order_date DATETIME COMMENT '訂單時間',
-    order_status ENUM('PENDING', 'PAID', 'SHIPPED', 'DELIVERED', 'COMPLETED', 'CANCELLED', 'RETURN_REQUESTED', 'RETURNED') COMMENT '訂單狀態',
-    payment_status ENUM('PENDING', 'PAID', 'FAILED', 'REFUNDED') COMMENT '付款狀態',
-    shipment_status ENUM('NOT_SHIPPED', 'SHIPPED', 'IN_TRANSIT', 'DELIVERED', 'RETURNING') COMMENT '出貨與物流狀態',
+    order_status ENUM('PENDING', 'PAID', 'SHIPPED', 'DELIVERED', 'COMPLETED', 'CANCELLED', 'RETURN_REQUESTED', 'RETURNED') DEFAULT 'PENDING' COMMENT '訂單狀態',
+    payment_status ENUM('PENDING', 'PAID', 'FAILED', 'REFUNDED') DEFAULT 'PENDING' COMMENT '付款狀態',
+    shipment_status ENUM('NOT_SHIPPED', 'SHIPPED', 'IN_TRANSIT', 'DELIVERED', 'RETURNING')DEFAULT 'NOT_SHIPPED' COMMENT '出貨與物流狀態',
     shipping_method VARCHAR(100) COMMENT '配送方式',
     payment_method VARCHAR(100) COMMENT '付款方式',
     tracking_number VARCHAR(255) COMMENT '物流追蹤號碼',
@@ -114,9 +110,9 @@ CREATE TABLE orders (
     total_amount DECIMAL(10, 2) COMMENT '訂單總金額',
     shipping_address TEXT COMMENT '配送地址',
     notes TEXT COMMENT '備註',
-    created_at DATETIME COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
-    FOREIGN KEY (user_id) REFERENCES users(id),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
+    FOREIGN KEY (buyer_id) REFERENCES users(id),
     FOREIGN KEY (seller_id) REFERENCES users(id)
 );
 
@@ -127,48 +123,48 @@ CREATE TABLE order_items (
     quantity INT COMMENT '數量',
     unit_price DECIMAL(10, 2) COMMENT '單價',
     total_price DECIMAL(10, 2) COMMENT '總金額',
-    created_at DATETIME COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (order_id) REFERENCES orders(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 CREATE TABLE recently_viewed (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '最近瀏覽 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '最近瀏覽 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     product_id BIGINT NOT NULL COMMENT '產品 ID',
-    viewed_at DATETIME COMMENT '瀏覽時間',
+    viewed_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '瀏覽時間',
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 CREATE TABLE search_history (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '搜尋歷史 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '搜尋歷史 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     keyword VARCHAR(255) COMMENT '搜尋關鍵字',
-    searched_at DATETIME COMMENT '搜尋時間',
+    searched_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '搜尋時間',
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
 CREATE TABLE recommended_products (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '推薦產品 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '推薦產品 ID',
     user_id BIGINT COMMENT '使用者 ID',
     product_id BIGINT NOT NULL COMMENT '產品 ID',
     reason VARCHAR(255) COMMENT '推薦原因',
-    created_at DATETIME COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (user_id) REFERENCES users(id),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );
 
 CREATE TABLE product_reviews (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '產品評價 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '產品評價 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     product_id BIGINT NOT NULL COMMENT '產品 ID',
     rating INT COMMENT '評分',
     comment TEXT COMMENT '評論',
-    created_at DATETIME COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     is_visible BOOLEAN COMMENT '是否顯示',
     UNIQUE (user_id, product_id),
     FOREIGN KEY (user_id) REFERENCES users(id),
@@ -176,15 +172,17 @@ CREATE TABLE product_reviews (
 );
 
 CREATE TABLE notifications (
-    id BIGINT AUTO_INCREMENT PRIMARY KEY  COMMENT '通知 ID',
+    id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '通知 ID',
     user_id BIGINT NOT NULL COMMENT '使用者 ID',
     type VARCHAR(100) COMMENT '通知類型',
     message TEXT COMMENT '通知訊息',
     status ENUM('PENDING', 'READ', 'ARCHIVED') COMMENT '通知狀態',
-    created_at DATETIME COMMENT '建立時間',
-    updated_at DATETIME COMMENT '更新時間',
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
+    updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
+
+
 
 
 ALTER TABLE products ADD FULLTEXT(name, description);  全文搜尋 給搜尋用的

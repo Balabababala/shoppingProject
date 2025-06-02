@@ -25,7 +25,7 @@ VALUES
 (11, 'Desktops', 'desktops', 4),
 (12, 'Smartphones', 'smartphones', 5),
 (13, 'Feature Phones', 'feature-phones', 5),
-下午 04:00 2025/5/28
+(14, 'Dummy Category', 'dummy-category', 6),
 (15, 'Pants', 'pants', 6),
 (16, 'Dresses', 'dresses', 7),
 (17, 'Skirts', 'skirts', 7),

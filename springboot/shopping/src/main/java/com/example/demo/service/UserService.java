@@ -10,5 +10,6 @@ import jakarta.servlet.http.HttpSession;
 
 public interface UserService {
 	User findUserByUserName(String username);
+	User findUserById(Long id);
 	boolean isLoginValid(LoginRequest loginDTO, User user, HttpSession session) throws ShoppingException;//登入驗證 loginDTO 符不符合資料庫     	
 }

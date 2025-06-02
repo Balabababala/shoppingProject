@@ -1,14 +1,14 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import ProductCard from '../ProductCard';
-import { AppContext } from '../../contexts/AppContext';  // 這行要加
+import CartEnabledProductCard from '../CartEnabledProductCard.jsx';
+
 
 function SearchPage() {
   const BASE_API = "http://localhost:8080/api";
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
 
-  const { userData,setToastMessage } = useContext(AppContext);  // 從 Context 拿 setToastMessage
+
 
   const keywordParam = searchParams.get('keyword') || '';
   const [keyword, setKeyword] = useState(keywordParam);
@@ -54,16 +54,6 @@ function SearchPage() {
     }
   };
 
-  const handleAddToCart = (product) => {
-          if (!userData) {
-        setToastMessage('請先登入才能加入購物車');
-        return;
-      }
-
-      console.log("加入購物車", product);
-      setToastMessage(`${product.name} 已加入購物車`);
-      // 這裡放你的加入購物車邏輯，例如呼叫 API 還沒放
-  };
 
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
@@ -98,14 +88,11 @@ function SearchPage() {
       ) : (
         <>
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-            {pagedProducts.map(product => (
-              <div key={product.id} className="col">
-                <ProductCard
-                  product={product}
-                  onAddToCart={handleAddToCart}  // 傳入函式，不要加括號喔
-                />
-              </div>
-            ))}
+              {pagedProducts.map(p => (
+                <div key={p.id} className="col">
+                  <CartEnabledProductCard product={p} />
+                </div>
+              ))}
           </div>
 
           {/* 分頁 */}

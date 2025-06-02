@@ -1,12 +1,15 @@
 package com.example.demo.service;
 
 import java.util.List;
+import java.util.Map;
 
 import com.example.demo.model.dto.CartItemResponse;
-
+import com.example.demo.model.entity.OrderItem;
 
 
 public interface CartItemService {
-	List <CartItemResponse> getCart(Long userId);
-	void addCartItem(Long userId,Long ProductId,Integer quantity);
-}
+	List <CartItemResponse> getCart(Long userId);					//顯示購物車資料用的
+	void addCartItem(Long userId,Long ProductId,Integer quantity);	//新增購物車物品 用的
+	void deleteAllCartItemByUser(Long userId);						//清空購物車
+	Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId);// 把userId 的 orderItems分賣家  用userId而不是直接傳入orderItems的原因 防 N+1
+}					
