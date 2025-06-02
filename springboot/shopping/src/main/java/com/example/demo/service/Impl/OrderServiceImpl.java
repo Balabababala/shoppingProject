@@ -74,9 +74,8 @@ public class OrderServiceImpl implements OrderService{
 				orderItem.setOrderId(orderId);
 				orderItemService.save(orderItem);    
 			}		
-		};
+		}
+		//清購物車
+		cartItemService.deleteAllCartItemByUser(BuyerId);
 	}
-
-	
-	
 }
