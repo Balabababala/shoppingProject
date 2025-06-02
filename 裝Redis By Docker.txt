@@ -1,0 +1,6 @@
+裝AMD64 (X86)
+
+
+docker run --name redis -p 6379:6379 -d redis //裝redis
+docker ps				      //看docker 映像黨
+docker exec -it redis redis-cli		      // 執行redis
