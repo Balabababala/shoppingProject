@@ -19,12 +19,24 @@ public class OrderItemServiceImpl implements OrderItemService{
 	@Autowired
 	private OrderItemRepository orderItemRepository;
 	
+	//repository
+	
+	@Override
+	public void save(OrderItem orderItem) {
+		orderItemRepository.save(orderItem);
+	}
+	
+	
+	//邏輯
+	
 	@Override
 	public void addOrderItem(List<OrderItem> orderItems) {
 		for(OrderItem orderItem:orderItems) {
-			orderItemRepository.save(orderItem);
+			save(orderItem);
 		}		
 	}
+
+	
 
 	@Override
 	public OrderItem cartItemToOrderItem(CartItem cartItem) {

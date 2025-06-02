@@ -1021,2007 +1021,4006 @@ FROM
 LIMIT 2000;
 
 -- 生成 2000 orders
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1, 986, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2487.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (2, 501, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9463.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (3, 807, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4197.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (4, 424, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5866.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (5, 157, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7525.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (6, 781, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 472.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (7, 125, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9254.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (8, 523, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 345.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (9, 864, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 800.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (10, 647, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9575.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (11, 442, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1371.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (12, 771, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10012.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (13, 240, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8533.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (14, 232, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5825.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (15, 818, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3174.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (16, 812, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8187.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (17, 265, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2054.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (18, 252, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8945.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (19, 665, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2584.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (20, 899, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5092.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (21, 544, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1340.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (22, 672, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8999.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (23, 708, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9877.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (24, 124, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2964.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (25, 241, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8890.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (26, 913, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 402.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (27, 496, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4479.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (28, 27, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 213.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (29, 369, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8352.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (30, 914, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5289.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (31, 625, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7157.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (32, 534, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 900.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (33, 84, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4818.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (34, 233, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3807.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (35, 124, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5763.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (36, 496, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8336.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (37, 375, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6191.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (38, 474, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1346.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (39, 60, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5213.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (40, 903, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4091.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (41, 790, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7557.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (42, 257, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5262.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (43, 87, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4848.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (44, 982, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6189.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (45, 414, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2956.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (46, 763, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6124.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (47, 625, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8845.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (48, 770, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2794.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (49, 83, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1477.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (50, 4, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1034.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (51, 278, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7854.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (52, 456, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 166.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (53, 130, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7092.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (54, 650, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9043.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (55, 716, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2503.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (56, 60, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6179.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (57, 863, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4138.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (58, 455, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1219.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (59, 430, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1958.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (60, 458, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3192.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (61, 191, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2862.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (62, 746, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 391.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (63, 209, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3186.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (64, 264, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6561.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (65, 86, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1943.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (66, 934, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8122.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (67, 657, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9093.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (68, 985, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7575.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (69, 625, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7414.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (70, 808, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8941.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (71, 492, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6196.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (72, 730, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2117.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (73, 492, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9877.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (74, 588, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4370.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (75, 365, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5003.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (76, 353, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8827.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (77, 860, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4455.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (78, 343, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1802.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (79, 49, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8744.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (80, 488, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3066.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (81, 877, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 359.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (82, 269, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5747.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (83, 684, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8648.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (84, 549, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5463.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (85, 924, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9524.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (86, 276, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1498.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (87, 916, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6399.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (88, 652, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6337.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (89, 269, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6189.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (90, 158, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3759.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (91, 628, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6959.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (92, 617, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9782.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (93, 53, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1868.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (94, 690, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5263.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (95, 689, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7403.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (96, 2, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3707.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (97, 184, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2602.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (98, 899, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2926.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (99, 295, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9947.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (100, 954, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4614.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (101, 51, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7919.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (102, 758, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1576.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (103, 276, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9822.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (104, 567, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8415.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (105, 195, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3417.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (106, 15, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7796.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (107, 571, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1160.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (108, 508, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1057.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (109, 523, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1371.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (110, 99, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8913.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (111, 513, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6561.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (112, 78, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5263.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (113, 576, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6296.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (114, 895, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4689.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (115, 635, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8497.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (116, 890, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2175.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (117, 503, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4862.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (118, 846, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1729.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (119, 100, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3225.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (120, 604, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9175.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (121, 916, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2094.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (122, 350, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3169.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (123, 962, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 367.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (124, 633, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7689.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (125, 740, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8253.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (126, 267, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8667.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (127, 105, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3829.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (128, 829, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7252.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (129, 211, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3322.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (130, 505, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2239.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (131, 846, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2207.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (132, 652, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4631.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (133, 302, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8513.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (134, 149, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7992.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (135, 917, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9367.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (136, 972, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9290.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (137, 458, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6701.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (138, 499, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6265.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (139, 290, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8342.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (140, 24, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8985.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (141, 426, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6205.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (142, 208, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5254.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (143, 634, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4225.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (144, 357, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1782.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (145, 731, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4827.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (146, 169, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5624.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (147, 185, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4209.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (148, 504, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3292.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (149, 986, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3568.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (150, 977, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8174.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (151, 149, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5453.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (152, 509, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 392.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (153, 987, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1928.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (154, 358, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7082.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (155, 921, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3921.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (156, 417, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5247.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (157, 564, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9209.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (158, 700, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3762.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (159, 906, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9877.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (160, 64, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5906.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (161, 775, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8733.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (162, 687, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8896.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (163, 45, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8185.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (164, 878, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2261.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (165, 426, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4390.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (166, 540, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2652.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (167, 222, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4080.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (168, 97, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8667.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (169, 369, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1433.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (170, 63, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5645.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (171, 993, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7583.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (172, 796, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7004.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (173, 218, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5921.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (174, 94, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5677.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (175, 115, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2215.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (176, 268, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6474.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (177, 287, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9749.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (178, 355, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7785.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (179, 945, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6183.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (180, 263, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8922.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (181, 398, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 649.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (182, 973, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7656.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (183, 814, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6686.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (184, 439, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 967.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (185, 403, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9101.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (186, 935, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 928.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (187, 153, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 526.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (188, 497, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6736.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (189, 612, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6555.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (190, 933, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3422.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (191, 364, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6670.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (192, 43, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7487.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (193, 619, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1878.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (194, 14, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9857.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (195, 565, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8943.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (196, 817, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6912.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (197, 526, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5449.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (198, 244, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1064.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (199, 551, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9496.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (200, 999, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3408.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (201, 906, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2807.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (202, 276, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2260.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (203, 753, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6239.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (204, 577, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3107.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (205, 474, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2268.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (206, 780, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7403.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (207, 701, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9873.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (208, 660, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9951.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (209, 363, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3429.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (210, 710, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7188.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (211, 377, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8718.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (212, 901, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1601.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (213, 970, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5971.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (214, 9, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 693.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (215, 728, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1970.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (216, 257, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2473.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (217, 420, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 672.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (218, 144, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3250.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (219, 529, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4570.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (220, 91, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7690.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (221, 348, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7045.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (222, 168, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5546.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (223, 414, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9349.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (224, 544, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4230.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (225, 872, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4526.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (226, 517, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1523.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (227, 853, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4598.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (228, 756, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8073.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (229, 955, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6603.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (230, 156, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5088.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (231, 825, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7747.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (232, 821, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8621.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (233, 474, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9824.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (234, 321, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8198.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (235, 377, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8304.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (236, 990, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4198.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (237, 355, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2086.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (238, 498, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5338.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (239, 535, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5716.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (240, 5, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4901.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (241, 320, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7117.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (242, 370, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1946.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (243, 105, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 328.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (244, 557, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1602.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (245, 983, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4573.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (246, 261, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6814.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (247, 411, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8100.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (248, 803, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2384.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (249, 877, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7659.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (250, 321, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1013.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (251, 41, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2232.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (252, 876, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 211.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (253, 325, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2685.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (254, 226, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8369.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (255, 312, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7384.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (256, 612, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8105.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (257, 53, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7485.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (258, 413, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5044.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (259, 437, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4638.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (260, 624, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 631.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (261, 728, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8092.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (262, 181, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8248.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (263, 772, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7875.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (264, 868, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2975.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (265, 627, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5599.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (266, 479, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6629.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (267, 473, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4722.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (268, 68, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1405.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (269, 148, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7622.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (270, 225, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7376.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (271, 650, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7749.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (272, 342, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1402.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (273, 709, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1257.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (274, 366, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7577.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (275, 106, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4055.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (276, 541, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2252.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (277, 829, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6977.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (278, 274, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9869.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (279, 758, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3941.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (280, 22, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9391.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (281, 854, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5355.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (282, 19, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4920.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (283, 50, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1796.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (284, 830, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8281.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (285, 671, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1042.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (286, 741, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5778.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (287, 291, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4892.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (288, 289, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6124.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (289, 914, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 915.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (290, 637, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1638.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (291, 286, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8235.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (292, 652, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 182.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (293, 14, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5798.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (294, 414, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1049.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (295, 175, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6141.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (296, 787, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4013.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (297, 549, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7680.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (298, 846, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7115.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (299, 347, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3697.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (300, 619, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5393.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (301, 573, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6842.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (302, 400, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9721.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (303, 733, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3777.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (304, 887, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2230.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (305, 467, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5802.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (306, 162, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2322.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (307, 419, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7780.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (308, 357, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5244.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (309, 907, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9501.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (310, 792, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3343.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (311, 457, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 735.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (312, 330, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8714.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (313, 624, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3637.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (314, 318, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4719.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (315, 939, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3964.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (316, 889, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3076.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (317, 449, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5556.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (318, 225, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2620.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (319, 399, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 947.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (320, 87, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5657.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (321, 504, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4637.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (322, 509, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7895.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (323, 1000, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4558.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (324, 969, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8342.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (325, 140, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1555.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (326, 808, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6284.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (327, 883, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6346.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (328, 291, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3461.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (329, 119, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8352.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (330, 868, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 923.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (331, 300, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1005.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (332, 409, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1676.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (333, 440, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3740.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (334, 464, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2195.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (335, 617, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1720.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (336, 217, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8176.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (337, 273, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 522.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (338, 375, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2454.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (339, 397, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4534.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (340, 942, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5945.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (341, 577, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4574.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (342, 238, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5668.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (343, 477, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2414.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (344, 502, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7416.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (345, 195, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7280.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (346, 361, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4523.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (347, 69, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2168.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (348, 244, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8277.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (349, 259, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5857.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (350, 845, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10019.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (351, 915, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9890.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (352, 821, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9744.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (353, 711, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8452.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (354, 271, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1097.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (355, 818, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3082.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (356, 910, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8061.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (357, 546, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3462.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (358, 706, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4350.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (359, 703, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 135.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (360, 635, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2543.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (361, 458, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4959.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (362, 772, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6336.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (363, 535, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 312.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (364, 593, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5931.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (365, 890, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8658.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (366, 224, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3552.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (367, 581, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9921.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (368, 747, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3358.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (369, 448, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5323.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (370, 548, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7590.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (371, 303, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2815.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (372, 32, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8717.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (373, 408, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1043.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (374, 84, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5534.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (375, 481, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5915.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (376, 42, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9711.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (377, 374, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6272.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (378, 429, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8116.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (379, 24, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2883.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (380, 952, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5383.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (381, 838, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8072.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (382, 258, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 686.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (383, 487, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1645.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (384, 276, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2407.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (385, 862, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2446.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (386, 856, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4528.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (387, 517, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3904.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (388, 204, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8936.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (389, 89, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6196.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (390, 973, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8561.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (391, 412, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7313.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (392, 692, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7296.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (393, 877, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 209.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (394, 572, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3968.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (395, 505, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3481.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (396, 129, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9307.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (397, 6, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8589.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (398, 985, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6787.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (399, 714, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7461.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (400, 158, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 529.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (401, 608, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 554.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (402, 690, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6006.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (403, 266, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6898.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (404, 290, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2219.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (405, 535, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4492.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (406, 35, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7204.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (407, 966, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1491.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (408, 15, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2283.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (409, 257, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6121.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (410, 65, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4268.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (411, 563, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5938.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (412, 820, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9024.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (413, 362, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5143.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (414, 327, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4232.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (415, 901, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2031.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (416, 739, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3962.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (417, 437, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7310.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (418, 971, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2784.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (419, 416, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8053.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (420, 450, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2520.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (421, 529, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1325.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (422, 656, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 458.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (423, 593, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6159.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (424, 781, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3875.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (425, 889, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2489.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (426, 20, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2074.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (427, 821, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 886.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (428, 561, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3741.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (429, 753, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7499.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (430, 731, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4454.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (431, 103, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4474.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (432, 466, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6396.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (433, 263, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7320.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (434, 233, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9950.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (435, 229, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7146.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (436, 492, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4728.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (437, 207, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7550.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (438, 99, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5827.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (439, 676, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3023.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (440, 765, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9592.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (441, 293, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8173.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (442, 501, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2047.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (443, 630, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4831.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (444, 128, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2272.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (445, 694, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7134.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (446, 253, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2481.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (447, 562, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3071.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (448, 779, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6332.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (449, 557, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4644.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (450, 565, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7089.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (451, 571, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7805.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (452, 785, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7641.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (453, 353, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7618.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (454, 932, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5121.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (455, 407, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3734.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (456, 743, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3875.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (457, 749, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6180.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (458, 269, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1865.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (459, 840, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1726.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (460, 554, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7271.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (461, 998, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6630.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (462, 789, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3976.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (463, 141, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2455.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (464, 854, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6928.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (465, 776, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7800.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (466, 328, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 949.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (467, 257, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 325.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (468, 487, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9448.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (469, 439, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 207.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (470, 419, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2745.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (471, 90, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8333.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (472, 747, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9190.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (473, 473, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9920.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (474, 194, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6135.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (475, 898, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7040.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (476, 461, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1956.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (477, 42, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1548.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (478, 755, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4780.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (479, 512, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3310.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (480, 315, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8360.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (481, 694, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7279.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (482, 616, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 605.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (483, 487, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6994.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (484, 824, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5706.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (485, 506, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1362.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (486, 416, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6487.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (487, 77, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6199.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (488, 121, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9634.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (489, 762, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1966.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (490, 998, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2817.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (491, 388, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4334.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (492, 907, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9343.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (493, 338, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4822.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (494, 367, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2955.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (495, 827, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4573.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (496, 450, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2670.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (497, 952, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5552.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (498, 807, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5128.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (499, 430, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9914.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (500, 491, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9822.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (501, 616, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 123.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (502, 643, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 813.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (503, 192, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9497.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (504, 10, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7034.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (505, 638, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5316.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (506, 784, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2134.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (507, 719, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4333.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (508, 131, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3970.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (509, 207, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3636.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (510, 89, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3317.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (511, 375, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8123.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (512, 452, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1122.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (513, 567, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9581.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (514, 548, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3747.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (515, 716, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1324.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (516, 920, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6023.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (517, 507, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6668.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (518, 349, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2656.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (519, 899, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9124.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (520, 532, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9554.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (521, 231, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7148.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (522, 248, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7989.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (523, 537, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6495.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (524, 333, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6130.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (525, 176, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8817.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (526, 978, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4488.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (527, 722, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5987.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (528, 103, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4055.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (529, 650, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5830.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (530, 71, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8519.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (531, 202, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6421.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (532, 399, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4845.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (533, 386, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2941.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (534, 108, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9706.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (535, 903, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3157.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (536, 505, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2797.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (537, 484, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5087.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (538, 38, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1883.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (539, 132, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3087.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (540, 601, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8593.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (541, 533, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6713.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (542, 176, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8427.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (543, 254, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10030.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (544, 549, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3236.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (545, 97, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7770.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (546, 712, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9493.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (547, 697, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8684.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (548, 808, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1105.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (549, 292, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5790.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (550, 18, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1206.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (551, 138, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7801.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (552, 791, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3409.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (553, 765, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5957.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (554, 490, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9330.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (555, 374, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5754.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (556, 695, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5841.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (557, 549, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3579.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (558, 565, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2479.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (559, 841, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4157.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (560, 156, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6716.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (561, 780, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5895.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (562, 456, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2376.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (563, 896, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7693.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (564, 971, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4380.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (565, 723, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2602.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (566, 614, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1235.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (567, 846, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 833.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (568, 384, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5181.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (569, 106, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7046.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (570, 517, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8771.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (571, 409, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4594.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (572, 968, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5793.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (573, 210, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2466.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (574, 488, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3909.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (575, 445, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9007.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (576, 702, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6180.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (577, 411, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 227.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (578, 165, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8699.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (579, 527, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9456.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (580, 569, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1987.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (581, 223, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9435.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (582, 240, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4506.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (583, 386, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7555.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (584, 747, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7655.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (585, 523, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9863.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (586, 109, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2994.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (587, 900, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9729.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (588, 618, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4034.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (589, 204, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2601.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (590, 929, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6949.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (591, 313, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9154.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (592, 522, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6801.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (593, 558, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5329.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (594, 65, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8483.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (595, 814, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9227.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (596, 608, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4463.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (597, 126, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1656.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (598, 144, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4655.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (599, 542, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9236.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (600, 312, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7228.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (601, 600, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6402.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (602, 404, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3046.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (603, 711, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5378.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (604, 735, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 545.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (605, 529, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1272.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (606, 360, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2336.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (607, 573, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2800.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (608, 817, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9599.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (609, 685, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7812.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (610, 442, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5407.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (611, 149, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6832.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (612, 162, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3539.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (613, 681, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7074.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (614, 726, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5029.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (615, 458, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4062.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (616, 999, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 750.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (617, 169, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7895.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (618, 120, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4652.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (619, 922, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6426.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (620, 430, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8929.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (621, 722, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8218.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (622, 149, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9352.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (623, 33, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3975.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (624, 569, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6284.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (625, 401, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6347.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (626, 898, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4471.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (627, 28, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4488.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (628, 422, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2623.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (629, 913, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1574.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (630, 50, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1983.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (631, 415, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 582.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (632, 945, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1635.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (633, 775, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6077.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (634, 635, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7130.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (635, 686, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7502.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (636, 942, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8142.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (637, 880, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2506.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (638, 177, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 369.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (639, 62, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7235.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (640, 83, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6621.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (641, 856, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4172.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (642, 984, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2164.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (643, 955, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7125.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (644, 500, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9776.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (645, 324, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7255.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (646, 973, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 664.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (647, 347, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3656.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (648, 84, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8460.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (649, 177, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6945.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (650, 356, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4806.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (651, 417, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4548.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (652, 121, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6721.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (653, 650, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1923.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (654, 770, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7886.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (655, 858, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4856.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (656, 784, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8275.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (657, 284, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4105.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (658, 220, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9130.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (659, 443, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5214.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (660, 716, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3191.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (661, 180, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3061.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (662, 829, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3308.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (663, 687, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2901.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (664, 114, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6067.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (665, 990, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7015.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (666, 971, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 931.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (667, 773, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8889.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (668, 590, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9509.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (669, 247, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4856.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (670, 146, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4071.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (671, 863, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6534.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (672, 814, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9169.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (673, 516, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6054.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (674, 614, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5330.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (675, 794, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10081.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (676, 222, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9171.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (677, 384, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7918.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (678, 980, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10026.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (679, 820, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3641.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (680, 193, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9173.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (681, 72, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2086.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (682, 888, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4098.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (683, 424, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3810.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (684, 294, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6889.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (685, 921, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4677.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (686, 872, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2803.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (687, 907, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1581.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (688, 15, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2337.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (689, 344, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7022.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (690, 446, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7717.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (691, 986, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1735.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (692, 114, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2610.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (693, 48, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6369.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (694, 489, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2101.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (695, 689, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 353.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (696, 139, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8466.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (697, 870, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8495.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (698, 124, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7157.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (699, 100, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3626.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (700, 63, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6511.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (701, 679, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6633.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (702, 428, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4213.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (703, 280, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3624.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (704, 754, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3274.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (705, 216, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3622.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (706, 669, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 391.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (707, 866, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9190.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (708, 529, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9969.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (709, 676, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6706.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (710, 28, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7773.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (711, 430, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2611.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (712, 951, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9214.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (713, 744, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6882.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (714, 805, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8628.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (715, 1000, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5252.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (716, 467, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7515.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (717, 986, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7222.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (718, 846, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1725.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (719, 573, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7800.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (720, 431, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9795.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (721, 772, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7084.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (722, 513, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7274.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (723, 970, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3283.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (724, 633, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4755.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (725, 20, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1608.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (726, 437, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 532.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (727, 803, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3538.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (728, 69, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2366.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (729, 143, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8444.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (730, 589, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6623.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (731, 844, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2281.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (732, 960, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7270.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (733, 720, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6087.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (734, 502, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1596.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (735, 458, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 454.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (736, 670, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4384.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (737, 68, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 764.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (738, 68, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7272.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (739, 82, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2002.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (740, 252, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5499.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (741, 441, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1275.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (742, 156, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9913.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (743, 704, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 751.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (744, 246, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8155.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (745, 393, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3702.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (746, 987, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5259.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (747, 872, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1550.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (748, 264, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 591.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (749, 290, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 393.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (750, 876, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4957.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (751, 711, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1337.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (752, 759, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9050.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (753, 177, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 158.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (754, 5, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1939.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (755, 986, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8304.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (756, 217, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6236.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (757, 529, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9062.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (758, 201, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4781.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (759, 69, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9810.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (760, 456, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2204.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (761, 352, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3751.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (762, 662, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3573.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (763, 772, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2215.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (764, 226, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1476.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (765, 121, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1717.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (766, 760, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2355.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (767, 981, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8302.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (768, 371, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2681.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (769, 697, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5406.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (770, 92, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5649.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (771, 555, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 439.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (772, 632, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9484.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (773, 350, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9612.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (774, 885, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9124.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (775, 858, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 162.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (776, 652, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4127.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (777, 778, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4031.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (778, 880, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6938.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (779, 689, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7327.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (780, 838, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7332.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (781, 940, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5430.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (782, 11, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 795.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (783, 58, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4502.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (784, 712, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 893.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (785, 774, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6308.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (786, 633, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8257.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (787, 211, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4771.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (788, 697, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1720.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (789, 239, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9495.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (790, 558, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 347.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (791, 840, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3590.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (792, 667, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8634.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (793, 105, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 577.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (794, 977, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 981.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (795, 845, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7895.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (796, 516, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5700.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (797, 442, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2583.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (798, 820, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3277.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (799, 936, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8090.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (800, 536, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8390.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (801, 839, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9828.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (802, 212, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 266.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (803, 308, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1102.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (804, 444, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1359.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (805, 811, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 340.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (806, 454, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10059.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (807, 342, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5162.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (808, 564, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9135.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (809, 228, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8785.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (810, 631, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8000.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (811, 618, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9469.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (812, 644, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3491.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (813, 349, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4293.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (814, 290, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 842.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (815, 310, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4409.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (816, 706, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3813.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (817, 748, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 106.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (818, 13, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 493.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (819, 356, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 495.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (820, 737, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9236.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (821, 644, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4470.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (822, 308, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7366.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (823, 971, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6676.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (824, 830, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3841.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (825, 971, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4669.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (826, 571, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5875.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (827, 279, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1204.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (828, 31, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8706.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (829, 652, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8622.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (830, 351, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7110.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (831, 403, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 698.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (832, 790, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7095.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (833, 349, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 970.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (834, 869, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6238.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (835, 229, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5592.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (836, 480, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1578.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (837, 810, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3038.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (838, 432, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4662.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (839, 137, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2608.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (840, 259, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4369.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (841, 534, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8620.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (842, 910, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9489.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (843, 4, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7436.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (844, 275, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4670.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (845, 144, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9971.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (846, 930, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5321.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (847, 945, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3283.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (848, 396, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9314.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (849, 498, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 942.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (850, 34, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5945.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (851, 918, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3442.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (852, 850, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5490.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (853, 379, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6660.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (854, 402, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5920.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (855, 887, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8558.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (856, 555, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6848.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (857, 837, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1671.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (858, 374, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4641.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (859, 33, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1755.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (860, 994, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6761.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (861, 431, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 957.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (862, 859, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7879.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (863, 167, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7276.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (864, 884, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5048.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (865, 748, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 752.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (866, 542, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4372.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (867, 263, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 816.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (868, 270, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6928.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (869, 376, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8551.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (870, 658, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7482.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (871, 13, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2200.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (872, 740, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5517.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (873, 553, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4248.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (874, 229, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4463.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (875, 262, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3574.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (876, 474, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1635.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (877, 754, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6800.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (878, 283, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8386.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (879, 366, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8774.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (880, 694, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7226.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (881, 889, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3341.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (882, 448, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 256.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (883, 185, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2039.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (884, 524, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1180.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (885, 162, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 158.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (886, 368, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1350.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (887, 420, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6729.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (888, 647, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8834.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (889, 512, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7438.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (890, 922, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8337.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (891, 171, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7204.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (892, 373, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8954.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (893, 418, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2209.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (894, 864, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6194.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (895, 612, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9553.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (896, 419, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4484.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (897, 171, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6379.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (898, 527, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6478.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (899, 826, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9303.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (900, 907, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5844.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (901, 319, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9298.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (902, 909, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 981.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (903, 586, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6803.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (904, 797, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8076.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (905, 916, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6745.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (906, 533, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3310.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (907, 241, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3427.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (908, 730, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5621.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (909, 430, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 767.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (910, 131, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3434.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (911, 546, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4270.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (912, 657, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1017.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (913, 608, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7270.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (914, 886, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2728.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (915, 427, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5494.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (916, 405, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6306.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (917, 401, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 790.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (918, 143, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9570.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (919, 169, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6998.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (920, 652, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8444.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (921, 620, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8350.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (922, 894, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8011.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (923, 758, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3564.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (924, 9, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2502.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (925, 517, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6814.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (926, 213, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4567.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (927, 321, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 154.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (928, 970, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8932.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (929, 378, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 661.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (930, 474, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 676.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (931, 589, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9513.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (932, 482, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3718.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (933, 343, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9592.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (934, 432, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 850.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (935, 751, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2750.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (936, 142, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2667.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (937, 168, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7870.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (938, 565, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9063.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (939, 708, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6052.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (940, 235, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3656.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (941, 833, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9831.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (942, 653, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8418.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (943, 400, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9210.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (944, 852, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3105.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (945, 712, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8455.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (946, 284, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1633.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (947, 263, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4101.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (948, 320, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5480.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (949, 793, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6431.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (950, 439, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2377.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (951, 102, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3803.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (952, 626, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7103.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (953, 256, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1620.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (954, 130, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10006.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (955, 162, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5513.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (956, 94, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8064.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (957, 849, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1329.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (958, 971, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2722.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (959, 86, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2911.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (960, 217, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8529.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (961, 650, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2319.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (962, 692, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6717.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (963, 249, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6155.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (964, 496, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8214.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (965, 239, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5946.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (966, 964, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1323.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (967, 805, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 160.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (968, 240, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 345.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (969, 532, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 371.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (970, 350, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2706.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (971, 472, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4329.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (972, 67, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3861.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (973, 942, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4231.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (974, 303, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1160.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (975, 557, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9397.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (976, 488, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 172.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (977, 929, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8692.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (978, 419, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9524.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (979, 955, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9557.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (980, 747, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3245.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (981, 273, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7314.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (982, 927, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2767.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (983, 100, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 523.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (984, 152, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4324.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (985, 940, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5611.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (986, 519, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1277.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (987, 6, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6710.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (988, 947, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5058.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (989, 350, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4753.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (990, 841, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2907.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (991, 452, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3174.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (992, 18, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5329.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (993, 91, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6300.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (994, 400, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1289.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (995, 717, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 493.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (996, 56, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4579.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (997, 192, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7390.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (998, 968, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 484.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (999, 283, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3250.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1000, 674, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7913.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1001, 49, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8302.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1002, 911, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8493.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1003, 164, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5273.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1004, 381, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 774.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1005, 698, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6798.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1006, 889, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4665.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1007, 140, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7307.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1008, 597, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8476.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1009, 961, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6159.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1010, 626, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8553.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1011, 551, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5274.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1012, 654, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9382.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1013, 26, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6341.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1014, 664, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 242.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1015, 370, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9791.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1016, 934, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3029.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1017, 865, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 144.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1018, 309, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4704.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1019, 474, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 107.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1020, 385, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6967.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1021, 75, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8831.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1022, 239, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5210.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1023, 75, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8124.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1024, 290, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8621.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1025, 228, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4092.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1026, 787, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3330.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1027, 777, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 663.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1028, 583, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 957.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1029, 81, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5781.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1030, 301, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5584.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1031, 970, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 646.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1032, 629, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3236.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1033, 990, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7333.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1034, 513, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9256.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1035, 953, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 351.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1036, 359, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 655.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1037, 672, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3271.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1038, 996, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2430.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1039, 298, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2406.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1040, 346, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9162.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1041, 739, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5730.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1042, 282, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5775.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1043, 652, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6691.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1044, 866, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4225.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1045, 675, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9403.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1046, 865, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6128.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1047, 881, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3805.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1048, 461, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4851.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1049, 551, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6817.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1050, 51, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4402.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1051, 207, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8261.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1052, 663, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6654.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1053, 96, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8370.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1054, 127, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2867.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1055, 266, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7089.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1056, 683, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 238.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1057, 965, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4032.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1058, 95, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9346.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1059, 630, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1985.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1060, 600, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3700.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1061, 674, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6117.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1062, 42, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8352.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1063, 441, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5697.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1064, 368, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 548.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1065, 347, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5062.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1066, 971, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1720.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1067, 438, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5788.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1068, 161, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6800.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1069, 541, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2605.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1070, 815, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3758.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1071, 170, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1459.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1072, 279, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3579.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1073, 364, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9285.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1074, 227, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8470.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1075, 657, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1587.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1076, 599, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3972.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1077, 645, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5683.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1078, 682, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8887.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1079, 185, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4641.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1080, 189, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5457.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1081, 796, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9309.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1082, 266, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1032.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1083, 957, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3646.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1084, 733, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1679.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1085, 510, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1555.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1086, 134, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7576.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1087, 650, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1851.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1088, 701, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9868.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1089, 184, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1622.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1090, 444, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8715.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1091, 308, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7275.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1092, 256, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2681.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1093, 748, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6848.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1094, 624, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 309.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1095, 776, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6787.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1096, 308, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5771.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1097, 898, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1333.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1098, 838, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1815.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1099, 659, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2885.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1100, 236, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4856.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1101, 868, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7289.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1102, 571, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9071.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1103, 177, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8844.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1104, 741, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8586.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1105, 127, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6025.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1106, 540, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9449.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1107, 959, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 390.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1108, 828, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5999.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1109, 1000, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7976.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1110, 684, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9426.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1111, 849, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4568.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1112, 261, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9851.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1113, 523, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3701.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1114, 217, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7120.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1115, 483, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8966.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1116, 836, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9603.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1117, 37, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 253.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1118, 582, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4812.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1119, 58, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6962.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1120, 239, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 371.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1121, 746, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9839.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1122, 257, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9008.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1123, 458, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7155.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1124, 2, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6607.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1125, 519, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 189.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1126, 254, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8075.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1127, 753, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7646.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1128, 144, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1825.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1129, 744, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8539.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1130, 529, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9987.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1131, 642, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8329.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1132, 855, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8130.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1133, 930, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3652.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1134, 944, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5224.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1135, 930, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6866.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1136, 595, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1868.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1137, 986, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2782.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1138, 373, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2366.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1139, 5, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6497.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1140, 417, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4173.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1141, 211, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2996.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1142, 575, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6410.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1143, 873, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6357.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1144, 693, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7695.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1145, 890, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8783.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1146, 448, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2363.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1147, 265, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7468.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1148, 572, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3308.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1149, 268, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 336.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1150, 71, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9136.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1151, 890, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10056.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1152, 306, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3087.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1153, 693, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9451.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1154, 743, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1296.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1155, 761, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 369.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1156, 763, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8332.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1157, 2, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2433.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1158, 397, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8692.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1159, 849, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7664.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1160, 277, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3938.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1161, 568, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1944.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1162, 397, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6513.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1163, 752, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4505.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1164, 539, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2904.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1165, 34, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2182.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1166, 901, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 815.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1167, 579, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6066.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1168, 58, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7251.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1169, 989, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4335.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1170, 967, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7037.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1171, 844, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6577.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1172, 655, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4162.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1173, 294, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1694.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1174, 730, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1579.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1175, 178, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3597.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1176, 94, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8614.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1177, 785, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6367.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1178, 856, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8944.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1179, 992, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3256.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1180, 972, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6305.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1181, 971, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1984.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1182, 792, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9510.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1183, 363, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2161.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1184, 445, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3153.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1185, 601, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9324.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1186, 613, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5463.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1187, 472, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4096.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1188, 725, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 166.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1189, 670, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4265.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1190, 492, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4923.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1191, 498, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2205.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1192, 994, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4963.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1193, 391, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9989.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1194, 858, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6812.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1195, 544, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9810.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1196, 831, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3748.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1197, 513, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7833.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1198, 122, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1495.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1199, 364, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5536.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1200, 826, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10009.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1201, 465, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3718.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1202, 242, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4746.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1203, 779, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 894.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1204, 566, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8748.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1205, 522, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9564.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1206, 917, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5056.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1207, 19, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1002.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1208, 848, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7514.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1209, 481, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1602.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1210, 761, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6845.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1211, 623, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1598.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1212, 333, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8048.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1213, 747, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10005.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1214, 66, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4608.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1215, 757, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8012.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1216, 217, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4811.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1217, 829, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6740.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1218, 916, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5522.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1219, 727, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4257.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1220, 400, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9192.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1221, 994, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1070.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1222, 788, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 579.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1223, 36, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2915.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1224, 544, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 685.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1225, 663, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4609.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1226, 870, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6757.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1227, 463, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8965.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1228, 372, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8829.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1229, 578, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 341.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1230, 72, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5290.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1231, 918, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3232.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1232, 90, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2181.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1233, 677, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2539.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1234, 756, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3560.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1235, 915, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3609.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1236, 445, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3141.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1237, 670, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6962.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1238, 721, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 659.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1239, 829, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4730.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1240, 482, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9891.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1241, 234, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3285.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1242, 90, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9160.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1243, 583, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9245.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1244, 342, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9247.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1245, 868, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4140.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1246, 60, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8129.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1247, 367, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6362.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1248, 325, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6723.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1249, 769, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7706.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1250, 811, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4923.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1251, 143, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5834.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1252, 811, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2577.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1253, 751, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3250.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1254, 116, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5817.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1255, 6, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8041.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1256, 854, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5141.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1257, 672, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1540.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1258, 660, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7988.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1259, 808, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3328.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1260, 786, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5227.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1261, 18, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4535.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1262, 182, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7901.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1263, 272, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6284.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1264, 834, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7881.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1265, 778, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1283.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1266, 600, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3640.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1267, 516, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3100.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1268, 988, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 294.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1269, 267, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9414.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1270, 374, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1219.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1271, 223, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2693.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1272, 501, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7147.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1273, 587, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4173.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1274, 748, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7405.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1275, 120, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4738.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1276, 447, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7181.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1277, 341, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9384.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1278, 679, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4109.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1279, 217, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 296.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1280, 393, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7284.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1281, 854, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7269.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1282, 699, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1868.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1283, 472, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3180.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1284, 215, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2883.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1285, 676, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6534.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1286, 669, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2466.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1287, 409, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2736.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1288, 421, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5924.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1289, 793, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 637.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1290, 898, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3226.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1291, 560, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1203.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1292, 343, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4246.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1293, 460, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 651.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1294, 925, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8027.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1295, 347, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1310.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1296, 91, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8610.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1297, 703, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9634.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1298, 812, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2559.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1299, 957, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2272.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1300, 308, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6207.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1301, 600, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7930.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1302, 235, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3887.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1303, 602, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4866.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1304, 808, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1898.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1305, 676, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1296.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1306, 150, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6832.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1307, 497, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8727.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1308, 42, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1007.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1309, 806, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6292.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1310, 522, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2236.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1311, 196, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7545.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1312, 687, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9932.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1313, 508, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9826.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1314, 587, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4625.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1315, 793, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 328.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1316, 283, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3381.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1317, 657, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2292.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1318, 422, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9328.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1319, 4, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9377.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1320, 28, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9503.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1321, 91, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6185.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1322, 72, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1584.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1323, 105, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8159.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1324, 854, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6727.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1325, 605, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4641.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1326, 644, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2671.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1327, 662, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4730.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1328, 828, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8574.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1329, 533, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6783.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1330, 456, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 606.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1331, 918, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8869.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1332, 821, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5249.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1333, 966, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9318.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1334, 456, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5447.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1335, 398, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3605.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1336, 539, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3291.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1337, 70, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6271.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1338, 296, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1742.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1339, 58, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4274.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1340, 588, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7077.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1341, 136, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1293.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1342, 773, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3158.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1343, 416, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 795.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1344, 644, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8464.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1345, 986, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9439.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1346, 628, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6835.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1347, 579, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1311.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1348, 768, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3363.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1349, 447, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7846.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1350, 616, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7500.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1351, 616, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7877.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1352, 228, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6530.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1353, 973, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7210.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1354, 23, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3879.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1355, 179, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7337.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1356, 677, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8360.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1357, 896, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8489.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1358, 572, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2457.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1359, 290, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3074.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1360, 78, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9988.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1361, 35, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1739.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1362, 453, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6105.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1363, 744, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5787.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1364, 318, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5464.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1365, 269, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6492.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1366, 222, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7633.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1367, 82, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3957.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1368, 727, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2313.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1369, 184, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5611.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1370, 843, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 797.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1371, 716, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7178.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1372, 343, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4247.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1373, 739, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7004.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1374, 977, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3800.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1375, 868, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8000.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1376, 306, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2344.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1377, 793, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 144.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1378, 893, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2832.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1379, 533, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 467.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1380, 741, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3456.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1381, 206, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6783.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1382, 234, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5678.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1383, 972, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5994.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1384, 764, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7155.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1385, 736, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7791.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1386, 14, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7945.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1387, 413, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9764.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1388, 556, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4997.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1389, 458, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 525.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1390, 717, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6938.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1391, 398, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3301.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1392, 305, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8395.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1393, 970, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3644.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1394, 355, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 725.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1395, 42, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1386.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1396, 391, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3888.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1397, 676, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8791.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1398, 117, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2437.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1399, 414, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3970.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1400, 596, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7105.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1401, 475, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1040.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1402, 343, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2332.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1403, 311, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6274.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1404, 483, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9193.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1405, 510, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2542.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1406, 462, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2674.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1407, 912, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2699.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1408, 33, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2020.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1409, 576, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6267.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1410, 743, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2948.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1411, 303, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2757.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1412, 963, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 931.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1413, 509, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9269.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1414, 317, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5477.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1415, 824, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9647.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1416, 997, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6340.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1417, 571, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7376.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1418, 454, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3946.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1419, 992, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4666.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1420, 100, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7964.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1421, 358, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5730.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1422, 230, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9911.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1423, 259, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3106.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1424, 236, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7975.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1425, 745, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2087.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1426, 417, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4792.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1427, 285, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9803.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1428, 265, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1857.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1429, 515, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2286.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1430, 252, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7421.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1431, 43, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5012.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1432, 465, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8275.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1433, 95, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9807.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1434, 851, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9669.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1435, 210, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3756.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1436, 935, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1720.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1437, 81, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3835.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1438, 411, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5190.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1439, 693, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4322.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1440, 392, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4235.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1441, 375, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2736.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1442, 713, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8833.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1443, 322, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4073.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1444, 713, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5018.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1445, 541, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2359.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1446, 904, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6738.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1447, 438, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3228.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1448, 734, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9167.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1449, 815, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1091.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1450, 838, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9690.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1451, 955, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9782.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1452, 148, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9374.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1453, 545, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6058.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1454, 239, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4731.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1455, 496, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1233.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1456, 991, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6859.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1457, 313, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7413.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1458, 783, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2603.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1459, 56, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1266.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1460, 220, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 324.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1461, 987, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10094.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1462, 747, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1034.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1463, 160, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2077.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1464, 398, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4211.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1465, 491, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4994.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1466, 520, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6426.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1467, 909, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5485.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1468, 100, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10075.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1469, 829, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3938.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1470, 401, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8975.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1471, 683, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8507.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1472, 472, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7337.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1473, 927, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5392.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1474, 884, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8759.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1475, 222, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1554.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1476, 864, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2220.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1477, 805, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 313.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1478, 404, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2844.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1479, 187, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9911.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1480, 656, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6154.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1481, 251, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10053.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1482, 655, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5936.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1483, 95, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1673.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1484, 957, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7438.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1485, 517, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 741.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1486, 625, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9621.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1487, 742, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7792.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1488, 507, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2444.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1489, 121, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1036.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1490, 502, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7739.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1491, 116, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2403.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1492, 663, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5168.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1493, 947, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2693.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1494, 155, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7922.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1495, 46, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4099.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1496, 164, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6391.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1497, 359, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5833.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1498, 669, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1835.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1499, 689, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1301.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1500, 681, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6264.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1501, 418, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3340.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1502, 471, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9175.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1503, 281, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7411.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1504, 472, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6595.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1505, 320, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1301.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1506, 711, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2940.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1507, 322, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3897.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1508, 7, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1622.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1509, 22, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4902.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1510, 720, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6031.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1511, 625, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1971.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1512, 795, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8569.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1513, 63, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1687.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1514, 680, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1714.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1515, 259, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6037.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1516, 270, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1780.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1517, 562, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6604.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1518, 443, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2984.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1519, 532, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4565.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1520, 311, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6699.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1521, 66, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5753.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1522, 414, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8375.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1523, 888, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6559.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1524, 314, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2508.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1525, 28, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8231.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1526, 236, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4238.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1527, 781, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4268.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1528, 419, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4695.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1529, 244, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8016.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1530, 506, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6050.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1531, 806, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5337.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1532, 758, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1358.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1533, 455, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 281.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1534, 902, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3780.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1535, 175, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10024.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1536, 721, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9510.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1537, 537, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9070.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1538, 394, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8843.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1539, 287, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1671.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1540, 583, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 204.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1541, 431, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5729.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1542, 325, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2700.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1543, 320, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1090.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1544, 549, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3737.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1545, 733, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10030.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1546, 346, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9630.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1547, 360, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8020.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1548, 96, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8749.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1549, 7, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8382.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1550, 702, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8719.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1551, 963, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5326.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1552, 300, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1484.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1553, 500, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6058.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1554, 221, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2593.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1555, 117, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4102.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1556, 630, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4016.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1557, 125, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2840.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1558, 437, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2958.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1559, 788, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 340.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1560, 186, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2724.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1561, 489, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4007.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1562, 664, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5461.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1563, 906, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6333.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1564, 268, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 809.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1565, 796, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1065.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1566, 637, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8925.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1567, 830, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2477.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1568, 154, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1127.80, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1569, 114, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9156.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1570, 471, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6494.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1571, 132, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7626.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1572, 7, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8157.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1573, 40, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 536.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1574, 794, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8730.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1575, 863, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8674.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1576, 633, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 357.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1577, 42, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6051.79, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1578, 812, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1187.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1579, 861, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2531.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1580, 243, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6729.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1581, 933, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9023.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1582, 194, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1529.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1583, 938, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6146.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1584, 570, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3857.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1585, 69, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8449.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1586, 566, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3697.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1587, 523, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2743.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1588, 875, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2228.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1589, 111, 25, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 950.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1590, 614, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9195.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1591, 787, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4947.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1592, 225, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3105.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1593, 543, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3356.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1594, 623, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8006.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1595, 816, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7944.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1596, 75, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9762.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1597, 442, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 366.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1598, 820, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4210.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1599, 254, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8362.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1600, 444, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9349.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1601, 92, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4178.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1602, 771, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3802.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1603, 769, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7008.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1604, 744, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4192.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1605, 578, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5516.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1606, 176, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4791.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1607, 471, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6162.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1608, 324, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3814.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1609, 33, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7962.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1610, 855, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2088.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1611, 491, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4553.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1612, 629, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1454.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1613, 659, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10009.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1614, 213, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2237.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1615, 474, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5710.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1616, 136, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1393.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1617, 80, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1747.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1618, 855, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5524.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1619, 696, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7845.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1620, 8, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5858.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1621, 378, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5598.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1622, 216, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5504.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1623, 451, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5915.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1624, 513, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2807.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1625, 262, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3014.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1626, 430, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8486.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1627, 302, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9057.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1628, 154, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8369.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1629, 137, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1551.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1630, 109, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8009.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1631, 134, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9035.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1632, 70, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 246.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1633, 967, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9234.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1634, 609, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1859.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1635, 255, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7874.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1636, 81, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 854.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1637, 853, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5629.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1638, 822, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1657.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1639, 231, 3, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5342.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1640, 417, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1489.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1641, 543, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1526.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1642, 587, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7556.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1643, 841, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9452.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1644, 177, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1320.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1645, 810, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1665.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1646, 42, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3097.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1647, 650, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5629.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1648, 414, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7489.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1649, 738, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7403.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1650, 40, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7754.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1651, 55, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2732.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1652, 997, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5110.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1653, 788, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8744.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1654, 3, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7203.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1655, 651, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6571.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1656, 74, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8451.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1657, 749, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7638.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1658, 589, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3872.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1659, 268, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4099.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1660, 962, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7097.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1661, 432, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6982.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1662, 613, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2784.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1663, 550, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3938.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1664, 152, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3374.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1665, 234, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2211.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1666, 958, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 264.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1667, 558, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1398.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1668, 315, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9834.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1669, 240, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4913.39, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1670, 461, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5516.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1671, 760, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8662.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1672, 933, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8074.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1673, 222, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 375.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1674, 526, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7642.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1675, 616, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3297.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1676, 525, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2696.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1677, 209, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3472.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1678, 71, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3107.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1679, 507, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 751.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1680, 645, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6684.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1681, 166, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9816.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1682, 42, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1227.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1683, 494, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9009.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1684, 3, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6991.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1685, 336, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1580.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1686, 230, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7682.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1687, 60, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6060.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1688, 699, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1629.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1689, 68, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9910.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1690, 726, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8624.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1691, 59, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3355.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1692, 618, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2047.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1693, 823, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8334.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1694, 510, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 398.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1695, 575, 93, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 905.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1696, 876, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7081.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1697, 454, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4093.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1698, 68, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2425.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1699, 989, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2189.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1700, 469, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7281.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1701, 396, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6795.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1702, 676, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3287.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1703, 153, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9540.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1704, 851, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 885.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1705, 478, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6321.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1706, 787, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2541.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1707, 287, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3166.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1708, 865, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5241.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1709, 481, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4378.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1710, 228, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3322.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1711, 108, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9475.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1712, 76, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9965.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1713, 882, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6638.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1714, 581, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3253.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1715, 989, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6868.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1716, 209, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 620.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1717, 92, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4848.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1718, 17, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3712.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1719, 806, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9654.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1720, 373, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4208.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1721, 196, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 849.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1722, 470, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9999.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1723, 59, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3277.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1724, 978, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 260.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1725, 463, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6910.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1726, 984, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7424.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1727, 169, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6478.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1728, 911, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3822.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1729, 442, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9282.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1730, 755, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 881.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1731, 269, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8603.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1732, 424, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9116.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1733, 152, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4406.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1734, 388, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7925.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1735, 882, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2681.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1736, 337, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5170.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1737, 374, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9665.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1738, 200, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7901.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1739, 695, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7461.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1740, 14, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7208.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1741, 353, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3114.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1742, 402, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2164.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1743, 678, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4063.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1744, 276, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10083.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1745, 870, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9096.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1746, 544, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2924.66, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1747, 789, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5403.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1748, 488, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2547.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1749, 400, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9146.48, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1750, 533, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 766.17, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1751, 423, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9069.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1752, 511, 42, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3648.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1753, 565, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 120.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1754, 183, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3365.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1755, 699, 35, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6795.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1756, 763, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5035.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1757, 56, 20, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3945.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1758, 242, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 462.34, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1759, 187, 59, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6216.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1760, 603, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5473.19, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1761, 574, 33, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5905.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1762, 66, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2607.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1763, 773, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3051.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1764, 43, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6343.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1765, 524, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 891.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1766, 516, 18, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3742.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1767, 805, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4386.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1768, 767, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9428.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1769, 639, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9515.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1770, 685, 63, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 139.54, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1771, 943, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6222.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1772, 539, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 767.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1773, 258, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8503.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1774, 624, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 737.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1775, 312, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 952.51, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1776, 429, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6866.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1777, 179, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2295.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1778, 523, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6429.38, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1779, 885, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2925.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1780, 640, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2060.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1781, 293, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5244.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1782, 66, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8321.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1783, 50, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2769.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1784, 569, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8312.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1785, 717, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6350.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1786, 377, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7515.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1787, 651, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3634.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1788, 333, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1237.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1789, 513, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 927.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1790, 941, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1449.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1791, 630, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5013.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1792, 984, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8640.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1793, 91, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6126.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1794, 762, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4331.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1795, 485, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2319.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1796, 951, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 362.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1797, 554, 47, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9724.53, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1798, 221, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1716.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1799, 407, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2867.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1800, 854, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 717.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1801, 912, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4095.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1802, 435, 88, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1750.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1803, 112, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1436.40, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1804, 537, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7309.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1805, 283, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9774.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1806, 791, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8140.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1807, 579, 5, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1067.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1808, 590, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2528.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1809, 816, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5538.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1810, 831, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2363.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1811, 94, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7269.25, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1812, 352, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6499.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1813, 626, 99, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4398.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1814, 151, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5180.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1815, 837, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6290.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1816, 988, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2780.98, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1817, 967, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7438.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1818, 603, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9977.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1819, 836, 41, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 623.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1820, 815, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 612.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1821, 202, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9906.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1822, 72, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2973.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1823, 593, 19, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7404.15, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1824, 309, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9975.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1825, 345, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6463.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1826, 146, 75, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7845.97, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1827, 951, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7872.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1828, 955, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8282.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1829, 367, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5018.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1830, 622, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4799.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1831, 762, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8557.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1832, 829, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9966.29, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1833, 994, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1057.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1834, 633, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6622.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1835, 449, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7351.94, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1836, 759, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2763.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1837, 829, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6875.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1838, 143, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6776.58, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1839, 766, 83, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 133.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1840, 279, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6987.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1841, 702, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2634.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1842, 387, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7042.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1843, 767, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6110.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1844, 200, 89, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6569.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1845, 496, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8657.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1846, 348, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4778.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1847, 440, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2543.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1848, 856, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3162.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1849, 233, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 870.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1850, 765, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2325.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1851, 670, 2, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2010.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1852, 882, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7100.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1853, 900, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3806.32, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1854, 683, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3582.63, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1855, 220, 65, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7881.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1856, 483, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1488.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1857, 103, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8096.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1858, 435, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5318.67, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1859, 168, 24, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6173.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1860, 528, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8234.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1861, 77, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1841.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1862, 928, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3238.18, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1863, 478, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4425.73, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1864, 109, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7291.87, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1865, 556, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7798.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1866, 992, 91, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5349.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1867, 379, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 792.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1868, 742, 40, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2907.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1869, 503, 82, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 784.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1870, 686, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7669.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1871, 186, 96, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8989.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1872, 905, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3171.78, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1873, 28, 37, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2212.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1874, 88, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9814.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1875, 449, 53, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7278.04, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1876, 849, 45, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1654.43, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1877, 431, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1183.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1878, 722, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 499.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1879, 732, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2131.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1880, 740, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2408.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1881, 107, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4027.47, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1882, 360, 11, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5498.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1883, 72, 85, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9770.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1884, 173, 36, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2145.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1885, 447, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6737.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1886, 600, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3102.37, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1887, 656, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1208.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1888, 481, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5856.20, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1889, 501, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7180.71, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1890, 236, 8, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4607.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1891, 306, 13, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8993.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1892, 581, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4681.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1893, 380, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6522.82, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1894, 210, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9880.95, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1895, 650, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6286.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1896, 181, 17, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7307.16, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1897, 335, 58, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1766.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1898, 415, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 538.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1899, 749, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1466.36, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1900, 526, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8680.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1901, 722, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3822.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1902, 31, 98, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5773.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1903, 830, 95, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3899.75, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1904, 779, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2336.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1905, 99, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8035.26, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1906, 638, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8376.06, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1907, 67, 54, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9062.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1908, 347, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5126.55, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1909, 693, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6556.30, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1910, 209, 81, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 984.99, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1911, 696, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3661.31, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1912, 816, 15, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5622.62, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1913, 398, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4504.76, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1914, 788, 6, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5107.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1915, 658, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3924.23, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1916, 424, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 10010.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1917, 938, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4310.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1918, 12, 7, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7944.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1919, 997, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2728.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1920, 776, 70, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1740.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1921, 644, 16, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5162.52, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1922, 678, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4571.00, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1923, 893, 92, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3724.03, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1924, 891, 34, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3733.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1925, 859, 73, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6973.56, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1926, 885, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5491.74, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1927, 815, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3116.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1928, 30, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4435.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1929, 786, 86, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 777.13, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1930, 591, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2131.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1931, 487, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2282.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1932, 837, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1496.49, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1933, 365, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9968.96, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1934, 400, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5286.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1935, 859, 69, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6865.22, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1936, 358, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9376.41, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1937, 42, 78, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9308.27, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1938, 268, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4077.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1939, 238, 28, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 534.05, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1940, 197, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9660.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1941, 589, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1092.33, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1942, 504, 50, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5448.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1943, 381, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4055.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1944, 645, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5375.46, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1945, 434, 77, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 418.70, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1946, 296, 43, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6747.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1947, 749, 56, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2846.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1948, 653, 71, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3088.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1949, 141, 52, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3948.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1950, 145, 60, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6421.57, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1951, 538, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8679.24, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1952, 223, 61, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9094.65, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1953, 204, 66, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9087.88, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1954, 832, 44, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 382.92, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1955, 824, 38, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3689.72, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1956, 929, 74, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8458.69, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1957, 587, 57, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2993.01, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1958, 728, 4, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4062.81, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1959, 196, 87, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7363.45, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1960, 503, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8223.50, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1961, 982, 29, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3327.08, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1962, 303, 97, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2709.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1963, 147, 76, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 9659.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1964, 870, 48, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8556.89, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1965, 433, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5168.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1966, 521, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4963.12, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1967, 720, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5938.35, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1968, 610, 49, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8134.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1969, 2, 51, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 996.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1970, 274, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7241.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1971, 274, 14, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1850.59, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1972, 79, 80, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2547.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1973, 61, 46, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3153.44, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1974, 431, 62, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8989.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1975, 203, 30, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8863.90, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1976, 187, 67, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7016.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1977, 14, 31, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 721.60, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1978, 941, 23, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1314.28, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1979, 320, 22, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3578.77, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1980, 113, 90, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7216.93, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1981, 281, 84, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5199.85, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1982, 383, 64, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4057.84, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1983, 135, 12, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6505.09, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1984, 727, 94, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4482.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1985, 76, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 1916.83, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1986, 195, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8842.86, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1987, 611, 27, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8461.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1988, 232, 1, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 4196.68, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1989, 427, 72, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6583.64, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1990, 468, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8127.02, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1991, 362, 32, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5259.10, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1992, 905, 68, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8652.07, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1993, 674, 10, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8903.14, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1994, 616, 100, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 2809.42, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1995, 558, 26, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3841.91, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1996, 647, 79, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 8161.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1997, 533, 55, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 7649.61, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1998, 699, 39, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 3426.11, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (1999, 934, 21, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 5534.21, '2025-05-23 16:28:29');
-INSERT INTO orders (id, user_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at) VALUES (2000, 198, 9, '2025-05-23 16:28:29', 'PAID', 'PAID', 'DELIVERED', 6719.89, '2025-05-23 16:28:29');
-
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 80, '2024-03-27 18:48:58', 'PAID', 'FAILED', 'IN_TRANSIT', 1277.2, '2024-03-27 18:48:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (977, 27, '2024-05-22 02:41:16', 'CANCELLED', 'PAID', 'DELIVERED', 872.33, '2024-05-22 02:41:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (14, 82, '2024-06-19 13:28:21', 'RETURNED', 'REFUNDED', 'DELIVERED', 4309.69, '2024-06-19 13:28:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (378, 3, '2024-09-27 11:29:36', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 2382.99, '2024-09-27 11:29:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (405, 88, '2024-02-12 14:21:07', 'COMPLETED', 'PAID', 'SHIPPED', 4491.4, '2024-02-12 14:21:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (951, 67, '2024-03-08 12:52:10', 'SHIPPED', 'FAILED', 'RETURNING', 2783.68, '2024-03-08 12:52:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (824, 47, '2024-05-10 01:29:54', 'SHIPPED', 'PAID', 'IN_TRANSIT', 2360.41, '2024-05-10 01:29:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (477, 72, '2024-08-10 15:32:58', 'DELIVERED', 'FAILED', 'DELIVERED', 2406.34, '2024-08-10 15:32:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (270, 99, '2025-01-11 10:38:53', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 1286.18, '2025-01-11 10:38:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (263, 81, '2024-07-21 11:02:23', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3470.62, '2024-07-21 11:02:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (71, 74, '2025-04-08 09:59:32', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 509.67, '2025-04-08 09:59:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (740, 92, '2025-03-13 09:20:18', 'PAID', 'FAILED', 'RETURNING', 1372.25, '2025-03-13 09:20:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (65, 21, '2025-03-29 22:29:59', 'PAID', 'PENDING', 'IN_TRANSIT', 2354.85, '2025-03-29 22:29:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (430, 70, '2024-08-01 22:07:43', 'COMPLETED', 'PAID', 'DELIVERED', 3970.21, '2024-08-01 22:07:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (582, 95, '2024-06-11 20:33:33', 'RETURNED', 'FAILED', 'DELIVERED', 4458.58, '2024-06-11 20:33:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (813, 61, '2025-02-18 14:34:47', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 1767.54, '2025-02-18 14:34:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (263, 36, '2024-02-05 06:42:22', 'DELIVERED', 'PENDING', 'SHIPPED', 1300.57, '2024-02-05 06:42:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (424, 68, '2024-06-21 08:46:21', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 3147.54, '2024-06-21 08:46:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (723, 24, '2025-03-11 14:03:44', 'PENDING', 'FAILED', 'RETURNING', 2106.48, '2025-03-11 14:03:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (805, 4, '2024-06-06 06:47:06', 'PENDING', 'FAILED', 'IN_TRANSIT', 3652.58, '2024-06-06 06:47:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (782, 24, '2024-06-29 15:53:44', 'PAID', 'FAILED', 'DELIVERED', 2187.4, '2024-06-29 15:53:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (580, 75, '2025-04-22 07:35:51', 'COMPLETED', 'REFUNDED', 'RETURNING', 1868.39, '2025-04-22 07:35:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (6, 87, '2025-02-02 07:26:37', 'SHIPPED', 'REFUNDED', 'DELIVERED', 3897.67, '2025-02-02 07:26:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (491, 44, '2024-12-11 07:50:57', 'COMPLETED', 'REFUNDED', 'DELIVERED', 445.29, '2024-12-11 07:50:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (495, 69, '2024-06-24 20:58:21', 'PAID', 'PAID', 'RETURNING', 4144.18, '2024-06-24 20:58:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (585, 44, '2024-05-25 08:19:14', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2270.0, '2024-05-25 08:19:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (333, 80, '2024-11-19 08:02:37', 'SHIPPED', 'PENDING', 'DELIVERED', 4644.36, '2024-11-19 08:02:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (305, 10, '2025-02-13 03:31:13', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 158.2, '2025-02-13 03:31:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (758, 32, '2024-03-21 07:59:38', 'PENDING', 'FAILED', 'RETURNING', 1125.48, '2024-03-21 07:59:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (934, 8, '2025-05-05 15:00:52', 'CANCELLED', 'PAID', 'RETURNING', 1341.75, '2025-05-05 15:00:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (572, 12, '2024-03-24 10:00:46', 'DELIVERED', 'PENDING', 'DELIVERED', 1468.01, '2024-03-24 10:00:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (557, 81, '2025-02-05 01:00:51', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 4681.75, '2025-02-05 01:00:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (128, 9, '2024-11-23 03:48:37', 'CANCELLED', 'PAID', 'RETURNING', 4070.69, '2024-11-23 03:48:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (252, 46, '2025-04-08 05:40:08', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 2785.34, '2025-04-08 05:40:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (455, 63, '2024-09-05 14:55:24', 'DELIVERED', 'PAID', 'SHIPPED', 3026.91, '2024-09-05 14:55:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (653, 27, '2024-02-25 09:54:05', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 2013.91, '2024-02-25 09:54:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (133, 44, '2024-05-01 18:16:55', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 4751.34, '2024-05-01 18:16:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (467, 73, '2024-11-20 14:49:24', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 3242.32, '2024-11-20 14:49:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (673, 79, '2024-09-04 08:31:31', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 1536.3, '2024-09-04 08:31:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (997, 72, '2024-02-28 03:30:37', 'CANCELLED', 'PAID', 'RETURNING', 599.58, '2024-02-28 03:30:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (699, 67, '2024-05-30 04:36:20', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 884.14, '2024-05-30 04:36:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (526, 81, '2024-05-20 23:29:34', 'SHIPPED', 'FAILED', 'SHIPPED', 2405.55, '2024-05-20 23:29:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (549, 72, '2024-05-06 10:14:03', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 2850.4, '2024-05-06 10:14:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (360, 25, '2024-08-30 03:25:32', 'RETURNED', 'PAID', 'DELIVERED', 1265.93, '2024-08-30 03:25:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (611, 2, '2024-06-19 07:32:17', 'DELIVERED', 'PAID', 'DELIVERED', 3390.27, '2024-06-19 07:32:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (470, 35, '2024-09-30 11:01:50', 'PENDING', 'PENDING', 'SHIPPED', 2097.15, '2024-09-30 11:01:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (722, 68, '2024-02-15 08:25:51', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2968.62, '2024-02-15 08:25:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (923, 46, '2024-09-18 12:06:56', 'CANCELLED', 'PENDING', 'DELIVERED', 176.4, '2024-09-18 12:06:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (682, 66, '2025-03-18 08:30:54', 'PAID', 'PENDING', 'DELIVERED', 1099.85, '2025-03-18 08:30:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (35, 43, '2024-07-13 09:54:51', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 804.29, '2024-07-13 09:54:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (650, 13, '2024-12-25 14:45:31', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 90.3, '2024-12-25 14:45:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (381, 48, '2025-05-18 19:43:30', 'CANCELLED', 'PENDING', 'DELIVERED', 4465.15, '2025-05-18 19:43:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (427, 13, '2024-06-16 23:43:41', 'COMPLETED', 'FAILED', 'DELIVERED', 1146.36, '2024-06-16 23:43:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (428, 27, '2024-09-11 03:45:22', 'CANCELLED', 'PAID', 'RETURNING', 4856.94, '2024-09-11 03:45:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (860, 27, '2025-05-22 03:56:40', 'COMPLETED', 'PENDING', 'DELIVERED', 288.95, '2025-05-22 03:56:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (570, 72, '2024-09-06 15:30:33', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 1050.09, '2024-09-06 15:30:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (298, 22, '2024-10-19 18:20:26', 'RETURNED', 'PAID', 'IN_TRANSIT', 3551.61, '2024-10-19 18:20:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (513, 35, '2024-07-26 13:17:49', 'COMPLETED', 'PENDING', 'RETURNING', 728.79, '2024-07-26 13:17:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (389, 76, '2024-03-16 01:06:24', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 2024.31, '2024-03-16 01:06:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (267, 1, '2025-03-02 01:38:18', 'PENDING', 'PENDING', 'RETURNING', 2068.55, '2025-03-02 01:38:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (823, 43, '2025-05-16 03:36:40', 'COMPLETED', 'PAID', 'IN_TRANSIT', 550.1, '2025-05-16 03:36:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (374, 83, '2024-04-12 08:36:02', 'DELIVERED', 'PENDING', 'DELIVERED', 563.84, '2024-04-12 08:36:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (730, 68, '2024-12-28 21:15:24', 'SHIPPED', 'PENDING', 'RETURNING', 3764.3, '2024-12-28 21:15:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (952, 66, '2025-05-06 22:48:32', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 1791.63, '2025-05-06 22:48:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (94, 62, '2024-05-03 18:26:56', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 4041.54, '2024-05-03 18:26:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (343, 73, '2025-05-14 10:59:28', 'RETURNED', 'REFUNDED', 'DELIVERED', 2418.48, '2025-05-14 10:59:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (963, 62, '2024-09-22 14:17:29', 'PENDING', 'FAILED', 'DELIVERED', 3670.3, '2024-09-22 14:17:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (907, 44, '2024-06-26 07:13:16', 'PAID', 'PENDING', 'DELIVERED', 1532.01, '2024-06-26 07:13:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (88, 10, '2024-03-04 06:37:01', 'PAID', 'FAILED', 'NOT_SHIPPED', 3858.72, '2024-03-04 06:37:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (597, 80, '2025-01-01 21:18:22', 'COMPLETED', 'FAILED', 'SHIPPED', 3163.95, '2025-01-01 21:18:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (44, 12, '2024-04-13 16:06:53', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 4452.31, '2024-04-13 16:06:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (606, 53, '2024-09-06 08:42:48', 'DELIVERED', 'PAID', 'RETURNING', 758.99, '2024-09-06 08:42:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (343, 50, '2024-12-23 11:48:09', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 102.14, '2024-12-23 11:48:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (601, 93, '2024-11-23 21:16:02', 'COMPLETED', 'FAILED', 'SHIPPED', 2620.95, '2024-11-23 21:16:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (697, 10, '2024-09-11 06:28:41', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 2736.6, '2024-09-11 06:28:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (944, 28, '2025-01-09 00:15:04', 'CANCELLED', 'PAID', 'SHIPPED', 2123.45, '2025-01-09 00:15:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (542, 68, '2024-07-15 23:39:28', 'PENDING', 'FAILED', 'DELIVERED', 2973.21, '2024-07-15 23:39:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (490, 71, '2024-08-10 15:54:25', 'CANCELLED', 'FAILED', 'SHIPPED', 3773.65, '2024-08-10 15:54:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (360, 33, '2024-06-15 19:14:49', 'PENDING', 'PAID', 'SHIPPED', 4777.76, '2024-06-15 19:14:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (874, 41, '2024-10-12 11:46:52', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3827.5, '2024-10-12 11:46:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (705, 8, '2024-11-05 19:39:54', 'CANCELLED', 'REFUNDED', 'RETURNING', 3891.86, '2024-11-05 19:39:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (7, 6, '2024-01-07 00:23:11', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 3008.53, '2024-01-07 00:23:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (925, 61, '2024-11-25 09:02:38', 'CANCELLED', 'PAID', 'SHIPPED', 447.42, '2024-11-25 09:02:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (166, 60, '2024-07-26 03:51:42', 'COMPLETED', 'PENDING', 'RETURNING', 2645.62, '2024-07-26 03:51:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (945, 34, '2024-11-21 16:55:32', 'PENDING', 'PENDING', 'SHIPPED', 671.56, '2024-11-21 16:55:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (292, 16, '2024-07-20 20:25:46', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 1677.21, '2024-07-20 20:25:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 30, '2024-09-21 06:35:54', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 4453.66, '2024-09-21 06:35:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 8, '2025-05-07 06:19:11', 'PENDING', 'FAILED', 'DELIVERED', 4926.24, '2025-05-07 06:19:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (974, 40, '2024-11-20 15:21:09', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 951.17, '2024-11-20 15:21:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (737, 64, '2024-09-21 06:22:15', 'CANCELLED', 'PENDING', 'SHIPPED', 1187.8, '2024-09-21 06:22:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (209, 24, '2024-12-08 10:04:41', 'RETURNED', 'PENDING', 'SHIPPED', 720.84, '2024-12-08 10:04:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (575, 83, '2024-09-21 03:55:30', 'CANCELLED', 'PAID', 'IN_TRANSIT', 709.75, '2024-09-21 03:55:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (738, 52, '2024-10-25 13:34:07', 'PENDING', 'PAID', 'NOT_SHIPPED', 2218.55, '2024-10-25 13:34:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (767, 64, '2025-05-24 20:01:27', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 3240.2, '2025-05-24 20:01:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (952, 22, '2025-05-19 11:45:37', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 2512.03, '2025-05-19 11:45:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (550, 87, '2024-07-17 04:22:15', 'COMPLETED', 'REFUNDED', 'SHIPPED', 2669.22, '2024-07-17 04:22:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (739, 5, '2024-12-12 01:50:20', 'PENDING', 'REFUNDED', 'SHIPPED', 1703.28, '2024-12-12 01:50:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (211, 53, '2024-10-08 20:41:37', 'CANCELLED', 'PENDING', 'SHIPPED', 897.45, '2024-10-08 20:41:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (416, 75, '2024-06-28 19:34:49', 'DELIVERED', 'PENDING', 'RETURNING', 2323.34, '2024-06-28 19:34:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (955, 22, '2025-02-17 15:31:01', 'PENDING', 'REFUNDED', 'SHIPPED', 2380.01, '2025-02-17 15:31:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (22, 82, '2025-03-25 00:18:52', 'COMPLETED', 'REFUNDED', 'SHIPPED', 2616.09, '2025-03-25 00:18:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (596, 5, '2024-11-03 21:56:48', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 4089.6, '2024-11-03 21:56:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (851, 54, '2024-02-04 11:46:59', 'SHIPPED', 'PAID', 'RETURNING', 1783.02, '2024-02-04 11:46:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (79, 26, '2024-07-15 11:01:11', 'PAID', 'FAILED', 'DELIVERED', 3696.32, '2024-07-15 11:01:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (58, 76, '2024-12-18 05:24:49', 'COMPLETED', 'REFUNDED', 'DELIVERED', 2556.72, '2024-12-18 05:24:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (356, 81, '2025-04-09 23:28:56', 'COMPLETED', 'REFUNDED', 'RETURNING', 1567.11, '2025-04-09 23:28:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (981, 52, '2024-11-25 21:57:20', 'PENDING', 'PENDING', 'RETURNING', 2127.34, '2024-11-25 21:57:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (84, 32, '2024-09-30 05:22:38', 'SHIPPED', 'PENDING', 'DELIVERED', 3020.67, '2024-09-30 05:22:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (693, 62, '2024-01-14 06:12:36', 'PAID', 'REFUNDED', 'RETURNING', 950.84, '2024-01-14 06:12:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (464, 42, '2024-12-08 09:54:37', 'DELIVERED', 'PAID', 'RETURNING', 3259.61, '2024-12-08 09:54:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (122, 43, '2025-01-30 22:40:08', 'DELIVERED', 'REFUNDED', 'DELIVERED', 285.36, '2025-01-30 22:40:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (152, 23, '2025-03-06 15:00:15', 'SHIPPED', 'PAID', 'SHIPPED', 2455.48, '2025-03-06 15:00:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (440, 10, '2024-10-03 13:37:34', 'CANCELLED', 'PAID', 'DELIVERED', 4338.91, '2024-10-03 13:37:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (358, 83, '2025-04-29 00:00:05', 'PAID', 'PENDING', 'IN_TRANSIT', 4214.43, '2025-04-29 00:00:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (660, 74, '2025-01-28 19:08:08', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 202.79, '2025-01-28 19:08:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (289, 50, '2024-09-18 08:51:22', 'SHIPPED', 'FAILED', 'RETURNING', 1122.66, '2024-09-18 08:51:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (113, 28, '2024-03-20 06:35:37', 'RETURNED', 'PENDING', 'RETURNING', 4779.07, '2024-03-20 06:35:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (372, 34, '2024-08-24 16:08:50', 'COMPLETED', 'PAID', 'SHIPPED', 4900.79, '2024-08-24 16:08:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (422, 100, '2024-03-21 13:48:00', 'PENDING', 'PAID', 'SHIPPED', 1461.05, '2024-03-21 13:48:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (398, 31, '2025-05-24 00:54:13', 'RETURNED', 'PENDING', 'RETURNING', 1024.66, '2025-05-24 00:54:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (996, 71, '2024-12-27 23:18:04', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 2868.81, '2024-12-27 23:18:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (736, 64, '2024-04-04 00:01:28', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 706.42, '2024-04-04 00:01:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (176, 36, '2024-08-05 07:37:01', 'PAID', 'FAILED', 'IN_TRANSIT', 4764.53, '2024-08-05 07:37:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (820, 99, '2024-09-25 20:59:29', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 1499.93, '2024-09-25 20:59:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (76, 37, '2024-01-19 14:17:29', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 2385.0, '2024-01-19 14:17:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (394, 20, '2024-05-17 21:08:15', 'DELIVERED', 'PENDING', 'RETURNING', 2830.6, '2024-05-17 21:08:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (844, 100, '2024-09-09 17:13:13', 'CANCELLED', 'PENDING', 'DELIVERED', 3891.26, '2024-09-09 17:13:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (297, 2, '2024-03-22 23:57:20', 'DELIVERED', 'PAID', 'SHIPPED', 4840.48, '2024-03-22 23:57:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (572, 35, '2024-04-28 01:45:59', 'SHIPPED', 'PAID', 'SHIPPED', 3779.54, '2024-04-28 01:45:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (26, 100, '2024-11-25 17:25:31', 'PENDING', 'FAILED', 'DELIVERED', 2084.99, '2024-11-25 17:25:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (528, 52, '2024-07-24 16:49:25', 'DELIVERED', 'REFUNDED', 'RETURNING', 4751.63, '2024-07-24 16:49:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (448, 48, '2024-05-22 00:40:27', 'RETURNED', 'PAID', 'IN_TRANSIT', 3133.78, '2024-05-22 00:40:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (960, 70, '2024-10-09 19:09:42', 'COMPLETED', 'FAILED', 'RETURNING', 4440.34, '2024-10-09 19:09:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (955, 93, '2024-12-29 06:15:00', 'CANCELLED', 'FAILED', 'RETURNING', 219.27, '2024-12-29 06:15:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (315, 79, '2024-01-26 03:37:53', 'RETURNED', 'PAID', 'SHIPPED', 1524.18, '2024-01-26 03:37:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (766, 61, '2024-12-31 17:55:25', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 145.34, '2024-12-31 17:55:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (12, 61, '2024-07-21 13:31:23', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 4574.86, '2024-07-21 13:31:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (340, 25, '2024-02-08 12:57:47', 'RETURNED', 'PAID', 'RETURNING', 858.91, '2024-02-08 12:57:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 25, '2025-05-16 17:53:49', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 626.89, '2025-05-16 17:53:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (601, 21, '2025-02-25 03:36:41', 'DELIVERED', 'PAID', 'RETURNING', 3816.48, '2025-02-25 03:36:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (824, 45, '2024-10-11 06:01:37', 'DELIVERED', 'PAID', 'SHIPPED', 3621.64, '2024-10-11 06:01:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (998, 92, '2024-05-14 11:08:09', 'COMPLETED', 'PAID', 'DELIVERED', 138.67, '2024-05-14 11:08:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (404, 97, '2024-07-06 23:02:44', 'PENDING', 'PENDING', 'RETURNING', 4097.26, '2024-07-06 23:02:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (30, 56, '2024-07-24 05:14:24', 'SHIPPED', 'PAID', 'SHIPPED', 2555.41, '2024-07-24 05:14:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (180, 35, '2024-07-25 08:38:36', 'DELIVERED', 'PAID', 'RETURNING', 1842.02, '2024-07-25 08:38:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (125, 85, '2025-01-30 17:27:53', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 2558.68, '2025-01-30 17:27:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (425, 51, '2024-05-02 22:45:40', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 1052.35, '2024-05-02 22:45:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (575, 40, '2024-08-27 17:51:07', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 3384.16, '2024-08-27 17:51:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (631, 45, '2024-12-30 00:54:58', 'PAID', 'REFUNDED', 'SHIPPED', 3724.99, '2024-12-30 00:54:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (345, 16, '2024-07-13 16:30:14', 'PAID', 'FAILED', 'DELIVERED', 3944.46, '2024-07-13 16:30:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (87, 59, '2024-09-13 03:46:25', 'PENDING', 'PAID', 'RETURNING', 406.8, '2024-09-13 03:46:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 13, '2024-05-17 20:25:59', 'DELIVERED', 'PENDING', 'SHIPPED', 4379.92, '2024-05-17 20:25:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 25, '2024-11-13 20:05:18', 'PAID', 'FAILED', 'RETURNING', 3585.16, '2024-11-13 20:05:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (756, 94, '2024-11-26 11:29:56', 'COMPLETED', 'REFUNDED', 'SHIPPED', 238.98, '2024-11-26 11:29:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (198, 95, '2024-01-03 21:09:14', 'DELIVERED', 'FAILED', 'RETURNING', 1985.73, '2024-01-03 21:09:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (93, 40, '2024-01-09 08:08:17', 'SHIPPED', 'PENDING', 'SHIPPED', 326.81, '2024-01-09 08:08:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (239, 39, '2025-03-01 19:15:28', 'COMPLETED', 'FAILED', 'SHIPPED', 653.59, '2025-03-01 19:15:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (590, 97, '2024-02-10 20:02:05', 'COMPLETED', 'REFUNDED', 'DELIVERED', 4408.96, '2024-02-10 20:02:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (832, 28, '2024-02-13 15:13:33', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 1611.6, '2024-02-13 15:13:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (901, 69, '2024-04-03 14:15:52', 'PAID', 'FAILED', 'IN_TRANSIT', 115.39, '2024-04-03 14:15:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (189, 50, '2024-02-27 12:47:10', 'DELIVERED', 'PAID', 'SHIPPED', 346.65, '2024-02-27 12:47:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (986, 77, '2024-12-03 11:27:06', 'DELIVERED', 'REFUNDED', 'DELIVERED', 2622.23, '2024-12-03 11:27:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (494, 81, '2025-03-03 22:33:52', 'RETURNED', 'PAID', 'DELIVERED', 1764.96, '2025-03-03 22:33:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (953, 42, '2024-03-12 10:12:28', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 863.26, '2024-03-12 10:12:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (661, 34, '2025-04-13 14:08:39', 'SHIPPED', 'REFUNDED', 'RETURNING', 3377.99, '2025-04-13 14:08:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (615, 71, '2024-04-16 09:40:50', 'PENDING', 'PENDING', 'SHIPPED', 3026.51, '2024-04-16 09:40:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (587, 98, '2025-03-18 10:00:56', 'RETURNED', 'REFUNDED', 'DELIVERED', 3944.98, '2025-03-18 10:00:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (115, 12, '2024-01-03 16:37:03', 'PAID', 'REFUNDED', 'RETURNING', 413.61, '2024-01-03 16:37:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (661, 72, '2025-01-21 22:21:54', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3657.81, '2025-01-21 22:21:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (634, 38, '2024-10-17 16:52:53', 'PAID', 'PENDING', 'NOT_SHIPPED', 2948.45, '2024-10-17 16:52:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (724, 2, '2024-04-02 19:08:35', 'DELIVERED', 'PENDING', 'RETURNING', 4971.56, '2024-04-02 19:08:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (592, 49, '2024-04-26 19:28:12', 'PENDING', 'REFUNDED', 'SHIPPED', 1360.26, '2024-04-26 19:28:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (761, 96, '2024-04-28 20:05:26', 'DELIVERED', 'PAID', 'DELIVERED', 4302.89, '2024-04-28 20:05:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (305, 94, '2024-08-22 04:43:21', 'COMPLETED', 'REFUNDED', 'SHIPPED', 131.93, '2024-08-22 04:43:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (15, 57, '2024-11-11 05:59:28', 'PENDING', 'PAID', 'DELIVERED', 2208.04, '2024-11-11 05:59:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (845, 7, '2024-06-29 01:20:05', 'PENDING', 'FAILED', 'NOT_SHIPPED', 1838.38, '2024-06-29 01:20:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (473, 83, '2024-06-12 20:36:08', 'RETURN_REQUESTED', 'FAILED', 'DELIVERED', 2043.72, '2024-06-12 20:36:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (937, 68, '2024-04-07 18:03:50', 'PAID', 'REFUNDED', 'RETURNING', 1075.42, '2024-04-07 18:03:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (486, 25, '2024-05-04 00:19:21', 'DELIVERED', 'REFUNDED', 'RETURNING', 1286.88, '2024-05-04 00:19:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (557, 44, '2024-07-13 18:25:03', 'COMPLETED', 'PENDING', 'SHIPPED', 3580.39, '2024-07-13 18:25:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (715, 92, '2025-05-16 00:22:08', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 1229.5, '2025-05-16 00:22:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (765, 36, '2024-09-08 04:57:47', 'SHIPPED', 'PENDING', 'SHIPPED', 3190.33, '2024-09-08 04:57:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (5, 63, '2025-01-07 19:04:20', 'DELIVERED', 'PAID', 'IN_TRANSIT', 2629.53, '2025-01-07 19:04:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (726, 54, '2024-08-06 07:31:20', 'PAID', 'FAILED', 'SHIPPED', 4106.05, '2024-08-06 07:31:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (565, 70, '2025-04-29 09:22:38', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 3889.92, '2025-04-29 09:22:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (989, 42, '2024-05-28 19:40:53', 'RETURN_REQUESTED', 'FAILED', 'DELIVERED', 1256.94, '2024-05-28 19:40:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 3, '2024-03-13 13:12:16', 'PENDING', 'FAILED', 'RETURNING', 283.08, '2024-03-13 13:12:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (418, 25, '2024-12-18 21:42:46', 'SHIPPED', 'PENDING', 'SHIPPED', 3034.28, '2024-12-18 21:42:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (935, 82, '2024-07-03 08:31:20', 'SHIPPED', 'FAILED', 'DELIVERED', 4200.03, '2024-07-03 08:31:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (698, 86, '2024-11-20 06:05:34', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 3018.32, '2024-11-20 06:05:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 52, '2024-11-30 08:05:43', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 3714.65, '2024-11-30 08:05:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (720, 20, '2024-01-28 22:00:15', 'COMPLETED', 'PENDING', 'DELIVERED', 3073.11, '2024-01-28 22:00:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (858, 79, '2024-03-27 19:50:51', 'RETURNED', 'FAILED', 'IN_TRANSIT', 1143.64, '2024-03-27 19:50:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (766, 74, '2024-11-01 00:47:38', 'SHIPPED', 'REFUNDED', 'SHIPPED', 1945.19, '2024-11-01 00:47:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (861, 44, '2024-06-16 13:47:55', 'SHIPPED', 'FAILED', 'SHIPPED', 258.92, '2024-06-16 13:47:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (162, 88, '2024-06-22 00:43:33', 'PENDING', 'PENDING', 'NOT_SHIPPED', 2730.15, '2024-06-22 00:43:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (212, 68, '2024-04-29 14:15:51', 'COMPLETED', 'PENDING', 'DELIVERED', 1660.77, '2024-04-29 14:15:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (252, 70, '2024-05-15 05:31:32', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 4677.95, '2024-05-15 05:31:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (116, 39, '2024-01-16 05:27:05', 'SHIPPED', 'PENDING', 'RETURNING', 3771.38, '2024-01-16 05:27:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (269, 1, '2025-03-28 17:58:05', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 2877.36, '2025-03-28 17:58:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (80, 1, '2025-02-10 02:21:23', 'CANCELLED', 'PAID', 'SHIPPED', 4547.3, '2025-02-10 02:21:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (386, 100, '2025-01-30 12:00:37', 'RETURNED', 'PAID', 'SHIPPED', 737.05, '2025-01-30 12:00:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (346, 58, '2024-05-01 06:30:01', 'PENDING', 'PENDING', 'DELIVERED', 4888.73, '2024-05-01 06:30:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (538, 38, '2024-10-11 18:52:11', 'PAID', 'FAILED', 'NOT_SHIPPED', 4372.53, '2024-10-11 18:52:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (84, 9, '2024-08-12 10:36:16', 'COMPLETED', 'PENDING', 'RETURNING', 4329.65, '2024-08-12 10:36:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (881, 48, '2024-01-03 06:17:39', 'CANCELLED', 'REFUNDED', 'DELIVERED', 2197.96, '2024-01-03 06:17:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (168, 78, '2024-07-14 07:47:59', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 2092.47, '2024-07-14 07:47:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 36, '2024-05-30 17:31:58', 'PENDING', 'FAILED', 'NOT_SHIPPED', 2696.64, '2024-05-30 17:31:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (940, 98, '2024-06-23 03:20:10', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 3278.69, '2024-06-23 03:20:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (351, 52, '2024-12-02 02:22:50', 'DELIVERED', 'REFUNDED', 'SHIPPED', 4279.65, '2024-12-02 02:22:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (19, 36, '2024-11-11 00:31:22', 'CANCELLED', 'PAID', 'RETURNING', 789.31, '2024-11-11 00:31:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (208, 81, '2024-02-26 15:28:03', 'COMPLETED', 'FAILED', 'SHIPPED', 2297.61, '2024-02-26 15:28:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (101, 44, '2025-05-02 19:56:15', 'CANCELLED', 'FAILED', 'DELIVERED', 4055.65, '2025-05-02 19:56:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (863, 39, '2025-03-30 13:17:38', 'RETURNED', 'REFUNDED', 'RETURNING', 1145.96, '2025-03-30 13:17:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (655, 72, '2025-04-28 13:37:02', 'RETURNED', 'PAID', 'RETURNING', 4534.03, '2025-04-28 13:37:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (735, 57, '2025-03-02 08:44:32', 'CANCELLED', 'PENDING', 'RETURNING', 2048.04, '2025-03-02 08:44:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (927, 59, '2025-04-28 13:27:22', 'PAID', 'PENDING', 'SHIPPED', 2400.79, '2025-04-28 13:27:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (967, 25, '2024-01-31 21:48:15', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2231.85, '2024-01-31 21:48:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (203, 63, '2024-08-29 01:36:05', 'SHIPPED', 'PAID', 'SHIPPED', 4531.11, '2024-08-29 01:36:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (793, 31, '2025-01-19 16:35:25', 'CANCELLED', 'PAID', 'SHIPPED', 504.47, '2025-01-19 16:35:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (413, 23, '2024-06-30 02:45:16', 'PAID', 'REFUNDED', 'IN_TRANSIT', 3911.54, '2024-06-30 02:45:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (411, 35, '2024-07-22 19:07:12', 'RETURNED', 'REFUNDED', 'RETURNING', 4726.87, '2024-07-22 19:07:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (705, 69, '2024-07-27 22:17:41', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 1233.78, '2024-07-27 22:17:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (30, 26, '2025-03-30 19:08:28', 'PAID', 'FAILED', 'RETURNING', 1635.5, '2025-03-30 19:08:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (793, 14, '2024-09-29 11:01:29', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 3518.07, '2024-09-29 11:01:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (142, 85, '2024-01-14 18:04:03', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 120.4, '2024-01-14 18:04:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (414, 98, '2024-02-14 01:16:06', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2436.48, '2024-02-14 01:16:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (520, 73, '2024-07-22 13:11:56', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 85.04, '2024-07-22 13:11:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (796, 48, '2024-03-16 08:50:37', 'PENDING', 'PAID', 'RETURNING', 3292.14, '2024-03-16 08:50:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (807, 9, '2024-12-20 06:30:42', 'RETURNED', 'PENDING', 'RETURNING', 4862.95, '2024-12-20 06:30:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (51, 76, '2025-05-16 12:56:10', 'DELIVERED', 'FAILED', 'SHIPPED', 725.75, '2025-05-16 12:56:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (372, 45, '2025-05-20 14:28:58', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 4890.84, '2025-05-20 14:28:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (663, 29, '2024-06-12 20:07:19', 'DELIVERED', 'PAID', 'RETURNING', 649.45, '2024-06-12 20:07:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (503, 64, '2024-12-21 23:02:03', 'DELIVERED', 'PAID', 'IN_TRANSIT', 303.29, '2024-12-21 23:02:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (285, 74, '2024-07-04 15:28:17', 'COMPLETED', 'PAID', 'RETURNING', 3047.93, '2024-07-04 15:28:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (701, 77, '2024-06-30 17:30:41', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 4737.39, '2024-06-30 17:30:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (55, 86, '2024-03-20 11:08:49', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 4920.35, '2024-03-20 11:08:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (109, 25, '2024-10-30 01:41:39', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 1809.96, '2024-10-30 01:41:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (701, 27, '2024-01-13 14:44:52', 'RETURNED', 'FAILED', 'RETURNING', 1473.79, '2024-01-13 14:44:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (348, 77, '2024-10-10 21:49:38', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 4845.39, '2024-10-10 21:49:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (482, 72, '2025-03-02 14:41:47', 'PENDING', 'PENDING', 'DELIVERED', 2194.75, '2025-03-02 14:41:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (292, 36, '2024-12-25 18:29:07', 'COMPLETED', 'REFUNDED', 'SHIPPED', 194.86, '2024-12-25 18:29:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (559, 84, '2024-01-29 21:43:47', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 1706.77, '2024-01-29 21:43:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (701, 100, '2024-04-02 13:19:31', 'CANCELLED', 'PENDING', 'SHIPPED', 1951.96, '2024-04-02 13:19:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (724, 81, '2024-04-26 17:20:48', 'RETURNED', 'FAILED', 'DELIVERED', 3754.15, '2024-04-26 17:20:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (621, 77, '2024-01-07 17:21:05', 'PAID', 'PAID', 'RETURNING', 1202.41, '2024-01-07 17:21:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (486, 100, '2024-03-29 22:13:31', 'PAID', 'FAILED', 'DELIVERED', 4674.16, '2024-03-29 22:13:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (853, 56, '2024-03-26 18:39:03', 'PENDING', 'PAID', 'SHIPPED', 3093.5, '2024-03-26 18:39:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (338, 27, '2025-01-31 07:33:20', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 150.21, '2025-01-31 07:33:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (806, 99, '2024-08-20 00:00:18', 'CANCELLED', 'FAILED', 'SHIPPED', 1534.2, '2024-08-20 00:00:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (771, 84, '2024-06-03 21:11:10', 'DELIVERED', 'PAID', 'IN_TRANSIT', 795.49, '2024-06-03 21:11:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (465, 59, '2024-02-15 17:29:01', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1741.28, '2024-02-15 17:29:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (178, 46, '2025-04-06 12:48:02', 'RETURNED', 'PENDING', 'SHIPPED', 3734.42, '2025-04-06 12:48:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (791, 12, '2024-07-27 08:56:18', 'CANCELLED', 'PENDING', 'RETURNING', 1039.56, '2024-07-27 08:56:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (214, 1, '2024-05-01 04:41:31', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 918.64, '2024-05-01 04:41:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (51, 83, '2024-02-01 10:43:46', 'SHIPPED', 'REFUNDED', 'DELIVERED', 1419.55, '2024-02-01 10:43:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (530, 93, '2024-11-04 18:34:45', 'COMPLETED', 'PAID', 'RETURNING', 2246.04, '2024-11-04 18:34:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (971, 91, '2025-02-19 23:38:00', 'SHIPPED', 'PAID', 'SHIPPED', 196.61, '2025-02-19 23:38:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (499, 94, '2025-01-10 13:44:58', 'PAID', 'PENDING', 'RETURNING', 4578.3, '2025-01-10 13:44:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (141, 51, '2025-01-14 08:25:00', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 2605.28, '2025-01-14 08:25:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (30, 82, '2024-06-12 23:45:13', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 1922.41, '2024-06-12 23:45:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (369, 59, '2024-03-04 18:46:19', 'PAID', 'PAID', 'NOT_SHIPPED', 133.93, '2024-03-04 18:46:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 50, '2024-06-07 17:36:51', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 3876.68, '2024-06-07 17:36:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (521, 30, '2024-04-05 18:12:27', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 4806.17, '2024-04-05 18:12:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (99, 9, '2024-09-17 10:15:16', 'DELIVERED', 'REFUNDED', 'SHIPPED', 1486.1, '2024-09-17 10:15:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (78, 18, '2024-03-05 17:06:14', 'PENDING', 'FAILED', 'SHIPPED', 2238.24, '2024-03-05 17:06:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 5, '2025-02-08 03:34:57', 'COMPLETED', 'REFUNDED', 'RETURNING', 81.53, '2025-02-08 03:34:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (321, 77, '2024-10-09 03:28:45', 'PAID', 'FAILED', 'NOT_SHIPPED', 1524.05, '2024-10-09 03:28:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (685, 10, '2024-07-22 02:10:36', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 1818.04, '2024-07-22 02:10:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (749, 69, '2024-12-07 00:08:50', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 490.37, '2024-12-07 00:08:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (332, 56, '2024-03-14 23:06:08', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 2500.73, '2024-03-14 23:06:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (271, 54, '2025-03-07 05:25:04', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 605.31, '2025-03-07 05:25:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (683, 6, '2024-09-30 07:18:52', 'RETURNED', 'FAILED', 'RETURNING', 2004.49, '2024-09-30 07:18:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (521, 83, '2024-12-10 05:20:26', 'PAID', 'FAILED', 'IN_TRANSIT', 4188.0, '2024-12-10 05:20:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (881, 48, '2024-10-19 16:20:34', 'SHIPPED', 'REFUNDED', 'DELIVERED', 4953.13, '2024-10-19 16:20:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (621, 21, '2024-08-01 02:20:31', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 2663.38, '2024-08-01 02:20:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (251, 59, '2024-04-21 04:09:25', 'RETURNED', 'PAID', 'RETURNING', 584.47, '2024-04-21 04:09:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (115, 61, '2024-07-13 07:36:16', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 405.97, '2024-07-13 07:36:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (160, 53, '2024-03-21 09:16:15', 'RETURNED', 'REFUNDED', 'RETURNING', 98.01, '2024-03-21 09:16:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (174, 18, '2024-04-13 16:20:53', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 1539.67, '2024-04-13 16:20:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (797, 12, '2024-03-02 06:49:39', 'PAID', 'FAILED', 'RETURNING', 1829.64, '2024-03-02 06:49:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (330, 25, '2025-03-13 20:21:14', 'COMPLETED', 'PAID', 'DELIVERED', 1439.68, '2025-03-13 20:21:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (185, 43, '2025-05-12 15:56:45', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2788.67, '2025-05-12 15:56:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (769, 12, '2024-06-25 01:43:47', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 203.43, '2024-06-25 01:43:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 81, '2024-03-17 12:36:01', 'PAID', 'PENDING', 'NOT_SHIPPED', 1374.91, '2024-03-17 12:36:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (694, 58, '2025-01-15 08:34:39', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 1413.55, '2025-01-15 08:34:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (199, 43, '2024-07-05 16:44:19', 'RETURNED', 'PAID', 'RETURNING', 1675.88, '2024-07-05 16:44:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (502, 12, '2025-04-29 11:06:33', 'PAID', 'PENDING', 'SHIPPED', 1409.47, '2025-04-29 11:06:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (417, 18, '2024-07-17 19:58:50', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 4812.27, '2024-07-17 19:58:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 64, '2024-03-08 20:31:39', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 98.91, '2024-03-08 20:31:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (340, 13, '2024-01-21 01:51:31', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 1968.93, '2024-01-21 01:51:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (40, 14, '2025-04-02 01:41:59', 'PENDING', 'REFUNDED', 'DELIVERED', 3398.03, '2025-04-02 01:41:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (880, 85, '2025-01-29 08:13:48', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4102.19, '2025-01-29 08:13:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (775, 78, '2024-02-17 09:51:05', 'RETURNED', 'FAILED', 'SHIPPED', 447.79, '2024-02-17 09:51:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (816, 92, '2024-11-21 21:13:35', 'COMPLETED', 'PAID', 'RETURNING', 4840.26, '2024-11-21 21:13:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (609, 90, '2025-01-05 09:50:49', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 195.26, '2025-01-05 09:50:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (178, 39, '2024-11-20 17:41:43', 'RETURNED', 'REFUNDED', 'RETURNING', 2000.1, '2024-11-20 17:41:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (652, 85, '2024-04-14 03:52:38', 'PENDING', 'PAID', 'DELIVERED', 1158.89, '2024-04-14 03:52:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (491, 48, '2025-04-21 19:53:28', 'DELIVERED', 'FAILED', 'DELIVERED', 4581.27, '2025-04-21 19:53:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (970, 29, '2024-01-29 06:54:26', 'COMPLETED', 'FAILED', 'SHIPPED', 1463.95, '2024-01-29 06:54:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (972, 67, '2025-02-27 06:14:30', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 2819.46, '2025-02-27 06:14:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (787, 43, '2025-02-15 11:09:18', 'DELIVERED', 'FAILED', 'SHIPPED', 3082.4, '2025-02-15 11:09:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (726, 71, '2025-04-24 07:15:51', 'DELIVERED', 'REFUNDED', 'SHIPPED', 2020.45, '2025-04-24 07:15:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (105, 56, '2025-03-13 10:51:54', 'DELIVERED', 'REFUNDED', 'DELIVERED', 4992.16, '2025-03-13 10:51:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (36, 75, '2025-05-05 07:13:01', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3660.42, '2025-05-05 07:13:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (830, 78, '2024-09-26 19:31:38', 'PAID', 'PAID', 'RETURNING', 3667.79, '2024-09-26 19:31:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (364, 10, '2024-12-22 18:50:19', 'SHIPPED', 'FAILED', 'DELIVERED', 2369.58, '2024-12-22 18:50:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (674, 27, '2024-09-14 02:19:47', 'RETURNED', 'PAID', 'RETURNING', 4283.05, '2024-09-14 02:19:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (177, 47, '2025-04-02 03:59:09', 'PENDING', 'FAILED', 'NOT_SHIPPED', 2995.36, '2025-04-02 03:59:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (127, 100, '2024-02-04 04:59:06', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 1348.22, '2024-02-04 04:59:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (100, 68, '2025-02-05 03:02:42', 'COMPLETED', 'PAID', 'DELIVERED', 1814.84, '2025-02-05 03:02:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (252, 8, '2024-11-12 00:30:58', 'PENDING', 'REFUNDED', 'SHIPPED', 461.69, '2024-11-12 00:30:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (329, 80, '2024-06-12 06:16:14', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 4449.35, '2024-06-12 06:16:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (487, 88, '2024-08-28 14:23:41', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 3423.07, '2024-08-28 14:23:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (904, 72, '2025-01-05 13:56:23', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 786.31, '2025-01-05 13:56:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 42, '2024-11-07 14:44:28', 'CANCELLED', 'REFUNDED', 'RETURNING', 2630.74, '2024-11-07 14:44:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 44, '2024-09-11 16:44:29', 'RETURNED', 'PAID', 'RETURNING', 350.54, '2024-09-11 16:44:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (968, 98, '2024-01-06 02:45:30', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 1112.37, '2024-01-06 02:45:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (568, 14, '2024-03-09 21:46:02', 'SHIPPED', 'FAILED', 'RETURNING', 409.5, '2024-03-09 21:46:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (490, 56, '2025-01-26 10:26:14', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 828.23, '2025-01-26 10:26:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (119, 58, '2024-09-09 03:23:41', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 1095.23, '2024-09-09 03:23:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (678, 41, '2024-10-25 16:45:59', 'RETURNED', 'FAILED', 'SHIPPED', 1282.06, '2024-10-25 16:45:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (419, 51, '2025-05-15 03:35:50', 'CANCELLED', 'REFUNDED', 'RETURNING', 4049.15, '2025-05-15 03:35:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 38, '2024-08-22 11:50:34', 'SHIPPED', 'PAID', 'SHIPPED', 4542.68, '2024-08-22 11:50:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (536, 59, '2024-08-10 07:19:13', 'PENDING', 'PENDING', 'NOT_SHIPPED', 4888.14, '2024-08-10 07:19:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (729, 52, '2024-08-26 00:24:33', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 2822.71, '2024-08-26 00:24:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (248, 87, '2025-03-27 10:13:35', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 3734.38, '2025-03-27 10:13:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (787, 9, '2025-04-04 12:19:38', 'PENDING', 'FAILED', 'RETURNING', 822.73, '2025-04-04 12:19:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (982, 93, '2024-12-28 17:59:23', 'PENDING', 'FAILED', 'SHIPPED', 77.18, '2024-12-28 17:59:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (409, 75, '2025-01-06 13:45:26', 'DELIVERED', 'FAILED', 'DELIVERED', 4345.62, '2025-01-06 13:45:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (355, 9, '2025-02-23 23:31:33', 'RETURNED', 'PAID', 'IN_TRANSIT', 4863.42, '2025-02-23 23:31:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (797, 85, '2025-03-23 04:13:24', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 3841.36, '2025-03-23 04:13:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (955, 89, '2024-01-01 05:44:22', 'RETURNED', 'REFUNDED', 'SHIPPED', 772.93, '2024-01-01 05:44:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (29, 19, '2024-02-08 15:40:44', 'DELIVERED', 'PAID', 'RETURNING', 4286.45, '2024-02-08 15:40:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (4, 77, '2024-09-20 05:57:31', 'RETURNED', 'PAID', 'RETURNING', 634.92, '2024-09-20 05:57:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (408, 63, '2025-02-10 23:54:11', 'PENDING', 'REFUNDED', 'RETURNING', 4663.24, '2025-02-10 23:54:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (207, 64, '2025-05-31 06:02:43', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 1240.47, '2025-05-31 06:02:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (874, 84, '2025-02-23 12:28:32', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 4292.8, '2025-02-23 12:28:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 97, '2024-04-22 20:38:12', 'RETURNED', 'PAID', 'RETURNING', 2825.46, '2024-04-22 20:38:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (398, 17, '2024-09-09 10:50:32', 'DELIVERED', 'REFUNDED', 'RETURNING', 4740.77, '2024-09-09 10:50:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (572, 87, '2024-09-05 19:45:36', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 4759.76, '2024-09-05 19:45:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (633, 55, '2024-10-24 15:10:10', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 3724.25, '2024-10-24 15:10:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (661, 68, '2025-01-13 00:55:56', 'DELIVERED', 'REFUNDED', 'DELIVERED', 3352.94, '2025-01-13 00:55:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (701, 42, '2025-03-15 14:12:28', 'COMPLETED', 'PAID', 'RETURNING', 2479.43, '2025-03-15 14:12:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (399, 17, '2024-02-08 03:27:42', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 205.29, '2024-02-08 03:27:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (112, 62, '2025-01-31 08:08:07', 'CANCELLED', 'PAID', 'RETURNING', 1030.35, '2025-01-31 08:08:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (35, 16, '2024-05-24 16:48:48', 'PENDING', 'PENDING', 'SHIPPED', 1060.82, '2024-05-24 16:48:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (503, 64, '2024-02-13 08:09:32', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 4619.93, '2024-02-13 08:09:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (878, 74, '2024-10-09 06:21:11', 'PENDING', 'PENDING', 'RETURNING', 4330.03, '2024-10-09 06:21:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (515, 88, '2025-03-30 04:36:55', 'PENDING', 'PAID', 'SHIPPED', 3842.11, '2025-03-30 04:36:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (844, 83, '2024-03-25 15:25:45', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 111.29, '2024-03-25 15:25:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (426, 47, '2024-08-29 08:59:26', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 3856.24, '2024-08-29 08:59:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (504, 93, '2024-03-04 12:39:13', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 153.47, '2024-03-04 12:39:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (439, 53, '2025-03-17 07:25:10', 'PENDING', 'FAILED', 'RETURNING', 386.92, '2025-03-17 07:25:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (74, 2, '2024-12-27 03:16:48', 'PENDING', 'FAILED', 'IN_TRANSIT', 3130.93, '2024-12-27 03:16:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (876, 29, '2024-01-12 10:55:13', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 859.78, '2024-01-12 10:55:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 100, '2024-09-08 09:02:52', 'RETURNED', 'PAID', 'NOT_SHIPPED', 4569.95, '2024-09-08 09:02:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 32, '2024-06-05 06:29:30', 'PENDING', 'PENDING', 'DELIVERED', 1716.03, '2024-06-05 06:29:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (29, 1, '2024-12-06 11:16:24', 'DELIVERED', 'FAILED', 'SHIPPED', 1401.53, '2024-12-06 11:16:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (809, 87, '2024-09-17 19:23:53', 'COMPLETED', 'PAID', 'RETURNING', 265.44, '2024-09-17 19:23:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (733, 25, '2024-02-27 09:27:23', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 814.24, '2024-02-27 09:27:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (782, 11, '2024-03-21 20:21:16', 'DELIVERED', 'FAILED', 'SHIPPED', 4522.98, '2024-03-21 20:21:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (404, 27, '2024-06-15 03:46:39', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 350.87, '2024-06-15 03:46:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (152, 18, '2024-01-27 12:13:49', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 1727.61, '2024-01-27 12:13:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (632, 50, '2024-06-19 05:43:36', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 2518.02, '2024-06-19 05:43:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (653, 91, '2024-03-30 04:18:56', 'COMPLETED', 'PAID', 'IN_TRANSIT', 4014.84, '2024-03-30 04:18:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (509, 30, '2025-02-19 04:39:05', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1416.75, '2025-02-19 04:39:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (284, 26, '2024-03-30 17:27:11', 'CANCELLED', 'PAID', 'SHIPPED', 1997.04, '2024-03-30 17:27:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (505, 6, '2025-02-20 08:26:56', 'PENDING', 'PENDING', 'DELIVERED', 1662.37, '2025-02-20 08:26:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (62, 32, '2024-05-13 11:46:35', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 131.8, '2024-05-13 11:46:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (371, 77, '2024-02-09 14:41:19', 'DELIVERED', 'FAILED', 'DELIVERED', 2752.16, '2024-02-09 14:41:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (809, 10, '2025-03-20 11:02:16', 'PENDING', 'PENDING', 'NOT_SHIPPED', 3705.55, '2025-03-20 11:02:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (838, 90, '2025-03-16 00:39:57', 'PENDING', 'PAID', 'DELIVERED', 2837.45, '2025-03-16 00:39:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (629, 70, '2024-11-13 03:50:37', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 4391.34, '2024-11-13 03:50:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (358, 49, '2024-02-09 04:27:49', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 991.06, '2024-02-09 04:27:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (687, 57, '2024-05-27 14:00:06', 'COMPLETED', 'PENDING', 'RETURNING', 4326.25, '2024-05-27 14:00:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (646, 7, '2024-04-30 06:27:38', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 3092.55, '2024-04-30 06:27:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (723, 37, '2024-12-18 20:44:29', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2419.1, '2024-12-18 20:44:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (380, 51, '2024-11-28 10:00:26', 'PENDING', 'FAILED', 'NOT_SHIPPED', 228.31, '2024-11-28 10:00:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (8, 78, '2024-02-22 08:36:55', 'RETURNED', 'PAID', 'IN_TRANSIT', 89.41, '2024-02-22 08:36:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (409, 48, '2024-12-31 23:34:50', 'SHIPPED', 'PENDING', 'DELIVERED', 861.59, '2024-12-31 23:34:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (439, 93, '2024-04-01 20:41:19', 'COMPLETED', 'REFUNDED', 'SHIPPED', 1620.78, '2024-04-01 20:41:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (218, 37, '2024-11-04 22:24:51', 'RETURNED', 'REFUNDED', 'RETURNING', 877.88, '2024-11-04 22:24:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (168, 41, '2024-09-21 16:56:20', 'SHIPPED', 'FAILED', 'DELIVERED', 54.4, '2024-09-21 16:56:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (573, 13, '2024-11-15 03:19:38', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 550.97, '2024-11-15 03:19:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (222, 53, '2024-09-23 14:13:06', 'RETURNED', 'PAID', 'SHIPPED', 4649.41, '2024-09-23 14:13:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (971, 21, '2024-10-26 19:20:52', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 2629.74, '2024-10-26 19:20:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (545, 32, '2024-10-18 18:33:10', 'DELIVERED', 'PENDING', 'RETURNING', 4466.33, '2024-10-18 18:33:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (495, 38, '2025-03-12 12:56:08', 'SHIPPED', 'PENDING', 'RETURNING', 2381.55, '2025-03-12 12:56:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (598, 70, '2025-03-19 06:20:29', 'DELIVERED', 'PAID', 'IN_TRANSIT', 3823.24, '2025-03-19 06:20:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (226, 84, '2025-02-18 08:15:39', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 3096.79, '2025-02-18 08:15:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (597, 25, '2024-03-11 01:37:42', 'PENDING', 'PENDING', 'RETURNING', 3054.82, '2024-03-11 01:37:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (730, 36, '2024-06-09 03:27:52', 'DELIVERED', 'REFUNDED', 'RETURNING', 2566.17, '2024-06-09 03:27:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (267, 36, '2024-12-31 00:11:24', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 676.75, '2024-12-31 00:11:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (654, 47, '2024-02-23 21:37:37', 'RETURNED', 'PENDING', 'IN_TRANSIT', 1497.59, '2024-02-23 21:37:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (823, 44, '2024-10-18 07:32:48', 'PENDING', 'PENDING', 'IN_TRANSIT', 4158.87, '2024-10-18 07:32:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (556, 90, '2024-08-13 03:26:59', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 1882.08, '2024-08-13 03:26:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (830, 82, '2024-03-08 22:28:08', 'CANCELLED', 'PENDING', 'RETURNING', 4509.59, '2024-03-08 22:28:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (402, 56, '2025-05-08 18:57:47', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 4498.83, '2025-05-08 18:57:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (148, 41, '2024-08-14 11:45:42', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 1760.75, '2024-08-14 11:45:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (813, 72, '2024-09-16 15:45:24', 'PENDING', 'PENDING', 'RETURNING', 3638.15, '2024-09-16 15:45:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (512, 58, '2024-06-02 22:40:36', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 1976.13, '2024-06-02 22:40:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (995, 86, '2025-02-18 19:16:20', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 4139.06, '2025-02-18 19:16:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (523, 71, '2025-03-30 23:37:26', 'CANCELLED', 'PAID', 'SHIPPED', 4160.95, '2025-03-30 23:37:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (436, 77, '2024-12-09 12:27:35', 'PENDING', 'PAID', 'NOT_SHIPPED', 4882.02, '2024-12-09 12:27:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (70, 74, '2024-03-02 08:04:04', 'PENDING', 'FAILED', 'IN_TRANSIT', 2077.98, '2024-03-02 08:04:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (433, 48, '2024-07-14 10:17:30', 'SHIPPED', 'PENDING', 'DELIVERED', 4851.72, '2024-07-14 10:17:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (44, 27, '2025-05-02 04:29:37', 'PAID', 'REFUNDED', 'IN_TRANSIT', 1238.89, '2025-05-02 04:29:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (794, 99, '2025-01-08 16:31:24', 'PENDING', 'PAID', 'RETURNING', 2979.59, '2025-01-08 16:31:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (681, 56, '2024-06-09 14:49:34', 'SHIPPED', 'FAILED', 'RETURNING', 1890.35, '2024-06-09 14:49:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (167, 100, '2025-02-02 19:22:52', 'RETURNED', 'REFUNDED', 'SHIPPED', 411.72, '2025-02-02 19:22:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (733, 38, '2024-11-20 03:24:30', 'PENDING', 'PENDING', 'IN_TRANSIT', 1503.53, '2024-11-20 03:24:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (399, 36, '2024-05-02 06:10:22', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 1287.09, '2024-05-02 06:10:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (217, 84, '2025-03-17 18:07:20', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 927.48, '2025-03-17 18:07:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (128, 83, '2024-10-20 03:32:56', 'PAID', 'PAID', 'RETURNING', 3539.66, '2024-10-20 03:32:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (301, 27, '2024-06-05 08:48:53', 'CANCELLED', 'FAILED', 'SHIPPED', 4192.53, '2024-06-05 08:48:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 44, '2024-10-17 02:41:27', 'SHIPPED', 'PAID', 'DELIVERED', 4404.9, '2024-10-17 02:41:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (687, 68, '2024-02-02 06:51:24', 'RETURNED', 'REFUNDED', 'RETURNING', 1152.55, '2024-02-02 06:51:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (59, 86, '2025-03-21 02:06:23', 'PENDING', 'PENDING', 'DELIVERED', 3144.0, '2025-03-21 02:06:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (996, 36, '2024-04-25 21:08:58', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 1931.13, '2024-04-25 21:08:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (467, 31, '2025-05-19 07:01:46', 'RETURNED', 'PAID', 'IN_TRANSIT', 1047.13, '2025-05-19 07:01:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (994, 52, '2024-10-31 11:54:59', 'DELIVERED', 'PAID', 'DELIVERED', 1881.54, '2024-10-31 11:54:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 46, '2024-12-08 03:12:21', 'DELIVERED', 'REFUNDED', 'RETURNING', 323.0, '2024-12-08 03:12:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (773, 97, '2024-12-27 04:49:59', 'COMPLETED', 'PENDING', 'RETURNING', 1734.23, '2024-12-27 04:49:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (131, 73, '2024-02-22 03:28:48', 'DELIVERED', 'REFUNDED', 'IN_TRANSIT', 2390.22, '2024-02-22 03:28:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (647, 40, '2025-03-09 23:12:35', 'PAID', 'REFUNDED', 'DELIVERED', 2168.56, '2025-03-09 23:12:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (143, 14, '2024-10-31 14:11:24', 'DELIVERED', 'PAID', 'RETURNING', 3181.01, '2024-10-31 14:11:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (54, 25, '2024-08-15 07:28:32', 'RETURNED', 'PENDING', 'DELIVERED', 2016.56, '2024-08-15 07:28:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (835, 72, '2025-01-08 00:53:57', 'PENDING', 'FAILED', 'SHIPPED', 4171.4, '2025-01-08 00:53:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (71, 18, '2025-05-25 23:37:56', 'DELIVERED', 'PENDING', 'DELIVERED', 3226.08, '2025-05-25 23:37:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (828, 16, '2024-02-17 11:48:44', 'SHIPPED', 'PAID', 'SHIPPED', 3063.7, '2024-02-17 11:48:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (447, 86, '2024-07-26 20:55:23', 'PAID', 'PAID', 'DELIVERED', 408.34, '2024-07-26 20:55:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (931, 86, '2024-05-20 06:38:59', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 119.45, '2024-05-20 06:38:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (223, 52, '2024-02-11 01:35:05', 'COMPLETED', 'PENDING', 'DELIVERED', 4736.46, '2024-02-11 01:35:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (20, 50, '2025-01-23 13:34:43', 'PAID', 'REFUNDED', 'IN_TRANSIT', 347.24, '2025-01-23 13:34:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 27, '2024-10-09 03:58:12', 'CANCELLED', 'FAILED', 'RETURNING', 326.99, '2024-10-09 03:58:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (233, 29, '2024-09-25 18:19:38', 'RETURNED', 'FAILED', 'SHIPPED', 1368.01, '2024-09-25 18:19:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (269, 59, '2024-05-08 21:31:20', 'DELIVERED', 'FAILED', 'RETURNING', 3211.61, '2024-05-08 21:31:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (666, 42, '2024-08-04 12:46:34', 'PENDING', 'PAID', 'RETURNING', 493.36, '2024-08-04 12:46:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (164, 34, '2024-02-25 10:31:14', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 2004.02, '2024-02-25 10:31:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (86, 34, '2024-02-28 17:22:53', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 2441.16, '2024-02-28 17:22:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (546, 93, '2024-08-17 17:52:59', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 786.4, '2024-08-17 17:52:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (221, 89, '2024-08-24 00:57:22', 'PENDING', 'REFUNDED', 'DELIVERED', 4798.38, '2024-08-24 00:57:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (549, 73, '2025-04-01 02:08:12', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 3457.62, '2025-04-01 02:08:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (821, 61, '2024-03-16 02:37:13', 'PAID', 'PAID', 'NOT_SHIPPED', 4172.55, '2024-03-16 02:37:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (165, 70, '2024-09-13 06:53:54', 'CANCELLED', 'REFUNDED', 'DELIVERED', 2226.26, '2024-09-13 06:53:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (98, 93, '2024-11-08 04:01:15', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 4396.19, '2024-11-08 04:01:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (235, 100, '2024-05-13 04:27:15', 'CANCELLED', 'FAILED', 'SHIPPED', 1399.91, '2024-05-13 04:27:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (846, 17, '2025-05-04 03:35:52', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 587.84, '2025-05-04 03:35:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (637, 85, '2025-03-06 15:32:53', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 2826.41, '2025-03-06 15:32:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (742, 75, '2025-03-07 09:25:28', 'PAID', 'FAILED', 'RETURNING', 2053.31, '2025-03-07 09:25:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (506, 11, '2024-09-14 05:39:54', 'RETURNED', 'FAILED', 'SHIPPED', 4803.56, '2024-09-14 05:39:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (55, 31, '2024-02-11 16:44:30', 'CANCELLED', 'PAID', 'DELIVERED', 1087.47, '2024-02-11 16:44:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (734, 94, '2024-05-24 22:08:00', 'SHIPPED', 'PENDING', 'RETURNING', 686.09, '2024-05-24 22:08:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (574, 8, '2024-12-28 20:57:48', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 2060.05, '2024-12-28 20:57:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (296, 53, '2024-10-09 12:53:41', 'PAID', 'PENDING', 'SHIPPED', 4883.57, '2024-10-09 12:53:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (89, 76, '2024-12-25 12:36:57', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 2772.45, '2024-12-25 12:36:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (287, 5, '2024-10-23 18:09:37', 'PAID', 'PENDING', 'SHIPPED', 3717.26, '2024-10-23 18:09:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (990, 86, '2024-03-01 23:11:25', 'PENDING', 'PENDING', 'SHIPPED', 1905.91, '2024-03-01 23:11:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (908, 5, '2025-04-27 09:00:32', 'CANCELLED', 'REFUNDED', 'SHIPPED', 1960.82, '2025-04-27 09:00:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (601, 27, '2024-04-25 15:28:03', 'SHIPPED', 'PENDING', 'SHIPPED', 3238.35, '2024-04-25 15:28:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 60, '2024-06-04 16:59:44', 'RETURNED', 'PENDING', 'RETURNING', 3195.98, '2024-06-04 16:59:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (127, 66, '2024-08-16 07:34:56', 'PAID', 'FAILED', 'NOT_SHIPPED', 1080.91, '2024-08-16 07:34:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (461, 73, '2024-10-30 04:49:26', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 3185.52, '2024-10-30 04:49:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (250, 7, '2024-02-02 11:38:48', 'CANCELLED', 'PENDING', 'RETURNING', 4201.41, '2024-02-02 11:38:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (751, 35, '2024-08-12 08:37:25', 'SHIPPED', 'FAILED', 'SHIPPED', 4459.97, '2024-08-12 08:37:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (150, 9, '2025-03-19 01:17:14', 'DELIVERED', 'PAID', 'DELIVERED', 1513.66, '2025-03-19 01:17:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (812, 5, '2024-08-28 17:30:53', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 304.12, '2024-08-28 17:30:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (866, 20, '2024-06-30 16:36:21', 'PENDING', 'PENDING', 'NOT_SHIPPED', 4220.03, '2024-06-30 16:36:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (724, 90, '2024-06-21 13:53:47', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 4393.22, '2024-06-21 13:53:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (712, 76, '2024-02-11 10:06:06', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 3918.19, '2024-02-11 10:06:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (90, 100, '2025-04-11 15:39:57', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 901.22, '2025-04-11 15:39:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (1000, 95, '2025-05-28 02:42:07', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 3671.5, '2025-05-28 02:42:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (162, 32, '2024-01-28 21:33:46', 'SHIPPED', 'FAILED', 'RETURNING', 820.92, '2024-01-28 21:33:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (111, 31, '2025-01-01 12:48:01', 'SHIPPED', 'PAID', 'SHIPPED', 2652.18, '2025-01-01 12:48:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (501, 39, '2025-02-06 04:36:52', 'CANCELLED', 'FAILED', 'SHIPPED', 3939.25, '2025-02-06 04:36:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (220, 46, '2024-02-19 22:20:55', 'PENDING', 'REFUNDED', 'DELIVERED', 3300.7, '2024-02-19 22:20:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 44, '2024-06-11 03:48:48', 'PENDING', 'PAID', 'DELIVERED', 1976.91, '2024-06-11 03:48:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (499, 71, '2024-07-31 21:46:18', 'COMPLETED', 'REFUNDED', 'RETURNING', 4853.77, '2024-07-31 21:46:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (57, 2, '2025-04-09 10:03:59', 'PAID', 'FAILED', 'IN_TRANSIT', 3713.52, '2025-04-09 10:03:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (49, 7, '2025-05-23 04:04:46', 'DELIVERED', 'PAID', 'IN_TRANSIT', 1832.56, '2025-05-23 04:04:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (346, 48, '2024-09-23 17:25:19', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1304.79, '2024-09-23 17:25:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (606, 13, '2024-05-06 15:26:09', 'SHIPPED', 'PAID', 'RETURNING', 3356.08, '2024-05-06 15:26:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (26, 93, '2025-02-02 10:15:48', 'SHIPPED', 'REFUNDED', 'RETURNING', 2259.14, '2025-02-02 10:15:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (600, 28, '2024-11-06 15:35:52', 'RETURNED', 'FAILED', 'RETURNING', 4175.19, '2024-11-06 15:35:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (868, 6, '2024-05-25 10:09:20', 'DELIVERED', 'FAILED', 'RETURNING', 4600.35, '2024-05-25 10:09:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (112, 17, '2024-10-17 05:22:12', 'DELIVERED', 'PENDING', 'RETURNING', 3127.76, '2024-10-17 05:22:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (300, 32, '2024-05-02 17:06:35', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 4408.02, '2024-05-02 17:06:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (294, 91, '2024-01-24 17:59:36', 'PAID', 'REFUNDED', 'IN_TRANSIT', 407.3, '2024-01-24 17:59:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (174, 99, '2025-01-22 10:53:15', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 225.81, '2025-01-22 10:53:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (988, 74, '2025-02-20 22:07:30', 'PENDING', 'PAID', 'NOT_SHIPPED', 1421.29, '2025-02-20 22:07:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 26, '2024-10-27 14:22:46', 'SHIPPED', 'PAID', 'SHIPPED', 3348.49, '2024-10-27 14:22:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (364, 24, '2024-08-10 21:05:43', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 4956.39, '2024-08-10 21:05:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (956, 8, '2024-05-24 23:01:11', 'RETURNED', 'PAID', 'NOT_SHIPPED', 729.85, '2024-05-24 23:01:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (150, 5, '2024-07-11 12:28:45', 'PAID', 'PAID', 'RETURNING', 3046.89, '2024-07-11 12:28:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 36, '2024-02-12 11:56:05', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 3539.42, '2024-02-12 11:56:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (526, 51, '2024-01-20 18:21:24', 'RETURNED', 'REFUNDED', 'SHIPPED', 706.62, '2024-01-20 18:21:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (615, 7, '2025-02-07 12:00:43', 'COMPLETED', 'PENDING', 'RETURNING', 1163.31, '2025-02-07 12:00:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (233, 98, '2024-09-27 04:51:17', 'RETURNED', 'PENDING', 'DELIVERED', 3078.88, '2024-09-27 04:51:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (356, 58, '2024-05-29 19:58:49', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 4325.88, '2024-05-29 19:58:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (169, 25, '2024-08-24 23:00:18', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 4075.75, '2024-08-24 23:00:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (949, 50, '2025-04-11 23:58:50', 'SHIPPED', 'PAID', 'SHIPPED', 2073.49, '2025-04-11 23:58:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (450, 86, '2024-07-25 09:31:17', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 2089.56, '2024-07-25 09:31:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 66, '2024-06-24 11:08:17', 'PENDING', 'REFUNDED', 'DELIVERED', 4062.86, '2024-06-24 11:08:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (288, 77, '2024-04-01 01:44:37', 'CANCELLED', 'REFUNDED', 'SHIPPED', 632.36, '2024-04-01 01:44:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (322, 29, '2024-03-11 15:37:47', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 2662.38, '2024-03-11 15:37:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (734, 51, '2024-09-08 09:43:11', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 4203.02, '2024-09-08 09:43:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (798, 37, '2024-07-08 04:17:34', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2407.95, '2024-07-08 04:17:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (56, 91, '2025-05-30 15:58:56', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 286.66, '2025-05-30 15:58:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (797, 48, '2025-05-28 02:44:52', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 1410.77, '2025-05-28 02:44:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (150, 26, '2024-06-24 10:31:58', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 3570.04, '2024-06-24 10:31:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (545, 38, '2024-08-05 04:51:58', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 3146.92, '2024-08-05 04:51:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (76, 2, '2024-05-14 08:04:29', 'SHIPPED', 'PENDING', 'SHIPPED', 2122.84, '2024-05-14 08:04:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (795, 49, '2024-11-19 03:42:40', 'PAID', 'PAID', 'SHIPPED', 3783.97, '2024-11-19 03:42:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (917, 23, '2024-06-29 06:41:36', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 93.48, '2024-06-29 06:41:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (798, 66, '2024-11-10 02:30:58', 'PAID', 'PENDING', 'RETURNING', 3559.49, '2024-11-10 02:30:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (469, 80, '2024-02-26 23:43:14', 'PENDING', 'PENDING', 'RETURNING', 2141.22, '2024-02-26 23:43:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (705, 59, '2024-07-22 22:07:39', 'PAID', 'FAILED', 'SHIPPED', 4278.97, '2024-07-22 22:07:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 32, '2024-04-27 08:50:23', 'RETURNED', 'REFUNDED', 'DELIVERED', 2339.6, '2024-04-27 08:50:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (828, 57, '2024-08-23 20:53:35', 'CANCELLED', 'PAID', 'DELIVERED', 200.35, '2024-08-23 20:53:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (1000, 26, '2025-05-09 02:27:36', 'PENDING', 'PAID', 'DELIVERED', 610.43, '2025-05-09 02:27:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (566, 99, '2024-08-23 10:51:24', 'CANCELLED', 'FAILED', 'SHIPPED', 3659.67, '2024-08-23 10:51:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (387, 82, '2024-10-08 00:09:29', 'COMPLETED', 'PAID', 'DELIVERED', 3998.15, '2024-10-08 00:09:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (58, 15, '2024-05-13 18:25:52', 'DELIVERED', 'FAILED', 'SHIPPED', 2583.39, '2024-05-13 18:25:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (51, 50, '2024-12-23 06:36:44', 'COMPLETED', 'FAILED', 'DELIVERED', 3154.29, '2024-12-23 06:36:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (83, 92, '2024-02-07 13:18:21', 'PENDING', 'PAID', 'RETURNING', 1317.77, '2024-02-07 13:18:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (214, 55, '2025-02-13 09:05:44', 'PENDING', 'FAILED', 'RETURNING', 375.16, '2025-02-13 09:05:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (164, 35, '2024-08-28 02:46:23', 'PAID', 'REFUNDED', 'RETURNING', 4170.05, '2024-08-28 02:46:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (104, 32, '2024-05-28 14:19:53', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 187.46, '2024-05-28 14:19:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (437, 46, '2025-03-22 18:10:23', 'PAID', 'PAID', 'IN_TRANSIT', 406.01, '2025-03-22 18:10:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (131, 50, '2025-04-16 04:06:05', 'RETURNED', 'REFUNDED', 'SHIPPED', 725.48, '2025-04-16 04:06:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (849, 56, '2025-01-21 21:23:54', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3038.61, '2025-01-21 21:23:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (644, 10, '2024-12-06 12:35:59', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 3300.5, '2024-12-06 12:35:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (945, 89, '2024-02-19 02:56:34', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 3045.64, '2024-02-19 02:56:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (12, 19, '2025-03-30 17:10:24', 'SHIPPED', 'FAILED', 'DELIVERED', 973.69, '2025-03-30 17:10:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (271, 43, '2025-05-02 13:33:37', 'PAID', 'PENDING', 'NOT_SHIPPED', 3889.27, '2025-05-02 13:33:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (252, 100, '2024-11-07 05:07:25', 'CANCELLED', 'FAILED', 'SHIPPED', 978.89, '2024-11-07 05:07:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (608, 32, '2024-09-20 04:13:22', 'PAID', 'REFUNDED', 'IN_TRANSIT', 4876.28, '2024-09-20 04:13:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (313, 98, '2024-04-25 17:37:46', 'PAID', 'REFUNDED', 'SHIPPED', 2544.98, '2024-04-25 17:37:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (164, 28, '2024-05-20 15:07:42', 'PENDING', 'REFUNDED', 'SHIPPED', 505.5, '2024-05-20 15:07:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (55, 57, '2024-08-15 12:00:28', 'PAID', 'FAILED', 'IN_TRANSIT', 2318.17, '2024-08-15 12:00:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (99, 77, '2024-02-10 08:12:33', 'SHIPPED', 'PENDING', 'SHIPPED', 3526.27, '2024-02-10 08:12:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (939, 8, '2024-12-24 07:16:19', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 3394.64, '2024-12-24 07:16:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (357, 33, '2024-06-07 12:58:11', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 4689.38, '2024-06-07 12:58:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (284, 6, '2025-01-03 02:36:37', 'PAID', 'FAILED', 'RETURNING', 4918.89, '2025-01-03 02:36:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (129, 75, '2025-01-24 19:15:00', 'DELIVERED', 'REFUNDED', 'SHIPPED', 3026.81, '2025-01-24 19:15:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (297, 68, '2024-07-31 06:33:42', 'PENDING', 'FAILED', 'NOT_SHIPPED', 4747.11, '2024-07-31 06:33:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (123, 2, '2024-09-02 11:43:30', 'SHIPPED', 'FAILED', 'SHIPPED', 4668.05, '2024-09-02 11:43:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (743, 27, '2025-03-16 21:35:04', 'RETURNED', 'PENDING', 'SHIPPED', 1557.09, '2025-03-16 21:35:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (820, 23, '2024-07-05 12:57:39', 'PAID', 'PAID', 'RETURNING', 4587.51, '2024-07-05 12:57:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (958, 61, '2024-06-04 05:19:32', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 3518.12, '2024-06-04 05:19:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (845, 17, '2024-10-09 01:41:45', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 1768.88, '2024-10-09 01:41:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (713, 50, '2024-06-21 06:59:58', 'PAID', 'FAILED', 'DELIVERED', 469.48, '2024-06-21 06:59:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (940, 65, '2025-02-25 22:58:17', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 2068.33, '2025-02-25 22:58:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (634, 80, '2024-01-03 22:45:35', 'DELIVERED', 'FAILED', 'DELIVERED', 829.07, '2024-01-03 22:45:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (585, 36, '2024-06-22 03:50:54', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 1481.85, '2024-06-22 03:50:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (446, 52, '2025-02-16 01:05:18', 'PAID', 'PAID', 'DELIVERED', 164.17, '2025-02-16 01:05:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (443, 96, '2024-08-04 06:41:18', 'PAID', 'FAILED', 'DELIVERED', 4886.76, '2024-08-04 06:41:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (847, 22, '2025-03-28 23:51:47', 'DELIVERED', 'PENDING', 'SHIPPED', 1267.34, '2025-03-28 23:51:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (967, 82, '2025-02-23 04:56:22', 'PENDING', 'FAILED', 'DELIVERED', 1819.76, '2025-02-23 04:56:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (740, 59, '2024-04-22 21:27:20', 'SHIPPED', 'FAILED', 'DELIVERED', 2759.82, '2024-04-22 21:27:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (157, 91, '2024-04-21 11:06:10', 'RETURNED', 'FAILED', 'DELIVERED', 4788.17, '2024-04-21 11:06:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (864, 28, '2024-02-03 13:17:53', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2766.44, '2024-02-03 13:17:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (230, 72, '2025-01-14 05:55:23', 'RETURNED', 'FAILED', 'IN_TRANSIT', 3305.8, '2025-01-14 05:55:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (621, 92, '2024-03-10 08:05:34', 'CANCELLED', 'PAID', 'IN_TRANSIT', 4122.33, '2024-03-10 08:05:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 65, '2024-11-25 22:35:35', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3382.3, '2024-11-25 22:35:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (209, 40, '2024-12-22 23:57:01', 'PENDING', 'REFUNDED', 'SHIPPED', 1136.78, '2024-12-22 23:57:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (4, 97, '2024-06-19 10:26:18', 'SHIPPED', 'FAILED', 'SHIPPED', 452.33, '2024-06-19 10:26:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (958, 97, '2025-02-16 01:20:40', 'COMPLETED', 'REFUNDED', 'SHIPPED', 1361.71, '2025-02-16 01:20:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (463, 96, '2025-02-11 18:25:10', 'DELIVERED', 'FAILED', 'DELIVERED', 1061.71, '2025-02-11 18:25:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (998, 29, '2024-06-29 22:56:23', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3641.94, '2024-06-29 22:56:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (809, 29, '2024-01-12 02:07:08', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 3533.56, '2024-01-12 02:07:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (364, 96, '2024-09-26 07:32:48', 'COMPLETED', 'PENDING', 'RETURNING', 3732.81, '2024-09-26 07:32:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (381, 58, '2024-05-30 23:46:19', 'PENDING', 'REFUNDED', 'RETURNING', 2879.92, '2024-05-30 23:46:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (574, 78, '2024-01-30 00:41:42', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 1474.79, '2024-01-30 00:41:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (728, 24, '2024-12-18 16:19:45', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 92.68, '2024-12-18 16:19:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (414, 32, '2025-01-25 20:21:32', 'PENDING', 'PENDING', 'RETURNING', 2127.01, '2025-01-25 20:21:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (426, 92, '2025-02-10 11:44:03', 'PENDING', 'REFUNDED', 'RETURNING', 3709.8, '2025-02-10 11:44:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (926, 15, '2024-06-28 08:32:34', 'PENDING', 'FAILED', 'RETURNING', 3631.93, '2024-06-28 08:32:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (225, 12, '2025-05-31 04:35:24', 'RETURNED', 'PENDING', 'DELIVERED', 2763.04, '2025-05-31 04:35:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (159, 62, '2024-08-08 09:02:40', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 1847.29, '2024-08-08 09:02:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (864, 82, '2025-02-19 16:45:04', 'PENDING', 'FAILED', 'NOT_SHIPPED', 625.74, '2025-02-19 16:45:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (766, 64, '2024-11-11 17:35:57', 'RETURNED', 'FAILED', 'DELIVERED', 2579.54, '2024-11-11 17:35:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 18, '2025-04-28 17:46:26', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3562.25, '2025-04-28 17:46:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (341, 83, '2025-05-10 03:39:04', 'COMPLETED', 'FAILED', 'DELIVERED', 2479.67, '2025-05-10 03:39:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (210, 67, '2024-09-09 21:59:29', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 88.9, '2024-09-09 21:59:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (197, 28, '2024-09-23 16:27:48', 'CANCELLED', 'REFUNDED', 'SHIPPED', 4949.18, '2024-09-23 16:27:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 45, '2024-07-23 18:13:22', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 2576.06, '2024-07-23 18:13:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 56, '2024-01-07 03:40:39', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 3248.29, '2024-01-07 03:40:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (942, 66, '2025-01-07 17:53:25', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 2289.26, '2025-01-07 17:53:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (100, 37, '2024-08-20 14:53:48', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 1540.99, '2024-08-20 14:53:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (477, 51, '2024-11-11 17:37:50', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 1663.35, '2024-11-11 17:37:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (781, 16, '2024-12-25 21:44:22', 'RETURNED', 'PAID', 'NOT_SHIPPED', 2119.04, '2024-12-25 21:44:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (466, 62, '2024-12-11 11:22:25', 'DELIVERED', 'FAILED', 'SHIPPED', 4636.38, '2024-12-11 11:22:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (190, 74, '2025-03-17 02:43:47', 'RETURNED', 'PENDING', 'IN_TRANSIT', 3130.44, '2025-03-17 02:43:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (746, 79, '2024-07-03 01:10:39', 'RETURNED', 'PAID', 'DELIVERED', 3081.49, '2024-07-03 01:10:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (711, 83, '2024-04-14 05:19:25', 'PAID', 'FAILED', 'RETURNING', 1175.44, '2024-04-14 05:19:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (365, 44, '2024-02-18 04:41:29', 'SHIPPED', 'PENDING', 'DELIVERED', 3172.89, '2024-02-18 04:41:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 42, '2025-04-29 17:19:01', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 2782.59, '2025-04-29 17:19:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (520, 21, '2025-05-28 07:57:39', 'PAID', 'FAILED', 'DELIVERED', 2282.89, '2025-05-28 07:57:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (260, 44, '2025-01-10 16:15:26', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1571.92, '2025-01-10 16:15:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 46, '2024-11-24 13:27:12', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 1214.59, '2024-11-24 13:27:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (345, 76, '2025-03-08 04:50:23', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3505.91, '2025-03-08 04:50:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (351, 100, '2024-10-09 15:39:47', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 1529.3, '2024-10-09 15:39:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (995, 88, '2024-04-25 17:33:20', 'PAID', 'FAILED', 'IN_TRANSIT', 1463.94, '2024-04-25 17:33:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (948, 81, '2024-08-10 23:34:13', 'PAID', 'PENDING', 'NOT_SHIPPED', 2010.56, '2024-08-10 23:34:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (842, 77, '2024-01-16 12:06:04', 'CANCELLED', 'PENDING', 'SHIPPED', 3551.16, '2024-01-16 12:06:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (78, 67, '2024-11-22 15:35:15', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2638.29, '2024-11-22 15:35:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (244, 56, '2024-09-04 20:39:00', 'PAID', 'FAILED', 'RETURNING', 535.76, '2024-09-04 20:39:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (560, 96, '2025-03-07 01:37:21', 'PAID', 'PENDING', 'DELIVERED', 871.7, '2025-03-07 01:37:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (83, 95, '2024-12-14 05:39:46', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 4959.19, '2024-12-14 05:39:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (894, 51, '2024-11-10 06:23:48', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 2708.63, '2024-11-10 06:23:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (454, 4, '2025-03-22 00:36:22', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 773.21, '2025-03-22 00:36:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (916, 27, '2025-04-13 02:14:24', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 3212.3, '2025-04-13 02:14:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (821, 64, '2025-01-08 04:43:50', 'SHIPPED', 'REFUNDED', 'RETURNING', 1562.46, '2025-01-08 04:43:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (849, 96, '2024-04-07 00:17:17', 'PENDING', 'PAID', 'DELIVERED', 3415.41, '2024-04-07 00:17:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 56, '2024-10-28 02:59:48', 'PENDING', 'PAID', 'NOT_SHIPPED', 2559.8, '2024-10-28 02:59:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (331, 9, '2024-09-14 13:50:30', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 2697.8, '2024-09-14 13:50:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (642, 90, '2025-01-31 16:47:26', 'PENDING', 'PENDING', 'DELIVERED', 3675.15, '2025-01-31 16:47:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (164, 12, '2024-08-31 10:07:58', 'COMPLETED', 'PAID', 'IN_TRANSIT', 2137.63, '2024-08-31 10:07:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (744, 77, '2024-07-22 04:36:17', 'DELIVERED', 'FAILED', 'DELIVERED', 2658.38, '2024-07-22 04:36:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 43, '2024-09-04 04:52:10', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 1458.45, '2024-09-04 04:52:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (131, 74, '2025-03-30 15:41:26', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 3813.27, '2025-03-30 15:41:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (616, 87, '2024-09-02 16:03:35', 'SHIPPED', 'REFUNDED', 'DELIVERED', 3140.92, '2024-09-02 16:03:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (672, 47, '2024-11-03 15:37:51', 'PENDING', 'PENDING', 'DELIVERED', 3987.62, '2024-11-03 15:37:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (39, 87, '2024-05-19 11:17:49', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 2807.42, '2024-05-19 11:17:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (576, 15, '2024-10-03 06:45:20', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 753.09, '2024-10-03 06:45:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (193, 62, '2024-03-26 01:03:27', 'DELIVERED', 'PAID', 'DELIVERED', 4473.16, '2024-03-26 01:03:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (768, 3, '2024-02-28 15:35:06', 'PENDING', 'PAID', 'IN_TRANSIT', 776.68, '2024-02-28 15:35:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (199, 88, '2024-10-05 01:26:37', 'RETURNED', 'PAID', 'SHIPPED', 3769.38, '2024-10-05 01:26:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (985, 56, '2025-03-01 16:24:33', 'PAID', 'REFUNDED', 'DELIVERED', 3886.18, '2025-03-01 16:24:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (918, 93, '2024-05-19 22:41:43', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2398.33, '2024-05-19 22:41:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (68, 57, '2024-05-12 10:55:34', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 4051.5, '2024-05-12 10:55:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (179, 45, '2024-12-07 08:33:03', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 2923.52, '2024-12-07 08:33:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (856, 100, '2024-09-14 18:02:05', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 4969.51, '2024-09-14 18:02:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (615, 18, '2024-12-11 18:02:28', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 3575.89, '2024-12-11 18:02:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (315, 49, '2024-12-01 12:03:58', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 3546.92, '2024-12-01 12:03:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (799, 16, '2024-02-04 19:29:09', 'COMPLETED', 'PAID', 'SHIPPED', 3929.66, '2024-02-04 19:29:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (878, 31, '2025-03-31 01:23:34', 'SHIPPED', 'PAID', 'RETURNING', 952.53, '2025-03-31 01:23:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (343, 3, '2024-06-15 07:10:32', 'PENDING', 'PAID', 'SHIPPED', 1787.42, '2024-06-15 07:10:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (315, 40, '2024-08-26 04:18:57', 'SHIPPED', 'REFUNDED', 'SHIPPED', 145.12, '2024-08-26 04:18:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (392, 37, '2024-09-23 00:46:12', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2055.2, '2024-09-23 00:46:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (70, 39, '2024-03-21 01:01:13', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 1230.37, '2024-03-21 01:01:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (274, 81, '2024-06-09 14:40:46', 'CANCELLED', 'PENDING', 'SHIPPED', 2070.36, '2024-06-09 14:40:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (275, 93, '2025-03-21 04:34:20', 'CANCELLED', 'PAID', 'IN_TRANSIT', 4350.58, '2025-03-21 04:34:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (169, 71, '2025-04-14 15:43:43', 'DELIVERED', 'REFUNDED', 'RETURNING', 3072.03, '2025-04-14 15:43:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (228, 28, '2024-09-04 14:56:50', 'SHIPPED', 'REFUNDED', 'DELIVERED', 491.58, '2024-09-04 14:56:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 4, '2025-05-14 19:55:40', 'DELIVERED', 'REFUNDED', 'SHIPPED', 2383.41, '2025-05-14 19:55:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (826, 66, '2024-04-20 18:17:00', 'DELIVERED', 'PENDING', 'RETURNING', 2209.25, '2024-04-20 18:17:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (27, 54, '2024-08-08 19:28:16', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2420.05, '2024-08-08 19:28:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (221, 50, '2024-08-26 17:45:37', 'PENDING', 'PAID', 'IN_TRANSIT', 4003.72, '2024-08-26 17:45:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (530, 44, '2024-12-01 05:09:40', 'RETURNED', 'PENDING', 'IN_TRANSIT', 1299.48, '2024-12-01 05:09:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (248, 5, '2024-06-16 08:23:52', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 427.32, '2024-06-16 08:23:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (42, 94, '2025-02-08 11:59:45', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 2875.27, '2025-02-08 11:59:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (925, 35, '2024-02-19 18:23:01', 'RETURNED', 'PENDING', 'DELIVERED', 4361.98, '2024-02-19 18:23:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (456, 27, '2024-05-02 03:39:26', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 4446.31, '2024-05-02 03:39:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (33, 5, '2024-06-12 14:04:07', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 380.06, '2024-06-12 14:04:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (806, 69, '2024-01-09 02:03:14', 'SHIPPED', 'PAID', 'RETURNING', 2693.84, '2024-01-09 02:03:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (85, 56, '2024-07-21 01:13:10', 'DELIVERED', 'PENDING', 'RETURNING', 3679.84, '2024-07-21 01:13:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (980, 48, '2024-07-02 10:41:51', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 3642.71, '2024-07-02 10:41:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (317, 63, '2024-01-31 05:56:20', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 2332.02, '2024-01-31 05:56:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (136, 37, '2024-08-26 02:54:04', 'SHIPPED', 'REFUNDED', 'DELIVERED', 1618.65, '2024-08-26 02:54:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (139, 91, '2024-08-18 23:14:02', 'DELIVERED', 'REFUNDED', 'SHIPPED', 3923.09, '2024-08-18 23:14:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (175, 23, '2024-11-27 18:43:20', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 933.66, '2024-11-27 18:43:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (337, 6, '2024-06-19 21:05:42', 'SHIPPED', 'REFUNDED', 'DELIVERED', 4530.73, '2024-06-19 21:05:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (858, 6, '2025-02-14 19:08:54', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 2345.34, '2025-02-14 19:08:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (998, 57, '2025-05-09 04:20:38', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 3207.88, '2025-05-09 04:20:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (353, 25, '2025-01-16 17:12:00', 'CANCELLED', 'PAID', 'DELIVERED', 4407.07, '2025-01-16 17:12:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 1, '2024-11-23 01:36:20', 'RETURNED', 'PENDING', 'SHIPPED', 142.72, '2024-11-23 01:36:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (547, 32, '2024-11-20 17:47:35', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 1206.93, '2024-11-20 17:47:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (233, 66, '2024-06-30 13:46:02', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 4932.58, '2024-06-30 13:46:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (943, 26, '2024-11-02 07:07:23', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 1002.84, '2024-11-02 07:07:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (492, 31, '2024-04-18 18:00:56', 'PENDING', 'FAILED', 'IN_TRANSIT', 787.46, '2024-04-18 18:00:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (563, 61, '2024-05-12 02:48:00', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 366.63, '2024-05-12 02:48:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (394, 8, '2024-01-19 13:12:50', 'PENDING', 'PENDING', 'RETURNING', 525.78, '2024-01-19 13:12:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (907, 75, '2025-02-03 10:25:09', 'SHIPPED', 'FAILED', 'RETURNING', 284.26, '2025-02-03 10:25:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (505, 83, '2024-03-29 10:36:47', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 2798.43, '2024-03-29 10:36:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (362, 24, '2025-04-25 05:37:46', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 4282.55, '2025-04-25 05:37:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (433, 73, '2025-02-26 15:45:36', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 4283.55, '2025-02-26 15:45:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (971, 62, '2024-07-20 06:55:41', 'RETURNED', 'PAID', 'NOT_SHIPPED', 781.17, '2024-07-20 06:55:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (243, 54, '2025-04-04 22:10:22', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 4064.43, '2025-04-04 22:10:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (250, 56, '2024-11-16 23:37:18', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 2241.27, '2024-11-16 23:37:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (889, 88, '2025-01-02 23:25:27', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 655.41, '2025-01-02 23:25:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (298, 21, '2025-03-07 23:19:57', 'PAID', 'REFUNDED', 'DELIVERED', 4597.02, '2025-03-07 23:19:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (38, 92, '2024-02-18 15:20:54', 'PENDING', 'PAID', 'RETURNING', 158.99, '2024-02-18 15:20:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (597, 86, '2024-12-08 17:26:04', 'RETURNED', 'FAILED', 'RETURNING', 4719.96, '2024-12-08 17:26:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (855, 31, '2025-05-20 03:32:25', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 1050.26, '2025-05-20 03:32:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (947, 20, '2024-04-14 17:09:42', 'SHIPPED', 'FAILED', 'RETURNING', 1763.63, '2024-04-14 17:09:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (428, 8, '2024-08-06 16:14:58', 'SHIPPED', 'FAILED', 'SHIPPED', 2669.28, '2024-08-06 16:14:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (254, 6, '2024-02-29 13:06:14', 'RETURNED', 'REFUNDED', 'RETURNING', 3919.34, '2024-02-29 13:06:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (3, 53, '2025-02-12 10:50:03', 'RETURNED', 'PAID', 'NOT_SHIPPED', 720.66, '2025-02-12 10:50:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (761, 5, '2024-06-09 13:31:09', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3658.99, '2024-06-09 13:31:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (308, 92, '2024-02-21 20:03:22', 'CANCELLED', 'PAID', 'RETURNING', 4067.61, '2024-02-21 20:03:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (285, 86, '2025-05-21 16:19:10', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 4594.76, '2025-05-21 16:19:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (242, 49, '2024-04-19 19:36:37', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1895.82, '2024-04-19 19:36:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (649, 24, '2024-10-24 18:06:33', 'CANCELLED', 'PAID', 'SHIPPED', 3803.17, '2024-10-24 18:06:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (529, 80, '2024-05-03 07:21:44', 'SHIPPED', 'PENDING', 'SHIPPED', 3654.75, '2024-05-03 07:21:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (419, 20, '2025-04-17 23:14:45', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 1295.82, '2025-04-17 23:14:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (652, 46, '2025-04-17 19:08:57', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 664.61, '2025-04-17 19:08:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (145, 14, '2025-02-06 22:53:12', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2057.91, '2025-02-06 22:53:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (491, 23, '2024-11-10 13:57:00', 'CANCELLED', 'PAID', 'RETURNING', 1535.85, '2024-11-10 13:57:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (891, 77, '2024-07-26 07:17:48', 'PENDING', 'REFUNDED', 'SHIPPED', 2504.47, '2024-07-26 07:17:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (568, 88, '2025-05-18 09:10:39', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 1939.34, '2025-05-18 09:10:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (913, 89, '2024-07-14 09:14:27', 'CANCELLED', 'PENDING', 'SHIPPED', 1995.41, '2024-07-14 09:14:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (462, 80, '2024-05-15 04:48:17', 'PAID', 'REFUNDED', 'RETURNING', 2367.56, '2024-05-15 04:48:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (780, 79, '2024-11-15 09:47:59', 'PAID', 'PENDING', 'IN_TRANSIT', 514.09, '2024-11-15 09:47:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 82, '2025-05-19 14:29:27', 'PAID', 'FAILED', 'SHIPPED', 285.94, '2025-05-19 14:29:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (402, 8, '2024-10-02 05:50:37', 'PAID', 'PENDING', 'IN_TRANSIT', 4334.39, '2024-10-02 05:50:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (262, 56, '2024-01-25 00:17:25', 'COMPLETED', 'PAID', 'IN_TRANSIT', 1226.32, '2024-01-25 00:17:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (136, 20, '2025-01-29 06:41:47', 'PENDING', 'PENDING', 'SHIPPED', 1589.21, '2025-01-29 06:41:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 82, '2025-03-03 23:16:49', 'CANCELLED', 'PENDING', 'SHIPPED', 1939.51, '2025-03-03 23:16:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (612, 16, '2024-02-23 13:02:36', 'RETURNED', 'PENDING', 'SHIPPED', 898.72, '2024-02-23 13:02:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 96, '2024-02-28 21:08:18', 'RETURNED', 'PENDING', 'RETURNING', 1525.74, '2024-02-28 21:08:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (425, 90, '2024-06-24 07:09:12', 'PENDING', 'FAILED', 'DELIVERED', 1000.91, '2024-06-24 07:09:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (606, 42, '2024-05-09 18:42:34', 'PENDING', 'FAILED', 'SHIPPED', 1573.65, '2024-05-09 18:42:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (358, 11, '2024-07-12 01:25:26', 'SHIPPED', 'REFUNDED', 'SHIPPED', 506.34, '2024-07-12 01:25:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (950, 3, '2024-08-28 05:34:42', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 488.59, '2024-08-28 05:34:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (489, 60, '2025-03-09 13:46:19', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 2595.81, '2025-03-09 13:46:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (128, 62, '2024-03-09 03:03:33', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 82.42, '2024-03-09 03:03:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (430, 22, '2025-02-20 19:03:26', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 905.28, '2025-02-20 19:03:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (696, 8, '2025-03-27 16:33:47', 'SHIPPED', 'REFUNDED', 'SHIPPED', 3963.27, '2025-03-27 16:33:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (254, 66, '2024-08-30 23:51:33', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 2905.43, '2024-08-30 23:51:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (578, 33, '2024-10-23 05:41:18', 'COMPLETED', 'PENDING', 'DELIVERED', 3294.78, '2024-10-23 05:41:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (677, 21, '2024-09-04 21:39:00', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 776.91, '2024-09-04 21:39:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (716, 80, '2025-03-25 13:01:00', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 4387.37, '2025-03-25 13:01:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (390, 54, '2024-11-13 17:39:02', 'DELIVERED', 'FAILED', 'SHIPPED', 4856.3, '2024-11-13 17:39:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (29, 17, '2024-07-11 09:29:56', 'CANCELLED', 'REFUNDED', 'SHIPPED', 3639.71, '2024-07-11 09:29:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (814, 89, '2024-06-07 15:29:06', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 225.02, '2024-06-07 15:29:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (309, 56, '2024-01-08 05:25:26', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4660.26, '2024-01-08 05:25:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (428, 83, '2024-05-28 17:43:52', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3369.26, '2024-05-28 17:43:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 4, '2024-04-19 23:06:21', 'PENDING', 'FAILED', 'SHIPPED', 3107.57, '2024-04-19 23:06:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (532, 29, '2025-02-02 19:22:26', 'COMPLETED', 'PENDING', 'DELIVERED', 3654.61, '2025-02-02 19:22:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (95, 68, '2024-05-31 18:58:02', 'PAID', 'REFUNDED', 'DELIVERED', 836.81, '2024-05-31 18:58:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (790, 31, '2024-09-06 04:51:54', 'RETURNED', 'PENDING', 'RETURNING', 4053.91, '2024-09-06 04:51:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (504, 23, '2024-09-02 19:34:19', 'RETURNED', 'REFUNDED', 'RETURNING', 3349.57, '2024-09-02 19:34:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (107, 66, '2024-01-30 13:22:31', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 4758.22, '2024-01-30 13:22:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (685, 72, '2024-03-25 20:39:57', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 3270.24, '2024-03-25 20:39:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (777, 20, '2024-11-10 10:01:59', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 3217.12, '2024-11-10 10:01:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (681, 54, '2024-08-11 08:07:21', 'COMPLETED', 'REFUNDED', 'SHIPPED', 3091.06, '2024-08-11 08:07:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (688, 16, '2024-06-25 05:49:24', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 1984.41, '2024-06-25 05:49:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (229, 88, '2025-01-04 22:37:52', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 3208.05, '2025-01-04 22:37:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (200, 48, '2024-11-06 23:59:03', 'RETURNED', 'PAID', 'RETURNING', 3766.39, '2024-11-06 23:59:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (967, 7, '2024-05-12 11:50:46', 'CANCELLED', 'REFUNDED', 'SHIPPED', 4126.2, '2024-05-12 11:50:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (304, 74, '2025-04-16 19:46:07', 'PAID', 'REFUNDED', 'DELIVERED', 905.38, '2025-04-16 19:46:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (823, 88, '2025-05-08 14:53:44', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 4855.67, '2025-05-08 14:53:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (643, 32, '2024-10-12 18:35:54', 'RETURNED', 'PAID', 'SHIPPED', 2484.16, '2024-10-12 18:35:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 92, '2025-02-11 08:26:19', 'PAID', 'PENDING', 'RETURNING', 4278.12, '2025-02-11 08:26:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (497, 36, '2024-01-20 10:26:33', 'COMPLETED', 'REFUNDED', 'DELIVERED', 455.51, '2024-01-20 10:26:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (888, 84, '2025-01-11 19:53:54', 'RETURNED', 'REFUNDED', 'RETURNING', 2974.44, '2025-01-11 19:53:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (626, 82, '2025-04-02 21:47:35', 'COMPLETED', 'REFUNDED', 'SHIPPED', 1056.3, '2025-04-02 21:47:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (710, 61, '2024-12-17 05:59:32', 'SHIPPED', 'PENDING', 'RETURNING', 292.58, '2024-12-17 05:59:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (987, 34, '2025-04-26 12:00:50', 'PENDING', 'REFUNDED', 'RETURNING', 2115.0, '2025-04-26 12:00:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (336, 54, '2025-02-11 15:34:59', 'PAID', 'REFUNDED', 'IN_TRANSIT', 983.75, '2025-02-11 15:34:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (106, 80, '2024-12-20 01:12:57', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 2303.53, '2024-12-20 01:12:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (857, 73, '2024-12-30 06:40:46', 'SHIPPED', 'PENDING', 'SHIPPED', 2483.89, '2024-12-30 06:40:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (493, 98, '2025-05-18 04:47:07', 'PENDING', 'PENDING', 'RETURNING', 1269.41, '2025-05-18 04:47:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (892, 8, '2024-03-02 12:38:27', 'COMPLETED', 'PENDING', 'RETURNING', 2147.18, '2024-03-02 12:38:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (649, 44, '2024-09-11 20:46:26', 'PENDING', 'PAID', 'IN_TRANSIT', 2071.0, '2024-09-11 20:46:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (682, 3, '2024-06-01 04:34:28', 'DELIVERED', 'PAID', 'DELIVERED', 2808.9, '2024-06-01 04:34:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (679, 70, '2024-12-05 06:49:16', 'PAID', 'PAID', 'DELIVERED', 4792.85, '2024-12-05 06:49:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (784, 70, '2025-03-21 19:29:05', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 1757.99, '2025-03-21 19:29:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (397, 95, '2024-07-23 09:44:48', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 3117.53, '2024-07-23 09:44:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (129, 21, '2024-02-09 21:46:05', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 2025.85, '2024-02-09 21:46:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (856, 55, '2024-08-27 06:58:37', 'PAID', 'FAILED', 'IN_TRANSIT', 4969.02, '2024-08-27 06:58:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (994, 58, '2024-09-09 15:16:11', 'PENDING', 'PENDING', 'SHIPPED', 2870.32, '2024-09-09 15:16:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (662, 51, '2025-05-07 20:15:17', 'CANCELLED', 'PENDING', 'DELIVERED', 975.46, '2025-05-07 20:15:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (540, 93, '2025-04-26 08:21:26', 'SHIPPED', 'PAID', 'SHIPPED', 1522.15, '2025-04-26 08:21:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (93, 26, '2025-04-07 07:53:07', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 1979.5, '2025-04-07 07:53:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (852, 19, '2024-01-13 04:45:37', 'SHIPPED', 'PENDING', 'SHIPPED', 4928.42, '2024-01-13 04:45:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (740, 42, '2024-09-29 12:36:23', 'SHIPPED', 'FAILED', 'RETURNING', 1377.57, '2024-09-29 12:36:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (427, 51, '2024-11-28 10:45:12', 'RETURNED', 'PENDING', 'IN_TRANSIT', 1023.07, '2024-11-28 10:45:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (760, 100, '2025-04-10 11:38:59', 'PENDING', 'REFUNDED', 'RETURNING', 1461.06, '2025-04-10 11:38:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 4, '2024-10-26 18:48:48', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 1286.85, '2024-10-26 18:48:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (538, 61, '2024-12-22 04:05:58', 'PENDING', 'REFUNDED', 'SHIPPED', 4927.32, '2024-12-22 04:05:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (93, 67, '2024-05-06 13:37:53', 'COMPLETED', 'REFUNDED', 'RETURNING', 2806.03, '2024-05-06 13:37:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (849, 37, '2024-07-25 23:37:16', 'COMPLETED', 'REFUNDED', 'DELIVERED', 2293.12, '2024-07-25 23:37:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (442, 4, '2025-03-11 11:09:40', 'PAID', 'PAID', 'RETURNING', 2509.04, '2025-03-11 11:09:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (221, 41, '2025-05-13 16:46:43', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 1231.32, '2025-05-13 16:46:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (195, 21, '2024-03-18 23:22:38', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 1502.84, '2024-03-18 23:22:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (390, 39, '2024-03-19 20:36:54', 'COMPLETED', 'PENDING', 'DELIVERED', 3457.65, '2024-03-19 20:36:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (535, 73, '2024-01-22 00:33:58', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2072.47, '2024-01-22 00:33:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (646, 96, '2025-01-01 13:58:56', 'PENDING', 'FAILED', 'NOT_SHIPPED', 3947.0, '2025-01-01 13:58:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (71, 49, '2024-10-03 05:36:33', 'RETURNED', 'REFUNDED', 'SHIPPED', 3415.27, '2024-10-03 05:36:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (313, 95, '2024-12-05 07:33:30', 'DELIVERED', 'REFUNDED', 'DELIVERED', 1053.37, '2024-12-05 07:33:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (607, 61, '2024-10-21 04:56:55', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 2975.44, '2024-10-21 04:56:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 25, '2024-07-23 14:15:53', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2328.35, '2024-07-23 14:15:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (44, 33, '2025-03-29 16:44:24', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 4197.34, '2025-03-29 16:44:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (843, 54, '2024-07-28 10:50:53', 'DELIVERED', 'PENDING', 'RETURNING', 4792.33, '2024-07-28 10:50:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (922, 65, '2025-05-24 00:03:29', 'DELIVERED', 'PAID', 'RETURNING', 341.42, '2025-05-24 00:03:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (84, 28, '2024-12-31 21:08:17', 'RETURNED', 'PENDING', 'SHIPPED', 4943.41, '2024-12-31 21:08:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (67, 5, '2024-02-06 14:03:46', 'PENDING', 'PAID', 'IN_TRANSIT', 2980.83, '2024-02-06 14:03:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (249, 16, '2024-04-04 08:04:12', 'PAID', 'PENDING', 'RETURNING', 2005.59, '2024-04-04 08:04:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (229, 86, '2024-09-02 23:49:43', 'DELIVERED', 'PENDING', 'DELIVERED', 971.19, '2024-09-02 23:49:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (360, 7, '2024-03-20 14:37:14', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 2257.67, '2024-03-20 14:37:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (603, 12, '2024-05-01 17:12:59', 'RETURNED', 'PENDING', 'DELIVERED', 1191.21, '2024-05-01 17:12:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (681, 70, '2024-12-31 12:55:17', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 4644.41, '2024-12-31 12:55:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (665, 74, '2024-05-06 04:29:02', 'PENDING', 'PENDING', 'DELIVERED', 4394.07, '2024-05-06 04:29:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (957, 38, '2025-04-16 15:30:45', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 3289.37, '2025-04-16 15:30:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (546, 24, '2025-01-02 06:09:33', 'COMPLETED', 'FAILED', 'RETURNING', 3922.28, '2025-01-02 06:09:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (220, 73, '2024-01-11 15:15:37', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 748.14, '2024-01-11 15:15:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (743, 35, '2024-12-09 12:20:10', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 3519.07, '2024-12-09 12:20:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (406, 47, '2025-04-17 13:16:35', 'RETURNED', 'PAID', 'RETURNING', 3541.5, '2025-04-17 13:16:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (932, 98, '2024-03-16 20:50:02', 'RETURNED', 'REFUNDED', 'SHIPPED', 2014.64, '2024-03-16 20:50:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (386, 57, '2025-05-09 07:57:56', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 1899.7, '2025-05-09 07:57:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (647, 12, '2024-03-15 07:11:53', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1398.62, '2024-03-15 07:11:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (627, 100, '2024-04-14 16:34:51', 'PAID', 'REFUNDED', 'SHIPPED', 687.11, '2024-04-14 16:34:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (872, 2, '2024-11-14 12:41:57', 'SHIPPED', 'FAILED', 'SHIPPED', 408.72, '2024-11-14 12:41:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (589, 41, '2024-06-29 05:04:22', 'RETURN_REQUESTED', 'FAILED', 'DELIVERED', 4422.04, '2024-06-29 05:04:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (654, 22, '2025-05-16 07:35:51', 'CANCELLED', 'PAID', 'IN_TRANSIT', 4492.02, '2025-05-16 07:35:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (208, 70, '2024-04-19 13:31:54', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 2377.66, '2024-04-19 13:31:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (515, 45, '2025-02-28 16:41:18', 'CANCELLED', 'REFUNDED', 'SHIPPED', 2445.23, '2025-02-28 16:41:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (112, 71, '2024-02-06 02:31:29', 'DELIVERED', 'PENDING', 'DELIVERED', 1556.85, '2024-02-06 02:31:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (842, 81, '2024-11-05 20:21:21', 'CANCELLED', 'PENDING', 'DELIVERED', 700.96, '2024-11-05 20:21:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (402, 31, '2024-12-21 03:50:55', 'SHIPPED', 'FAILED', 'DELIVERED', 1921.43, '2024-12-21 03:50:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (908, 60, '2024-11-14 17:36:55', 'SHIPPED', 'REFUNDED', 'DELIVERED', 617.43, '2024-11-14 17:36:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (552, 36, '2024-12-09 15:01:10', 'DELIVERED', 'REFUNDED', 'SHIPPED', 3332.98, '2024-12-09 15:01:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (137, 93, '2024-12-02 08:15:10', 'CANCELLED', 'REFUNDED', 'RETURNING', 3803.08, '2024-12-02 08:15:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 46, '2025-01-14 19:16:26', 'CANCELLED', 'REFUNDED', 'RETURNING', 2946.11, '2025-01-14 19:16:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (510, 42, '2024-06-04 08:16:28', 'COMPLETED', 'PENDING', 'SHIPPED', 3639.9, '2024-06-04 08:16:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (221, 76, '2024-06-04 15:16:19', 'COMPLETED', 'PAID', 'RETURNING', 3740.77, '2024-06-04 15:16:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (865, 61, '2025-03-05 20:36:15', 'RETURNED', 'FAILED', 'DELIVERED', 4605.64, '2025-03-05 20:36:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (884, 3, '2025-01-14 06:46:20', 'DELIVERED', 'REFUNDED', 'SHIPPED', 4619.87, '2025-01-14 06:46:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (367, 17, '2024-11-29 10:42:16', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 564.09, '2024-11-29 10:42:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (683, 65, '2024-03-16 17:07:30', 'PAID', 'REFUNDED', 'IN_TRANSIT', 4672.73, '2024-03-16 17:07:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (473, 63, '2024-09-13 06:23:42', 'DELIVERED', 'REFUNDED', 'DELIVERED', 4931.04, '2024-09-13 06:23:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (858, 11, '2025-02-26 10:40:43', 'RETURNED', 'FAILED', 'RETURNING', 1120.34, '2025-02-26 10:40:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (343, 3, '2024-12-25 21:52:38', 'RETURNED', 'PAID', 'NOT_SHIPPED', 1855.98, '2024-12-25 21:52:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (608, 58, '2024-05-16 07:36:24', 'PENDING', 'PENDING', 'IN_TRANSIT', 3653.92, '2024-05-16 07:36:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (393, 78, '2024-08-23 10:22:07', 'SHIPPED', 'PAID', 'SHIPPED', 2544.93, '2024-08-23 10:22:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (206, 10, '2024-05-27 02:25:56', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2243.44, '2024-05-27 02:25:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (118, 8, '2024-05-05 18:41:32', 'PAID', 'FAILED', 'IN_TRANSIT', 4100.99, '2024-05-05 18:41:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (381, 76, '2024-02-08 12:12:06', 'PENDING', 'REFUNDED', 'SHIPPED', 2259.98, '2024-02-08 12:12:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (772, 77, '2024-04-03 00:46:42', 'RETURNED', 'PAID', 'RETURNING', 112.94, '2024-04-03 00:46:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (260, 1, '2024-04-13 23:34:32', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 3242.39, '2024-04-13 23:34:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (282, 23, '2024-08-20 16:39:33', 'RETURNED', 'FAILED', 'IN_TRANSIT', 526.94, '2024-08-20 16:39:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (345, 77, '2024-04-18 00:09:47', 'PENDING', 'PAID', 'IN_TRANSIT', 256.87, '2024-04-18 00:09:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (941, 5, '2024-05-03 14:38:07', 'SHIPPED', 'PENDING', 'DELIVERED', 3917.87, '2024-05-03 14:38:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (615, 72, '2024-10-11 19:29:18', 'SHIPPED', 'REFUNDED', 'SHIPPED', 578.99, '2024-10-11 19:29:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (243, 89, '2024-11-23 15:33:23', 'COMPLETED', 'FAILED', 'SHIPPED', 174.89, '2024-11-23 15:33:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (110, 96, '2025-02-24 00:05:02', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 580.11, '2025-02-24 00:05:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (957, 20, '2024-03-21 09:35:21', 'DELIVERED', 'PAID', 'RETURNING', 4419.64, '2024-03-21 09:35:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (88, 70, '2025-03-28 18:40:11', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 2896.57, '2025-03-28 18:40:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (435, 55, '2024-10-02 19:46:56', 'PAID', 'REFUNDED', 'DELIVERED', 3487.92, '2024-10-02 19:46:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (281, 91, '2024-10-11 09:52:14', 'CANCELLED', 'FAILED', 'DELIVERED', 972.0, '2024-10-11 09:52:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (265, 57, '2024-06-15 17:25:52', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 3030.6, '2024-06-15 17:25:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (983, 96, '2025-05-29 17:14:29', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 4721.55, '2025-05-29 17:14:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (135, 40, '2024-05-05 17:00:29', 'CANCELLED', 'FAILED', 'RETURNING', 491.85, '2024-05-05 17:00:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (568, 20, '2024-10-31 08:46:04', 'SHIPPED', 'PENDING', 'DELIVERED', 2567.06, '2024-10-31 08:46:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (551, 51, '2024-10-24 22:21:23', 'DELIVERED', 'REFUNDED', 'SHIPPED', 4109.96, '2024-10-24 22:21:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (452, 48, '2024-03-15 12:28:29', 'SHIPPED', 'PENDING', 'RETURNING', 1928.25, '2024-03-15 12:28:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (111, 93, '2025-05-29 21:36:27', 'COMPLETED', 'PAID', 'RETURNING', 4172.48, '2025-05-29 21:36:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (845, 88, '2025-04-22 02:55:15', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 2525.76, '2025-04-22 02:55:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (560, 93, '2024-04-16 07:18:44', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 3414.87, '2024-04-16 07:18:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (501, 53, '2024-09-26 06:34:47', 'PENDING', 'FAILED', 'DELIVERED', 4372.04, '2024-09-26 06:34:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (685, 80, '2024-09-29 20:32:05', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3534.73, '2024-09-29 20:32:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (77, 39, '2024-12-25 13:07:46', 'PAID', 'PAID', 'SHIPPED', 3825.26, '2024-12-25 13:07:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (707, 68, '2024-07-15 18:53:38', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 3930.93, '2024-07-15 18:53:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (592, 95, '2024-10-13 06:15:43', 'CANCELLED', 'REFUNDED', 'RETURNING', 1441.01, '2024-10-13 06:15:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (11, 44, '2024-06-21 15:39:11', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 4780.29, '2024-06-21 15:39:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (390, 76, '2024-09-18 06:01:58', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 1559.51, '2024-09-18 06:01:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (558, 42, '2025-01-11 06:49:06', 'RETURNED', 'FAILED', 'RETURNING', 4430.2, '2025-01-11 06:49:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (754, 100, '2024-02-21 10:55:19', 'CANCELLED', 'REFUNDED', 'DELIVERED', 1562.32, '2024-02-21 10:55:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 1, '2024-04-21 14:46:47', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 4201.92, '2024-04-21 14:46:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (815, 73, '2024-01-10 10:09:43', 'COMPLETED', 'PAID', 'IN_TRANSIT', 2316.42, '2024-01-10 10:09:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (501, 51, '2025-05-02 11:43:14', 'RETURN_REQUESTED', 'FAILED', 'DELIVERED', 3389.24, '2025-05-02 11:43:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (983, 44, '2024-03-21 20:28:37', 'COMPLETED', 'FAILED', 'DELIVERED', 3967.7, '2024-03-21 20:28:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (56, 4, '2024-09-07 02:41:34', 'CANCELLED', 'REFUNDED', 'SHIPPED', 632.23, '2024-09-07 02:41:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (22, 59, '2024-03-31 10:12:37', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 4853.13, '2024-03-31 10:12:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (80, 23, '2024-02-23 11:51:16', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 3802.97, '2024-02-23 11:51:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (650, 22, '2024-09-08 02:58:52', 'DELIVERED', 'FAILED', 'SHIPPED', 3162.78, '2024-09-08 02:58:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (771, 74, '2025-05-09 22:29:51', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 3012.46, '2025-05-09 22:29:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (952, 30, '2024-09-06 16:09:43', 'DELIVERED', 'PENDING', 'DELIVERED', 4087.53, '2024-09-06 16:09:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (18, 19, '2024-03-23 03:54:44', 'CANCELLED', 'REFUNDED', 'RETURNING', 1907.44, '2024-03-23 03:54:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (822, 45, '2024-04-01 05:59:20', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 3215.15, '2024-04-01 05:59:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (870, 58, '2024-11-18 06:49:43', 'SHIPPED', 'PENDING', 'RETURNING', 2443.26, '2024-11-18 06:49:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (914, 77, '2024-06-22 02:16:29', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 1361.62, '2024-06-22 02:16:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (920, 74, '2025-03-28 01:15:27', 'PENDING', 'REFUNDED', 'RETURNING', 2385.04, '2025-03-28 01:15:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (457, 91, '2024-12-27 09:14:04', 'PENDING', 'PAID', 'SHIPPED', 647.38, '2024-12-27 09:14:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 43, '2024-04-17 14:05:06', 'COMPLETED', 'FAILED', 'RETURNING', 3579.95, '2024-04-17 14:05:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (877, 7, '2024-04-18 16:34:46', 'CANCELLED', 'PAID', 'DELIVERED', 1886.51, '2024-04-18 16:34:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (240, 89, '2025-04-13 17:50:15', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 3645.15, '2025-04-13 17:50:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (377, 6, '2024-11-15 18:32:52', 'DELIVERED', 'FAILED', 'RETURNING', 3081.89, '2024-11-15 18:32:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (541, 86, '2024-12-16 10:36:02', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 3215.76, '2024-12-16 10:36:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 14, '2024-04-29 10:32:13', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 3356.79, '2024-04-29 10:32:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (244, 66, '2024-01-07 13:12:26', 'SHIPPED', 'FAILED', 'DELIVERED', 2304.08, '2024-01-07 13:12:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (355, 54, '2024-10-07 05:42:11', 'RETURNED', 'PENDING', 'RETURNING', 963.59, '2024-10-07 05:42:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (929, 37, '2024-03-02 12:09:01', 'RETURNED', 'PAID', 'IN_TRANSIT', 584.45, '2024-03-02 12:09:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (199, 64, '2025-01-02 00:14:00', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 760.09, '2025-01-02 00:14:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (78, 39, '2024-04-03 15:29:06', 'PAID', 'PAID', 'NOT_SHIPPED', 3187.53, '2024-04-03 15:29:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (920, 35, '2024-05-20 10:43:22', 'RETURNED', 'FAILED', 'DELIVERED', 3969.41, '2024-05-20 10:43:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (232, 7, '2024-04-22 14:56:57', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 3763.68, '2024-04-22 14:56:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 16, '2024-08-15 12:46:57', 'SHIPPED', 'FAILED', 'RETURNING', 4071.93, '2024-08-15 12:46:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (484, 7, '2024-08-26 13:53:21', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 3150.91, '2024-08-26 13:53:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (445, 31, '2025-04-12 17:59:47', 'DELIVERED', 'PAID', 'DELIVERED', 2483.64, '2025-04-12 17:59:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (465, 100, '2024-01-09 21:15:55', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 3401.46, '2024-01-09 21:15:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (661, 72, '2024-10-09 23:58:59', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 3282.67, '2024-10-09 23:58:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (562, 26, '2024-10-12 21:06:17', 'PENDING', 'PENDING', 'SHIPPED', 747.03, '2024-10-12 21:06:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (703, 86, '2024-08-29 23:51:18', 'CANCELLED', 'PENDING', 'DELIVERED', 313.34, '2024-08-29 23:51:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (379, 54, '2025-05-27 18:03:17', 'SHIPPED', 'PAID', 'SHIPPED', 3821.9, '2025-05-27 18:03:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (39, 16, '2024-07-05 19:47:17', 'DELIVERED', 'REFUNDED', 'RETURNING', 3208.51, '2024-07-05 19:47:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (496, 9, '2024-05-23 01:24:00', 'PENDING', 'REFUNDED', 'DELIVERED', 2072.37, '2024-05-23 01:24:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (339, 52, '2024-10-28 11:42:08', 'CANCELLED', 'REFUNDED', 'RETURNING', 3827.79, '2024-10-28 11:42:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 23, '2024-06-16 05:34:58', 'DELIVERED', 'PAID', 'DELIVERED', 2478.43, '2024-06-16 05:34:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (179, 51, '2024-01-30 14:25:30', 'RETURNED', 'REFUNDED', 'SHIPPED', 968.79, '2024-01-30 14:25:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (827, 89, '2024-04-26 03:32:49', 'COMPLETED', 'PENDING', 'SHIPPED', 1058.78, '2024-04-26 03:32:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (810, 40, '2024-06-26 01:42:48', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 1750.12, '2024-06-26 01:42:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (260, 81, '2025-03-07 20:02:15', 'PAID', 'FAILED', 'NOT_SHIPPED', 3352.84, '2025-03-07 20:02:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (143, 85, '2024-06-02 23:29:52', 'RETURNED', 'FAILED', 'SHIPPED', 474.2, '2024-06-02 23:29:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (233, 76, '2025-05-30 18:16:16', 'PENDING', 'FAILED', 'IN_TRANSIT', 1387.88, '2025-05-30 18:16:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (306, 58, '2024-02-13 01:31:49', 'PAID', 'FAILED', 'NOT_SHIPPED', 2831.23, '2024-02-13 01:31:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (751, 13, '2025-05-08 13:58:28', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 4932.72, '2025-05-08 13:58:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (733, 19, '2025-05-29 20:13:32', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 978.09, '2025-05-29 20:13:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (462, 14, '2024-08-03 15:52:48', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 2062.05, '2024-08-03 15:52:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (660, 5, '2025-01-10 16:16:39', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 3570.3, '2025-01-10 16:16:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (609, 42, '2025-04-06 05:38:55', 'CANCELLED', 'PAID', 'IN_TRANSIT', 3931.47, '2025-04-06 05:38:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (763, 37, '2025-03-31 02:24:18', 'COMPLETED', 'PENDING', 'RETURNING', 1364.45, '2025-03-31 02:24:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (784, 25, '2024-01-08 17:58:53', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4780.46, '2024-01-08 17:58:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (808, 85, '2025-01-16 03:31:02', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 2096.54, '2025-01-16 03:31:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (84, 36, '2024-09-13 17:58:19', 'COMPLETED', 'PENDING', 'RETURNING', 4262.96, '2024-09-13 17:58:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 91, '2024-07-15 12:45:33', 'DELIVERED', 'PAID', 'SHIPPED', 4992.16, '2024-07-15 12:45:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (682, 54, '2025-02-15 18:36:04', 'CANCELLED', 'FAILED', 'RETURNING', 3173.73, '2025-02-15 18:36:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (442, 80, '2024-10-26 14:23:15', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 1616.05, '2024-10-26 14:23:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (231, 74, '2024-03-13 14:17:42', 'PAID', 'PENDING', 'DELIVERED', 3320.07, '2024-03-13 14:17:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (668, 40, '2025-02-11 22:19:05', 'RETURNED', 'PAID', 'IN_TRANSIT', 2385.72, '2025-02-11 22:19:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (653, 31, '2024-02-11 07:22:05', 'PENDING', 'PAID', 'IN_TRANSIT', 1974.51, '2024-02-11 07:22:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (127, 2, '2025-05-07 19:20:00', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3676.17, '2025-05-07 19:20:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (535, 8, '2024-03-08 12:19:52', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 281.45, '2024-03-08 12:19:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (612, 60, '2025-01-11 20:59:06', 'SHIPPED', 'REFUNDED', 'SHIPPED', 3637.19, '2025-01-11 20:59:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 3, '2025-05-29 16:53:23', 'DELIVERED', 'PAID', 'SHIPPED', 1325.4, '2025-05-29 16:53:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (336, 10, '2025-02-05 04:35:21', 'SHIPPED', 'FAILED', 'DELIVERED', 4263.8, '2025-02-05 04:35:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (538, 99, '2024-08-25 23:30:53', 'CANCELLED', 'PAID', 'IN_TRANSIT', 3240.7, '2024-08-25 23:30:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (969, 23, '2025-05-29 01:47:09', 'PENDING', 'PENDING', 'NOT_SHIPPED', 4873.45, '2025-05-29 01:47:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (692, 100, '2025-03-09 17:18:17', 'PENDING', 'PENDING', 'RETURNING', 4597.91, '2025-03-09 17:18:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (717, 20, '2024-05-16 14:40:33', 'CANCELLED', 'FAILED', 'SHIPPED', 1194.13, '2024-05-16 14:40:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (966, 17, '2024-06-19 15:25:49', 'RETURNED', 'FAILED', 'RETURNING', 1032.02, '2024-06-19 15:25:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (73, 66, '2025-01-27 03:25:11', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 677.15, '2025-01-27 03:25:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (493, 91, '2024-03-06 12:05:25', 'PENDING', 'FAILED', 'NOT_SHIPPED', 2508.91, '2024-03-06 12:05:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (459, 82, '2025-01-01 14:40:19', 'PAID', 'PENDING', 'IN_TRANSIT', 2731.62, '2025-01-01 14:40:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (622, 64, '2024-06-24 08:06:52', 'PENDING', 'PENDING', 'IN_TRANSIT', 3075.72, '2024-06-24 08:06:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (440, 13, '2024-10-23 01:25:41', 'COMPLETED', 'FAILED', 'DELIVERED', 2151.66, '2024-10-23 01:25:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (103, 78, '2025-03-20 04:27:52', 'COMPLETED', 'FAILED', 'RETURNING', 1349.82, '2025-03-20 04:27:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 20, '2024-04-25 21:45:28', 'COMPLETED', 'FAILED', 'SHIPPED', 4602.98, '2024-04-25 21:45:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (212, 76, '2025-02-12 12:05:04', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 592.51, '2025-02-12 12:05:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (12, 71, '2024-01-17 23:58:08', 'PAID', 'FAILED', 'NOT_SHIPPED', 2925.74, '2024-01-17 23:58:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (98, 92, '2024-11-29 20:27:21', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 226.6, '2024-11-29 20:27:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 94, '2024-05-05 00:53:19', 'PENDING', 'PAID', 'DELIVERED', 2079.96, '2024-05-05 00:53:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (975, 12, '2024-05-20 09:17:47', 'RETURNED', 'FAILED', 'RETURNING', 743.19, '2024-05-20 09:17:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (51, 72, '2024-05-15 05:48:21', 'RETURNED', 'REFUNDED', 'RETURNING', 2309.98, '2024-05-15 05:48:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (370, 87, '2024-05-22 14:36:38', 'RETURNED', 'PAID', 'RETURNING', 3449.58, '2024-05-22 14:36:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (900, 75, '2025-01-18 16:33:17', 'PAID', 'PENDING', 'RETURNING', 1566.85, '2025-01-18 16:33:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (41, 99, '2024-08-03 10:31:19', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 2222.62, '2024-08-03 10:31:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (208, 89, '2025-04-30 09:52:18', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 3151.29, '2025-04-30 09:52:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (881, 16, '2025-05-06 16:30:25', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 115.4, '2025-05-06 16:30:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (200, 57, '2024-03-13 12:19:53', 'PAID', 'REFUNDED', 'RETURNING', 103.27, '2024-03-13 12:19:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (527, 21, '2024-06-30 14:26:01', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 150.07, '2024-06-30 14:26:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (497, 89, '2024-01-09 21:14:15', 'RETURNED', 'REFUNDED', 'RETURNING', 2555.97, '2024-01-09 21:14:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 46, '2024-03-23 02:44:21', 'DELIVERED', 'PAID', 'RETURNING', 3660.17, '2024-03-23 02:44:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (158, 97, '2025-02-19 11:00:45', 'SHIPPED', 'PENDING', 'RETURNING', 2391.9, '2025-02-19 11:00:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 30, '2024-10-25 11:44:10', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 201.07, '2024-10-25 11:44:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (283, 13, '2025-03-01 22:28:42', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 172.21, '2025-03-01 22:28:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (989, 39, '2024-09-01 19:18:27', 'RETURNED', 'FAILED', 'SHIPPED', 2942.19, '2024-09-01 19:18:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (171, 10, '2024-09-26 20:03:15', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 2614.59, '2024-09-26 20:03:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (784, 96, '2025-01-17 05:28:40', 'DELIVERED', 'FAILED', 'DELIVERED', 122.97, '2025-01-17 05:28:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (3, 43, '2024-05-30 04:35:42', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 2927.13, '2024-05-30 04:35:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (895, 37, '2025-04-24 19:08:01', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 4214.65, '2025-04-24 19:08:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (416, 81, '2024-05-20 00:24:26', 'PENDING', 'REFUNDED', 'SHIPPED', 4243.78, '2024-05-20 00:24:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (67, 20, '2024-05-27 13:44:58', 'RETURNED', 'FAILED', 'IN_TRANSIT', 4353.25, '2024-05-27 13:44:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (740, 51, '2024-01-10 15:13:55', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1773.28, '2024-01-10 15:13:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (829, 85, '2024-02-09 13:17:35', 'SHIPPED', 'PAID', 'SHIPPED', 1903.89, '2024-02-09 13:17:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (19, 2, '2024-02-18 13:24:04', 'PENDING', 'PENDING', 'NOT_SHIPPED', 509.44, '2024-02-18 13:24:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (622, 71, '2024-04-15 05:37:17', 'DELIVERED', 'PAID', 'SHIPPED', 1280.59, '2024-04-15 05:37:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (687, 45, '2024-08-03 04:56:27', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 3732.07, '2024-08-03 04:56:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (429, 17, '2024-04-10 10:05:35', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 1716.26, '2024-04-10 10:05:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (262, 37, '2024-05-05 10:37:39', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 1982.72, '2024-05-05 10:37:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (650, 68, '2025-03-22 05:58:14', 'CANCELLED', 'PAID', 'RETURNING', 2005.7, '2025-03-22 05:58:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (271, 18, '2024-10-11 07:52:42', 'PENDING', 'REFUNDED', 'DELIVERED', 4889.24, '2024-10-11 07:52:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (354, 46, '2024-06-27 19:27:00', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 3792.86, '2024-06-27 19:27:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (404, 89, '2024-05-29 04:08:25', 'CANCELLED', 'FAILED', 'SHIPPED', 2434.53, '2024-05-29 04:08:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (215, 5, '2024-03-16 20:30:53', 'SHIPPED', 'REFUNDED', 'SHIPPED', 456.93, '2024-03-16 20:30:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (730, 51, '2025-01-29 07:36:12', 'RETURNED', 'PAID', 'SHIPPED', 1270.77, '2025-01-29 07:36:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (949, 76, '2025-03-17 07:15:40', 'PENDING', 'REFUNDED', 'SHIPPED', 414.59, '2025-03-17 07:15:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (333, 65, '2025-04-01 06:53:05', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2710.58, '2025-04-01 06:53:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (274, 36, '2024-04-06 18:00:49', 'PENDING', 'REFUNDED', 'SHIPPED', 1193.72, '2024-04-06 18:00:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (627, 6, '2024-06-17 00:23:02', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 1153.01, '2024-06-17 00:23:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (240, 46, '2024-07-26 17:40:58', 'RETURNED', 'REFUNDED', 'RETURNING', 2686.92, '2024-07-26 17:40:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (218, 49, '2025-01-04 20:23:47', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 1306.73, '2025-01-04 20:23:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (170, 45, '2024-04-26 14:30:57', 'PAID', 'PAID', 'RETURNING', 4956.85, '2024-04-26 14:30:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (747, 14, '2024-06-29 21:55:26', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1780.19, '2024-06-29 21:55:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (110, 81, '2024-01-14 19:29:11', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 4329.52, '2024-01-14 19:29:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (718, 59, '2025-01-14 16:06:28', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2154.35, '2025-01-14 16:06:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (647, 70, '2024-03-07 08:59:10', 'COMPLETED', 'FAILED', 'RETURNING', 2758.29, '2024-03-07 08:59:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (3, 90, '2024-08-21 16:40:39', 'SHIPPED', 'PENDING', 'DELIVERED', 4091.88, '2024-08-21 16:40:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (938, 85, '2025-04-20 17:41:07', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 3178.7, '2025-04-20 17:41:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (285, 60, '2024-01-03 19:14:27', 'PAID', 'PAID', 'NOT_SHIPPED', 3342.8, '2024-01-03 19:14:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (510, 8, '2025-03-05 01:20:19', 'PENDING', 'REFUNDED', 'SHIPPED', 4564.98, '2025-03-05 01:20:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (625, 51, '2025-03-01 13:21:06', 'DELIVERED', 'REFUNDED', 'RETURNING', 3184.78, '2025-03-01 13:21:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (900, 9, '2024-04-19 06:11:43', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 3990.86, '2024-04-19 06:11:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (946, 68, '2024-12-24 18:01:29', 'SHIPPED', 'PAID', 'DELIVERED', 2354.08, '2024-12-24 18:01:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (293, 95, '2024-06-05 11:33:03', 'PENDING', 'PAID', 'IN_TRANSIT', 4917.06, '2024-06-05 11:33:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (259, 75, '2025-01-16 02:16:30', 'COMPLETED', 'FAILED', 'DELIVERED', 4321.04, '2025-01-16 02:16:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (394, 39, '2024-08-05 20:43:00', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2102.69, '2024-08-05 20:43:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (215, 47, '2024-11-25 02:54:13', 'RETURNED', 'PENDING', 'RETURNING', 4882.1, '2024-11-25 02:54:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (952, 64, '2025-01-01 09:02:21', 'SHIPPED', 'FAILED', 'RETURNING', 153.6, '2025-01-01 09:02:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (646, 57, '2024-06-08 12:55:42', 'RETURNED', 'PENDING', 'DELIVERED', 707.55, '2024-06-08 12:55:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (614, 30, '2025-05-01 05:28:21', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 2588.88, '2025-05-01 05:28:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (901, 71, '2025-03-13 08:15:54', 'PAID', 'FAILED', 'DELIVERED', 2707.02, '2025-03-13 08:15:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (682, 59, '2024-02-16 06:46:43', 'CANCELLED', 'REFUNDED', 'RETURNING', 3019.57, '2024-02-16 06:46:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (230, 75, '2025-01-25 13:29:07', 'CANCELLED', 'FAILED', 'DELIVERED', 2490.75, '2025-01-25 13:29:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (581, 20, '2024-10-26 03:34:48', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 3139.69, '2024-10-26 03:34:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (938, 64, '2025-03-02 13:12:07', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 4868.43, '2025-03-02 13:12:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (105, 93, '2025-03-04 01:34:31', 'SHIPPED', 'PENDING', 'RETURNING', 3575.65, '2025-03-04 01:34:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (418, 99, '2025-05-22 19:49:45', 'COMPLETED', 'PENDING', 'SHIPPED', 3385.27, '2025-05-22 19:49:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (482, 5, '2024-02-03 08:14:06', 'DELIVERED', 'PENDING', 'SHIPPED', 2309.42, '2024-02-03 08:14:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (5, 10, '2025-03-31 19:02:45', 'CANCELLED', 'PAID', 'IN_TRANSIT', 1196.93, '2025-03-31 19:02:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (23, 5, '2024-03-23 15:52:53', 'RETURNED', 'REFUNDED', 'RETURNING', 3412.19, '2024-03-23 15:52:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (741, 91, '2024-08-25 04:28:50', 'COMPLETED', 'REFUNDED', 'RETURNING', 386.77, '2024-08-25 04:28:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (231, 6, '2024-08-18 06:58:17', 'PENDING', 'PENDING', 'IN_TRANSIT', 147.19, '2024-08-18 06:58:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (766, 90, '2024-01-18 15:55:29', 'CANCELLED', 'PAID', 'SHIPPED', 4796.28, '2024-01-18 15:55:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (642, 18, '2024-12-04 06:39:22', 'SHIPPED', 'PAID', 'SHIPPED', 801.77, '2024-12-04 06:39:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 53, '2024-07-11 13:44:07', 'DELIVERED', 'REFUNDED', 'SHIPPED', 315.26, '2024-07-11 13:44:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (313, 79, '2024-11-29 06:43:07', 'PENDING', 'REFUNDED', 'DELIVERED', 235.87, '2024-11-29 06:43:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (457, 50, '2025-03-01 17:53:08', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 1837.62, '2025-03-01 17:53:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (622, 10, '2025-04-24 17:49:06', 'PENDING', 'PENDING', 'SHIPPED', 2775.39, '2025-04-24 17:49:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (825, 7, '2025-03-13 07:10:13', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 1047.45, '2025-03-13 07:10:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (776, 9, '2024-01-12 15:05:26', 'RETURNED', 'FAILED', 'SHIPPED', 89.01, '2024-01-12 15:05:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (158, 42, '2024-03-24 07:29:29', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 4677.32, '2024-03-24 07:29:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (624, 96, '2024-12-28 08:06:24', 'RETURNED', 'PENDING', 'IN_TRANSIT', 1188.81, '2024-12-28 08:06:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (480, 82, '2024-04-12 11:44:46', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1795.28, '2024-04-12 11:44:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (807, 14, '2024-09-17 12:45:22', 'SHIPPED', 'PENDING', 'SHIPPED', 2839.95, '2024-09-17 12:45:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (23, 98, '2024-11-11 01:49:00', 'CANCELLED', 'PAID', 'RETURNING', 2591.44, '2024-11-11 01:49:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (251, 55, '2024-05-15 23:22:38', 'PAID', 'PENDING', 'DELIVERED', 165.42, '2024-05-15 23:22:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (631, 71, '2025-01-31 03:04:00', 'PAID', 'REFUNDED', 'IN_TRANSIT', 2362.27, '2025-01-31 03:04:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (6, 88, '2025-01-03 08:24:44', 'CANCELLED', 'PENDING', 'DELIVERED', 3170.32, '2025-01-03 08:24:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (575, 18, '2024-04-11 16:37:59', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 702.26, '2024-04-11 16:37:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (815, 98, '2025-01-29 19:02:06', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 2700.57, '2025-01-29 19:02:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (233, 40, '2024-01-16 10:18:26', 'RETURNED', 'PAID', 'RETURNING', 4908.48, '2024-01-16 10:18:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (590, 43, '2024-05-12 15:47:02', 'DELIVERED', 'PAID', 'IN_TRANSIT', 4226.54, '2024-05-12 15:47:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (604, 33, '2025-02-22 11:37:55', 'SHIPPED', 'FAILED', 'RETURNING', 3775.66, '2025-02-22 11:37:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (918, 4, '2024-11-28 03:43:06', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 3847.1, '2024-11-28 03:43:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (794, 76, '2025-02-02 08:01:24', 'PENDING', 'REFUNDED', 'DELIVERED', 784.51, '2025-02-02 08:01:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (406, 22, '2025-04-25 21:41:35', 'PENDING', 'PENDING', 'IN_TRANSIT', 287.49, '2025-04-25 21:41:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (104, 67, '2024-11-08 14:51:07', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 1975.7, '2024-11-08 14:51:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (535, 90, '2024-01-25 23:08:37', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 4875.26, '2024-01-25 23:08:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (690, 72, '2024-01-01 00:15:45', 'COMPLETED', 'PAID', 'IN_TRANSIT', 2881.47, '2024-01-01 00:15:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (188, 14, '2024-05-05 14:51:48', 'COMPLETED', 'REFUNDED', 'RETURNING', 4534.58, '2024-05-05 14:51:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (341, 63, '2025-03-24 04:53:47', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 3741.72, '2025-03-24 04:53:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (822, 52, '2025-02-03 12:17:43', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 246.88, '2025-02-03 12:17:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (545, 70, '2025-02-18 22:43:36', 'RETURNED', 'PAID', 'NOT_SHIPPED', 113.91, '2025-02-18 22:43:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (10, 40, '2025-03-18 20:59:39', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 386.73, '2025-03-18 20:59:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (469, 33, '2025-03-13 14:25:41', 'PENDING', 'FAILED', 'IN_TRANSIT', 904.76, '2025-03-13 14:25:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (720, 73, '2024-08-01 14:59:00', 'PAID', 'PAID', 'SHIPPED', 4072.29, '2024-08-01 14:59:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (326, 41, '2024-06-27 11:17:27', 'PAID', 'PENDING', 'NOT_SHIPPED', 236.55, '2024-06-27 11:17:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 26, '2024-07-09 10:47:49', 'PAID', 'PENDING', 'SHIPPED', 4958.19, '2024-07-09 10:47:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (125, 77, '2024-08-14 14:07:08', 'PENDING', 'FAILED', 'SHIPPED', 3818.34, '2024-08-14 14:07:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (701, 15, '2024-11-15 07:42:44', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 3162.0, '2024-11-15 07:42:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (543, 84, '2024-03-06 13:51:38', 'SHIPPED', 'PENDING', 'SHIPPED', 1619.35, '2024-03-06 13:51:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 77, '2024-01-30 16:37:43', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 1271.54, '2024-01-30 16:37:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (946, 47, '2024-03-05 00:05:47', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 335.1, '2024-03-05 00:05:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (396, 44, '2024-03-07 10:13:08', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 1524.7, '2024-03-07 10:13:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (825, 8, '2024-10-07 07:43:13', 'PENDING', 'PENDING', 'RETURNING', 1630.62, '2024-10-07 07:43:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (365, 49, '2024-12-07 08:49:58', 'DELIVERED', 'FAILED', 'SHIPPED', 828.91, '2024-12-07 08:49:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (130, 18, '2024-07-13 21:14:19', 'RETURNED', 'FAILED', 'DELIVERED', 4572.97, '2024-07-13 21:14:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (537, 87, '2024-04-28 20:35:59', 'SHIPPED', 'REFUNDED', 'DELIVERED', 4038.19, '2024-04-28 20:35:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (865, 95, '2024-03-04 06:44:42', 'SHIPPED', 'PAID', 'RETURNING', 3040.45, '2024-03-04 06:44:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (514, 10, '2024-05-15 19:35:45', 'CANCELLED', 'FAILED', 'RETURNING', 1948.3, '2024-05-15 19:35:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (105, 15, '2024-07-21 20:39:57', 'RETURNED', 'FAILED', 'RETURNING', 697.91, '2024-07-21 20:39:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (469, 82, '2024-01-21 19:46:39', 'RETURNED', 'PAID', 'RETURNING', 1560.29, '2024-01-21 19:46:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (656, 77, '2024-09-20 01:10:11', 'COMPLETED', 'FAILED', 'RETURNING', 453.29, '2024-09-20 01:10:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (332, 18, '2024-10-04 00:55:15', 'PAID', 'PAID', 'DELIVERED', 4168.59, '2024-10-04 00:55:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (264, 22, '2025-04-26 09:31:11', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 4957.06, '2025-04-26 09:31:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (382, 15, '2024-01-21 20:04:39', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 2434.23, '2024-01-21 20:04:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (72, 52, '2024-03-16 02:48:55', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 3417.85, '2024-03-16 02:48:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (669, 35, '2024-12-22 05:38:09', 'PENDING', 'PAID', 'DELIVERED', 1697.79, '2024-12-22 05:38:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (229, 66, '2024-04-27 08:36:30', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2882.49, '2024-04-27 08:36:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (281, 12, '2024-05-06 13:29:55', 'CANCELLED', 'PENDING', 'SHIPPED', 1802.9, '2024-05-06 13:29:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 20, '2024-04-18 12:20:14', 'PAID', 'PENDING', 'RETURNING', 1972.64, '2024-04-18 12:20:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (824, 86, '2024-07-06 21:50:00', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 4265.23, '2024-07-06 21:50:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (513, 92, '2024-09-02 05:51:55', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 4615.37, '2024-09-02 05:51:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (679, 7, '2025-03-15 17:12:52', 'COMPLETED', 'PENDING', 'DELIVERED', 855.33, '2025-03-15 17:12:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 86, '2024-09-24 20:35:17', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 2651.35, '2024-09-24 20:35:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (633, 20, '2025-01-31 18:12:01', 'RETURNED', 'PENDING', 'RETURNING', 156.53, '2025-01-31 18:12:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (491, 24, '2024-03-27 12:28:19', 'DELIVERED', 'PAID', 'IN_TRANSIT', 923.16, '2024-03-27 12:28:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (401, 4, '2024-09-29 01:22:48', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 839.63, '2024-09-29 01:22:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (911, 43, '2024-11-12 12:35:31', 'COMPLETED', 'PENDING', 'RETURNING', 3623.79, '2024-11-12 12:35:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (644, 94, '2024-08-01 13:18:28', 'DELIVERED', 'FAILED', 'SHIPPED', 4855.95, '2024-08-01 13:18:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (326, 85, '2024-09-27 10:07:58', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 737.61, '2024-09-27 10:07:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (879, 50, '2024-02-05 10:51:11', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 1837.98, '2024-02-05 10:51:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (654, 62, '2025-03-01 17:42:33', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 3323.91, '2025-03-01 17:42:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (443, 72, '2024-09-03 23:50:09', 'RETURNED', 'PAID', 'SHIPPED', 563.6, '2024-09-03 23:50:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (499, 15, '2025-03-29 00:37:57', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 183.4, '2025-03-29 00:37:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (213, 85, '2025-05-04 23:55:29', 'PAID', 'FAILED', 'RETURNING', 517.76, '2025-05-04 23:55:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (80, 80, '2024-05-22 16:51:12', 'PAID', 'PAID', 'NOT_SHIPPED', 1332.32, '2024-05-22 16:51:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (174, 39, '2024-02-14 01:08:21', 'DELIVERED', 'PENDING', 'RETURNING', 1820.84, '2024-02-14 01:08:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (137, 52, '2025-05-19 04:36:37', 'PAID', 'PENDING', 'DELIVERED', 1594.51, '2025-05-19 04:36:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (461, 80, '2024-09-30 16:32:17', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 1367.2, '2024-09-30 16:32:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (385, 51, '2024-05-13 15:09:01', 'RETURNED', 'PAID', 'NOT_SHIPPED', 3491.48, '2024-05-13 15:09:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (907, 80, '2025-03-29 00:57:03', 'CANCELLED', 'PAID', 'RETURNING', 2046.11, '2025-03-29 00:57:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 55, '2024-12-31 14:37:22', 'PAID', 'REFUNDED', 'IN_TRANSIT', 1615.7, '2024-12-31 14:37:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (438, 49, '2025-02-03 13:05:41', 'COMPLETED', 'PAID', 'IN_TRANSIT', 1263.91, '2025-02-03 13:05:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (904, 47, '2024-02-02 21:39:21', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 2708.37, '2024-02-02 21:39:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (706, 20, '2024-05-25 12:16:20', 'COMPLETED', 'FAILED', 'RETURNING', 3944.58, '2024-05-25 12:16:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (448, 47, '2025-03-06 20:52:02', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 439.58, '2025-03-06 20:52:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (203, 58, '2024-09-23 14:15:00', 'PENDING', 'PENDING', 'IN_TRANSIT', 1054.75, '2024-09-23 14:15:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (922, 77, '2025-03-06 01:30:49', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 4859.16, '2025-03-06 01:30:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (764, 77, '2024-10-03 04:56:39', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4972.4, '2024-10-03 04:56:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (798, 11, '2024-07-03 03:29:26', 'SHIPPED', 'PAID', 'SHIPPED', 2084.27, '2024-07-03 03:29:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (967, 65, '2024-12-27 18:21:28', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2115.76, '2024-12-27 18:21:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (519, 26, '2024-04-03 22:50:21', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 801.44, '2024-04-03 22:50:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (494, 49, '2024-07-18 20:09:21', 'DELIVERED', 'REFUNDED', 'DELIVERED', 389.73, '2024-07-18 20:09:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (47, 58, '2024-01-07 08:00:22', 'PAID', 'REFUNDED', 'DELIVERED', 1639.58, '2024-01-07 08:00:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (961, 41, '2025-05-20 09:08:40', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 3768.62, '2025-05-20 09:08:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (231, 97, '2024-01-08 20:12:41', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 709.8, '2024-01-08 20:12:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (858, 18, '2024-01-03 23:38:55', 'SHIPPED', 'REFUNDED', 'RETURNING', 4535.4, '2024-01-03 23:38:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (687, 98, '2024-03-04 19:16:55', 'PAID', 'PAID', 'RETURNING', 3306.88, '2024-03-04 19:16:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (302, 100, '2024-09-20 15:59:30', 'RETURN_REQUESTED', 'FAILED', 'DELIVERED', 4735.4, '2024-09-20 15:59:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (602, 16, '2024-04-28 06:37:23', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 4176.7, '2024-04-28 06:37:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (686, 1, '2024-07-26 15:27:32', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 3152.34, '2024-07-26 15:27:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (245, 14, '2024-05-01 16:25:39', 'RETURNED', 'PENDING', 'SHIPPED', 1002.95, '2024-05-01 16:25:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (486, 51, '2024-09-13 04:11:24', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 2227.24, '2024-09-13 04:11:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (158, 76, '2024-11-09 12:12:43', 'CANCELLED', 'FAILED', 'SHIPPED', 3306.12, '2024-11-09 12:12:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (658, 52, '2024-05-28 21:39:01', 'RETURNED', 'PAID', 'SHIPPED', 2991.06, '2024-05-28 21:39:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (696, 2, '2024-02-04 08:27:29', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 1753.09, '2024-02-04 08:27:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (819, 48, '2025-03-15 13:07:03', 'RETURNED', 'REFUNDED', 'SHIPPED', 3368.1, '2025-03-15 13:07:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (907, 93, '2024-12-18 20:38:28', 'RETURNED', 'FAILED', 'DELIVERED', 2245.95, '2024-12-18 20:38:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (778, 31, '2024-04-26 23:30:13', 'RETURNED', 'PAID', 'RETURNING', 1375.77, '2024-04-26 23:30:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (302, 56, '2024-06-08 13:27:13', 'PENDING', 'PAID', 'RETURNING', 3287.85, '2024-06-08 13:27:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (948, 74, '2024-08-16 20:35:32', 'CANCELLED', 'PENDING', 'DELIVERED', 316.89, '2024-08-16 20:35:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (996, 24, '2024-12-27 20:57:02', 'DELIVERED', 'PAID', 'DELIVERED', 3235.92, '2024-12-27 20:57:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (73, 37, '2024-01-08 22:38:33', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 3989.14, '2024-01-08 22:38:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (43, 6, '2024-03-28 02:24:48', 'SHIPPED', 'REFUNDED', 'RETURNING', 572.04, '2024-03-28 02:24:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (64, 32, '2024-05-21 06:50:43', 'RETURNED', 'PAID', 'RETURNING', 4101.18, '2024-05-21 06:50:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (2, 91, '2024-01-15 18:29:59', 'PAID', 'REFUNDED', 'RETURNING', 2785.11, '2024-01-15 18:29:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (232, 48, '2024-09-18 01:03:43', 'RETURNED', 'PENDING', 'RETURNING', 640.88, '2024-09-18 01:03:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (889, 96, '2025-02-07 10:03:07', 'RETURNED', 'PAID', 'SHIPPED', 464.24, '2025-02-07 10:03:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (990, 64, '2024-08-16 20:56:27', 'RETURNED', 'FAILED', 'DELIVERED', 3191.03, '2024-08-16 20:56:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 19, '2024-10-15 08:30:06', 'PENDING', 'PAID', 'DELIVERED', 3695.99, '2024-10-15 08:30:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (533, 10, '2024-10-15 00:53:40', 'PAID', 'PENDING', 'NOT_SHIPPED', 3136.04, '2024-10-15 00:53:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (620, 45, '2024-02-27 00:55:51', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3866.4, '2024-02-27 00:55:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (756, 77, '2024-04-02 21:19:18', 'PAID', 'PENDING', 'DELIVERED', 4156.65, '2024-04-02 21:19:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (284, 41, '2025-03-02 12:26:24', 'RETURNED', 'PAID', 'NOT_SHIPPED', 4813.69, '2025-03-02 12:26:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (329, 36, '2024-01-22 22:55:49', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 1198.29, '2024-01-22 22:55:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (815, 82, '2024-12-28 10:11:57', 'SHIPPED', 'PAID', 'DELIVERED', 3222.94, '2024-12-28 10:11:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (511, 34, '2024-07-12 03:46:01', 'RETURNED', 'FAILED', 'IN_TRANSIT', 2621.12, '2024-07-12 03:46:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (378, 7, '2024-05-08 00:58:23', 'RETURNED', 'REFUNDED', 'RETURNING', 4183.03, '2024-05-08 00:58:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (483, 40, '2025-02-14 16:17:49', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 3217.57, '2025-02-14 16:17:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (482, 73, '2024-05-07 06:20:58', 'SHIPPED', 'PAID', 'RETURNING', 4873.62, '2024-05-07 06:20:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (476, 68, '2024-12-06 03:01:09', 'CANCELLED', 'PENDING', 'RETURNING', 721.65, '2024-12-06 03:01:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (363, 69, '2024-10-04 11:52:13', 'SHIPPED', 'PENDING', 'RETURNING', 3050.22, '2024-10-04 11:52:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (624, 13, '2024-04-15 19:33:55', 'PENDING', 'PENDING', 'IN_TRANSIT', 3281.87, '2024-04-15 19:33:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (279, 33, '2024-02-06 15:18:35', 'COMPLETED', 'PENDING', 'SHIPPED', 3071.31, '2024-02-06 15:18:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (554, 46, '2024-03-12 20:31:00', 'RETURNED', 'REFUNDED', 'DELIVERED', 3206.33, '2024-03-12 20:31:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (565, 73, '2025-02-21 09:41:42', 'PAID', 'REFUNDED', 'RETURNING', 3965.92, '2025-02-21 09:41:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (945, 66, '2025-05-23 00:04:01', 'CANCELLED', 'FAILED', 'RETURNING', 3044.78, '2025-05-23 00:04:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (839, 4, '2024-05-18 04:11:03', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 3766.43, '2024-05-18 04:11:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (30, 30, '2024-05-20 01:57:46', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 3444.58, '2024-05-20 01:57:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (2, 62, '2024-01-20 05:13:14', 'DELIVERED', 'REFUNDED', 'DELIVERED', 4783.14, '2024-01-20 05:13:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (978, 73, '2024-02-10 09:23:04', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 230.91, '2024-02-10 09:23:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (220, 98, '2024-11-24 19:50:53', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 4016.68, '2024-11-24 19:50:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (908, 82, '2025-03-08 20:42:52', 'SHIPPED', 'PAID', 'DELIVERED', 1401.34, '2025-03-08 20:42:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (919, 54, '2024-10-08 04:56:07', 'RETURNED', 'FAILED', 'SHIPPED', 270.13, '2024-10-08 04:56:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (797, 69, '2025-02-26 17:23:07', 'COMPLETED', 'REFUNDED', 'SHIPPED', 3932.84, '2025-02-26 17:23:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (492, 60, '2024-06-01 09:24:59', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 3776.18, '2024-06-01 09:24:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (728, 98, '2024-02-14 05:14:04', 'PAID', 'PAID', 'RETURNING', 4610.98, '2024-02-14 05:14:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (314, 45, '2024-06-20 10:28:04', 'RETURNED', 'PAID', 'IN_TRANSIT', 179.12, '2024-06-20 10:28:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (412, 31, '2024-05-07 06:55:01', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 4219.28, '2024-05-07 06:55:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (493, 73, '2024-11-02 10:51:07', 'SHIPPED', 'FAILED', 'DELIVERED', 3945.23, '2024-11-02 10:51:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (690, 3, '2024-06-15 15:44:36', 'CANCELLED', 'PAID', 'DELIVERED', 952.81, '2024-06-15 15:44:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (638, 8, '2025-05-09 13:20:48', 'DELIVERED', 'REFUNDED', 'SHIPPED', 4426.43, '2025-05-09 13:20:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (859, 83, '2024-07-18 00:34:22', 'SHIPPED', 'FAILED', 'RETURNING', 3714.37, '2024-07-18 00:34:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 91, '2024-04-05 08:49:16', 'DELIVERED', 'REFUNDED', 'RETURNING', 445.65, '2024-04-05 08:49:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (872, 52, '2025-01-17 06:15:09', 'PAID', 'PAID', 'SHIPPED', 1165.72, '2025-01-17 06:15:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (463, 55, '2025-01-13 12:45:12', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 2010.29, '2025-01-13 12:45:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (189, 75, '2024-02-18 21:46:24', 'DELIVERED', 'PAID', 'DELIVERED', 4354.55, '2024-02-18 21:46:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (475, 15, '2024-06-02 03:52:14', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2421.2, '2024-06-02 03:52:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (651, 46, '2025-01-29 09:58:40', 'PAID', 'PENDING', 'RETURNING', 4090.25, '2025-01-29 09:58:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (279, 82, '2025-02-25 19:28:12', 'RETURNED', 'PENDING', 'SHIPPED', 1684.24, '2025-02-25 19:28:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (895, 64, '2024-10-30 22:13:03', 'PENDING', 'PAID', 'NOT_SHIPPED', 2512.41, '2024-10-30 22:13:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (505, 11, '2025-02-27 17:39:45', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 352.85, '2025-02-27 17:39:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (569, 67, '2024-12-27 04:36:28', 'CANCELLED', 'FAILED', 'RETURNING', 273.11, '2024-12-27 04:36:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (120, 42, '2024-01-26 06:10:41', 'SHIPPED', 'PENDING', 'SHIPPED', 2801.39, '2024-01-26 06:10:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (629, 58, '2025-01-14 12:44:49', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 3130.89, '2025-01-14 12:44:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (485, 56, '2024-05-18 10:11:18', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 1766.4, '2024-05-18 10:11:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (291, 42, '2024-05-05 03:07:50', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 515.06, '2024-05-05 03:07:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (759, 81, '2024-04-03 19:41:06', 'COMPLETED', 'PAID', 'SHIPPED', 2052.65, '2024-04-03 19:41:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (36, 78, '2024-01-22 18:14:06', 'DELIVERED', 'PENDING', 'DELIVERED', 879.81, '2024-01-22 18:14:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (847, 31, '2025-05-22 05:04:16', 'PENDING', 'FAILED', 'DELIVERED', 2202.09, '2025-05-22 05:04:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (714, 41, '2024-01-25 08:31:02', 'SHIPPED', 'PENDING', 'SHIPPED', 4959.07, '2024-01-25 08:31:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (439, 49, '2024-05-06 11:43:34', 'COMPLETED', 'PENDING', 'DELIVERED', 4844.3, '2024-05-06 11:43:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (24, 37, '2024-02-01 13:48:07', 'DELIVERED', 'FAILED', 'RETURNING', 1840.23, '2024-02-01 13:48:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (253, 95, '2024-01-17 23:13:25', 'PENDING', 'PENDING', 'SHIPPED', 2320.18, '2024-01-17 23:13:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (525, 25, '2024-12-09 00:47:18', 'PENDING', 'PENDING', 'SHIPPED', 1357.69, '2024-12-09 00:47:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 80, '2024-04-14 16:05:55', 'COMPLETED', 'REFUNDED', 'DELIVERED', 1487.67, '2024-04-14 16:05:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (56, 7, '2024-07-30 03:23:37', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 1887.93, '2024-07-30 03:23:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (785, 38, '2025-01-08 07:29:26', 'PAID', 'REFUNDED', 'RETURNING', 3309.31, '2025-01-08 07:29:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (747, 93, '2024-02-15 10:34:48', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 2548.85, '2024-02-15 10:34:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (239, 40, '2025-03-25 22:33:43', 'COMPLETED', 'PAID', 'RETURNING', 2009.44, '2025-03-25 22:33:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (963, 51, '2024-03-03 17:06:46', 'CANCELLED', 'REFUNDED', 'DELIVERED', 1202.41, '2024-03-03 17:06:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (954, 5, '2024-09-29 19:09:51', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 977.9, '2024-09-29 19:09:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (988, 100, '2024-05-11 10:07:48', 'SHIPPED', 'PAID', 'SHIPPED', 1317.83, '2024-05-11 10:07:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 94, '2024-12-09 22:20:46', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 3182.51, '2024-12-09 22:20:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (95, 19, '2024-06-13 07:21:59', 'RETURNED', 'FAILED', 'RETURNING', 4844.0, '2024-06-13 07:21:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (675, 71, '2025-04-22 12:22:01', 'PAID', 'PAID', 'IN_TRANSIT', 1773.37, '2025-04-22 12:22:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (137, 63, '2024-09-29 18:01:31', 'PENDING', 'FAILED', 'IN_TRANSIT', 2500.88, '2024-09-29 18:01:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (674, 29, '2024-08-07 23:11:12', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 1389.21, '2024-08-07 23:11:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (232, 37, '2024-04-15 19:02:25', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 3694.14, '2024-04-15 19:02:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (530, 54, '2024-06-27 00:15:13', 'PENDING', 'FAILED', 'NOT_SHIPPED', 1922.38, '2024-06-27 00:15:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (551, 64, '2024-09-03 23:24:20', 'COMPLETED', 'PAID', 'IN_TRANSIT', 591.9, '2024-09-03 23:24:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (249, 44, '2024-11-03 09:25:11', 'CANCELLED', 'PAID', 'IN_TRANSIT', 3441.89, '2024-11-03 09:25:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (355, 63, '2024-01-28 08:38:11', 'PAID', 'PENDING', 'NOT_SHIPPED', 2759.57, '2024-01-28 08:38:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (422, 56, '2024-09-06 13:34:02', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 4384.25, '2024-09-06 13:34:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (698, 43, '2024-12-13 04:34:37', 'COMPLETED', 'PAID', 'RETURNING', 2107.17, '2024-12-13 04:34:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (325, 34, '2024-02-03 13:58:36', 'PAID', 'REFUNDED', 'SHIPPED', 448.38, '2024-02-03 13:58:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (198, 81, '2024-01-15 00:56:13', 'SHIPPED', 'PAID', 'DELIVERED', 1053.79, '2024-01-15 00:56:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (369, 21, '2025-05-14 08:27:59', 'PAID', 'PENDING', 'IN_TRANSIT', 538.94, '2025-05-14 08:27:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (453, 32, '2024-10-23 11:25:55', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1296.15, '2024-10-23 11:25:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (716, 58, '2024-12-07 18:02:34', 'DELIVERED', 'PAID', 'IN_TRANSIT', 1391.45, '2024-12-07 18:02:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (645, 14, '2025-02-24 19:44:49', 'PAID', 'FAILED', 'SHIPPED', 2119.53, '2025-02-24 19:44:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (221, 21, '2025-01-02 08:33:02', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 3880.95, '2025-01-02 08:33:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (281, 80, '2024-11-05 18:29:36', 'CANCELLED', 'REFUNDED', 'RETURNING', 3113.41, '2024-11-05 18:29:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (685, 82, '2024-12-21 15:14:05', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 1361.61, '2024-12-21 15:14:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (706, 66, '2025-04-25 17:26:30', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 4198.88, '2025-04-25 17:26:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (58, 81, '2024-11-28 18:42:43', 'DELIVERED', 'PAID', 'SHIPPED', 704.46, '2024-11-28 18:42:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (723, 95, '2025-04-30 11:56:50', 'PENDING', 'PENDING', 'RETURNING', 1271.13, '2025-04-30 11:56:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (301, 46, '2025-02-03 21:16:24', 'CANCELLED', 'REFUNDED', 'RETURNING', 3216.48, '2025-02-03 21:16:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (506, 85, '2024-01-22 05:59:03', 'SHIPPED', 'REFUNDED', 'RETURNING', 4400.08, '2024-01-22 05:59:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (749, 18, '2024-09-30 18:43:58', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 488.7, '2024-09-30 18:43:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (609, 9, '2025-02-18 05:23:32', 'CANCELLED', 'FAILED', 'RETURNING', 3145.23, '2025-02-18 05:23:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (185, 23, '2025-05-24 11:07:38', 'COMPLETED', 'FAILED', 'SHIPPED', 288.58, '2025-05-24 11:07:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 88, '2025-02-12 02:06:25', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 4743.12, '2025-02-12 02:06:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (88, 56, '2024-07-12 07:35:37', 'RETURNED', 'PAID', 'DELIVERED', 4703.33, '2024-07-12 07:35:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (519, 35, '2024-02-15 23:52:10', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 4736.01, '2024-02-15 23:52:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (269, 95, '2024-06-04 21:17:24', 'PENDING', 'FAILED', 'IN_TRANSIT', 1437.0, '2024-06-04 21:17:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (641, 43, '2024-05-01 10:06:55', 'COMPLETED', 'PENDING', 'DELIVERED', 3326.67, '2024-05-01 10:06:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (189, 10, '2024-05-16 09:30:19', 'CANCELLED', 'REFUNDED', 'SHIPPED', 2921.35, '2024-05-16 09:30:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (814, 12, '2024-12-13 16:15:41', 'CANCELLED', 'PENDING', 'DELIVERED', 1359.81, '2024-12-13 16:15:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (268, 22, '2024-08-23 10:05:48', 'CANCELLED', 'PENDING', 'RETURNING', 424.68, '2024-08-23 10:05:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (858, 5, '2024-12-10 09:36:18', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 1038.67, '2024-12-10 09:36:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (342, 12, '2024-11-10 13:48:03', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 4434.93, '2024-11-10 13:48:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (184, 40, '2024-12-15 12:24:38', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 4516.75, '2024-12-15 12:24:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (681, 29, '2024-10-27 20:09:37', 'DELIVERED', 'PENDING', 'SHIPPED', 2952.57, '2024-10-27 20:09:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (634, 54, '2025-01-04 17:20:48', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 2200.81, '2025-01-04 17:20:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (398, 59, '2024-08-19 02:46:03', 'RETURNED', 'FAILED', 'SHIPPED', 3885.4, '2024-08-19 02:46:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (274, 12, '2024-03-06 00:11:51', 'PENDING', 'PENDING', 'IN_TRANSIT', 3319.49, '2024-03-06 00:11:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (503, 80, '2024-06-02 19:27:10', 'PAID', 'PAID', 'IN_TRANSIT', 865.45, '2024-06-02 19:27:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (515, 53, '2024-03-10 22:17:32', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 4204.54, '2024-03-10 22:17:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (359, 70, '2025-02-08 02:00:28', 'COMPLETED', 'REFUNDED', 'SHIPPED', 4241.82, '2025-02-08 02:00:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (399, 1, '2024-03-19 21:16:36', 'SHIPPED', 'PAID', 'IN_TRANSIT', 996.56, '2024-03-19 21:16:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (3, 2, '2024-08-25 23:32:30', 'DELIVERED', 'REFUNDED', 'DELIVERED', 1832.31, '2024-08-25 23:32:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (257, 70, '2025-01-20 06:22:14', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 120.46, '2025-01-20 06:22:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (855, 60, '2025-04-24 12:42:45', 'PENDING', 'PAID', 'SHIPPED', 2699.88, '2025-04-24 12:42:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (965, 73, '2024-09-02 22:03:33', 'PAID', 'PAID', 'DELIVERED', 3663.26, '2024-09-02 22:03:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (651, 90, '2024-11-18 17:33:27', 'RETURNED', 'FAILED', 'SHIPPED', 4330.1, '2024-11-18 17:33:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (972, 35, '2025-01-16 11:02:40', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 2329.13, '2025-01-16 11:02:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (974, 9, '2025-01-21 18:43:23', 'CANCELLED', 'REFUNDED', 'DELIVERED', 3383.82, '2025-01-21 18:43:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (587, 79, '2024-05-21 08:58:45', 'SHIPPED', 'FAILED', 'RETURNING', 2932.4, '2024-05-21 08:58:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (974, 2, '2024-09-29 23:54:58', 'PENDING', 'REFUNDED', 'DELIVERED', 2001.79, '2024-09-29 23:54:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (353, 33, '2024-10-08 14:18:44', 'RETURNED', 'FAILED', 'IN_TRANSIT', 3392.55, '2024-10-08 14:18:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (339, 33, '2024-02-06 04:18:50', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 2886.54, '2024-02-06 04:18:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (483, 27, '2024-09-16 14:32:59', 'PENDING', 'PAID', 'IN_TRANSIT', 287.81, '2024-09-16 14:32:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (481, 25, '2025-04-21 06:40:18', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 472.63, '2025-04-21 06:40:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (676, 39, '2025-02-07 09:04:54', 'PENDING', 'REFUNDED', 'DELIVERED', 2579.58, '2025-02-07 09:04:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (743, 83, '2024-10-24 16:08:37', 'RETURNED', 'REFUNDED', 'DELIVERED', 1975.35, '2024-10-24 16:08:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (663, 22, '2024-08-02 17:04:45', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 2493.03, '2024-08-02 17:04:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (208, 59, '2024-12-24 15:08:59', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 702.81, '2024-12-24 15:08:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (496, 86, '2024-03-14 12:59:06', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 1428.21, '2024-03-14 12:59:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (28, 12, '2024-07-25 06:21:50', 'SHIPPED', 'REFUNDED', 'DELIVERED', 1844.06, '2024-07-25 06:21:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (454, 86, '2025-04-11 20:11:41', 'COMPLETED', 'PAID', 'DELIVERED', 4148.34, '2025-04-11 20:11:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (623, 23, '2024-01-27 03:13:48', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 1127.46, '2024-01-27 03:13:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (948, 56, '2025-04-11 04:23:51', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 3659.44, '2025-04-11 04:23:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (730, 67, '2025-03-18 23:17:09', 'RETURNED', 'FAILED', 'IN_TRANSIT', 484.09, '2025-03-18 23:17:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (40, 46, '2024-12-06 11:41:05', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 697.79, '2024-12-06 11:41:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (621, 77, '2024-12-01 22:38:54', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 117.29, '2024-12-01 22:38:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (714, 58, '2024-05-21 12:06:06', 'RETURNED', 'PAID', 'RETURNING', 3487.94, '2024-05-21 12:06:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (607, 52, '2024-05-19 00:05:25', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 1754.74, '2024-05-19 00:05:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (534, 18, '2024-09-04 01:20:28', 'DELIVERED', 'PAID', 'SHIPPED', 3509.25, '2024-09-04 01:20:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (640, 3, '2024-05-27 07:24:07', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 624.34, '2024-05-27 07:24:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (891, 26, '2024-12-29 08:14:10', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 4271.66, '2024-12-29 08:14:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (298, 46, '2024-12-14 05:32:57', 'DELIVERED', 'PAID', 'IN_TRANSIT', 560.82, '2024-12-14 05:32:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (892, 27, '2024-06-21 21:15:12', 'RETURNED', 'PAID', 'IN_TRANSIT', 569.64, '2024-06-21 21:15:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (878, 100, '2025-04-10 21:56:31', 'RETURNED', 'PAID', 'NOT_SHIPPED', 2425.54, '2025-04-10 21:56:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (850, 21, '2024-09-21 22:51:28', 'SHIPPED', 'PENDING', 'DELIVERED', 834.52, '2024-09-21 22:51:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (778, 23, '2024-01-23 21:17:26', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3871.05, '2024-01-23 21:17:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (373, 18, '2024-04-16 05:43:31', 'DELIVERED', 'PENDING', 'RETURNING', 4744.54, '2024-04-16 05:43:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (780, 32, '2024-10-19 04:57:38', 'PAID', 'PAID', 'SHIPPED', 897.06, '2024-10-19 04:57:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (431, 59, '2024-11-29 15:27:46', 'PAID', 'REFUNDED', 'DELIVERED', 1137.74, '2024-11-29 15:27:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (665, 8, '2024-02-10 04:22:42', 'CANCELLED', 'PENDING', 'SHIPPED', 2518.15, '2024-02-10 04:22:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (93, 46, '2024-01-27 11:30:09', 'PENDING', 'PAID', 'NOT_SHIPPED', 1492.91, '2024-01-27 11:30:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (735, 65, '2025-01-22 05:11:30', 'PAID', 'REFUNDED', 'RETURNING', 4765.93, '2025-01-22 05:11:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (671, 82, '2024-02-05 15:53:38', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 2745.53, '2024-02-05 15:53:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (646, 14, '2025-01-20 23:00:42', 'PENDING', 'PAID', 'RETURNING', 4189.11, '2025-01-20 23:00:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (392, 90, '2024-01-04 06:10:39', 'DELIVERED', 'PAID', 'SHIPPED', 3818.34, '2024-01-04 06:10:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (471, 49, '2025-03-17 16:57:31', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 3067.79, '2025-03-17 16:57:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (335, 52, '2024-04-21 12:03:56', 'PAID', 'FAILED', 'IN_TRANSIT', 4694.0, '2024-04-21 12:03:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (27, 22, '2024-09-21 00:22:36', 'CANCELLED', 'PAID', 'SHIPPED', 3703.76, '2024-09-21 00:22:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (821, 25, '2025-01-01 17:26:52', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 453.39, '2025-01-01 17:26:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (563, 92, '2024-06-30 00:55:46', 'SHIPPED', 'FAILED', 'RETURNING', 1453.71, '2024-06-30 00:55:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (781, 37, '2024-05-04 17:42:17', 'PAID', 'FAILED', 'RETURNING', 1067.2, '2024-05-04 17:42:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (155, 22, '2024-04-10 04:33:18', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 1248.96, '2024-04-10 04:33:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (711, 56, '2024-09-17 23:02:39', 'PENDING', 'PAID', 'IN_TRANSIT', 882.8, '2024-09-17 23:02:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (153, 83, '2024-04-22 00:36:11', 'CANCELLED', 'PENDING', 'RETURNING', 4790.39, '2024-04-22 00:36:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (74, 64, '2024-05-16 17:30:10', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 3535.48, '2024-05-16 17:30:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (454, 26, '2025-01-07 01:07:30', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 4720.72, '2025-01-07 01:07:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (180, 66, '2025-03-06 21:44:20', 'PAID', 'PAID', 'RETURNING', 4262.55, '2025-03-06 21:44:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (558, 60, '2024-08-18 18:02:27', 'PAID', 'PAID', 'SHIPPED', 4013.77, '2024-08-18 18:02:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (958, 58, '2024-11-16 10:41:03', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 2982.86, '2024-11-16 10:41:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (976, 23, '2025-03-27 11:04:37', 'SHIPPED', 'PENDING', 'DELIVERED', 4585.74, '2025-03-27 11:04:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (483, 72, '2024-07-14 00:18:21', 'PAID', 'PAID', 'RETURNING', 3131.02, '2024-07-14 00:18:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (542, 79, '2025-02-09 01:37:56', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 2949.87, '2025-02-09 01:37:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (904, 23, '2024-08-09 02:58:53', 'CANCELLED', 'PAID', 'RETURNING', 760.87, '2024-08-09 02:58:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (547, 30, '2024-06-25 17:37:04', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2849.06, '2024-06-25 17:37:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (132, 80, '2024-07-29 05:12:54', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 4089.8, '2024-07-29 05:12:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (565, 14, '2024-10-09 15:44:35', 'RETURNED', 'REFUNDED', 'DELIVERED', 768.65, '2024-10-09 15:44:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (696, 11, '2024-07-24 03:24:57', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 3338.79, '2024-07-24 03:24:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (500, 93, '2024-11-30 02:27:15', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 4412.95, '2024-11-30 02:27:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 54, '2024-07-28 19:06:30', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 3337.72, '2024-07-28 19:06:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (773, 33, '2025-02-27 22:06:08', 'SHIPPED', 'PENDING', 'DELIVERED', 331.3, '2025-02-27 22:06:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (413, 67, '2024-05-17 12:36:59', 'COMPLETED', 'REFUNDED', 'RETURNING', 3659.39, '2024-05-17 12:36:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (332, 68, '2025-01-10 23:09:44', 'DELIVERED', 'PENDING', 'SHIPPED', 358.53, '2025-01-10 23:09:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (856, 27, '2024-01-24 05:14:45', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 4085.8, '2024-01-24 05:14:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (601, 86, '2025-02-02 08:05:40', 'PAID', 'REFUNDED', 'SHIPPED', 4153.85, '2025-02-02 08:05:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (579, 80, '2024-03-16 17:38:06', 'PENDING', 'PENDING', 'SHIPPED', 4595.54, '2024-03-16 17:38:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (115, 57, '2024-08-19 06:30:26', 'SHIPPED', 'REFUNDED', 'DELIVERED', 4809.48, '2024-08-19 06:30:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (305, 51, '2024-02-05 22:08:33', 'SHIPPED', 'PENDING', 'DELIVERED', 4044.79, '2024-02-05 22:08:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (485, 20, '2024-08-13 03:10:20', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 2663.66, '2024-08-13 03:10:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (661, 100, '2024-02-03 02:19:35', 'CANCELLED', 'REFUNDED', 'RETURNING', 2611.05, '2024-02-03 02:19:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (450, 10, '2024-08-25 00:57:13', 'PAID', 'FAILED', 'RETURNING', 4598.86, '2024-08-25 00:57:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 47, '2024-06-17 22:08:54', 'PENDING', 'PENDING', 'NOT_SHIPPED', 580.7, '2024-06-17 22:08:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (245, 7, '2024-11-28 14:27:47', 'RETURNED', 'PAID', 'IN_TRANSIT', 2213.81, '2024-11-28 14:27:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (779, 29, '2024-09-06 00:49:59', 'PENDING', 'FAILED', 'RETURNING', 4799.79, '2024-09-06 00:49:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (638, 58, '2024-01-17 10:24:12', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 210.61, '2024-01-17 10:24:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (69, 26, '2024-10-23 17:45:23', 'COMPLETED', 'FAILED', 'SHIPPED', 318.49, '2024-10-23 17:45:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (258, 50, '2024-02-13 12:13:02', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 1140.78, '2024-02-13 12:13:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (474, 42, '2025-05-20 01:38:57', 'PAID', 'PENDING', 'RETURNING', 4544.97, '2025-05-20 01:38:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (763, 86, '2024-11-22 21:51:17', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 2812.08, '2024-11-22 21:51:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (330, 51, '2024-08-06 19:02:12', 'SHIPPED', 'FAILED', 'RETURNING', 2883.52, '2024-08-06 19:02:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (699, 94, '2025-05-04 12:00:56', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 2775.3, '2025-05-04 12:00:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (42, 19, '2024-03-14 12:01:34', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 489.99, '2024-03-14 12:01:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (13, 9, '2024-01-17 15:10:35', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 4753.31, '2024-01-17 15:10:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (201, 29, '2025-01-25 06:36:33', 'SHIPPED', 'PENDING', 'DELIVERED', 269.88, '2025-01-25 06:36:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (281, 75, '2024-08-24 15:34:03', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 691.03, '2024-08-24 15:34:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 33, '2025-04-06 21:16:23', 'PENDING', 'PAID', 'IN_TRANSIT', 3407.19, '2025-04-06 21:16:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (513, 63, '2024-06-16 01:45:34', 'RETURNED', 'FAILED', 'RETURNING', 1227.2, '2024-06-16 01:45:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 12, '2024-06-13 03:40:00', 'RETURNED', 'REFUNDED', 'DELIVERED', 1317.29, '2024-06-13 03:40:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (748, 33, '2024-11-27 07:28:37', 'PENDING', 'PENDING', 'DELIVERED', 1527.53, '2024-11-27 07:28:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (532, 30, '2024-10-15 00:51:35', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 794.97, '2024-10-15 00:51:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (930, 17, '2024-09-04 02:52:46', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 4580.09, '2024-09-04 02:52:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (244, 15, '2024-05-31 03:52:15', 'SHIPPED', 'FAILED', 'SHIPPED', 3223.44, '2024-05-31 03:52:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (188, 22, '2024-04-14 04:52:16', 'COMPLETED', 'FAILED', 'RETURNING', 4163.15, '2024-04-14 04:52:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (172, 35, '2024-12-21 15:26:31', 'RETURNED', 'FAILED', 'DELIVERED', 949.82, '2024-12-21 15:26:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (12, 35, '2024-09-20 20:07:24', 'SHIPPED', 'PENDING', 'DELIVERED', 2616.53, '2024-09-20 20:07:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (19, 58, '2024-12-18 15:11:00', 'CANCELLED', 'PAID', 'IN_TRANSIT', 1339.96, '2024-12-18 15:11:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (257, 13, '2024-08-14 13:44:00', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 2808.19, '2024-08-14 13:44:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (502, 51, '2025-05-10 23:50:38', 'RETURNED', 'PAID', 'SHIPPED', 102.59, '2025-05-10 23:50:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (699, 84, '2024-01-30 16:29:13', 'PAID', 'FAILED', 'IN_TRANSIT', 4188.99, '2024-01-30 16:29:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (217, 36, '2024-09-12 13:06:52', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3171.01, '2024-09-12 13:06:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (288, 11, '2024-04-18 06:14:34', 'DELIVERED', 'PAID', 'DELIVERED', 4046.56, '2024-04-18 06:14:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (425, 41, '2024-08-15 04:34:27', 'DELIVERED', 'REFUNDED', 'IN_TRANSIT', 2477.99, '2024-08-15 04:34:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (304, 53, '2024-08-09 19:17:28', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 4518.31, '2024-08-09 19:17:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (597, 21, '2025-03-01 21:07:42', 'PAID', 'PAID', 'SHIPPED', 1188.42, '2025-03-01 21:07:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (830, 85, '2025-03-26 19:35:28', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 692.57, '2025-03-26 19:35:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 20, '2024-03-04 15:54:56', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 307.51, '2024-03-04 15:54:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (908, 60, '2024-12-17 09:37:27', 'PAID', 'PAID', 'IN_TRANSIT', 374.45, '2024-12-17 09:37:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (537, 39, '2024-11-11 04:16:29', 'SHIPPED', 'PAID', 'SHIPPED', 4923.5, '2024-11-11 04:16:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (239, 77, '2024-01-14 22:13:39', 'CANCELLED', 'FAILED', 'SHIPPED', 1607.62, '2024-01-14 22:13:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (764, 70, '2024-03-17 21:10:45', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 4165.75, '2024-03-17 21:10:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (812, 82, '2025-03-18 05:16:08', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3264.58, '2025-03-18 05:16:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (459, 67, '2024-10-06 08:29:36', 'PENDING', 'FAILED', 'RETURNING', 1074.32, '2024-10-06 08:29:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (242, 59, '2024-03-29 19:49:35', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 707.0, '2024-03-29 19:49:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (414, 69, '2024-11-22 20:38:50', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 1701.94, '2024-11-22 20:38:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (924, 53, '2025-01-04 00:45:50', 'PENDING', 'PAID', 'RETURNING', 1252.54, '2025-01-04 00:45:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (203, 69, '2024-11-20 12:53:04', 'SHIPPED', 'PENDING', 'RETURNING', 3866.97, '2024-11-20 12:53:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (552, 39, '2024-04-29 19:23:48', 'CANCELLED', 'PAID', 'IN_TRANSIT', 1708.55, '2024-04-29 19:23:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (628, 45, '2025-03-10 01:22:41', 'PAID', 'PENDING', 'NOT_SHIPPED', 1616.1, '2025-03-10 01:22:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 51, '2024-03-08 20:41:17', 'DELIVERED', 'PENDING', 'RETURNING', 2677.58, '2024-03-08 20:41:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (602, 53, '2025-01-04 00:53:43', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2212.59, '2025-01-04 00:53:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (809, 8, '2024-01-01 15:58:00', 'PENDING', 'FAILED', 'IN_TRANSIT', 4213.04, '2024-01-01 15:58:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 19, '2025-02-03 11:36:49', 'CANCELLED', 'PENDING', 'DELIVERED', 622.72, '2025-02-03 11:36:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (154, 17, '2024-05-03 13:17:43', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 927.45, '2024-05-03 13:17:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (708, 38, '2024-05-02 04:55:19', 'PENDING', 'PAID', 'SHIPPED', 1053.55, '2024-05-02 04:55:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (813, 9, '2024-07-26 06:02:48', 'CANCELLED', 'PENDING', 'SHIPPED', 140.27, '2024-07-26 06:02:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (492, 93, '2025-03-09 05:30:33', 'PENDING', 'REFUNDED', 'RETURNING', 330.86, '2025-03-09 05:30:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (326, 6, '2024-04-28 01:50:51', 'DELIVERED', 'PAID', 'DELIVERED', 4664.31, '2024-04-28 01:50:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (995, 48, '2024-07-29 22:50:02', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 1887.78, '2024-07-29 22:50:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (874, 65, '2024-02-02 23:58:23', 'COMPLETED', 'PAID', 'IN_TRANSIT', 1153.64, '2024-02-02 23:58:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (47, 35, '2024-11-18 08:22:04', 'RETURNED', 'REFUNDED', 'SHIPPED', 3114.75, '2024-11-18 08:22:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (195, 86, '2024-08-08 17:59:51', 'RETURNED', 'PENDING', 'SHIPPED', 3977.61, '2024-08-08 17:59:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (548, 35, '2024-08-22 12:47:24', 'PAID', 'PENDING', 'SHIPPED', 4057.63, '2024-08-22 12:47:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (438, 39, '2025-02-19 22:19:29', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 2412.08, '2025-02-19 22:19:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (652, 38, '2024-11-22 01:47:23', 'SHIPPED', 'REFUNDED', 'SHIPPED', 1478.74, '2024-11-22 01:47:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (272, 11, '2024-03-17 14:14:10', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 3009.32, '2024-03-17 14:14:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (512, 49, '2025-03-24 01:07:20', 'PAID', 'FAILED', 'RETURNING', 2236.89, '2025-03-24 01:07:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (849, 100, '2024-12-01 09:45:49', 'PENDING', 'REFUNDED', 'SHIPPED', 1217.78, '2024-12-01 09:45:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (344, 16, '2024-08-28 23:52:23', 'CANCELLED', 'FAILED', 'SHIPPED', 2320.42, '2024-08-28 23:52:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (967, 3, '2024-04-23 15:20:03', 'DELIVERED', 'REFUNDED', 'SHIPPED', 1287.2, '2024-04-23 15:20:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (580, 58, '2024-06-30 06:29:50', 'SHIPPED', 'PENDING', 'RETURNING', 4724.61, '2024-06-30 06:29:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (483, 33, '2025-04-10 11:01:47', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 3500.19, '2025-04-10 11:01:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (950, 98, '2024-09-02 01:08:13', 'DELIVERED', 'PENDING', 'DELIVERED', 4497.79, '2024-09-02 01:08:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (398, 65, '2024-12-08 12:50:38', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 4074.55, '2024-12-08 12:50:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (665, 21, '2025-02-12 00:31:58', 'PENDING', 'PAID', 'DELIVERED', 2555.85, '2025-02-12 00:31:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (368, 67, '2025-05-10 07:24:49', 'SHIPPED', 'PENDING', 'SHIPPED', 1177.88, '2025-05-10 07:24:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (845, 7, '2024-10-05 17:46:19', 'RETURNED', 'PENDING', 'SHIPPED', 3677.23, '2024-10-05 17:46:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (232, 13, '2024-05-19 22:04:47', 'PAID', 'PENDING', 'NOT_SHIPPED', 3781.19, '2024-05-19 22:04:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (876, 39, '2024-08-24 20:11:54', 'PAID', 'REFUNDED', 'IN_TRANSIT', 4970.67, '2024-08-24 20:11:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (399, 40, '2024-08-24 23:22:08', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 3445.31, '2024-08-24 23:22:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (575, 89, '2025-03-25 12:35:56', 'CANCELLED', 'PAID', 'DELIVERED', 2792.37, '2025-03-25 12:35:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (536, 31, '2024-03-21 15:46:47', 'SHIPPED', 'PENDING', 'SHIPPED', 912.14, '2024-03-21 15:46:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (461, 36, '2024-08-04 17:03:03', 'RETURNED', 'REFUNDED', 'RETURNING', 4254.47, '2024-08-04 17:03:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (795, 25, '2024-04-09 07:52:43', 'PENDING', 'PENDING', 'IN_TRANSIT', 4141.85, '2024-04-09 07:52:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (21, 14, '2024-06-05 01:47:05', 'PAID', 'PENDING', 'RETURNING', 4064.62, '2024-06-05 01:47:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (56, 55, '2024-03-08 03:34:20', 'PENDING', 'PENDING', 'IN_TRANSIT', 4706.94, '2024-03-08 03:34:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (843, 48, '2024-08-23 00:45:29', 'SHIPPED', 'PAID', 'IN_TRANSIT', 2760.02, '2024-08-23 00:45:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (245, 56, '2024-11-12 05:48:27', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 2810.54, '2024-11-12 05:48:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (167, 27, '2024-06-05 06:34:40', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 4694.08, '2024-06-05 06:34:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (622, 53, '2024-10-21 19:17:08', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 2966.26, '2024-10-21 19:17:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (907, 69, '2024-08-23 06:44:57', 'COMPLETED', 'FAILED', 'RETURNING', 2556.39, '2024-08-23 06:44:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (69, 13, '2024-08-15 15:38:41', 'CANCELLED', 'REFUNDED', 'RETURNING', 1485.36, '2024-08-15 15:38:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (228, 38, '2025-02-16 12:59:10', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 3500.46, '2025-02-16 12:59:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (919, 43, '2024-04-09 05:06:14', 'PENDING', 'PAID', 'RETURNING', 1005.51, '2024-04-09 05:06:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (412, 61, '2024-12-13 11:49:29', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3143.9, '2024-12-13 11:49:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (956, 74, '2024-09-25 18:31:42', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 394.71, '2024-09-25 18:31:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (890, 83, '2024-12-12 11:44:40', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2144.91, '2024-12-12 11:44:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (16, 32, '2024-06-19 15:59:20', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 1851.96, '2024-06-19 15:59:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (958, 8, '2024-12-26 02:01:14', 'CANCELLED', 'FAILED', 'SHIPPED', 1354.49, '2024-12-26 02:01:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (151, 37, '2024-05-24 01:30:03', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 4169.84, '2024-05-24 01:30:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (689, 18, '2025-04-17 01:26:58', 'RETURNED', 'PAID', 'IN_TRANSIT', 3066.44, '2025-04-17 01:26:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (406, 22, '2024-02-14 23:08:41', 'DELIVERED', 'PENDING', 'RETURNING', 664.47, '2024-02-14 23:08:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (893, 39, '2024-02-12 03:57:12', 'COMPLETED', 'PAID', 'SHIPPED', 1679.69, '2024-02-12 03:57:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (527, 4, '2025-05-02 18:18:22', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4461.93, '2025-05-02 18:18:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (986, 41, '2025-04-21 22:49:26', 'RETURNED', 'PAID', 'DELIVERED', 4975.39, '2025-04-21 22:49:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (501, 17, '2025-04-17 14:53:35', 'PENDING', 'FAILED', 'SHIPPED', 2349.48, '2025-04-17 14:53:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (294, 65, '2025-03-30 12:06:19', 'DELIVERED', 'PENDING', 'RETURNING', 479.61, '2025-03-30 12:06:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (159, 68, '2024-12-13 00:20:22', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 4401.07, '2024-12-13 00:20:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (99, 57, '2024-04-20 01:21:26', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 1785.33, '2024-04-20 01:21:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (755, 59, '2024-12-11 09:59:17', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 3837.68, '2024-12-11 09:59:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 72, '2024-06-19 01:28:35', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 3138.41, '2024-06-19 01:28:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (598, 44, '2025-05-12 16:26:06', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 303.71, '2025-05-12 16:26:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (370, 14, '2024-11-22 15:54:09', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4652.65, '2024-11-22 15:54:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (593, 51, '2024-10-29 23:47:46', 'RETURNED', 'PAID', 'DELIVERED', 3746.49, '2024-10-29 23:47:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (634, 17, '2024-04-24 06:28:32', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 2138.87, '2024-04-24 06:28:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (382, 99, '2025-05-07 15:22:23', 'PENDING', 'FAILED', 'RETURNING', 3139.48, '2025-05-07 15:22:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (210, 91, '2024-03-09 13:03:34', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4805.56, '2024-03-09 13:03:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (253, 22, '2024-03-15 15:29:40', 'DELIVERED', 'PAID', 'RETURNING', 759.46, '2024-03-15 15:29:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (376, 56, '2024-01-21 10:45:43', 'PENDING', 'FAILED', 'IN_TRANSIT', 335.48, '2024-01-21 10:45:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (983, 79, '2025-03-11 08:15:05', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 1910.93, '2025-03-11 08:15:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (691, 17, '2024-12-16 23:39:29', 'COMPLETED', 'PAID', 'RETURNING', 942.44, '2024-12-16 23:39:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (757, 5, '2024-03-27 12:49:02', 'RETURNED', 'PAID', 'SHIPPED', 621.34, '2024-03-27 12:49:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (389, 87, '2024-12-17 23:59:16', 'DELIVERED', 'FAILED', 'DELIVERED', 4474.26, '2024-12-17 23:59:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (779, 49, '2024-12-06 14:20:49', 'CANCELLED', 'PAID', 'DELIVERED', 4398.09, '2024-12-06 14:20:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (505, 17, '2025-04-19 17:07:04', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 4331.91, '2025-04-19 17:07:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (898, 19, '2025-02-25 08:26:56', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 3208.35, '2025-02-25 08:26:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (549, 28, '2024-05-18 01:29:14', 'PENDING', 'FAILED', 'IN_TRANSIT', 3800.53, '2024-05-18 01:29:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (171, 19, '2024-01-29 02:20:33', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 768.37, '2024-01-29 02:20:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (293, 45, '2024-01-30 01:23:05', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 3407.43, '2024-01-30 01:23:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (702, 90, '2025-03-07 22:08:26', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 164.69, '2025-03-07 22:08:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (442, 91, '2024-06-30 23:05:46', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3708.02, '2024-06-30 23:05:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (154, 7, '2024-05-30 04:02:46', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 331.13, '2024-05-30 04:02:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (504, 27, '2024-08-27 23:04:32', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3071.43, '2024-08-27 23:04:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (49, 72, '2024-09-17 15:01:21', 'PENDING', 'PENDING', 'IN_TRANSIT', 610.47, '2024-09-17 15:01:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (152, 49, '2025-01-29 03:22:01', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 4064.02, '2025-01-29 03:22:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 94, '2024-01-27 17:23:30', 'COMPLETED', 'PAID', 'IN_TRANSIT', 584.95, '2024-01-27 17:23:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (59, 37, '2024-10-27 07:29:37', 'PENDING', 'PAID', 'NOT_SHIPPED', 130.7, '2024-10-27 07:29:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (353, 68, '2025-01-22 14:21:24', 'DELIVERED', 'REFUNDED', 'IN_TRANSIT', 1467.33, '2025-01-22 14:21:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (975, 51, '2024-05-15 04:20:39', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 313.71, '2024-05-15 04:20:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (791, 35, '2024-10-21 15:59:05', 'COMPLETED', 'FAILED', 'DELIVERED', 3007.36, '2024-10-21 15:59:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (653, 74, '2024-02-12 00:11:22', 'DELIVERED', 'PAID', 'SHIPPED', 84.73, '2024-02-12 00:11:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (609, 23, '2024-07-12 15:19:55', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 3261.88, '2024-07-12 15:19:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (794, 2, '2024-06-27 03:32:33', 'DELIVERED', 'REFUNDED', 'DELIVERED', 2808.13, '2024-06-27 03:32:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (935, 54, '2024-11-19 20:47:19', 'PENDING', 'FAILED', 'RETURNING', 3300.97, '2024-11-19 20:47:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (267, 91, '2024-07-16 08:18:05', 'PENDING', 'PENDING', 'NOT_SHIPPED', 496.02, '2024-07-16 08:18:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (433, 50, '2024-07-13 01:01:44', 'RETURNED', 'PAID', 'RETURNING', 4956.26, '2024-07-13 01:01:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (563, 43, '2024-10-05 13:49:22', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 2765.69, '2024-10-05 13:49:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (548, 29, '2025-05-05 04:44:21', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 715.85, '2025-05-05 04:44:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (614, 69, '2024-05-14 05:42:56', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 3933.2, '2024-05-14 05:42:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 74, '2024-05-14 04:30:32', 'CANCELLED', 'FAILED', 'RETURNING', 3272.89, '2024-05-14 04:30:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (318, 23, '2025-05-11 12:32:10', 'COMPLETED', 'PAID', 'IN_TRANSIT', 4175.52, '2025-05-11 12:32:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (152, 4, '2024-07-14 15:19:44', 'DELIVERED', 'REFUNDED', 'SHIPPED', 1128.15, '2024-07-14 15:19:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (872, 8, '2024-08-26 11:34:07', 'RETURNED', 'PAID', 'SHIPPED', 4217.17, '2024-08-26 11:34:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (847, 89, '2024-01-20 03:28:01', 'PENDING', 'FAILED', 'IN_TRANSIT', 4920.31, '2024-01-20 03:28:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (791, 21, '2024-04-15 15:18:40', 'RETURNED', 'PENDING', 'IN_TRANSIT', 4266.72, '2024-04-15 15:18:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (578, 14, '2024-02-28 17:13:36', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 3046.25, '2024-02-28 17:13:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (42, 88, '2025-05-29 03:04:53', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2872.96, '2025-05-29 03:04:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (251, 81, '2024-06-18 11:01:22', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 4639.68, '2024-06-18 11:01:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (396, 52, '2024-11-11 19:23:02', 'RETURNED', 'PAID', 'RETURNING', 282.28, '2024-11-11 19:23:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (781, 11, '2024-11-03 10:09:17', 'PAID', 'PENDING', 'RETURNING', 3240.55, '2024-11-03 10:09:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (179, 19, '2024-11-09 02:21:58', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 305.18, '2024-11-09 02:21:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (594, 53, '2024-07-26 21:02:31', 'PENDING', 'FAILED', 'NOT_SHIPPED', 3100.27, '2024-07-26 21:02:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (559, 34, '2024-10-16 15:18:21', 'SHIPPED', 'REFUNDED', 'SHIPPED', 1434.58, '2024-10-16 15:18:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (918, 71, '2025-01-11 18:55:15', 'RETURN_REQUESTED', 'REFUNDED', 'DELIVERED', 3977.35, '2025-01-11 18:55:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (759, 93, '2025-04-03 14:11:46', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 778.93, '2025-04-03 14:11:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (150, 20, '2025-02-19 04:18:08', 'DELIVERED', 'PAID', 'SHIPPED', 1169.2, '2025-02-19 04:18:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (447, 85, '2024-11-18 15:59:24', 'PAID', 'REFUNDED', 'RETURNING', 2028.94, '2024-11-18 15:59:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 27, '2025-02-10 08:26:49', 'DELIVERED', 'FAILED', 'SHIPPED', 1368.14, '2025-02-10 08:26:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (42, 70, '2024-01-01 07:19:33', 'COMPLETED', 'REFUNDED', 'RETURNING', 1385.05, '2024-01-01 07:19:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (673, 89, '2024-03-12 11:27:06', 'COMPLETED', 'FAILED', 'SHIPPED', 4670.65, '2024-03-12 11:27:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (412, 22, '2025-05-25 14:02:33', 'CANCELLED', 'FAILED', 'SHIPPED', 3034.34, '2025-05-25 14:02:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (59, 36, '2024-06-29 02:40:29', 'DELIVERED', 'FAILED', 'RETURNING', 4364.46, '2024-06-29 02:40:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (430, 88, '2024-02-20 05:44:58', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 4004.93, '2024-02-20 05:44:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (634, 29, '2024-12-05 18:37:34', 'PENDING', 'FAILED', 'DELIVERED', 2731.56, '2024-12-05 18:37:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (805, 24, '2024-08-11 20:02:33', 'PENDING', 'REFUNDED', 'DELIVERED', 3551.58, '2024-08-11 20:02:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (857, 66, '2024-07-27 05:50:41', 'CANCELLED', 'REFUNDED', 'RETURNING', 2098.79, '2024-07-27 05:50:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (293, 53, '2025-02-22 05:44:26', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 2055.57, '2025-02-22 05:44:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (990, 51, '2025-03-11 08:10:07', 'CANCELLED', 'FAILED', 'RETURNING', 3946.59, '2025-03-11 08:10:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (929, 68, '2025-04-13 19:21:03', 'COMPLETED', 'PENDING', 'SHIPPED', 1751.6, '2025-04-13 19:21:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (746, 58, '2024-07-28 00:49:36', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 1182.66, '2024-07-28 00:49:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (571, 85, '2024-10-28 17:41:06', 'DELIVERED', 'REFUNDED', 'SHIPPED', 280.98, '2024-10-28 17:41:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (846, 6, '2024-03-21 02:00:16', 'DELIVERED', 'PENDING', 'SHIPPED', 1259.84, '2024-03-21 02:00:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (666, 69, '2024-09-04 05:25:25', 'CANCELLED', 'FAILED', 'RETURNING', 3451.17, '2024-09-04 05:25:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (672, 73, '2024-07-18 08:02:20', 'PENDING', 'FAILED', 'IN_TRANSIT', 4865.56, '2024-07-18 08:02:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (355, 28, '2024-09-21 19:33:58', 'PENDING', 'REFUNDED', 'RETURNING', 4321.4, '2024-09-21 19:33:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (61, 47, '2024-06-05 06:59:56', 'COMPLETED', 'REFUNDED', 'SHIPPED', 2087.84, '2024-06-05 06:59:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (431, 3, '2024-12-12 06:46:25', 'PAID', 'PENDING', 'IN_TRANSIT', 2583.18, '2024-12-12 06:46:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (690, 93, '2025-05-05 12:13:01', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 398.96, '2025-05-05 12:13:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (276, 82, '2024-07-24 13:52:53', 'DELIVERED', 'FAILED', 'DELIVERED', 2084.63, '2024-07-24 13:52:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (581, 11, '2024-02-22 18:06:53', 'RETURNED', 'PENDING', 'RETURNING', 1720.48, '2024-02-22 18:06:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (156, 12, '2024-11-03 14:20:48', 'PAID', 'PENDING', 'RETURNING', 1687.92, '2024-11-03 14:20:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (940, 70, '2024-10-10 20:32:54', 'PENDING', 'FAILED', 'SHIPPED', 3133.52, '2024-10-10 20:32:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (984, 24, '2025-03-26 08:15:06', 'PENDING', 'PENDING', 'DELIVERED', 3008.0, '2025-03-26 08:15:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (416, 73, '2025-01-31 17:22:10', 'COMPLETED', 'PAID', 'IN_TRANSIT', 3294.94, '2025-01-31 17:22:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (468, 53, '2024-06-16 10:33:24', 'PENDING', 'REFUNDED', 'RETURNING', 761.02, '2024-06-16 10:33:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (278, 18, '2024-08-31 07:00:29', 'SHIPPED', 'FAILED', 'SHIPPED', 1226.39, '2024-08-31 07:00:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (513, 40, '2024-11-22 08:55:06', 'SHIPPED', 'PAID', 'IN_TRANSIT', 1078.36, '2024-11-22 08:55:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (172, 68, '2024-06-05 17:05:45', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 3512.36, '2024-06-05 17:05:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (976, 25, '2024-03-15 02:23:27', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 659.56, '2024-03-15 02:23:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (779, 54, '2025-03-03 19:38:14', 'SHIPPED', 'FAILED', 'RETURNING', 3564.06, '2025-03-03 19:38:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (77, 50, '2025-05-07 21:57:13', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2355.89, '2025-05-07 21:57:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (68, 67, '2024-09-02 10:15:15', 'DELIVERED', 'PENDING', 'DELIVERED', 513.12, '2024-09-02 10:15:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (204, 10, '2025-01-26 15:37:33', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 1632.2, '2025-01-26 15:37:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (366, 7, '2025-02-03 16:58:55', 'CANCELLED', 'FAILED', 'SHIPPED', 2817.51, '2025-02-03 16:58:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (993, 92, '2024-11-25 12:40:44', 'RETURNED', 'FAILED', 'IN_TRANSIT', 536.18, '2024-11-25 12:40:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (590, 76, '2025-02-10 16:01:46', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 459.4, '2025-02-10 16:01:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (765, 3, '2024-05-18 01:56:58', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 2162.42, '2024-05-18 01:56:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (429, 4, '2024-03-24 06:20:56', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 793.06, '2024-03-24 06:20:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (33, 94, '2024-01-09 00:49:58', 'PAID', 'REFUNDED', 'SHIPPED', 3721.95, '2024-01-09 00:49:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (24, 94, '2025-01-18 20:55:56', 'COMPLETED', 'FAILED', 'SHIPPED', 1475.58, '2025-01-18 20:55:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (655, 68, '2024-03-07 02:35:45', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 1682.72, '2024-03-07 02:35:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (130, 46, '2025-04-01 08:40:32', 'PAID', 'FAILED', 'IN_TRANSIT', 2047.34, '2025-04-01 08:40:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (935, 25, '2024-04-27 18:43:24', 'DELIVERED', 'PENDING', 'DELIVERED', 1954.72, '2024-04-27 18:43:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (868, 43, '2024-09-11 10:50:11', 'PENDING', 'REFUNDED', 'RETURNING', 2221.38, '2024-09-11 10:50:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (273, 1, '2024-11-27 02:02:12', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 2207.08, '2024-11-27 02:02:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (294, 20, '2024-04-19 10:49:04', 'CANCELLED', 'REFUNDED', 'RETURNING', 2058.94, '2024-04-19 10:49:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (413, 98, '2024-07-10 09:22:50', 'PENDING', 'FAILED', 'DELIVERED', 3393.01, '2024-07-10 09:22:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (408, 53, '2024-04-19 09:47:21', 'SHIPPED', 'PAID', 'IN_TRANSIT', 2007.31, '2024-04-19 09:47:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (861, 14, '2024-05-16 07:34:41', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 4445.87, '2024-05-16 07:34:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (559, 45, '2025-04-10 06:24:37', 'PENDING', 'PAID', 'NOT_SHIPPED', 3458.7, '2025-04-10 06:24:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (458, 82, '2025-04-22 10:52:55', 'DELIVERED', 'FAILED', 'SHIPPED', 1216.69, '2025-04-22 10:52:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (283, 56, '2024-10-02 21:27:57', 'COMPLETED', 'PAID', 'IN_TRANSIT', 3140.23, '2024-10-02 21:27:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (850, 82, '2024-09-05 12:55:40', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 3586.1, '2024-09-05 12:55:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (853, 90, '2024-01-07 21:14:34', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 1241.17, '2024-01-07 21:14:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (837, 26, '2024-12-01 19:35:47', 'PAID', 'REFUNDED', 'SHIPPED', 3041.46, '2024-12-01 19:35:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (94, 82, '2025-01-24 19:18:50', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 3960.56, '2025-01-24 19:18:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (195, 94, '2024-01-05 08:58:30', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 4590.27, '2024-01-05 08:58:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (480, 35, '2024-08-24 11:31:47', 'PENDING', 'PAID', 'RETURNING', 3642.92, '2024-08-24 11:31:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (720, 20, '2025-05-16 09:53:39', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 87.71, '2025-05-16 09:53:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (614, 71, '2024-08-29 18:10:28', 'CANCELLED', 'REFUNDED', 'DELIVERED', 2274.68, '2024-08-29 18:10:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (553, 83, '2024-02-12 08:09:10', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 3386.89, '2024-02-12 08:09:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (659, 31, '2024-10-19 10:18:22', 'PENDING', 'PAID', 'NOT_SHIPPED', 4604.69, '2024-10-19 10:18:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (464, 30, '2024-04-15 14:45:17', 'PAID', 'REFUNDED', 'SHIPPED', 3915.16, '2024-04-15 14:45:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (685, 62, '2024-04-30 20:59:56', 'CANCELLED', 'FAILED', 'DELIVERED', 430.96, '2024-04-30 20:59:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (413, 33, '2024-07-22 10:19:19', 'SHIPPED', 'PAID', 'RETURNING', 1614.19, '2024-07-22 10:19:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (890, 12, '2024-04-03 22:12:56', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 2800.45, '2024-04-03 22:12:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (87, 38, '2024-04-19 06:33:19', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 1392.64, '2024-04-19 06:33:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (922, 65, '2024-06-01 17:17:11', 'PENDING', 'PAID', 'SHIPPED', 2325.17, '2024-06-01 17:17:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (151, 65, '2024-11-10 10:08:24', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2189.41, '2024-11-10 10:08:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (810, 72, '2025-03-27 19:20:22', 'PAID', 'PAID', 'NOT_SHIPPED', 1280.35, '2025-03-27 19:20:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (650, 26, '2024-05-24 05:15:45', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 4411.39, '2024-05-24 05:15:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 18, '2025-05-05 01:46:36', 'CANCELLED', 'FAILED', 'SHIPPED', 1401.29, '2025-05-05 01:46:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 67, '2025-02-15 23:17:00', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 260.07, '2025-02-15 23:17:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (797, 31, '2024-04-21 14:38:15', 'PAID', 'PENDING', 'DELIVERED', 2451.1, '2024-04-21 14:38:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (363, 86, '2024-01-29 02:44:56', 'SHIPPED', 'FAILED', 'RETURNING', 704.21, '2024-01-29 02:44:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (989, 90, '2024-09-12 04:47:51', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 2817.14, '2024-09-12 04:47:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (774, 97, '2024-03-21 07:04:40', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 1989.22, '2024-03-21 07:04:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (768, 32, '2024-10-09 16:08:33', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 1793.85, '2024-10-09 16:08:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (853, 16, '2024-08-26 17:59:42', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 1290.97, '2024-08-26 17:59:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (729, 9, '2024-05-05 03:16:27', 'CANCELLED', 'PENDING', 'SHIPPED', 3554.18, '2024-05-05 03:16:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (263, 75, '2024-12-21 09:50:03', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2079.02, '2024-12-21 09:50:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (62, 38, '2024-05-29 15:58:49', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 1535.7, '2024-05-29 15:58:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (792, 25, '2025-02-04 08:03:25', 'COMPLETED', 'FAILED', 'SHIPPED', 3447.02, '2025-02-04 08:03:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (850, 19, '2024-02-02 20:01:13', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 3284.36, '2024-02-02 20:01:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (749, 22, '2024-12-10 16:56:14', 'PAID', 'REFUNDED', 'DELIVERED', 2537.62, '2024-12-10 16:56:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (894, 30, '2024-01-25 11:05:40', 'CANCELLED', 'REFUNDED', 'DELIVERED', 2521.14, '2024-01-25 11:05:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (724, 56, '2024-06-06 00:31:06', 'COMPLETED', 'REFUNDED', 'NOT_SHIPPED', 2981.0, '2024-06-06 00:31:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (704, 37, '2025-03-09 13:12:45', 'CANCELLED', 'PAID', 'RETURNING', 2697.81, '2025-03-09 13:12:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (66, 31, '2025-01-23 05:44:01', 'SHIPPED', 'REFUNDED', 'DELIVERED', 2438.61, '2025-01-23 05:44:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (93, 24, '2025-02-10 10:29:06', 'PENDING', 'PENDING', 'IN_TRANSIT', 2409.09, '2025-02-10 10:29:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (153, 71, '2024-05-02 00:51:53', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 4637.12, '2024-05-02 00:51:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (180, 2, '2025-02-27 10:29:44', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 3414.69, '2025-02-27 10:29:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (73, 39, '2024-01-13 00:38:12', 'PAID', 'REFUNDED', 'IN_TRANSIT', 876.98, '2024-01-13 00:38:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (364, 67, '2024-07-19 03:04:43', 'COMPLETED', 'FAILED', 'RETURNING', 4959.42, '2024-07-19 03:04:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (934, 6, '2025-05-07 19:17:08', 'PENDING', 'REFUNDED', 'DELIVERED', 4673.8, '2025-05-07 19:17:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (774, 91, '2024-05-09 23:21:49', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 4531.93, '2024-05-09 23:21:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (235, 6, '2025-01-06 11:20:55', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 4061.91, '2025-01-06 11:20:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (929, 36, '2024-12-26 21:37:48', 'PAID', 'PAID', 'DELIVERED', 4844.04, '2024-12-26 21:37:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (438, 14, '2024-12-31 09:25:59', 'COMPLETED', 'REFUNDED', 'DELIVERED', 944.45, '2024-12-31 09:25:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (796, 57, '2024-12-23 20:29:34', 'RETURNED', 'PAID', 'RETURNING', 3048.49, '2024-12-23 20:29:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (746, 35, '2025-01-11 22:45:45', 'PENDING', 'FAILED', 'RETURNING', 4426.86, '2025-01-11 22:45:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (452, 42, '2024-09-04 01:55:34', 'CANCELLED', 'REFUNDED', 'SHIPPED', 4394.71, '2024-09-04 01:55:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (39, 22, '2024-07-29 07:25:38', 'PAID', 'PAID', 'DELIVERED', 3484.2, '2024-07-29 07:25:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (227, 82, '2024-05-16 07:53:02', 'RETURNED', 'PENDING', 'SHIPPED', 1723.64, '2024-05-16 07:53:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (562, 67, '2024-04-01 15:59:34', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 4251.35, '2024-04-01 15:59:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (729, 61, '2025-04-05 03:26:47', 'DELIVERED', 'PENDING', 'DELIVERED', 1205.93, '2025-04-05 03:26:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (759, 77, '2024-12-26 08:07:38', 'SHIPPED', 'PAID', 'SHIPPED', 2536.83, '2024-12-26 08:07:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (247, 63, '2025-03-31 06:08:26', 'DELIVERED', 'PENDING', 'SHIPPED', 266.87, '2025-03-31 06:08:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (26, 90, '2024-01-08 15:14:28', 'RETURNED', 'PAID', 'NOT_SHIPPED', 3741.92, '2024-01-08 15:14:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (461, 59, '2024-01-04 02:26:38', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 3548.6, '2024-01-04 02:26:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (524, 76, '2024-10-26 15:40:47', 'COMPLETED', 'PAID', 'RETURNING', 2231.42, '2024-10-26 15:40:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (114, 40, '2024-03-26 12:46:08', 'PAID', 'PENDING', 'RETURNING', 3548.43, '2024-03-26 12:46:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (777, 100, '2025-05-08 14:09:33', 'CANCELLED', 'FAILED', 'SHIPPED', 1231.69, '2025-05-08 14:09:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (856, 80, '2024-10-10 19:11:42', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 4605.03, '2024-10-10 19:11:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (514, 57, '2024-03-10 19:18:36', 'DELIVERED', 'FAILED', 'DELIVERED', 4634.31, '2024-03-10 19:18:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 53, '2024-06-29 18:22:19', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 733.41, '2024-06-29 18:22:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (425, 15, '2025-03-13 19:47:28', 'PENDING', 'REFUNDED', 'DELIVERED', 1133.96, '2025-03-13 19:47:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (788, 44, '2024-08-14 01:40:52', 'CANCELLED', 'REFUNDED', 'DELIVERED', 3889.02, '2024-08-14 01:40:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (117, 38, '2024-04-03 05:40:01', 'COMPLETED', 'FAILED', 'IN_TRANSIT', 511.16, '2024-04-03 05:40:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (850, 39, '2024-09-30 18:53:41', 'PENDING', 'FAILED', 'SHIPPED', 3124.79, '2024-09-30 18:53:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (814, 93, '2024-03-04 22:52:47', 'SHIPPED', 'PAID', 'IN_TRANSIT', 3432.52, '2024-03-04 22:52:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (667, 79, '2025-05-23 16:37:18', 'CANCELLED', 'PENDING', 'SHIPPED', 2703.13, '2025-05-23 16:37:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (560, 85, '2024-08-06 08:17:36', 'PENDING', 'REFUNDED', 'SHIPPED', 3369.62, '2024-08-06 08:17:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (22, 86, '2024-05-16 08:32:53', 'PAID', 'PAID', 'IN_TRANSIT', 615.94, '2024-05-16 08:32:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (873, 59, '2025-03-24 15:40:01', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 2402.36, '2025-03-24 15:40:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (328, 31, '2024-05-17 02:14:08', 'COMPLETED', 'PENDING', 'RETURNING', 4070.99, '2024-05-17 02:14:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (946, 100, '2024-11-28 04:32:30', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 1471.24, '2024-11-28 04:32:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (98, 75, '2024-07-31 08:00:37', 'CANCELLED', 'REFUNDED', 'SHIPPED', 2935.24, '2024-07-31 08:00:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (378, 49, '2024-03-21 01:03:10', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 3887.42, '2024-03-21 01:03:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (955, 57, '2024-01-17 05:08:05', 'DELIVERED', 'FAILED', 'DELIVERED', 659.23, '2024-01-17 05:08:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (146, 29, '2024-04-28 03:28:35', 'PAID', 'PAID', 'DELIVERED', 1563.07, '2024-04-28 03:28:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (744, 49, '2025-02-13 00:06:57', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 3870.3, '2025-02-13 00:06:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (710, 77, '2025-02-11 12:15:51', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 3465.65, '2025-02-11 12:15:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (247, 15, '2025-01-23 03:39:15', 'PENDING', 'FAILED', 'NOT_SHIPPED', 3687.3, '2025-01-23 03:39:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (350, 32, '2025-04-12 16:36:15', 'SHIPPED', 'REFUNDED', 'SHIPPED', 4895.11, '2025-04-12 16:36:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (875, 63, '2024-10-12 10:15:57', 'RETURNED', 'PAID', 'IN_TRANSIT', 4567.23, '2024-10-12 10:15:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (235, 88, '2024-01-25 21:06:53', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 267.0, '2024-01-25 21:06:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (773, 74, '2024-07-17 07:44:33', 'RETURNED', 'PENDING', 'IN_TRANSIT', 2406.89, '2024-07-17 07:44:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (475, 80, '2024-11-13 07:08:08', 'SHIPPED', 'PAID', 'IN_TRANSIT', 3836.07, '2024-11-13 07:08:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (624, 85, '2024-05-24 16:13:48', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 4146.09, '2024-05-24 16:13:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (63, 100, '2024-08-09 08:18:45', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 4887.41, '2024-08-09 08:18:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (181, 58, '2024-12-26 16:49:59', 'CANCELLED', 'PAID', 'DELIVERED', 3589.69, '2024-12-26 16:49:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (989, 9, '2025-02-04 13:04:06', 'COMPLETED', 'PENDING', 'DELIVERED', 3193.88, '2025-02-04 13:04:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (411, 81, '2024-02-29 14:15:43', 'DELIVERED', 'REFUNDED', 'IN_TRANSIT', 2903.41, '2024-02-29 14:15:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (919, 13, '2025-04-10 03:25:28', 'DELIVERED', 'PENDING', 'DELIVERED', 1703.58, '2025-04-10 03:25:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (428, 39, '2024-03-25 14:53:50', 'RETURN_REQUESTED', 'PAID', 'IN_TRANSIT', 2495.03, '2024-03-25 14:53:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (537, 95, '2024-05-01 13:59:29', 'DELIVERED', 'REFUNDED', 'RETURNING', 2613.94, '2024-05-01 13:59:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (75, 86, '2024-03-12 22:22:53', 'DELIVERED', 'FAILED', 'DELIVERED', 3261.94, '2024-03-12 22:22:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (29, 23, '2024-10-26 04:53:32', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 4080.5, '2024-10-26 04:53:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (638, 42, '2024-04-02 17:22:58', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 3158.83, '2024-04-02 17:22:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (956, 51, '2024-08-13 16:35:41', 'SHIPPED', 'FAILED', 'RETURNING', 2162.52, '2024-08-13 16:35:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (394, 61, '2024-02-17 02:11:06', 'SHIPPED', 'FAILED', 'RETURNING', 4811.83, '2024-02-17 02:11:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (867, 22, '2025-01-26 15:52:27', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 996.26, '2025-01-26 15:52:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (354, 42, '2024-01-28 16:38:56', 'RETURNED', 'FAILED', 'IN_TRANSIT', 721.41, '2024-01-28 16:38:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (668, 90, '2024-12-14 00:42:49', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 2241.75, '2024-12-14 00:42:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (715, 94, '2024-12-17 03:57:28', 'CANCELLED', 'PAID', 'SHIPPED', 4134.93, '2024-12-17 03:57:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (83, 43, '2024-07-11 18:52:12', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 4502.4, '2024-07-11 18:52:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (789, 31, '2024-05-24 09:35:08', 'DELIVERED', 'PAID', 'IN_TRANSIT', 4951.3, '2024-05-24 09:35:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (187, 84, '2025-03-01 22:55:35', 'DELIVERED', 'PENDING', 'DELIVERED', 1874.32, '2025-03-01 22:55:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (416, 51, '2025-05-17 04:08:05', 'SHIPPED', 'PAID', 'IN_TRANSIT', 2448.01, '2025-05-17 04:08:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (70, 92, '2024-04-02 16:27:19', 'PAID', 'PAID', 'RETURNING', 4458.0, '2024-04-02 16:27:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (833, 90, '2024-11-25 18:31:22', 'SHIPPED', 'FAILED', 'RETURNING', 4445.99, '2024-11-25 18:31:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (738, 35, '2024-03-12 20:40:36', 'RETURNED', 'FAILED', 'IN_TRANSIT', 3168.39, '2024-03-12 20:40:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (733, 23, '2024-11-23 11:30:14', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 1412.33, '2024-11-23 11:30:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (462, 34, '2025-05-11 22:55:03', 'RETURNED', 'PAID', 'IN_TRANSIT', 816.16, '2025-05-11 22:55:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (750, 100, '2025-05-20 10:39:22', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 2993.21, '2025-05-20 10:39:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (4, 67, '2025-03-08 03:59:20', 'PAID', 'REFUNDED', 'IN_TRANSIT', 3050.93, '2025-03-08 03:59:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (619, 86, '2024-05-06 06:25:50', 'RETURNED', 'PENDING', 'SHIPPED', 2532.45, '2024-05-06 06:25:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (624, 29, '2024-05-11 11:48:11', 'PENDING', 'FAILED', 'IN_TRANSIT', 4736.32, '2024-05-11 11:48:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (107, 95, '2025-01-22 21:34:53', 'RETURNED', 'PAID', 'SHIPPED', 4383.91, '2025-01-22 21:34:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (399, 59, '2024-01-07 15:16:08', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 3460.87, '2024-01-07 15:16:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (207, 82, '2024-09-29 10:24:57', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 3119.65, '2024-09-29 10:24:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (484, 82, '2025-02-18 13:54:24', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 675.24, '2025-02-18 13:54:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (113, 10, '2025-03-21 04:36:19', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2085.16, '2025-03-21 04:36:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (294, 32, '2024-01-02 02:50:26', 'COMPLETED', 'PAID', 'RETURNING', 4801.82, '2024-01-02 02:50:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (196, 69, '2024-08-21 02:24:40', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 4146.8, '2024-08-21 02:24:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (425, 48, '2024-01-23 09:44:32', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 764.93, '2024-01-23 09:44:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (577, 90, '2024-09-29 03:01:13', 'COMPLETED', 'PENDING', 'SHIPPED', 599.38, '2024-09-29 03:01:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (900, 28, '2024-02-28 17:41:03', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 973.52, '2024-02-28 17:41:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (648, 46, '2025-05-15 10:22:21', 'RETURNED', 'REFUNDED', 'NOT_SHIPPED', 1442.97, '2025-05-15 10:22:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (812, 29, '2025-01-09 13:11:59', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 884.62, '2025-01-09 13:11:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (925, 18, '2025-05-26 00:35:27', 'PAID', 'REFUNDED', 'IN_TRANSIT', 954.13, '2025-05-26 00:35:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (487, 51, '2024-10-31 07:59:12', 'PAID', 'PENDING', 'NOT_SHIPPED', 4482.71, '2024-10-31 07:59:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (887, 72, '2025-03-04 08:38:56', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 1365.7, '2025-03-04 08:38:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 82, '2024-07-06 16:00:36', 'SHIPPED', 'FAILED', 'RETURNING', 1177.54, '2024-07-06 16:00:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (647, 38, '2024-10-15 03:59:24', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4234.97, '2024-10-15 03:59:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (44, 43, '2024-03-30 20:23:05', 'RETURNED', 'REFUNDED', 'SHIPPED', 423.98, '2024-03-30 20:23:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (232, 28, '2024-01-14 10:54:13', 'RETURNED', 'FAILED', 'NOT_SHIPPED', 4670.94, '2024-01-14 10:54:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (369, 49, '2024-04-25 06:37:07', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 1936.42, '2024-04-25 06:37:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (360, 65, '2025-04-10 23:31:45', 'PENDING', 'PENDING', 'NOT_SHIPPED', 1346.21, '2025-04-10 23:31:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (860, 24, '2024-11-12 19:46:25', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2891.16, '2024-11-12 19:46:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (129, 27, '2025-03-29 06:03:44', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 2296.5, '2025-03-29 06:03:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (496, 27, '2024-09-13 12:28:49', 'PAID', 'PAID', 'SHIPPED', 468.56, '2024-09-13 12:28:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (312, 34, '2024-07-24 00:19:23', 'RETURNED', 'REFUNDED', 'DELIVERED', 4552.76, '2024-07-24 00:19:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (466, 32, '2024-08-30 21:45:54', 'PENDING', 'FAILED', 'DELIVERED', 2995.16, '2024-08-30 21:45:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (964, 56, '2024-05-19 08:26:00', 'RETURNED', 'FAILED', 'SHIPPED', 2981.5, '2024-05-19 08:26:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (639, 19, '2025-04-28 22:46:07', 'DELIVERED', 'PAID', 'NOT_SHIPPED', 164.35, '2025-04-28 22:46:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (178, 1, '2024-05-24 15:51:48', 'RETURN_REQUESTED', 'PAID', 'DELIVERED', 1505.8, '2024-05-24 15:51:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (760, 45, '2024-01-04 05:20:28', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 1352.49, '2024-01-04 05:20:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (659, 88, '2024-03-02 18:24:29', 'PENDING', 'PAID', 'NOT_SHIPPED', 2645.13, '2024-03-02 18:24:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (326, 60, '2025-01-12 13:00:27', 'PAID', 'PAID', 'NOT_SHIPPED', 3973.55, '2025-01-12 13:00:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (544, 35, '2024-10-31 05:18:56', 'RETURN_REQUESTED', 'REFUNDED', 'SHIPPED', 3292.54, '2024-10-31 05:18:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (693, 29, '2025-01-24 09:24:05', 'PENDING', 'FAILED', 'RETURNING', 1901.97, '2025-01-24 09:24:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (97, 20, '2025-03-11 19:38:32', 'RETURNED', 'PAID', 'SHIPPED', 3814.9, '2025-03-11 19:38:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (669, 63, '2024-11-12 07:16:41', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 3842.63, '2024-11-12 07:16:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (816, 44, '2024-04-29 01:39:19', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 3289.29, '2024-04-29 01:39:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (94, 95, '2025-01-21 23:03:05', 'DELIVERED', 'PENDING', 'SHIPPED', 3085.14, '2025-01-21 23:03:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (895, 6, '2025-02-24 07:23:40', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 3833.7, '2025-02-24 07:23:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (48, 10, '2025-01-27 21:43:14', 'CANCELLED', 'PAID', 'SHIPPED', 1667.98, '2025-01-27 21:43:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (854, 20, '2025-02-13 12:44:56', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2413.75, '2025-02-13 12:44:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (347, 78, '2025-01-22 23:53:47', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 883.94, '2025-01-22 23:53:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (655, 66, '2024-09-28 17:01:11', 'DELIVERED', 'PAID', 'RETURNING', 1935.04, '2024-09-28 17:01:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (606, 97, '2025-04-22 06:37:57', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4629.29, '2025-04-22 06:37:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (506, 29, '2024-03-20 18:51:28', 'PENDING', 'PAID', 'SHIPPED', 1147.91, '2024-03-20 18:51:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (336, 25, '2024-12-09 14:34:58', 'DELIVERED', 'REFUNDED', 'IN_TRANSIT', 2528.4, '2024-12-09 14:34:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (683, 76, '2025-03-23 19:26:43', 'COMPLETED', 'PENDING', 'DELIVERED', 721.65, '2025-03-23 19:26:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (914, 91, '2024-03-21 05:55:59', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 3257.41, '2024-03-21 05:55:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (123, 5, '2025-04-04 01:03:02', 'CANCELLED', 'FAILED', 'NOT_SHIPPED', 3607.83, '2025-04-04 01:03:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (871, 34, '2024-07-31 14:47:39', 'PAID', 'FAILED', 'IN_TRANSIT', 1056.3, '2024-07-31 14:47:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (330, 98, '2024-03-21 21:33:11', 'PENDING', 'PAID', 'SHIPPED', 3962.67, '2024-03-21 21:33:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (710, 32, '2025-04-14 01:34:28', 'COMPLETED', 'REFUNDED', 'RETURNING', 974.62, '2025-04-14 01:34:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (969, 97, '2025-02-19 04:22:17', 'RETURNED', 'REFUNDED', 'SHIPPED', 2256.26, '2025-02-19 04:22:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (672, 81, '2024-04-01 12:50:43', 'PENDING', 'PAID', 'NOT_SHIPPED', 2494.47, '2024-04-01 12:50:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (494, 4, '2025-03-05 01:22:48', 'SHIPPED', 'REFUNDED', 'DELIVERED', 1648.17, '2025-03-05 01:22:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (860, 75, '2024-11-06 14:55:41', 'RETURNED', 'FAILED', 'IN_TRANSIT', 3579.61, '2024-11-06 14:55:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (714, 44, '2024-08-23 21:45:14', 'PENDING', 'REFUNDED', 'SHIPPED', 3442.45, '2024-08-23 21:45:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (64, 47, '2024-12-27 03:29:51', 'PAID', 'PAID', 'NOT_SHIPPED', 1633.35, '2024-12-27 03:29:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (638, 72, '2024-05-24 22:45:33', 'PENDING', 'PAID', 'DELIVERED', 4950.84, '2024-05-24 22:45:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (824, 58, '2024-12-20 01:03:51', 'COMPLETED', 'FAILED', 'RETURNING', 2558.87, '2024-12-20 01:03:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (117, 24, '2025-04-08 17:01:02', 'PAID', 'FAILED', 'RETURNING', 1763.33, '2025-04-08 17:01:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (473, 64, '2024-07-05 10:53:37', 'COMPLETED', 'REFUNDED', 'DELIVERED', 3830.67, '2024-07-05 10:53:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (743, 21, '2024-12-03 02:49:00', 'DELIVERED', 'FAILED', 'DELIVERED', 1624.06, '2024-12-03 02:49:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (503, 50, '2024-05-04 06:25:50', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 4009.99, '2024-05-04 06:25:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (881, 30, '2024-12-23 23:39:53', 'PENDING', 'PAID', 'SHIPPED', 4034.44, '2024-12-23 23:39:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (885, 42, '2024-01-14 13:31:27', 'SHIPPED', 'PAID', 'RETURNING', 1145.09, '2024-01-14 13:31:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (584, 47, '2024-09-11 11:32:49', 'SHIPPED', 'FAILED', 'SHIPPED', 4125.51, '2024-09-11 11:32:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (395, 16, '2025-01-13 05:28:27', 'RETURNED', 'PAID', 'SHIPPED', 3252.08, '2025-01-13 05:28:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (66, 44, '2024-10-06 07:34:44', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 3575.13, '2024-10-06 07:34:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (884, 46, '2024-10-14 03:11:13', 'PENDING', 'REFUNDED', 'DELIVERED', 222.84, '2024-10-14 03:11:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 73, '2025-01-27 10:44:18', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 2247.33, '2025-01-27 10:44:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (490, 52, '2024-10-27 05:31:10', 'SHIPPED', 'PAID', 'IN_TRANSIT', 3026.78, '2024-10-27 05:31:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (469, 12, '2025-04-19 23:46:16', 'PAID', 'FAILED', 'SHIPPED', 4093.31, '2025-04-19 23:46:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (657, 68, '2024-08-31 22:27:02', 'CANCELLED', 'FAILED', 'DELIVERED', 902.85, '2024-08-31 22:27:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (475, 71, '2025-03-31 02:35:17', 'SHIPPED', 'REFUNDED', 'RETURNING', 326.09, '2025-03-31 02:35:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (489, 14, '2025-04-18 20:08:20', 'COMPLETED', 'FAILED', 'SHIPPED', 4243.37, '2025-04-18 20:08:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (440, 25, '2024-07-06 22:49:45', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 793.6, '2024-07-06 22:49:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (996, 28, '2024-01-07 15:00:22', 'PENDING', 'REFUNDED', 'DELIVERED', 3585.48, '2024-01-07 15:00:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (249, 61, '2025-01-07 17:16:55', 'PENDING', 'PENDING', 'SHIPPED', 602.93, '2025-01-07 17:16:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (251, 33, '2024-11-03 05:22:24', 'DELIVERED', 'PAID', 'RETURNING', 3077.9, '2024-11-03 05:22:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (191, 48, '2024-07-19 09:13:22', 'PENDING', 'PENDING', 'SHIPPED', 3888.83, '2024-07-19 09:13:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (994, 11, '2024-06-23 20:24:24', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3576.41, '2024-06-23 20:24:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (213, 18, '2024-07-24 19:29:38', 'RETURN_REQUESTED', 'FAILED', 'RETURNING', 4575.21, '2024-07-24 19:29:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (342, 88, '2024-10-30 22:42:43', 'PAID', 'FAILED', 'RETURNING', 377.41, '2024-10-30 22:42:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (186, 96, '2024-12-12 08:57:42', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 4487.7, '2024-12-12 08:57:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (310, 50, '2024-07-03 17:01:06', 'SHIPPED', 'FAILED', 'DELIVERED', 1321.25, '2024-07-03 17:01:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (387, 47, '2024-12-10 18:04:25', 'SHIPPED', 'FAILED', 'SHIPPED', 822.68, '2024-12-10 18:04:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (677, 68, '2025-04-21 14:16:38', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 2045.4, '2025-04-21 14:16:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (482, 87, '2024-03-08 22:30:13', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 1152.75, '2024-03-08 22:30:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (466, 97, '2025-02-02 04:13:09', 'CANCELLED', 'PAID', 'NOT_SHIPPED', 3356.83, '2025-02-02 04:13:09');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (358, 15, '2024-01-28 03:33:01', 'PAID', 'REFUNDED', 'RETURNING', 4885.34, '2024-01-28 03:33:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (951, 72, '2024-02-03 04:57:35', 'SHIPPED', 'REFUNDED', 'SHIPPED', 4555.1, '2024-02-03 04:57:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (725, 86, '2025-01-03 03:04:00', 'COMPLETED', 'PAID', 'RETURNING', 3866.83, '2025-01-03 03:04:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (299, 46, '2024-01-04 09:00:15', 'DELIVERED', 'FAILED', 'DELIVERED', 223.35, '2024-01-04 09:00:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (769, 9, '2025-03-07 09:00:46', 'DELIVERED', 'PENDING', 'IN_TRANSIT', 2260.79, '2025-03-07 09:00:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (142, 14, '2025-04-29 16:22:28', 'SHIPPED', 'PAID', 'DELIVERED', 4780.7, '2025-04-29 16:22:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (527, 27, '2024-05-11 23:02:16', 'CANCELLED', 'FAILED', 'RETURNING', 977.86, '2024-05-11 23:02:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (153, 18, '2024-12-15 21:13:22', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 2250.06, '2024-12-15 21:13:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (342, 63, '2024-08-15 19:30:35', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 440.05, '2024-08-15 19:30:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (914, 64, '2025-02-09 22:20:57', 'SHIPPED', 'PAID', 'IN_TRANSIT', 1509.05, '2025-02-09 22:20:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (625, 100, '2025-01-23 06:12:23', 'SHIPPED', 'PENDING', 'SHIPPED', 424.99, '2025-01-23 06:12:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (549, 65, '2025-05-15 08:18:22', 'CANCELLED', 'FAILED', 'SHIPPED', 68.49, '2025-05-15 08:18:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (665, 44, '2025-04-18 05:36:26', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 4280.54, '2025-04-18 05:36:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (63, 48, '2025-01-26 13:28:59', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 2317.94, '2025-01-26 13:28:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (590, 31, '2024-03-16 00:07:24', 'COMPLETED', 'PAID', 'DELIVERED', 221.35, '2024-03-16 00:07:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (981, 5, '2024-02-03 10:51:28', 'DELIVERED', 'PAID', 'DELIVERED', 1196.69, '2024-02-03 10:51:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (230, 42, '2024-10-05 10:23:46', 'PAID', 'REFUNDED', 'SHIPPED', 3650.02, '2024-10-05 10:23:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (137, 84, '2025-05-09 19:31:33', 'PENDING', 'FAILED', 'RETURNING', 3343.5, '2025-05-09 19:31:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (675, 95, '2025-02-03 19:00:53', 'CANCELLED', 'PAID', 'RETURNING', 1434.9, '2025-02-03 19:00:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (201, 17, '2025-03-17 13:04:15', 'RETURNED', 'REFUNDED', 'DELIVERED', 4685.32, '2025-03-17 13:04:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (397, 61, '2024-07-30 22:26:21', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 4977.71, '2024-07-30 22:26:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (272, 53, '2025-05-07 04:20:49', 'COMPLETED', 'REFUNDED', 'RETURNING', 1425.36, '2025-05-07 04:20:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (242, 39, '2025-04-22 21:57:04', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 1969.58, '2025-04-22 21:57:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (428, 39, '2025-04-19 20:59:25', 'PAID', 'FAILED', 'DELIVERED', 4354.12, '2025-04-19 20:59:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (950, 27, '2024-10-14 15:56:28', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 901.9, '2024-10-14 15:56:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 60, '2025-05-11 01:21:38', 'PENDING', 'FAILED', 'SHIPPED', 2853.9, '2025-05-11 01:21:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (904, 44, '2024-08-17 10:02:46', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 539.72, '2024-08-17 10:02:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (132, 78, '2024-06-30 18:11:17', 'CANCELLED', 'REFUNDED', 'SHIPPED', 2195.89, '2024-06-30 18:11:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (49, 28, '2024-01-10 03:58:58', 'PAID', 'REFUNDED', 'RETURNING', 1720.78, '2024-01-10 03:58:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 11, '2024-09-27 23:41:11', 'COMPLETED', 'PENDING', 'RETURNING', 2087.98, '2024-09-27 23:41:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (625, 35, '2024-05-15 01:49:00', 'RETURNED', 'PAID', 'RETURNING', 4182.65, '2024-05-15 01:49:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (694, 24, '2024-11-24 13:04:59', 'CANCELLED', 'REFUNDED', 'DELIVERED', 1909.35, '2024-11-24 13:04:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (112, 49, '2024-03-26 07:34:01', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 1872.01, '2024-03-26 07:34:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (153, 98, '2024-03-16 03:50:51', 'PAID', 'REFUNDED', 'DELIVERED', 2942.37, '2024-03-16 03:50:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (852, 49, '2025-01-16 20:43:25', 'DELIVERED', 'PAID', 'DELIVERED', 1553.48, '2025-01-16 20:43:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (403, 96, '2024-11-09 02:03:04', 'DELIVERED', 'REFUNDED', 'RETURNING', 127.98, '2024-11-09 02:03:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (984, 49, '2025-04-29 01:13:49', 'PAID', 'PAID', 'DELIVERED', 2044.96, '2025-04-29 01:13:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (630, 88, '2024-02-15 00:14:35', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 4358.68, '2024-02-15 00:14:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (329, 89, '2025-05-12 04:46:16', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 1154.0, '2025-05-12 04:46:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (752, 56, '2024-06-24 16:04:53', 'RETURNED', 'REFUNDED', 'DELIVERED', 374.98, '2024-06-24 16:04:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (248, 64, '2024-11-26 21:06:07', 'SHIPPED', 'REFUNDED', 'SHIPPED', 3310.79, '2024-11-26 21:06:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (344, 54, '2024-12-12 14:08:33', 'PENDING', 'FAILED', 'IN_TRANSIT', 1289.94, '2024-12-12 14:08:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (25, 67, '2024-07-10 08:20:45', 'COMPLETED', 'PENDING', 'RETURNING', 948.72, '2024-07-10 08:20:45');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (314, 13, '2025-04-01 17:13:40', 'CANCELLED', 'PAID', 'RETURNING', 1176.97, '2025-04-01 17:13:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (769, 25, '2025-05-20 09:14:37', 'PENDING', 'REFUNDED', 'DELIVERED', 2665.42, '2025-05-20 09:14:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (535, 51, '2024-10-18 07:53:23', 'RETURN_REQUESTED', 'PENDING', 'RETURNING', 518.79, '2024-10-18 07:53:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (674, 47, '2025-03-08 08:49:04', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3617.43, '2025-03-08 08:49:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (189, 54, '2024-03-21 12:44:57', 'PAID', 'REFUNDED', 'NOT_SHIPPED', 1602.92, '2024-03-21 12:44:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (585, 36, '2024-08-31 10:12:25', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 4107.7, '2024-08-31 10:12:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (843, 58, '2025-05-03 05:20:33', 'PAID', 'PAID', 'DELIVERED', 2777.14, '2025-05-03 05:20:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (386, 42, '2024-09-13 12:48:05', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2178.81, '2024-09-13 12:48:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (704, 15, '2024-01-05 11:46:11', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 3880.72, '2024-01-05 11:46:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (633, 41, '2025-01-07 05:26:14', 'SHIPPED', 'REFUNDED', 'RETURNING', 2957.75, '2025-01-07 05:26:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (938, 49, '2025-01-30 06:21:36', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2968.43, '2025-01-30 06:21:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (775, 16, '2025-05-13 07:07:06', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4061.9, '2025-05-13 07:07:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (150, 32, '2024-08-17 19:07:51', 'COMPLETED', 'PAID', 'NOT_SHIPPED', 4648.94, '2024-08-17 19:07:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (616, 10, '2024-01-30 17:11:04', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 2079.52, '2024-01-30 17:11:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (254, 69, '2025-05-21 01:42:18', 'PAID', 'PAID', 'DELIVERED', 419.15, '2025-05-21 01:42:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (526, 59, '2024-12-05 08:56:10', 'COMPLETED', 'REFUNDED', 'SHIPPED', 1989.51, '2024-12-05 08:56:10');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (377, 75, '2024-11-17 10:04:50', 'PAID', 'REFUNDED', 'RETURNING', 4721.85, '2024-11-17 10:04:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (178, 23, '2025-03-08 17:09:52', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4601.27, '2025-03-08 17:09:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (616, 45, '2025-04-07 10:50:41', 'CANCELLED', 'PENDING', 'DELIVERED', 1087.69, '2025-04-07 10:50:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (79, 31, '2024-02-13 02:26:40', 'SHIPPED', 'PENDING', 'RETURNING', 1232.71, '2024-02-13 02:26:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (55, 44, '2025-01-14 01:49:55', 'PAID', 'FAILED', 'DELIVERED', 659.99, '2025-01-14 01:49:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (114, 27, '2025-02-20 04:14:44', 'PAID', 'FAILED', 'NOT_SHIPPED', 1855.11, '2025-02-20 04:14:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (777, 34, '2024-08-27 21:30:58', 'COMPLETED', 'REFUNDED', 'DELIVERED', 1334.48, '2024-08-27 21:30:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (649, 90, '2024-02-09 09:15:04', 'DELIVERED', 'PAID', 'RETURNING', 1734.21, '2024-02-09 09:15:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (882, 58, '2024-01-16 16:11:26', 'PAID', 'PENDING', 'RETURNING', 1705.28, '2024-01-16 16:11:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (608, 3, '2025-01-13 03:56:57', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4551.95, '2025-01-13 03:56:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (145, 56, '2024-04-13 20:42:32', 'PAID', 'FAILED', 'IN_TRANSIT', 4881.88, '2024-04-13 20:42:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (146, 29, '2024-08-18 08:19:47', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 3324.08, '2024-08-18 08:19:47');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (637, 43, '2024-07-29 07:18:28', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 369.1, '2024-07-29 07:18:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (287, 63, '2025-05-18 14:59:23', 'COMPLETED', 'FAILED', 'DELIVERED', 2894.51, '2025-05-18 14:59:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (507, 68, '2024-02-02 03:33:26', 'PAID', 'PENDING', 'IN_TRANSIT', 96.87, '2024-02-02 03:33:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (703, 1, '2024-02-21 12:09:32', 'PENDING', 'FAILED', 'NOT_SHIPPED', 4498.12, '2024-02-21 12:09:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (753, 22, '2024-12-07 05:25:26', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 1118.36, '2024-12-07 05:25:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (859, 22, '2024-07-07 21:43:01', 'PENDING', 'FAILED', 'NOT_SHIPPED', 578.21, '2024-07-07 21:43:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (525, 27, '2024-11-08 00:25:31', 'RETURNED', 'PAID', 'RETURNING', 1732.45, '2024-11-08 00:25:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (950, 53, '2024-09-01 21:52:56', 'CANCELLED', 'PENDING', 'DELIVERED', 1774.73, '2024-09-01 21:52:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (562, 14, '2024-05-04 17:49:33', 'PENDING', 'PENDING', 'RETURNING', 4933.85, '2024-05-04 17:49:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (212, 71, '2025-01-22 13:08:49', 'PENDING', 'PENDING', 'IN_TRANSIT', 4599.34, '2025-01-22 13:08:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (104, 90, '2024-11-02 04:52:21', 'DELIVERED', 'PENDING', 'DELIVERED', 4231.89, '2024-11-02 04:52:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (950, 91, '2025-05-14 11:34:13', 'RETURNED', 'PAID', 'RETURNING', 1858.2, '2025-05-14 11:34:13');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (157, 69, '2024-03-23 22:06:05', 'RETURN_REQUESTED', 'PENDING', 'SHIPPED', 2005.41, '2024-03-23 22:06:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (903, 63, '2024-11-20 19:22:52', 'DELIVERED', 'FAILED', 'SHIPPED', 3276.72, '2024-11-20 19:22:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (734, 25, '2024-06-21 07:03:49', 'PENDING', 'FAILED', 'IN_TRANSIT', 3931.99, '2024-06-21 07:03:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (803, 2, '2025-04-09 22:29:27', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 1677.84, '2025-04-09 22:29:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (167, 30, '2024-02-04 18:56:42', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 1526.31, '2024-02-04 18:56:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (976, 33, '2025-01-30 22:08:40', 'SHIPPED', 'REFUNDED', 'RETURNING', 3094.29, '2025-01-30 22:08:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 22, '2024-06-22 10:31:41', 'CANCELLED', 'PENDING', 'RETURNING', 4943.1, '2024-06-22 10:31:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (498, 59, '2024-04-07 22:10:20', 'COMPLETED', 'REFUNDED', 'DELIVERED', 2671.19, '2024-04-07 22:10:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (259, 45, '2024-01-05 02:57:43', 'PENDING', 'REFUNDED', 'IN_TRANSIT', 3897.92, '2024-01-05 02:57:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (681, 61, '2025-02-23 21:28:51', 'DELIVERED', 'REFUNDED', 'RETURNING', 1943.48, '2025-02-23 21:28:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (589, 37, '2025-02-15 08:31:16', 'RETURNED', 'FAILED', 'IN_TRANSIT', 1268.61, '2025-02-15 08:31:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (276, 9, '2024-10-29 21:08:08', 'COMPLETED', 'REFUNDED', 'SHIPPED', 1413.37, '2024-10-29 21:08:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (986, 62, '2024-04-29 14:19:15', 'DELIVERED', 'PAID', 'DELIVERED', 2211.09, '2024-04-29 14:19:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (605, 43, '2024-01-11 18:12:50', 'SHIPPED', 'PAID', 'SHIPPED', 4901.23, '2024-01-11 18:12:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (14, 11, '2024-06-28 20:46:00', 'PAID', 'PENDING', 'DELIVERED', 2574.46, '2024-06-28 20:46:00');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (92, 87, '2025-05-30 09:46:29', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 542.29, '2025-05-30 09:46:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (847, 75, '2024-03-07 06:19:44', 'DELIVERED', 'PENDING', 'NOT_SHIPPED', 2105.12, '2024-03-07 06:19:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (869, 56, '2024-08-14 06:32:04', 'CANCELLED', 'REFUNDED', 'SHIPPED', 2996.16, '2024-08-14 06:32:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (972, 20, '2024-09-19 18:06:17', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 1400.08, '2024-09-19 18:06:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (100, 23, '2025-02-09 04:26:42', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 96.21, '2025-02-09 04:26:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (515, 39, '2025-02-06 16:44:08', 'CANCELLED', 'PENDING', 'IN_TRANSIT', 4721.06, '2025-02-06 16:44:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (921, 48, '2024-02-04 07:24:24', 'SHIPPED', 'FAILED', 'RETURNING', 2098.62, '2024-02-04 07:24:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (613, 27, '2025-04-02 12:42:42', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 2780.81, '2025-04-02 12:42:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (587, 98, '2025-01-01 07:24:19', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 1985.39, '2025-01-01 07:24:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (640, 76, '2024-04-18 08:38:07', 'CANCELLED', 'FAILED', 'IN_TRANSIT', 1395.51, '2024-04-18 08:38:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (717, 56, '2025-04-21 18:39:19', 'PENDING', 'PAID', 'RETURNING', 558.71, '2025-04-21 18:39:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (826, 68, '2024-09-13 06:09:18', 'PAID', 'PAID', 'RETURNING', 403.67, '2024-09-13 06:09:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (871, 9, '2024-11-28 15:16:24', 'CANCELLED', 'PAID', 'RETURNING', 2070.42, '2024-11-28 15:16:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (265, 70, '2024-05-19 01:38:04', 'CANCELLED', 'PAID', 'SHIPPED', 778.18, '2024-05-19 01:38:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (456, 63, '2025-01-26 13:49:39', 'RETURNED', 'PENDING', 'DELIVERED', 4040.9, '2025-01-26 13:49:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (761, 51, '2024-07-29 12:14:08', 'CANCELLED', 'REFUNDED', 'RETURNING', 4139.81, '2024-07-29 12:14:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (940, 60, '2024-04-10 01:39:57', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 59.75, '2024-04-10 01:39:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (411, 28, '2024-09-20 06:41:38', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 2522.06, '2024-09-20 06:41:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (743, 83, '2024-04-07 14:16:38', 'CANCELLED', 'FAILED', 'RETURNING', 2284.34, '2024-04-07 14:16:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (541, 44, '2024-03-11 00:27:38', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 1604.93, '2024-03-11 00:27:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (928, 6, '2024-07-10 20:15:56', 'SHIPPED', 'PENDING', 'RETURNING', 2335.7, '2024-07-10 20:15:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (787, 13, '2024-07-22 21:52:01', 'RETURNED', 'PENDING', 'IN_TRANSIT', 4035.84, '2024-07-22 21:52:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (456, 6, '2024-09-08 18:12:33', 'COMPLETED', 'FAILED', 'RETURNING', 2447.91, '2024-09-08 18:12:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (64, 48, '2024-01-03 00:21:35', 'PAID', 'PENDING', 'IN_TRANSIT', 2375.76, '2024-01-03 00:21:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (968, 50, '2024-03-20 18:25:18', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 1590.25, '2024-03-20 18:25:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (926, 86, '2024-11-22 08:51:23', 'DELIVERED', 'PAID', 'IN_TRANSIT', 2782.34, '2024-11-22 08:51:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (692, 36, '2024-11-03 13:26:39', 'RETURNED', 'PAID', 'IN_TRANSIT', 1255.82, '2024-11-03 13:26:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (820, 27, '2024-08-13 16:26:37', 'RETURNED', 'PAID', 'IN_TRANSIT', 2511.14, '2024-08-13 16:26:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (369, 50, '2024-06-09 12:24:56', 'RETURN_REQUESTED', 'PAID', 'RETURNING', 3455.3, '2024-06-09 12:24:56');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (336, 5, '2024-01-10 02:29:16', 'CANCELLED', 'FAILED', 'RETURNING', 1403.41, '2024-01-10 02:29:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (101, 66, '2024-04-22 02:04:50', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 2830.45, '2024-04-22 02:04:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (815, 87, '2024-03-26 12:12:44', 'RETURN_REQUESTED', 'REFUNDED', 'NOT_SHIPPED', 4257.2, '2024-03-26 12:12:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (397, 87, '2025-01-11 01:31:30', 'CANCELLED', 'REFUNDED', 'IN_TRANSIT', 1781.55, '2025-01-11 01:31:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (159, 25, '2024-09-27 09:39:46', 'PENDING', 'PAID', 'NOT_SHIPPED', 1669.08, '2024-09-27 09:39:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (501, 8, '2024-02-05 22:07:15', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 4015.45, '2024-02-05 22:07:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (757, 12, '2025-01-29 01:11:16', 'SHIPPED', 'PENDING', 'RETURNING', 2538.83, '2025-01-29 01:11:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (615, 98, '2025-02-03 11:06:52', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2445.46, '2025-02-03 11:06:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (184, 9, '2024-07-16 11:05:37', 'PAID', 'FAILED', 'NOT_SHIPPED', 4682.46, '2024-07-16 11:05:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (527, 100, '2024-11-23 20:26:27', 'RETURN_REQUESTED', 'PENDING', 'IN_TRANSIT', 3377.14, '2024-11-23 20:26:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (160, 37, '2024-02-19 00:09:51', 'CANCELLED', 'PAID', 'SHIPPED', 4126.06, '2024-02-19 00:09:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (710, 22, '2024-12-23 04:52:31', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 598.58, '2024-12-23 04:52:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (559, 35, '2025-04-28 21:56:29', 'SHIPPED', 'FAILED', 'SHIPPED', 3481.97, '2025-04-28 21:56:29');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (851, 14, '2024-12-08 09:35:38', 'PAID', 'PAID', 'DELIVERED', 4212.7, '2024-12-08 09:35:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (684, 45, '2024-07-30 00:55:33', 'SHIPPED', 'PENDING', 'RETURNING', 1668.98, '2024-07-30 00:55:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (586, 83, '2024-04-21 02:25:12', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 3256.13, '2024-04-21 02:25:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (507, 68, '2024-05-07 06:44:32', 'CANCELLED', 'PENDING', 'DELIVERED', 1568.95, '2024-05-07 06:44:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (749, 59, '2024-02-15 04:04:40', 'SHIPPED', 'PENDING', 'NOT_SHIPPED', 1417.99, '2024-02-15 04:04:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (896, 9, '2025-05-08 12:17:07', 'RETURNED', 'REFUNDED', 'SHIPPED', 4547.35, '2025-05-08 12:17:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (273, 47, '2024-10-20 02:44:23', 'CANCELLED', 'PENDING', 'RETURNING', 4763.31, '2024-10-20 02:44:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (129, 54, '2024-07-05 11:30:28', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 3016.27, '2024-07-05 11:30:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (522, 9, '2024-10-24 01:36:17', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 4360.02, '2024-10-24 01:36:17');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (540, 64, '2024-03-29 03:36:12', 'DELIVERED', 'REFUNDED', 'DELIVERED', 1564.3, '2024-03-29 03:36:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (937, 78, '2024-11-08 13:50:35', 'CANCELLED', 'PAID', 'SHIPPED', 4256.5, '2024-11-08 13:50:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (722, 29, '2024-02-12 15:31:52', 'PAID', 'PENDING', 'SHIPPED', 3914.72, '2024-02-12 15:31:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (771, 12, '2025-02-21 21:07:01', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 4610.0, '2025-02-21 21:07:01');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (327, 24, '2024-09-22 14:54:53', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 3371.64, '2024-09-22 14:54:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (125, 65, '2024-09-23 16:16:15', 'RETURN_REQUESTED', 'REFUNDED', 'IN_TRANSIT', 2251.0, '2024-09-23 16:16:15');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (307, 82, '2025-04-25 05:07:57', 'DELIVERED', 'PAID', 'IN_TRANSIT', 853.09, '2025-04-25 05:07:57');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (379, 69, '2024-03-03 19:14:38', 'PAID', 'REFUNDED', 'DELIVERED', 1637.52, '2024-03-03 19:14:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (200, 37, '2024-07-06 04:00:19', 'PAID', 'PAID', 'IN_TRANSIT', 3122.18, '2024-07-06 04:00:19');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (215, 44, '2024-08-19 02:33:02', 'COMPLETED', 'PENDING', 'IN_TRANSIT', 2269.48, '2024-08-19 02:33:02');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (560, 6, '2025-01-04 02:35:58', 'RETURNED', 'PENDING', 'NOT_SHIPPED', 1733.5, '2025-01-04 02:35:58');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (298, 44, '2024-03-24 17:09:04', 'COMPLETED', 'FAILED', 'RETURNING', 1307.39, '2024-03-24 17:09:04');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (644, 95, '2024-03-22 19:12:16', 'DELIVERED', 'REFUNDED', 'NOT_SHIPPED', 3364.7, '2024-03-22 19:12:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (27, 45, '2024-01-02 09:16:05', 'PENDING', 'FAILED', 'RETURNING', 4248.54, '2024-01-02 09:16:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (299, 53, '2024-02-01 10:19:22', 'RETURNED', 'FAILED', 'RETURNING', 101.02, '2024-02-01 10:19:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (491, 53, '2024-11-03 21:44:38', 'DELIVERED', 'PENDING', 'DELIVERED', 395.94, '2024-11-03 21:44:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (81, 94, '2025-05-19 16:40:14', 'COMPLETED', 'PENDING', 'NOT_SHIPPED', 2420.44, '2025-05-19 16:40:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (558, 63, '2024-04-12 20:04:39', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 3087.44, '2024-04-12 20:04:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (798, 33, '2024-09-03 04:16:52', 'COMPLETED', 'PENDING', 'RETURNING', 1801.48, '2024-09-03 04:16:52');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (229, 10, '2024-02-02 20:51:50', 'COMPLETED', 'FAILED', 'DELIVERED', 4276.56, '2024-02-02 20:51:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (859, 25, '2025-04-09 08:28:28', 'PENDING', 'PENDING', 'SHIPPED', 1343.83, '2025-04-09 08:28:28');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (167, 99, '2024-09-27 22:18:53', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 1335.14, '2024-09-27 22:18:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (319, 86, '2024-02-23 09:08:16', 'RETURN_REQUESTED', 'PAID', 'SHIPPED', 4944.04, '2024-02-23 09:08:16');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (472, 36, '2024-05-31 03:01:07', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 3705.39, '2024-05-31 03:01:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (808, 54, '2024-06-18 23:53:53', 'RETURNED', 'FAILED', 'RETURNING', 3617.6, '2024-06-18 23:53:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (450, 72, '2024-07-07 03:42:03', 'PAID', 'PAID', 'RETURNING', 3948.06, '2024-07-07 03:42:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (927, 39, '2024-04-02 04:21:48', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 2907.37, '2024-04-02 04:21:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (214, 25, '2024-02-10 03:07:25', 'RETURN_REQUESTED', 'PENDING', 'DELIVERED', 4212.94, '2024-02-10 03:07:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (371, 3, '2025-01-25 03:36:51', 'COMPLETED', 'FAILED', 'NOT_SHIPPED', 3278.6, '2025-01-25 03:36:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (506, 51, '2025-01-17 08:48:30', 'SHIPPED', 'PAID', 'RETURNING', 1617.06, '2025-01-17 08:48:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (252, 28, '2024-08-20 03:06:05', 'PAID', 'PENDING', 'IN_TRANSIT', 384.01, '2024-08-20 03:06:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (592, 89, '2024-01-20 17:55:35', 'CANCELLED', 'REFUNDED', 'NOT_SHIPPED', 521.27, '2024-01-20 17:55:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (903, 26, '2024-02-08 20:36:12', 'PENDING', 'PAID', 'DELIVERED', 4099.07, '2024-02-08 20:36:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (369, 73, '2024-01-28 10:19:50', 'PENDING', 'REFUNDED', 'NOT_SHIPPED', 2607.78, '2024-01-28 10:19:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (490, 1, '2024-08-08 12:38:41', 'COMPLETED', 'FAILED', 'SHIPPED', 3475.39, '2024-08-08 12:38:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (556, 70, '2024-02-10 17:17:37', 'DELIVERED', 'FAILED', 'DELIVERED', 4997.06, '2024-02-10 17:17:37');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (969, 10, '2024-03-05 01:43:59', 'RETURN_REQUESTED', 'FAILED', 'SHIPPED', 1184.39, '2024-03-05 01:43:59');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 59, '2024-10-23 07:17:48', 'RETURNED', 'FAILED', 'RETURNING', 1810.72, '2024-10-23 07:17:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (505, 49, '2024-02-25 02:51:33', 'RETURN_REQUESTED', 'FAILED', 'NOT_SHIPPED', 4439.83, '2024-02-25 02:51:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (870, 11, '2025-02-14 04:48:30', 'COMPLETED', 'REFUNDED', 'RETURNING', 2217.76, '2025-02-14 04:48:30');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (145, 80, '2024-10-31 01:35:22', 'PENDING', 'FAILED', 'DELIVERED', 904.79, '2024-10-31 01:35:22');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (933, 88, '2025-05-30 12:41:03', 'CANCELLED', 'PAID', 'DELIVERED', 4483.39, '2025-05-30 12:41:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (122, 43, '2024-12-15 16:20:42', 'DELIVERED', 'PAID', 'DELIVERED', 567.52, '2024-12-15 16:20:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (224, 21, '2024-04-07 07:41:49', 'CANCELLED', 'REFUNDED', 'DELIVERED', 894.02, '2024-04-07 07:41:49');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (548, 81, '2024-02-24 23:15:31', 'DELIVERED', 'PAID', 'SHIPPED', 1384.3, '2024-02-24 23:15:31');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (311, 6, '2024-08-01 21:59:42', 'CANCELLED', 'PAID', 'SHIPPED', 1524.52, '2024-08-01 21:59:42');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (200, 84, '2025-02-23 14:35:51', 'COMPLETED', 'REFUNDED', 'IN_TRANSIT', 4792.04, '2025-02-23 14:35:51');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (976, 98, '2024-05-14 04:52:53', 'CANCELLED', 'REFUNDED', 'DELIVERED', 1374.96, '2024-05-14 04:52:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 66, '2025-02-26 18:26:44', 'RETURN_REQUESTED', 'PENDING', 'NOT_SHIPPED', 2992.5, '2025-02-26 18:26:44');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (890, 84, '2024-01-12 11:42:39', 'RETURNED', 'PENDING', 'RETURNING', 4775.63, '2024-01-12 11:42:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (176, 84, '2024-06-22 05:04:34', 'PENDING', 'REFUNDED', 'RETURNING', 1273.36, '2024-06-22 05:04:34');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (990, 28, '2025-03-05 14:23:48', 'RETURNED', 'PENDING', 'RETURNING', 3671.46, '2025-03-05 14:23:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (74, 7, '2024-11-14 18:18:20', 'SHIPPED', 'REFUNDED', 'SHIPPED', 1819.92, '2024-11-14 18:18:20');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (90, 69, '2024-03-31 23:46:24', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 3775.84, '2024-03-31 23:46:24');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (936, 18, '2025-03-28 02:04:14', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 2765.29, '2025-03-28 02:04:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (732, 96, '2024-09-11 23:54:36', 'PAID', 'REFUNDED', 'RETURNING', 1189.75, '2024-09-11 23:54:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (704, 90, '2025-02-18 05:19:35', 'RETURN_REQUESTED', 'FAILED', 'IN_TRANSIT', 3658.94, '2025-02-18 05:19:35');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (180, 24, '2025-01-09 23:58:43', 'RETURNED', 'FAILED', 'RETURNING', 763.72, '2025-01-09 23:58:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (370, 2, '2024-10-06 14:21:43', 'CANCELLED', 'PENDING', 'RETURNING', 2865.97, '2024-10-06 14:21:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (239, 58, '2025-03-11 19:47:07', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 2110.98, '2025-03-11 19:47:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (68, 98, '2024-03-23 20:11:14', 'SHIPPED', 'REFUNDED', 'NOT_SHIPPED', 4013.3, '2024-03-23 20:11:14');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (357, 90, '2025-01-02 05:13:40', 'PAID', 'PAID', 'NOT_SHIPPED', 2094.82, '2025-01-02 05:13:40');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (604, 14, '2024-04-24 22:23:53', 'RETURNED', 'FAILED', 'DELIVERED', 1477.61, '2024-04-24 22:23:53');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (314, 2, '2024-12-02 09:05:36', 'RETURN_REQUESTED', 'REFUNDED', 'RETURNING', 4655.19, '2024-12-02 09:05:36');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (533, 24, '2025-05-10 08:57:55', 'CANCELLED', 'PENDING', 'NOT_SHIPPED', 4932.48, '2025-05-10 08:57:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (617, 79, '2024-01-11 18:17:38', 'SHIPPED', 'REFUNDED', 'IN_TRANSIT', 2962.44, '2024-01-11 18:17:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (810, 87, '2025-02-04 08:31:25', 'SHIPPED', 'PAID', 'NOT_SHIPPED', 2359.28, '2025-02-04 08:31:25');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (796, 14, '2025-04-01 12:14:11', 'SHIPPED', 'PAID', 'IN_TRANSIT', 4673.0, '2025-04-01 12:14:11');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (910, 7, '2025-02-16 09:13:55', 'SHIPPED', 'FAILED', 'NOT_SHIPPED', 3350.53, '2025-02-16 09:13:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (970, 64, '2024-05-18 22:48:26', 'PENDING', 'PAID', 'SHIPPED', 4559.3, '2024-05-18 22:48:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (754, 85, '2024-05-11 22:27:18', 'SHIPPED', 'PENDING', 'IN_TRANSIT', 3557.5, '2024-05-11 22:27:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (773, 18, '2025-03-26 15:35:55', 'PENDING', 'REFUNDED', 'SHIPPED', 4493.06, '2025-03-26 15:35:55');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (306, 94, '2024-04-13 20:33:12', 'RETURNED', 'PAID', 'SHIPPED', 4708.31, '2024-04-13 20:33:12');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (560, 58, '2024-10-21 00:43:27', 'RETURNED', 'PAID', 'SHIPPED', 2884.59, '2024-10-21 00:43:27');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (245, 52, '2024-03-14 11:16:38', 'RETURNED', 'REFUNDED', 'IN_TRANSIT', 1966.03, '2024-03-14 11:16:38');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (766, 35, '2024-12-08 21:34:54', 'SHIPPED', 'PAID', 'DELIVERED', 4406.4, '2024-12-08 21:34:54');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (774, 55, '2025-03-10 13:31:32', 'PENDING', 'PENDING', 'RETURNING', 1524.21, '2025-03-10 13:31:32');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (17, 88, '2024-01-06 13:44:23', 'SHIPPED', 'REFUNDED', 'RETURNING', 2245.27, '2024-01-06 13:44:23');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (123, 62, '2025-03-27 20:10:07', 'RETURN_REQUESTED', 'PAID', 'NOT_SHIPPED', 3143.78, '2025-03-27 20:10:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (417, 94, '2024-08-28 09:51:41', 'SHIPPED', 'PENDING', 'DELIVERED', 1632.05, '2024-08-28 09:51:41');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (31, 62, '2024-10-26 18:23:39', 'SHIPPED', 'REFUNDED', 'SHIPPED', 1754.92, '2024-10-26 18:23:39');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (906, 46, '2024-02-06 15:22:43', 'SHIPPED', 'FAILED', 'IN_TRANSIT', 1849.46, '2024-02-06 15:22:43');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (105, 8, '2024-09-08 21:14:06', 'DELIVERED', 'FAILED', 'NOT_SHIPPED', 4263.41, '2024-09-08 21:14:06');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (803, 97, '2024-12-19 20:45:07', 'PAID', 'FAILED', 'SHIPPED', 1413.31, '2024-12-19 20:45:07');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (288, 88, '2025-03-19 00:05:08', 'RETURNED', 'PENDING', 'DELIVERED', 3507.45, '2025-03-19 00:05:08');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (256, 9, '2024-08-26 12:19:21', 'PENDING', 'FAILED', 'SHIPPED', 939.73, '2024-08-26 12:19:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (316, 27, '2024-11-02 13:43:18', 'COMPLETED', 'REFUNDED', 'RETURNING', 4259.25, '2024-11-02 13:43:18');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (294, 40, '2024-01-23 19:47:46', 'PENDING', 'REFUNDED', 'RETURNING', 3208.86, '2024-01-23 19:47:46');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (363, 84, '2024-12-11 13:18:48', 'PAID', 'PENDING', 'SHIPPED', 2738.94, '2024-12-11 13:18:48');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (385, 59, '2024-04-04 14:58:03', 'CANCELLED', 'REFUNDED', 'DELIVERED', 441.54, '2024-04-04 14:58:03');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (160, 97, '2024-05-15 20:23:33', 'SHIPPED', 'PAID', 'DELIVERED', 3816.99, '2024-05-15 20:23:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (831, 68, '2024-08-23 20:10:21', 'RETURNED', 'PENDING', 'IN_TRANSIT', 3693.56, '2024-08-23 20:10:21');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (366, 64, '2024-03-20 10:05:05', 'PENDING', 'PAID', 'SHIPPED', 294.58, '2024-03-20 10:05:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (291, 64, '2024-09-24 11:09:26', 'DELIVERED', 'FAILED', 'IN_TRANSIT', 923.34, '2024-09-24 11:09:26');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (245, 23, '2025-01-03 16:25:33', 'CANCELLED', 'FAILED', 'DELIVERED', 1193.81, '2025-01-03 16:25:33');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (83, 20, '2024-09-12 15:42:05', 'PAID', 'FAILED', 'NOT_SHIPPED', 4109.1, '2024-09-12 15:42:05');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (377, 61, '2025-04-14 19:16:50', 'CANCELLED', 'FAILED', 'SHIPPED', 2644.14, '2025-04-14 19:16:50');
+INSERT INTO orders (buyer_id, seller_id, order_date, order_status, payment_status, shipment_status, total_amount, created_at)
+VALUES (349, 15, '2024-10-22 01:27:05', 'PAID', 'PAID', 'RETURNING', 3042.66, '2024-10-22 01:27:05');
 -- 生成 2000 order_items
 
 INSERT INTO order_items (order_id, product_id, quantity, unit_price, total_price, created_at)

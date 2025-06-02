@@ -20,14 +20,44 @@ public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
+
 	
+	//repository
+
+	@Override
+	public Optional<Category> findBySlug(String slug) {
+		return categoryRepository.findBySlug(slug);
+	}
+
+	@Override
+	public List<Category> findAll() {
+		return categoryRepository.findAll();
+	}
+
+	@Override
+	public Optional<Category> findById(Long CategoriyId) {
+		return categoryRepository.findById(CategoriyId);
+	}
+
+	@Override
+	public List<Category> findByParentId(Long parentId) {
+		return categoryRepository.findByParentId(parentId);
+	}
+
+	@Override
+	public List<Category> findChildrenBySlug(String slug) {
+		return categoryRepository.findChildrenBySlug(slug);
+	}
+
+	
+	//邏輯
+
 	@Override
 	public List<CategoryResponse> findTopCategory(){
-	    return categoryRepository.findAll()
-	              .stream()
-	              .filter(category -> category.getParentId() == null) // parentId是Long，可以直接比對null
-	              .map(CategoryMapper::toDto)
-	              .toList();
+	    return 	findAll().stream()
+			             .filter(category -> category.getParentId() == null) // parentId是Long，可以直接比對null
+			             .map(CategoryMapper::toDto)
+			             .toList();
 	}
 	
 //	@Override
@@ -39,15 +69,15 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	
 	@Override
-	public List<CategoryResponse> findChildrenBySlug(String slug) {
-		return categoryRepository.findChildrenBySlug(slug).stream()
-															.map(categoty->CategoryMapper.toDto(categoty))
-															.toList();
+	public List<CategoryResponse> findChildrenBySlugToCategoryResponse(String slug) {
+		return findChildrenBySlug(slug).stream()
+									   .map(categoty->CategoryMapper.toDto(categoty))
+									   .toList();
 	}
 	
 	@Override
 	public List<Category> findAllCategoryAndDescendantsBySlug(String slug) {
-        Optional<Category> rootOpt = categoryRepository.findBySlug(slug);
+        Optional<Category> rootOpt = findBySlug(slug);
         if (rootOpt.isEmpty()) {
             return List.of();
         }
@@ -59,7 +89,7 @@ public class CategoryServiceImpl implements CategoryService{
     }
 
     private void fetchChildrenRecursively(Category parent, List<Category> accumulator) {
-        List<Category> children = categoryRepository.findByParentId(parent.getId());
+        List<Category> children = findByParentId(parent.getId());
         if (children.isEmpty()) return;
         accumulator.addAll(children);
         for (Category child : children) {

@@ -23,6 +23,9 @@
 		response	//apiResponse 包 Dto 再給前端 讓前端好處理
 		service
 
+service 邏輯 要檢查是否有 (判斷是否可以做 再做) 
+	       檢查是需要  exception
+
 
 結帳功能
 

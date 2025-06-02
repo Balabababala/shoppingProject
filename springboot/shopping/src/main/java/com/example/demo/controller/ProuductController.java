@@ -39,13 +39,13 @@ public class ProuductController {
 	//productPage 用
 	@GetMapping("/{id}")
 	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long id){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findById(id)));
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByIdToProductResponse(id)));
 	}
 	
 	//searchPage 用
 	@GetMapping("/search")
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByKeywordFullTextBoolean(keyword)));//對應值
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByKeywordFullTextBooleanToProductResponses(keyword)));//對應值
 	}
 	
 	

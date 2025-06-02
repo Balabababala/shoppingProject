@@ -1,13 +1,14 @@
 package com.example.demo.service.Impl;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dto.ProductResponse;
+import com.example.demo.model.entity.Product;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CategoryService;
@@ -27,14 +28,38 @@ public class ProductServiceImpl implements ProductService{
 	CategoryService categoryService;
 	
 	
-	@Transactional
+	//repository
+
 	@Override
-	public void minusProductByid(Long id, Integer quantity) {
-		productRepository.minusById(id, quantity);
+	public void minusById(Long id, int quantity) {
+		productRepository.minusById	(id,quantity);
 	}
 
 	@Override
-	public ProductResponse findById(Long id) {
+	public Optional<Product> findById(Long id) {
+		return productRepository.findById(id);
+	}
+
+	@Override
+	public List<Product> findByCategoryId(Long categoryId) {
+		return productRepository.findByCategoryId(categoryId);
+	}
+
+	@Override
+	public List<Product> findByKeywordFullTextBoolean(String keyword) {
+		return productRepository.findByKeywordFullTextBoolean(keyword);
+	}
+
+	//邏輯
+	
+	@Transactional
+	@Override
+	public void minusProductByid(Long id, Integer quantity) {
+		minusById(id, quantity);
+	}
+	
+	@Override
+	public ProductResponse findByIdToProductResponse(Long id) {
 		return ProductMapper.toDto(productRepository.findById(id).get());
 	}
 	
@@ -71,12 +96,11 @@ public class ProductServiceImpl implements ProductService{
 //	}
 	
 	@Override 
-	public List<ProductResponse> findByKeywordFullTextBoolean(String keyword) {//boolean 狀態才能 用*萬用字元
+	public List<ProductResponse> findByKeywordFullTextBooleanToProductResponses(String keyword) {//boolean 狀態才能 用*萬用字元
 		keyword=keyword+'*';
 		return productRepository.findByKeywordFullTextBoolean(keyword).stream()
 																.map(ProductMapper::toDto)
 																.toList();
 	}
-	
 	
 }

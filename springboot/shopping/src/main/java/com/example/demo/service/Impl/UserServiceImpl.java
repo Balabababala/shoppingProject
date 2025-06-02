@@ -1,5 +1,7 @@
 package com.example.demo.service.Impl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,12 +21,26 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	UserRepository userRepository;
 	
+	//repository
+	
+	@Override
+	public Optional<User> findById(Long Id) {
+		return userRepository.findById(Id);
+	}
+
+	@Override
+	public User findByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+
+	//邏輯
 	
 	@Override
     public User findUserByUserName(String username) {
-        return userRepository.findByUsername(username);
+        return findByUsername(username);
     }
 
+	
 	@Override
 	public boolean isLoginValid(LoginRequest loginDTO, User user, HttpSession session) throws ShoppingException{
 		
@@ -51,7 +67,7 @@ public class UserServiceImpl implements UserService{
 
 	@Override
 	public User findUserById(Long id) {
-		return userRepository.findById(id)
+		return findById(id)
 	            .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
 	}
 

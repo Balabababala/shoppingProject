@@ -14,7 +14,6 @@ import com.example.demo.model.dto.CartItemResponse;
 import com.example.demo.model.entity.CartItem;
 import com.example.demo.model.entity.OrderItem;
 import com.example.demo.repository.CartItemRepository;
-import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CartItemService;
 import com.example.demo.service.OrderItemService;
 	
@@ -30,36 +29,60 @@ public class CartItemServiceImpl implements CartItemService{
 		
 	@Autowired
 	private OrderItemService orderItemService;
-		
-	@Autowired
-	ProductRepository productRepository;
 
+	//repository	
+	
+	@Override
+	public void deleteByUserId(Long userId) {
+		cartItemRepository.deleteByUserId(userId);
+	}
 
-		
+	@Override
+	public List<CartItem> findByUserId(Long userId) {
+		return cartItemRepository.findByUserId(userId);
+	}
+
+	@Override
+	
+	public List<CartItem> findByUserIdWithProduct(Long userId){
+		return cartItemRepository.findByUserIdWithProduct(userId);
+	}
+	@Override
+	public List<CartItem> findByUserIdAndProductId(Long userId, Long productId) {
+		return cartItemRepository.findByUserIdAndProductId(userId,productId);
+	}
+
+	@Override
+	public void addCartItemIfExist(Long userId, Long productId, Integer quantity) {
+		cartItemRepository.addCartItem(userId,productId,quantity);
+	}
+
+	
+	//邏輯
 	@Override
 	public List<CartItemResponse> getCart(Long userId) {
-		return cartItemRepository.findByUserId(userId).stream()
-		        									   .map(CartItemMapper::toDto)
-		        									   .toList(); // 如果是 Java 16+，可以用 toList()  
+		return findByUserId(userId).stream()
+		        				   .map(CartItemMapper::toDto)
+		        				   .toList(); // 如果是 Java 16+，可以用 toList()  
 		}
 	
 	@Override
 	public void addCartItem(Long userId, Long ProductId, Integer quantity) {
-		if(cartItemRepository.findByUserIdAndProductId(userId, ProductId).isEmpty()) {
-			cartItemRepository.addCartItem(userId, ProductId, quantity);
+		if(findByUserIdAndProductId(userId, ProductId).isEmpty()) {
+			addCartItem(userId, ProductId, quantity);
 		}
-		cartItemRepository.addCartItemIfExist(userId, ProductId, quantity);
+		addCartItemIfExist(userId, ProductId, quantity);
 	}
 
 	@Override
 	public void deleteAllCartItemByUser(Long userId) {
-		cartItemRepository.deleteByUserId(userId);
+		deleteByUserId(userId);
 	}
 
 	@Override
 	public Map<Long, List<OrderItem>> orderItemsGroupedBySeller(Long UserId) {
 		Map<Long, List<OrderItem>> orderItemsGroup=new HashMap<>();
-		List <CartItem> cartItems =cartItemRepository.findByUserIdWithProduct(UserId);
+		List <CartItem> cartItems =findByUserIdWithProduct(UserId);
 		
 		for(CartItem cartItem:cartItems) {
 				Long sellerId =cartItem.getProduct().getSellerId();

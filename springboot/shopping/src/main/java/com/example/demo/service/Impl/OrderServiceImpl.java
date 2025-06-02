@@ -16,6 +16,7 @@ import com.example.demo.model.entity.User;
 import com.example.demo.repository.OrderItemRepository;
 import com.example.demo.repository.OrderRepository;
 import com.example.demo.service.CartItemService;
+import com.example.demo.service.OrderItemService;
 import com.example.demo.service.OrderService;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.UserService;
@@ -26,7 +27,7 @@ public class OrderServiceImpl implements OrderService{
 	private OrderRepository orderRepository; 
 	
 	@Autowired
-	private OrderItemRepository orderItemRepository;
+	private OrderItemService orderItemService;
 	
 	@Autowired
 	private CartItemService cartItemService;
@@ -36,6 +37,15 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private ProductService productService;
+	
+	//repository
+	@Override
+	public void save(Order order) {
+		orderRepository.save(order);
+	}
+	
+	//邏輯
+	
 	@Override
 	public void createOrder(OrderRequest orderRequest,Long BuyerId) {
 		User Buyer=userService.findUserById(BuyerId); //因為建定單要用 (我已用join colunm  BuyerId的新增 更新不能用 )
@@ -55,16 +65,18 @@ public class OrderServiceImpl implements OrderService{
 			
 			//order的部分
 			Order order=OrderMapper.toEntity(orderRequest, Buyer, Seller, total);
-			orderRepository.save(order);
+			save(order);
 			
 			//orderItems的部分
 			Long orderId=order.getId();
 			for (OrderItem orderItem : orderItems) {
 				productService.minusProductByid(orderItem.getProductId(), orderItem.getQuantity());
 				orderItem.setOrderId(orderId);
-				orderItemRepository.save(orderItem);    
+				orderItemService.save(orderItem);    
 			}		
 		};
 	}
+
+	
 	
 }
