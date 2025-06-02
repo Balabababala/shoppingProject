@@ -50,6 +50,18 @@ public class User {
     @Column(name = "is_email_verified", nullable = false)
     private Boolean isEmailVerified;
     
+    @Column(name = "default_address", columnDefinition = "TEXT")
+    private String defaultAddress;
+
+    @Column(name = "default_receiver_name", length = 255)
+    private String defaultReceiverName;
+
+    @Column(name = "default_receiver_phone", length = 50)
+    private String defaultReceiverPhone;
+    
+    
+    
+    
     @OneToMany(mappedBy = "seller")
     private List<Product> products;
     

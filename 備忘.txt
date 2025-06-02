@@ -26,6 +26,8 @@
 service 邏輯 要檢查是否有 (判斷是否可以做 再做) 
 	       檢查是需要  exception
 
+功能相關 要建
+
 
 結帳功能
 
@@ -34,11 +36,11 @@ OrderRequest		 //結帳 丟資料給後端 建訂單用 呼叫 service
 OredeMapper 	         //OrderRequest 轉Entity
  
 
-OrderService    //+      呼叫Repository  建訂單邏輯
+OrderService    //+      呼叫Repository  V 建訂單邏輯
 OrderItemService//+	 呼叫Repository  V CartItem 轉 orderItem
 CartItemService //改	 呼叫Repository  V 寫依賣家分 Map<Long,List<cartItem>> 
 ProductService  //改	 呼叫Repository  V -數量  
 
-
+剩api 測試 接前端
 
 

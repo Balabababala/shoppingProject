@@ -43,7 +43,7 @@ public class OrderItemServiceImpl implements OrderItemService{
 								Product product=cartItem.getProduct();
 								OrderItem orderItem =new OrderItem();
 								orderItem.setOrderId(cartItem.getId());
-								orderItem.setProductId(product.getId());
+								orderItem.setProduct(product);
 								orderItem.setQuantity(cartItem.getQuantity());
 								orderItem.setUnitPrice(product.getPrice());
 								orderItem.setTotalPrice(product.getPrice().multiply(BigDecimal.valueOf(cartItem.getQuantity())));

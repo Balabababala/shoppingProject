@@ -3,8 +3,9 @@ package com.example.demo.repository;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.data.jdbc.repository.query.Modifying;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -18,8 +19,9 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	
     // 你可以加自訂的方法，像是：
 	@Modifying
-	@Query(value ="UPDATE products SET stock=stock-quantity  WHERE id=:id,", nativeQuery = true)
-	void minusById(@Param("id")Long id,int quantity);
+	@Transactional
+	@Query(value ="UPDATE products SET stock= stock- :quantity  WHERE id=:id", nativeQuery = true)
+	void minusById(@Param("id")Long id, @Param("quantity") int quantity);
 	
 	
 	Optional<Product> findById(Long id);//對照用 id->name

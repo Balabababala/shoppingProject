@@ -15,6 +15,7 @@ import com.example.demo.model.dto.CartItemResponse;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.CartItemService;
+import com.example.demo.service.UserService;
 
 import jakarta.servlet.http.HttpSession;
 
@@ -24,23 +25,33 @@ public class CartItemController {
 	@Autowired
 	private CartItemService cartItemService; 
 	
+	@Autowired
+	private UserService userService;
+	
 	@GetMapping //contexts 用
 	public ResponseEntity<ApiResponse<List<CartItemResponse>>> getCart(HttpSession session)   {
-		UserDto sessionUser= (UserDto)session.getAttribute("sessionUser");
-		return ResponseEntity.ok(ApiResponse.success("取購物車成功", cartItemService.getCart(sessionUser.getUserId())));
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		return ResponseEntity.ok(ApiResponse.success("取購物車成功", cartItemService.getCart(userDto.getUserId())));
 	}
 	
 	@PostMapping("/add")
 	public ResponseEntity<ApiResponse<Object>> addCart(HttpSession session,@RequestBody AddCartItemRequest addCartItemRequest){
-		UserDto sessionUser= (UserDto)session.getAttribute("sessionUser");
+		UserDto sessionUser= (UserDto)session.getAttribute("userDto");
 		if(sessionUser==null) {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你沒登入是怎麼進來的"));
 		}
 		
 		if(sessionUser.getUserId().equals(addCartItemRequest.getUserId())) {
-			cartItemService.addCartItem(addCartItemRequest.getUserId(), addCartItemRequest.getProductId(), addCartItemRequest.getQuantity());
+			cartItemService.addOrUpdateCartItem(addCartItemRequest.getUserId(), addCartItemRequest.getProductId(), addCartItemRequest.getQuantity());
 			return ResponseEntity.ok(ApiResponse.success("加入成功",null));
 		}
 		return ResponseEntity.badRequest().body(ApiResponse.error("不是 你他媽怎麼做到的"));
+	}
+	
+	@GetMapping("/clear")// test  cartItem 清除
+	public ResponseEntity<ApiResponse<List<Void>>> clearCart(HttpSession session)   {
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		cartItemService.deleteAllCartItemByUser(userDto.getUserId());
+		return ResponseEntity.ok(ApiResponse.success("刪購物車成功",null));
 	}
 }

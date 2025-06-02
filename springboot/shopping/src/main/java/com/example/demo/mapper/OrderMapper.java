@@ -3,7 +3,7 @@ package com.example.demo.mapper;
 
 import java.math.BigDecimal;
 
-import com.example.demo.model.dto.OrderRequest;
+import com.example.demo.model.dto.OrderDto;
 import com.example.demo.model.entity.Order;
 import com.example.demo.model.entity.User;
 
@@ -13,7 +13,7 @@ import com.example.demo.model.entity.User;
 //要其他傳入值
 public class OrderMapper {	
 	
-	public static Order toEntity(OrderRequest orderRequest,User buyer,User seller,BigDecimal totalAmount) {
+	public static Order toEntity(OrderDto orderRequest,User buyer,User seller,BigDecimal totalAmount) {
 		Order order= new Order();
 		order.setBuyer(buyer);
 		order.setSeller(seller);

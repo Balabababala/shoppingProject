@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class OrderRequest {
+public class OrderDto {
     private String receiverName;       // 收件人姓名
     private String receiverPhone;      // 收件人電話
     private String shippingAddress;    // 配送地址

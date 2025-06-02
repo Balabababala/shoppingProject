@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService{
 	
 	
 	//repository
-
+	
 	@Override
 	public void minusById(Long id, int quantity) {
 		productRepository.minusById	(id,quantity);
@@ -52,7 +52,7 @@ public class ProductServiceImpl implements ProductService{
 
 	//邏輯
 	
-	@Transactional
+
 	@Override
 	public void minusProductByid(Long id, Integer quantity) {
 		minusById(id, quantity);

@@ -12,6 +12,7 @@
 11. product_reviews -     評價				  //使用者生成
 12. 商品評價 不重複
 13. notifications - 通知中心				  //員工生成 使用者看到
+14. user_addresses -地址
 
 一般員工		❌ 無法管理角色與權限資料表
 中階主管（選擇性）	✅ 只能將既有角色分配給員工
@@ -45,7 +46,10 @@ CREATE TABLE users (
     updated_at DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新時間',
     last_login_at DATETIME COMMENT '最後登入時間',
     is_active BOOLEAN COMMENT '是否啟用',
-    is_email_verified BOOLEAN COMMENT '是否驗證'
+    is_email_verified BOOLEAN COMMENT '是否驗證',
+    default_address TEXT COMMENT '預設地址',
+    default_receiver_name VARCHAR(255) COMMENT '預設收件人姓名',
+    default_receiver_phone VARCHAR(50) COMMENT '預設收件人電話'
 );
 
 CREATE TABLE login_logs (

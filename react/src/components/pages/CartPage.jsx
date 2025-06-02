@@ -1,11 +1,12 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Container, Row, Col, Button, Image, Card } from "react-bootstrap";
 import { AppContext } from '../../contexts/AppContext';
 import { Link } from "react-router-dom";  
 import "../../css/CartPage.css";
 
 function CartPage() {
-  const { cartItems, setCartItems } = useContext(AppContext);
+  const { cartItems, setCartItems, clearCart } = useContext(AppContext);
+  const [loadingClear, setLoadingClear] = useState(false);
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -13,7 +14,14 @@ function CartPage() {
   );
 
   const removeItem = (id) => {
+    // TODO: 呼叫後端刪除單一商品 API
     setCartItems(cartItems.filter((item) => item.id !== id));
+  };
+
+  const handleClearCart = async () => {
+    setLoadingClear(true);
+    await clearCart();
+    setLoadingClear(false);
   };
 
   return (
@@ -32,7 +40,7 @@ function CartPage() {
                     <Col xs={3} md={2}>
                       <Link to={`/products/${item.id}`}>
                         <Image
-                          src={item.imageUrl}
+                          src={item.imageUrl || 'https://via.placeholder.com/100x100?text=No+Image'}
                           alt={item.productName}
                           fluid
                           rounded
@@ -50,10 +58,10 @@ function CartPage() {
                             {item.productName}
                           </Link>
                         </Card.Title>
-                        <Card.Text>單價: ${item.price}</Card.Text>
+                        <Card.Text>單價: ${item.price.toLocaleString()}</Card.Text>
                         <Card.Text>數量: {item.quantity}</Card.Text>
                         <Card.Text>
-                          小計: ${item.price * item.quantity}
+                          小計: ${(item.price * item.quantity).toLocaleString()}
                         </Card.Text>
                       </Card.Body>
                     </Col>
@@ -77,10 +85,24 @@ function CartPage() {
                 <h4>結帳</h4>
                 <div className="d-flex justify-content-between mb-3">
                   <span>總計</span>
-                  <span>${totalPrice}</span>
+                  <span>${totalPrice.toLocaleString()}</span>
                 </div>
-                <Button variant="primary" className="w-100">
+                <Button 
+                  as={Link} 
+                  to="/checkout" 
+                  variant="primary" 
+                  className="w-100" 
+                  disabled={cartItems.length === 0}
+                >
                   結帳
+                </Button>
+                <Button 
+                  variant="warning" 
+                  onClick={handleClearCart} 
+                  className="mt-2"
+                  disabled={loadingClear || cartItems.length === 0}
+                >
+                  {loadingClear ? '清空中...' : '清空購物車 '}
                 </Button>
               </Card>
             </Col>

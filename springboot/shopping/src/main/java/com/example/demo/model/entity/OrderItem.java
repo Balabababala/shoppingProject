@@ -40,7 +40,7 @@ public class OrderItem {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
- // 多個 OrderItem 對應一個 Order
+    // 多個 OrderItem 對應一個 Order
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", nullable = false)
     private Order order;

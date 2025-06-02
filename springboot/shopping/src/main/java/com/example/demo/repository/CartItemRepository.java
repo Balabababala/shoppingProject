@@ -16,13 +16,16 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	//已有方法 find.... save delete
 	
     // 你可以加自訂的方法，像是：
+	
 	//清空購物車用
+	@Modifying
+	@Transactional
 	void deleteByUserId(Long userId);
 	
 	List<CartItem> findByUserId(Long userId);
 	
 	//防n+1用的
-	@Query(value = "SELECT c.* FROM cart_item c JOIN product p ON c.product_id = p.id WHERE c.user_id = :userId", nativeQuery = true)
+	@Query(value = "SELECT c.* FROM cart_items c JOIN products p ON c.product_id = p.id WHERE c.user_id = :userId", nativeQuery = true)
 	List<CartItem> findByUserIdWithProduct(@Param("userId") Long userId);
 	
 	//判斷購物車是否已有商品
@@ -38,7 +41,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	//加入購物車 如果已存在用這
 	@Modifying
 	@Transactional
-	@Query(value="UPDATE cart_items SET quantity= quantity+:quantity,updated_at=curdate() where user_id=:userId and product_id=:productId",nativeQuery = true)
+	@Query(value="UPDATE cart_items SET quantity= quantity + :quantity,updated_at=curdate() where user_id=:userId and product_id=:productId",nativeQuery = true)
 	void addCartItemIfExist(@Param("userId") Long userId,@Param("productId") Long productId ,@Param("quantity") Integer quantity);
 	
 }

@@ -51,10 +51,15 @@ public class CartItemServiceImpl implements CartItemService{
 	public List<CartItem> findByUserIdAndProductId(Long userId, Long productId) {
 		return cartItemRepository.findByUserIdAndProductId(userId,productId);
 	}
+	
+	@Override
+	public void addCartItem(Long userId,Long productId ,Integer quantity) {
+		cartItemRepository.addCartItem(userId, productId, quantity);
+	};
 
 	@Override
 	public void addCartItemIfExist(Long userId, Long productId, Integer quantity) {
-		cartItemRepository.addCartItem(userId,productId,quantity);
+		cartItemRepository.addCartItemIfExist(userId, productId, quantity);
 	}
 
 	
@@ -67,11 +72,12 @@ public class CartItemServiceImpl implements CartItemService{
 		}
 	
 	@Override
-	public void addCartItem(Long userId, Long ProductId, Integer quantity) {
-		if(findByUserIdAndProductId(userId, ProductId).isEmpty()) {
-			addCartItem(userId, ProductId, quantity);
-		}
-		addCartItemIfExist(userId, ProductId, quantity);
+	public void addOrUpdateCartItem(Long userId, Long productId, Integer quantity) {
+		if(findByUserIdAndProductId(userId, productId).isEmpty()) {
+			addCartItem(userId, productId, quantity);
+		} else {
+	        addCartItemIfExist(userId, productId, quantity);
+	    }
 	}
 
 	@Override

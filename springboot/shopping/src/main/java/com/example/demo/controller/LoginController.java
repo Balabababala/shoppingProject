@@ -41,7 +41,7 @@ public class LoginController {
 		try {
 			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功
 				UserDto userDto = new UserDto(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
-				session.setAttribute("sessionUser", userDto);
+				session.setAttribute("userDto", userDto);
 				user.setLastLoginAt(LocalDateTime.now());//更新 最近登入時間
 														 //登入紀錄 還沒建 Entity
 				return ResponseEntity.ok(ApiResponse.success("登入成功", userDto));

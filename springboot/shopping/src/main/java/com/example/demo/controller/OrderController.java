@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.OrderRequest;
+import com.example.demo.model.dto.OrderDto;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.OrderService;
@@ -25,15 +25,14 @@ public class OrderController {
 	@Autowired
 	private OrderService orderService;
 	
-	
-	//
 	@PostMapping("/create")
-	public ResponseEntity<ApiResponse<List<Void>>> getTopCatogory(@RequestBody OrderRequest orderRequest,HttpSession session)  {
-		if(session==null) {
+	public ResponseEntity<ApiResponse<List<Void>>> getTopCatogory(@RequestBody OrderDto orderRequest,HttpSession session)  {
+		UserDto userDto = (UserDto) session.getAttribute("userDto");
+		if(userDto==null) {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
 		}
-		UserDto userDto =(UserDto)session.getAttribute("userDto");
+
 		orderService.createOrder(orderRequest, userDto.getUserId());
-		return ResponseEntity.ok(ApiResponse.success("更新成功", null));
+		return ResponseEntity.ok(ApiResponse.success("結帳成功", null));
 	}
 }
