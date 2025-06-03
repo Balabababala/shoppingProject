@@ -31,11 +31,21 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
       @OneToMany(mappedBy= "xxx") xxx  是對面Entity 的屬性(上面那個的屬性) 
 
       關聯後  欄位保留方法 因為它會不知道是哪個來管(新增 更新)   @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
+	
+      注意 別用了 他不會同步更新 也就是說直接取他的值可能會錯
 
 8. MySQL 內建的相似度  //沒做出來
 	ALTER TABLE product ADD FULLTEXT(name, description); 
 	被比較的要+ FULLTEXT 全文收旬
 
 9.樹狀結構 我是直接在 mapper 做遞迴(依靠JPA 突然做出來)
+
+10.Spring Security
+	要dependency 相關東西
+	功能是會自動紀錄使用者帳密 登陸狀態
+	預設filter 是 如果沒登錄 就全擋
+	但他能自訂filter
+			
+
 
 

@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.entity.CartItem;
 import com.example.demo.model.entity.OrderItem;
@@ -22,10 +23,10 @@ public class OrderItemServiceImpl implements OrderItemService{
 	//repository
 	
 
+	@Override
 	public void save(OrderItem orderItem) {
 		orderItemRepository.save(orderItem);
 	}
-	
 	
 	//邏輯
 	
@@ -36,13 +37,11 @@ public class OrderItemServiceImpl implements OrderItemService{
 		}		
 	}
 
-	
-
 	@Override
 	public OrderItem cartItemToOrderItem(CartItem cartItem) {
 								Product product=cartItem.getProduct();
 								OrderItem orderItem =new OrderItem();
-								orderItem.setOrderId(cartItem.getId());
+								
 								orderItem.setProduct(product);
 								orderItem.setQuantity(cartItem.getQuantity());
 								orderItem.setUnitPrice(product.getPrice());

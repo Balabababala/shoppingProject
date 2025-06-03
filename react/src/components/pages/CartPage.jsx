@@ -7,21 +7,44 @@ import "../../css/CartPage.css";
 function CartPage() {
   const { cartItems, setCartItems, clearCart } = useContext(AppContext);
   const [loadingClear, setLoadingClear] = useState(false);
+  const BASE_API = "http://localhost:8080/api";
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
     0
   );
 
-  const removeItem = (id) => {
-    // TODO: 呼叫後端刪除單一商品 API
-    setCartItems(cartItems.filter((item) => item.id !== id));
+  // 刪除單一商品
+  const removeItem = async (id) => {
+    try {
+      const response = await fetch(`${BASE_API}/cart/delete/${id}`, {
+        credentials: 'include', 
+        method: 'DELETE',
+      });
+
+      if (!response.ok) {
+        throw new Error('刪除失敗');
+      }
+
+      // 後端刪除成功後，更新前端狀態
+      setCartItems(cartItems.filter((item) => item.id !== id));
+    } catch (error) {
+      console.error('刪除商品錯誤:', error);
+      alert('刪除商品失敗，請稍後再試');
+    }
   };
 
+  // 清空購物車
   const handleClearCart = async () => {
     setLoadingClear(true);
-    await clearCart();
-    setLoadingClear(false);
+    try {
+      await clearCart();  // 假設 clearCart 已經包含呼叫後端清空購物車邏輯
+    } catch (error) {
+      alert('清空購物車失敗，請稍後再試');
+      console.error(error);
+    } finally {
+      setLoadingClear(false);
+    }
   };
 
   return (

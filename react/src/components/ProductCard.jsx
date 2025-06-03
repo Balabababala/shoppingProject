@@ -17,7 +17,6 @@ function ProductCard({ product, onAddToCart }) {
 
   return (
     <Card style={{ width: '18rem' }} className="m-2">
-      {/* 點圖片會跳詳細 */}
       <Card.Img
         variant="top"
         src={product.imageUrl || 'https://via.placeholder.com/286x180?text=No+Image'}
@@ -27,7 +26,6 @@ function ProductCard({ product, onAddToCart }) {
       />
 
       <Card.Body>
-        {/* 點商品名稱也會跳詳細 */}
         <Card.Title
           style={{ cursor: 'pointer' }}
           onClick={goToDetailPage}
@@ -54,16 +52,15 @@ function ProductCard({ product, onAddToCart }) {
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
             style={{ width: '4.5rem', marginRight: '0.5rem' }}
-            onClick={(e) => e.stopPropagation()} // 防止點數字欄時觸發父事件
+            onClick={(e) => e.stopPropagation()}
           />
           <span>件</span>
         </div>
 
-        {/* 加入購物車按鈕 */}
         <Button
           variant="primary"
           onClick={(e) => {
-            e.stopPropagation(); // 阻止冒泡，避免觸發 Card 點擊
+            e.stopPropagation();
             handleAddToCart();
           }}
         >

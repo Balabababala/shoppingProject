@@ -8,6 +8,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.mapper.*;
 import com.example.demo.model.dto.CategoryResponse;
@@ -20,26 +21,34 @@ public class CategoryServiceImpl implements CategoryService{
 	@Autowired
 	private CategoryRepository categoryRepository;
 	
-
-	
 	//repository
 
+	
+	@Override
 	public Optional<Category> findBySlug(String slug) {
 		return categoryRepository.findBySlug(slug);
 	}
 
+	
+	@Override
 	public List<Category> findAll() {
 		return categoryRepository.findAll();
 	}
 
+	
+	@Override
 	public Optional<Category> findById(Long CategoriyId) {
 		return categoryRepository.findById(CategoriyId);
 	}
 
+
+	@Override
 	public List<Category> findByParentId(Long parentId) {
 		return categoryRepository.findByParentId(parentId);
 	}
 
+
+	@Override
 	public List<Category> findChildrenBySlug(String slug) {
 		return categoryRepository.findChildrenBySlug(slug);
 	}

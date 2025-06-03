@@ -15,14 +15,19 @@ import com.example.demo.model.entity.Category;
 public interface CategoryRepository extends JpaRepository<Category, Long> {
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	
-	Optional<Category> findBySlug(String slug);       
+	@Transactional(readOnly = true)
+	Optional<Category> findBySlug(String slug);   
+	
+	@Transactional(readOnly = true)
 	Optional<Category> findById(Long CategoriyId);
+	
+	@Transactional(readOnly = true)
 	List<Category> findByParentId(Long parentId);
 	
     // 你可以加自訂的方法，像是：
 	
-	@Transactional(readOnly = true) 
-	@Query(value = "SELECT * FROM category c JOIN category p ON c.parent_id = p.id WHERE p.slug = :slug", nativeQuery = true)
+	@Transactional(readOnly = true)
+	@Query(value = "SELECT c.* FROM categories c JOIN categories p ON c.parent_id = p.id WHERE p.slug = :slug", nativeQuery = true)
 	List<Category> findChildrenBySlug(@Param("slug") String slug);//只有兒子 後面給遞迴用的
 }
 

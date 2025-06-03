@@ -4,6 +4,9 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.Cacheable;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,6 +16,7 @@ import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CategoryService;
 import com.example.demo.service.ProductService;
+import com.example.demo.exception.ShoppingException;
 import com.example.demo.mapper.*;
 
 @Service
@@ -28,32 +32,41 @@ public class ProductServiceImpl implements ProductService{
 	CategoryService categoryService;
 	
 	//repository
-	
-	public void minusById(Long id, int quantity) {
-		productRepository.minusById	(id,quantity);
+
+
+	@CacheEvict(value = "products", key = "#id")
+	@Override	
+	public int minusByIdIfEnoughStock(Long id, int quantity) {
+		return productRepository.minusByIdIfEnoughStock(id, quantity);
 	}
+	
 
-
+	@Cacheable(value = "products", key = "#id")
+	@Override
 	public Optional<Product> findById(Long id) {
 		return productRepository.findById(id);
 	}
 
 
+	@Override
 	public List<Product> findByCategoryId(Long categoryId) {
 		return productRepository.findByCategoryId(categoryId);
 	}
 
 
+	@Override
 	public List<Product> findByKeywordFullTextBoolean(String keyword) {
 		return productRepository.findByKeywordFullTextBoolean(keyword);
 	}
 
 	//邏輯
-	
 
 	@Override
 	public void minusProductByid(Long id, Integer quantity) {
-		minusById(id, quantity);
+		int updatedRows=minusByIdIfEnoughStock(id, quantity);
+		if (updatedRows == 0) {
+	        throw new ShoppingException("庫存不足，無法扣除商品庫存，商品ID：" + id);
+	    }
 	}
 	
 	@Override
@@ -72,7 +85,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	
-	@Transactional
+
 	@Override
 	public List<ProductResponse> findAllCategoryBySlug(String slug) {  	//自己+子子孫孫
 		 return categoryService.findAllCategoryAndDescendantsBySlug(slug).stream()

@@ -7,7 +7,9 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.mapper.CartItemMapper;
 import com.example.demo.model.dto.CartItemResponse;
@@ -16,6 +18,8 @@ import com.example.demo.model.entity.OrderItem;
 import com.example.demo.repository.CartItemRepository;
 import com.example.demo.service.CartItemService;
 import com.example.demo.service.OrderItemService;
+
+
 	
 	
 	
@@ -30,28 +34,47 @@ public class CartItemServiceImpl implements CartItemService{
 	@Autowired
 	private OrderItemService orderItemService;
 
-	//repository	
+	//repository
+
 	
+	@Override
 	public void deleteByUserId(Long userId) {
 		cartItemRepository.deleteByUserId(userId);
 	}
 
+	@Override
+	public void deleteByUserIdAndProductId(Long userId,Long productId) {
+		cartItemRepository.deleteByUserIdAndProductId(userId, productId);
+		
+	}
+	
+	@Override
 	public List<CartItem> findByUserId(Long userId) {
 		return cartItemRepository.findByUserId(userId);
 	}
 	
+	
+	
+
+	@Override
 	public List<CartItem> findByUserIdWithProduct(Long userId){
 		return cartItemRepository.findByUserIdWithProduct(userId);
 	}
 
+	
+	@Override
 	public List<CartItem> findByUserIdAndProductId(Long userId, Long productId) {
 		return cartItemRepository.findByUserIdAndProductId(userId,productId);
 	}
 	
+	
+	@Override
 	public void addCartItem(Long userId,Long productId ,Integer quantity) {
 		cartItemRepository.addCartItem(userId, productId, quantity);
 	};
 
+	
+	@Override
 	public void addCartItemIfExist(Long userId, Long productId, Integer quantity) {
 		cartItemRepository.addCartItemIfExist(userId, productId, quantity);
 	}
@@ -73,6 +96,9 @@ public class CartItemServiceImpl implements CartItemService{
 	        addCartItemIfExist(userId, productId, quantity);
 	    }
 	}
+
+	
+
 
 	@Override
 	public void deleteAllCartItemByUser(Long userId) {

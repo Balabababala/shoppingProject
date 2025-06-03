@@ -39,12 +39,12 @@ public class LoginController {
 		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
 		//比對
 		try {
-			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功
-				UserDto userDto = new UserDto(user.getUsername(),user.getId(),user.getRoleId(),user.getIsActive(),user.getIsEmailVerified());
-				session.setAttribute("userDto", userDto);
-				user.setLastLoginAt(LocalDateTime.now());//更新 最近登入時間
-														 //登入紀錄 還沒建 Entity
+			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功	
+				UserDto userDto=userService.handleSuccessfulLogin(user); //登入成功做的事 
+				session.setAttribute("userDto", userDto);				 //把UserDto 塞到session
 				return ResponseEntity.ok(ApiResponse.success("登入成功", userDto));
+				
+				
 			}
 			return ResponseEntity.badRequest().body(ApiResponse.error("登入失敗"));
 		} catch (ShoppingException e) {

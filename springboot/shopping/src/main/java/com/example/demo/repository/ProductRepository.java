@@ -17,14 +17,18 @@ import com.example.demo.model.entity.Product;
 public interface ProductRepository extends JpaRepository <Product, Long>{
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	
+	@Transactional(readOnly = true)
 	Optional<Product> findById(Long id);//對照用 id->name
+	
+	@Transactional(readOnly = true)
 	List<Product> findByCategoryId(Long categoryId);
 	
 	// 你可以加自訂的方法，像是：
-	@Modifying
 	@Transactional
-	@Query(value ="UPDATE products SET stock= stock- :quantity  WHERE id=:id", nativeQuery = true)
-	void minusById(@Param("id")Long id, @Param("quantity") int quantity);
+	@Modifying
+	@Query(value ="UPDATE products SET stock = stock - :quantity WHERE id = :id AND stock >= :quantity", nativeQuery = true)
+	int minusByIdIfEnoughStock(@Param("id") Long id, @Param("quantity") int quantity);
+
 	
 	
 //	//MySQL 內建的相似度比較
@@ -38,6 +42,7 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 //	List<Product> findByKeywordFullText(String keyword);
 
 	//MySQL 內建的相似度比較 ver2
+	@Transactional(readOnly = true)
 	@Query(value = "SELECT *, MATCH(name, description) AGAINST (:keyword IN BOOLEAN MODE) AS score "
 	        + "FROM products "
 	        + "WHERE MATCH(name, description) AGAINST (:keyword IN BOOLEAN MODE) "

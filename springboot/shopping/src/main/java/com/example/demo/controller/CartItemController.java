@@ -4,7 +4,9 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +27,6 @@ public class CartItemController {
 	@Autowired
 	private CartItemService cartItemService; 
 	
-	@Autowired
-	private UserService userService;
 	
 	@GetMapping //contexts 用
 	public ResponseEntity<ApiResponse<List<CartItemResponse>>> getCart(HttpSession session)   {
@@ -36,19 +36,20 @@ public class CartItemController {
 	
 	@PostMapping("/add")
 	public ResponseEntity<ApiResponse<Object>> addCart(HttpSession session,@RequestBody AddCartItemRequest addCartItemRequest){
-		UserDto sessionUser= (UserDto)session.getAttribute("userDto");
-		if(sessionUser==null) {
-			return ResponseEntity.badRequest().body(ApiResponse.error("你沒登入是怎麼進來的"));
-		}
-		
-		if(sessionUser.getUserId().equals(addCartItemRequest.getUserId())) {
-			cartItemService.addOrUpdateCartItem(addCartItemRequest.getUserId(), addCartItemRequest.getProductId(), addCartItemRequest.getQuantity());
-			return ResponseEntity.ok(ApiResponse.success("加入成功",null));
-		}
-		return ResponseEntity.badRequest().body(ApiResponse.error("不是 你他媽怎麼做到的"));
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		cartItemService.addOrUpdateCartItem(userDto.getUserId(), addCartItemRequest.getProductId(), addCartItemRequest.getQuantity());
+		return ResponseEntity.ok(ApiResponse.success("加入成功",null));
 	}
 	
-	@GetMapping("/clear")// test  cartItem 清除
+	@DeleteMapping("/delete/{productId}")
+	public ResponseEntity<ApiResponse<Object>> deleteCart(HttpSession session,@PathVariable Long productId){
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		cartItemService.deleteByUserIdAndProductId(userDto.getUserId(),productId);
+		return ResponseEntity.ok(ApiResponse.success("刪除成功",null));
+		
+	}
+	
+	@PostMapping("/clear")// cartItem 清除
 	public ResponseEntity<ApiResponse<List<Void>>> clearCart(HttpSession session)   {
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		cartItemService.deleteAllCartItemByUser(userDto.getUserId());

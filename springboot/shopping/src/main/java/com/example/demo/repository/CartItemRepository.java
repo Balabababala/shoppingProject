@@ -15,20 +15,25 @@ import com.example.demo.model.entity.CartItem;
 public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	//已有方法 find.... save delete  find 要用還是要寫 只是不用Query
 	
-	//清空購物車用
-	@Modifying
 	@Transactional
+	@Modifying
+	void deleteByUserIdAndProductId(Long userId,Long productId);//刪單個
+	
+	@Transactional
+	@Modifying
 	void deleteByUserId(Long userId);
 	
+	@Transactional(readOnly = true)
 	List<CartItem> findByUserId(Long userId);
 	
 	//判斷購物車是否已有商品
+	@Transactional(readOnly = true)
 	List<CartItem> findByUserIdAndProductId(Long userId,Long productId );
 	
 	// 你可以加自訂的方法，像是：
 	
 	//防n+1用的
-	@Transactional(readOnly = true) 
+	@Transactional(readOnly = true)
 	@Query(value = "SELECT c.* FROM cart_items c JOIN products p ON c.product_id = p.id WHERE c.user_id = :userId", nativeQuery = true)
 	List<CartItem> findByUserIdWithProduct(@Param("userId") Long userId);
 	

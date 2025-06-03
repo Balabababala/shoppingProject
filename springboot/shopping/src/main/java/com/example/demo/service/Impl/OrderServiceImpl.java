@@ -8,6 +8,7 @@ import java.util.Map.Entry;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.dto.OrderDto;
@@ -45,12 +46,14 @@ public class OrderServiceImpl implements OrderService{
 	
 	//repository
 
+
 	public void save(Order order) {
 		orderRepository.save(order);
 	}
 	
 	//邏輯
 	
+	@Transactional
 	@Override
 	public void createOrder(OrderDto orderRequest,Long BuyerId) {
 		User Buyer=userService.findUserById(BuyerId); //因為建定單要用 (我已用join colunm  BuyerId的新增 更新不能用 )
@@ -75,7 +78,7 @@ public class OrderServiceImpl implements OrderService{
 			//orderItems的部分
 
 			for (OrderItem orderItem : orderItems) {
-				productService.minusProductByid(orderItem.getProductId(), orderItem.getQuantity());
+				productService.minusProductByid(orderItem.getProduct().getId(), orderItem.getQuantity());
 				orderItem.setOrder(order);
 				orderItemService.save(orderItem);    
 			}		
