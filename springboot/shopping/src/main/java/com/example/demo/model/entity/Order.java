@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 import com.example.demo.model.enums.OrderStatus;
 import com.example.demo.model.enums.PaymentStatus;
 import com.example.demo.model.enums.ShipmentStatus;
@@ -23,12 +26,6 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "buyer_id",insertable =false,updatable = false)
-    private Long buyerId;
-    
-    @Column(name = "seller_id",insertable =false,updatable = false)
-    private Long sellerId;
 
     @Column(name = "order_date")
     private LocalDateTime orderDate;
@@ -69,9 +66,11 @@ public class Order {
     @Column(name = "notes", columnDefinition = "TEXT")
     private String notes;
 
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 

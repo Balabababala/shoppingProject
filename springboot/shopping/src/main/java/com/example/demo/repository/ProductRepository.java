@@ -27,7 +27,7 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	@Transactional
 	@Modifying
 	@Query(value ="UPDATE products SET stock = stock - :quantity WHERE id = :id AND stock >= :quantity", nativeQuery = true)
-	int minusByIdIfEnoughStock(@Param("id") Long id, @Param("quantity") int quantity);
+	Long minusByIdIfEnoughStock(@Param("id") Long id, @Param("quantity") Integer quantity);
 
 	
 	

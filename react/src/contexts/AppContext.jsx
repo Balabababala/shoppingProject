@@ -107,7 +107,7 @@ export function AppProvider({ children }) {
     try {
       setCartItems([]);
       const resp = await fetch(`${API_BASE}/cart/clear`, {
-        method: 'POST',  // 建議用 POST，如果後端只支援 GET，也可改回去
+        method: 'DELETE',  // 建議用 POST，如果後端只支援 GET，也可改回去
         credentials: 'include',
         headers: { 'Cache-Control': 'no-cache' },
       });

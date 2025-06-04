@@ -72,7 +72,7 @@ public class CategoryServiceImpl implements CategoryService{
 	
 	
 	@Override
-	public List<CategoryResponse> findChildrenBySlugToCategoryResponse(String slug) {
+	public List<CategoryResponse> findCategoryChildrenBySlugToCategoryResponse(String slug) {
 		return findChildrenBySlug(slug).stream()
 									   .map(categoty->CategoryMapper.toDto(categoty))
 									   .toList();

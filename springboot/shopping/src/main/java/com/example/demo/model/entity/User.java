@@ -3,6 +3,11 @@ package com.example.demo.model.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,21 +28,21 @@ public class User {
     @Column(name = "username", nullable = false, length = 50)
     private String username;
 
-    @Column(name = "hash_password", nullable = false)
-    private String hashPassword;
+    @Column(name = "password_hash", nullable = false)
+    private String passwordHash;
 
-    @Column(name = "hash_salt", nullable = false)
-    private String hashSalt;
+    @Column(name = "salt", nullable = false)
+    private String salt;
 
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 
-    @Column(name = "role_id", nullable = false)
-    private Long roleId;
 
+    @CreationTimestamp
     @Column(name = "created_at", nullable = false)
     private LocalDateTime createdAt;
-
+    
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
@@ -59,12 +64,18 @@ public class User {
     @Column(name = "default_receiver_phone", length = 50)
     private String defaultReceiverPhone;
     
-    
-    
+    @ManyToOne
+    @JoinColumn(name = "role_id" ,nullable = false)
+    private Role role;
     
     @OneToMany(mappedBy = "seller")
     private List<Product> products;
     
     @OneToMany(mappedBy = "user")
     private List<CartItem> cartItems;
+    
+    @OneToMany(mappedBy = "user")
+    private List<Favorite> favorites;
+    
+   
 }

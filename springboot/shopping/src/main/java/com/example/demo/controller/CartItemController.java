@@ -41,7 +41,7 @@ public class CartItemController {
 		return ResponseEntity.ok(ApiResponse.success("加入成功",null));
 	}
 	
-	@DeleteMapping("/delete/{productId}")
+	@DeleteMapping("/{productId}")
 	public ResponseEntity<ApiResponse<Object>> deleteCart(HttpSession session,@PathVariable Long productId){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		cartItemService.deleteByUserIdAndProductId(userDto.getUserId(),productId);
@@ -49,10 +49,10 @@ public class CartItemController {
 		
 	}
 	
-	@PostMapping("/clear")// cartItem 清除
+	@DeleteMapping("/clear")	// cartItem 清除
 	public ResponseEntity<ApiResponse<List<Void>>> clearCart(HttpSession session)   {
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
-		cartItemService.deleteAllCartItemByUser(userDto.getUserId());
+		cartItemService.clearCart(userDto.getUserId());
 		return ResponseEntity.ok(ApiResponse.success("刪購物車成功",null));
 	}
 }

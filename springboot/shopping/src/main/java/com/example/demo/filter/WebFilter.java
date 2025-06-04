@@ -32,7 +32,9 @@ public class WebFilter extends OncePerRequestFilter {
         if (path.startsWith("/api/login") ||
             path.startsWith("/api/products") ||
             path.startsWith("/api/categories") ||
-            path.startsWith("/api/auth-code")) {
+            path.startsWith("/api/auth-code")||
+            path.startsWith("/uploads")||
+            path.startsWith("/check")) {
             filterChain.doFilter(request, response);
             return;
         }

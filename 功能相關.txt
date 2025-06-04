@@ -1,4 +1,23 @@
-只寫service 和 controller 可能有前端
+結構
+	只寫規則可能不一樣的
+
+service
+	會區分是 //repository //邏輯
+	//repository 他會包裝 repository 的方法 名字一樣 傳入值一樣 
+	//邏輯 會有自己的方法 名字會加自己Enitity名稱 會寫轉成什麼 或直接寫他做什麼(如果動作多)
+
+controller
+	依功能分布一Entity	
+
+DTO
+	命名
+	request 	只有前端傳後端
+	response	只有後端傳前端
+	Dto		都傳
+mapper
+	看情況方法可能不一樣
+
+
 
 登入
 
@@ -14,3 +33,52 @@ OrderService    //+      呼叫Repository  V 建訂單邏輯
 OrderItemService//+	 呼叫Repository  V CartItem 轉 orderItem
 CartItemService //改	 呼叫Repository  V 寫依賣家分 Map<Long,List<cartItem>> 
 ProductService  //改	 呼叫Repository  V -數量 
+
+收藏相關
+
+Entity
+favoriteRequest
+
+加入收藏功能(productDetailPage)
+
+repository favorite
+		save(Favorite favorite);
+service	   favorite
+		addFavorite(Long userId,Long productId);
+controller favorite
+		POST
+		@Requestbody (FavoriteDto favoriteDto)
+		/favorites
+
+刪除收藏    (productDetailPage,userFavoritePage)
+
+repository favorite
+		delete(Favorite favorite);
+service    favorite
+		deleteByUserIdAndProductId(Long userId,Long productId);
+	controller favorite
+		DELTET
+		@PathVariable
+		/favorites/{productId}	
+
+查詢使用者收藏狀態 (userFavoritePage)
+
+repository favorite
+	    List<Favorite> findByUserId(Long userId);
+	    List<Favorite> findByUserIdWithUserAndProductAndImages(Long userId);	//join 版
+	    Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId);       //判斷用是否已加入
+service	   favorite
+	    List<FavoriteDto>  findByUserId(Long userId);
+controller
+		GET
+		@PathVariable
+		/api/users/{userId}/favorites
+	
+檢查是否已收藏 (userFavoritePage)
+repository favorite
+	    List<Favorite> findByUserIdAndProductId(Long userId ,Long productId);       //判斷用是否已加入
+service	   favorite
+	    用repository 的就好
+controller
+		GET
+		

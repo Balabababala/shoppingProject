@@ -30,9 +30,9 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 
       @OneToMany(mappedBy= "xxx") xxx  是對面Entity 的屬性(上面那個的屬性) 
 
-      關聯後  欄位保留方法 因為它會不知道是哪個來管(新增 更新)   @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
-	
-      注意 別用了 他不會同步更新 也就是說直接取他的值可能會錯
+      關聯後 欄位保留方法 因為它會不知道是哪個來管(新增 更新)  
+      @Column(name = "parent_id", insertable = false, updatable = false) 不可插入 不可更新 
+      注意 只有自己對自己才用 他不會同步更新 也就是說直接取他的值可能會錯
 
 8. MySQL 內建的相似度  //沒做出來
 	ALTER TABLE product ADD FULLTEXT(name, description); 
@@ -46,6 +46,9 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 	預設filter 是 如果沒登錄 就全擋
 	但他能自訂filter
 			
-
+11.如果有雙向關聯
+	@JsonIgnore 可以讓json 不抓資料(防無限迴圈)
+	(發現原因 我把實體直接丟前端 處裡玩不用上面那行也可以)
+	而且我是新增時報錯(錯在不同地方) 找半天
 
 

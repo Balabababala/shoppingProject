@@ -101,7 +101,7 @@ public class CartItemServiceImpl implements CartItemService{
 
 
 	@Override
-	public void deleteAllCartItemByUser(Long userId) {
+	public void clearCart(Long userId) {
 		deleteByUserId(userId);
 	}
 
@@ -111,7 +111,7 @@ public class CartItemServiceImpl implements CartItemService{
 		List <CartItem> cartItems =findByUserIdWithProduct(UserId);
 		
 		for(CartItem cartItem:cartItems) {
-				Long sellerId =cartItem.getProduct().getSellerId();
+				Long sellerId =cartItem.getProduct().getSeller().getId();
 				
 //			if(!orderItemsGroup.containsKey(sellerId)) {
 //				orderItemsGroup.put(sellerId,new ArrayList<OrderItem>());

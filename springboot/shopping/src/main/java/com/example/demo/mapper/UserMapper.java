@@ -10,7 +10,7 @@ public class UserMapper {
         return new UserDto(
         		user.getUsername(),
         		user.getId(),
-        		user.getRoleId(),
+        		user.getRole().getId(),
         		user.getIsActive(),
         		user.getIsEmailVerified()
         );

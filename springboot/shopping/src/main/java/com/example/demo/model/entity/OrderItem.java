@@ -8,8 +8,11 @@ import lombok.AllArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
-@Table(name = "order_items")
+@Table(name = "order_items", uniqueConstraints = {@UniqueConstraint(columnNames = {"order_id","product_id"})})
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,15 +21,9 @@ public class OrderItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @Column(name = "order_id",insertable =false,updatable = false)
-    private Long orderId;
-    
-    @Column(name = "product_id",insertable =false,updatable = false)
-    private Long productId;
     
     @Column(nullable = false)
-    private Integer quantity;
+    private Integer  quantity;
 
     @Column(name = "unit_price", nullable = false, precision = 10, scale = 2)
     private BigDecimal unitPrice;
@@ -34,9 +31,11 @@ public class OrderItem {
     @Column(name = "total_price", nullable = false, precision = 10, scale = 2)
     private BigDecimal totalPrice;
 
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 

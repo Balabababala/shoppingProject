@@ -36,14 +36,14 @@ public class ProductServiceImpl implements ProductService{
 
 	@CacheEvict(value = "products", key = "#id")
 	@Override	
-	public int minusByIdIfEnoughStock(Long id, int quantity) {
+	public Long minusByIdIfEnoughStock(Long id, Integer quantity) {
 		return productRepository.minusByIdIfEnoughStock(id, quantity);
 	}
 	
 
 	@Cacheable(value = "products", key = "#id")
 	@Override
-	public Optional<Product> findById(Long id) {
+	public Optional<Product> findProductById(Long id) {
 		return productRepository.findById(id);
 	}
 
@@ -63,7 +63,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void minusProductByid(Long id, Integer quantity) {
-		int updatedRows=minusByIdIfEnoughStock(id, quantity);
+		Long updatedRows=minusByIdIfEnoughStock(id, quantity);
 		if (updatedRows == 0) {
 	        throw new ShoppingException("庫存不足，無法扣除商品庫存，商品ID：" + id);
 	    }
@@ -75,7 +75,7 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public List<ProductResponse> findAll() {
+	public List<ProductResponse> findAllProductsToProductResponse() {
 		 return categoryRepository.findAll().stream()
 		        .flatMap(category -> 
 	            productRepository.findByCategoryId(category.getId()).stream()
@@ -87,7 +87,7 @@ public class ProductServiceImpl implements ProductService{
 	
 
 	@Override
-	public List<ProductResponse> findAllCategoryBySlug(String slug) {  	//自己+子子孫孫
+	public List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug) {  	//自己+子子孫孫
 		 return categoryService.findAllCategoryAndDescendantsBySlug(slug).stream()
 		        .flatMap(category -> 
 	            productRepository.findByCategoryId(category.getId()).stream()
@@ -107,7 +107,7 @@ public class ProductServiceImpl implements ProductService{
 //	}
 	
 	@Override 
-	public List<ProductResponse> findByKeywordFullTextBooleanToProductResponses(String keyword) {//boolean 狀態才能 用*萬用字元
+	public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword) {//boolean 狀態才能 用*萬用字元
 		keyword=keyword+'*';
 		return productRepository.findByKeywordFullTextBoolean(keyword).stream()
 																.map(ProductMapper::toDto)

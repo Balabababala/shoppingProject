@@ -17,7 +17,7 @@ function CartPage() {
   // 刪除單一商品
   const removeItem = async (id) => {
     try {
-      const response = await fetch(`${BASE_API}/cart/delete/${id}`, {
+      const response = await fetch(`${BASE_API}/cart/${id}`, {
         credentials: 'include', 
         method: 'DELETE',
       });

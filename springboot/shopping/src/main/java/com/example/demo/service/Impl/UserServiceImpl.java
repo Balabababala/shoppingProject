@@ -60,7 +60,7 @@ public class UserServiceImpl implements UserService{
 			
 			try {
 			//以下有 inputStream 所以用try catch 抓
-				if(!PasswordHash.hashPassword(loginDTO.getPassword(),user.getHashSalt()).equals(user.getHashPassword())) {
+				if(!PasswordHash.hashPassword(loginDTO.getPassword(),user.getSalt()).equals(user.getPasswordHash())) {
 					throw new ShoppingException("密碼錯誤");
 				} 
 			} catch (Exception e) {

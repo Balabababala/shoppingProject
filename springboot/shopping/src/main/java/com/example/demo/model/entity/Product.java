@@ -1,6 +1,7 @@
 package com.example.demo.model.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,11 +10,16 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
+import com.example.demo.model.enums.ProductStatus;
+
 @Entity
-@Table(name = "products")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "products")
 public class Product {
 
     @Id
@@ -29,21 +35,22 @@ public class Product {
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal price;
 
-    @Column(nullable = false)
-    private Integer stock;
+    @Min(1)
+    @Column(name="stock",nullable = false)
+    private Integer  stock;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name="status",nullable = false)
+    private ProductStatus status ;
+    
     @Column(name = "image_url", columnDefinition = "TEXT")
     private String imageUrl;
     
-    @Column(name = "seller_id", insertable = false, updatable = false)
-    private Long sellerId;
-    
-    @Column(name = "category_id", insertable = false, updatable = false)
-    private Long categoryId;
-    
+    @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
@@ -57,5 +64,11 @@ public class Product {
     
     @OneToMany(mappedBy = "product")
     private List<CartItem> cartItems;
+    
+    @OneToMany(mappedBy = "product")
+    private List<Favorite> favorite;
+    
+    @OneToMany(mappedBy = "product")
+    private List<ProductImage> productImages;
 
 }

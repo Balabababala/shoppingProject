@@ -31,7 +31,7 @@ public class CategoryController  {
 	
 	@GetMapping("/{slug}/tree")  			//CategoryPage 用
 	public ResponseEntity<ApiResponse<List<CategoryResponse>>> getCatogoryBySlug(@PathVariable String slug)   {
-		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.findChildrenBySlugToCategoryResponse(slug)));
+		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.findCategoryChildrenBySlugToCategoryResponse(slug)));
 	}
 
 }

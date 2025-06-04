@@ -84,7 +84,7 @@ public class OrderServiceImpl implements OrderService{
 			}		
 		}
 		//清購物車
-		cartItemService.deleteAllCartItemByUser(BuyerId);
+		cartItemService.clearCart(BuyerId);
 	}
 
 	@Override

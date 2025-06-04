@@ -2,13 +2,18 @@ package com.example.demo.model.entity;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+
 import java.time.LocalDateTime;
 
-@Table(name = "cart_items")
+@Table(name = "cart_items",
+		uniqueConstraints = {
+        @UniqueConstraint(columnNames = {"user_id", "product_id"})
+    })
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -26,6 +31,7 @@ public class CartItem {
     private Long productId ;
     
     @Column(nullable = false)
+    @Min(1)
     private Integer quantity;
 
     @Column(name = "added_at", nullable = false)

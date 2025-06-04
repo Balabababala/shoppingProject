@@ -30,10 +30,10 @@ public class ProuductController {
 	@GetMapping		
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findCategoryById(@RequestParam(defaultValue = "") String category){
 		if(category.isEmpty()) {
-			return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAll()));//空字串
+			return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAllProductsToProductResponse()));//空字串
 		}
 		
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAllCategoryBySlug(category)));//對應值
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAllProductsByCategorySlugToProductResponses(category)));//對應值
 	}
 	
 	//productPage 用
@@ -45,7 +45,7 @@ public class ProuductController {
 	//searchPage 用
 	@GetMapping("/search")
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByKeywordFullTextBooleanToProductResponses(keyword)));//對應值
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductsByKeywordFullTextBooleanToProductResponses(keyword)));//對應值
 	}
 	
 	
