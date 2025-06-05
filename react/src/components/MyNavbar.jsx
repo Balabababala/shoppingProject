@@ -34,7 +34,7 @@ function MyNavbar({ onChangeContent }) {
                 <MyNavbarCategories categories={categories} />
               </NavDropdown>
 
-              <Nav.Link as={Link} to={userData?.userId ? "/recent" : "/userlogin"}>
+              <Nav.Link as={Link} to={userData?.userId ? "/myrecent" : "/userlogin"}>
                 最近看過
               </Nav.Link>
 
@@ -44,7 +44,7 @@ function MyNavbar({ onChangeContent }) {
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
               >
-                <Nav.Link className="cart-link" as={Link} to={userData?.userId ? "/cart" : "/userlogin"}>
+                <Nav.Link className="cart-link" as={Link} to={userData?.userId ? "/mycart" : "/userlogin"}>
                   購物車
                 </Nav.Link>
 
@@ -64,12 +64,15 @@ function MyNavbar({ onChangeContent }) {
                       </div>
                     ))
                   )}
-                  <Button as={Link} to={userData?.userId ? "/cart" : "/userlogin"} variant="primary">
+                  <Button as={Link} to={userData?.userId ? "/mycart" : "/userlogin"} variant="primary">
                     去結帳
                   </Button>
                 </div>
               </div>
-
+                  
+              <Nav.Link as={Link} to={userData?.userId ? "/myfavorite" : "/userlogin"}>
+                我的收藏
+              </Nav.Link>
               {/* 登入後功能選單 */}
               {userData?.username && (
                 <>

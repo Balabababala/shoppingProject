@@ -37,9 +37,9 @@ public class ProuductController {
 	}
 	
 	//productPage 用
-	@GetMapping("/{id}")
-	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long id){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByIdToProductResponse(id)));
+	@GetMapping("/{productId}")
+	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long productId){
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByIdToProductResponse(productId)));
 	}
 	
 	//searchPage 用

@@ -16,9 +16,36 @@ import com.example.demo.model.entity.Product;
 @Repository
 public interface ProductRepository extends JpaRepository <Product, Long>{
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
+
+	@Transactional(readOnly = true)
+	@Query("SELECT p FROM Product p JOIN FETCH p.category")
+	List<Product> findAllWithCategory();
 	
 	@Transactional(readOnly = true)
-	Optional<Product> findById(Long id);//對照用 id->name
+	@Query(value = """
+		    SELECT p FROM Product p 
+		    JOIN FETCH p.category c 
+		    JOIN FETCH p.productImages pi 
+		    WHERE p.id = :id
+		    """)
+	Optional<Product> findByCategoryWithCategoryAndProductImage(@Param("id") Long id);
+	
+	@Transactional(readOnly = true)
+	@Query("""
+		    SELECT DISTINCT p FROM Product p
+		    JOIN FETCH p.category c
+		    LEFT JOIN FETCH p.productImages pi
+		    WHERE p.id = :id
+		""")
+	Optional<Product> findByIdWithCategoryAndProductImage(@Param("id") Long id);
+	
+	@Query(value ="""
+			SELECT DISTINCT p FROM Product p 
+			JOIN FETCH p.category 
+			LEFT JOIN FETCH p.productImages 
+			WHERE p.category.id IN :categoryIds
+		""")
+	List<Product> findAllByCategoryIdsWithCategoryAndProductImage(@Param("categoryIds") List<Long> categoryIds);
 	
 	@Transactional(readOnly = true)
 	List<Product> findByCategoryId(Long categoryId);
@@ -27,7 +54,7 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	@Transactional
 	@Modifying
 	@Query(value ="UPDATE products SET stock = stock - :quantity WHERE id = :id AND stock >= :quantity", nativeQuery = true)
-	Long minusByIdIfEnoughStock(@Param("id") Long id, @Param("quantity") Integer quantity);
+	Integer minusByIdIfEnoughStock(@Param("id") Long id, @Param("quantity") Integer quantity);
 
 	
 	

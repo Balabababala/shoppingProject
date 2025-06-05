@@ -9,11 +9,11 @@ import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.entity.Favorite;
 
-import jakarta.transaction.Transactional;
+
 
 @Repository
 public interface FavoriteRepository extends JpaRepository<Favorite, Long>{
@@ -29,8 +29,15 @@ public interface FavoriteRepository extends JpaRepository<Favorite, Long>{
 	
 	List<Favorite> findByUserId(Long userId);
 	
-	@Query("SELECT f FROM Favorite f JOIN FETCH f.user u JOIN FETCH f.product p LEFT JOIN FETCH p.productImages WHERE u.id = :userId")
-	List<Favorite> findByUserIdWithUserAndProductAndImages(@Param("userId") Long userId);//join版
+	@Transactional(readOnly = true)
+	@Query("""
+			    SELECT DISTINCT f FROM Favorite f
+			    JOIN FETCH f.user u
+			    JOIN FETCH f.product p
+			    LEFT JOIN FETCH p.productImages pi
+			    WHERE f.user.id = :userId
+		   """)
+	List<Favorite> findByUserIdWithUserAndProductAndImages(@Param("userId") Long userId);
 	
 	
 	Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId);

@@ -5,18 +5,14 @@ export const AppContext = createContext();
 export function AppProvider({ children }) {
   const API_BASE = 'http://localhost:8080/api';
 
-  const [userData, setUserData] = useState(() => {
-    const savedUser = localStorage.getItem('userData');
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [userData, setUserData] = useState(null);
+  const [loadingAuth, setLoadingAuth] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [categories, setCategories] = useState([]);
-  const [toastMessage, setToastMessage] = useState('');
+  const [toastMessages, setToastMessages] = useState([]);
 
-  // 控制只在初始化時獲取使用者資訊，避免用 userData 當依賴導致循環呼叫
   const initialUserCheckDone = useRef(false);
 
-  // 把 userData 寫入 localStorage
   useEffect(() => {
     if (userData) {
       localStorage.setItem('userData', JSON.stringify(userData));
@@ -25,67 +21,62 @@ export function AppProvider({ children }) {
     }
   }, [userData]);
 
-  // 取分類 (只執行一次)
   useEffect(() => {
-    fetch(`${API_BASE}/categories/top-mynavbar`, { headers: { 'Cache-Control': 'no-cache' } })
+    if (userData) fetchCart();
+  }, [userData]);
+
+  useEffect(() => {
+    fetch(`${API_BASE}/categories/top-mynavbar`, {
+      headers: { 'Cache-Control': 'no-cache' },
+    })
       .then(resp => resp.json())
       .then(data => setCategories(data.data))
       .catch(console.error);
   }, []);
 
-  // 取使用者資訊，只在初始化時執行一次
   useEffect(() => {
-    if (!initialUserCheckDone.current) {
-      fetch(`${API_BASE}/user`, { credentials: 'include', headers: { 'Cache-Control': 'no-cache' } })
-        .then(resp => resp.json())
-        .then(data => {
-          if (data.data) {
-            setUserData(data.data);
-          } else {
-            setUserData(null);
-            setCartItems([]);
-            setToastMessage('您尚未登入，請重新登入');
-          }
-        })
-        .catch(error => {
-          console.error(error);
-          setUserData(null);
-          setCartItems([]);
-          setToastMessage('無法取得使用者資訊，請稍後再試');
-        })
-        .finally(() => {
-          initialUserCheckDone.current = true;
-        });
-    }
+    if (initialUserCheckDone.current) return;
+
+    const fetchUserData = async () => {
+      const data = await fetchWithAuthCheck(`${API_BASE}/user/me`);
+      if (data?.data) {
+        setUserData(data.data);
+      } else {
+        handleLogout('您尚未登入，請重新登入');
+      }
+
+      initialUserCheckDone.current = true;
+      setLoadingAuth(false);
+    };
+
+    fetchUserData();
   }, []);
 
-  // 定時檢查使用者登入狀態 (每5分鐘)
+  // 🔁 定時驗證登入狀態
   useEffect(() => {
-    const interval = setInterval(() => {
-      fetch(`${API_BASE}/user`, { credentials: 'include', headers: { 'Cache-Control': 'no-cache' } })
-        .then(resp => resp.json())
-        .then(data => {
-          if (!data.data) {
-            setUserData(null);
-            setCartItems([]);
-            setToastMessage('您已登出，請重新登入');
-          }
-        })
-        .catch(() => {
-          setUserData(null);
-          setCartItems([]);
-        });
-    }, 5 * 60 * 1000);
+    const interval = setInterval(async () => {
+      const data = await fetchWithAuthCheck(`${API_BASE}/user/me`);
+      if (!data?.data) {
+        handleLogout('登入狀態已過期，請重新登入');
+      }
+    }, 5 * 60 * 1000); // 每5分鐘
 
     return () => clearInterval(interval);
   }, []);
 
-  // fetchCart 函式
+  const handleLogout = (msg = '您已登出') => {
+    setUserData(null);
+    setCartItems([]);
+    localStorage.removeItem('userData');
+    addToastMessage(msg);
+  };
+
   const fetchCart = useCallback(async () => {
     if (!userData) {
       setCartItems([]);
       return;
     }
+
     try {
       const resp = await fetch(`${API_BASE}/cart`, {
         credentials: 'include',
@@ -98,43 +89,88 @@ export function AppProvider({ children }) {
         setCartItems([]);
       }
     } catch (error) {
-      console.error(error);
+      console.error('取得購物車失敗:', error);
     }
   }, [userData]);
 
-  // 清空購物車
+  const addToCart = async (product, quantity = 1) => {
+    if (!userData) {
+      addToastMessage('請先登入才能加入購物車');
+      return;
+    }
+
+    try {
+      const resp = await fetch(`${API_BASE}/cart/add`, {
+        method: 'POST',
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
+        },
+        body: JSON.stringify({ productId: product.id, quantity }),
+      });
+      const data = await resp.json();
+
+      if (data.message?.includes('成功')) {
+        await fetchCart();
+        addToastMessage('已成功加入購物車');
+      } else {
+        addToastMessage('加入購物車失敗: ' + (data.message || '未知錯誤'));
+      }
+    } catch (error) {
+      addToastMessage('加入購物車錯誤: ' + error.message);
+    }
+  };
+
   const clearCart = async () => {
     try {
       setCartItems([]);
       const resp = await fetch(`${API_BASE}/cart/clear`, {
-        method: 'DELETE',  // 建議用 POST，如果後端只支援 GET，也可改回去
+        method: 'DELETE',
         credentials: 'include',
         headers: { 'Cache-Control': 'no-cache' },
       });
       const data = await resp.json();
-      if (data.message && data.message.includes('成功')) {
+
+      if (data.message?.includes('成功')) {
         await fetchCart();
-        setToastMessage('購物車已清空');
+        addToastMessage('購物車已清空');
       } else {
-        setToastMessage('清空購物車失敗: ' + (data.message || '未知錯誤'));
+        addToastMessage('清空購物車失敗: ' + (data.message || '未知錯誤'));
       }
     } catch (error) {
-      setToastMessage('清空購物車錯誤: ' + error.message);
+      addToastMessage('清空購物車錯誤: ' + error.message);
     }
   };
 
-  // 預設呼叫 fetchCart 保持購物車資料同步
-  useEffect(() => {
-    fetchCart();
-  }, [fetchCart]);
+  const addToastMessage = (text) => {
+    const id = Date.now() + Math.random();
+    setToastMessages((prev) => [...prev, { id, text }]);
+  };
 
-  // 可選：toastMessage 自動清除（3秒後）
-  useEffect(() => {
-    if (toastMessage) {
-      const timer = setTimeout(() => setToastMessage(''), 3000);
-      return () => clearTimeout(timer);
+  const removeToastMessage = (id) => {
+    setToastMessages((prev) => prev.filter((msg) => msg.id !== id));
+  };
+
+  const fetchWithAuthCheck = async (url, options = {}) => {
+    try {
+      const resp = await fetch(url, {
+        credentials: 'include',
+        headers: { 'Cache-Control': 'no-cache', ...(options.headers || {}) },
+        ...options,
+      });
+
+      if (resp.status === 401 || resp.status === 403) {
+        handleLogout('登入狀態失效，請重新登入');
+        return null;
+      }
+
+      return await resp.json();
+    } catch (err) {
+      console.error('API 呼叫失敗:', err);
+      return null;
     }
-  }, [toastMessage]);
+  };
 
   return (
     <AppContext.Provider
@@ -144,13 +180,16 @@ export function AppProvider({ children }) {
         cartItems,
         setCartItems,
         categories,
-        toastMessage,
-        setToastMessage,
+        toastMessages,
+        addToastMessage,
+        removeToastMessage,
         clearCart,
         fetchCart,
+        addToCart,
+        fetchWithAuthCheck,
       }}
     >
-      {children}
+      {loadingAuth ? <div>載入中...</div> : children}
     </AppContext.Provider>
   );
 }

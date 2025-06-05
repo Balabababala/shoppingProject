@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import CartEnabledProductCard from '../CartEnabledProductCard';
-
+import ModernProductCard from '../ModernProductCard ';
+import { AppContext } from '../../contexts/AppContext';
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {
   if (!categories || categories.length === 0) return null;
@@ -42,8 +41,10 @@ function CategoryPage() {
   const BASE_API = "http://localhost:8080/api";
   const { slug } = useParams();
 
+  const { userData, addToastMessage, setCartItems } = useContext(AppContext);
+
   const [categoriesTree, setCategoriesTree] = useState([]);
-  const [selectedCategory, setSelectedCategory] = useState(slug);
+  const [selectedCategory, setSelectedCategory] = useState(slug || null);
   const [products, setProducts] = useState([]);
 
   // 分頁相關
@@ -53,17 +54,15 @@ function CategoryPage() {
 
   // 載入分類樹
   useEffect(() => {
-    fetch(`${BASE_API}/categories/${slug}/tree`)
+    fetch(`${BASE_API}/categories/${slug || ''}/tree`)
       .then(res => res.json())
       .then(data => setCategoriesTree(data.data))
       .catch(err => console.error('取得分類樹失敗', err));
   }, [slug]);
 
-  // 載入全部商品（依分類）
-  // 後端 API 要求 category 參數必須存在，
-  // 沒有分類時請帶空字串 '?category=' 表示全部商品
+  // 載入商品（依分類）
   useEffect(() => {
-    const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '';
+    const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '?category=';
     fetch(`${BASE_API}/products${categoryQuery}`)
       .then(res => res.json())
       .then(data => {
@@ -74,7 +73,9 @@ function CategoryPage() {
   }, [selectedCategory]);
 
   const totalPages = products ? Math.ceil(products.length / pageSize) : 0;
-  const pagedProducts = products ? products.slice((currentPage - 1) * pageSize, currentPage * pageSize) : [];
+  const pagedProducts = products
+    ? products.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+    : [];
 
   const handleSelectCategory = (categorySlug) => {
     setSelectedCategory(categorySlug);
@@ -85,7 +86,42 @@ function CategoryPage() {
     setCurrentPage(pageNum);
   };
 
-  
+  // 加入購物車事件
+  const handleAddToCart = (productId, quantity) => {
+    if (!userData) {
+      addToastMessage('請先登入才能加入購物車！');
+      return;
+    }
+    let qty = quantity;
+    if (isNaN(qty) || qty < 1) qty = 1;
+
+    fetch(`${BASE_API}/cart/add`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      credentials: 'include',
+      body: JSON.stringify({
+        userId: userData.userId,
+        productId,
+        quantity: qty,
+      }),
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`加入購物車失敗，狀態碼:${res.status}`);
+        return res.json();
+      })
+      .then(() => {
+        addToastMessage(`已加入購物車：商品ID ${productId} x ${qty}`);
+        return fetch(`${BASE_API}/cart`, { credentials: 'include' });
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (!data || !data.data) throw new Error('購物車資料格式錯誤');
+        setCartItems(data.data);
+      })
+      .catch(err => {
+        addToastMessage(err.message);
+      });
+  };
 
   return (
     <div className="container mt-4">
@@ -115,12 +151,16 @@ function CategoryPage() {
               <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {pagedProducts.map(p => (
                   <div key={p.id} className="col">
-                    <CartEnabledProductCard product={p} />
+                    <ModernProductCard
+                      product={p}
+                      mode="cart"
+                      onAddToCart={handleAddToCart}
+                    />
                   </div>
                 ))}
               </div>
 
-              {/* 分頁區塊保持原本寫法 */}
+              {/* 分頁區塊 */}
               <nav aria-label="Page navigation" className="mt-4">
                 <ul className="pagination justify-content-center">
                   <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>

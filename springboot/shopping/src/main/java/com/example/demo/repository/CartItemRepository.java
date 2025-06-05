@@ -30,19 +30,33 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	@Transactional(readOnly = true)
 	List<CartItem> findByUserIdAndProductId(Long userId,Long productId );
 	
-	// 你可以加自訂的方法，像是：
 	
-	//防n+1用的
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT c.* FROM cart_items c JOIN products p ON c.product_id = p.id WHERE c.user_id = :userId", nativeQuery = true)
+	@Query(value = """
+			SELECT c FROM CartItem c
+			JOIN FETCH c.product p
+			WHERE c.user.id=:userId
+			""")
 	List<CartItem> findByUserIdWithProduct(@Param("userId") Long userId);
 	
+	@Transactional(readOnly = true)
+	@Query(value = """
+			SELECT c FROM CartItem c 
+			LEFT JOIN FETCH c.product p 
+			LEFT JOIN FETCH p.productImages pi
+			WHERE c.user.id = :userId
+			"""
+)
+	List<CartItem> findByUserIdWithProductAndProductImageItems(@Param("userId") Long userId);
+
+	
+	// 你可以加自訂的方法，像是：
 	
 	//加入購物車
 	@Modifying
 	@Transactional
 	@Query(value="INSERT INTO cart_items(user_id,product_id,quantity,added_at) "
-			   + 				 "VALUES(:userId,:productId,:quantity,curdate())",nativeQuery = true)		
+			   + "VALUES(:userId,:productId,:quantity,curdate())",nativeQuery = true)		
 	void addCartItem(@Param("userId") Long userId,@Param("productId") Long productId ,@Param("quantity") Integer quantity);
 	
 	//加入購物車 如果已存在用這

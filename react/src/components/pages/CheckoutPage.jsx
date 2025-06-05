@@ -4,7 +4,7 @@ import { AppContext } from "../../contexts/AppContext";
 import axios from "axios";
 
 export default function CheckoutPage() {
-  const { setCartItems } = useContext(AppContext);
+  const { setCartItems ,addToastMessage} = useContext(AppContext);
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -54,14 +54,14 @@ export default function CheckoutPage() {
     try {
       const res = await axios.post("/api/order/create", form);
       setCartItems([]);  // 清空購物車狀態
-      alert(res.data.message || "訂單送出成功！");
+      addToastMessage(res.data.message || "訂單送出成功！");
       navigate("/cart");  // 跳轉回購物車頁面
     } catch (error) {
       const msg =
         error.response?.data?.message ||
         error.response?.data ||
         "未知錯誤，請稍後再試。";
-      alert("結帳失敗：" + msg);
+      addToastMessage("結帳失敗：" + msg);
     } finally {
       setLoading(false);
     }

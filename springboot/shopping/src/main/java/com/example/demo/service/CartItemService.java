@@ -20,14 +20,15 @@ public interface CartItemService {
 	void deleteByUserIdAndProductId(Long userId,Long productId);
 	List<CartItem> findByUserId(Long userId);
 	List<CartItem> findByUserIdWithProduct(Long userId);
+	List<CartItem> findByUserIdWithProductAndProductImageItems (Long userId);
 	List<CartItem> findByUserIdAndProductId(Long userId, Long productId);
 	void addCartItem(Long userId,Long productId ,Integer quantity);
 	public void addCartItemIfExist(Long userId, Long productId, Integer quantity);
 	
 	//邏輯
 	
-	List <CartItemResponse> getCart(Long userId);						//顯示購物車資料用的
-	void clearCart(Long userId);							//清空購物車
+	List <CartItemResponse> getCart(Long userId);						   //顯示購物車資料用的
+	void clearCart(Long userId);										   //清空購物車
 	void addOrUpdateCartItem(Long userId,Long productId ,Integer quantity);//區分
-	Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId);// 把userId 的 orderItems分賣家  用userId而不是直接傳入orderItems的原因 防 N+1
+	Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId);   // 把userId 的 orderItems分賣家  用userId而不是直接傳入orderItems的原因 
 }					

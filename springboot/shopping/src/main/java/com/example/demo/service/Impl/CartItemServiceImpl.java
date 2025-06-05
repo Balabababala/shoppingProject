@@ -7,9 +7,8 @@ import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
 
 import com.example.demo.mapper.CartItemMapper;
 import com.example.demo.model.dto.CartItemResponse;
@@ -53,12 +52,14 @@ public class CartItemServiceImpl implements CartItemService{
 		return cartItemRepository.findByUserId(userId);
 	}
 	
-	
-	
-
 	@Override
 	public List<CartItem> findByUserIdWithProduct(Long userId){
 		return cartItemRepository.findByUserIdWithProduct(userId);
+	}
+
+	@Override
+	public List<CartItem> findByUserIdWithProductAndProductImageItems(Long userId){
+		return cartItemRepository.findByUserIdWithProductAndProductImageItems(userId);
 	}
 
 	
@@ -83,9 +84,9 @@ public class CartItemServiceImpl implements CartItemService{
 	//邏輯
 	@Override
 	public List<CartItemResponse> getCart(Long userId) {
-		return findByUserId(userId).stream()
-		        				   .map(CartItemMapper::toDto)
-		        				   .toList(); // 如果是 Java 16+，可以用 toList()  
+		return findByUserIdWithProductAndProductImageItems(userId).stream()
+										        				  .map(CartItemMapper::toDto)
+										        				  .toList();  
 		}
 	
 	@Override
@@ -96,9 +97,7 @@ public class CartItemServiceImpl implements CartItemService{
 	        addCartItemIfExist(userId, productId, quantity);
 	    }
 	}
-
 	
-
 
 	@Override
 	public void clearCart(Long userId) {

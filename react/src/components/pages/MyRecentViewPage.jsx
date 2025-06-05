@@ -2,7 +2,7 @@ import React from 'react';
 import '../../css/RecentViewPage.css';
 import RecentList from '../RecentList.jsx';
 
-function RecentlyViewedPage() {
+function MyRecentlyViewedPage() {
   const recentlyViewedProducts = [
     {
       id: 101,
@@ -40,4 +40,4 @@ function RecentlyViewedPage() {
   );
 }
 
-export default RecentlyViewedPage;
+export default MyRecentlyViewedPage;

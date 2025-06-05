@@ -1,11 +1,34 @@
 前端
-	只有做 如果沒登入 會導向登入頁面
-	CartPage       		沒做結帳
-	MemberInfoPage 		沒串真的資料
-	NotificationsPage 	沒串真的資料
-	RecentViewPage  	沒串真的資料
-	圖相關的 要改(ProductDetailPage)
-	註冊還沒做
+	買家
+		圖相關的 productResponse 結構要改 (可能+List<ProductImagesResponse>  productImagesResponse ;)
+				 顯示縮圖
+					product.productImagesResponse.reduse(productImagesResponse->{
+					if(productImagesResponse.number=1){
+					}return productImagesResponse.image_url
+					})
+				顯示組圖
+					product.productImagesResponse.map.......
+		可能新增對話功能(WebSocket)		(可以晚點)
+		產品詳情頁+評價+留言	  		(可以晚點)
+		最近看過	串真的資料 外觀要改
+		訂單資訊
+		通知中心	串真的資料 
+		註冊還沒做 可能需要建分頁
+		登出還沒做
+	
+	賣家
+
+		上架商品
+		我的商品(可能改我的賣場)
+
+	後台
+		都還沒做 看專題大綱
+		
+
+判斷身份 之後一起做
+
+
+
 注意
 	有用ToastMessage 元件 他是獨立的
 	有用AppContent 他是獨立的 可共用
@@ -26,21 +49,9 @@
 service 邏輯 要檢查是否有 (判斷是否可以做 再做) 
 	       檢查是需要  exception
 
-功能相關 要建
 
 
-結帳功能
 
-CheckoutUserInfoResponse //讓結帳能直接填會員資料
-OrderRequest		 //結帳 丟資料給後端 建訂單用 呼叫 service
-OredeMapper 	         //OrderRequest 轉Entity
- 
 
-OrderService    //+      呼叫Repository  V 建訂單邏輯
-OrderItemService//+	 呼叫Repository  V CartItem 轉 orderItem
-CartItemService //改	 呼叫Repository  V 寫依賣家分 Map<Long,List<cartItem>> 
-ProductService  //改	 呼叫Repository  V -數量  
-
-剩api 測試 接前端
 
 

@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.dto.ProductResponse;
+import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
@@ -32,11 +33,24 @@ public class ProductServiceImpl implements ProductService{
 	CategoryService categoryService;
 	
 	//repository
+	@Override
+ 	public List<Product> findAllProductsWithCategory(){
+		return productRepository.findAllWithCategory();
+	};
+	
+	@CacheEvict(value = "products", key = "#id")
+	@Override
+	public	Optional<Product> findProductByIdWithCategoryAndProductImage(Long id){
+		return productRepository.findByIdWithCategoryAndProductImage(id);
+	}
 
-
+	public List<Product> findAllProductsByCategoryIdsWithCategoryAndProductImage (List<Long> categoryIds){
+		return productRepository.findAllByCategoryIdsWithCategoryAndProductImage(categoryIds);
+	}
+	
 	@CacheEvict(value = "products", key = "#id")
 	@Override	
-	public Long minusByIdIfEnoughStock(Long id, Integer quantity) {
+	public Integer minusByIdIfEnoughStock(Long id, Integer quantity) {
 		return productRepository.minusByIdIfEnoughStock(id, quantity);
 	}
 	
@@ -63,7 +77,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public void minusProductByid(Long id, Integer quantity) {
-		Long updatedRows=minusByIdIfEnoughStock(id, quantity);
+		Integer updatedRows=minusByIdIfEnoughStock(id, quantity);
 		if (updatedRows == 0) {
 	        throw new ShoppingException("庫存不足，無法扣除商品庫存，商品ID：" + id);
 	    }
@@ -71,40 +85,38 @@ public class ProductServiceImpl implements ProductService{
 	
 	@Override
 	public ProductResponse findByIdToProductResponse(Long id) {
-		return ProductMapper.toDto(productRepository.findById(id).get());
+		return ProductMapper.toDto(findProductByIdWithCategoryAndProductImage(id).orElseThrow(()-> new ShoppingException("product 轉 dto 失敗")));
 	}
 	
 	@Override
 	public List<ProductResponse> findAllProductsToProductResponse() {
-		 return categoryRepository.findAll().stream()
-		        .flatMap(category -> 
-	            productRepository.findByCategoryId(category.getId()).stream()
-	                .map(ProductMapper::toDto)
-	        )
-	        .toList();
+//		 return categoryRepository.findAll().stream()
+//		        .flatMap(category -> 
+//	            productRepository.findByCategoryId(category.getId()).stream()
+//	                .map(ProductMapper::toDto)
+//	        )
+//	        .toList();
+		
+		return findAllProductsWithCategory().stream()
+											.map(ProductMapper::toDto)
+				                            .toList();
 	}
-	
-	
 
 	@Override
 	public List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug) {  	//自己+子子孫孫
-		 return categoryService.findAllCategoryAndDescendantsBySlug(slug).stream()
-		        .flatMap(category -> 
-	            productRepository.findByCategoryId(category.getId()).stream()
-	                								.map(ProductMapper::toDto)
-	        )
-	        .toList();
-	}
+		// 取得分類與所有子孫分類
+	    List<Category> categories = categoryService.findAllCategoryAndDescendantsBySlug(slug);
+	    List<Long> categoryIds = categories.stream()
+	                                       .map(Category::getId)
+	                                       .toList();
+	    // 一次查詢所有符合 categoryIds 的商品
+	    List<Product> products = findAllProductsByCategoryIdsWithCategoryAndProductImage(categoryIds);
 
-	
-//	@Override 
-//	public List<ProductResponse> findByKeyword(String keyword) {
-//		
-//		System.out.print(keyword);
-//		return productRepository.findByKeywordFullText(keyword).stream()
-//																.map(ProductMapper::toDto)
-//																.toList();
-//	}
+	    // 轉 DTO 回傳
+	    return products.stream()
+	                   .map(ProductMapper::toDto)
+	                   .toList();
+	}
 	
 	@Override 
 	public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword) {//boolean 狀態才能 用*萬用字元

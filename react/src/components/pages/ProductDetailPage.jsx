@@ -12,14 +12,14 @@ import {
   Form,
 } from 'react-bootstrap';
 import { AppContext } from '../../contexts/AppContext';
-
+//這頁的 product 都是 來自 product
 function ProductDetailPage() {
   const BASE_API = 'http://localhost:8080/api';
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const { userData, setCartItems, setToastMessage } = useContext(AppContext);
-  const [product, setProduct] = useState(null);
+  const { userData, setCartItems, addToastMessage } = useContext(AppContext);
+  const [product, setProduct] = useState(null);  //就是product
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [quantity, setQuantity] = useState(1);
@@ -67,7 +67,7 @@ function ProductDetailPage() {
 
   const handleAddToCart = () => {
     if (!userData) {
-      setToastMessage('請先登入才能加入購物車！');
+      addToastMessage('請先登入才能加入購物車！');
       navigate('/userlogin');
       return;
     }
@@ -91,7 +91,7 @@ function ProductDetailPage() {
         return res.json();
       })
       .then(() => {
-        setToastMessage(`已加入購物車：${product.name} x ${qty}`);
+        addToastMessage(`已加入購物車：${product.name} x ${qty}`);
         return fetch(`${BASE_API}/cart`, { credentials: 'include' });
       })
       .then((res) => res.json())
@@ -102,13 +102,13 @@ function ProductDetailPage() {
         setCartItems(data.data);
       })
       .catch((err) => {
-        setToastMessage(err.message);
+        addToastMessage(err.message);
       });
   };
 
   const handleToggleFavorite = () => {
     if (!userData) {
-      setToastMessage('請先登入才能收藏商品！');
+      addToastMessage('請先登入才能收藏商品！');
       navigate('/userlogin');
       return;
     }
@@ -137,12 +137,11 @@ function ProductDetailPage() {
       })
       .then(() => {
         // 直接更新收藏狀態，不用額外呼叫 checkFavoriteStatus()
-        setIsFavorite((prev) => {
-          setToastMessage(prev ? '已移除收藏' : '已加入收藏');
-          return !prev;
-        });
+        const newStatus = !isFavorite;
+        setIsFavorite(newStatus);
+        addToastMessage(newStatus ? '已加入收藏' : '已移除收藏');
       })
-      .catch((err) => setToastMessage(err.message));
+      .catch((err) => addToastMessage(err.message));
   };
 
   const handleBack = () => {

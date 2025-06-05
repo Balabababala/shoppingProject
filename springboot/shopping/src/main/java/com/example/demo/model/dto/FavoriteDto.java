@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class FavoriteDto {
+public class FavoriteDto {	 
 	private Long productId;
 	private String productName;
 	private BigDecimal price;

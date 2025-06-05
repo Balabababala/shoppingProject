@@ -11,9 +11,12 @@ public class ProductMapper {
         	product.getDescription(),
         	product.getPrice(),
         	product.getStock(),
-        	product.getImageUrl(),
         	product.getCategory().getId(),
-        	UserMapper.toDto(product.getSeller())
+        	product.getCategory().getName(),
+        	UserMapper.toDto(product.getSeller()),
+        	product.getProductImages().stream().
+        							   map(ProductImageResponseMapper::toDto).
+        							   toList()
         );
     }
 }

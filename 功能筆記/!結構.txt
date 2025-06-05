@@ -1,0 +1,18 @@
+結構
+	只寫規則可能不一樣的
+
+service
+	會區分是 //repository //邏輯
+	//repository 他會包裝 repository 的方法 名字一樣 傳入值一樣 
+	//邏輯 會有自己的方法 名字會加自己Enitity名稱 會寫轉成什麼 或直接寫他做什麼(如果動作多)
+
+controller
+	依功能分布一Entity	
+
+DTO
+	命名
+	request 	只有前端傳後端
+	response	只有後端傳前端
+	Dto		都傳
+mapper
+	看情況方法可能不一樣

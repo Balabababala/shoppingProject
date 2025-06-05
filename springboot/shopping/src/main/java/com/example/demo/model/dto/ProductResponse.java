@@ -2,6 +2,7 @@ package com.example.demo.model.dto;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import com.example.demo.model.entity.User;
 
@@ -18,7 +19,8 @@ public class ProductResponse {
     private String description;
     private BigDecimal price;
     private Integer stock;
-    private String imageUrl;
     private Long categoryId;
+    private String categoryName;
     private UserDto sellerUserDto;
+    private List<ProductImageResponse> productImageResponse;
 }

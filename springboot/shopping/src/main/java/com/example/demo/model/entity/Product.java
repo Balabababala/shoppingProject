@@ -43,9 +43,6 @@ public class Product {
     @Column(name="status",nullable = false)
     private ProductStatus status ;
     
-    @Column(name = "image_url", columnDefinition = "TEXT")
-    private String imageUrl;
-    
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -54,7 +51,7 @@ public class Product {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
-    @ManyToOne						//對Category
+    @ManyToOne						
     @JoinColumn(name ="category_id")
     private Category category;
     
