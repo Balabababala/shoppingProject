@@ -29,6 +29,6 @@ public interface CartItemService {
 	
 	List <CartItemResponse> getCart(Long userId);						   //顯示購物車資料用的
 	void clearCart(Long userId);										   //清空購物車
-	void addOrUpdateCartItem(Long userId,Long productId ,Integer quantity);//區分
-	Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId);   // 把userId 的 orderItems分賣家  用userId而不是直接傳入orderItems的原因 
+	void addOrUpdateCartItem(Long userId,Long productId ,Integer quantity);//加 product 到 cart 方法(要分辨是否已在 cart裡)
+	Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId);   //把 user 的 cartitem 依賣家 分類 
 }					

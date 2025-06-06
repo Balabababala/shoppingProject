@@ -17,11 +17,7 @@ import com.example.demo.model.entity.Favorite;
 
 @Repository
 public interface FavoriteRepository extends JpaRepository<Favorite, Long>{
-	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
-	@Modifying
-	@Transactional
-	Favorite save(Favorite favorite);
-
+	//已有方法 find... save delete  有加...要寫 只是不用Query
 	
 	@Modifying
 	@Transactional

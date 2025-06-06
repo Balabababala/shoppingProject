@@ -7,11 +7,13 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 @Entity
-@Table(name = "login_logs")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "login_logs")
 public class LoginLog {
 
     @Id
@@ -23,8 +25,9 @@ public class LoginLog {
 
     @Column(name = "user_agent", columnDefinition = "TEXT")
     private String userAgent;
-
-    @Column(name = "login_time", columnDefinition = "DATETIME DEFAULT CURRENT_TIMESTAMP")
+    
+    @CreationTimestamp
+    @Column(name = "login_time")
     private LocalDateTime loginTime;
 
     @Column(name = "success")

@@ -40,11 +40,11 @@ public class ProductServiceImpl implements ProductService{
 	
 	@CacheEvict(value = "products", key = "#id")
 	@Override
-	public	Optional<Product> findProductByIdWithCategoryAndProductImage(Long id){
+	public	Optional<Product> findByIdWithCategoryAndProductImage(Long id){
 		return productRepository.findByIdWithCategoryAndProductImage(id);
 	}
 
-	public List<Product> findAllProductsByCategoryIdsWithCategoryAndProductImage (List<Long> categoryIds){
+	public List<Product> findAllByCategoryIdsWithCategoryAndProductImage (List<Long> categoryIds){
 		return productRepository.findAllByCategoryIdsWithCategoryAndProductImage(categoryIds);
 	}
 	
@@ -57,7 +57,7 @@ public class ProductServiceImpl implements ProductService{
 
 	@Cacheable(value = "products", key = "#id")
 	@Override
-	public Optional<Product> findProductById(Long id) {
+	public Optional<Product> findById(Long id) {
 		return productRepository.findById(id);
 	}
 
@@ -84,8 +84,8 @@ public class ProductServiceImpl implements ProductService{
 	}
 	
 	@Override
-	public ProductResponse findByIdToProductResponse(Long id) {
-		return ProductMapper.toDto(findProductByIdWithCategoryAndProductImage(id).orElseThrow(()-> new ShoppingException("product 轉 dto 失敗")));
+	public ProductResponse findProductByIdToProductResponse(Long id) {
+		return ProductMapper.toDto(findByIdWithCategoryAndProductImage(id).orElseThrow(()-> new ShoppingException("product 轉 dto 失敗")));
 	}
 	
 	@Override
@@ -110,7 +110,7 @@ public class ProductServiceImpl implements ProductService{
 	                                       .map(Category::getId)
 	                                       .toList();
 	    // 一次查詢所有符合 categoryIds 的商品
-	    List<Product> products = findAllProductsByCategoryIdsWithCategoryAndProductImage(categoryIds);
+	    List<Product> products = findAllByCategoryIdsWithCategoryAndProductImage(categoryIds);
 
 	    // 轉 DTO 回傳
 	    return products.stream()

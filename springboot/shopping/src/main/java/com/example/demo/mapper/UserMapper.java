@@ -15,4 +15,5 @@ public class UserMapper {
         		user.getIsEmailVerified()
         );
     }
+
 }

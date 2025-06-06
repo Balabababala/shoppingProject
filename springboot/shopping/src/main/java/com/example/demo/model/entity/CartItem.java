@@ -10,14 +10,14 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
-@Table(name = "cart_items",
-		uniqueConstraints = {
-        @UniqueConstraint(columnNames = {"user_id", "product_id"})
-    })
-@NoArgsConstructor
-@AllArgsConstructor
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "cart_items",
+uniqueConstraints = {
+@UniqueConstraint(columnNames = {"user_id", "product_id"})
+})
 public class CartItem {
 
     @Id

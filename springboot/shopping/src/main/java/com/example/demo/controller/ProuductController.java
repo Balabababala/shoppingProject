@@ -23,7 +23,7 @@ import jakarta.websocket.server.PathParam;
 public class ProuductController {
 
 	@Autowired
-	ProductService productService;
+	private ProductService productService;
 	
 	
 	//?category=xxx categoryPage 用
@@ -39,7 +39,7 @@ public class ProuductController {
 	//productPage 用
 	@GetMapping("/{productId}")
 	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long productId){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findByIdToProductResponse(productId)));
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductByIdToProductResponse(productId)));
 	}
 	
 	//searchPage 用

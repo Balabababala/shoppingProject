@@ -14,8 +14,9 @@ import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.UserService;
 
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
-
+import jakarta.websocket.Session;
 
 
 //需要 驗證 loginDTO AuthcodeController 以上成功 做下面
@@ -28,20 +29,21 @@ public class LoginController {
 
 	
 	@Autowired
-	UserService userService;
+	private UserService userService;
 	
 	@PostMapping		//loginPage 用
-	public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginRequest loginDTO,HttpSession session){
+	public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginRequest loginDTO,HttpServletRequest request){
+		HttpSession session=request.getSession();
 		User user= userService.findUserByUserName(loginDTO.getUsername()); //查找使用者 為空不報錯
 		//比對
 		try {
-			if(userService.isLoginValid(loginDTO, user, session)) { 	   //驗證是否登入成功	
-				UserDto userDto=userService.handleSuccessfulLogin(user); //登入成功做的事 
-				session.setAttribute("userDto", userDto);				 //把UserDto 塞到session
+			if(userService.isLoginValid(loginDTO, user, request)) { 	   			//驗證是否登入成功 +登入紀錄	
+				UserDto userDto=userService.handleSuccessfulLogin(user); 			//登入成功做的事 
+				session.setAttribute("userDto", userDto);				 			//把UserDto 塞到session
 				return ResponseEntity.ok(ApiResponse.success("登入成功", userDto));
 				
-				
 			}
+
 			return ResponseEntity.badRequest().body(ApiResponse.error("登入失敗"));
 		} catch (ShoppingException e) {
 			return ResponseEntity.badRequest().body(ApiResponse.error(e.getMessage()));

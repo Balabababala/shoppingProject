@@ -14,10 +14,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "users")
 public class User {
 
     @Id
@@ -39,7 +39,7 @@ public class User {
 
 
     @CreationTimestamp
-    @Column(name = "created_at", nullable = false)
+    @Column(name = "created_at")
     private LocalDateTime createdAt;
     
     @UpdateTimestamp
@@ -77,5 +77,7 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<Favorite> favorites;
     
-   
+    @OneToMany(mappedBy = "user")
+    private List<Notification> notifications;
+    
 }

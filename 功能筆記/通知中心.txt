@@ -1,0 +1,32 @@
+通知中心
+
+Entity
+	notification
+Mapper
+
+
+
+看通知訊息
+	
+repository  notification
+		findByUserId(Long userId);
+service     notification
+		findNotificationByUsertiNotificationResponse(Long userId);
+controller  notification
+		GET
+		/notification
+		return NotificationResponse
+
+看通知訊息 (改成已讀)
+repository  notification
+		markAsReadByNotificationId(Long notificationId);
+service     notification
+		markNotificationAsReadByNotificationId(Long notificationId)
+controller  notification
+		POST
+		@PathVariable
+		/notification/{Notificationid}
+		
+
+生成通知訊息(後台)//之後做
+

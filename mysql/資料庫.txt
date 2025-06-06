@@ -3,7 +3,7 @@
 2. login_logs 登錄紀錄					  //使用者生成
 3. categories - 商品分類表
 4. products - 商品表					  //使用者生成(賣家)
-5. product_images					  //
+5. product_images					  //商品圖
 6. favorites						  //我的收藏
 6. cart_items - 購物車明細				  //使用者生成(買家)
 7. orders - 訂單主表					  //使用者生成(買家) 員工可看 設定

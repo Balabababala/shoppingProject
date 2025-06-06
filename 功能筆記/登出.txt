@@ -1,0 +1,7 @@
+登出相關
+entity
+	User
+
+登出功能
+	controller 
+		session.invalidate(); 就好

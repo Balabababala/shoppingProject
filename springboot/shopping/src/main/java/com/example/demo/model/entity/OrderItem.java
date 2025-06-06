@@ -12,10 +12,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 @Entity
-@Table(name = "order_items", uniqueConstraints = {@UniqueConstraint(columnNames = {"order_id","product_id"})})
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "order_items", uniqueConstraints = {@UniqueConstraint(columnNames = {"order_id","product_id"})})
 public class OrderItem {
 
     @Id

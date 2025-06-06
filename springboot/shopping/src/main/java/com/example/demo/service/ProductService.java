@@ -15,17 +15,17 @@ public interface ProductService {
 	//repository
 	
 	List<Product> findAllProductsWithCategory();
-	Optional<Product> findProductByIdWithCategoryAndProductImage(Long id);
-	List<Product> findAllProductsByCategoryIdsWithCategoryAndProductImage(List<Long> categoryIds);
+	Optional<Product> findByIdWithCategoryAndProductImage(Long id);
+	List<Product> findAllByCategoryIdsWithCategoryAndProductImage(List<Long> categoryIds);
 	Integer minusByIdIfEnoughStock(Long id, Integer quantity);
-	Optional<Product> findProductById(Long id);
+	Optional<Product> findById(Long id);
 	List<Product> findByCategoryId(Long categoryId);
 	List<Product> findByKeywordFullTextBoolean(String keyword);
 	
 	//邏輯
 	
 	void minusProductByid(Long id ,Integer integer);									//依 productId -quantity  要判斷庫存(還沒寫)
-	ProductResponse findByIdToProductResponse(Long id);									//依 productId 找 產品轉DTO  				  產品卡用
+	ProductResponse findProductByIdToProductResponse(Long id);									//依 productId 找 產品轉DTO  				  產品卡用
 	List<ProductResponse> findAllProductsToProductResponse();							//找全部			 產品轉DTO  				  分類頁面用
 	List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug);	//依 slug(分類別稱)找分類(含子分類)下的所有產品 轉DTO  分類頁面用     
 //	List<ProductResponse> findByKeyword(String keyword); 	 	

@@ -1,7 +1,7 @@
 收藏相關
 
 Entity
-favoriteRequest
+	favorite
 
 加入收藏功能(productDetailPage)
 
@@ -14,35 +14,36 @@ controller favorite
 		@Requestbody (FavoriteDto favoriteDto)
 		/favorites
 
-刪除收藏    (productDetailPage,userFavoritePage)
+刪除收藏    (productDetailPage,myFavoritePage)
 
 repository favorite
 		delete(Favorite favorite);
 service    favorite
 		deleteByUserIdAndProductId(Long userId,Long productId);
-	controller favorite
+controller favorite
 		DELTET
 		@PathVariable
 		/favorites/{productId}	
 
-查詢使用者收藏狀態 (userFavoritePage)
+查詢使用者收藏狀態 (myFavoritePage)
 
 repository favorite
 	    List<Favorite> findByUserId(Long userId);
 	    List<Favorite> findByUserIdWithUserAndProductAndImages(Long userId);	//join 版
-	    Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId);       //判斷用是否已加入
+	    Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId);   //判斷用是否已加入
 service	   favorite
 	    List<FavoriteDto>  findByUserId(Long userId);
 controller
 		GET
 		@PathVariable
 		/api/users/{userId}/favorites
+		return List<FavoriteDto>
 	
-檢查是否已收藏 (userFavoritePage)
+檢查是否已收藏 (productDetailPage)
 repository favorite
 	    List<Favorite> findByUserIdAndProductId(Long userId ,Long productId);       //判斷用是否已加入
 service	   favorite
-	    用repository 的就好
+	    List<Favorite> findByUserIdAndProductId(Long userId ,Long productId);
 controller
 		GET
-		
+		/api/favorites

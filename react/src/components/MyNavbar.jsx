@@ -13,7 +13,7 @@ import MyNavbarCategories from './MyNavbarCategories.jsx';
 
 function MyNavbar({ onChangeContent }) {
   const API_BASE = 'http://localhost:8080/api';
-  const { userData, cartItems = [], categories = [] } = useContext(AppContext); // 安全預設值
+  const { userData, cartItems = [], categories = [],setUserData,addToastMessage} = useContext(AppContext); // 安全預設值
   const [showCart, setShowCart] = useState(false);
 
   // 顯示購物車內容
@@ -21,6 +21,29 @@ function MyNavbar({ onChangeContent }) {
   const handleMouseLeave = () => {
     setTimeout(() => setShowCart(false), 200);
   };
+
+  //登出 因為只在這登出
+
+
+  const logout = () =>{
+    fetch(`${API_BASE}/logout`,{
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Cache-Control': 'no-cache' },
+      
+    })
+    .then(response => {
+      if (response.ok) {
+        setUserData(null); // 清空前端 userData
+        window.location.href = '/';
+      } else {
+        addToastMessage('登出失敗');
+      }
+    })
+    .catch(error => {
+      addToastMessage('登出時發生錯誤', error);
+    });
+  }
 
   return (
     <>
@@ -70,16 +93,17 @@ function MyNavbar({ onChangeContent }) {
                 </div>
               </div>
                   
-              <Nav.Link as={Link} to={userData?.userId ? "/myfavorite" : "/userlogin"}>
-                我的收藏
-              </Nav.Link>
               {/* 登入後功能選單 */}
               {userData?.username && (
                 <>
-                  <Nav.Link as={Link} to="/notifications">通知中心</Nav.Link>
-                  <NavDropdown title={userData.username} id="basic-nav-dropdown">
+                  <NavDropdown title={userData.username} id="basic-nav-dropdown">     {/*等有賣家在裡面做判斷*/}
+                    <NavDropdown.Item as={Link} to="/notifications">通知中心</NavDropdown.Item>
+                    <NavDropdown.Item as={Link} to="/myfavorite">我的收藏</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>
                     <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
+                    <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
+
+
                   </NavDropdown>
                 </>
               )}
@@ -88,6 +112,7 @@ function MyNavbar({ onChangeContent }) {
               {!userData?.username && (
                 <Nav.Link as={Link} to="/userlogin">登錄/註冊</Nav.Link>
               )}
+
             </Nav>
 
             <MySearch />

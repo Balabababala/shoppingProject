@@ -17,10 +17,10 @@ import com.example.demo.model.enums.PaymentStatus;
 import com.example.demo.model.enums.ShipmentStatus;
 
 @Entity
-@Table(name = "orders")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
+@Table(name = "orders")
 public class Order {
 
     @Id

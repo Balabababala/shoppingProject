@@ -30,6 +30,7 @@ public class WebFilter extends OncePerRequestFilter {
 
         // 放行不需登入的路徑（例如登入、商品查詢等）
         if (path.startsWith("/api/login") ||
+        	path.startsWith("/api/logout")	||
             path.startsWith("/api/products") ||
             path.startsWith("/api/categories") ||
             path.startsWith("/api/auth-code")||

@@ -1,0 +1,28 @@
+登入相關
+entity
+	User
+	LoginLog
+
+	
+登入功能
+
+repository User
+		save (User user);//自動有
+		Optional<User> findById(Long Id);
+		User findByUsername(String username);
+		
+
+	   LoginLog
+		save (LoginLog loginLog);//自動有
+
+service    User
+		User findUserByUserName(String username);							     //登入驗證使用者名稱用  (之後可能+ 驗證email findUserByEmail)
+		boolean isLoginValid(LoginRequest loginDTO, User user, HttpSession session) throws ShoppingException;//登入驗證 loginDTO 符不符合資料庫 + 登入紀錄
+		UserDto handleSuccessfulLogin(User user);							     //如果登入成功 生userDto + 更新 最近登入時間
+	   LoginLog
+		void createLoginLog(User user,HttpServletRequest request);					     //登入紀錄
+		
+controller LoginController @RequestMapping("/api/login")
+			   @PostMapping			//loginPage 用
+
+	   

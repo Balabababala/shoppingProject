@@ -18,9 +18,7 @@ import com.example.demo.service.UserService;
 
 @Service
 public class FavoriteServiceImpl implements FavoriteService{
-
 	
-	//repository
 	@Autowired
 	private FavoriteRepository favoriteRepository;
 	
@@ -30,6 +28,7 @@ public class FavoriteServiceImpl implements FavoriteService{
 	@Autowired
 	private ProductService productService;
 
+	//repository
 	@Transactional
 	@Override
 	public void save(Favorite favorite) {
@@ -67,7 +66,7 @@ public class FavoriteServiceImpl implements FavoriteService{
 		Favorite favorite =new Favorite();
 
 		favorite.setUser(userService.findUserById(userId));
-		favorite.setProduct(productService.findProductById(productId).get());
+		favorite.setProduct(productService.findById(productId).get());
 		
 		save(favorite);
 	}

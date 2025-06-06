@@ -1,9 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Container, Spinner, Alert } from "react-bootstrap";
-import NotificationList from "../NotificationList";
-import NotificationDetail from "../NotificationDetail";
+import { Container, Spinner, Alert, ListGroup, Button, Card, Badge } from "react-bootstrap";
 
 const Notifications = () => {
+  const BASE_API = 'http://localhost:8080/api';
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -14,35 +13,47 @@ const Notifications = () => {
   }, []);
 
   const fetchNotifications = async () => {
-    try {
-      // 假資料
-      const mockData = [
-        {
-          id: 1,
-          message: "您的訂單已發貨。",
-          status: "PENDING",
-          created_at: "2025-05-08T12:00:00"
-        },
-        {
-          id: 2,
-          message: "系統將進行維護，請稍後再試。",
-          status: "READ",
-          created_at: "2025-05-07T10:00:00"
-        },
-        {
-          id: 3,
-          message: "您有新的留言。",
-          status: "PENDING",
-          created_at: "2025-05-06T14:30:00"
-        }
-      ];
+    fetch(`${BASE_API}/notification`, {
+      method: 'GET',
+      headers: {},
+      credentials: 'include',
+    })
+      .then(res => {
+        if (!res.ok) throw new Error('找不到通知');
+        return res.json();
+      })
+      .then(data => {
+        setNotifications(data.data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  };
 
-      setNotifications(mockData);
-      setLoading(false);
+  const markAsRead = async (id) => {
+    try {
+      await fetch(`${BASE_API}/notification/${id}`, {
+        method: 'POST',
+        headers: {},
+        credentials: 'include',
+      });
+      setNotifications((prevNotifications) =>
+        prevNotifications.map((notif) =>
+          notif.id === id ? { ...notif, status: 'READ' } : notif
+        )
+      );
     } catch (error) {
-      setError("無法載入通知");
-      setLoading(false);
+      console.error('標記為已讀失敗', error);
     }
+  };
+
+  const handleSelectNotification = async (notif) => {
+    if (notif.status !== 'READ' && notif.status !== 'ARCHIVED') {
+      await markAsRead(notif.id);
+    }
+    setSelectedNotif({ ...notif, status: notif.status === 'ARCHIVED' ? 'ARCHIVED' : 'READ' });
   };
 
   if (loading) return (
@@ -63,10 +74,47 @@ const Notifications = () => {
       {!selectedNotif ? (
         <>
           <h2 className="mb-4">通知中心</h2>
-          <NotificationList notifications={notifications} onSelect={setSelectedNotif} />
+          {notifications.length === 0 ? (
+            <Alert variant="info">目前沒有通知。</Alert>
+          ) : (
+            <ListGroup>
+              {notifications.map((notif) => (
+                <ListGroup.Item
+                  key={notif.id}
+                  action
+                  onClick={() => handleSelectNotification(notif)}
+                >
+                  <div className="fw-bold">
+                    {notif.type || <span className="text-muted">[無類型]</span>}{" "}
+                    {notif.status === "READ" && <Badge bg="success">已讀</Badge>}
+                    {notif.status === "PENDING" && <Badge bg="warning">待處理</Badge>}
+                    {notif.status === "ARCHIVED" && <Badge bg="secondary">已封存</Badge>}
+                  </div>
+                  <div>{notif.message}</div>
+                </ListGroup.Item>
+              ))}
+            </ListGroup>
+          )}
         </>
       ) : (
-        <NotificationDetail notification={selectedNotif} onBack={() => setSelectedNotif(null)} />
+        <>
+          <Button variant="secondary" onClick={() => setSelectedNotif(null)} className="mb-3">
+            返回列表
+          </Button>
+          <Card>
+            <Card.Body>
+              <Card.Title>通知詳情</Card.Title>
+              <Card.Text><strong>類型:</strong> {selectedNotif.type || "[無類型]"}</Card.Text>
+              <Card.Text><strong>內容:</strong> {selectedNotif.message}</Card.Text>
+              <Card.Text>
+                <strong>狀態:</strong>{" "}
+                {selectedNotif.status === "READ" && <Badge bg="success">已讀</Badge>}
+                {selectedNotif.status === "PENDING" && <Badge bg="warning">待處理</Badge>}
+                {selectedNotif.status === "ARCHIVED" && <Badge bg="secondary">已封存</Badge>}
+              </Card.Text>
+            </Card.Body>
+          </Card>
+        </>
       )}
     </Container>
   );
