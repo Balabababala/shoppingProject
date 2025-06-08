@@ -16,8 +16,8 @@ import com.example.demo.model.entity.LoginLog;
 import com.example.demo.model.entity.User;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.LoginLogService;
-import com.example.demo.service.PasswordHash;
 import com.example.demo.service.UserService;
+import com.example.demo.util.PasswordHash;
 
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;

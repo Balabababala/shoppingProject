@@ -70,10 +70,12 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 
 	//MySQL 內建的相似度比較 ver2
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT *, MATCH(name, description) AGAINST (:keyword IN BOOLEAN MODE) AS score "
-	        + "FROM products "
-	        + "WHERE MATCH(name, description) AGAINST (:keyword IN BOOLEAN MODE) "
-	        + "ORDER BY score DESC, updated_at DESC", nativeQuery = true)
-	List<Product> findByKeywordFullTextBoolean(String keyword);
+	@Query(value = "SELECT p.*, MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) AS score " +
+	               "FROM products p " +
+	               "WHERE MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) " +
+	               "ORDER BY score DESC, p.updated_at DESC",
+	       nativeQuery = true)
+	List<Product> findByKeywordFullTextBoolean(@Param("keyword") String keyword);
+
 
 }

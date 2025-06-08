@@ -84,6 +84,7 @@ public class Order {
     @JoinColumn(name = "seller_id", nullable = false)
     private User seller;
     
-
+    @OneToMany(mappedBy = "order") 
+    private List<OrderItem> orderItems;
 
 }

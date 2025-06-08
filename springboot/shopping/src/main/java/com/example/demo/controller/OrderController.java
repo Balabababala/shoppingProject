@@ -5,12 +5,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.OrderDto;
+import com.example.demo.model.dto.CreateOrderRequest;
+import com.example.demo.model.dto.OrderResponse;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.OrderService;
@@ -19,14 +22,14 @@ import com.example.demo.service.OrderService;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/api")
 public class OrderController {
 
 	@Autowired
 	private OrderService orderService;
 	
-	@PostMapping("/create")
-	public ResponseEntity<ApiResponse<List<Void>>> getTopCatogory(@RequestBody OrderDto orderRequest,HttpSession session)  {
+	@PostMapping("/order/create")
+	public ResponseEntity<ApiResponse<List<Void>>> createOrder(@RequestBody CreateOrderRequest orderRequest,HttpSession session)  {
 		UserDto userDto = (UserDto) session.getAttribute("userDto");
 		if(userDto==null) {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
@@ -34,5 +37,16 @@ public class OrderController {
 
 		orderService.createOrder(orderRequest, userDto.getUserId());
 		return ResponseEntity.ok(ApiResponse.success("結帳成功", null));
+	}
+	
+	@GetMapping("/orders/{userId}")
+	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersByBuyerId(@PathVariable Long userId,HttpSession session)  {
+		UserDto userDto = (UserDto) session.getAttribute("userDto");
+		if(userDto.getUserId()==userId) {
+			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
+		}
+
+		List<OrderResponse> oredeOrderResponses= orderService.getOrderByBuyerId(userId);
+		return ResponseEntity.ok(ApiResponse.success("取得資料成功", oredeOrderResponses));
 	}
 }

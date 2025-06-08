@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.OrderDto;
+import com.example.demo.model.dto.CreateOrderRequest;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.OrderService;
@@ -36,13 +36,13 @@ public class UserController {
 	}
 	
 	@GetMapping("/default-order-info")
-	public ResponseEntity<ApiResponse<OrderDto>> getUserOrderInfo(HttpSession session) {
+	public ResponseEntity<ApiResponse<CreateOrderRequest>> getUserOrderInfo(HttpSession session) {
 		
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		if(userDto==null) {
 			return ResponseEntity.status(401).body(ApiResponse.error("尚未登入"));
 		}
-		OrderDto orderDto= orderService.getUserDefaultToOrderDto(userDto);
+		CreateOrderRequest orderDto= orderService.getUserDefaultToOrderDto(userDto);
 		
 		return ResponseEntity.ok(ApiResponse.success("取得使用者資料成功",orderDto));
 	}

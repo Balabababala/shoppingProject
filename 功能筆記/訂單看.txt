@@ -1,0 +1,38 @@
+我的訂單
+
+Entity
+	Order
+
+DTO OrderItemResponse 
+    OrderResponse
+
+
+看使用者(買方)訂單
+	
+repository  order
+		findByBuyerIdWithOrderItemAndBuyerAndSeller(Long userId);
+service     order
+		getOrderByBuyerId(Long userId);
+controller  order
+		GET
+		/orders/{userId} @PathVariable
+		return List <OrderResponse>
+
+
+
+
+
+
+
+
+
+看使用者(賣家)訂單
+	
+repository  order
+		findBySellerIdWithOrderItem(Long userId);
+service     order
+		getOrderBySellerId(Long userId);
+controller  order
+		GET
+		/order/seller/{userId} @VariablePath
+		return List <OrderResponse>
