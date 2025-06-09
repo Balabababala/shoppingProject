@@ -26,7 +26,7 @@ public class ProductImage {
 	@Column(name = "image_url", nullable = false, columnDefinition = "TEXT")
 	private String imageUrl;
 	
-	@ManyToOne
+	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "product_id", nullable = false)
 	private Product product;
 }

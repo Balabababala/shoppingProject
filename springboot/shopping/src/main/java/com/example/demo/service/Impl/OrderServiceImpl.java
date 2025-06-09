@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.mapper.CreateOrderMapper;
 import com.example.demo.mapper.OrderMapper;
-import com.example.demo.model.dto.CreateOrderRequest;
+import com.example.demo.model.dto.CreateOrderDto;
 import com.example.demo.model.dto.OrderResponse;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.CartItem;
@@ -65,7 +65,7 @@ public class OrderServiceImpl implements OrderService{
 
 	@Transactional
 	@Override
-	public void createOrder(CreateOrderRequest orderRequest,Long BuyerId) {
+	public void createOrder(CreateOrderDto orderRequest,Long BuyerId) {
 		User Buyer=userService.findUserById(BuyerId); //因為建定單要用 (我已用join colunm  BuyerId的新增 更新不能用 )
 		//先 生出 Map<Long,List<OrderItem>> for 依SellerId 分的 orderItems (依賣家 建1個order和 多個對應的orderitems -product 對應的產品)
 		//注意 cartItemService.orderItemsGroupedBySeller 這是 取userId 的 cartItems 轉成依 SellerId分的 orderItems!!  要注意它不是完整的orderItem 
@@ -98,13 +98,13 @@ public class OrderServiceImpl implements OrderService{
 	}
 
 	@Override
-	public CreateOrderRequest getUserDefaultToOrderDto(UserDto userDto) {
-		CreateOrderRequest orderDto = new CreateOrderRequest();
-		orderDto.setReceiverName(userService.findByUsername(userDto.getUsername()).getDefaultReceiverName());
-		orderDto.setShippingAddress(userService.findByUsername(userDto.getUsername()).getDefaultAddress());
-		orderDto.setReceiverPhone(userService.findByUsername(userDto.getUsername()).getDefaultReceiverPhone());
+	public CreateOrderDto getUserDefaultToCreateOrderDto(UserDto userDto) {
+		CreateOrderDto createorderDto = new CreateOrderDto();
+		createorderDto.setReceiverName(userService.findByUsername(userDto.getUsername()).get().getDefaultReceiverName());
+		createorderDto.setShippingAddress(userService.findByUsername(userDto.getUsername()).get().getDefaultAddress());
+		createorderDto.setReceiverPhone(userService.findByUsername(userDto.getUsername()).get().getDefaultReceiverPhone());
 			
-		return orderDto;
+		return createorderDto;
 	}
 
 	@Override

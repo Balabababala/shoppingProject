@@ -7,6 +7,7 @@ import com.example.demo.model.entity.User;
 
 public class UserMapper {
 	public static UserDto toDto(User user) {
+	
         return new UserDto(
         		user.getUsername(),
         		user.getId(),

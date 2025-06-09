@@ -38,6 +38,11 @@
 		    <artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
 		 -->
+		 <!-- boot-starter-mail   -->
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-mail</artifactId>
+		</dependency>
 		 <!-- validation   -->
 		 <dependency>
 		    <groupId>jakarta.validation</groupId>

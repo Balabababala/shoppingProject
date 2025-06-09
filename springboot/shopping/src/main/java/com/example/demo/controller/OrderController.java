@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.demo.model.dto.CreateOrderRequest;
+import com.example.demo.model.dto.CreateOrderDto;
 import com.example.demo.model.dto.OrderResponse;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
@@ -29,7 +29,7 @@ public class OrderController {
 	private OrderService orderService;
 	
 	@PostMapping("/order/create")
-	public ResponseEntity<ApiResponse<List<Void>>> createOrder(@RequestBody CreateOrderRequest orderRequest,HttpSession session)  {
+	public ResponseEntity<ApiResponse<List<Void>>> createOrder(@RequestBody CreateOrderDto orderRequest,HttpSession session)  {
 		UserDto userDto = (UserDto) session.getAttribute("userDto");
 		if(userDto==null) {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
@@ -42,7 +42,7 @@ public class OrderController {
 	@GetMapping("/orders/{userId}")
 	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersByBuyerId(@PathVariable Long userId,HttpSession session)  {
 		UserDto userDto = (UserDto) session.getAttribute("userDto");
-		if(userDto.getUserId()==userId) {
+		if(userDto.getUserId()!=userId) {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
 		}
 

@@ -55,7 +55,7 @@ public class Product {
     @JoinColumn(name ="category_id")
     private Category category;
     
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name ="seller_id")
     private User seller;
     
@@ -67,5 +67,8 @@ public class Product {
     
     @OneToMany(mappedBy = "product")
     private List<ProductImage> productImages;
+    
+    @OneToMany(mappedBy = "product")
+    private List<RecentlyViewed> recentlyViews;
 
 }

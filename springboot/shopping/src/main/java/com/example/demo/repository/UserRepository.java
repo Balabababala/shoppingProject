@@ -7,6 +7,8 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.entity.User;
+import java.util.List;
+
 
 @Repository
 public interface UserRepository extends JpaRepository<User, Long>{
@@ -16,7 +18,10 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	Optional<User> findById(Long Id);
 	
 	@Transactional(readOnly = true)
-	User findByUsername(String username);
+	Optional<User> findByUsername(String username);
+	
+	@Transactional(readOnly = true)
+	Optional<User> findByEmail(String email);
 	
 	// 你可以加自訂的方法，像是：
 	

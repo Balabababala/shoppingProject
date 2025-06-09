@@ -64,7 +64,13 @@ public class User {
     @Column(name = "default_receiver_phone", length = 50)
     private String defaultReceiverPhone;
     
-    @ManyToOne
+    @Column(name = "email_verification_code", length = 20)
+    private String emailVerificationCode;
+
+    @Column(name = "email_verification_expire_time")
+    private LocalDateTime emailVerificationExpireTime;
+    
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "role_id" ,nullable = false)
     private Role role;
     
@@ -79,5 +85,8 @@ public class User {
     
     @OneToMany(mappedBy = "user")
     private List<Notification> notifications;
+    
+    @OneToMany(mappedBy = "user")
+    private List<RecentlyViewed> recentlyVieweds;
     
 }

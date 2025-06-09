@@ -5,7 +5,7 @@ import java.security.SecureRandom;
 
 import org.springframework.stereotype.Service;
 
-//給login 用的
+//給 login 用的
 @Service
 public class PasswordHash {
 	

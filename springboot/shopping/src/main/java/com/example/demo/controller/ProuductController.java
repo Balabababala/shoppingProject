@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.model.dto.ProductResponse;
+import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.ProductService;
+import com.example.demo.service.RecentlyViewedService;
 
+import jakarta.servlet.http.HttpSession;
 import jakarta.websocket.server.PathParam;
 
 
@@ -25,6 +28,8 @@ public class ProuductController {
 	@Autowired
 	private ProductService productService;
 	
+	@Autowired
+	private RecentlyViewedService recentlyViewedService;
 	
 	//?category=xxx categoryPage 用
 	@GetMapping		
@@ -38,7 +43,11 @@ public class ProuductController {
 	
 	//productPage 用
 	@GetMapping("/{productId}")
-	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long productId){
+	public ResponseEntity<ApiResponse<ProductResponse>> findById(HttpSession session,@PathVariable Long productId){
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		if(userDto!= null) {
+			recentlyViewedService.addRecentlyViewed(userDto.getUserId(), productId);
+		}
 		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductByIdToProductResponse(productId)));
 	}
 	
