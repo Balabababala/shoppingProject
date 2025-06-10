@@ -17,6 +17,9 @@ controller  notification
 		/notification
 		return NotificationResponse
 
+dto 
+	NotificationResponse
+
 看通知訊息 (改成已讀)
 repository  notification
 		markAsReadByNotificationId(Long notificationId);

@@ -5,7 +5,7 @@ import { AppContext } from '../../contexts/AppContext';
 import '../../css/UserLoginPage.css';
 
 function LoginPage() {
-  const API_BASE = 'http://localhost:8080';
+  const API_BASE = 'http://localhost:8080/api/';
   const { setUserData } = useContext(AppContext);
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
@@ -20,7 +20,7 @@ function LoginPage() {
     };
 
     try {
-      const url = `${API_BASE}/api/login`;
+      const url = `${API_BASE}login`;
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -44,7 +44,7 @@ function LoginPage() {
   };
 
   const loadCaptcha = () => {
-    setCaptchaImage(`${API_BASE}/api/auth-code?${new Date().getTime()}`);
+    setCaptchaImage(`${API_BASE}auth-code?${new Date().getTime()}`);
   };
 
   useEffect(() => {

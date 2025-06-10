@@ -12,14 +12,21 @@ public class CorsConfig {
     public WebMvcConfigurer corsConfigurer() {
         return new WebMvcConfigurer() {
 
-            @Override
-            public void addCorsMappings(CorsRegistry registry) {
-                registry.addMapping("/api/**")
-                        .allowedOrigins("http://localhost:5173")  // 你前端網址
-                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                        .allowedHeaders("*")
-                        .allowCredentials(true);  // 允許 Cookie
-            }
+        	@Override
+        	public void addCorsMappings(CorsRegistry registry) {
+        	    registry.addMapping("/api/**")
+        	            .allowedOrigins("http://localhost:5173")
+        	            .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+        	            .allowedHeaders("*")
+        	            .allowCredentials(true);
+
+        	    registry.addMapping("/uploads/**")
+        	            .allowedOrigins("http://localhost:5173")
+        	            .allowedMethods("GET", "OPTIONS")
+        	            .allowedHeaders("*")
+        	            .allowCredentials(true);
+        	}
+
         };
     }
 }

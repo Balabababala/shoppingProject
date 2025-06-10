@@ -8,9 +8,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class EmailService {
 
-    private final JavaMailSender mailSender;
+    private final JavaMailSender mailSender;	//發信元件
 
-    @Value("${spring.mail.username}")
+    @Value("${spring.mail.username}")			//讀 application.properties 
     private String from;
 
     public EmailService(JavaMailSender mailSender) {

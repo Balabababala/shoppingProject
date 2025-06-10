@@ -56,57 +56,76 @@ function MyNavbar({ onChangeContent }) {
               <NavDropdown title="商品分類" id="basic-nav-dropdown">
                 <MyNavbarCategories categories={categories} />
               </NavDropdown>
-
-              <Nav.Link as={Link} to={userData?.userId ? "/myrecent" : "/userlogin"}>
+              {userData?.username &&(                                               //可能會改讓非使用者能用
+                <Nav.Link as={Link} to= "/myrecent">
                 最近看過
-              </Nav.Link>
-
-              {/* 購物車連結與下拉 */}
-              <div
-                className="cart-link-wrapper"
-                onMouseEnter={handleMouseEnter}
-                onMouseLeave={handleMouseLeave}
-              >
-                <Nav.Link className="cart-link" as={Link} to={userData?.userId ? "/mycart" : "/userlogin"}>
-                  購物車
                 </Nav.Link>
+              )}
+                                                                                    {/*可能會改讓非使用者能用*/}
+              {/* 購物車連結與下拉 */}                                               
+              {userData?.roleId === 1 && (
+                <div
+                  className="cart-link-wrapper"
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <Nav.Link className="cart-link" as={Link} to={userData?.userId ? "/mycart" : "/userlogin"}>
+                    購物車
+                  </Nav.Link>
 
-                <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
-                  {cartItems.length === 0 ? (
-                    <div>購物車是空的</div>
-                  ) : (
-                    cartItems.map((item) => (
-                      <div key={item.id} className="cart-item">
-                        <img
-                          src={item.imageUrl}
-                          alt={item.name}
-                          style={{ width: 50, height: 50 }}
-                        />
-                        <div>{item.name}</div>
-                        <div>${item.price}</div>
-                      </div>
-                    ))
-                  )}
-                  <Button as={Link} to={userData?.userId ? "/mycart" : "/userlogin"} variant="primary">
-                    去結帳
-                  </Button>
+                  <div className={`cart-dropdown ${showCart ? 'show' : ''}`}>
+                    {cartItems.length === 0 ? (
+                      <div>購物車是空的</div>
+                    ) : (
+                      <>
+                        {cartItems.slice(0, 4).map((item) => (
+                          <div key={item.id} className="cart-item">
+                            <img
+                              src={item.imageUrl}
+                              alt={item.name}
+                              style={{ width: 50, height: 50 }}
+                            />
+                            <div>{item.name}</div>
+                            <div>${item.price}</div>
+                          </div>
+                        ))}
+                        {cartItems.length > 4 && (
+                          <div className="more-items">還有 {cartItems.length - 4} 項商品...</div>
+                        )}
+                      </>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}   
                   
               {/* 登入後功能選單 */}
               {userData?.username && (
-                <>
-                  <NavDropdown title={userData.username} id="basic-nav-dropdown">     {/*等有賣家在裡面做判斷*/}
-                    <NavDropdown.Item as={Link} to="/notifications">通知中心</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/myfavorite">我的收藏</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>
-                    <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
-                    <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
-
-
-                  </NavDropdown>
-                </>
+                <NavDropdown title={userData.username} id="basic-nav-dropdown">
+                  {userData?.roleId === 1 ? (
+                    <>
+                      {/* 買家登入 */}
+                      <NavDropdown.Item as={Link} to="/notifications">通知中心</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/myfavorite">我的收藏</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/orders">我的訂單</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
+                      <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
+                    </>
+                  ) : userData?.roleId === 2 ? (
+                    <>
+                      {/* 賣家登入 */}
+                      <NavDropdown.Item as={Link} to="/notifications">通知中心</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/seller/products">我的商品</NavDropdown.Item> {/* 記得補 */}
+                      <NavDropdown.Item as={Link} to="/seller/orders">我的訂單</NavDropdown.Item>
+                      <NavDropdown.Item as={Link} to="/memberInfo">我的資料</NavDropdown.Item>
+                      <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
+                    </>
+                  ) : (
+                    // 如果有其他角色可以在這裡補
+                    null
+                  )}
+                </NavDropdown>
               )}
+
 
               {/* 未登入顯示登入/註冊 */}
               {!userData?.username && (

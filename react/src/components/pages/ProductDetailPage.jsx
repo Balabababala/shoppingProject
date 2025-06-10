@@ -30,7 +30,9 @@ function ProductDetailPage() {
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch(`${BASE_API}/products/${id}`)
+    fetch(`${BASE_API}/products/${id}`, {
+      credentials: 'include',  // 加這行，確保帶上 cookie
+    })
       .then((res) => {
         if (!res.ok) throw new Error('找不到商品');
         return res.json();
@@ -46,6 +48,7 @@ function ProductDetailPage() {
         setLoading(false);
       });
   }, [id]);
+
 
   // 檢查是否已加入收藏
   const checkFavoriteStatus = () => {

@@ -31,14 +31,13 @@
 	</properties>
 	<dependencies>
 	
-		<!-- 
-			Spring Boot Starter Security
+		<!--Spring Boot Starter Security-->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
-		 -->
-		 <!-- boot-starter-mail   -->
+	
+		 <!-- Spring Boot Starter Mail   -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-mail</artifactId>

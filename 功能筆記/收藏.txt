@@ -13,6 +13,8 @@ controller favorite
 		POST
 		@Requestbody (FavoriteDto favoriteDto)
 		/favorites
+dto 
+	favoriteDto
 
 刪除收藏    (productDetailPage,myFavoritePage)
 
@@ -38,6 +40,8 @@ controller
 		@PathVariable
 		/api/users/{userId}/favorites
 		return List<FavoriteDto>
+dto 
+	favoriteDto
 	
 檢查是否已收藏 (productDetailPage)
 repository favorite

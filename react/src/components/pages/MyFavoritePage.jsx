@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AppContext } from '../../contexts/AppContext';
-import ModernProductCard from '../ModernProductCard ';
+import ModernProductCard from '../ModernProductCard';
 
 function MyFavorite() {
   const BASE_API="http://localhost:8080/api";

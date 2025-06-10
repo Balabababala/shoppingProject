@@ -46,7 +46,17 @@ public class OrderController {
 			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
 		}
 
-		List<OrderResponse> oredeOrderResponses= orderService.getOrderByBuyerId(userId);
-		return ResponseEntity.ok(ApiResponse.success("取得資料成功", oredeOrderResponses));
+		List<OrderResponse> orderResponses= orderService.getOrderByBuyerId(userId);
+		return ResponseEntity.ok(ApiResponse.success("取得資料成功", orderResponses));
+	}
+	@GetMapping("/orders/seller/{userId}")
+	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersBySellerId(@PathVariable Long userId,HttpSession session)  {
+		UserDto userDto = (UserDto) session.getAttribute("userDto");
+		if(userDto.getUserId()!=userId) {
+			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
+		}
+
+		List<OrderResponse> orderResponses= orderService.getOrderBySellerId(userId);
+		return ResponseEntity.ok(ApiResponse.success("取得資料成功", orderResponses));
 	}
 }

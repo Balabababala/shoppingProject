@@ -59,9 +59,15 @@ public class OrderServiceImpl implements OrderService{
 
 	}
 	
+	@Override
+	public List<Order> findBySellerIdWithOrderItemAndBuyerAndSeller(Long userId) {
+		return orderRepository.findBySellerIdWithOrderItemAndBuyerAndSeller(userId);
+	}
 	//邏輯
 	
 
+
+	
 
 	@Transactional
 	@Override
@@ -114,4 +120,13 @@ public class OrderServiceImpl implements OrderService{
 																  .toList();
 	}
 
+	@Override
+	public List<OrderResponse> getOrderBySellerId(Long userId) {
+		return findBySellerIdWithOrderItemAndBuyerAndSeller(userId).stream()
+																   .map(OrderMapper::toDto)
+																   .toList();
+	}
+
+	
+	
 }

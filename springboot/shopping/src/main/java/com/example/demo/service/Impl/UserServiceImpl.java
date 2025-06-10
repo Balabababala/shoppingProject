@@ -5,6 +5,7 @@ import java.time.LocalDateTime;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 
@@ -32,6 +33,9 @@ import jakarta.servlet.http.HttpSession;
 @Service
 public class UserServiceImpl implements UserService{
 
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Autowired
 	private UserRepository userRepository;
 	
@@ -78,7 +82,7 @@ public class UserServiceImpl implements UserService{
 		save(user);
 	}
 	
-	
+	@Override
 	 public void register(UserRegisterRequest request) throws Exception {
 		 System.out.println("Registering with email: " + request.getEmail());
 		    System.out.println("Registering with username: " + request.getUsername());
@@ -99,13 +103,19 @@ public class UserServiceImpl implements UserService{
 	        }
 
 	        User user = new User();
-	        String salt = PasswordHash.generateSalt();
-	        String hash = PasswordHash.hashPassword(request.getPassword(), salt);
+	        user.setUsername(request.getUsername());
+	        user.setEmail(request.getEmail());
+
+	        // 用 BCryptPasswordEncoder 編碼密碼，不用自己生成 salt
+	        String encodedPassword = passwordEncoder.encode(request.getPassword());
+	        user.setPasswordHash(encodedPassword);
+
+	        user.setIsActive(true);
+	        user.setIsEmailVerified(false);
+
 
 	        user.setUsername(request.getUsername());
 	        user.setEmail(request.getEmail());
-	        user.setSalt(salt);
-	        user.setPasswordHash(hash);
 	        user.setIsActive(true);
 	        user.setIsEmailVerified(false);
 
@@ -164,34 +174,7 @@ public class UserServiceImpl implements UserService{
 
 
 
-	@Override
-	public boolean isLoginValid(LoginRequest loginDTO, User user, HttpServletRequest request) throws ShoppingException{
-			HttpSession session =request.getSession();
-			 
-			if(!loginDTO.getUsername().equals(user.getUsername())) {
-				loginLogService.createLoginLog(user, request ,false);//登入紀錄 失敗
-				throw new ShoppingException("找不到使用者");
-			}
-			
-			try {
-			//以下有 inputStream 所以用try catch 抓
-				if(!PasswordHash.hashPassword(loginDTO.getPassword(),user.getSalt()).equals(user.getPasswordHash())) {
-					loginLogService.createLoginLog(user, request ,false);//登入紀錄 失敗
-					throw new ShoppingException("密碼錯誤");
-				} 
-			} catch (Exception e) {
-				loginLogService.createLoginLog(user, request ,false);//登入紀錄 失敗
-				throw new ShoppingException("密碼加密失敗：" + e.getMessage());	
-			}
-			
-			if(!loginDTO.getCaptchaCode().equals(session.getAttribute("authCode"))){
-				loginLogService.createLoginLog(user, request ,false);//登入紀錄 失敗
-				throw new ShoppingException("驗證碼錯誤");
-			}
-			loginLogService.createLoginLog(user, request ,true);//登入紀錄
-		
-		return true;
-	}
+	
 
 	@Override
 	public User findUserById(Long id) {

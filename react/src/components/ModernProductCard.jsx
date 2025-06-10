@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-//product 可能是從 cartItemResponse 來 or productResponse 來 or favoriteDto 來 他命名方式不同
+
 function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddToCart }) {
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
 
- const handleClick = () => {
-  const id = product.id ?? product.productId;
-  navigate(`/products/${id}`);
-};
+  const handleClick = () => {
+    const id = product.id ?? product.productId;
+    navigate(`/products/${id}`);
+  };
 
   const handleAddToCart = () => {
     if (onAddToCart) {
@@ -24,10 +24,10 @@ function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddT
 
   return (
     <div className="card h-100 shadow-sm rounded-3" style={{ overflow: 'hidden' }}>
-      {product.imageUrl ? (
+      {product.productImage || product.imageUrl ? (
         <img
-          src={product.imageUrl}
-          alt={product.name || '商品圖片'}
+          src={product.productImage || product.imageUrl}
+          alt={product.productName || product.name || '商品圖片'}
           className="card-img-top"
           style={{ objectFit: 'cover', height: '180px', cursor: 'pointer' }}
           onClick={handleClick}
@@ -51,9 +51,11 @@ function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddT
           {product.productName || product.name || '無商品名稱'}
         </h5>
 
-        <p className="card-text mb-2 text-primary fw-bold">
-          NT${product.price ? product.price.toFixed(2) : '0.00'}
-        </p>
+        {mode !== 'viewed' && (
+          <p className="card-text mb-2 text-primary fw-bold">
+            NT${product.price ? product.price.toFixed(2) : '0.00'}
+          </p>
+        )}
 
         {product.categoryName && (
           <p className="card-text text-muted mb-2">分類：{product.categoryName}</p>
@@ -82,6 +84,12 @@ function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddT
           <button className="btn btn-danger mt-auto" onClick={handleDeleteFavorite}>
             取消收藏
           </button>
+        )}
+
+        {mode === 'viewed' && (
+          <p className="card-text text-muted mb-2 mt-auto">
+            最近瀏覽：{new Date(product.viewedAt).toLocaleString()}
+          </p>
         )}
 
         {(mode === 'viewed' || mode === 'default') && (

@@ -13,6 +13,7 @@ export function AppProvider({ children }) {
 
   const initialUserCheckDone = useRef(false);
 
+  // 同步 userData 到 localStorage
   useEffect(() => {
     if (userData) {
       localStorage.setItem('userData', JSON.stringify(userData));
@@ -21,10 +22,12 @@ export function AppProvider({ children }) {
     }
   }, [userData]);
 
+  // userData 有變時抓購物車
   useEffect(() => {
     if (userData) fetchCart();
   }, [userData]);
 
+  // 抓分類
   useEffect(() => {
     fetch(`${API_BASE}/categories/top-mynavbar`, {
       headers: { 'Cache-Control': 'no-cache' },
@@ -34,17 +37,17 @@ export function AppProvider({ children }) {
       .catch(console.error);
   }, []);
 
+  // 初次驗證登入狀態
   useEffect(() => {
     if (initialUserCheckDone.current) return;
 
     const fetchUserData = async () => {
       const data = await fetchWithAuthCheck(`${API_BASE}/user/me`);
-      if (data?.data) {
-        setUserData(data.data);
-      } else {
+      if (data?.authError) {
         handleLogout('您尚未登入，請重新登入');
+      } else if (data?.data) {
+        setUserData(data.data);
       }
-
       initialUserCheckDone.current = true;
       setLoadingAuth(false);
     };
@@ -52,14 +55,14 @@ export function AppProvider({ children }) {
     fetchUserData();
   }, []);
 
-  // 🔁 定時驗證登入狀態
+  // 定時驗證登入狀態
   useEffect(() => {
     const interval = setInterval(async () => {
       const data = await fetchWithAuthCheck(`${API_BASE}/user/me`);
-      if (!data?.data) {
+      if (data?.authError) {
         handleLogout('登入狀態已過期，請重新登入');
       }
-    }, 5 * 60 * 1000); // 每5分鐘
+    }, 5 * 60 * 1000);
 
     return () => clearInterval(interval);
   }, []);
@@ -152,6 +155,7 @@ export function AppProvider({ children }) {
     setToastMessages((prev) => prev.filter((msg) => msg.id !== id));
   };
 
+  // 這裡不再直接 handleLogout，改回傳 authError
   const fetchWithAuthCheck = async (url, options = {}) => {
     try {
       const resp = await fetch(url, {
@@ -161,8 +165,7 @@ export function AppProvider({ children }) {
       });
 
       if (resp.status === 401 || resp.status === 403) {
-        handleLogout('登入狀態失效，請重新登入');
-        return null;
+        return { authError: true };
       }
 
       return await resp.json();

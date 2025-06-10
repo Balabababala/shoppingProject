@@ -29,8 +29,7 @@ public interface UserService {
 	void verifyEmail(String email, String code);																//信箱驗證
 	User findUserByUserName(String username);																	//登入驗證使用者名稱用  (之後可能+email findUserByEmail)
 	User findUserById(Long id);																					//給別人用的 轉換用	(要優化的話可以 試試)
-	boolean isLoginValid(LoginRequest loginDTO, User user, HttpServletRequest request) throws ShoppingException;//登入驗證 loginDTO 符不符合資料庫   + 登入紀錄 還沒做完 
-	UserDto handleSuccessfulLogin(User user );															 		//如果登入成功 生userDto + 更新 最近登入時間 
+	UserDto handleSuccessfulLogin(User user);															 		//如果登入成功 生userDto + 更新 最近登入時間 
 	UserProfileDto getProfileDto(Long id); 																		//取Profile
 	
 	

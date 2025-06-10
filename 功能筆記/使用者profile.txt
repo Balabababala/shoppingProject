@@ -1,0 +1,36 @@
+使用者profile相關
+entity
+	user
+
+看使用者profile功能 (MemberInfoPage)
+
+repository 
+	   User		
+	   Optional<user> findById(Long id) 有共用
+service    
+	   User 
+	   UserProfileDto getProfileDto(Long id)
+	   
+controller 
+	   User	@GET @PathVarible
+		/api/profile	
+		
+dto
+	userProfileDto
+	   
+更新使用者	(MemberInfoPage)
+
+repository 
+	   User			
+		Optional<user> findById(Long id) 有共用
+		save(User user)			 有共用
+service    
+	   User	
+		updateUser(Long userId,UserProfileDto userProfileDto)
+
+controller 
+	  User	@POST @RequestBody
+		("/profile/update")
+
+dto
+	userProfileDto

@@ -46,7 +46,7 @@
 		response	//apiResponse 包 Dto 再給前端 讓前端好處理
 		service
 
-service 邏輯 要檢查是否有 (判斷是否可以做 再做) 
+service 邏輯 要檢查是否有 (判斷是否可以做 再做  可用AOP) 
 	       檢查是需要  exception
 
 Order 前綴後綴要注意 因為重複名稱又改 可能沒改道

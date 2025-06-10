@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import ModernProductCard from '../ModernProductCard ';
+import ModernProductCard from '../ModernProductCard';
 import { AppContext } from '../../contexts/AppContext';
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {

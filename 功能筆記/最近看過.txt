@@ -1,0 +1,31 @@
+最近看過相關
+entity
+	recentlyViewed
+
+最近看過(頁面)功能
+
+repository 
+	   RecentlyViewed		
+		List<RecentlyViewed> findByUserIdOrderByViewTimeDescWithUser(Long userId)
+service    
+	   RecentlyViewed
+		List<RecentlyViewedResponse> getRecentlyViewedByUserId(Long userId)  //取最近看過
+controller 
+	   	
+		GET	@PathVarible
+		/RecentlyViewed/buyer/{userId}
+dto
+	RecentlyViewedResponse
+	   
+新增最近看過(點產品用)(可能移到產品相關)
+
+repository 
+	   RecentlyViewed		
+		save()	//自動有
+service    
+	   RecentlyViewed
+		addRecentlyViewed(Long userId,Long productId)  //新增最近看過
+		(包到點產品controller)
+
+controller 
+	   包到點產品邏輯了 所以沒有 

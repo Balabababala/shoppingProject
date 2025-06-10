@@ -1,0 +1,46 @@
+使用者註冊相關
+entity
+	user
+
+註冊功能
+
+repository 
+	   User		
+	   User findByUsername(String username); 有共用 //確認是否重複
+	   User findByEmail				//確認是否重複
+	   void save (User user);                有共用 //建新使用者
+service    
+           EmailService  			//送驗證信
+	   User 
+	   register(UserRequest userRequest)
+	   
+controller 
+	   User	@Post @RequestBody
+		/api/register	
+		
+dto
+	UserRegisterRequest
+
+信箱驗證
+
+
+驗證功能(用了 Spring Boot Starter Mail 不用javaMail一個一個設定)
+
+repository 
+	   User		
+	   User findByEmail				//驗證用
+	   void save (User user);                有共用 //變更驗證狀態
+service   
+	   User 
+	   verifyEmail(String email, String verificationCode)
+	   
+controller 
+	   User	@Post @RequestBody
+		/api/verify-email
+		
+dto
+	   EmailVerificationRequest
+
+
+
+

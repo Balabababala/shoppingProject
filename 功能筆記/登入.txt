@@ -22,7 +22,31 @@ service    User
 	   LoginLog
 		void createLoginLog(User user,HttpServletRequest request);					     //登入紀錄
 		
+Security 設定（SecurityConfig）
+		AuthenticationManager
+
+		配置 userDetailsService 與 passwordEncoder (BCryptPasswordEncoder)
+
+		SecurityFilterChain
+
+		設定哪些 API 允許匿名訪問（例如 /api/login, /api/auth-code）
+
+		禁用預設 formLogin，改用自訂 API 登入
+
+		CSRF 可依需求啟用或禁用
+
+		PasswordEncoder
+
+		建立 BCryptPasswordEncoder bean 用於密碼比對
+
+
+
+
 controller LoginController @RequestMapping("/api/login")
 			   @PostMapping			//loginPage 用
+
+
+
+
 
 	   

@@ -1,6 +1,6 @@
 import React, { useState, useEffect ,useContext} from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
-import ModernProductCard from '../ModernProductCard .jsx';
+import ModernProductCard from '../ModernProductCard.jsx';
 import { AppContext } from '../../contexts/AppContext';
 
 function SearchPage() {

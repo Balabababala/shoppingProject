@@ -63,6 +63,7 @@ public class UserController {
 	@PostMapping("/user/profile/update")
 	public ResponseEntity<ApiResponse<UserProfileDto>> updateUserProfile(@RequestBody UserProfileDto userProfileDto,HttpSession session) {
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		
 		userService.updateUser(userDto.getUserId(), userProfileDto);
 		
 		return ResponseEntity.ok(ApiResponse.success("更新使用者資料成功",null));

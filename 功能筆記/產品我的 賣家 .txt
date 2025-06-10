@@ -1,0 +1,130 @@
+API 路徑	HTTP 方法	說明	備註
+/api/seller/products	GET	取得賣家所有商品清單	需登入賣家
+/api/seller/products	POST	新增商品	傳商品資料
+/api/seller/products/{id}	PUT	編輯指定商品	根據 ID 修改商品資料
+/api/seller/products/{id}	DELETE	刪除指定商品	根據 ID 刪除商品
+/api/seller/products/{id}	GET	取得指定商品詳細資料	編輯用
+
+賣家產品相關
+
+Entity
+	product
+Mapper
+	SellerProductMapper toDto
+		     	    toEntity
+
+
+
+取得賣家所有商品清單(SellerProductsPage)
+
+repository product
+		List<product> findBySellerIdWithSellerAndCategoryAndProductImage(Long userId);
+service	   product
+		List<product> getSellerProduct(Long userId);
+controller product
+		GET
+		/api/seller/products
+dto 
+	SellerProductDto
+
+
+
+
+新增商品	()
+
+
+repository product
+		save(Product product);
+service	   product
+		addProduct(Product product);
+controller product
+		POST
+		@RequestBody
+		/api/seller/products
+dto 
+	SellerProductDto	
+
+編輯指定商品	()				
+
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+service	   product
+		updataProduct(CreateProductResponse createProductResponse ,Long productId)
+controller product
+		PUT
+		@RequestBody @PathVariable
+		/api/seller/products/{id}
+dto 
+	SellerProductDto
+
+
+刪除指定商品	()	//其實是改狀態 seller 看不到
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+service	   product
+		deleteProduct(Long productId)
+controller product
+		DELETE
+		@PathVariable
+		/api/seller/products/{id}
+
+
+		
+/api/seller/products/{id}	DELETE
+
+下架指定商品	()	//seller 還看的到
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+service	   product
+		unActiveProduct(Long productId)
+controller product
+		DELETE
+		@PathVariable
+		/api/seller/products/{id}/unactive
+
+		
+/api/seller/products/{id}	
+
+上架指定商品	()	//seller 還看的到
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+service	   product
+		ActiveProduct(Long productId)
+controller product
+		PUT
+		@PathVariable
+		/api/seller/products/{id}/active
+
+
+		
+/api/seller/products/{id}
+
+
+取得指定商品詳細資料	編輯用
+repository product
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+service	   product
+		findProductById(Long productId)
+controller product
+		GET
+		@PathVariable
+		/api/seller/products/{id}
+dto 
+	SellerProductDto
+
+
+
+
+
+
+
+
+
+
+
+
+
