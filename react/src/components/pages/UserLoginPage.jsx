@@ -31,15 +31,15 @@ function LoginPage() {
       const result = await response.json();
 
       if (result.message === '登入成功') {
-        alert('登入成功');
+        addToastMessage('登入成功');
         setUserData(result.data);
         navigate('/');
       } else {
-        alert('登入失敗：' + result.message);
+        addToastMessage('登入失敗：' + result.message);
       }
     } catch (error) {
       console.error('表單提交時出現錯誤', error);
-      alert('提交失敗，請稍後再試');
+      addToastMessage('提交失敗，請稍後再試');
     }
   };
 

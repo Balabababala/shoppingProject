@@ -10,10 +10,10 @@ import com.example.demo.response.ApiResponse;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api/logout")
+@RequestMapping("/api")
 public class Logout {
 		
-	@PostMapping
+	@PostMapping("/logout")
 	ResponseEntity<ApiResponse<Void>> logout(HttpSession session){
 //		session.removeAttribute("userDto");
 		

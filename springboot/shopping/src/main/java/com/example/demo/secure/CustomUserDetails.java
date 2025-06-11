@@ -1,6 +1,7 @@
 package com.example.demo.secure;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -22,7 +23,7 @@ public class CustomUserDetails implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().getName()));
+        return Collections.singletonList(new SimpleGrantedAuthority("ROLE_"+user.getRole().getName()));
     }
 
     @Override
@@ -58,6 +59,8 @@ public class CustomUserDetails implements UserDetails {
     public User getUser() {
         return user;
     }
+    
+    
 }
 
 

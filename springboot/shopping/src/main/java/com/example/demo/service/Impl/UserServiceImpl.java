@@ -172,10 +172,6 @@ public class UserServiceImpl implements UserService{
         return findByUsername(username).get();
     }
 
-
-
-	
-
 	@Override
 	public User findUserById(Long id) {
 		return findById(id)

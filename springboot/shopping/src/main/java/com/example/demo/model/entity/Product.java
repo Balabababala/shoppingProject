@@ -37,11 +37,14 @@ public class Product {
 
     @Min(1)
     @Column(name="stock",nullable = false)
-    private Integer  stock;
+    private Integer stock;
 
     @Enumerated(EnumType.STRING)
     @Column(name="status",nullable = false)
     private ProductStatus status ;
+    
+    @Column(name="is_deleted",nullable = false)
+    private Boolean isDeleted;
     
     @CreationTimestamp
     @Column(name = "created_at")

@@ -1,11 +1,6 @@
-API 路徑	HTTP 方法	說明	備註
-/api/seller/products	GET	取得賣家所有商品清單	需登入賣家
-/api/seller/products	POST	新增商品	傳商品資料
-/api/seller/products/{id}	PUT	編輯指定商品	根據 ID 修改商品資料
-/api/seller/products/{id}	DELETE	刪除指定商品	根據 ID 刪除商品
-/api/seller/products/{id}	GET	取得指定商品詳細資料	編輯用
-
 賣家產品相關
+剩圖相關
+和controller 還沒
 
 Entity
 	product
@@ -18,9 +13,9 @@ Mapper
 取得賣家所有商品清單(SellerProductsPage)
 
 repository product
-		List<product> findBySellerIdWithSellerAndCategoryAndProductImage(Long userId);
+		List<Product> findBySellerIdWithSellerAndCategoryAndProductImage(Long sellerId);
 service	   product
-		List<product> getSellerProduct(Long userId);
+		List<Product> getSellerProduct(Long userId);
 controller product
 		GET
 		/api/seller/products
@@ -30,27 +25,27 @@ dto
 
 
 
-新增商品	()
+新增商品	
 
 
 repository product
-		save(Product product);
+		save(Product product);					//自己有
 service	   product
-		addProduct(Product product);
+		addProduct(Product product,HttpSession session);	//新增 產品 
 controller product
 		POST
 		@RequestBody
-		/api/seller/products
+		/api/seller/products						
 dto 
 	SellerProductDto	
 
 編輯指定商品	()				
 
 repository product
-		save(Product product);
-		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+		save(Product product);					//自己有
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和下面共用
 service	   product
-		updataProduct(CreateProductResponse createProductResponse ,Long productId)
+		updataProductSellerProductDto sellerProductDto ,Long productId,HttpSession session)
 controller product
 		PUT
 		@RequestBody @PathVariable
@@ -61,10 +56,10 @@ dto
 
 刪除指定商品	()	//其實是改狀態 seller 看不到
 repository product
-		save(Product product);
-		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+		save(Product product);					//自己有
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
 service	   product
-		deleteProduct(Long productId)
+		deleteProduct(Long productId,HttpSession session)       //更新 產品 改成刪除狀態 (查資料庫同時 也驗證了身分)
 controller product
 		DELETE
 		@PathVariable
@@ -77,9 +72,9 @@ controller product
 下架指定商品	()	//seller 還看的到
 repository product
 		save(Product product);
-		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
 service	   product
-		unActiveProduct(Long productId)
+		unActiveProduct(Long productId,HttpSession session)	//更新 產品 改成下架狀態 (查資料庫同時 也驗證了身分)
 controller product
 		DELETE
 		@PathVariable
@@ -91,9 +86,9 @@ controller product
 上架指定商品	()	//seller 還看的到
 repository product
 		save(Product product);
-		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
 service	   product
-		ActiveProduct(Long productId)
+		activeProduct(Long productId,HttpSession session)	//更新 產品 改成上架狀態 (查資料庫同時 也驗證了身分)
 controller product
 		PUT
 		@PathVariable
@@ -106,9 +101,9 @@ controller product
 
 取得指定商品詳細資料	編輯用
 repository product
-		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);////和上面共用
 service	   product
-		findProductById(Long productId)
+		SellerProductDto findProductByIdToSellerProductDto(Long productId,HttpSession session);				//依 productId 找 產品轉SellerProductDto	  更新 產品用 (查資料庫同時 也驗證了身分 其實不用 但我想共用一樣的方法)
 controller product
 		GET
 		@PathVariable

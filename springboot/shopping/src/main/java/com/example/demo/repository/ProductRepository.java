@@ -22,13 +22,21 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	List<Product> findAllWithCategory();
 	
 	@Transactional(readOnly = true)
-	@Query(value = """
-		    SELECT p FROM Product p 
-		    JOIN FETCH p.category c 
-		    JOIN FETCH p.productImages pi 
-		    WHERE p.id = :id
-		    """)
-	Optional<Product> findByCategoryWithCategoryAndProductImage(@Param("id") Long id);
+	@Query("SELECT DISTINCT p FROM Product p "
+			+ "JOIN FETCH p.seller s "
+			+ "JOIN FETCH p.category c "
+			+ "LEFT JOIN FETCH p.productImages pi "
+			+ "WHERE s.id = :sellerId")
+	List<Product> findBySellerIdWithSellerAndCategoryAndProductImage(@Param("sellerId") Long sellerId);
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT DISTINCT p FROM Product p "
+			+ "JOIN FETCH p.seller s "
+			+ "JOIN FETCH p.category c "
+			+ "LEFT JOIN FETCH p.productImages pi "
+			+ "WHERE s.id = :sellerId "
+			+ "AND p.id= :productId ")
+	Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(@Param("sellerId") Long sellerId,@Param("productId") Long productId);
 	
 	@Transactional(readOnly = true)
 	@Query("""

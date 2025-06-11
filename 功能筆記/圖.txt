@@ -1,0 +1,71 @@
+productImage
+
+Entity
+	productImage
+Mapper
+	
+
+查該產品圖片 (確認圖片狀態 來決定是否可新增 刪除)
+repository productImage
+		List<ProductImage> findByProductIdOrderByNumberAscWithProduct(Long productId);
+    		Optional<ProductImage> findByIdAndProductIdWithProduct(Long id, Long productId);
+service	   productImage
+		List<ProductImage> getImagesByProduct(Long productId, Long sellerId)
+controller
+	    @GetMapping("/seller/products/{productId}/images") @PathVarible
+		
+dto 
+	productImageDto
+
+新增產品圖片
+repository productImage
+		List<ProductImage> findByProductIdOrderByNumberAscWithProduct(Long productId);
+    		Optional<ProductImage> findByIdAndProductIdWithProduct(Long id, Long productId);
+service	   productImage
+		ProductImageDto addImageToProduct(Long productId, Long sellerId, MultipartFile file, Integer number);
+	   product
+		findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId,Long productId)	 	//共用 同時確認  		 	
+controller
+	@PostMapping("/seller/products/{productId}/images") @PathVarible
+dto 
+	productImageDto
+
+刪除該產品圖片
+repository productImage
+		List<ProductImage> findByProductIdOrderByNumberAscWithProduct(Long productId);
+    		Optional<ProductImage> findByIdAndProductIdWithProduct(Long id, Long productId);
+service	   productImage
+		void deleteImage(Long imageId, Long sellerId);
+		 	//刪除圖片
+
+controller
+	@DeleteMapping("/seller/products/images/{imageId}") @PathVarible
+dto 
+	productImageDto
+
+
+
+
+
+
+
+
+//上傳圖片方法  新增產品圖片 用到
+private String uploadImageAndGetUrl(MultipartFile file) 
+private void deleteImageFromStorage(String imageUrl)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

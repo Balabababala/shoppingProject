@@ -52,6 +52,7 @@ service 邏輯 要檢查是否有 (判斷是否可以做 再做  可用AOP)
 Order 前綴後綴要注意 因為重複名稱又改 可能沒改道
 
 
-
+jwt 要加的話 
+	產品我的 賣家  ->>addProduct 要改 有驗證(session)
 
 

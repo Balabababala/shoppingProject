@@ -1,41 +1,3 @@
-
-
-
-
-Authentication authentication = authenticationManager.authenticate(
-    new UsernamePasswordAuthenticationToken(loginDTO.getUsername(), loginDTO.getPassword())
-);
-👉 驗證成功：
-
-authenticate() 會回傳一個 Authentication 物件（裡面含有 principal = CustomUserDetails、roles、credentials 已清除等資訊）
-
-你可以透過 authentication.getPrincipal() 拿到你自定義的 CustomUserDetails，再拿到 User Entity。
-
-👉 驗證失敗（重點！）：
-
-authenticate() 會丟出例外（Exception），通常是以下幾種：
-
-BadCredentialsException → 帳號密碼錯誤
-
-UsernameNotFoundException → 找不到 username（這在你的 CustomUserDetailsService 裡會拋）
-
-DisabledException → 帳號被停用（isEnabled() = false）
-
-LockedException → 帳號被鎖住（isAccountNonLocked() = false）
-
-其他 → AuthenticationException 是統一的父類別
-
-直接取user方法
-CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
-User user = userDetails.getUser();
-
-
-
-
-
-
-
-
 教學
 
 1️⃣ Authentication 物件長什麼樣？
@@ -54,3 +16,24 @@ authorities → 使用者權限（ROLE_USER / ROLE_ADMIN ...）
 
 isAuthenticated → boolean 是否已認證成功
 
+
+------------------------------------------------------------------------------
+Spring Secure 的部分
+
+SecurityConfig
+CustomUserDetailsService 
+CustomUserDetails 
+
+CustomUserDetailsService 包含 CustomUserDetails 的設定 (負責載入使用者)
+收尋的部分			載入的部分
+驗證部分
+
+其實是
+在 SecurityConfig 實作 AuthenticationManager 一部分 (核心)(要塞 UserDetailsService 的實作 和 PasswordEncoder的實作)
+							   UserDetailsService 的實作 我是叫 CustomUserDetailsService 
+在用AuthenticationManager.authenticationManager 方法來驗證
+
+filter部分
+因為 AuthenticationManager 設好了
+就可以 .authenticated()
+       .hasRole("seller")

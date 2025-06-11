@@ -21,7 +21,6 @@ public class CreateOrderMapper {
 		Order order= new Order();
 		order.setBuyer(buyer);
 		order.setSeller(seller);
-		order.setOrderDate(LocalDateTime.now());
 		order.setShippingMethod(orderRequest.getShippingMethod());
 		order.setPaymentMethod(orderRequest.getPaymentMethod());
 		order.setReceiverName(orderRequest.getReceiverName());

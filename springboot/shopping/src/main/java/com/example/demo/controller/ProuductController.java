@@ -22,7 +22,7 @@ import jakarta.websocket.server.PathParam;
 
 //CategoryPage 用到 
 @RestController
-@RequestMapping("/api/products")
+@RequestMapping("/api")
 public class ProuductController {
 
 	@Autowired
@@ -42,7 +42,7 @@ public class ProuductController {
 	}
 	
 	//productPage 用
-	@GetMapping("/{productId}")
+	@GetMapping("/products/{productId}")
 	public ResponseEntity<ApiResponse<ProductResponse>> findById(HttpSession session,@PathVariable Long productId){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		if(userDto!= null) {
@@ -52,7 +52,7 @@ public class ProuductController {
 	}
 	
 	//searchPage 用
-	@GetMapping("/search")
+	@GetMapping("/products/search")
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword){
 		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductsByKeywordFullTextBooleanToProductResponses(keyword)));//對應值
 	}

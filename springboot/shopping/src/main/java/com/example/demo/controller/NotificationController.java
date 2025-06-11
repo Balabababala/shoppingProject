@@ -19,13 +19,13 @@ import com.example.demo.service.NotificationService;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api/notification")
+@RequestMapping("/api")
 public class NotificationController {
 	
 	@Autowired
 	private NotificationService notificationService;
 	
-	@GetMapping
+	@GetMapping("/notification")
 	ResponseEntity<ApiResponse<List<NotificationDto>>> getNotification(HttpSession session){
 		try {
 			UserDto userDto= (UserDto)session.getAttribute("userDto");
@@ -35,7 +35,7 @@ public class NotificationController {
 		}
 	}
 	
-	@PostMapping("/{id}")
+	@PostMapping("/notification/{id}")
 	ResponseEntity<ApiResponse<Void>> markAsRead(HttpSession session,@PathVariable Long id){
 		try {
 			UserDto userDto= (UserDto)session.getAttribute("userDto");

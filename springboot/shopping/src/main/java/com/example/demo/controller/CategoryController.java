@@ -18,18 +18,18 @@ import com.example.demo.service.CategoryService;
 //給 mynavbar 用的
 
 @RestController
-@RequestMapping("/api/categories")
+@RequestMapping("/api")
 public class CategoryController  {
 	
 	@Autowired
 	private CategoryService categoryService;
 	
-	@GetMapping("/top-mynavbar")  //MyNavbarCategories用
+	@GetMapping("/categories/top-mynavbar")  //MyNavbarCategories用
 	public ResponseEntity<ApiResponse<List<CategoryResponse>>> getTopCatogory()   {
 		return ResponseEntity.ok(ApiResponse.success("最上層類別取得成功", categoryService.findTopCategory()));
 	}
 	
-	@GetMapping("/{slug}/tree")  			//CategoryPage 用
+	@GetMapping("/categories/{slug}/tree")  			//CategoryPage 用
 	public ResponseEntity<ApiResponse<List<CategoryResponse>>> getCatogoryBySlug(@PathVariable String slug)   {
 		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.findCategoryChildrenBySlugToCategoryResponse(slug)));
 	}
