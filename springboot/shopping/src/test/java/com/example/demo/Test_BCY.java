@@ -18,7 +18,7 @@ import com.example.demo.repository.ProductRepository;
 import com.example.demo.util.CategoryTreeUtil;
 
 @SpringBootTest
-public class Test_GetSon {
+public class Test_BCY {
 
 	@Autowired
 	private CategoryRepository categoryRepository;

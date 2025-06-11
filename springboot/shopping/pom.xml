@@ -36,18 +36,27 @@
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-security</artifactId>
 		</dependency>
+		
+		<!--JWT-->
+		<dependency>
+			<groupId>com.nimbusds</groupId>
+			<artifactId>nimbus-jose-jwt</artifactId>
+			<version>9.15.1</version>
+		</dependency>
 	
 		 <!-- Spring Boot Starter Mail   -->
 		<dependency>
 		    <groupId>org.springframework.boot</groupId>
 		    <artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
+		
 		 <!-- validation   -->
 		 <dependency>
 		    <groupId>jakarta.validation</groupId>
 		    <artifactId>jakarta.validation-api</artifactId>
 		    <version>3.0.2</version>
 		</dependency>
+		
 		<!-- hibernate  validation(Entity 用的) -->
 		<dependency>
 		    <groupId>org.hibernate.validator</groupId>

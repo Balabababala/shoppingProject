@@ -31,9 +31,6 @@ public class User {
     @Column(name = "password_hash", nullable = false)
     private String passwordHash;
 
-    @Column(name = "salt", nullable = false)
-    private String salt;
-
     @Column(name = "email", nullable = false, length = 100)
     private String email;
 

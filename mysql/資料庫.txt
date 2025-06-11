@@ -41,7 +41,6 @@ CREATE TABLE users (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '使用者 ID',
     username VARCHAR(255) UNIQUE COMMENT '使用者名稱',
     password_hash VARCHAR(255) COMMENT '密碼（加密）',
-    salt VARCHAR(255) COMMENT '加鹽',
     email VARCHAR(255) UNIQUE COMMENT '電子郵件',
     role_id BIGINT NOT NULL COMMENT '角色 ID',
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT '建立時間',
