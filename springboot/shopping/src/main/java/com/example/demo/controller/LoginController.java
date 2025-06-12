@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.mapper.UserMapper;
+
 import com.example.demo.model.dto.LoginRequest;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.User;
@@ -20,6 +20,7 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -44,7 +45,7 @@ public class LoginController {
         // 比對前端傳過來的驗證碼，忽略大小寫
         if (loginRequest.getCaptchaCode() == null || !loginRequest.getCaptchaCode().equalsIgnoreCase(sessionCaptcha)) {
         	
-        	Optional<User> opt=userService.findByUsername(loginRequest.getUsername());  //如果有該使用者
+        	Optional<User> opt = userService.checkUser(loginRequest.getUsername());     //如果有該使用者
         	if(opt.isPresent()) {
         		loginLogService.createLoginLog(opt.get(), request, false); 				//直接記錄登入失敗記錄
         	}
@@ -58,6 +59,11 @@ public class LoginController {
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
             );
             
+            // 把認證結果放入 SecurityContext
+            SecurityContextHolder.getContext().setAuthentication(authentication);
+            
+            // Spring Secure 看session 有沒有登入 是看 SPRING_SECURITY_CONTEXT 有沒有 SecurityContextHolder 如果你用 他自帶的登入器 它會自動設
+            session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
             
             // 認證成功後，取得 CustomUserDetails
             CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
@@ -65,13 +71,13 @@ public class LoginController {
             // 轉成 UserDto
             UserDto userDto = userService.handleSuccessfulLogin(userDetails.getUser());
 
-            // 選擇性把 UserDto 放入 session
+            // 把 UserDto 放入 session
             session.setAttribute("userDto", userDto);
 
             loginLogService.createLoginLog(userDetails.getUser(), request, true);//直接記錄登入成功記錄
             return ResponseEntity.ok(ApiResponse.success("登入成功", userDto));
         } catch (AuthenticationException e) {
-        	Optional<User> opt=userService.findByUsername(loginRequest.getUsername());  //如果有該使用者
+        	Optional<User> opt=userService.checkUser(loginRequest.getUsername());  //如果有該使用者
         	if(opt.isPresent()) {
         		loginLogService.createLoginLog(opt.get(), request, false); 				//直接記錄登入失敗記錄
         	}

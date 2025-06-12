@@ -1,0 +1,57 @@
+我的訂單
+
+Entity
+	Order
+
+DTO OrderItemResponse 
+    OrderResponse
+
+建 訂單
+	
+repository  order
+		findByBuyerIdWithOrderItemAndBuyerAndSeller(Long userId);
+	    userRepository
+		Optional<User> findById(Long Id)
+
+service     order
+		void createOrder(CreateOrderDto orderRequest,Long BuyerId)		//主要
+	    cartItem
+		Map<Long , List <OrderItem>> orderItemsGroupedBySeller(Long userId) 	//分賣家取產品
+	     product
+	    	void minusProductByid(Long id ,Integer integer)				//刪數量用
+controller  order
+		GET
+		/api/order/create @PathRequest
+		return List <OrderResponse>
+dto 
+	CreateOrderDto
+Mapper
+	CreateOrderMapper
+
+看使用者(買方)訂單
+	
+repository  order
+		findByBuyerIdWithOrderItemAndBuyerAndSeller(Long userId);
+service     order
+		getOrderByBuyerId(Long userId);
+controller  order
+		GET
+		/orders/{userId} @PathVariable
+		return List <OrderResponse>
+dto 
+	<OrderResponse>
+
+
+看使用者(賣家)訂單
+	
+repository  order
+		findBySellerIdWithOrderItemAndBuyerAndSeller(Long userId);
+service     order
+		getOrderBySellerId(Long userId);
+controller  order
+		GET
+		/order/seller/{userId} @VariablePath
+		return List <OrderResponse>
+
+
+

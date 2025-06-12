@@ -22,34 +22,34 @@ import com.example.demo.service.UserService;
 import jakarta.servlet.http.HttpSession;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/cart")
 public class CartItemController {
 	@Autowired
 	private CartItemService cartItemService; 
 	
 	
-	@GetMapping ("/cart")//contexts 用
+	@GetMapping //contexts 用
 	public ResponseEntity<ApiResponse<List<CartItemResponse>>> getCart(HttpSession session)   {
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		return ResponseEntity.ok(ApiResponse.success("取購物車成功", cartItemService.getCart(userDto.getUserId())));
 	}
 	
-	@PostMapping("/cart/add")
+	@PostMapping("/add")
 	public ResponseEntity<ApiResponse<Object>> addCart(HttpSession session,@RequestBody AddCartItemRequest addCartItemRequest){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		cartItemService.addOrUpdateCartItem(userDto.getUserId(), addCartItemRequest.getProductId(), addCartItemRequest.getQuantity());
 		return ResponseEntity.ok(ApiResponse.success("加入成功",null));
 	}
 	
-	@DeleteMapping("/cart/{productId}")
+	@DeleteMapping("/{productId}")
 	public ResponseEntity<ApiResponse<Object>> deleteCart(HttpSession session,@PathVariable Long productId){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
-		cartItemService.deleteByUserIdAndProductId(userDto.getUserId(),productId);
+		cartItemService.deleteItemFromCart(userDto.getUserId(),productId);
 		return ResponseEntity.ok(ApiResponse.success("刪除成功",null));
 		
 	}
 	
-	@DeleteMapping("/cart/clear")	// cartItem 清除
+	@DeleteMapping("/clear")	// cartItem 清除
 	public ResponseEntity<ApiResponse<List<Void>>> clearCart(HttpSession session)   {
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		cartItemService.clearCart(userDto.getUserId());

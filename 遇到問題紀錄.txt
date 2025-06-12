@@ -61,3 +61,13 @@ CORS 如果沒設定 不能跨網路取資料(主要是Spring會檔)
 		 拔出來會是字串
 
 14. 圖片要記得 CORS 也要設定
+
+15.Spring Secure
+	一直401 他認不出來
+
+	登入 驗證完 沒把把認證結果放入 SecurityContext
+	且
+	// Spring Secure 看session 有沒有登入 是看 SPRING_SECURITY_CONTEXT 有沒有 SecurityContextHolder 如果你用 他自帶的登入器 它會自動設
+
+16.結構又改了
+	repository 不應該用 service 再包一層

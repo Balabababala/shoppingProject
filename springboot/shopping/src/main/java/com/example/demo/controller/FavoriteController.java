@@ -27,13 +27,13 @@ import jakarta.servlet.http.HttpSession;
 
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/favorites")
 public class FavoriteController {
 	
 	@Autowired
 	private FavoriteService favoriteService;
 	
-	@PostMapping("/favorites")   	//新增
+	@PostMapping   	//新增
 	public ResponseEntity<ApiResponse<Void>> addFavorite(HttpSession session,@RequestBody FavoriteDto favoriteDto){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		try {
@@ -45,7 +45,7 @@ public class FavoriteController {
 	}	
 	
 	
-	@DeleteMapping("/favorites/{productId}")
+	@DeleteMapping("/{productId}")
 	public ResponseEntity<ApiResponse<Void>> deleteFavorite(HttpSession session,@PathVariable Long productId){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		try {
@@ -57,7 +57,7 @@ public class FavoriteController {
 	}
 	
 	
-	@GetMapping("/favorites/{userId}/favorites")
+	@GetMapping("/{userId}/favorites")
 	public ResponseEntity<ApiResponse<List<FavoriteDto>>> getFavorite(HttpSession session,@PathVariable Long userId){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		if(userDto.getUserId().equals(userId)) {
@@ -66,7 +66,7 @@ public class FavoriteController {
 		return ResponseEntity.badRequest().body(ApiResponse.error("你在幹嘛 想偷看別人的"));
 	}
 	
-	@GetMapping("/favorites/check")
+	@GetMapping("/check")
 	public ResponseEntity<ApiResponse<Boolean>> checkFavorite(HttpSession session,@RequestParam Long userId,@RequestParam Long productId ){
 		UserDto userDto= (UserDto)session.getAttribute("userDto");
 		if(userDto.getUserId().equals(userId)) {

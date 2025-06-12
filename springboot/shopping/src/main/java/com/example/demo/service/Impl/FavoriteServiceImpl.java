@@ -5,13 +5,14 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.exception.ShoppingException;
 import com.example.demo.mapper.FavoriteMapper;
 import com.example.demo.model.dto.FavoriteDto;
 import com.example.demo.model.entity.Favorite;
 import com.example.demo.repository.FavoriteRepository;
+import com.example.demo.repository.ProductRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.FavoriteService;
 import com.example.demo.service.ProductService;
 import com.example.demo.service.UserService;
@@ -23,73 +24,50 @@ public class FavoriteServiceImpl implements FavoriteService{
 	private FavoriteRepository favoriteRepository;
 	
 	@Autowired
-	private UserService userService;
+	private UserRepository userRepository;
 	
 	@Autowired
-	private ProductService productService;
+	private ProductRepository productRepository;
 
-	//repository
-	@Transactional
-	@Override
-	public void save(Favorite favorite) {
-		favoriteRepository.save(favorite);	
-	}
-
-	@Override
-	public void delete(Favorite favorite) {
-		favoriteRepository.delete(favorite);
-	}
-
-	@Override
-	public List<Favorite> findByUserId(Long userId) {
-		return favoriteRepository.findByUserId(userId);
-	}
 	
-	@Override
-	public List<Favorite> findByUserIdWithUserAndProductAndImages(Long userId){
-		return favoriteRepository.findByUserIdWithUserAndProductAndImages(userId);
-	}
-	
-	@Override
-	public Optional<Favorite> findByUserIdAndProductId(Long userId, Long productId) {
-		return favoriteRepository.findByUserIdAndProductId(userId, productId);
-	}
 
 	//邏輯
 	
 	
 	@Override
 	public void addFavoriteByUserIdAndProductId(Long userId, Long productId) {		
-		if(!findByUserIdAndProductId(userId,productId).isEmpty()){					//已經存在
+		if(!favoriteRepository.findByUserIdAndProductId(userId,productId).isEmpty()){					
 			throw new ShoppingException("已加入收藏");
 		}
 		Favorite favorite =new Favorite();
 
-		favorite.setUser(userService.findUserById(userId));
-		favorite.setProduct(productService.findById(productId).get());
+		favorite.setUser(userRepository.findById(userId).orElseThrow(() -> new ShoppingException("找不到使用者")));
+		favorite.setProduct(productRepository.findById(productId).orElseThrow(() -> new ShoppingException("找不到產品")));
 		
-		save(favorite);
+		favoriteRepository.save(favorite);
 	}
-
+	
 	@Override
 	public void deleteFavoriteByUserIdAndProductId(Long userId, Long productId) {
-		Optional<Favorite> opt=findByUserIdAndProductId(userId,productId);
-		if(opt.isEmpty()){					//已經存在
+		Optional<Favorite> opt=favoriteRepository.findByUserIdAndProductId(userId,productId);
+		if(opt.isEmpty()){							
 			throw new ShoppingException("未加入收藏");
 		}
 
-		delete(opt.get());
+		favoriteRepository.delete(opt.get());
 	}
 
 	@Override
 	public List<FavoriteDto> findFavoriteByUserId(Long userId) {
-		return	findByUserIdWithUserAndProductAndImages(userId).stream().
+		return	favoriteRepository.findByUserIdWithUserAndProductAndImages(userId).stream().
 																map(FavoriteMapper::toDto).
 																toList();
 	}
 
-	
-	
-	
+	@Override
+	public Optional<Favorite> findByUserIdAndProductId(Long userId, Long productId) {
+		return favoriteRepository.findByUserIdAndProductId(userId, productId);
+	}
 
+	
 }

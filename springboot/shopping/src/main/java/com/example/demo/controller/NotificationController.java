@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import java.net.http.HttpRequest;
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,6 +25,19 @@ public class NotificationController {
 	@Autowired
 	private NotificationService notificationService;
 	
+	//看通知訊息 (改成已讀)
+		@PostMapping("/notification/{id}")
+		ResponseEntity<ApiResponse<Void>> markAsRead(HttpSession session,@PathVariable Long id){
+			try {
+				UserDto userDto= (UserDto)session.getAttribute("userDto");
+				notificationService.markNotificationAsReadByNotificationId(id,userDto.getUserId());
+				return ResponseEntity.ok(ApiResponse.success("執行成功", null));
+			} catch (Exception e) {
+				return ResponseEntity.badRequest().body(ApiResponse.error("執行失敗"));
+			}
+		}
+		
+	//看通知訊息列表
 	@GetMapping("/notification")
 	ResponseEntity<ApiResponse<List<NotificationDto>>> getNotification(HttpSession session){
 		try {
@@ -35,14 +48,5 @@ public class NotificationController {
 		}
 	}
 	
-	@PostMapping("/notification/{id}")
-	ResponseEntity<ApiResponse<Void>> markAsRead(HttpSession session,@PathVariable Long id){
-		try {
-			UserDto userDto= (UserDto)session.getAttribute("userDto");
-			notificationService.markNotificationAsReadByNotificationId(id,userDto.getUserId());
-			return ResponseEntity.ok(ApiResponse.success("執行成功", null));
-		} catch (Exception e) {
-			return ResponseEntity.badRequest().body(ApiResponse.error("執行失敗"));
-		}
-	}
+	
 }

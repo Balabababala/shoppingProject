@@ -1,0 +1,130 @@
+賣家產品相關
+
+SellerProduct
+
+和controller 還沒
+
+Entity
+	product
+Mapper
+	SellerProductMapper toDto
+		     	    toEntity
+
+
+
+取得賣家所有商品清單(SellerProductsPage)
+
+repository product
+		List<Product> findBySellerIdWithSellerAndCategoryAndProductImage(Long sellerId);
+service	   product
+		List<SellerProductDto> getSellerProduct(Long userId);
+controller 
+		GET
+		/api/seller/products
+dto 
+	SellerProductDto
+
+
+
+
+新增商品	
+
+
+repository product
+		save(Product product);					//自己有
+service	   product
+		addProduct(Product product,HttpSession session);	//新增 產品 
+	   productImage
+		
+			
+controller product
+		POST
+		@RequestBody
+		/api/seller/products						
+dto 
+	SellerProductDto	
+
+編輯指定商品	()				
+
+repository product
+		save(Product product);					//自己有
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和下面共用
+service	   product
+		updataProductSellerProductDto sellerProductDto ,Long productId,HttpSession session)
+controller product
+		PUT
+		@RequestBody @PathVariable
+		/api/seller/products/{id}
+dto 
+	SellerProductDto
+
+
+刪除指定商品	()	//其實是改狀態 seller 看不到
+repository product
+		save(Product product);					//自己有
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
+service	   product
+		deleteProduct(Long productId,HttpSession session)       //更新 產品 改成刪除狀態 (查資料庫同時 也驗證了身分)
+controller product
+		DELETE
+		@PathVariable
+		/api/seller/products/{id}
+
+
+		
+/api/seller/products/{id}	DELETE
+
+下架指定商品	()	//seller 還看的到
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
+service	   product
+		unActiveProduct(Long productId,HttpSession session)	//更新 產品 改成下架狀態 (查資料庫同時 也驗證了身分)
+controller product
+		DELETE
+		@PathVariable
+		/api/seller/products/{id}/unactive
+
+		
+/api/seller/products/{id}	
+
+上架指定商品	()	//seller 還看的到
+repository product
+		save(Product product);
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);    //和上面共用
+service	   product
+		activeProduct(Long productId,HttpSession session)	//更新 產品 改成上架狀態 (查資料庫同時 也驗證了身分)
+controller product
+		PUT
+		@PathVariable
+		/api/seller/products/{id}/active
+
+
+		
+/api/seller/products/{id}
+
+
+取得指定商品詳細資料	編輯用
+repository product
+		Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId, Long productId);////和上面共用
+service	   product
+		SellerProductDto findProductByIdToSellerProductDto(Long productId,HttpSession session);				//依 productId 找 產品轉SellerProductDto	  更新 產品用 (查資料庫同時 也驗證了身分 其實不用 但我想共用一樣的方法)
+controller product
+		GET
+		@PathVariable
+		/api/seller/products/{id}
+dto 
+	SellerProductDto
+
+
+
+
+
+
+
+
+
+
+
+
+

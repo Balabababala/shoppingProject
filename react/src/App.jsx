@@ -10,7 +10,8 @@ import MyFavoritePage from './components/pages/MyFavoritePage.jsx'         //頁
 import MyCartPage from './components/pages/MyCartPage.jsx';                //頁面 購物車        買家專用   (後端還沒寫買家才能進)
 import CheckoutPage from './components/pages/CheckoutPage.jsx'             //頁面 結帳          買家專用   (後端還沒寫買家才能進)
 import SellerProductsPage from './components/pages/SellerProductsPage.jsx' //頁面 我的商品       賣家專用   (後端還沒寫賣家才能進)
-import SellerOrdersPage from './components/pages/SellerOrdersPage.jsx' //頁面 我的商品       賣家專用   (後端還沒寫賣家才能進)
+import SellerOrdersPage from './components/pages/SellerOrdersPage.jsx'             //頁面 我的商品       賣家專用   (後端還沒寫賣家才能進)
+import SellerProductNewPage from './components/pages/SellerProductNewPage.jsx'     //頁面 新增商品       賣家專用   (後端還沒寫賣家才能進)
 import NotificationsPage from './components/pages/NotificationsPage.jsx';  //頁面
 import RegisterPage from './components/pages/RegisterPage.jsx';            //註冊頁面
 import EmailVerificationPage from './components/pages/EmailVerificationPage.jsx';            //Email驗證頁面
@@ -35,6 +36,7 @@ function App() {
           <Route path="/myfavorite" element={<MyFavoritePage />} />
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/seller/products" element={<SellerProductsPage />} />
+          <Route path="/seller/products/new" element={<SellerProductNewPage />} />
           <Route path="/seller/orders" element={<SellerOrdersPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/category/:slug" element={<CategoryPage />} />

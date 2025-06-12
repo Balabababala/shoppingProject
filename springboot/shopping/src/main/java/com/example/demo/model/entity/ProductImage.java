@@ -11,17 +11,17 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name ="products_image")
+@Table(name ="product_images")
 public class ProductImage {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Min(1)
-	@Max(10)
+	@Min(-1)
+	@Max(8)
 	@Column(name = "number", nullable = false)
-	private Integer number; // 圖片順序 1~10
+	private Integer number; // 圖片順序 -1~8
 
 	@Column(name = "image_url", nullable = false, columnDefinition = "TEXT")
 	private String imageUrl;

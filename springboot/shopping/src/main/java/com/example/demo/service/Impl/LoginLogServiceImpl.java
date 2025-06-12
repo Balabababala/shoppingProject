@@ -18,12 +18,7 @@ public class LoginLogServiceImpl implements LoginLogService{
 	@Autowired
 	private LoginLogRepository loginLogRepository;
 	
-	//Repository
-	@Override
-	public
-	void save(LoginLog loginLog) {
-		loginLogRepository.save(loginLog);
-	}
+
 	
 	//邏輯
 	@Override
@@ -43,6 +38,6 @@ public class LoginLogServiceImpl implements LoginLogService{
 		loginLog.setUser(user);
 		loginLog.setUserAgent(userAgent);
 		
-		save(loginLog);
+		loginLogRepository.save(loginLog);
 	}
 }

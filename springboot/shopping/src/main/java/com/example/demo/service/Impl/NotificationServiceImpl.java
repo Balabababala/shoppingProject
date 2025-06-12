@@ -20,33 +20,16 @@ public class NotificationServiceImpl implements NotificationService{
 	@Autowired
 	private NotificationRepository notificationRepository;
 	
-	//repository
-	
-	@Override
-	public void markAsReadByNotificationId(Long notificationId) {		
-		notificationRepository.markAsReadByNotificationId(notificationId);
-	};
-	
-	@Override
-	public Optional<Notification> findByNotificationId(Long notificationId){
-		return notificationRepository.findByNotificationId(notificationId);
-	};
-	
-	@Override
-	public List<Notification> findByUserId(Long userId){		
-		return notificationRepository.findByUserId(userId);
-	}
-
 	
 	//邏輯
 	
 	
 	@Override
 	public void markNotificationAsReadByNotificationId(Long notificationId,Long userId) { //+判斷 是否是使用者的通知 雖然不太可能發生
-		Optional<Notification> opt= findByNotificationId(notificationId);
+		Optional<Notification> opt= notificationRepository.findByNotificationId(notificationId);
 		if(opt.get().getUser().getId().equals(userId)) {
 			if(opt.get().getStatus()!=NotificationStatus.ARCHIVED) {
-				markAsReadByNotificationId(notificationId);
+				notificationRepository.markAsReadByNotificationId(notificationId);
 			}
 			return;
 		}
@@ -55,7 +38,7 @@ public class NotificationServiceImpl implements NotificationService{
 	
 	@Override
 	public List<NotificationDto> findNotificationsByUsertiNotificationResponse(Long userId) {
-		return findByUserId(userId).stream()
+		return notificationRepository.findByUserId(userId).stream()
 								   .map(NotificationMapper::toDto)
 								   .toList();
 	};

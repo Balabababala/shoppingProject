@@ -23,7 +23,6 @@ public class Favorite {
 	@CreationTimestamp
 	@Column(name = "created_at" , updatable = false)
 	private LocalDateTime createdAt;
-	
 
 	@ManyToOne
 	@JoinColumn(name = "user_id",nullable = false)

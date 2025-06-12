@@ -24,7 +24,14 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 	@Transactional(readOnly = true)
 	List<Category> findByParentId(Long parentId);
 	
+	//找沒有子分類的分類
+		
+	
     // 你可以加自訂的方法，像是：
+	
+	@Transactional
+	@Query("SELECT c FROM Category c WHERE c.children IS EMPTY")
+	List<Category> findLeafCategories();
 	
 	@Transactional(readOnly = true)
 	@Query(value = "SELECT c.* FROM categories c JOIN categories p ON c.parent_id = p.id WHERE p.slug = :slug", nativeQuery = true)

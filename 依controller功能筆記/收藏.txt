@@ -1,0 +1,63 @@
+收藏相關
+
+Entity
+	favorite
+Dto
+	favoriteDto
+加入收藏功能(productDetailPage)
+
+repository favorite
+		save(Favorite favorite);						 //自動有
+		Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId) //新增要先確認是否存在
+	   user
+		Optional<User> findUserById(Long userId)
+	   product
+		Optional<User> findById()
+service	   favorite
+		void addFavoriteByUserIdAndProductId(Long userId, Long productId);
+controller favorite
+		@POST /favorites
+		ResponseEntity<ApiResponse<Void>> addFavorite(HttpSession session,@RequestBody FavoriteDto favoriteDto){
+		
+
+	
+
+刪除收藏    (productDetailPage,myFavoritePage)
+
+repository favorite
+		delete(Favorite favorite);						 //自動有
+		Optional<Favorite> findByUserIdAndProductId(Long userId ,Long productId) //刪除要先確認是否存在
+service    favorite
+		deleteByUserIdAndProductId(Long userId,Long productId);
+controller favorite
+		DELTET
+		@PathVariable
+		/favorites/{productId}	
+
+查詢使用者收藏狀態 (myFavoritePage)
+
+repository favorite
+	    List<Favorite> findByUserId(Long userId);
+	    List<Favorite> findByUserIdWithUserAndProductAndImages(Long userId);	//join 版
+service	   favorite
+	   List<FavoriteDto> findFavoriteByUserId(Long userId);
+controller
+		GET
+		@PathVariable
+		/api/users/{userId}/favorites
+		return List<FavoriteDto>
+mapper
+	FavoriteMapper
+		toDto
+
+dto 
+	favoriteDto
+	
+檢查是否已收藏 (productDetailPage)
+repository favorite
+	    List<Favorite> findByUserIdAndProductId(Long userId ,Long productId);       //判斷用是否已加入
+service	   favorite
+	    List<Favorite> findByUserIdAndProductId(Long userId ,Long productId);
+controller
+		GET
+		/api/favorites

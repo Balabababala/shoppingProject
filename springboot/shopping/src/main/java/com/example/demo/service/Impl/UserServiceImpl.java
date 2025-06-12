@@ -48,38 +48,17 @@ public class UserServiceImpl implements UserService{
 	@Autowired
 	private RoleService roleService;
 	
-	//repository
 
-	@Override
-	public Optional<User> findById(Long Id) {
-		return userRepository.findById(Id);
-	}
-
-	@Override
-	public Optional<User> findByUsername(String username) {
-		return userRepository.findByUsername(username);
-	}
-	
-
-	@Override
-	public Optional<User> findByEmail(String email) {
-		return userRepository.findByEmail(email);
-	}
-
-	@Override
-	public void save(User user) {
-		userRepository.save(user);
-	}
 
 	//邏輯
 	
 	@Override
 	public void updateUser(Long userId,UserProfileDto userProfileDto) {
-		User user= findById(userId).get();
+		User user= userRepository.findById(userId).get();
 		user.setDefaultAddress(userProfileDto.getDefaultAddress());
 		user.setDefaultReceiverName(userProfileDto.getDefaultReceiverName());
 		user.setDefaultReceiverPhone(userProfileDto.getDefaultReceiverPhone());
-		save(user);
+		userRepository.save(user);
 	}
 	
 	@Override
@@ -87,18 +66,18 @@ public class UserServiceImpl implements UserService{
 		 System.out.println("Registering with email: " + request.getEmail());
 		    System.out.println("Registering with username: " + request.getUsername());
 
-		    Optional<User> userByEmail = findByEmail(request.getEmail());
+		    Optional<User> userByEmail = userRepository.findByEmail(request.getEmail());
 		    System.out.println("findByEmail present? " + userByEmail.isPresent());
 
-		    Optional<User> userByUsername = findByUsername(request.getUsername());
+		    Optional<User> userByUsername = userRepository.findByUsername(request.getUsername());
 		    System.out.println("findByUsername present? " + userByUsername.isPresent());
 
 		    if (userByEmail.isPresent() || userByUsername.isPresent()) {
 		        throw new RuntimeException("Email 或 Username 已存在");
 		    }
 		    
-	        if (findByEmail(request.getEmail()).isPresent()
-	                || findByUsername(request.getUsername()).isPresent()) {
+	        if (userRepository.findByEmail(request.getEmail()).isPresent()
+	                || userRepository.findByUsername(request.getUsername()).isPresent()) {
 	            throw new RuntimeException("Email 或 Username 已存在");
 	        }
 
@@ -144,7 +123,7 @@ public class UserServiceImpl implements UserService{
 
 	 @Override
 	    public void verifyEmail(String email, String code) {
-	        User user = findByEmail(email)
+	        User user = userRepository.findByEmail(email)
 	                .orElseThrow(() -> new RuntimeException("User not found"));
 
 	        if (user.getIsEmailVerified()) {
@@ -168,25 +147,25 @@ public class UserServiceImpl implements UserService{
 
 
 	@Override
-    public User findUserByUserName(String username) {
-        return findByUsername(username).get();
+    public Optional <User> checkUser(String username) {
+        return userRepository.findByUsername(username);
     }
 
 	@Override
 	public User findUserById(Long id) {
-		return findById(id)
+		return userRepository.findById(id)
 	            .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
 	}
 	@Override
 	public UserDto handleSuccessfulLogin(User user) {
 		user.setLastLoginAt(LocalDateTime.now());     //更新 最近登入時間
-		save(user);
+		userRepository.save(user);
 		UserDto userDto=UserMapper.toDto(user);
 		return userDto;
 	}
 
 	@Override
 	public UserProfileDto getProfileDto(Long id) {
-		return UserProfileMapper.toDto(findById(id).orElseThrow(()->new ShoppingException("沒找到?")));
+		return UserProfileMapper.toDto(userRepository.findById(id).orElseThrow(()->new ShoppingException("沒找到?")));
 	}
 }

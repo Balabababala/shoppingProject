@@ -10,9 +10,9 @@ SET FOREIGN_KEY_CHECKS = 1;
 
 -- 生成 3 roles (buyer, seller, admin)
 INSERT INTO roles (id, name) VALUES
-(1, 'buyer'),
-(2, 'seller'),
-(3, 'admin');
+(1, 'ROLE_BUYER'),
+(2, 'ROLE_SELLER'),
+(3, 'ROLE_ADMIN');
 
 -- 生成 9 users (buyer, seller, admin)
 INSERT INTO users (

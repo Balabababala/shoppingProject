@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.exception.ShoppingException;
 import com.example.demo.mapper.CreateOrderMapper;
 import com.example.demo.mapper.OrderMapper;
 import com.example.demo.model.dto.CreateOrderDto;
@@ -21,6 +22,7 @@ import com.example.demo.model.entity.OrderItem;
 import com.example.demo.model.entity.User;
 import com.example.demo.repository.OrderItemRepository;
 import com.example.demo.repository.OrderRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.CartItemService;
 import com.example.demo.service.OrderItemService;
@@ -35,34 +37,19 @@ public class OrderServiceImpl implements OrderService{
 	private OrderRepository orderRepository; 
 	
 	@Autowired
-	private OrderItemService orderItemService;
+	private UserRepository userRepository;
+	
+	@Autowired
+	private OrderItemRepository orderItemRepository;
 	
 	@Autowired
 	private CartItemService cartItemService;
 	
 	@Autowired
-	private UserService userService;
-	
-	@Autowired
 	private ProductService productService;
 	
-	//repository
 
-
-	public void save(Order order) {
-		orderRepository.save(order);
-	}
 	
-	@Override
-	public List<Order> findByBuyerIdWithOrderItemAndBuyerAndSeller(Long userId) {
-			return orderRepository.findByBuyerIdWithOrderItemAndBuyerAndSeller(userId);
-
-	}
-	
-	@Override
-	public List<Order> findBySellerIdWithOrderItemAndBuyerAndSeller(Long userId) {
-		return orderRepository.findBySellerIdWithOrderItemAndBuyerAndSeller(userId);
-	}
 	//邏輯
 	
 
@@ -72,14 +59,14 @@ public class OrderServiceImpl implements OrderService{
 	@Transactional
 	@Override
 	public void createOrder(CreateOrderDto orderRequest,Long BuyerId) {
-		User Buyer=userService.findUserById(BuyerId); //因為建定單要用 (我已用join colunm  BuyerId的新增 更新不能用 )
+		User Buyer=userRepository.findById(BuyerId).orElseThrow(()-> new ShoppingException("找不到買家")); //因為建定單要用 (我已用join colunm  BuyerId的新增 更新不能用 )
 		//先 生出 Map<Long,List<OrderItem>> for 依SellerId 分的 orderItems (依賣家 建1個order和 多個對應的orderitems -product 對應的產品)
 		//注意 cartItemService.orderItemsGroupedBySeller 這是 取userId 的 cartItems 轉成依 SellerId分的 orderItems!!  要注意它不是完整的orderItem 
 		for(Entry<Long, List<OrderItem>> sellerAndOrderItem:cartItemService.orderItemsGroupedBySeller(BuyerId).entrySet()) {
 			
 			//取等下要用的資料
 			Long SellerId = sellerAndOrderItem.getKey();
-			User Seller =userService.findUserById(SellerId);
+			User Seller =userRepository.findById(SellerId).orElseThrow(()-> new ShoppingException("找不到賣家"));
 			List<OrderItem> orderItems =sellerAndOrderItem.getValue();
 			
 			//暫時計入金錢的
@@ -89,14 +76,14 @@ public class OrderServiceImpl implements OrderService{
 			
 			//order的部分
 			Order order=CreateOrderMapper.toEntity(orderRequest, Buyer, Seller, total);
-			save(order);
+			orderRepository.save(order);
 			
 			//orderItems的部分
 
 			for (OrderItem orderItem : orderItems) {
 				productService.minusProductByid(orderItem.getProduct().getId(), orderItem.getQuantity());
 				orderItem.setOrder(order);
-				orderItemService.save(orderItem);    
+				orderItemRepository.save(orderItem);    
 			}		
 		}
 		//清購物車
@@ -106,23 +93,23 @@ public class OrderServiceImpl implements OrderService{
 	@Override
 	public CreateOrderDto getUserDefaultToCreateOrderDto(UserDto userDto) {
 		CreateOrderDto createorderDto = new CreateOrderDto();
-		createorderDto.setReceiverName(userService.findByUsername(userDto.getUsername()).get().getDefaultReceiverName());
-		createorderDto.setShippingAddress(userService.findByUsername(userDto.getUsername()).get().getDefaultAddress());
-		createorderDto.setReceiverPhone(userService.findByUsername(userDto.getUsername()).get().getDefaultReceiverPhone());
+		createorderDto.setReceiverName(userRepository.findByUsername(userDto.getUsername()).get().getDefaultReceiverName());
+		createorderDto.setShippingAddress(userRepository.findByUsername(userDto.getUsername()).get().getDefaultAddress());
+		createorderDto.setReceiverPhone(userRepository.findByUsername(userDto.getUsername()).get().getDefaultReceiverPhone());
 			
 		return createorderDto;
 	}
 
 	@Override
 	public List<OrderResponse> getOrderByBuyerId(Long userId) {
-		return findByBuyerIdWithOrderItemAndBuyerAndSeller(userId).stream()
+		return orderRepository.findByBuyerIdWithOrderItemAndBuyerAndSeller(userId).stream()
 																  .map(OrderMapper::toDto)
 																  .toList();
 	}
 
 	@Override
 	public List<OrderResponse> getOrderBySellerId(Long userId) {
-		return findBySellerIdWithOrderItemAndBuyerAndSeller(userId).stream()
+		return orderRepository.findBySellerIdWithOrderItemAndBuyerAndSeller(userId).stream()
 																   .map(OrderMapper::toDto)
 																   .toList();
 	}

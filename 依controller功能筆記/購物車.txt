@@ -1,0 +1,57 @@
+購物車相關
+entity
+	cartItem
+		
+dto
+	CartItemResponse	//取user 的 所有CartItem
+	AddCartItemRequest	//新增請求用
+
+取user購物車用 			//contexts 用
+	repository 
+		cartItem
+			List<CartItem> findByUserIdWithProductAndProductImageItems(Long userId);
+	service	
+		cartItem
+			List <CartItemResponse> getCart(Long userId);
+	controller 
+	   cartItem 
+	   @Get /api/cart 			
+	public ResponseEntity<ApiResponse<List<CartItemResponse>>> getCart(HttpSession session)   
+		
+新增user購物車商品
+	repository 
+		cartItem
+			List<CartItem> findByUserIdAndProductId(userId, productId)
+			void addCartItem(userId, productId, quantity)
+			void addCartItemIfExist(userId, productId, quantity)
+	service	
+		cartItem
+			void addOrUpdateCartItem(Long userId,Long productId ,Integer quantity)
+	controller 
+	     cartItem 
+	     @Post  /api//cart/add")
+		public ResponseEntity<ApiResponse<Object>> addCart(HttpSession session,@RequestBody AddCartItemRequest addCartItemRequest)
+		
+刪除user購物車商品
+	repository 
+		cartItem
+			void deleteByUserIdAndProductId(Long userId,Long productId)
+	service	
+		cartItem
+			void deleteItemFromCart(Long userId,Long productId);
+	controller 
+		cartItem
+		@Delete /api/cart/{productId} //刪單個
+		public ResponseEntity<ApiResponse<Object>> deleteCart(HttpSession session,@PathVariable Long productId)
+
+清user購物車	
+	repository 
+		cartItem
+			void deleteByUserId(Long userId);
+	service	
+		cartItem
+			void clearCart(Long userId,Long productId);
+	controller 
+		cartItem
+		@Delete api/cart/clear			
+		public ResponseEntity<ApiResponse<List<Void>>> clearCart(HttpSession session)   

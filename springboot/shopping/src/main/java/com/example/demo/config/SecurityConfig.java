@@ -31,9 +31,10 @@ public class SecurityConfig {
         	.cors(cors -> cors.configurationSource(corsConfigurationSource())) 				  // 使用 Spring Security 的 CORS
             .csrf(csrf -> csrf.disable()) // 若要保留 CSRF，要配合 CSRF token 寫法
             .authorizeHttpRequests(auth -> auth
+            	.requestMatchers("/uploads/**").permitAll() //
                 .requestMatchers("/api/login", "/api/auth-code", "/api/register").permitAll() // login, captcha, register 放行
 //              .requestMatchers("/api/seller/**").authenticated()
-                .requestMatchers("/api/seller/**").hasRole("seller")
+                .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
                 .anyRequest().permitAll()														//最後全通過 暫時這樣
             )
             .httpBasic(httpBasic -> {}) // 也可以不用加 httpBasic，單純自己控制 API
@@ -52,6 +53,15 @@ public class SecurityConfig {
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", config);
+        
+     // 靜態資源路徑，不允許憑證，允許所有 origin
+        CorsConfiguration staticConfig = new CorsConfiguration();
+        staticConfig.addAllowedOriginPattern("*");
+        staticConfig.setAllowedMethods(List.of("GET"));
+        staticConfig.setAllowedHeaders(List.of("*"));
+        staticConfig.setAllowCredentials(false);
+        source.registerCorsConfiguration("/uploads/**", staticConfig);
+        
         return source;
     }
 

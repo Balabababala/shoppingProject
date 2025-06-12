@@ -14,13 +14,13 @@ import com.example.demo.response.ApiResponse;
 import com.example.demo.service.RecentlyViewedService;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/recent")
 
 public class RecentlyViewedController {
 	@Autowired
 	private RecentlyViewedService recentlyViewedService; 
 	
-	@GetMapping("/recent/buyer/{userId}")
+	@GetMapping("/buyer/{userId}")
 	public ResponseEntity<ApiResponse<List<RecentlyViewedResponse>>> findBuyerRecentlyViewed(@PathVariable Long userId){
 		return ResponseEntity.ok(ApiResponse.success("獲取資料成功", recentlyViewedService.getRecentlyViewedByUserId(userId)));//對應值
 	}

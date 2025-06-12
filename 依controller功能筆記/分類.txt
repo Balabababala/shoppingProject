@@ -1,0 +1,30 @@
+分類相關 
+
+entity
+	category		
+dto
+	
+取最上層類別	//給 mynavbar 用的	
+
+	repository 
+		category
+			findAll // 預設的
+	service	
+		category
+			List<CategoryResponse> findTopCategory(); //是用lamda
+	controller 
+		category
+			@Get api/categories/top-mynavbar  //MyNavbarCategories用
+			public ResponseEntity<ApiResponse<List<CategoryResponse>>> getTopCatogory()  
+	
+子類別	//CategoryPage 用
+	repository 
+		category
+			List<Category> findChildrenBySlug(@Param("slug") String slug);	//只有兒子
+	service	
+		category
+			public List<CategoryResponse> findCategoryChildrenBySlugToCategoryResponse(String slug)
+	controller 
+		category
+		@Get api/categories/{slug}/tree
+			public ResponseEntity<ApiResponse<List<CategoryResponse>>> getCatogoryBySlug(@PathVariable String slug)

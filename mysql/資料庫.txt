@@ -105,7 +105,7 @@ CREATE TABLE product_images (
     product_id BIGINT COMMENT '產品 ID',
     number TINYINT COMMENT '產品的第幾張圖 1為縮圖',
     image_url TEXT COMMENT '圖片網址',
-    CHECK (number BETWEEN 1 AND 10),  -- 限制 number 必須介於 1 到 10
+    CHECK (number BETWEEN -1 AND 9),  -- 限制 number 必須介於 1 到 10
     UNIQUE (product_id, number),
     FOREIGN KEY (product_id) REFERENCES products(id)
 );

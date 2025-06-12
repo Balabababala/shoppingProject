@@ -2,6 +2,7 @@ package com.example.demo.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -37,11 +38,13 @@ public class UserController {
 	
 	@GetMapping("/user/me") //contexts 用
 	public ResponseEntity<ApiResponse<UserDto>> getRole(HttpSession session) {
-		UserDto UserDto= (UserDto)session.getAttribute("userDto");
-		if(UserDto==null) {
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		if(userDto==null) {
 			return ResponseEntity.status(401).body(ApiResponse.error("尚未登入"));
 		}
-			return ResponseEntity.ok(ApiResponse.success("取得使用者資料成功",UserDto));
+			return ResponseEntity.ok(ApiResponse.success("取得使用者資料成功",userDto));
+//			return ResponseEntity.ok(ApiResponse.success(userService.findByUsername(userDto.getUsername()).get().getRole().getName(),userDto));
+//			return ResponseEntity.ok(ApiResponse.success(SecurityContextHolder.getContext().getAuthentication().toString(),userDto));
 	}
 	
 	@GetMapping("/user/default-order-info")

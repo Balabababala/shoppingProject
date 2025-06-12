@@ -1,6 +1,7 @@
 package com.example.demo.repository;
 
 import java.util.List;
+import java.util.Locale.Category;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -15,6 +16,7 @@ import com.example.demo.model.entity.CartItem;
 public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	//已有方法 find.... save delete  find 要用還是要寫 只是不用Query
 	
+	
 	@Transactional
 	@Modifying
 	void deleteByUserIdAndProductId(Long userId,Long productId);//刪單個
@@ -22,7 +24,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	@Transactional
 	@Modifying
 	void deleteByUserId(Long userId);
-	
+
 	@Transactional(readOnly = true)
 	List<CartItem> findByUserId(Long userId);
 	

@@ -8,13 +8,7 @@ import com.example.demo.model.entity.Notification;
 
 public interface NotificationService {
 	
-	//repository
-	void markAsReadByNotificationId(Long notificationId);
-	
-	Optional<Notification> findByNotificationId(Long userId);					//判斷是否存在用
-	
-	List<Notification> findByUserId(Long userId);
-	
+
 	//邏輯
 	
 	void markNotificationAsReadByNotificationId(Long notificationId,Long userId);//改已讀

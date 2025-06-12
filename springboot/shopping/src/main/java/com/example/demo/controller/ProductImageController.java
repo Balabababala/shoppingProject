@@ -17,16 +17,15 @@ public class ProductImageController {
     private ProductImageService productImageService;
 
     // 上傳圖片
-    @PostMapping("/products/{productId}/images")
-    public ResponseEntity<String> uploadImage(
-            @PathVariable Long productId,
-            @RequestParam Long sellerId,
-            @RequestParam MultipartFile file,
-            @RequestParam(required = false, defaultValue = "0") Integer number
-    ) {
-        productImageService.addImageToProduct(productId, sellerId, file, number);
-        return ResponseEntity.ok("圖片上傳成功");
+    public void addImageToProduct(Long productId, Long sellerId, MultipartFile file, int number) {
+    	
+    	
+    	
+        // 1. 驗證賣家是否有權限操作此商品 (省略)
+        // 2. 存檔（本地或雲端）
+        // 3. 寫入資料庫：圖片路徑 + productId + sellerId + number (-1 是主圖，0~9 是附圖順序)
     }
+ 
 
     // 刪除圖片
     @DeleteMapping("/products/images/{imageId}")

@@ -53,6 +53,9 @@ Order 前綴後綴要注意 因為重複名稱又改 可能沒改道
 
 
 jwt 要加的話 
+	購物車
+	收藏
+	登入
 	產品我的 賣家  ->>addProduct 要改 有驗證(session)
-
-
+	
+product productImage 設計不良 有互相注入發生

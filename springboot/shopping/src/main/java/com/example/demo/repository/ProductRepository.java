@@ -18,6 +18,9 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 
 	@Transactional(readOnly = true)
+	Optional<Product> findById(Long productId);
+	
+	@Transactional(readOnly = true)
 	@Query("SELECT p FROM Product p JOIN FETCH p.category")
 	List<Product> findAllWithCategory();
 	

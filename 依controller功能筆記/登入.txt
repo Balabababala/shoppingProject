@@ -1,0 +1,48 @@
+登入相關
+entity
+	User
+	LoginLog
+登入功能
+
+repository User
+		save (User user);//自動有
+		Optional<User> findById(Long Id);
+		User findByUsername(String username);
+		
+	   LoginLog
+		save (LoginLog loginLog);//自動有
+
+service    User
+		Optional <User> checkUser(String username);							     //登入驗證使用者名稱用  (之後可能+ 驗證email findUserByEmail)
+		UserDto handleSuccessfulLogin(User user);							     //如果登入成功 生userDto + 更新 最近登入時間
+	   LoginLog
+		void createLoginLog(User user,HttpServletRequest request);					     //登入紀錄
+		
+Security 設定（SecurityConfig）
+		AuthenticationManager
+
+		配置 userDetailsService 與 passwordEncoder (BCryptPasswordEncoder)
+
+		SecurityFilterChain
+
+		設定哪些 API 允許匿名訪問（例如 /api/login, /api/auth-code）
+
+		禁用預設 formLogin，改用自訂 API 登入
+
+		CSRF 可依需求啟用或禁用
+
+		PasswordEncoder
+
+		建立 BCryptPasswordEncoder bean 用於密碼比對
+
+
+
+
+controller LoginController @RequestMapping("/api/login")
+			   @PostMapping			//loginPage 用
+
+
+
+
+
+	   

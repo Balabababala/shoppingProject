@@ -1,213 +1,212 @@
 package com.example.demo.service.Impl;
 
-import java.util.List;
-import java.util.Optional;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cache.annotation.CacheEvict;
-import org.springframework.cache.annotation.Cacheable;
-import org.springframework.stereotype.Service;
-
+import com.example.demo.exception.ShoppingException;
+import com.example.demo.mapper.ProductMapper;
+import com.example.demo.mapper.SellerProductMapper;
 import com.example.demo.model.dto.ProductResponse;
-import com.example.demo.model.dto.SellerProductDto;
+import com.example.demo.model.dto.SellerProductCreateRequest;
+import com.example.demo.model.dto.SellerProductResponse;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.enums.ProductStatus;
+import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.CategoryService;
+import com.example.demo.service.ProductImageService;
 import com.example.demo.service.ProductService;
-import com.example.demo.service.UserService;
-
 import jakarta.servlet.http.HttpSession;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
-import com.example.demo.exception.ShoppingException;
-import com.example.demo.mapper.*;
-
+import java.util.ArrayList;
+import java.util.List;
 @Service
-public class ProductServiceImpl implements ProductService{
+public class ProductServiceImpl implements ProductService {
 
-	@Autowired
-	private ProductRepository productRepository;
+    @Autowired
+    private ProductRepository productRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
+    @Autowired
+    @Lazy
+    private ProductImageService productImageService;
+    @Autowired
+    private UserRepository userRepository;
+    @Autowired
+    private CategoryService categoryService;
 
-	@Autowired
-	private UserService userService;
-	
-	@Autowired
-	private CategoryService categoryService;
-	
-	//repository
-	@Override
-	public void save(Product product) {
-		productRepository.save(product);
-	}
-	@CacheEvict(value = "products", key = "#id")
-	@Override	
-	public Integer minusByIdIfEnoughStock(Long id, Integer quantity) {
-		return productRepository.minusByIdIfEnoughStock(id, quantity);
-	}
+    /**
+     * 新增商品並上傳圖片（1主圖 + 最多9張額外圖）
+     */
+    @Override
+    public void addProduct(SellerProductCreateRequest sellerProductDto, HttpSession session) {
+        UserDto userDto = (UserDto) session.getAttribute("userDto");
 
-	@Override
-	public List<Product> findBySellerIdWithSellerAndCategoryAndProductImage(Long sellerId) {
-		return productRepository.findBySellerIdWithSellerAndCategoryAndProductImage(sellerId);
-	}
+        // 先存商品資料
+        Product product = productRepository.save(
+                SellerProductMapper.toEntity(
+                		sellerProductDto,
+                        categoryRepository.findById(sellerProductDto.getCategoryId())
+                                .orElseThrow(() -> new ShoppingException("無該分類")),
+                        userRepository.findById(userDto.getUserId())
+                                .orElseThrow(() -> new ShoppingException("無該賣家"))
+                )
+        );
 
-	@Override
-	public Optional<Product> findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(Long sellerId,
-			Long productId) {
-		return productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(sellerId, productId);
-	}
+        // 準備圖片列表：主圖放第一張，後面接最多9張額外圖
+        List<MultipartFile> allFiles = new ArrayList<>();
+        if (sellerProductDto.getThumbnail() != null && !sellerProductDto.getThumbnail().isEmpty()) {
+            allFiles.add(sellerProductDto.getThumbnail());
+        }
+        if (sellerProductDto.getExtraImages() != null && !sellerProductDto.getExtraImages().isEmpty()) {
+            allFiles.addAll(sellerProductDto.getExtraImages().stream().limit(9).toList());
+        }
 
-	@Override
- 	public List<Product> findAllProductsWithCategory(){
-		return productRepository.findAllWithCategory();
-	};
-	
-	public List<Product> findAllByCategoryIdsWithCategoryAndProductImage (List<Long> categoryIds){
-		return productRepository.findAllByCategoryIdsWithCategoryAndProductImage(categoryIds);
-	}
-	
-
-	@CacheEvict(value = "products", key = "#id")
-	@Override
-	public	Optional<Product> findByIdWithCategoryAndProductImage(Long id){
-		return productRepository.findByIdWithCategoryAndProductImage(id);
-	}
-
-	@Cacheable(value = "products", key = "#id")
-	@Override
-	public Optional<Product> findById(Long id) {
-		return productRepository.findById(id);
-	}
+        // 一次呼叫 service 上傳圖片，number 從 -1 開始，-1 表示主圖
+        if (!allFiles.isEmpty()) {
+            productImageService.addImagesToProduct(product.getId(), userDto.getUserId(), allFiles, 0);
+        }
+    }
 
 
-	@Override
-	public List<Product> findByCategoryId(Long categoryId) {
-		return productRepository.findByCategoryId(categoryId);
-	}
+    /**
+     * 修改商品資訊，驗證賣家權限
+     */
+    @Override
+    public void updateProduct(SellerProductCreateRequest dto, Long id, HttpSession session) {
+        UserDto user = (UserDto) session.getAttribute("userDto");
 
+        // 找商品，且要是此賣家擁有
+        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(user.getUserId(), id)
+                .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
 
-	@Override
-	public List<Product> findByKeywordFullTextBoolean(String keyword) {
-		return productRepository.findByKeywordFullTextBoolean(keyword);
-	}
+        // 更新欄位
+        product.setName(dto.getName());
+        product.setDescription(dto.getDescription());
+        product.setPrice(dto.getPrice());
+        product.setStock(dto.getStock());
+        product.setStatus(dto.getStatus());
 
-	//邏輯
-	@Override
-	public void addProduct(SellerProductDto sellerProductDto,HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		save(SellerProductMapper.toEntity(sellerProductDto
-										,categoryService.findById(sellerProductDto.getCategoryId()).orElseThrow(()-> new ShoppingException("無該分類")) 
-										,userService.findById(userDto.getUserId()).orElseThrow(()-> new ShoppingException("無該賣家"))));
-	}
-	
-	
-	@Override
-	public void updataProduct(SellerProductDto sellerProductDto, Long productId, HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		Product product = findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), productId)
-															.orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
-		// 更新欄位
-	    product.setName(sellerProductDto.getName());
-	    product.setDescription(sellerProductDto.getDescription());
-	    product.setPrice(sellerProductDto.getPrice());
-	    product.setStock(sellerProductDto.getStock());
-	    product.setStatus(sellerProductDto.getStatus());
-	    
-	    // 更新分類，要先抓出 Category Entity
-	    Category category = categoryService.findById(sellerProductDto.getCategoryId())
-	            .orElseThrow(() -> new ShoppingException("無該分類"));
-	    product.setCategory(category);
-		save(product);
-	}
-	
-	@Override
-	public void deleteProduct(Long productId, HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		Product product = findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), productId)
-															.orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
-		// 更新欄位
-		product.setIsDeleted(true);
-		save(product);
-	}
-	
-	
-	@Override
-	public void unActiveProduct(Long productId, HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		Product product = findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), productId)
-															.orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
-		// 更新欄位
-		product.setStatus(ProductStatus.INACTIVE);
-		save(product);
-	}
-	@Override
-	public void activeProduct(Long productId, HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		Product product = findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), productId)
-															.orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
-		// 更新欄位
-		product.setStatus(ProductStatus.ACTIVE);
-		save(product);
-	}
-	@Override
-	public void minusProductByid(Long id, Integer quantity) {
-		Integer updatedRows=minusByIdIfEnoughStock(id, quantity);
-		if (updatedRows == 0) {
-	        throw new ShoppingException("庫存不足，無法扣除商品庫存，商品ID：" + id);
-	    }
-	}
-	
-	
-	@Override
-	public SellerProductDto findProductByIdToSellerProductDto(Long productId,HttpSession session) {
-		UserDto userDto=(UserDto)session.getAttribute("userDto");
-		Product product = findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), productId)
-															.orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        Category category = categoryRepository.findById(dto.getCategoryId())
+                .orElseThrow(() -> new ShoppingException("無該分類"));
+        product.setCategory(category);
 
-		return SellerProductMapper.toDto(product);
-	}
-	
-	@Override
-	public ProductResponse findProductByIdToProductResponse(Long id) {
-		return ProductMapper.toDto(findByIdWithCategoryAndProductImage(id).orElseThrow(()-> new ShoppingException("product 轉 dto 失敗")));
-	}
-	
-	@Override
-	public List<ProductResponse> findAllProductsToProductResponse() {
-//		 return categoryRepository.findAll().stream()
-//		        .flatMap(category -> 
-//	            productRepository.findByCategoryId(category.getId()).stream()
-//	                .map(ProductMapper::toDto)
-//	        )
-//	        .toList();
-		
-		return findAllProductsWithCategory().stream()
-											.map(ProductMapper::toDto)
-				                            .toList();
-	}
+        productRepository.save(product);
+    }
 
-	@Override
-	public List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug) {  	//自己+子子孫孫
-		// 取得分類與所有子孫分類
-	    List<Category> categories = categoryService.findAllCategoryAndDescendantsBySlug(slug);
-	    List<Long> categoryIds = categories.stream()
-	                                       .map(Category::getId)
-	                                       .toList();
-	    // 一次查詢所有符合 categoryIds 的商品
-	    List<Product> products = findAllByCategoryIdsWithCategoryAndProductImage(categoryIds);
+    /**
+     * 軟刪除商品，標記為已刪除
+     */
+    @Override
+    public void deleteProduct(Long id, HttpSession session) {
+        UserDto user = (UserDto) session.getAttribute("userDto");
+        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(user.getUserId(), id)
+                .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        product.setIsDeleted(true);
+        productRepository.save(product);
+    }
 
-	    // 轉 DTO 回傳
-	    return products.stream()
-	                   .map(ProductMapper::toDto)
-	                   .toList();
-	}
-	
-	@Override 
-	public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword) {//boolean 狀態才能 用*萬用字元
-		keyword=keyword+'*';
-		return productRepository.findByKeywordFullTextBoolean(keyword).stream()
-																.map(ProductMapper::toDto)
-																.toList();
-	}
+    /**
+     * 商品下架（狀態設為 INACTIVE）
+     */
+    @Override
+    public void unActiveProduct(Long id, HttpSession session) {
+        updateProductStatus(id, session, ProductStatus.INACTIVE);
+    }
+
+    /**
+     * 商品上架（狀態設為 ACTIVE）
+     */
+    @Override
+    public void activeProduct(Long id, HttpSession session) {
+        updateProductStatus(id, session, ProductStatus.ACTIVE);
+    }
+
+    /**
+     * 共用狀態修改方法
+     */
+    private void updateProductStatus(Long id, HttpSession session, ProductStatus status) {
+        UserDto user = (UserDto) session.getAttribute("userDto");
+        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(user.getUserId(), id)
+                .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        product.setStatus(status);
+        productRepository.save(product);
+    }
+
+    /**
+     * 取得賣家所有商品清單
+     */
+    @Override
+    public List<SellerProductResponse> getSellerProduct(Long userId) {
+        return productRepository.findBySellerIdWithSellerAndCategoryAndProductImage(userId)
+                .stream()
+                .map(SellerProductMapper::toDto)
+                .toList();
+    }
+
+    /**
+     * 取得單一商品（賣家限定）
+     */
+    @Override
+    public SellerProductResponse findProductByIdToSellerProductDto(Long id, HttpSession session) {
+        UserDto user = (UserDto) session.getAttribute("userDto");
+        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(user.getUserId(), id)
+                .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        return SellerProductMapper.toDto(product);
+    }
+
+    /**
+     * 取得單一商品詳細資料（給前台用）
+     */
+    @Override
+    public ProductResponse findProductByIdToProductResponse(Long id) {
+        return ProductMapper.toDto(productRepository.findByIdWithCategoryAndProductImage(id)
+                .orElseThrow(() -> new ShoppingException("查無商品")));
+    }
+
+    /**
+     * 取得所有商品（前台）
+     */
+    @Override
+    public List<ProductResponse> findAllProductsToProductResponse() {
+        return productRepository.findAllWithCategory()
+                .stream()
+                .map(ProductMapper::toDto)
+                .toList();
+    }
+
+    /**
+     * 依分類 Slug 取得該分類與所有子分類商品
+     */
+    @Override
+    public List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug) {
+        List<Long> categoryIds = categoryService.findAllCategoryAndDescendantsBySlug(slug)
+                .stream().map(Category::getId).toList();
+        return productRepository.findAllByCategoryIdsWithCategoryAndProductImage(categoryIds)
+                .stream().map(ProductMapper::toDto).toList();
+    }
+
+    /**
+     * 依關鍵字全文搜尋商品（Boolean 模式）
+     */
+    @Override
+    public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword) {
+        return productRepository.findByKeywordFullTextBoolean(keyword + "*")
+                .stream().map(ProductMapper::toDto).toList();
+    }
+
+    /**
+     * 訂單結帳時扣庫存（有庫存才扣，否則拋例外）
+     */
+    @Override
+    public void minusProductByid(Long id, Integer quantity) {
+        if (productRepository.minusByIdIfEnoughStock(id, quantity) == 0) {
+            throw new ShoppingException("庫存不足，無法扣除商品庫存，商品ID：" + id);
+        }
+    }
 }
+

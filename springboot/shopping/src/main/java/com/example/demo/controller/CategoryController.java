@@ -34,4 +34,8 @@ public class CategoryController  {
 		return ResponseEntity.ok(ApiResponse.success("子類別取得成功", categoryService.findCategoryChildrenBySlugToCategoryResponse(slug)));
 	}
 
+	@GetMapping("/categories/leaf")
+	public List<CategoryResponse> getLeafCategories() {
+	    return categoryService.findLeafCategories();
+	}
 }

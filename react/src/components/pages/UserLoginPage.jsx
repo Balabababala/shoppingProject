@@ -6,7 +6,7 @@ import '../../css/UserLoginPage.css';
 
 function LoginPage() {
   const API_BASE = 'http://localhost:8080/api/';
-  const { setUserData } = useContext(AppContext);
+  const { setUserData ,addToastMessage } = useContext(AppContext);
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
   const navigate = useNavigate();

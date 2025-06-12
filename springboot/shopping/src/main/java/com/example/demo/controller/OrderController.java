@@ -38,7 +38,7 @@ public class OrderController {
 		orderService.createOrder(orderRequest, userDto.getUserId());
 		return ResponseEntity.ok(ApiResponse.success("結帳成功", null));
 	}
-	
+	//看使用者(買方)訂單
 	@GetMapping("/orders/{userId}")
 	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersByBuyerId(@PathVariable Long userId,HttpSession session)  {
 		UserDto userDto = (UserDto) session.getAttribute("userDto");
@@ -49,6 +49,7 @@ public class OrderController {
 		List<OrderResponse> orderResponses= orderService.getOrderByBuyerId(userId);
 		return ResponseEntity.ok(ApiResponse.success("取得資料成功", orderResponses));
 	}
+	//看使用者(賣家)訂單
 	@GetMapping("/orders/seller/{userId}")
 	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersBySellerId(@PathVariable Long userId,HttpSession session)  {
 		UserDto userDto = (UserDto) session.getAttribute("userDto");
@@ -59,4 +60,6 @@ public class OrderController {
 		List<OrderResponse> orderResponses= orderService.getOrderBySellerId(userId);
 		return ResponseEntity.ok(ApiResponse.success("取得資料成功", orderResponses));
 	}
+	
+	
 }
