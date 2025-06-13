@@ -1,6 +1,8 @@
 package com.example.demo.service.Impl;
 
 import com.example.demo.exception.ShoppingException;
+import com.example.demo.mapper.ProductImageMapper;
+import com.example.demo.mapper.ProductMapper;
 import com.example.demo.model.dto.ProductImageDto;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.entity.ProductImage;
@@ -34,27 +36,15 @@ public class ProductImageServiceImpl implements ProductImageService {
     public List<ProductImageDto> getImagesByProduct(Long productId, Long sellerId) {
         Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(sellerId, productId)
                 .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
-        return product.getProductImages().stream().map(this::toDto).toList();
+        return product.getProductImages().stream()
+        								 .map(ProductImageMapper::toDto)
+        								 .toList();
     }
 
-    /**
-     * 新增主圖（number 設為 -1 表示主圖）
-     */
-    @Override
-    public void addThumbnailToProduct(Long productId, Long sellerId, MultipartFile file) {
-        addImageToProduct(productId, sellerId, file, -1);
-    }
+    
 
     /**
-     * 新增額外圖（number 設為順序編號）
-     */
-    @Override
-    public void addExtraImageToProduct(Long productId, Long sellerId, MultipartFile file, Integer number) {
-        addImageToProduct(productId, sellerId, file, number);
-    }
-
-    /**
-     * 新增圖片到商品（包含檔案上傳與資料庫記錄） 是上面2個的實作方法
+     * 新增圖片到商品（包含檔案上傳與資料庫記錄） 
      */
     private void addImageToProduct(Long productId, Long sellerId, MultipartFile file, Integer number) {
     	// 檔案型態檢查（只接受圖片）
@@ -78,7 +68,6 @@ public class ProductImageServiceImpl implements ProductImageService {
         image.setProduct(product);
         image.setNumber(number);
         image.setImageUrl(url);
-        System.out.print(url+"HHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
         productImageRepository.save(image);
     }
 
@@ -87,7 +76,7 @@ public class ProductImageServiceImpl implements ProductImageService {
      * @param productId 商品ID
      * @param sellerId 賣家ID
      * @param files 圖片檔案清單
-     * @param mainImageIndex 主圖在files中的索引（-1~files.size()-1）
+     * @param mainImageIndex 主圖在files中的索引（0~files.size()-1） 這裡才處裡 主圖是-1
      */
     
     public void addImagesToProduct(Long productId, Long sellerId, List<MultipartFile> files, Integer mainImageIndex) {
@@ -103,7 +92,7 @@ public class ProductImageServiceImpl implements ProductImageService {
         }
 
         // 依序處理每張圖片
-        int attachmentNumber = 0; // 附圖序號，從0開始
+        int attachmentNumber = 0; // 附圖序號，從0開始 這裡才處裡 主圖改-1 才丟進去
         for (int i = 0; i < files.size(); i++) {
             int number = (i == mainImageIndex) ? -1 : attachmentNumber++;
             MultipartFile file = files.get(i);
@@ -115,14 +104,44 @@ public class ProductImageServiceImpl implements ProductImageService {
      * 刪除圖片（檢查賣家權限）
      */
     @Override
-    public void deleteImage(Long imageId, Long sellerId) {
-        ProductImage image = productImageRepository.findById(imageId)
-                .orElseThrow(() -> new ShoppingException("找不到該圖片"));
-        if (!image.getProduct().getSeller().getId().equals(sellerId)) {
-            throw new ShoppingException("無權限刪除圖片");
+    public void deleteImage(Long productId, Long sellerId) {
+    	Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(sellerId,productId).orElseThrow(()-> new ShoppingException("找不到產品 或不是該商品主人"));
+    			
+        List <ProductImage> productImages = product.getProductImages();
+
+        //該商品沒有圖片可刪除
+        if (productImages == null || productImages.isEmpty()) {
+            return;
         }
-        productImageRepository.delete(image);
+        
+        // 刪除本地檔案
+        // 刪除資料庫紀錄
+        for(ProductImage productImage :productImages) {
+        	deleteImageFile(productImage.getImageUrl());
+        	productImageRepository.delete(productImage);
+        } 
     }
+
+    /**
+     * 刪除本地實體圖片檔案
+     */
+    private void deleteImageFile(String imageUrl) {
+        try {
+            // 假設 imageUrl 格式是 "/uploads/xxx.jpg"
+            String filename = Paths.get(imageUrl).getFileName().toString();
+            Path filePath = Paths.get(uploadDir).resolve(filename);
+
+            if (Files.exists(filePath)) {
+                Files.delete(filePath);
+            }
+        } catch (IOException e) {
+            // 這裡你可以改用 logger 記錄錯誤
+            System.err.println("刪除圖片檔案失敗: " + e.getMessage());
+        }
+    }
+
+
+
 
     /**
      * 實際檔案上傳並回傳 URL
@@ -139,15 +158,6 @@ public class ProductImageServiceImpl implements ProductImageService {
         }
     }
 
-    /**
-     * 轉換圖片實體為 DTO
-     */
-    private ProductImageDto toDto(ProductImage image) {
-        ProductImageDto dto = new ProductImageDto();
-        dto.setId(image.getId());
-        dto.setImageUrl(image.getImageUrl());
-        dto.setNumber(image.getNumber());
-        return dto;
-    }
+    
 }
 

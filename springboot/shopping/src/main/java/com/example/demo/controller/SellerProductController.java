@@ -6,9 +6,12 @@ import com.example.demo.model.dto.UserDto;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.ProductService;
 import jakarta.servlet.http.HttpSession;
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -48,11 +51,17 @@ public class SellerProductController {
     /**
      * 修改商品資料（json 格式）
      */
-    @PutMapping("/{id}")
+    @PutMapping(value = "/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public ResponseEntity<ApiResponse<Void>> updateProduct(@PathVariable Long id,
-                                                           @RequestBody SellerProductCreateRequest dto,
+    													    @ModelAttribute SellerProductCreateRequest sellerProductCreateRequest,		   
                                                            HttpSession session) {
-        productService.updateProduct(dto, id, session);
+    	System.out.print("6666666666666666"+sellerProductCreateRequest.getStatus());
+    	System.out.println("name = " + sellerProductCreateRequest.getName());
+    	System.out.println("price = " + sellerProductCreateRequest.getPrice());
+    	System.out.println("thumbnail = " + (sellerProductCreateRequest.getThumbnail() != null ? sellerProductCreateRequest.getThumbnail().getOriginalFilename() : "null"));
+    	System.out.println("extraImages = " + (sellerProductCreateRequest.getExtraImages() != null ? sellerProductCreateRequest.getExtraImages().size() : "null")); 
+    	
+        productService.updateProduct(sellerProductCreateRequest, id, session);
         return ResponseEntity.ok(ApiResponse.success("修改成功", null));
     }
 
@@ -68,7 +77,7 @@ public class SellerProductController {
     /**
      * 商品下架（狀態設為非上架）
      */
-    @DeleteMapping("/{id}/unactive")
+    @PutMapping("/{id}/unactive")
     public ResponseEntity<ApiResponse<Void>> unActiveProduct(@PathVariable Long id, HttpSession session) {
         productService.unActiveProduct(id, session);
         return ResponseEntity.ok(ApiResponse.success("下架成功", null));

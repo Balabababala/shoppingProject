@@ -15,9 +15,7 @@ public interface ProductImageService {
 	//邏輯
 	
 	List<ProductImageDto> getImagesByProduct(Long productId, Long sellerId);									//查該產品圖片 (確認圖片狀態 來決定是否可新增 刪除)
-	void addThumbnailToProduct(Long productId, Long sellerId, MultipartFile file);								//新增產品主圖
-	void addExtraImageToProduct(Long productId, Long sellerId, MultipartFile file, Integer number); 			//新增產品主圖
-	void addImagesToProduct(Long productId, Long sellerId, List<MultipartFile> files, Integer mainImageIndex) ; //整合上面2種的方法
-	void deleteImage(Long imageId, Long sellerId);																//刪除該產品圖片
+	void addImagesToProduct(Long productId, Long sellerId, List<MultipartFile> files, Integer mainImageIndex) ; //加List<MultipartFile> 生成名字上傳圖到硬碟 + 到資料庫
+	void deleteImage(Long productId, Long sellerId);																//刪除該產品圖片
 	
 }

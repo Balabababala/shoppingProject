@@ -12,6 +12,8 @@ import CheckoutPage from './components/pages/CheckoutPage.jsx'             //頁
 import SellerProductsPage from './components/pages/SellerProductsPage.jsx' //頁面 我的商品       賣家專用   (後端還沒寫賣家才能進)
 import SellerOrdersPage from './components/pages/SellerOrdersPage.jsx'             //頁面 我的商品       賣家專用   (後端還沒寫賣家才能進)
 import SellerProductNewPage from './components/pages/SellerProductNewPage.jsx'     //頁面 新增商品       賣家專用   (後端還沒寫賣家才能進)
+import SellerProductEditPage from './components/pages/SellerProductEditPage.jsx'     //頁面 編輯商品       賣家專用   (後端還沒寫賣家才能進)
+
 import NotificationsPage from './components/pages/NotificationsPage.jsx';  //頁面
 import RegisterPage from './components/pages/RegisterPage.jsx';            //註冊頁面
 import EmailVerificationPage from './components/pages/EmailVerificationPage.jsx';            //Email驗證頁面
@@ -37,6 +39,7 @@ function App() {
           <Route path="/checkout" element={<CheckoutPage />} />
           <Route path="/seller/products" element={<SellerProductsPage />} />
           <Route path="/seller/products/new" element={<SellerProductNewPage />} />
+          <Route path="/seller/products/edit/:id" element={<SellerProductEditPage />} />
           <Route path="/seller/orders" element={<SellerOrdersPage />} />
           <Route path="/notifications" element={<NotificationsPage />} />
           <Route path="/category/:slug" element={<CategoryPage />} />

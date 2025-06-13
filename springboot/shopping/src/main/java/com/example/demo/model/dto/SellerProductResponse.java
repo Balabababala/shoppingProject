@@ -18,25 +18,15 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class SellerProductResponse {
 
+	private Long id;
     private String name;
-
     private String description;
-
-
     @DecimalMin(value = "0.0", inclusive = false)
     private BigDecimal price;
-
-
     @Min(1)
     private Integer stock;
-
-
+    private Boolean isDeleted;	
     private ProductStatus status; // ACTIVE, INACTIVE
-
-
     private Long categoryId;
-
-    private String thumbnailUrl; // 主圖
-    
-    private List<String> extraImagesUrl; // 其他圖
+    private List<ProductImageDto> ProductImageDto;
 }

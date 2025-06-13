@@ -8,10 +8,35 @@ function SellerOrdersPage() {
   const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
+  const [searchKeyword, setSearchKeyword] = useState('');
   const pageSize = 5;
 
-  const totalPages = Math.ceil(orders.length / pageSize);
-  const pagedOrders = orders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  // 篩選後的訂單清單
+  const filteredOrders = orders.filter(order => {
+  const keyword = searchKeyword.trim().toLowerCase();
+  if (!keyword) return true;
+
+  if (String(order.id).toLowerCase().includes(keyword)) return true;
+
+  if (order.buyerName && order.buyerName.toLowerCase().includes(keyword)) return true;
+
+  if (
+    order.items.some(item =>
+      item.productName && item.productName.toLowerCase().includes(keyword)
+    )
+  ) return true;
+
+  // 新增：訂單日期也要能搜尋
+  // order.orderDate 是日期字串或 Date 物件，轉成字串搜尋
+  const orderDateStr = new Date(order.orderDate).toLocaleDateString();
+  if (orderDateStr.toLowerCase().includes(keyword)) return true;
+
+  return false;
+});
+
+
+  const totalPages = Math.ceil(filteredOrders.length / pageSize);
+  const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -34,17 +59,35 @@ function SellerOrdersPage() {
     fetchOrders();
   }, [userData, fetchWithAuthCheck, addToastMessage]);
 
+  // 切換分頁並重置輸入欄位
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
     setCurrentPage(pageNum);
+    setInputPage('');
   };
+
+  // 搜尋關鍵字改變時回到第一頁
+  useEffect(() => {
+    setCurrentPage(1);
+  }, [searchKeyword]);
 
   return (
     <div className="container mt-4" style={{ maxWidth: 960 }}>
       <h1 className="mb-4 text-center" style={{ color: '#222' }}>賣家訂單管理</h1>
 
+      {/* 快速搜尋輸入框 */}
+      <div className="mb-3">
+        <input
+          type="text"
+          className="form-control"
+          placeholder="快速搜尋：訂單編號、買家名稱或商品名稱"
+          value={searchKeyword}
+          onChange={e => setSearchKeyword(e.target.value)}
+        />
+      </div>
+
       {pagedOrders.length === 0 ? (
-        <p className="text-center text-muted fs-5">目前沒有訂單紀錄</p>
+        <p className="text-center text-muted fs-5">目前沒有符合條件的訂單紀錄</p>
       ) : (
         <>
           {pagedOrders.map(order => (
@@ -137,7 +180,6 @@ function SellerOrdersPage() {
                 if (e.key === 'Enter') {
                   const pageNum = Number(inputPage);
                   if (!isNaN(pageNum)) changePage(pageNum);
-                  setInputPage('');
                 }
               }}
             />

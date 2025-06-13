@@ -11,6 +11,7 @@ import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.enums.ProductStatus;
 import com.example.demo.repository.CategoryRepository;
+import com.example.demo.repository.ProductImageRepository;
 import com.example.demo.repository.ProductRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.CategoryService;
@@ -18,7 +19,6 @@ import com.example.demo.service.ProductImageService;
 import com.example.demo.service.ProductService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -31,9 +31,10 @@ public class ProductServiceImpl implements ProductService {
     private ProductRepository productRepository;
     @Autowired
     private CategoryRepository categoryRepository;
+   
     @Autowired
-    @Lazy
     private ProductImageService productImageService;
+
     @Autowired
     private UserRepository userRepository;
     @Autowired
@@ -66,7 +67,7 @@ public class ProductServiceImpl implements ProductService {
             allFiles.addAll(sellerProductDto.getExtraImages().stream().limit(9).toList());
         }
 
-        // 一次呼叫 service 上傳圖片，number 從 -1 開始，-1 表示主圖
+        // 一次呼叫 service 上傳圖片，number 從 0 開始，0 表示主圖
         if (!allFiles.isEmpty()) {
             productImageService.addImagesToProduct(product.getId(), userDto.getUserId(), allFiles, 0);
         }
@@ -77,25 +78,48 @@ public class ProductServiceImpl implements ProductService {
      * 修改商品資訊，驗證賣家權限
      */
     @Override
-    public void updateProduct(SellerProductCreateRequest dto, Long id, HttpSession session) {
-        UserDto user = (UserDto) session.getAttribute("userDto");
+    public void updateProduct(SellerProductCreateRequest sellerProductCreateRequest, Long id, HttpSession session) {
+        UserDto userDto = (UserDto) session.getAttribute("userDto");
 
-        // 找商品，且要是此賣家擁有
-        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(user.getUserId(), id)
-                .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        // 找商品
+        Product product = productRepository.findBySellerIdAndProductIdWithSellerAndCategoryAndProductImage(userDto.getUserId(), id)
+            .orElseThrow(() -> new ShoppingException("找不到該商品或非該賣家"));
+        
+        	MultipartFile thumbnail = sellerProductCreateRequest.getThumbnail();
+        	List <MultipartFile> extraImages =sellerProductCreateRequest.getExtraImages();
+        	
+        	boolean hasNewImages = (thumbnail != null && !thumbnail.isEmpty()) ||
+                (extraImages != null && !extraImages.isEmpty());
+        	
+        	if(hasNewImages) {
+	        	// 刪除舊圖片（資料庫）
+	            productImageService.deleteImage(product.getId(),userDto.getUserId());
+	            product.getProductImages().clear();
+	
+	            // 加入新圖片
+	            List<MultipartFile> newImages = new ArrayList();
+	            if(sellerProductCreateRequest.getThumbnail()!=null) {
+	            	 newImages.add(sellerProductCreateRequest.getThumbnail());
+	            }
+	            if(sellerProductCreateRequest.getExtraImages()!=null) {
+	            	newImages.addAll(sellerProductCreateRequest.getExtraImages());
+	            }
+	            
+	            productImageService.addImagesToProduct(product.getId(), userDto.getUserId(), newImages, 0);
+        	}		
+		
+			 // 更新其他欄位（你原本的邏輯）
+            product.setName(sellerProductCreateRequest.getName());
+            product.setDescription(sellerProductCreateRequest.getDescription());
+            product.setPrice(sellerProductCreateRequest.getPrice());
+            product.setStock(sellerProductCreateRequest.getStock());
+            product.setStatus(sellerProductCreateRequest.getStatus());
 
-        // 更新欄位
-        product.setName(dto.getName());
-        product.setDescription(dto.getDescription());
-        product.setPrice(dto.getPrice());
-        product.setStock(dto.getStock());
-        product.setStatus(dto.getStatus());
-
-        Category category = categoryRepository.findById(dto.getCategoryId())
-                .orElseThrow(() -> new ShoppingException("無該分類"));
-        product.setCategory(category);
-
-        productRepository.save(product);
+            Category category = categoryRepository.findById(sellerProductCreateRequest.getCategoryId())
+                    .orElseThrow(() -> new ShoppingException("無該分類"));
+            product.setCategory(category);
+            // 儲存
+            productRepository.save(product);
     }
 
     /**
@@ -144,6 +168,7 @@ public class ProductServiceImpl implements ProductService {
     public List<SellerProductResponse> getSellerProduct(Long userId) {
         return productRepository.findBySellerIdWithSellerAndCategoryAndProductImage(userId)
                 .stream()
+                .filter(p -> !Boolean.TRUE.equals(p.getIsDeleted()))
                 .map(SellerProductMapper::toDto)
                 .toList();
     }

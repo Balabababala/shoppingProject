@@ -24,38 +24,21 @@ public class SellerProductMapper {
 		product.setCategory(category);
 		product.setSeller(seller);
 		return product;
-		
     }
 	
 	public static SellerProductResponse toDto(Product product) {
 	    SellerProductResponse sellerProductResponse = new SellerProductResponse();
+	    sellerProductResponse.setId(product.getId());
 	    sellerProductResponse.setName(product.getName());
 	    sellerProductResponse.setDescription(product.getDescription());
 	    sellerProductResponse.setPrice(product.getPrice());
 	    sellerProductResponse.setStock(product.getStock());
 	    sellerProductResponse.setStatus(product.getStatus());
-	    sellerProductResponse.setCategoryId(product.getCategory() != null ? product.getCategory().getId() : null);
-
-	    List<ProductImage> images = product.getProductImages();
-	    if (images != null && !images.isEmpty()) {
-	        // 主圖設第一張
-	    	sellerProductResponse.setThumbnailUrl(images.get(0).getImageUrl());
-
-	        // 其他圖片 URL（從第2張開始）
-	        if (images.size() > 1) {
-	            List<String> extraUrls = images.stream()
-	                                           .skip(1)
-	                                           .map(ProductImage::getImageUrl)
-	                                           .toList();
-	            sellerProductResponse.setExtraImagesUrl(extraUrls);
-	        } else {
-	        	sellerProductResponse.setExtraImagesUrl(List.of()); // 空清單
-	        }
-	    } else {
-	    	sellerProductResponse.setThumbnailUrl(null);
-	    	sellerProductResponse.setExtraImagesUrl(List.of());
-	    }
-
+	    sellerProductResponse.setCategoryId(product.getCategory().getId());
+	    sellerProductResponse.setProductImageDto(product.getProductImages().stream()
+				  .map(ProductImageMapper::toDto)
+				  .toList()
+	    );
 	    return sellerProductResponse;
 	}
 

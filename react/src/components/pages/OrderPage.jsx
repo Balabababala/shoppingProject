@@ -6,12 +6,27 @@ function MyOrdersPage() {
   const { userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
 
   const [orders, setOrders] = useState([]);
+  const [searchKeyword, setSearchKeyword] = useState("");  // 新增搜尋狀態
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
   const pageSize = 5; // 一頁顯示幾筆訂單
 
-  const totalPages = Math.ceil(orders.length / pageSize);
-  const pagedOrders = orders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+  // 篩選訂單，如果搜尋框是空的，就顯示全部
+  const filteredOrders = orders.filter(order => {
+    const keyword = searchKeyword.trim().toLowerCase();
+    if (!keyword) return true; // 空白顯示全部
+
+    // 你可以根據需求調整比對欄位，這裡比對訂單編號、收件人名稱、商品名稱
+    if (String(order.id).includes(keyword)) return true;
+    if (order.receiverName?.toLowerCase().includes(keyword)) return true;
+    if (order.items.some(item => item.productName.toLowerCase().includes(keyword))) return true;
+
+    return false;
+  });
+
+  // 分頁計算用篩選後的訂單
+  const totalPages = Math.ceil(filteredOrders.length / pageSize);
+  const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   useEffect(() => {
     const fetchOrders = async () => {
@@ -42,6 +57,18 @@ function MyOrdersPage() {
   return (
     <div className="container mt-4" style={{ maxWidth: 960 }}>
       <h1 className="mb-4 text-center" style={{ color: '#222' }}>我的訂單</h1>
+
+      {/* 搜尋輸入框 */}
+      <input
+        type="text"
+        className="form-control mb-3"
+        placeholder="搜尋訂單編號、收件人、商品名稱"
+        value={searchKeyword}
+        onChange={e => {
+          setSearchKeyword(e.target.value);
+          setCurrentPage(1); // 搜尋時回到第1頁
+        }}
+      />
 
       {pagedOrders.length === 0 ? (
         <p className="text-center text-muted fs-5">目前沒有訂單紀錄</p>

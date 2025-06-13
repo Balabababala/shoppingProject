@@ -24,5 +24,5 @@ public class ProductResponse {
     private Long categoryId;
     private String categoryName;
     private UserDto sellerUserDto;
-    private List<ProductImageResponse> productImageResponse;
+    private List<ProductImageDto> ProductImageDto;
 }
