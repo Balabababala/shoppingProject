@@ -28,7 +28,7 @@ function MyRecentlyViewedPage() {
           const products = data.data.map((item) => ({
             id: item.productId,
             productName: item.productName,
-            productImage: item.productImage ? `http://localhost:8080${item.productImage}` : null,
+            productImageDtos: Array.isArray(item.productImageDtos) ? item.productImageDtos : [],
             viewedAt: item.viewedAt,
           }));
           setRecentlyViewedProducts(products);
