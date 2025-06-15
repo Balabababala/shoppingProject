@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,7 +15,10 @@ import com.example.demo.mapper.CartItemMapper;
 import com.example.demo.model.dto.CartItemResponse;
 import com.example.demo.model.entity.CartItem;
 import com.example.demo.model.entity.OrderItem;
+import com.example.demo.model.entity.Product;
+import com.example.demo.model.enums.ProductStatus;
 import com.example.demo.repository.CartItemRepository;
+import com.example.demo.repository.ProductRepository;
 import com.example.demo.service.CartItemService;
 import com.example.demo.service.OrderItemService;
 
@@ -29,7 +33,9 @@ public class CartItemServiceImpl implements CartItemService{
 	@Autowired
     private CartItemRepository cartItemRepository;
 		
-		
+	@Autowired
+	private ProductRepository productRepository;
+	
 	@Autowired
 	private OrderItemService orderItemService;
 
@@ -37,6 +43,14 @@ public class CartItemServiceImpl implements CartItemService{
 	//邏輯
 	@Override
 	public void addOrUpdateCartItem(Long userId, Long productId, Integer quantity) {
+		Optional <Product> opt =productRepository.findById(productId);
+		if(opt.isEmpty()) {
+			return ;
+		}
+		if(opt.get().getIsDeleted()==true || opt.get().getStatus()==ProductStatus.INACTIVE ) {
+			return ;
+		}
+		
 		if(cartItemRepository.findByUserIdAndProductId(userId, productId).isEmpty()) {
 			cartItemRepository.addCartItem(userId, productId, quantity);
 		} else {

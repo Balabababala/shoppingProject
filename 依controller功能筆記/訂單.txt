@@ -32,6 +32,7 @@ Mapper
 	
 repository  order
 		findByBuyerIdWithOrderItemAndBuyerAndSeller(Long userId);
+		s				
 service     order
 		getOrderByBuyerId(Long userId);
 controller  order
@@ -40,6 +41,22 @@ controller  order
 		return List <OrderResponse>
 dto 
 	<OrderResponse>
+
+
+
+取消訂單
+	repository  order
+			Optional <Order> findById(Long id);
+			Save //自動有 
+	service     order
+		void cancelOrder(Long orderId, Long buyerId); 
+	controller  order
+		@PutMapping("/orders/{orderId}/cancel")
+
+		ResponseEntity<ApiResponse<Void>> cancelOrder(
+	        @PathVariable Long orderId
+	        ,HttpSession session)
+
 
 
 看使用者(賣家)訂單

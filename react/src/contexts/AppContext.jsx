@@ -3,7 +3,9 @@ import React, { createContext, useState, useEffect, useCallback, useRef } from '
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
+  const BASE_URL = 'http://localhost:8080' ;
   const API_BASE = 'http://localhost:8080/api';
+  
 
   const [userData, setUserData] = useState(null);
   const [loadingAuth, setLoadingAuth] = useState(true);
@@ -190,6 +192,8 @@ export function AppProvider({ children }) {
         fetchCart,
         addToCart,
         fetchWithAuthCheck,
+        API_BASE,
+        BASE_URL,
       }}
     >
       {loadingAuth ? <div>載入中...</div> : children}

@@ -20,6 +20,9 @@ import com.example.demo.model.entity.CartItem;
 import com.example.demo.model.entity.Order;
 import com.example.demo.model.entity.OrderItem;
 import com.example.demo.model.entity.User;
+import com.example.demo.model.enums.OrderStatus;
+import com.example.demo.model.enums.PaymentStatus;
+import com.example.demo.model.enums.ShipmentStatus;
 import com.example.demo.repository.OrderItemRepository;
 import com.example.demo.repository.OrderRepository;
 import com.example.demo.repository.UserRepository;
@@ -106,6 +109,37 @@ public class OrderServiceImpl implements OrderService{
 																  .map(OrderMapper::toDto)
 																  .toList();
 	}
+
+	private boolean isCancellable(Order order) {
+	    return (order.getOrderStatus() == OrderStatus.PENDING || order.getOrderStatus() == OrderStatus.PAID)
+	           && order.getShipmentStatus() == ShipmentStatus.NOT_SHIPPED;
+	}
+	
+	
+	
+	@Override
+	@Transactional
+	public void cancelOrder(Long orderId, Long buyerId) {
+	    Order order = orderRepository.findById(orderId)
+	        .orElseThrow(() -> new ShoppingException("訂單不存在"));
+
+	    if (!order.getBuyer().getId().equals(buyerId)) {
+	        throw new ShoppingException("無權限取消此訂單");
+	    }
+
+	    if (!isCancellable(order)) {
+	        throw new IllegalStateException("該訂單無法取消");
+	    }
+
+	    order.setOrderStatus(OrderStatus.CANCELLED);
+	    order.setPaymentStatus(PaymentStatus.REFUNDED); // 如果未付款可保留為 PENDING
+
+	    orderRepository.save(order);
+
+	    // TODO: 如有付款，進行退款流程（例如呼叫支付 API）
+	    // TODO: 發送通知（待補）
+	}
+
 
 	@Override
 	public List<OrderResponse> getOrderBySellerId(Long userId) {

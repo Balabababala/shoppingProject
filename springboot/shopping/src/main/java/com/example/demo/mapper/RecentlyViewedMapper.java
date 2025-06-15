@@ -7,23 +7,25 @@ import com.example.demo.model.entity.RecentlyViewed;
 public class RecentlyViewedMapper {
 
     public static RecentlyViewedResponse toDto(RecentlyViewed recentlyViewed) {
-        if (recentlyViewed == null) {
-            return null;
-        }
+    	RecentlyViewedResponse recentlyViewedResponse =new RecentlyViewedResponse();
+    	Product product =recentlyViewed.getProduct();
+    	if(product==null) {
+    		return null;
+    	}
+    	recentlyViewedResponse.setProductId(product.getId());
+    	recentlyViewedResponse.setProductName(product.getName());
+    	if(product.getProductImages()!=null) {
+    		recentlyViewedResponse.setProductImageDtos(
+    				product.getProductImages().stream()
+    										  .map(ProductImageMapper::toDto)
+    										  .toList());
+    	}
+        recentlyViewedResponse.setViewedAt(recentlyViewed.getViewedAt());
+        return recentlyViewedResponse;
         
-        String imageUrl=null;
-        if (recentlyViewed.getProduct() != null 
-                && recentlyViewed.getProduct().getProductImages() != null 
-                && !recentlyViewed.getProduct().getProductImages().isEmpty()) {
-                imageUrl = recentlyViewed.getProduct().getProductImages().get(0).getImageUrl();
-            }
+       
         
  
-        return new RecentlyViewedResponse(
-        	    recentlyViewed.getProduct() != null ? recentlyViewed.getProduct().getId() : null,
-        	    recentlyViewed.getProduct() != null ? recentlyViewed.getProduct().getName() : null,
-        	    imageUrl,
-        	    recentlyViewed.getViewedAt()
-        	);
+        
     }
 }

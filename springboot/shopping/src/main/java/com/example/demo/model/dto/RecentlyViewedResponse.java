@@ -1,6 +1,7 @@
 package com.example.demo.model.dto;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -13,7 +14,7 @@ public class RecentlyViewedResponse {
 
     private Long productId;
     private String productName;
-    private String productImage;
+    private List<ProductImageDto> productImageDtos;
     private LocalDateTime viewedAt;
 
 }

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -49,6 +50,20 @@ public class OrderController {
 		List<OrderResponse> orderResponses= orderService.getOrderByBuyerId(userId);
 		return ResponseEntity.ok(ApiResponse.success("取得資料成功", orderResponses));
 	}
+	
+	//
+	@PutMapping("/orders/{orderId}/cancel")
+	public ResponseEntity<ApiResponse<Void>> cancelOrder(
+	        @PathVariable Long orderId
+	        ,HttpSession session) {
+		UserDto userDto = (UserDto) session.getAttribute("userDto");
+		if(userDto==null) {
+			return ResponseEntity.badRequest().body(ApiResponse.error("你怎麼進來的?"));
+		}
+	    orderService.cancelOrder(orderId, userDto.getUserId());
+	    return ResponseEntity.ok(ApiResponse.success("訂單已成功取消", null));
+	}
+	
 	//看使用者(賣家)訂單
 	@GetMapping("/orders/seller/{userId}")
 	public ResponseEntity<ApiResponse<List<OrderResponse>>> getOrdersBySellerId(@PathVariable Long userId,HttpSession session)  {

@@ -11,29 +11,18 @@ function SellerOrdersPage() {
   const [searchKeyword, setSearchKeyword] = useState('');
   const pageSize = 5;
 
-  // 篩選後的訂單清單
   const filteredOrders = orders.filter(order => {
-  const keyword = searchKeyword.trim().toLowerCase();
-  if (!keyword) return true;
-
-  if (String(order.id).toLowerCase().includes(keyword)) return true;
-
-  if (order.buyerName && order.buyerName.toLowerCase().includes(keyword)) return true;
-
-  if (
-    order.items.some(item =>
+    const keyword = searchKeyword.trim().toLowerCase();
+    if (!keyword) return true;
+    if (String(order.id).toLowerCase().includes(keyword)) return true;
+    if (order.buyerName && order.buyerName.toLowerCase().includes(keyword)) return true;
+    if (order.items.some(item =>
       item.productName && item.productName.toLowerCase().includes(keyword)
-    )
-  ) return true;
+    )) return true;
 
-  // 新增：訂單日期也要能搜尋
-  // order.orderDate 是日期字串或 Date 物件，轉成字串搜尋
-  const orderDateStr = new Date(order.orderDate).toLocaleDateString();
-  if (orderDateStr.toLowerCase().includes(keyword)) return true;
-
-  return false;
-});
-
+    const orderDateStr = new Date(order.orderDate).toLocaleDateString();
+    return orderDateStr.toLowerCase().includes(keyword);
+  });
 
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
@@ -59,14 +48,12 @@ function SellerOrdersPage() {
     fetchOrders();
   }, [userData, fetchWithAuthCheck, addToastMessage]);
 
-  // 切換分頁並重置輸入欄位
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
     setCurrentPage(pageNum);
     setInputPage('');
   };
 
-  // 搜尋關鍵字改變時回到第一頁
   useEffect(() => {
     setCurrentPage(1);
   }, [searchKeyword]);
@@ -75,7 +62,6 @@ function SellerOrdersPage() {
     <div className="container mt-4" style={{ maxWidth: 960 }}>
       <h1 className="mb-4 text-center" style={{ color: '#222' }}>賣家訂單管理</h1>
 
-      {/* 快速搜尋輸入框 */}
       <div className="mb-3">
         <input
           type="text"
@@ -94,12 +80,12 @@ function SellerOrdersPage() {
             <div key={order.id} className="card mb-4 shadow-sm">
               <div className="card-header d-flex justify-content-between align-items-center bg-success text-white">
                 <div>
-                  <div>訂單編號 #{order.id}</div>
+                  <div>訂單編號 <strong>#{order.id}</strong></div>
                   <div style={{ fontSize: '0.9rem' }}>
-                    買家：{order.buyerName} ({order.buyerEmail})
+                    買家：{order.receiverName}
                   </div>
                 </div>
-                <span>{new Date(order.orderDate).toLocaleString()}</span>
+                <span style={{ fontSize: '0.9rem' }}>{new Date(order.orderDate).toLocaleString()}</span>
               </div>
 
               <div className="card-body">
@@ -115,18 +101,33 @@ function SellerOrdersPage() {
                   </div>
                 </div>
 
+                <div className="row mb-2">
+                  <div className="col-md-4">
+                    <strong>付款方式：</strong> {order.paymentMethod}
+                  </div>
+                  <div className="col-md-4">
+                    <strong>運送方式：</strong> {order.shippingMethod}
+                  </div>
+                </div>
+
                 <div className="row mb-3">
                   <div className="col-md-6">
-                    <strong>收件人：</strong> {order.receiverName} ({order.receiverPhone})
+                    <strong>收件人：</strong> {order.receiverName}（{order.receiverPhone}）
                   </div>
                   <div className="col-md-6">
                     <strong>地址：</strong> {order.shippingAddress}
                   </div>
                 </div>
 
+                {order.notes && (
+                  <div className="mb-3">
+                    <strong>備註：</strong> {order.notes}
+                  </div>
+                )}
+
                 <h5 className="mb-3">商品明細</h5>
                 <table className="table table-bordered table-sm">
-                  <thead className="thead-light">
+                  <thead className="table-light">
                     <tr>
                       <th>商品名稱</th>
                       <th>數量</th>
@@ -146,14 +147,14 @@ function SellerOrdersPage() {
                   </tbody>
                 </table>
 
-                <div className="text-end">
-                  <strong>訂單總金額：</strong> <span className="fs-5 text-danger">${order.totalAmount}</span>
+                <div className="text-end mt-3">
+                  <strong>訂單總金額：</strong>
+                  <span className="fs-5 text-danger"> ${order.totalAmount}</span>
                 </div>
               </div>
             </div>
           ))}
 
-          {/* 分頁控制 */}
           <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
             <button
               className="btn btn-outline-success"

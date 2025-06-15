@@ -93,6 +93,7 @@ public class ProductServiceImpl implements ProductService {
         	
         	if(hasNewImages) {
 	        	// 刪除舊圖片（資料庫）
+        		
 	            productImageService.deleteImage(product.getId(),userDto.getUserId());
 	            product.getProductImages().clear();
 	
@@ -198,7 +199,7 @@ public class ProductServiceImpl implements ProductService {
      */
     @Override
     public List<ProductResponse> findAllProductsToProductResponse() {
-        return productRepository.findAllWithCategory()
+        return productRepository.findVisibleWithCategory()
                 .stream()
                 .map(ProductMapper::toDto)
                 .toList();

@@ -6,25 +6,20 @@ function MyOrdersPage() {
   const { userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
 
   const [orders, setOrders] = useState([]);
-  const [searchKeyword, setSearchKeyword] = useState("");  // 新增搜尋狀態
+  const [searchKeyword, setSearchKeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
-  const pageSize = 5; // 一頁顯示幾筆訂單
+  const pageSize = 5;
 
-  // 篩選訂單，如果搜尋框是空的，就顯示全部
   const filteredOrders = orders.filter(order => {
     const keyword = searchKeyword.trim().toLowerCase();
-    if (!keyword) return true; // 空白顯示全部
-
-    // 你可以根據需求調整比對欄位，這裡比對訂單編號、收件人名稱、商品名稱
+    if (!keyword) return true;
     if (String(order.id).includes(keyword)) return true;
     if (order.receiverName?.toLowerCase().includes(keyword)) return true;
     if (order.items.some(item => item.productName.toLowerCase().includes(keyword))) return true;
-
     return false;
   });
 
-  // 分頁計算用篩選後的訂單
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
@@ -54,11 +49,35 @@ function MyOrdersPage() {
     setCurrentPage(pageNum);
   };
 
+  const handleCancel = async (orderId) => {
+    if (!window.confirm("確定要取消這筆訂單嗎？")) return;
+
+    try {
+      const res = await fetch(`${BASE_API}/orders/${orderId}/cancel`, {
+        method: 'PUT',
+        credentials: 'include',
+      });
+
+      const result = await res.json();
+      if (res.ok) {
+        addToastMessage("訂單已成功取消");
+        setOrders(prev =>
+          prev.map(order =>
+            order.id === orderId ? { ...order, orderStatus: 'CANCELED' } : order
+          )
+        );
+      } else {
+        addToastMessage(result.message || "取消失敗");
+      }
+    } catch (error) {
+      addToastMessage("取消訂單時發生錯誤");
+    }
+  };
+
   return (
     <div className="container mt-4" style={{ maxWidth: 960 }}>
       <h1 className="mb-4 text-center" style={{ color: '#222' }}>我的訂單</h1>
 
-      {/* 搜尋輸入框 */}
       <input
         type="text"
         className="form-control mb-3"
@@ -66,7 +85,7 @@ function MyOrdersPage() {
         value={searchKeyword}
         onChange={e => {
           setSearchKeyword(e.target.value);
-          setCurrentPage(1); // 搜尋時回到第1頁
+          setCurrentPage(1);
         }}
       />
 
@@ -121,14 +140,24 @@ function MyOrdersPage() {
                     ))}
                   </tbody>
                 </table>
-                <div className="text-end">
-                  <strong>訂單總金額：</strong> <span className="fs-5 text-danger">${order.totalAmount}</span>
+                <div className="d-flex justify-content-between align-items-center mt-3">
+                  <div>
+                    <strong>訂單總金額：</strong>{" "}
+                    <span className="fs-5 text-danger">${order.totalAmount}</span>
+                  </div>
+                  {(order.orderStatus === "PENDING" || order.orderStatus === "PAID") && (
+                    <button
+                      className="btn btn-outline-danger btn-sm"
+                      onClick={() => handleCancel(order.id)}
+                    >
+                      取消訂單
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
           ))}
 
-          {/* 分頁控制 */}
           <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
             <button
               className="btn btn-outline-primary"

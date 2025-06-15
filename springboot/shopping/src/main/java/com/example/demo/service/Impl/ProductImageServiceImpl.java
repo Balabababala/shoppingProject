@@ -148,15 +148,24 @@ public class ProductImageServiceImpl implements ProductImageService {
      */
     private String uploadImageAndGetUrl(MultipartFile file) {
         try {
-            String filename = UUID.randomUUID() + "_" + file.getOriginalFilename();
+            // 取得原始檔名的附檔名（包含點號）
+            String originalFilename = file.getOriginalFilename();
+            String extension = "";
+            if (originalFilename != null && originalFilename.contains(".")) {
+                extension = originalFilename.substring(originalFilename.lastIndexOf("."));
+            }
+
+            String filename = UUID.randomUUID().toString() + extension;
             Path filepath = Paths.get(uploadDir).resolve(filename);
             Files.copy(file.getInputStream(), filepath, StandardCopyOption.REPLACE_EXISTING);
-            // 這裡的 URL 實作依專案需求調整
+
+            // 回傳 URL
             return "/uploads/" + filename;
         } catch (IOException e) {
             throw new ShoppingException("圖片上傳失敗");
         }
     }
+
 
     
 }

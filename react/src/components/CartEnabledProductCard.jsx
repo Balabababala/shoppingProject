@@ -4,12 +4,12 @@ import { AppContext } from '../contexts/AppContext';
 import { Button, Form } from 'react-bootstrap';
 
 function CartEnabledProductCard({ product }) {
+  
   const [quantity, setQuantity] = useState(1);
   const [adding, setAdding] = useState(false);
-  const { userData, setCartItems, addToastMessage } = useContext(AppContext);
+  const { userData, setCartItems, addToastMessage ,BASE_API} = useContext(AppContext);
   const navigate = useNavigate();
-  const BASE_API = 'http://localhost:8080/api';
-
+  
   const handleAddToCart = () => {
     if (!userData) {
       addToastMessage('請先登入才能加入購物車！');
