@@ -37,6 +37,9 @@ public class WebFilter extends OncePerRequestFilter {
         // 放行不需登入的路徑
         if (path.startsWith("/api/login") ||
             path.startsWith("/api/logout") ||
+            path.startsWith("/api/admin/login") ||
+            path.startsWith("/api/admin/logout") ||
+            path.startsWith("/api/admin/me") ||
             path.startsWith("/api/products") ||
             path.startsWith("/api/categories") ||
             path.startsWith("/api/auth-code") ||
@@ -50,13 +53,22 @@ public class WebFilter extends OncePerRequestFilter {
 
         // 判斷是否登入
         HttpSession session = request.getSession(false);
-        UserDto userDto = (session != null) ? (UserDto) session.getAttribute("userDto") : null;
-
-        if (userDto == null) {
-            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
-            response.setContentType("application/json;charset=UTF-8");
-            response.getWriter().write("{\"success\": false, \"message\": \"尚未登入\"}");
-            return;
+        if (path.startsWith("/api/admin")) {
+            UserDto adminUserDto = (session != null) ? (UserDto) session.getAttribute("adminUserDto") : null;
+            if (adminUserDto == null) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().write("{\"success\": false, \"message\": \"尚未登入後台\"}");
+                return;
+            }
+        } else {
+            UserDto userDto = (session != null) ? (UserDto) session.getAttribute("userDto") : null;
+            if (userDto == null) {
+                response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+                response.setContentType("application/json;charset=UTF-8");
+                response.getWriter().write("{\"success\": false, \"message\": \"尚未登入\"}");
+                return;
+            }
         }
 
         // 通過所有檢查，繼續執行後續 Filter 與 Controller

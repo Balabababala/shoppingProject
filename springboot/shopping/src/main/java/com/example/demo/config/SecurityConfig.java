@@ -32,14 +32,19 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable()) // 若要保留 CSRF，要配合 CSRF token 寫法
             .authorizeHttpRequests(auth -> auth
             	.requestMatchers("/uploads/**").permitAll() //
+            	.requestMatchers("/api/admin/login").permitAll()//
                 .requestMatchers("/api/login", "/api/auth-code", "/api/register").permitAll() // login, captcha, register 放行
 //              .requestMatchers("/api/seller/**").authenticated()
                 .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
+                .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
                 .anyRequest().permitAll()														//最後全通過 暫時這樣
             )
-            .httpBasic(httpBasic -> {}) // 也可以不用加 httpBasic，單純自己控制 API
-            .formLogin(form -> form.disable()); // 禁用 formLogin，改用 API 登入
-
+            .httpBasic(httpBasic -> {}) 				// 也可以不用加 httpBasic，單純自己控制 API
+            .formLogin(form -> form.disable()) 			// 禁用 formLogin，改用 API 登入
+	        .sessionManagement(session -> session 		// ✅ 加上 session 保留機制
+	                .maximumSessions(1)
+	                .maxSessionsPreventsLogin(false)
+	            );
         return http.build();
     }
 

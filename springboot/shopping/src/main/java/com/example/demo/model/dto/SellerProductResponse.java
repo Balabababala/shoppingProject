@@ -28,5 +28,5 @@ public class SellerProductResponse {
     private Boolean isDeleted;	
     private ProductStatus status; // ACTIVE, INACTIVE
     private Long categoryId;
-    private List<ProductImageDto> ProductImageDto;
+    private List<ProductImageDto> productImageDtos;
 }

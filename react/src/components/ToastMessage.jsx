@@ -34,7 +34,7 @@ function ToastMessage() {
   };
 
   return (
-    <ToastContainer position="top-end" className="p-3" style={{ zIndex: 9999 }}>
+    <ToastContainer position="top-end" className="p-3" style={{ position: 'fixed', top: 0, right: 0, zIndex: 9999 }}>
       {toastMessages.map(({ id, text }) => (
         <Toast
           key={id}

@@ -35,7 +35,7 @@ public class SellerProductMapper {
 	    sellerProductResponse.setStock(product.getStock());
 	    sellerProductResponse.setStatus(product.getStatus());
 	    sellerProductResponse.setCategoryId(product.getCategory().getId());
-	    sellerProductResponse.setProductImageDto(product.getProductImages().stream()
+	    sellerProductResponse.setProductImageDtos(product.getProductImages().stream()
 				  .map(ProductImageMapper::toDto)
 				  .toList()
 	    );

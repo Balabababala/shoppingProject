@@ -17,20 +17,12 @@ public interface ProductReviewRepository extends JpaRepository<ProductReview, Lo
 	
 	
 	@Transactional
-	@Query(
-			  value = "SELECT EXISTS(SELECT 1 FROM product_reviews WHERE user_id = :userId AND product_id = :productId)",
-			  nativeQuery = true
-			)
 	boolean existsByUserAndProduct(User user, Product product);
 
 	@Transactional(readOnly = true)
-	@Query(
-			  value = "SELECT u.* FROM users u " +
-			          "JOIN product_reviews pr ON u.id = pr.user_id " +
-			          "WHERE pr.product_id = :productId AND pr.is_visible = true",
-			  nativeQuery = true
-			)
+	@Query("SELECT pr FROM ProductReview pr JOIN FETCH pr.user WHERE pr.product.id = :productId AND pr.isVisible = true")
 	List<ProductReview> findByProductIdAndIsVisibleTrue(Long productId);
+
 
 	
 	@Transactional

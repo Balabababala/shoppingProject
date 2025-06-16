@@ -1,5 +1,4 @@
 import { useState, useContext } from 'react';
-import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/MyNavbar.css';
 import { Link } from 'react-router-dom';
@@ -12,7 +11,7 @@ import { AppContext } from '../contexts/AppContext';
 import MyNavbarCategories from './MyNavbarCategories.jsx';
 
 function MyNavbar({ onChangeContent }) {
-  const { userData, cartItems = [], categories = [],setUserData,addToastMessage,API_BASE} = useContext(AppContext); // 安全預設值
+  const {BASE_URL,userData, cartItems = [], categories = [],setUserData,addToastMessage,API_BASE} = useContext(AppContext); // 安全預設值
   const [showCart, setShowCart] = useState(false);
 
   // 顯示購物車內容
@@ -80,7 +79,7 @@ function MyNavbar({ onChangeContent }) {
                         {cartItems.slice(0, 4).map((item) => (
                           <div key={item.id} className="cart-item">
                             <img
-                              src={item.imageUrl}
+                              src={`${BASE_URL}${item.imageUrl}`}
                               alt={item.name}
                               style={{ width: 50, height: 50 }}
                             />
