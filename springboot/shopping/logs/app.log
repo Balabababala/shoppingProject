@@ -6640,3 +6640,9 @@ org.springframework.security.web.firewall.RequestRejectedException: The request 
 2025-06-13T17:06:02.881+08:00 DEBUG 16388 --- [shopping] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Securing GET /uploads/f4b96433-bfaf-4ad9-baf6-cf5885194adf_1.png
 2025-06-13T17:06:02.881+08:00 DEBUG 16388 --- [shopping] [http-nio-8080-exec-1] o.s.security.web.FilterChainProxy        : Secured GET /uploads/f4b96433-bfaf-4ad9-baf6-cf5885194adf_1.png
 2025-06-13T17:06:02.886+08:00 DEBUG 16388 --- [shopping] [http-nio-8080-exec-1] w.c.HttpSessionSecurityContextRepository : Retrieved SecurityContextImpl [Authentication=UsernamePasswordAuthenticationToken [Principal=com.example.demo.secure.CustomUserDetails@21682dc1, Credentials=[PROTECTED], Authenticated=true, Details=null, Granted Authorities=[ROLE_SELLER]]]
+2025-06-13T17:06:39.169+08:00  INFO 16388 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-13T17:06:39.171+08:00  INFO 16388 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-13T17:06:39.181+08:00  INFO 16388 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-13T17:06:39.191+08:00  INFO 16388 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-13T17:06:39.192+08:00  INFO 16388 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-13T17:06:39.196+08:00  INFO 16388 --- [shopping] [RMI TCP Connection(10)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
