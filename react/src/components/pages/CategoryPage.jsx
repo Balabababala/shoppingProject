@@ -38,10 +38,10 @@ function CategoryTree({ categories, selectedSlug, onSelect }) {
 }
 
 function CategoryPage() {
-  const BASE_API = "http://localhost:8080/api";
+
   const { slug } = useParams();
 
-  const { userData, addToastMessage, setCartItems } = useContext(AppContext);
+  const { userData, addToastMessage, setCartItems ,API_BASE} = useContext(AppContext);
 
   const [categoriesTree, setCategoriesTree] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(slug || null);
@@ -54,7 +54,7 @@ function CategoryPage() {
 
   // 載入分類樹
   useEffect(() => {
-    fetch(`${BASE_API}/categories/${slug || ''}/tree`)
+    fetch(`${API_BASE}/categories/${slug || ''}/tree`)
       .then(res => res.json())
       .then(data => setCategoriesTree(data.data))
       .catch(err => console.error('取得分類樹失敗', err));
@@ -63,7 +63,7 @@ function CategoryPage() {
   // 載入商品（依分類）
   useEffect(() => {
     const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '?category=';
-    fetch(`${BASE_API}/products${categoryQuery}`)
+    fetch(`${API_BASE}/products${categoryQuery}`)
       .then(res => res.json())
       .then(data => {
         setProducts(data.data);
@@ -95,7 +95,7 @@ function CategoryPage() {
     let qty = quantity;
     if (isNaN(qty) || qty < 1) qty = 1;
 
-    fetch(`${BASE_API}/cart/add`, {
+    fetch(`${API_BASE}/cart/add`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',
@@ -111,7 +111,7 @@ function CategoryPage() {
       })
       .then(() => {
         addToastMessage(`已加入購物車：商品ID ${productId} x ${qty}`);
-        return fetch(`${BASE_API}/cart`, { credentials: 'include' });
+        return fetch(`${API_BASE}/cart`, { credentials: 'include' });
       })
       .then(res => res.json())
       .then(data => {

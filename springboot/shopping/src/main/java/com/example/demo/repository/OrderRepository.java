@@ -1,7 +1,7 @@
 package com.example.demo.repository;
 
 import java.util.List;
-
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -13,7 +13,7 @@ import com.example.demo.model.entity.Order;
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long>{
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
-	
+	Optional <Order> findById(Long id);
 	
 	@Query(value = "SELECT o FROM Order o "
 				+ "JOIN FETCH o.orderItems oi "

@@ -55,11 +55,6 @@ public class SellerProductController {
     public ResponseEntity<ApiResponse<Void>> updateProduct(@PathVariable Long id,
     													    @ModelAttribute SellerProductCreateRequest sellerProductCreateRequest,		   
                                                            HttpSession session) {
-    	System.out.print("6666666666666666"+sellerProductCreateRequest.getStatus());
-    	System.out.println("name = " + sellerProductCreateRequest.getName());
-    	System.out.println("price = " + sellerProductCreateRequest.getPrice());
-    	System.out.println("thumbnail = " + (sellerProductCreateRequest.getThumbnail() != null ? sellerProductCreateRequest.getThumbnail().getOriginalFilename() : "null"));
-    	System.out.println("extraImages = " + (sellerProductCreateRequest.getExtraImages() != null ? sellerProductCreateRequest.getExtraImages().size() : "null")); 
     	
         productService.updateProduct(sellerProductCreateRequest, id, session);
         return ResponseEntity.ok(ApiResponse.success("修改成功", null));

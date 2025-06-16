@@ -13,6 +13,8 @@ public interface RecentlyViewedRepository extends JpaRepository<RecentlyViewed, 
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	Optional<RecentlyViewed> findByUserIdAndProductId(Long UserId,Long productId);
 	
+	
+	
 	// 你可以加自訂的方法，像是：
 	@Query(value = "SELECT rv "
 				+ "FROM RecentlyViewed rv "

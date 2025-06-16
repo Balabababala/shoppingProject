@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState ,useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AppContext } from "../contexts/AppContext";
+
 
 function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddToCart }) {
+  const { BASE_URL } = useContext(AppContext);
   const navigate = useNavigate();
   const [quantity, setQuantity] = useState(1);
 
@@ -24,9 +27,9 @@ function ModernProductCard({ product, mode = 'default', onDeleteFavorite, onAddT
 
   return (
     <div className="card h-100 shadow-sm rounded-3" style={{ overflow: 'hidden' }}>
-      {product.productImage || product.imageUrl ? (
+      {product.productImageDtos?.length>0 ?(
         <img
-          src={product.productImage || product.imageUrl}
+          src={`${BASE_URL}${product.productImageDtos?.[0].imageUrl}`}
           alt={product.productName || product.name || '商品圖片'}
           className="card-img-top"
           style={{ objectFit: 'cover', height: '180px', cursor: 'pointer' }}

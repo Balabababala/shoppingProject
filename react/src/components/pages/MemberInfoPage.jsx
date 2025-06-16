@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useContext} from "react";
+import { AppContext } from "../../contexts/AppContext"; 
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function MemberInfoPage() {
@@ -13,12 +14,14 @@ function MemberInfoPage() {
   const [submitError, setSubmitError] = useState(null);
   const [submitSuccess, setSubmitSuccess] = useState(null);
   const [validationErrors, setValidationErrors] = useState({});
-
-  const API_BASE = "http://localhost:8080/api/";
+  const {
+      API_BASE,
+      addToastMessage, // 如果你之後想用 toast 顯示成功/錯誤訊息可以用
+    } = useContext(AppContext);
 
   // 載入用戶資料
   useEffect(() => {
-    fetch(`${API_BASE}user/profile`, {
+    fetch(`${API_BASE}/user/profile`, {
       credentials: "include",
     })
       .then((resp) => {
@@ -64,7 +67,7 @@ function MemberInfoPage() {
 
     setSubmitLoading(true);
 
-    fetch(`${API_BASE}user/profile/update`, {
+    fetch(`${API_BASE}/user/profile/update`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       credentials: "include",

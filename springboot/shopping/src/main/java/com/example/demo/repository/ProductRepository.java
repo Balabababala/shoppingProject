@@ -12,6 +12,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.model.entity.Product;
+import com.example.demo.model.entity.User;
 
 @Repository
 public interface ProductRepository extends JpaRepository <Product, Long>{
@@ -23,6 +24,11 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	@Transactional(readOnly = true)
 	@Query("SELECT p FROM Product p JOIN FETCH p.category")
 	List<Product> findAllWithCategory();
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT p FROM Product p JOIN FETCH p.category " +
+		       "WHERE p.isDeleted = false AND p.status = 'ACTIVE'")
+	List<Product> findVisibleWithCategory();
 	
 	@Transactional(readOnly = true)
 	@Query("SELECT DISTINCT p FROM Product p "
@@ -84,9 +90,15 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	@Query(value = "SELECT p.*, MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) AS score " +
 	               "FROM products p " +
 	               "WHERE MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) " +
+	               "AND p.is_deleted = FALSE " +
+	               "AND p.status = 'ACTIVE' " +
 	               "ORDER BY score DESC, p.updated_at DESC",
 	       nativeQuery = true)
 	List<Product> findByKeywordFullTextBoolean(@Param("keyword") String keyword);
+
+	
+	
+
 
 
 }

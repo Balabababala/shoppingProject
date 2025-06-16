@@ -12,8 +12,7 @@ import { AppContext } from '../contexts/AppContext';
 import MyNavbarCategories from './MyNavbarCategories.jsx';
 
 function MyNavbar({ onChangeContent }) {
-  const API_BASE = 'http://localhost:8080/api';
-  const { userData, cartItems = [], categories = [],setUserData,addToastMessage} = useContext(AppContext); // 安全預設值
+  const { userData, cartItems = [], categories = [],setUserData,addToastMessage,API_BASE} = useContext(AppContext); // 安全預設值
   const [showCart, setShowCart] = useState(false);
 
   // 顯示購物車內容
