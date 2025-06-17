@@ -57,7 +57,14 @@ public class AdminProductController {
         productService.deleteProductByAdmin(id);
         return ResponseEntity.ok(ApiResponse.success("刪除商品成功", null));
     }
-
+    
+    /** 回復商品 **/
+    @PutMapping("/{id}/restore")
+    public ResponseEntity<ApiResponse<Void>> restoreProduct(@PathVariable Long id) {
+        productService.restoreProductByAdmin(id);
+        return ResponseEntity.ok(ApiResponse.success("回復商品成功", null));
+    }
+    
     /** 商品下架 **/
     @PutMapping("/{id}/unactive")
     public ResponseEntity<ApiResponse<Void>> unactiveProduct(@PathVariable Long id, HttpSession session) {
@@ -70,7 +77,7 @@ public class AdminProductController {
     @PutMapping("/{id}/active")
     public ResponseEntity<ApiResponse<Void>> activeProduct(@PathVariable Long id, HttpSession session) {
         // 可加權限檢查
-        productService.unActiveProductByAdmin(id);
+        productService.activeProductByAdmin(id);
         return ResponseEntity.ok(ApiResponse.success("商品上架成功", null));
     }
 

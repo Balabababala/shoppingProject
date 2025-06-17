@@ -30,6 +30,7 @@ public class AdminProductMapper {
 		adminProductResponse.setPrice(product.getPrice());
 		adminProductResponse.setStock(product.getStock());
 		adminProductResponse.setStatus(product.getStatus());
+		adminProductResponse.setIsDeleted(product.getIsDeleted());
 		adminProductResponse.setCategoryId(product.getCategory().getId());
 		adminProductResponse.setProductImageDtos(product.getProductImages().stream()
 																			.map(ProductImageMapper::toDto)

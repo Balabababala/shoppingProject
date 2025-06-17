@@ -1,0 +1,206 @@
+.admin-userlist {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-family: 'Noto Sans', 'Microsoft JhengHei', sans-serif;
+  color: #333;
+}
+
+.userlist-controls {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.userlist-controls input {
+  padding: 0.5rem 0.75rem;
+  flex-grow: 1;
+  max-width: 300px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  transition: border-color 0.2s ease;
+}
+
+.userlist-controls input:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.userlist-header,
+.user-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 1.5fr 4fr; /* 總共 4 欄 */
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.userlist-header {
+  font-weight: 600;
+  background-color: #f5f7fa;
+  user-select: none;
+}
+
+.user-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.user-row:hover {
+  background-color: #e1eaff;
+}
+
+.status-active {
+  color: #388e3c; /* 深綠色 */
+  font-weight: 600;
+}
+
+.status-inactive {
+  color: #d32f2f; /* 深紅色 */
+  font-weight: 600;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center; /* 內容置中 */
+  flex-wrap: nowrap;
+}
+
+.action-buttons button {
+  padding: 0.3rem 0.7rem;
+  border-radius: 4px;
+  border: none;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-change-role {
+  margin-left: 0.5rem;
+  padding: 0.3rem 0.7rem;
+  background-color: #1976d2;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  font-size: 0.85rem;
+}
+
+.btn-change-role:disabled {
+  background-color: #90caf9;
+  cursor: not-allowed;
+}
+
+.btn-change-role:not(:disabled):hover {
+  background-color: #1565c0;
+}
+
+.btn-edit {
+  background-color: #2196f3;
+  color: white;
+}
+
+.btn-edit:hover {
+  background-color: #1976d2;
+}
+
+.btn-delete {
+  background-color: #f44336;
+  color: white;
+}
+
+.btn-delete:hover {
+  background-color: #d32f2f;
+}
+
+.btn-on {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-on:hover {
+  background-color: #388e3c;
+}
+
+.btn-off {
+  background-color: #ff9800;
+  color: white;
+}
+
+.btn-off:hover {
+  background-color: #fb8c00;
+}
+
+.btn-reset-password {
+  background-color: #9c27b0;
+  color: white;
+}
+
+.btn-reset-password:hover {
+  background-color: #7b1fa2;
+}
+
+select {
+  padding: 0.3rem 0.5rem;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+  cursor: pointer;
+}
+
+select:focus {
+  border-color: #1976d2;
+  outline: none;
+}
+
+.no-users {
+  padding: 2rem;
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.loading,
+.not-logged-in {
+  padding: 2rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.5rem;
+  gap: 1rem;
+  font-size: 1rem;
+}
+
+.pagination button {
+  padding: 0.4rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #1976d2;
+  background-color: white;
+  color: #1976d2;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.pagination button:disabled {
+  border-color: #ccc;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.pagination button:not(:disabled):hover {
+  background-color: #1976d2;
+  color: white;
+}

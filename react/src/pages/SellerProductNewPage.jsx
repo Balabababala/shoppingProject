@@ -10,11 +10,11 @@ import {
   Image,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Select from 'react-select';
 import { AppContext } from '../contexts/AppContext';
 
 function SellerProductNewPage() {
-  const API_BASE = 'http://localhost:8080/api';
-  const { addToastMessage } = useContext(AppContext);
+  const { addToastMessage, API_BASE } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -30,25 +30,41 @@ function SellerProductNewPage() {
   const [extraImages, setExtraImages] = useState([]);
   const [uploading, setUploading] = useState(false);
 
+  // 取得葉分類資料，避免無限請求
   useEffect(() => {
     fetch(`${API_BASE}/categories/leaf`)
       .then((res) => res.json())
-      .then((data) => {
-        if (data) setCategories(data);
+      .then((json) => {
+        if (json.data && Array.isArray(json.data)) {
+          setCategories(json.data);
+        } else {
+          addToastMessage('分類資料載入失敗: ' + (json.message || ''));
+        }
       })
       .catch(() => addToastMessage('分類資料載入失敗'));
   }, [API_BASE, addToastMessage]);
 
+  // input 值改變事件
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
 
+  // react-select 選擇分類事件
+  const handleCategoryChange = (selectedOption) => {
+    setProduct((prev) => ({
+      ...prev,
+      categoryId: selectedOption ? selectedOption.value : '',
+    }));
+  };
+
+  // 主圖片選擇
   const handleMainImageChange = (e) => {
     const file = e.target.files[0];
     setMainImage(file);
   };
 
+  // 其他圖片選擇，限制最多9張
   const handleExtraImagesChange = (e) => {
     const files = Array.from(e.target.files);
     if (files.length > 9) {
@@ -59,15 +75,17 @@ function SellerProductNewPage() {
     }
   };
 
+  // 表單送出
   const handleSubmit = async (e) => {
     e.preventDefault();
     setUploading(true);
     try {
       const formData = new FormData();
-      Object.entries(product).forEach(([key, val]) =>
-        formData.append(key, val)
-      );
+      // 產品基本資訊
+      Object.entries(product).forEach(([key, val]) => formData.append(key, val));
+      // 主圖片
       if (mainImage) formData.append('thumbnail', mainImage);
+      // 其他圖片
       extraImages.forEach((file) => {
         formData.append('extraImages', file);
       });
@@ -91,6 +109,16 @@ function SellerProductNewPage() {
       setUploading(false);
     }
   };
+
+  // 轉換分類為 react-select 格式
+  const categoryOptions = categories.map((cat) => ({
+    value: cat.id,
+    label: cat.name,
+  }));
+
+  // 目前選擇的分類
+  const selectedCategory =
+    categoryOptions.find((opt) => opt.value === product.categoryId) || null;
 
   return (
     <Container className="my-4">
@@ -141,19 +169,14 @@ function SellerProductNewPage() {
 
           <Form.Group className="mb-3" controlId="categoryId">
             <Form.Label>分類 *</Form.Label>
-            <Form.Select
-              name="categoryId"
-              value={product.categoryId}
-              onChange={handleChange}
+            <Select
+              options={categoryOptions}
+              value={selectedCategory}
+              onChange={handleCategoryChange}
+              isClearable
+              placeholder="請選擇分類"
               required
-            >
-              <option value="">請選擇分類</option>
-              {categories.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.name}
-                </option>
-              ))}
-            </Form.Select>
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="status">
@@ -185,6 +208,7 @@ function SellerProductNewPage() {
                   src={URL.createObjectURL(mainImage)}
                   thumbnail
                   style={{ maxHeight: 200 }}
+                  alt="主圖片預覽"
                 />
               </div>
             )}
@@ -208,6 +232,7 @@ function SellerProductNewPage() {
                     src={URL.createObjectURL(img)}
                     thumbnail
                     style={{ height: 100, objectFit: 'cover' }}
+                    alt={`其他圖片預覽 ${i + 1}`}
                   />
                 </Col>
               ))}

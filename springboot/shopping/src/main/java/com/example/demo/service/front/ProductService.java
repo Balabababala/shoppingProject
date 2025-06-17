@@ -42,8 +42,13 @@ public interface ProductService {
     void addProductByAdmin(@Valid AdminProductCreateRequest request);
     // 後台刪除商品（軟刪除）
     void deleteProductByAdmin(Long id);
+    // 後台回復商品（取消軟刪除）
+    void restoreProductByAdmin(Long id);
     // 後台商品下架（狀態改為非上架）
     void unActiveProductByAdmin(Long id);
+    // 後台商品下架（狀態改為非上架）
+    void activeProductByAdmin(Long id);
+    
     // 後台取得單一商品詳細資訊
     AdminProductResponse findProductByIdForAdmin(Long id);
 	void updateProductByAdmin(Long id, @Valid AdminProductCreateRequest request);

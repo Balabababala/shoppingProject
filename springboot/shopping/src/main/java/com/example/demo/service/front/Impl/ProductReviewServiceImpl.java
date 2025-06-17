@@ -72,6 +72,11 @@ public class ProductReviewServiceImpl implements ProductReviewService {
                          .toList();
     }
 
+    
+    
+
+    //後臺用
+
     @Override
     public ProductReviewDto updateVisibility(Long reviewId, boolean visible) {
         ProductReview review = productReviewRepository.findById(reviewId)
@@ -91,12 +96,22 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         ProductReview updated = productReviewRepository.save(review);
         return ProductReviewMapper.toDto(updated);
     }
-
+    
     @Override
     public void deleteReview(Long reviewId) {
         if (!productReviewRepository.existsById(reviewId)) {
             throw new NoSuchElementException("找不到評論");
         }
-        productRepository.deleteById(reviewId);
+        productReviewRepository.deleteById(reviewId);
     }
+    
+    @Override
+    @Transactional(readOnly = true)
+    public List<ProductReviewDto> getAllReviews() {
+        return productReviewRepository.findAll()
+                .stream()
+                .map(ProductReviewMapper::toDto)
+                .toList();
+    }
+    
 }

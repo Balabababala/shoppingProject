@@ -32,6 +32,8 @@ public class Category {
 
     private LocalDateTime updatedAt;
     
+    private Integer level; 
+    
     @OneToMany(mappedBy = "category")		//對product
     private List<Product> products;
     

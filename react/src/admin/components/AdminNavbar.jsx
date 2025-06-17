@@ -1,5 +1,6 @@
-import { useState } from 'react';
+import { useState,useContext} from 'react';
 import { Link } from 'react-router-dom';
+import { AdminAppContext } from '../contexts/AdminAppContext';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -10,6 +11,26 @@ function AdminNavbar() {
 
   const handleMouseEnter = () => setShowCart(true);
   const handleMouseLeave = () => setTimeout(() => setShowCart(false), 200);
+ const { API_BASE, setAdminUserData,addToastMessage } = useContext(AdminAppContext);
+
+   const logout = () =>{
+    fetch(`${API_BASE}/admin/logout`,{
+      method: 'POST',
+      credentials: 'include',
+      headers: { 'Cache-Control': 'no-cache' },
+    })
+    .then(response => {
+      if (response.ok) {
+        setAdminUserData(null); // 清空前端 adminUserData
+        window.location.href = '/admin';
+      } else {
+        addToastMessage('登出失敗');
+      }
+    })
+    .catch(error => {
+      addToastMessage('登出時發生錯誤', error);
+    });
+  }
 
   return (
     <Navbar expand="lg" fixed="top" className="mynavbar">
@@ -22,14 +43,11 @@ function AdminNavbar() {
             <NavDropdown title="商品管理" id="product-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin/products">商品列表</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/categories">商品分類管理</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/inventory">庫存管理</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/reviews">評論管理</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="用戶管理" id="user-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin/users">會員列表</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/permissions">權限設定</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/users/deactivated">停用帳號</NavDropdown.Item>
             </NavDropdown>
 
             <NavDropdown title="推薦系統管理" id="recommend-nav-dropdown">
@@ -44,7 +62,7 @@ function AdminNavbar() {
 
             <NavDropdown title="帳號管理" id="account-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin/account/change-password">修改密碼</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/admin/logout">登出</NavDropdown.Item>
+              <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
             </NavDropdown>
 
           </Nav>

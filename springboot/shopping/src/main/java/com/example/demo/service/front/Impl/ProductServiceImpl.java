@@ -30,6 +30,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 @Service
 public class ProductServiceImpl implements ProductService {
 
@@ -157,7 +158,10 @@ public class ProductServiceImpl implements ProductService {
         updateProductStatus(id, session, ProductStatus.ACTIVE);
     }
 
-    /**
+    
+
+
+	/**
      * 共用狀態修改方法
      */
     private void updateProductStatus(Long id, HttpSession session, ProductStatus status) {
@@ -261,9 +265,25 @@ public class ProductServiceImpl implements ProductService {
 	    User seller = userRepository.findById(adminProductCreateRequest.getSellerId())
 	            .orElseThrow(() -> new ShoppingException("找不到賣家 ID：" + adminProductCreateRequest.getSellerId()));
 
+	    // 建立商品實體
 	    Product product = AdminProductMapper.toEntity(adminProductCreateRequest, category, seller);
 
-	    productRepository.save(product);
+	    // 先存商品資料（取得 ID）
+	    product = productRepository.save(product);
+
+	    // 準備圖片列表：主圖放第一張，後面接最多9張額外圖
+	    List<MultipartFile> allFiles = new ArrayList<>();
+	    if (adminProductCreateRequest.getThumbnail() != null && !adminProductCreateRequest.getThumbnail().isEmpty()) {
+	        allFiles.add(adminProductCreateRequest.getThumbnail());
+	    }
+	    if (adminProductCreateRequest.getExtraImages() != null && !adminProductCreateRequest.getExtraImages().isEmpty()) {
+	        allFiles.addAll(adminProductCreateRequest.getExtraImages().stream().limit(9).toList());
+	    }
+
+	    // 一次呼叫 service 上傳圖片，number 從 0 開始，0 表示主圖
+	    if (!allFiles.isEmpty()) {
+	        productImageService.addImagesToProduct(product.getId(), seller.getId(), allFiles, 0);
+	    }
 	}
 
 	@Override
@@ -274,6 +294,24 @@ public class ProductServiceImpl implements ProductService {
 	    product.setIsDeleted(true);  // 依你的欄位名稱改寫
 	    productRepository.save(product);
 	}
+	
+	@Override
+	public void restoreProductByAdmin(Long id) {
+//	    Product product = productRepository.findById(id)
+//	        .orElseThrow(() -> new ShoppingException("找不到商品，ID：" + id));
+//	    product.setIsDeleted(false);
+//	    productRepository.save(product);		
+		Optional<Product> optional = productRepository.findById(id);
+	    if (optional.isEmpty()) {
+	        System.out.println("找不到商品，ID: " + id);
+	        throw new ShoppingException("找不到商品，ID：" + id);
+	    }
+	    Product product = optional.get();
+	    System.out.println("找到商品，名稱：" + product.getName() + ", isDeleted=" + product.getIsDeleted());
+	    product.setIsDeleted(false);
+	    productRepository.save(product);
+	    System.out.println("商品已復原，ID：" + product.getId());
+	}
 
 	@Override
 	public void unActiveProductByAdmin(Long id) {
@@ -281,6 +319,15 @@ public class ProductServiceImpl implements ProductService {
 	    Product product = productRepository.findById(id)
 	        .orElseThrow(() -> new ShoppingException("找不到商品，ID：" + id));
 	    product.setStatus(ProductStatus.INACTIVE);  // 依你的欄位名稱改寫
+	    productRepository.save(product);
+	}
+	
+	@Override
+	public void activeProductByAdmin(Long id) {
+	    // 改成下架狀態
+	    Product product = productRepository.findById(id)
+	        .orElseThrow(() -> new ShoppingException("找不到商品，ID：" + id));
+	    product.setStatus(ProductStatus.ACTIVE);  // 依你的欄位名稱改寫
 	    productRepository.save(product);
 	}
 
@@ -293,55 +340,47 @@ public class ProductServiceImpl implements ProductService {
 
 
 	@Override
-	public void updateProductByAdmin(Long id, @Valid AdminProductCreateRequest adminProductCreateRequest) {
-	    // 找商品本體
-	    Product product = productRepository.findById(id)
+	public void updateProductByAdmin(Long id, @Valid AdminProductCreateRequest request) {
+	    Product product = productRepository.findByIdWithSeller(id)
 	            .orElseThrow(() -> new ShoppingException("找不到商品 ID：" + id));
 
-	    // 找分類
-	    Category category = categoryRepository.findById(adminProductCreateRequest.getCategoryId())
-	            .orElseThrow(() -> new ShoppingException("找不到分類 ID：" + adminProductCreateRequest.getCategoryId()));
+	    Category category = categoryRepository.findById(request.getCategoryId())
+	            .orElseThrow(() -> new ShoppingException("找不到分類 ID：" + request.getCategoryId()));
 
-	    // 找賣家
-	    User seller = userRepository.findById(adminProductCreateRequest.getSellerId())
-	            .orElseThrow(() -> new ShoppingException("找不到賣家 ID：" + adminProductCreateRequest.getSellerId()));
+	    // 不要把 sellerId 用在這裡找賣家，因為管理者不是賣家，不改 sellerId
+	    // 建議改成從商品本體取得 seller
+	    User seller = product.getSeller();
+	    if (seller == null) {
+	        throw new ShoppingException("該商品沒有關聯賣家，無法更新圖片");
+	    }
 
-	    MultipartFile thumbnail = adminProductCreateRequest.getThumbnail();
-    	List <MultipartFile> extraImages =adminProductCreateRequest.getExtraImages();
-	    
+	    MultipartFile thumbnail = request.getThumbnail();
+	    List<MultipartFile> extraImages = request.getExtraImages();
+
 	    boolean hasNewImages = (thumbnail != null && !thumbnail.isEmpty()) ||
-                (extraImages != null && !extraImages.isEmpty());
-	    
-	    if(hasNewImages) {
-        	// 刪除舊圖片（資料庫）
-    		
-            productImageService.deleteImage(product.getId(),seller.getId());
-            product.getProductImages().clear();
-            
-            
-            // 加入新圖片
-            List<MultipartFile> newImages = new ArrayList();
-            if(adminProductCreateRequest.getThumbnail()!=null) {
-            	 newImages.add(adminProductCreateRequest.getThumbnail());
-            }
-            if(adminProductCreateRequest.getExtraImages()!=null) {
-            	newImages.addAll(adminProductCreateRequest.getExtraImages());
-            }
-            
-            productImageService.addImagesToProduct(product.getId(), seller.getId(), newImages, 0);
-    	}		
-	
-		 // 更新其他欄位（你原本的邏輯）
-        product.setName(adminProductCreateRequest.getName());
-        product.setDescription(adminProductCreateRequest.getDescription());
-        product.setPrice(adminProductCreateRequest.getPrice());
-        product.setStock(adminProductCreateRequest.getStock());
-        product.setStatus(adminProductCreateRequest.getStatus());
+	                           (extraImages != null && !extraImages.isEmpty());
 
-       
-        product.setCategory(category);
-        // 儲存
-        productRepository.save(product);
+	    if (hasNewImages) {
+	        productImageService.deleteImage(product.getId(), seller.getId());
+	        product.getProductImages().clear();
+
+	        List<MultipartFile> newImages = new ArrayList<>();
+	        if (thumbnail != null && !thumbnail.isEmpty()) {
+	            newImages.add(thumbnail);
+	        }
+	        if (extraImages != null && !extraImages.isEmpty()) {
+	            newImages.addAll(extraImages);
+	        }
+
+	        productImageService.addImagesToProduct(product.getId(), seller.getId(), newImages, 0);
+	    }
+
+	    product.setName(request.getName());
+	    product.setDescription(request.getDescription());
+	    product.setPrice(request.getPrice());
+	    product.setStock(request.getStock());
+	    product.setStatus(request.getStatus());
+	    product.setCategory(category);
 
 	    productRepository.save(product);
 	}

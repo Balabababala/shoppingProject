@@ -112,8 +112,8 @@ function AdminProductListPage() {
     }
   };
 
-  // 刪除商品
-  const deleteProduct = async (id) => {
+  // 刪除商品（軟刪除）
+  const softDeleteProduct = async (id) => {
     if (!window.confirm('確定要刪除此商品？')) return;
     if (!adminUserData) {
       addToastMessage('請先登入');
@@ -134,15 +134,36 @@ function AdminProductListPage() {
     }
   };
 
-  if (loading) return <div>載入中...</div>;
-  if (error) return <div style={{ color: 'red' }}>{error}</div>;
-  if (!adminUserData) return <div>請先登入才能管理商品</div>;
+  // 復原商品
+  const restoreProduct = async (id) => {
+    if (!adminUserData) {
+      addToastMessage('請先登入');
+      return;
+    }
+    try {
+      const res = await fetchWithAuthCheck(`${API_BASE}/admin/products/${id}/restore`, { method: 'PUT' });
+      if (res?.authError) {
+        addToastMessage('身份驗證失效，請重新登入');
+      } else if (res?.message?.includes('成功')) {
+        addToastMessage('商品已復原');
+        fetchProducts();
+      } else {
+        addToastMessage('復原商品失敗');
+      }
+    } catch {
+      addToastMessage('復原商品時發生錯誤');
+    }
+  };
+
+  if (loading) return <div style={{ padding: 20 }}>載入中...</div>;
+  if (error) return <div style={{ padding: 20, color: 'red' }}>{error}</div>;
+  if (!adminUserData) return <div style={{ padding: 20 }}>請先登入才能管理商品</div>;
 
   return (
-    <div style={{ padding: 20 }}>
-      <h2>管理員商品列表</h2>
+    <div style={{ padding: 20, maxWidth: 1200, margin: 'auto' }}>
+      <h2 style={{ marginBottom: 20 }}>管理員商品列表</h2>
 
-      <div style={{ marginBottom: 12 }}>
+      <div style={{ marginBottom: 20, display: 'flex', alignItems: 'center', gap: 12 }}>
         <button onClick={() => navigate('/admin/products/new')}>新增商品</button>
         <input
           type="text"
@@ -152,31 +173,85 @@ function AdminProductListPage() {
             setSearchKeyword(e.target.value);
             setCurrentPage(1);
           }}
-          style={{ marginLeft: 12, padding: 4 }}
+          style={{
+            flexGrow: 1,
+            maxWidth: 300,
+            padding: '6px 8px',
+            borderRadius: 4,
+            border: '1px solid #ccc',
+            fontSize: 14,
+          }}
         />
       </div>
 
-      <div style={{ display: 'flex', fontWeight: 'bold', borderBottom: '1px solid #ccc', paddingBottom: 6 }}>
-        <div style={{ flex: 1, cursor: 'pointer' }} onClick={() => handleSort('id')}>
-          商品ID {sortBy === 'id' ? (sortAsc ? '↑' : '↓') : ''}
+      {/* 表格標題列 */}
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: '60px 2fr 100px 80px 100px 80px 220px',
+          fontWeight: 'bold',
+          borderBottom: '2px solid #333',
+          paddingBottom: 6,
+          cursor: 'default',
+        }}
+      >
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleSort('id')}
+          aria-label="依商品ID排序"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if(e.key === 'Enter') handleSort('id'); }}
+        >
+          商品ID {sortBy === 'id' ? (sortAsc ? '▲' : '▼') : ''}
         </div>
-        <div style={{ flex: 2, cursor: 'pointer' }} onClick={() => handleSort('name')}>
-          商品名稱 {sortBy === 'name' ? (sortAsc ? '↑' : '↓') : ''}
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleSort('name')}
+          aria-label="依商品名稱排序"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if(e.key === 'Enter') handleSort('name'); }}
+        >
+          商品名稱 {sortBy === 'name' ? (sortAsc ? '▲' : '▼') : ''}
         </div>
-        <div style={{ flex: 1, cursor: 'pointer' }} onClick={() => handleSort('price')}>
-          價格 {sortBy === 'price' ? (sortAsc ? '↑' : '↓') : ''}
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleSort('price')}
+          aria-label="依價格排序"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if(e.key === 'Enter') handleSort('price'); }}
+        >
+          價格 {sortBy === 'price' ? (sortAsc ? '▲' : '▼') : ''}
         </div>
-        <div style={{ flex: 1, cursor: 'pointer' }} onClick={() => handleSort('stock')}>
-          庫存 {sortBy === 'stock' ? (sortAsc ? '↑' : '↓') : ''}
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleSort('stock')}
+          aria-label="依庫存排序"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if(e.key === 'Enter') handleSort('stock'); }}
+        >
+          庫存 {sortBy === 'stock' ? (sortAsc ? '▲' : '▼') : ''}
         </div>
-        <div style={{ flex: 1, cursor: 'pointer' }} onClick={() => handleSort('status')}>
-          狀態 {sortBy === 'status' ? (sortAsc ? '↑' : '↓') : ''}
+        <div
+          style={{ cursor: 'pointer' }}
+          onClick={() => handleSort('status')}
+          aria-label="依狀態排序"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if(e.key === 'Enter') handleSort('status'); }}
+        >
+          狀態 {sortBy === 'status' ? (sortAsc ? '▲' : '▼') : ''}
         </div>
-        <div style={{ flex: 2 }}>操作</div>
+        <div>刪除狀態</div>
+        <div>操作</div>
       </div>
 
+      {/* 商品列表 */}
       {pageProducts.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: 20 }}>尚無符合條件的商品</div>
+        <div style={{ textAlign: 'center', padding: 20, color: '#666' }}>尚無符合條件的商品</div>
       ) : (
         pageProducts.map(p => {
           const mainImageObj = Array.isArray(p.productImageDtos)
@@ -188,19 +263,20 @@ function AdminProductListPage() {
             <div
               key={p.id}
               style={{
-                display: 'flex',
+                display: 'grid',
+                gridTemplateColumns: '60px 2fr 100px 80px 100px 80px 220px',
                 alignItems: 'center',
                 borderBottom: '1px solid #eee',
-                padding: '8px 0',
+                padding: '12px 0',
               }}
             >
-              <div style={{ flex: 1 }}>{p.id}</div>
-              <div style={{ flex: 2, display: 'flex', alignItems: 'center', gap: 8 }}>
+              <div>{p.id}</div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
                 {mainImageUrl ? (
                   <img
                     src={mainImageUrl}
                     alt={p.name}
-                    style={{ width: 50, height: 50, objectFit: 'cover', cursor: 'pointer' }}
+                    style={{ width: 50, height: 50, objectFit: 'cover', cursor: 'pointer', borderRadius: 4 }}
                     onClick={() => navigate(`/products/${p.id}`)}
                   />
                 ) : (
@@ -215,6 +291,7 @@ function AdminProductListPage() {
                       cursor: 'pointer',
                       fontSize: 12,
                       color: '#666',
+                      borderRadius: 4,
                     }}
                     onClick={() => navigate(`/products/${p.id}`)}
                   >
@@ -228,22 +305,20 @@ function AdminProductListPage() {
                   {p.name}
                 </span>
               </div>
-              <div style={{ flex: 1 }}>NT$ {p.price}</div>
-              <div style={{ flex: 1 }}>{p.stock}</div>
-              <div
-                style={{
-                  flex: 1,
-                  color: p.status === 'ACTIVE' ? 'green' : 'gray',
-                  fontWeight: 'bold',
-                }}
-              >
+              <div>NT$ {p.price}</div>
+              <div>{p.stock}</div>
+              <div style={{ color: p.status === 'ACTIVE' ? 'green' : 'gray', fontWeight: 'bold' }}>
                 {p.status === 'ACTIVE' ? '上架中' : '下架中'}
               </div>
-              <div style={{ flex: 2, display: 'flex', gap: 8 }}>
+              <div style={{ color: p.isDeleted ? 'red' : 'black' }}>
+                {p.isDeleted ? '已刪除' : '正常'}
+              </div>
+              <div style={{ display: 'flex', gap: 8 }}>
                 <button onClick={() => toggleStatus(p.id, p.status)}>
                   {p.status === 'ACTIVE' ? '下架' : '上架'}
                 </button>
-                <button onClick={() => deleteProduct(p.id)}>刪除</button>
+                {!p.isDeleted && <button onClick={() => softDeleteProduct(p.id)}>刪除</button>}
+                {p.isDeleted && <button onClick={() => restoreProduct(p.id)}>復原</button>}
                 <button onClick={() => navigate(`/admin/products/edit/${p.id}`)}>編輯</button>
               </div>
             </div>
@@ -251,19 +326,39 @@ function AdminProductListPage() {
         })
       )}
 
-      <div style={{ marginTop: 12, display: 'flex', justifyContent: 'center', gap: 12 }}>
+      {/* 分頁控制 */}
+      <div
+        style={{
+          marginTop: 20,
+          display: 'flex',
+          justifyContent: 'center',
+          gap: 12,
+          alignItems: 'center',
+          fontSize: 14,
+        }}
+        aria-label="商品列表分頁"
+      >
         <button
           onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
           disabled={currentPage === 1}
+          aria-disabled={currentPage === 1}
+          aria-label="上一頁"
+          style={{ padding: '6px 12px' }}
         >
           上一頁
         </button>
+
+        {/* 可加上頁碼跳轉或目前頁數顯示 */}
         <span>
           第 {currentPage} 頁 / 共 {totalPage} 頁
         </span>
+
         <button
           onClick={() => setCurrentPage(p => Math.min(totalPage, p + 1))}
           disabled={currentPage === totalPage}
+          aria-disabled={currentPage === totalPage}
+          aria-label="下一頁"
+          style={{ padding: '6px 12px' }}
         >
           下一頁
         </button>

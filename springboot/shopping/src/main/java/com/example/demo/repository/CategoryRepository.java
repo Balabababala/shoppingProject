@@ -36,5 +36,12 @@ public interface CategoryRepository extends JpaRepository<Category, Long> {
 	@Transactional(readOnly = true)
 	@Query(value = "SELECT c.* FROM categories c JOIN categories p ON c.parent_id = p.id WHERE p.slug = :slug", nativeQuery = true)
 	List<Category> findChildrenBySlug(@Param("slug") String slug);//只有兒子 後面給遞迴用的
+
+	@Transactional(readOnly = true)
+	@Query("SELECT c FROM Category c LEFT JOIN FETCH c.parent")
+	List<Category> findAllWithParent();
+	
+	@Query("SELECT c FROM Category c LEFT JOIN FETCH c.children WHERE c.id = :id")
+	Optional<Category> findByIdWithChildren(@Param("id") Long id);
 }
 

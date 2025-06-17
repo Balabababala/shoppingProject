@@ -30,6 +30,7 @@ public class SecurityConfig {
         http
         	.cors(cors -> cors.configurationSource(corsConfigurationSource())) 				  // 使用 Spring Security 的 CORS
             .csrf(csrf -> csrf.disable()) // 若要保留 CSRF，要配合 CSRF token 寫法
+            .securityContext(context -> context.requireExplicitSave(false))
             .authorizeHttpRequests(auth -> auth
             	.requestMatchers("/uploads/**").permitAll() //
             	.requestMatchers("/api/admin/login").permitAll()//
@@ -39,7 +40,6 @@ public class SecurityConfig {
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
                 .anyRequest().permitAll()														//最後全通過 暫時這樣
             )
-            .httpBasic(httpBasic -> {}) 				// 也可以不用加 httpBasic，單純自己控制 API
             .formLogin(form -> form.disable()) 			// 禁用 formLogin，改用 API 登入
 	        .sessionManagement(session -> session 		// ✅ 加上 session 保留機制
 	                .maximumSessions(1)
@@ -51,8 +51,8 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        config.setAllowedOrigins(List.of("http://localhost:5173"));
-        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
+        config.setAllowedOriginPatterns(List.of("http://localhost:5173"));
+        config.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
 

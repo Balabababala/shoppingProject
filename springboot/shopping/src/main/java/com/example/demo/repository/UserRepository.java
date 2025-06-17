@@ -2,11 +2,17 @@ package com.example.demo.repository;
 
 import java.util.Optional;
 
+
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.model.entity.Role;
 import com.example.demo.model.entity.User;
+
+import io.lettuce.core.dynamic.annotation.Param;
+
 import java.util.List;
 
 
@@ -23,6 +29,10 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	@Transactional(readOnly = true)
 	Optional<User> findByEmail(String email);
 	
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT u FROM User u JOIN FETCH u.role r WHERE r = :role")
+	List<User> findByRoleWithRole(@Param("role") Role role);
 	// 你可以加自訂的方法，像是：
 	
 }

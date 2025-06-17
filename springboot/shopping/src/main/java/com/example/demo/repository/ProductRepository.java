@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.example.demo.model.entity.Category;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.entity.User;
 
@@ -95,6 +96,11 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 	               "ORDER BY score DESC, p.updated_at DESC",
 	       nativeQuery = true)
 	List<Product> findByKeywordFullTextBoolean(@Param("keyword") String keyword);
+
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT p FROM Product p JOIN FETCH p.seller s WHERE p.id = :id")
+	Optional<Product> findByIdWithSeller(@Param("id") Long id);
 
 	
 	

@@ -16,6 +16,7 @@ import com.example.demo.model.dto.UserProfileDto;
 import com.example.demo.model.dto.UserRegisterRequest;
 import com.example.demo.model.entity.Role;
 import com.example.demo.model.entity.User;
+import com.example.demo.repository.RoleRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.front.EmailService;
 import com.example.demo.service.front.LoginLogService;
@@ -44,7 +45,7 @@ public class UserServiceImpl implements UserService{
 	private EmailService emailService;
 	
 	@Autowired
-	private RoleService roleService;
+	private RoleRepository roleRepository;
 	
 
 
@@ -104,7 +105,7 @@ public class UserServiceImpl implements UserService{
 	        if (roleId == null || roleId > 2) {
 	            throw new RuntimeException("Invalid roleId");
 	        }
-	        Role role = roleService.findByRoleId(roleId)
+	        Role role = roleRepository.findById(roleId)
 	                .orElseThrow(() -> new RuntimeException("Role not found"));
 	        user.setRole(role);
 
