@@ -3,6 +3,8 @@ package com.example.demo.repository;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -28,6 +30,19 @@ public interface OrderRepository extends JpaRepository<Order, Long>{
 				+ "JOIN FETCH o.seller s "
 				+ "WHERE s.id = :userId")
 	List<Order> findBySellerIdWithOrderItemAndBuyerAndSeller(@Param("userId") Long userId);
+	
+	@Query("""
+		    SELECT o FROM Order o
+		    JOIN o.buyer u
+		    WHERE (:orderNumber IS NULL OR STR(o.id) LIKE %:orderNumber%)
+		      AND (:userName IS NULL OR u.username LIKE %:userName%)
+		""")
+		List<Order> searchOrdersNoPage(
+		    @Param("orderNumber") String orderNumber,
+		    @Param("userName") String userName
+		);
+
+
 	// 你可以加自訂的方法，像是：
 
 }

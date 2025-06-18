@@ -13,11 +13,16 @@ import AdminCategoryManagePage from './pages/AdminCategoryManagePage.jsx';
 import AdminReviewManagePage from './pages/AdminReviewManagePage.jsx';
 
 import AdminUserListPage from './pages/AdminUserListPage.jsx';
+import AdminOrderPage from './pages/AdminOrderPage.jsx';
+
 // import AdminPermissionManagePage from './pages/AdminPermissionManagePage.jsx';
 // import AdminUserDeactivatedPage from './pages/AdminUserDeactivatedPage.jsx';
 
 import AdminRecommendRulesPage from './pages/AdminRecommendRulesPage.jsx';
 import AdminRecommendContentPage from './pages/AdminRecommendContentPage.jsx';
+import AdminOrderDetailPage from './pages/AdminOrderDetailPage.jsx';
+import AdminOrderEditPage from './pages/AdminOrderEditPage.jsx';
+
 
 // import AdminSearchHistoryPage from './pages/AdminSearchHistoryPage.jsx';
 // import AdminBrowseHistoryPage from './pages/AdminBrowseHistoryPage.jsx';
@@ -45,8 +50,12 @@ function AdminApp() {
          <Route path="/categories" element={<AdminCategoryManagePage />} />
          <Route path="/reviews" element={<AdminReviewManagePage />} />
          <Route path="/recommend/rules" element={<AdminRecommendRulesPage />} />
-        <Route path="/recommend/content" element={<AdminRecommendContentPage />} />
+         <Route path="/recommend/content" element={<AdminRecommendContentPage />} />
 
+        
+        <Route path="/order-search" element={<AdminOrderPage />} />
+        <Route path="/detail/:orderId" element={<AdminOrderDetailPage />} />
+        <Route path="/admin/order-edit" element={<AdminOrderEditPage />} />
 
         <Route path="/users" element={<AdminUserListPage />} /> 
          

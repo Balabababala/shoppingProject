@@ -18,7 +18,6 @@ function AdminRecommendRulesPage() {
   const [currentRule, setCurrentRule] = useState({ id: null, name: '', type: '', weight: 0, active: false });
   const navigate = useNavigate();
 
-  // 取得規則列表
   const fetchRules = async () => {
     if (!adminUserData) {
       setError('請先登入');
@@ -54,7 +53,6 @@ function AdminRecommendRulesPage() {
     fetchRules();
   }, [adminUserData]);
 
-  // 排序處理
   const sortedRules = [...rules];
   if (sortBy) {
     sortedRules.sort((a, b) => {
@@ -72,7 +70,6 @@ function AdminRecommendRulesPage() {
     });
   }
 
-  // 搜尋過濾
   const filteredRules = sortedRules.filter(r => {
     const kw = searchKeyword.trim().toLowerCase();
     return (
@@ -95,13 +92,11 @@ function AdminRecommendRulesPage() {
     setCurrentPage(1);
   };
 
-  // 開啟模態框（新增或編輯）
   const handleOpenModal = (rule = { id: null, name: '', type: '', weight: 0, active: false }) => {
     setCurrentRule(rule);
     setShowModal(true);
   };
 
-  // 處理表單提交（新增或編輯）
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!adminUserData) {
@@ -138,7 +133,6 @@ function AdminRecommendRulesPage() {
     }
   };
 
-  // 刪除規則
   const deleteRule = async (id) => {
     if (!window.confirm('確定要刪除此規則？')) return;
     if (!adminUserData) {
@@ -149,7 +143,7 @@ function AdminRecommendRulesPage() {
     try {
       const res = await fetchWithAuthCheck(`${API_BASE}/admin/recommend/rules/${id}`, {
         method: 'DELETE',
-        headers: { 'content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
       });
 
       if (res?.authError) {
@@ -172,6 +166,8 @@ function AdminRecommendRulesPage() {
   if (error) return <div style={{ padding: 20, color: 'red' }}>{error}</div>;
   if (!adminUserData) return <div style={{ padding: 20 }}>請先登入才能管理規則</div>;
 
+  const gridColumns = '60px minmax(200px, 1fr) 100px 100px 160px'; // ID / 名稱 / 權重 / 狀態 / 操作欄
+
   return (
     <div style={{ padding: 20, maxWidth: 1200, margin: 'auto' }}>
       <h2 style={{ marginBottom: 20 }}>管理員推薦規則列表</h2>
@@ -182,7 +178,7 @@ function AdminRecommendRulesPage() {
           type="text"
           placeholder="搜尋規則名稱或ID"
           value={searchKeyword}
-          onChange={e => {
+          onChange={(e) => {
             setSearchKeyword(e.target.value);
             setCurrentPage(1);
           }}
@@ -197,102 +193,83 @@ function AdminRecommendRulesPage() {
         />
       </div>
 
-      {/* 表格標題列 */}
-      <div
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '80px 2fr 150px 100px 100px 200px',
-          fontWeight: 'bold',
-          borderBottom: '2px solid #333',
-          paddingBottom: 6,
-          cursor: 'default',
-        }}
-      >
+      {/* 表格包裹一層滾動，避免窄版跑版 */}
+      <div style={{ overflowX: 'auto' }}>
+        {/* 表格標題列 */}
         <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleSort('id')}
-          aria-label="依規則ID排序"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleSort('id'); }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: gridColumns,
+            fontWeight: 'bold',
+            borderBottom: '2px solid #333',
+            paddingBottom: 8,
+            alignItems: 'center',
+            userSelect: 'none',
+          }}
         >
-          規則ID {sortBy === 'id' ? (sortAsc ? '▲' : '▼') : ''}
+          {[
+            ['id', '規則ID'],
+            ['name', '規則名稱'],
+            ['weight', '權重'],
+            ['active', '啟用狀態'],
+          ].map(([field, label]) => (
+            <div
+              key={field}
+              style={{ cursor: 'pointer', textAlign: field === 'id' ? 'center' : 'left' }}
+              onClick={() => handleSort(field)}
+              role="button"
+              tabIndex={0}
+              onKeyDown={(e) => { if (e.key === 'Enter') handleSort(field); }}
+            >
+              {label} {sortBy === field ? (sortAsc ? '▲' : '▼') : ''}
+            </div>
+          ))}
+          <div style={{ textAlign: 'center' }}>操作</div>
         </div>
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleSort('name')}
-          aria-label="依規則名稱排序"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleSort('name'); }}
-        >
-          規則名稱 {sortBy === 'name' ? (sortAsc ? '▲' : '▼') : ''}
-        </div>
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleSort('type')}
-          aria-label="依規則類型排序"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleSort('type'); }}
-        >
-          規則類型 {sortBy === 'type' ? (sortAsc ? '▲' : '▼') : ''}
-        </div>
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleSort('weight')}
-          aria-label="依權重排序"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleSort('weight'); }}
-        >
-          權重 {sortBy === 'weight' ? (sortAsc ? '▲' : '▼') : ''}
-        </div>
-        <div
-          style={{ cursor: 'pointer' }}
-          onClick={() => handleSort('active')}
-          aria-label="依啟用狀態排序"
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => { if (e.key === 'Enter') handleSort('active'); }}
-        >
-          啟用狀態 {sortBy === 'active' ? (sortAsc ? '▲' : '▼') : ''}
-        </div>
-        <div>操作</div>
-      </div>
 
-      {/* 規則列表 */}
-      {pageRules.length === 0 ? (
-        <div style={{ textAlign: 'center', padding: 20, color: '#666' }}>尚無符合條件的規則</div>
-      ) : (
-        pageRules.map(r => (
-          <div
-            key={r.id}
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '80px 2fr 150px 100px 100px 200px',
-              alignItems: 'center',
-              borderBottom: '1px solid #eee',
-              padding: '12px 0',
-            }}
-          >
-            <div>{r.id}</div>
-            <div style={{ cursor: 'pointer', color: '#007bff', textDecoration: 'underline' }}
-                 onClick={() => handleOpenModal(r)}>
-              {r.name}
+        {/* 規則列表 */}
+        {pageRules.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: 20, color: '#666' }}>尚無符合條件的規則</div>
+        ) : (
+          pageRules.map(r => (
+            <div
+              key={r.id}
+              style={{
+                display: 'grid',
+                gridTemplateColumns: gridColumns,
+                alignItems: 'center',
+                borderBottom: '1px solid #eee',
+                padding: '12px 0',
+                fontSize: 14,
+              }}
+            >
+              <div style={{ textAlign: 'center' }}>{r.id}</div>
+              <div
+                style={{
+                  cursor: 'pointer',
+                  color: '#007bff',
+                  textDecoration: 'underline',
+                  overflow: 'hidden',
+                  whiteSpace: 'nowrap',
+                  textOverflow: 'ellipsis',
+                }}
+                onClick={() => handleOpenModal(r)}
+                title={r.name}
+              >
+                {r.name}
+              </div>
+              <div style={{ textAlign: 'center' }}>{r.weight.toFixed(1)}</div>
+              <div style={{ textAlign: 'center', color: r.active ? 'green' : 'gray', fontWeight: 'bold' }}>
+                {r.active ? '啟用' : '停用'}
+              </div>
+              <div style={{ display: 'flex', gap: 8, justifyContent: 'center' }}>
+                <button onClick={() => handleOpenModal(r)} style={{ padding: '4px 12px' }}>編輯</button>
+                <button onClick={() => deleteRule(r.id)} style={{ padding: '4px 12px' }}>刪除</button>
+              </div>
             </div>
-            <div>{r.type === 'Popularity' ? '熱門產品' : r.type === 'UserHistory' ? '用戶歷史' : '類別相關'}</div>
-            <div>{r.weight.toFixed(1)}</div>
-            <div style={{ color: r.active ? 'green' : 'gray', fontWeight: 'bold' }}>
-              {r.active ? '啟用' : '停用'}
-            </div>
-            <div style={{ display: 'flex', gap: 8 }}>
-              <button onClick={() => handleOpenModal(r)}>編輯</button>
-              <button onClick={() => deleteRule(r.id)}>刪除</button>
-            </div>
-          </div>
-        ))
-      )}
+          ))
+        )}
+      </div>
 
       {/* 分頁控制 */}
       <div
@@ -304,13 +281,10 @@ function AdminRecommendRulesPage() {
           alignItems: 'center',
           fontSize: 14,
         }}
-        aria-label="規則列表分頁"
       >
         <button
           onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
           disabled={currentPage === 1}
-          aria-disabled={currentPage === 1}
-          aria-label="上一頁"
           style={{ padding: '6px 12px' }}
         >
           上一頁
@@ -321,8 +295,6 @@ function AdminRecommendRulesPage() {
         <button
           onClick={() => setCurrentPage(p => Math.min(totalPage, p + 1))}
           disabled={currentPage === totalPage}
-          aria-disabled={currentPage === totalPage}
-          aria-label="下一頁"
           style={{ padding: '6px 12px' }}
         >
           下一頁
@@ -346,19 +318,6 @@ function AdminRecommendRulesPage() {
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Label>規則類型</Form.Label>
-              <Form.Select
-                value={currentRule.type}
-                onChange={(e) => setCurrentRule({ ...currentRule, type: e.target.value })}
-                required
-              >
-                <option value="">選擇類型</option>
-                <option value="Popularity">熱門產品</option>
-                <option value="UserHistory">用戶歷史</option>
-                <option value="CategoryBased">類別相關</option>
-              </Form.Select>
-            </Form.Group>
-            <Form.Group className="mb-3">
               <Form.Label>權重 (0-1)</Form.Label>
               <Form.Control
                 type="number"
@@ -378,9 +337,7 @@ function AdminRecommendRulesPage() {
                 onChange={(e) => setCurrentRule({ ...currentRule, active: e.target.checked })}
               />
             </Form.Group>
-            <Button variant="primary" type="submit">
-              儲存
-            </Button>
+            <Button variant="primary" type="submit">儲存</Button>
           </Form>
         </Modal.Body>
       </Modal>

@@ -46,6 +46,10 @@ function AdminNavbar() {
               <NavDropdown.Item as={Link} to="/admin/reviews">評論管理</NavDropdown.Item>
             </NavDropdown>
 
+            <NavDropdown title="訂單管理" id="history-nav-dropdown">
+              <NavDropdown.Item as={Link} to="/admin/order-search">訂單紀錄</NavDropdown.Item>
+            </NavDropdown>
+
             <NavDropdown title="用戶管理" id="user-nav-dropdown">
               <NavDropdown.Item as={Link} to="/admin/users">會員列表</NavDropdown.Item>
             </NavDropdown>
@@ -59,6 +63,8 @@ function AdminNavbar() {
               <NavDropdown.Item as={Link} to="/admin/history/search">搜尋紀錄查詢</NavDropdown.Item>
               <NavDropdown.Item as={Link} to="/admin/history/browse">最近瀏覽商品紀錄</NavDropdown.Item>
             </NavDropdown>
+
+
 
             <NavDropdown title="帳號管理" id="account-nav-dropdown">
               <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>

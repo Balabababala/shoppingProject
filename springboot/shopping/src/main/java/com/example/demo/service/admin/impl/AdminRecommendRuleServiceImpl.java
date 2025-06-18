@@ -20,27 +20,39 @@ public class AdminRecommendRuleServiceImpl implements AdminRecommendRuleService 
     @Autowired
     private RecommendRuleRepository recommendRuleRepository;
 
+    
+    @Override
     public List<RecommendRuleDto> getAllRules() {
         return recommendRuleRepository.findAll().stream()
         									    .map(RecommendRuleDtoMapper::toDto)
-        									    .toList()
-        							   ;
+        									    .toList();
     }
 
+    @Override
     public RecommendRuleDto getRuleById(Long id) {
         return RecommendRuleDtoMapper.toDto(recommendRuleRepository.findById(id)
         														   .orElseThrow(()->new ShoppingException("沒找到規則")));
     }
 
+    @Override
     public void createRule(RecommendRuleDto recommendRuleDto) {
     	recommendRuleRepository.save(RecommendRuleDtoMapper.toEntity(recommendRuleDto));
     }
 
-    public void updateRule(Long id, RecommendRuleDto recommendRuleDto) {
-        RecommendRule existingRule = recommendRuleRepository.getById(id);
-        recommendRuleRepository.save(RecommendRuleDtoMapper.toEntity(recommendRuleDto));
+    @Override
+    public void updateRule(Long id, RecommendRuleDto dto) {
+        RecommendRule rule = recommendRuleRepository.findById(id)
+            .orElseThrow(() -> new ShoppingException("找不到規則"));
+
+        rule.setName(dto.getName());
+        rule.setType(dto.getType());
+        rule.setWeight(dto.getWeight());
+        rule.setActive(dto.getActive());
+
+        recommendRuleRepository.save(rule);
     }
 
+    @Override
     public void deleteRule(Long id) {
         recommendRuleRepository.deleteById(id);
     }

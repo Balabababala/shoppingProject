@@ -216,7 +216,7 @@ function AdminRecommendContentPage() {
       return;
     }
     try {
-      const res = await fetchWithAuthCheck(`${API_BASE}/admin/recommendation/${id}`, {
+      const res = await fetchWithAuthCheck(`${API_BASE}/admin/recommend/content/${id}`, {
         method: 'DELETE',
         headers: { 'Content-Type': 'application/json' },
       });
