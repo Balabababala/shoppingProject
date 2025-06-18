@@ -28,7 +28,6 @@ function AdminProductNewPage() {
 
   const [categories, setCategories] = useState([]);
   const [sellers, setSellers] = useState([]);
-  const [sellerFilter, setSellerFilter] = useState('');
 
   const [mainImage, setMainImage] = useState(null);
   const [mainImagePreview, setMainImagePreview] = useState(null);
@@ -39,22 +38,17 @@ function AdminProductNewPage() {
   const [uploading, setUploading] = useState(false);
 
   useEffect(() => {
-  Promise.all([
-    fetch(`${API_BASE}/categories/leaf`, { credentials: 'include' })
-      .then((res) => res.json()),
-    fetch(`${API_BASE}/admin/users/sellers`, { credentials: 'include' })
-      .then((res) => res.json()),
-  ])
-    .then(([categoriesData, sellersData]) => {
-      setCategories(categoriesData.data);
-      setSellers(sellersData.data);
-    })
-    .catch(() => addToastMessage('分類或賣家資料載入失敗'));
-}, [API_BASE, addToastMessage]);
+    Promise.all([
+      fetch(`${API_BASE}/categories/leaf`, { credentials: 'include' }).then((res) => res.json()),
+      fetch(`${API_BASE}/admin/sellers`, { credentials: 'include' }).then((res) => res.json()),
+    ])
+      .then(([categoriesData, sellersData]) => {
+        setCategories(categoriesData.data || []);
+        setSellers(sellersData.data || []);
+      })
+      .catch(() => addToastMessage('分類或賣家資料載入失敗'));
+  }, [API_BASE, addToastMessage]);
 
-
-
-  // 主圖片預覽與釋放
   useEffect(() => {
     if (!mainImage) {
       setMainImagePreview(null);
@@ -65,35 +59,21 @@ function AdminProductNewPage() {
     return () => URL.revokeObjectURL(objectUrl);
   }, [mainImage]);
 
-  // 其他圖片預覽與釋放
   useEffect(() => {
+    extraImagesPreviews.forEach((url) => URL.revokeObjectURL(url));
     if (extraImages.length === 0) {
-      extraImagesPreviews.forEach((url) => URL.revokeObjectURL(url));
       setExtraImagesPreviews([]);
       return;
     }
-    const objectUrls = extraImages.map((file) => URL.createObjectURL(file));
-    setExtraImagesPreviews(objectUrls);
-
-    return () => {
-      objectUrls.forEach((url) => URL.revokeObjectURL(url));
-    };
+    const urls = extraImages.map((file) => URL.createObjectURL(file));
+    setExtraImagesPreviews(urls);
+    return () => urls.forEach((url) => URL.revokeObjectURL(url));
   }, [extraImages]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setProduct((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleSellerFilterChange = (e) => {
-    setSellerFilter(e.target.value);
-  };
-
-  const filteredSellers = Array.isArray(sellers)?sellers.filter(
-    (s) =>
-      s.name.toLowerCase().includes(sellerFilter.toLowerCase()) ||
-      s.email.toLowerCase().includes(sellerFilter.toLowerCase())
-  ): [];
 
   const handleMainImageChange = (e) => {
     setMainImage(e.target.files[0]);
@@ -114,7 +94,6 @@ function AdminProductNewPage() {
     setUploading(true);
     try {
       const formData = new FormData();
-      // 對需要數字型態的欄位轉型
       formData.append('name', product.name);
       formData.append('price', parseFloat(product.price));
       formData.append('stock', parseInt(product.stock, 10));
@@ -209,10 +188,10 @@ function AdminProductNewPage() {
                     }
                   : null
               }
-              onChange={(selectedOption) =>
+              onChange={(selected) =>
                 setProduct((prev) => ({
                   ...prev,
-                  categoryId: selectedOption ? selectedOption.value : '',
+                  categoryId: selected ? selected.value : '',
                 }))
               }
               placeholder="請選擇分類"
@@ -235,17 +214,16 @@ function AdminProductNewPage() {
                     }
                   : null
               }
-              onChange={(selectedOption) =>
+              onChange={(selected) =>
                 setProduct((prev) => ({
                   ...prev,
-                  sellerId: selectedOption ? selectedOption.value : '',
+                  sellerId: selected ? selected.value : '',
                 }))
               }
               placeholder="請選擇賣家"
               isClearable
             />
           </Form.Group>
-
 
           <Form.Group className="mb-4" controlId="thumbnail">
             <Form.Label>主圖片（僅限 1 張）</Form.Label>
@@ -259,11 +237,7 @@ function AdminProductNewPage() {
             </Form.Text>
             {mainImagePreview && (
               <div className="mt-2">
-                <Image
-                  src={mainImagePreview}
-                  thumbnail
-                  style={{ maxHeight: 200 }}
-                />
+                <Image src={mainImagePreview} thumbnail style={{ maxHeight: 200 }} />
               </div>
             )}
           </Form.Group>
@@ -282,11 +256,7 @@ function AdminProductNewPage() {
             <Row className="mt-2 g-2">
               {extraImagesPreviews.map((src, i) => (
                 <Col xs={4} md={3} key={i}>
-                  <Image
-                    src={src}
-                    thumbnail
-                    style={{ height: 100, objectFit: 'cover' }}
-                  />
+                  <Image src={src} thumbnail style={{ height: 100, objectFit: 'cover' }} />
                 </Col>
               ))}
             </Row>

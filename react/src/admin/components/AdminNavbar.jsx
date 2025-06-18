@@ -61,7 +61,6 @@ function AdminNavbar() {
             </NavDropdown>
 
             <NavDropdown title="帳號管理" id="account-nav-dropdown">
-              <NavDropdown.Item as={Link} to="/admin/account/change-password">修改密碼</NavDropdown.Item>
               <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
             </NavDropdown>
 

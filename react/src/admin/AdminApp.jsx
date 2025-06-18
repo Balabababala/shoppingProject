@@ -16,8 +16,8 @@ import AdminUserListPage from './pages/AdminUserListPage.jsx';
 // import AdminPermissionManagePage from './pages/AdminPermissionManagePage.jsx';
 // import AdminUserDeactivatedPage from './pages/AdminUserDeactivatedPage.jsx';
 
-// import AdminRecommendRulesPage from './pages/AdminRecommendRulesPage.jsx';
-// import AdminRecommendContentPage from './pages/AdminRecommendContentPage.jsx';
+import AdminRecommendRulesPage from './pages/AdminRecommendRulesPage.jsx';
+import AdminRecommendContentPage from './pages/AdminRecommendContentPage.jsx';
 
 // import AdminSearchHistoryPage from './pages/AdminSearchHistoryPage.jsx';
 // import AdminBrowseHistoryPage from './pages/AdminBrowseHistoryPage.jsx';
@@ -44,6 +44,8 @@ function AdminApp() {
          <Route path="/products/edit/:id" element={<AdminProductEditPage />} />
          <Route path="/categories" element={<AdminCategoryManagePage />} />
          <Route path="/reviews" element={<AdminReviewManagePage />} />
+         <Route path="/recommend/rules" element={<AdminRecommendRulesPage />} />
+        <Route path="/recommend/content" element={<AdminRecommendContentPage />} />
 
 
         <Route path="/users" element={<AdminUserListPage />} /> 

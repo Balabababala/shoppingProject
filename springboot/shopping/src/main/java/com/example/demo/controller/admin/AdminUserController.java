@@ -40,6 +40,7 @@ public class AdminUserController {
     }
 
     // 取得所有賣家清單
+//    @GetMapping("/sellers-debug")
     @GetMapping("/sellers")
     public ResponseEntity<ApiResponse<List<AdminGetSellerResponse>>> getAllSellers() {
         List<AdminGetSellerResponse> sellers = adminUserService.findAllSellers();
