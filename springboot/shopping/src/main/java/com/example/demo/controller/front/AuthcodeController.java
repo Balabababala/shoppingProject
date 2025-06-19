@@ -9,6 +9,8 @@ import java.util.Random;
 
 import javax.imageio.ImageIO;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,86 +20,76 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@RestController //免@ResponseBody ,用了 jsp渲染就不能用 
+@RestController
 @RequestMapping("/api")
-
-
 public class AuthcodeController {
-	//loginpage 用
-	@GetMapping("/auth-code")
-	public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
-	    String code = generateAuthCode(); // 1. 產生驗證碼
-	    session.setAttribute("authCode", code); // 2. 存入 session
-	    BufferedImage image = getAuthCodeImage(code); // 3. 產生圖像
-	    response.setContentType("image/png"); // 4. 設定回傳格式
-	    ImageIO.write(image, "png", response.getOutputStream()); // 5. 寫入輸出流
-	}
-	
-	@PostMapping("/verify-code")
-	public String verifyCode(@RequestParam String codeInput, HttpSession session) {
-	    String savedCode = (String) session.getAttribute("authCode");
 
-	    if (savedCode != null && savedCode.equalsIgnoreCase(codeInput)) {
-	        session.removeAttribute("authCode"); // 驗證通過後清除
-	        return "驗證成功";
-	    } else {
-	        return "驗證失敗";
-	    }
-	}
-	
-	private String generateAuthCode() {
-		String chars="0";
-//		String chars="0123456789zxcvbnmasdfghjklqwertyuiopZXCVBNMASDFHJKLQWERTYUIOP";
-		Random random= new Random();
-		StringBuffer authcode=new StringBuffer();
-		for(int i =0 ;i<4;i++) {
-			int index = random.nextInt(chars.length()); // 隨機取位置
-			authcode.append(chars.charAt(index)); // 取得該位置的資料
-		}
-		
-		return authcode.toString();
-	}
-	
-	private String generateAuthCode2() {
-		String chars="0";
-		Random random= new Random();
-		StringBuffer authcode=new StringBuffer();
-		for(int i =0 ;i<4;i++) {
-			int index = random.nextInt(chars.length()); // 隨機取位置
-			authcode.append(chars.charAt(index)); // 取得該位置的資料
-		}
-		
-		return authcode.toString();
-	}
-	//use Java2D 產生動態圖像
-	private BufferedImage getAuthCodeImage(String authcode) {
-		//建立圖像區域(80*30 RGB)
-		BufferedImage img =new BufferedImage(80, 30, BufferedImage.TYPE_INT_RGB);
-		Graphics g=img.getGraphics();
-		//設定顏色
-		g.setColor(Color.YELLOW);
-		//塗滿
-		g.fillRect(0, 0, 80, 30);
-		
-		g.setColor(Color.BLACK);
-		//字型
-		g.setFont(new Font("Arial",Font.BOLD,22));
-		//繪文字
-		g.drawString(authcode,18,22);//(18 x,22 y)表 繪文字坐上起點
-		
-		g.setColor(Color.RED);
-		//干擾線
-		Random random =new Random();
-		for(int i=0;i<10;i++) {
-			int x1=random.nextInt(80);
-			int y1=random.nextInt(30);
-			int x2=random.nextInt(80);
-			int y2=random.nextInt(30);
-			//畫直線
-			g.drawLine(x1, y1, x2, y2);
-		}
-		return img;
-			
-		
-	}
+    private static final Logger logger = LoggerFactory.getLogger(AuthcodeController.class);
+
+    @GetMapping("/auth-code")
+    public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
+        logger.debug("開始生成驗證碼，session ID: {}", session.getId());
+        String code = generateAuthCode();
+        session.setAttribute("authCode", code);
+        logger.debug("生成驗證碼: {}", code);
+        BufferedImage image = getAuthCodeImage(code);
+        response.setContentType("image/png");
+        try {
+            ImageIO.write(image, "png", response.getOutputStream());
+            logger.debug("驗證碼圖片生成成功");
+        } catch (IOException e) {
+            logger.error("生成驗證碼圖片失敗: {}", e.getMessage(), e);
+            throw e;
+        }
+    }
+
+    @PostMapping("/verify-code")
+    public String verifyCode(@RequestParam String codeInput, HttpSession session) {
+        logger.debug("驗證碼輸入: {}, session ID: {}", codeInput, session.getId());
+        String savedCode = (String) session.getAttribute("authCode");
+        logger.debug("Session 中儲存的驗證碼: {}", savedCode);
+
+        if (savedCode != null && savedCode.equalsIgnoreCase(codeInput)) {
+            session.removeAttribute("authCode");
+            logger.info("驗證碼驗證成功");
+            return "驗證成功";
+        } else {
+            logger.warn("驗證碼驗證失敗，輸入: {}, 預期: {}", codeInput, savedCode);
+            return "驗證失敗";
+        }
+    }
+
+    private String generateAuthCode() {
+        // 修正字符集，增加隨機性
+        String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        Random random = new Random();
+        StringBuilder authcode = new StringBuilder();
+        for (int i = 0; i < 4; i++) {
+            int index = random.nextInt(chars.length());
+            authcode.append(chars.charAt(index));
+        }
+        return authcode.toString();
+    }
+
+    // 移除冗餘的 generateAuthCode2
+    private BufferedImage getAuthCodeImage(String authcode) {
+        BufferedImage img = new BufferedImage(80, 30, BufferedImage.TYPE_INT_RGB);
+        Graphics g = img.getGraphics();
+        g.setColor(Color.YELLOW);
+        g.fillRect(0, 0, 80, 30);
+        g.setColor(Color.BLACK);
+        g.setFont(new Font("Arial", Font.BOLD, 22));
+        g.drawString(authcode, 18, 22);
+
+        g.setColor(Color.RED);
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            int x1 = random.nextInt(80);
+            int y1 = random.nextInt(30);
+            int x2 = random.nextInt(80);
+            int y2 = random.nextInt(30);
+            g.drawLine(x1, y1, x2, y2);
+        }
+        return img;
+    }
 }

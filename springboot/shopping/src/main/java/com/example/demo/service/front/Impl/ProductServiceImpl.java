@@ -19,6 +19,7 @@ import com.example.demo.repository.UserRepository;
 import com.example.demo.service.front.CategoryService;
 import com.example.demo.service.front.ProductImageService;
 import com.example.demo.service.front.ProductService;
+import com.example.demo.service.front.SearchHistoryService;
 
 import jakarta.servlet.http.HttpSession;
 import jakarta.validation.Valid;
@@ -44,9 +45,13 @@ public class ProductServiceImpl implements ProductService {
 
     @Autowired
     private UserRepository userRepository;
+    
     @Autowired
     private CategoryService categoryService;
-
+    
+    @Autowired
+    private SearchHistoryService searchHistorySerivce;
+    
     /**
      * 新增商品並上傳圖片（1主圖 + 最多9張額外圖）
      */
@@ -230,7 +235,8 @@ public class ProductServiceImpl implements ProductService {
      * 依關鍵字全文搜尋商品（Boolean 模式）
      */
     @Override
-    public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword) {
+    public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(Long userId,String keyword) {
+    	searchHistorySerivce.createSearchHistory(userId, keyword);
         return productRepository.findByKeywordFullTextBoolean(keyword + "*")
                 .stream().map(ProductMapper::toDto).toList();
     }

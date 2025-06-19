@@ -1,6 +1,8 @@
 package com.example.demo.model.dto;
 
 
+import com.example.demo.model.entity.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,10 +10,11 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+
 public class UserDto {
 	private String username;
 	private Long userId;
-	private Long roleId;
+	private String role;
 	private Boolean isActive;
     private Boolean isEmailVerified;
 }

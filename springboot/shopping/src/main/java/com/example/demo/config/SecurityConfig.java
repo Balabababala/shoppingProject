@@ -2,6 +2,7 @@ package com.example.demo.config;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -14,17 +15,23 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import com.example.demo.filter.JwtAuthenticationFilter;
 import com.example.demo.secure.CustomUserDetailsService;
 
 @Configuration
 public class SecurityConfig {
+	
+	@Autowired
+    private CustomUserDetailsService customUserDetailsService;
+	
+	@Autowired
+	private JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    private final CustomUserDetailsService customUserDetailsService;
-
-    public SecurityConfig(CustomUserDetailsService customUserDetailsService) {
+    public SecurityConfig(CustomUserDetailsService customUserDetailsService,JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.customUserDetailsService = customUserDetailsService;
+        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
-
+     
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {		//filter
         http
@@ -44,7 +51,8 @@ public class SecurityConfig {
 	        .sessionManagement(session -> session 		// ✅ 加上 session 保留機制
 	                .maximumSessions(1)
 	                .maxSessionsPreventsLogin(false)
-	            );
+	            )
+	        .addFilterBefore(jwtAuthenticationFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);;
         return http.build();
     }
 

@@ -13,6 +13,7 @@ function AdminProductListPage() {
   const [sortBy, setSortBy] = useState(null);
   const [sortAsc, setSortAsc] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
+  const [inputPage, setInputPage] = useState(''); //分頁
   const navigate = useNavigate();
 
   // 取得商品列表
@@ -332,37 +333,58 @@ function AdminProductListPage() {
           marginTop: 20,
           display: 'flex',
           justifyContent: 'center',
-          gap: 12,
           alignItems: 'center',
+          gap: 12,
           fontSize: 14,
         }}
-        aria-label="商品列表分頁"
       >
         <button
-          onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+          onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
           disabled={currentPage === 1}
-          aria-disabled={currentPage === 1}
-          aria-label="上一頁"
           style={{ padding: '6px 12px' }}
         >
           上一頁
         </button>
 
-        {/* 可加上頁碼跳轉或目前頁數顯示 */}
-        <span>
-          第 {currentPage} 頁 / 共 {totalPage} 頁
+        <input
+          type="number"
+          min="1"
+          max={totalPage}
+          value={inputPage}
+          placeholder={currentPage.toString()}
+          onChange={(e) => setInputPage(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              const pageNum = Number(inputPage);
+              if (!isNaN(pageNum)) {
+                const target = Math.max(1, Math.min(totalPage, pageNum));
+                setCurrentPage(target);
+                setInputPage('');
+              }
+            }
+          }}
+          style={{
+            width: '4.5rem',
+            textAlign: 'center',
+            padding: '4px 6px',
+            borderRadius: 4,
+            border: '1px solid #ccc',
+          }}
+        />
+
+        <span style={{ userSelect: 'none' }}>
+          / 共 {totalPage} 頁
         </span>
 
         <button
-          onClick={() => setCurrentPage(p => Math.min(totalPage, p + 1))}
+          onClick={() => setCurrentPage((p) => Math.min(totalPage, p + 1))}
           disabled={currentPage === totalPage}
-          aria-disabled={currentPage === totalPage}
-          aria-label="下一頁"
           style={{ padding: '6px 12px' }}
         >
           下一頁
         </button>
       </div>
+                  
     </div>
   );
 }

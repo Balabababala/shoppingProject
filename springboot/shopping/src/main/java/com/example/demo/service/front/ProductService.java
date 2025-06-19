@@ -33,7 +33,7 @@ public interface ProductService {
 	List<ProductResponse> findAllProductsToProductResponse();											//找全部			 產品轉DTO  				  分類頁面用
 	List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug);					//依 slug(分類別稱)找分類(含子分類)下的所有產品 轉DTO  分類頁面用     
 //	List<ProductResponse> findByKeyword(String keyword); 	 	
-	List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(String keyword);		//全文搜尋版 找相關產品轉DTO			  收尋頁面用
+	List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(Long userId,String keyword);		//全文搜尋版 找相關產品轉DTO			  收尋頁面用
 	
 	//後台
 	 // 取得後台所有商品列表

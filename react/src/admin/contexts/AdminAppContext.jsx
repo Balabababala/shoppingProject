@@ -27,7 +27,6 @@ export function AdminAppProvider({ children }) {
 
   const fetchAdminUser = async () => {
     const data = await fetchWithAuthCheck(`${API_BASE}/admin/me`);
-    console.log('fetchAdminUser response:', data);
     if (data?.authError) {
       handleLogout('尚未登入後台，請重新登入');
     } else if (data?.data) {

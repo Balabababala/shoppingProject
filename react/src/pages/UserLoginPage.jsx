@@ -5,11 +5,15 @@ import { AppContext } from '../contexts/AppContext';
 import '../css/UserLoginPage.css';
 
 function LoginPage() {
-  const API_BASE = 'http://localhost:8080/api/';
-  const { setUserData ,addToastMessage } = useContext(AppContext);
+  const { setUserData, addToastMessage, API_BASE } = useContext(AppContext);
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
   const navigate = useNavigate();
+
+  const loadCaptcha = () => {
+    setCaptchaImage(`${API_BASE}/auth-code?${Date.now()}`);
+    setCaptchaCode(''); // 清空驗證碼輸入
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -20,31 +24,69 @@ function LoginPage() {
     };
 
     try {
-      const url = `${API_BASE}login`;
-      const response = await fetch(url, {
+      const response = await fetch(`${API_BASE}/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
         body: JSON.stringify(data),
+        credentials: 'include',
       });
 
       const result = await response.json();
+      console.log('🔑 登入回應:', result);
 
       if (result.message === '登入成功') {
-        addToastMessage('登入成功');
-        setUserData(result.data);
-        navigate('/');
+        const token = result.data?.trim(); // 去除可能的空白
+        if (!token) {
+          addToastMessage('登入失敗：無效的 token');
+          loadCaptcha();
+          return;
+        }
+        console.log('✅ 成功登入，JWT token:', token);
+        localStorage.setItem('token', token);
+
+        // 取得使用者資訊
+        console.log('📤 發送 Authorization 頭:', `Bearer ${token}`);
+        const userResp = await fetch(`${API_BASE}/user/me`, {
+          headers: {
+            'Content-Type': 'application/json',
+            Authorization: `Bearer ${token}`,
+          },
+        });
+
+        console.log('📡 /user/me response status:', userResp.status);
+
+        if (!userResp.ok) {
+          const errData = await userResp.json();
+          console.error('❌ 取得使用者資料錯誤:', errData);
+          addToastMessage(`登入成功但取得使用者資料失敗: ${errData.message || '未知錯誤'}`);
+          loadCaptcha();
+          return;
+        }
+
+        const userResult = await userResp.json();
+        console.log('👤 使用者資料:', userResult);
+
+        if (userResult?.data) {
+          setUserData({
+            token,
+            user: userResult.data,
+          });
+          addToastMessage('登入成功');
+          navigate('/');
+        } else {
+          console.warn('⚠️ /user/me 沒有包含 data 欄位:', userResult);
+          addToastMessage('登入成功但使用者資料格式錯誤');
+          loadCaptcha();
+        }
       } else {
         addToastMessage('登入失敗：' + result.message);
+        loadCaptcha();
       }
     } catch (error) {
-      console.error('表單提交時出現錯誤', error);
-      addToastMessage('提交失敗，請稍後再試');
+      console.error('⚠️ 登入時發生錯誤:', error);
+      addToastMessage('登入失敗，請稍後再試');
+      loadCaptcha();
     }
-  };
-
-  const loadCaptcha = () => {
-    setCaptchaImage(`${API_BASE}auth-code?${new Date().getTime()}`);
   };
 
   useEffect(() => {
@@ -68,8 +110,14 @@ function LoginPage() {
 
           <Form.Group controlId="captcha">
             <Form.Label>驗證碼</Form.Label>
-            <div>
-              <img src={captchaImage} alt="Captcha" style={{ width: '100px', height: '40px' }} />
+            <div className="mb-2">
+              <img
+                src={captchaImage}
+                alt="驗證碼"
+                style={{ width: '100px', height: '40px', cursor: 'pointer' }}
+                onClick={loadCaptcha}
+                title="點擊刷新驗證碼"
+              />
             </div>
             <Form.Control
               type="text"

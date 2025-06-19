@@ -7,14 +7,16 @@ import com.example.demo.model.entity.User;
 
 public class UserMapper {
 	public static UserDto toDto(User user) {
-	
-        return new UserDto(
-        		user.getUsername(),
-        		user.getId(),
-        		user.getRole().getId(),
-        		user.getIsActive(),
-        		user.getIsEmailVerified()
-        );
+		if(user==null) {
+			return null;
+		}
+		UserDto userDto =new UserDto();
+		userDto.setUsername(user.getUsername());
+		userDto.setUserId(user.getId());
+		userDto.setRole(user.getRole().getName());
+		userDto.setIsActive(user.getIsActive());
+		userDto.setIsEmailVerified(user.getIsEmailVerified());
+		return userDto;
     }
 
 }

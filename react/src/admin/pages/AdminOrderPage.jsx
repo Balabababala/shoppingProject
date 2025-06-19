@@ -18,6 +18,8 @@ export default function AdminOrderPage() {
   // 分頁目前頁數
   const [currentPage, setCurrentPage] = useState(1);
 
+  const [inputPage, setInputPage] = useState(''); //分頁輸入用
+
   // 載入狀態
   const [loading, setLoading] = useState(false);
 
@@ -144,7 +146,7 @@ export default function AdminOrderPage() {
                     <Button
                       variant="info"
                       size="sm"
-                      onClick={() => navigate(`/admin/detail/${order.id}`)}
+                      onClick={() => navigate(`/admin/order/detail/${order.id}`)}
                     >
                       詳細
                     </Button>
@@ -154,7 +156,45 @@ export default function AdminOrderPage() {
             </tbody>
           </Table>
 
-          <Pagination className="justify-content-center">{paginationItems}</Pagination>
+         <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
+          <Button
+            variant="outline-primary"
+            disabled={currentPage === 1}
+            onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+          >
+            上一頁
+          </Button>
+
+          <Form.Control
+            type="number"
+            min="1"
+            max={totalPages}
+            value={inputPage}
+            placeholder={currentPage.toString()}
+            onChange={(e) => setInputPage(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === 'Enter') {
+                const pageNum = Number(inputPage);
+                if (!isNaN(pageNum)) {
+                  const target = Math.max(1, Math.min(totalPages, pageNum));
+                  setCurrentPage(target);
+                  setInputPage('');
+                }
+              }
+            }}
+            style={{ width: '4.5rem', textAlign: 'center' }}
+          />
+
+          <span style={{ userSelect: 'none' }}> / {totalPages} 頁</span>
+
+          <Button
+            variant="outline-primary"
+            disabled={currentPage === totalPages}
+            onClick={() => setCurrentPage(p => Math.min(totalPages, p + 1))}
+          >
+            下一頁
+          </Button>
+        </div>
         </>
       )}
     </div>

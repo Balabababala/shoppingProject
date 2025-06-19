@@ -53,8 +53,12 @@ public class ProductController {
 	
 	//searchPage 用
 	@GetMapping("/search")
-	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword){
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductsByKeywordFullTextBooleanToProductResponses(keyword)));//對應值
+	public ResponseEntity<ApiResponse<List<ProductResponse>>> findBykeyWord(@RequestParam String keyword,HttpSession session){
+		UserDto userDto= (UserDto)session.getAttribute("userDto");
+		if(userDto!= null) {
+			return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductsByKeywordFullTextBooleanToProductResponses(userDto.getUserId(),keyword)));//對應值
+		}
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductsByKeywordFullTextBooleanToProductResponses(null,keyword)));//對應值
 	}
 	
 }

@@ -1,4 +1,4 @@
-package com.example.demo.util;
+package com.example.demo.security;
 
 import java.security.MessageDigest;
 import java.security.SecureRandom;

@@ -32,7 +32,7 @@ public class AdminUserController {
             return ResponseEntity.status(401).body(ApiResponse.error("尚未登入後台"));
         }
 
-        if (adminUserDto.getRoleId() != 3) {
+        if (adminUserDto.getRole().equals("ROLE_ADMIN")) {
             return ResponseEntity.status(403).body(ApiResponse.error("權限不足"));
         }
 

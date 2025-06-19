@@ -238,7 +238,7 @@ CREATE TABLE product_reviews (
 
 CREATE TABLE notifications (
     id BIGINT AUTO_INCREMENT PRIMARY KEY COMMENT '通知 ID',
-    user_id BIGINT NOT NULL COMMENT '使用者 ID',
+    user_id BIGINT COMMENT '使用者 ID',
     type VARCHAR(100) COMMENT '通知類型',
     message TEXT COMMENT '通知訊息',
     status ENUM('PENDING', 'READ', 'ARCHIVED') COMMENT '通知狀態',

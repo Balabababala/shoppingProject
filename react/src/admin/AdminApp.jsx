@@ -23,9 +23,12 @@ import AdminRecommendContentPage from './pages/AdminRecommendContentPage.jsx';
 import AdminOrderDetailPage from './pages/AdminOrderDetailPage.jsx';
 import AdminOrderEditPage from './pages/AdminOrderEditPage.jsx';
 
+import AdminNotificationsPage from './pages/AdminNotificationsPage.jsx';
+import AdminNotificationNewPage from './pages/AdminNotificationNewPage.jsx';
 
-// import AdminSearchHistoryPage from './pages/AdminSearchHistoryPage.jsx';
-// import AdminBrowseHistoryPage from './pages/AdminBrowseHistoryPage.jsx';
+
+import AdminSearchHistoryPage from './pages/AdminSearchHistoryPage.jsx';
+import AdminBrowseHistoryPage from './pages/AdminBrowseHistoryPage.jsx';
 
 // import AdminChangePasswordPage from './pages/AdminChangePasswordPage.jsx';
 // import AdminLogoutPage from './pages/AdminLogoutPage.jsx';
@@ -53,9 +56,18 @@ function AdminApp() {
          <Route path="/recommend/content" element={<AdminRecommendContentPage />} />
 
         
-        <Route path="/order-search" element={<AdminOrderPage />} />
-        <Route path="/detail/:orderId" element={<AdminOrderDetailPage />} />
-        <Route path="/admin/order-edit" element={<AdminOrderEditPage />} />
+        <Route path="/order" element={<AdminOrderPage />} />
+        <Route path="/order/detail/:orderId" element={<AdminOrderDetailPage />} />
+        <Route path="/order-edit/:orderId" element={<AdminOrderEditPage />} />
+
+
+
+        <Route path="/history/search" element={<AdminSearchHistoryPage />} />
+        <Route path="/history/browse" element={<AdminBrowseHistoryPage />} />
+
+        <Route path="/notification" element={<AdminNotificationsPage />} />
+        <Route path="/notification/new" element={<AdminNotificationNewPage />} />
+      
 
         <Route path="/users" element={<AdminUserListPage />} /> 
          

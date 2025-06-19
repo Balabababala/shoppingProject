@@ -72,3 +72,65 @@ Maven
     <version>0.11.5</version>
     <scope>runtime</scope>
 </dependency>
+
+
+1. @Component
+標註在類別上，表示這個類別是一個 Spring 管理的組件（Bean）。
+
+Spring 容器在啟動時會自動掃描並實例化這個類別，成為一個 Bean。
+
+透過 @Autowired 可以在其他 Bean 中注入這個類別的物件。
+
+範例：
+
+
+@Component
+public class KeyInitializer {
+    @PostConstruct
+    public void init() {
+        // 啟動時自動執行
+    }
+}
+2. @Bean
+標註在方法上，用來告訴 Spring 「這個方法的回傳值是一個 Bean」。
+
+這個方法通常寫在 @Configuration 標註的類別中。
+
+Spring 啟動時會執行該方法並將回傳的物件納入容器管理。
+
+範例：
+
+@Configuration
+public class AppConfig {
+    
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+}
+3. @PostConstruct
+標註在方法上，該方法會在 Spring 完成 Bean 的建構和依賴注入後自動執行一次。
+
+常用於 Bean 初始化時要做的額外設定或邏輯，例如生成金鑰、預設值設定等。
+
+範例：
+
+@Component
+public class KeyInitializer {
+
+    private KeyPair keyPair;
+
+    @PostConstruct
+    public void init() {
+        keyPair = KeyUtil.generateRSAKeyPair();
+        System.out.println("KeyPair generated.");
+    }
+}
+整體流程示意
+Spring 啟動時，掃描帶 @Component 的類別 → 實例化並放入容器。
+
+@Configuration 類別的 @Bean 方法被呼叫 → 回傳物件也放入容器。
+
+建構完 Bean 之後，@PostConstruct 方法會被呼叫。
+
+其他需要用這些 Bean 的地方使用 @Autowired 注入。

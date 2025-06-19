@@ -21,17 +21,20 @@ function SearchPage() {
   const pagedProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const fetchProducts = (searchKeyword) => {
-    fetch(`${BASE_API}/products/search?keyword=${encodeURIComponent(searchKeyword)}`)
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data.data || []);
-        setCurrentPage(1);
-      })
-      .catch(err => {
-        console.error('搜尋商品失敗', err);
-        setProducts([]);
-      });
-  };
+  fetch(`${BASE_API}/products/search?keyword=${encodeURIComponent(searchKeyword)}`, {
+    credentials: 'include', // 帶上 cookie
+  })
+    .then(res => res.json())
+    .then(data => {
+      setProducts(data.data || []);
+      setCurrentPage(1);
+    })
+    .catch(err => {
+      console.error('搜尋商品失敗', err);
+      setProducts([]);
+    });
+};
+
 
   // 加入購物車事件
   const handleAddToCart = (productId, quantity) => {

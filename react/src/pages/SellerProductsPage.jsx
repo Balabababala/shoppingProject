@@ -3,19 +3,20 @@ import { AppContext } from '../contexts/AppContext';
 import { useNavigate } from 'react-router-dom';
 import '../css/SellerProductsPage.css';
 
-
 const PAGE_SIZE = 5;
 
 export default function SellerProductsPage() {
-  const {API_BASE,BASE_URL , userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
+  const { API_BASE, BASE_URL, userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortBy, setSortBy] = useState(null);
-  const [sortAsc, setSortAsc] = useState(true);
+  const [sortAsc, setSortAsc] = useState(true);  
+  const [inputPage, setInputPage] = useState('');//頁面用
   const navigate = useNavigate();
 
+  // 抓商品
   const fetchSellerProducts = async () => {
     if (!userData) {
       addToastMessage('請先登入');
@@ -44,6 +45,7 @@ export default function SellerProductsPage() {
     fetchSellerProducts();
   }, [userData]);
 
+  // 排序
   const sortedProducts = [...products];
   if (sortBy) {
     sortedProducts.sort((a, b) => {
@@ -61,6 +63,7 @@ export default function SellerProductsPage() {
     });
   }
 
+  // 篩選搜尋關鍵字
   const filtered = sortedProducts.filter(p => {
     const kw = searchKeyword.trim().toLowerCase();
     return kw === '' || p.name?.toLowerCase().includes(kw) || String(p.id).includes(kw);
@@ -69,6 +72,7 @@ export default function SellerProductsPage() {
   const totalPage = Math.max(1, Math.ceil(filtered.length / PAGE_SIZE));
   const pageProducts = filtered.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
+  // 排序切換
   const handleSort = (field) => {
     if (sortBy === field) {
       setSortAsc(!sortAsc);
@@ -79,6 +83,7 @@ export default function SellerProductsPage() {
     setCurrentPage(1);
   };
 
+  // 狀態切換上下架
   const toggleStatus = async (id, status) => {
     if (!userData) {
       addToastMessage('請先登入');
@@ -101,6 +106,7 @@ export default function SellerProductsPage() {
     }
   };
 
+  // 刪除商品
   const deleteProduct = async (id) => {
     if (!window.confirm('確定要刪除此商品？')) return;
     if (!userData) {
@@ -131,7 +137,7 @@ export default function SellerProductsPage() {
 
       <div className="top-actions">
         <button className="btn-new-product" onClick={() => navigate('/seller/products/new')}>
-          新增商品
+          ＋ 新增商品
         </button>
         <input
           className="search-input"
@@ -146,10 +152,18 @@ export default function SellerProductsPage() {
       </div>
 
       <div className="product-header">
-        <button onClick={() => handleSort('name')}>商品名稱 {sortBy === 'name' ? (sortAsc ? '↑' : '↓') : ''}</button>
-        <button onClick={() => handleSort('price')}>價格 {sortBy === 'price' ? (sortAsc ? '↑' : '↓') : ''}</button>
-        <button onClick={() => handleSort('stock')}>庫存 {sortBy === 'stock' ? (sortAsc ? '↑' : '↓') : ''}</button>
-        <button onClick={() => handleSort('status')}>狀態 {sortBy === 'status' ? (sortAsc ? '↑' : '↓') : ''}</button>
+        <button onClick={() => handleSort('name')} className="sortable">
+          商品名稱 {sortBy === 'name' ? (sortAsc ? '▲' : '▼') : ''}
+        </button>
+        <button onClick={() => handleSort('price')} className="sortable">
+          價格 {sortBy === 'price' ? (sortAsc ? '▲' : '▼') : ''}
+        </button>
+        <button onClick={() => handleSort('stock')} className="sortable">
+          庫存 {sortBy === 'stock' ? (sortAsc ? '▲' : '▼') : ''}
+        </button>
+        <button onClick={() => handleSort('status')} className="sortable">
+          狀態 {sortBy === 'status' ? (sortAsc ? '▲' : '▼') : ''}
+        </button>
         <div>操作</div>
       </div>
 
@@ -214,17 +228,51 @@ export default function SellerProductsPage() {
         })
       )}
 
-      <div className="pagination">
-        <button onClick={() => setCurrentPage(p => Math.max(1, p - 1))} disabled={currentPage === 1}>
+      <div className="d-flex justify-content-center align-items-center mt-4 gap-3">
+        <button
+          className="btn btn-outline-success"
+          disabled={currentPage === 1}
+          onClick={() => setCurrentPage(p => Math.max(1, p - 1))}
+        >
           上一頁
         </button>
-        <span>
-          第 {currentPage} 頁 / 共 {totalPage} 頁
-        </span>
-        <button onClick={() => setCurrentPage(p => Math.min(totalPage, p + 1))} disabled={currentPage === totalPage}>
+
+        <input
+          type="number"
+          min="1"
+          max={totalPage}
+          value={inputPage}
+          placeholder={currentPage}
+          style={{
+            width: '4.5rem',
+            textAlign: 'center',
+            borderRadius: '0.375rem',
+            border: '1px solid #ced4da',
+          }}
+          onChange={e => setInputPage(e.target.value)}
+          onKeyDown={e => {
+            if (e.key === 'Enter') {
+              const pageNum = Number(inputPage);
+              if (!isNaN(pageNum)) {
+                const targetPage = Math.max(1, Math.min(totalPage, pageNum));
+                setCurrentPage(targetPage);
+                setInputPage('');
+              }
+            }
+          }}
+        />
+
+        <span style={{ userSelect: 'none' }}> / {totalPage} 頁</span>
+
+        <button
+          className="btn btn-outline-success"
+          disabled={currentPage === totalPage}
+          onClick={() => setCurrentPage(p => Math.min(totalPage, p + 1))}
+        >
           下一頁
         </button>
       </div>
+ 
     </div>
   );
 }
