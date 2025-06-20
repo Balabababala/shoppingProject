@@ -2,36 +2,39 @@ import React, { useEffect, useState, useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 function MyOrdersPage() {
-  const BASE_API = "http://localhost:8080/api";
-  const { userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
+  const { userData, fetchWithAuthCheck, addToastMessage, API_BASE } = useContext(AppContext);
 
   const [orders, setOrders] = useState([]);
   const [searchKeyword, setSearchKeyword] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [inputPage, setInputPage] = useState('');
+  const [inputPage, setInputPage] = useState("");
   const pageSize = 5;
 
-  const filteredOrders = orders.filter(order => {
+  // 過濾訂單（訂單編號、收件人、商品名稱）
+  const filteredOrders = orders.filter((order) => {
     const keyword = searchKeyword.trim().toLowerCase();
     if (!keyword) return true;
     if (String(order.id).includes(keyword)) return true;
     if (order.receiverName?.toLowerCase().includes(keyword)) return true;
-    if (order.items.some(item => item.productName.toLowerCase().includes(keyword))) return true;
+    if (order.items.some((item) => item.productName.toLowerCase().includes(keyword))) return true;
     return false;
   });
 
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
+  // 取 userId，要先確認 userData.user 存在
+  const userId = userData?.user?.userId;
+
   useEffect(() => {
     const fetchOrders = async () => {
-      if (!userData) {
+      if (!userId) {
         addToastMessage("請先登入以查看訂單");
         setOrders([]);
         return;
       }
 
-      const data = await fetchWithAuthCheck(`${BASE_API}/orders/${userData.userId}`);
+      const data = await fetchWithAuthCheck(`${API_BASE}/buyer/orders/${userId}`);
       if (data?.data) {
         setOrders(data.data);
         setCurrentPage(1);
@@ -42,7 +45,7 @@ function MyOrdersPage() {
     };
 
     fetchOrders();
-  }, [userData, fetchWithAuthCheck, addToastMessage]);
+  }, [userId, fetchWithAuthCheck, addToastMessage, API_BASE]);
 
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
@@ -53,18 +56,20 @@ function MyOrdersPage() {
     if (!window.confirm("確定要取消這筆訂單嗎？")) return;
 
     try {
-      const res = await fetch(`${BASE_API}/orders/${orderId}/cancel`, {
-        method: 'PUT',
-        credentials: 'include',
+      // 使用 fetchWithAuthCheck 並指定 method PUT
+      const result = await fetchWithAuthCheck(`${API_BASE}/buyer/orders/${orderId}/cancel`, {
+        method: "PUT",
       });
 
-      const result = await res.json();
-      if (res.ok) {
+      if (!result) {
+        addToastMessage("取消訂單時發生錯誤");
+        return;
+      }
+
+      if (!result.authError && result?.success !== false) {
         addToastMessage("訂單已成功取消");
-        setOrders(prev =>
-          prev.map(order =>
-            order.id === orderId ? { ...order, orderStatus: 'CANCELED' } : order
-          )
+        setOrders((prev) =>
+          prev.map((order) => (order.id === orderId ? { ...order, orderStatus: "CANCELLED" } : order))
         );
       } else {
         addToastMessage(result.message || "取消失敗");
@@ -76,14 +81,16 @@ function MyOrdersPage() {
 
   return (
     <div className="container mt-4" style={{ maxWidth: 960 }}>
-      <h1 className="mb-4 text-center" style={{ color: '#222' }}>我的訂單</h1>
+      <h1 className="mb-4 text-center" style={{ color: "#222" }}>
+        我的訂單
+      </h1>
 
       <input
         type="text"
         className="form-control mb-3"
         placeholder="搜尋訂單編號、收件人、商品名稱"
         value={searchKeyword}
-        onChange={e => {
+        onChange={(e) => {
           setSearchKeyword(e.target.value);
           setCurrentPage(1);
         }}
@@ -93,7 +100,7 @@ function MyOrdersPage() {
         <p className="text-center text-muted fs-5">目前沒有訂單紀錄</p>
       ) : (
         <>
-          {pagedOrders.map(order => (
+          {pagedOrders.map((order) => (
             <div key={order.id} className="card mb-4 shadow-sm">
               <div className="card-header d-flex justify-content-between align-items-center bg-primary text-white">
                 <span>訂單編號 #{order.id}</span>
@@ -174,22 +181,25 @@ function MyOrdersPage() {
               value={inputPage}
               placeholder={currentPage}
               style={{
-                width: '4.5rem',
-                textAlign: 'center',
-                borderRadius: '0.375rem',
-                border: '1px solid #ced4da',
+                width: "4.5rem",
+                textAlign: "center",
+                borderRadius: "0.375rem",
+                border: "1px solid #ced4da",
               }}
-              onChange={e => setInputPage(e.target.value)}
-              onKeyDown={e => {
-                if (e.key === 'Enter') {
+              onChange={(e) => setInputPage(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
                   const pageNum = Number(inputPage);
                   if (!isNaN(pageNum)) changePage(pageNum);
-                  setInputPage('');
+                  setInputPage("");
                 }
               }}
             />
 
-            <span style={{ userSelect: 'none' }}> / {totalPages} 頁</span>
+            <span style={{ userSelect: "none" }}>
+              {" "}
+              / {totalPages} 頁
+            </span>
 
             <button
               className="btn btn-outline-primary"

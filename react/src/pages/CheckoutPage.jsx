@@ -1,10 +1,9 @@
 import { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { AppContext } from "../contexts/AppContext";
-import axios from "axios";
 
 export default function CheckoutPage() {
-  const { setCartItems ,addToastMessage} = useContext(AppContext);
+  const { setCartItems, addToastMessage, userData } = useContext(AppContext);
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -22,26 +21,39 @@ export default function CheckoutPage() {
   // 載入使用者預設訂單資訊
   useEffect(() => {
     async function fetchDefaultOrderInfo() {
+      if (!userData?.token) {
+        setLoadingUserInfo(false);
+        return;
+      }
       try {
-        const res = await axios.get("/api/user/default-order-info");
-        if (res.data.data) {
+        const res = await fetch("/api/user/default-order-info", {
+          headers: {
+            "Cache-Control": "no-cache",
+            Authorization: `Bearer ${userData.token}`,
+          },
+        });
+        if (!res.ok) throw new Error("取得預設訂單資訊失敗");
+        const data = await res.json();
+
+        if (data.data) {
           setForm({
-            receiverName: res.data.data.receiverName || "",
-            receiverPhone: res.data.data.receiverPhone || "",
-            shippingAddress: res.data.data.shippingAddress || "",
-            paymentMethod: res.data.data.paymentMethod || "credit_card",
-            shippingMethod: res.data.data.shippingMethod || "home_delivery",
-            notes: res.data.data.notes || "",
+            receiverName: data.data.receiverName || "",
+            receiverPhone: data.data.receiverPhone || "",
+            shippingAddress: data.data.shippingAddress || "",
+            paymentMethod: data.data.paymentMethod || "credit_card",
+            shippingMethod: data.data.shippingMethod || "home_delivery",
+            notes: data.data.notes || "",
           });
         }
       } catch (error) {
         console.error("抓取預設訂單資訊失敗", error);
+        addToastMessage("無法取得使用者預設訂單資訊");
       } finally {
         setLoadingUserInfo(false);
       }
     }
     fetchDefaultOrderInfo();
-  }, []);
+  }, [userData, addToastMessage]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,18 +62,51 @@ export default function CheckoutPage() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!userData?.token) {
+      addToastMessage("請先登入");
+      return;
+    }
+
+    // 簡單前端驗證
+    if (!form.receiverName.trim()) {
+      addToastMessage("請輸入收件人姓名");
+      return;
+    }
+    if (!form.receiverPhone.trim()) {
+      addToastMessage("請輸入收件人電話");
+      return;
+    }
+    if (!form.shippingAddress.trim()) {
+      addToastMessage("請輸入配送地址");
+      return;
+    }
+
     setLoading(true);
+
     try {
-      const res = await axios.post("/api/order/create", form);
-      setCartItems([]);  // 清空購物車狀態
-      addToastMessage(res.data.message || "訂單送出成功！");
-      navigate("/cart");  // 跳轉回購物車頁面
+      const res = await fetch("/api/buyer/order/create", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Cache-Control": "no-cache",
+          Authorization: `Bearer ${userData.token}`,
+        },
+        body: JSON.stringify(form),
+      });
+
+      if (!res.ok) {
+        const errData = await res.json();
+        throw new Error(errData.message || "訂單送出失敗");
+      }
+
+      const resData = await res.json();
+
+      setCartItems([]); // 清空購物車狀態
+      addToastMessage(resData.message || "訂單送出成功！");
+      navigate("/cart"); // 依需求可改成跳轉成功頁
     } catch (error) {
-      const msg =
-        error.response?.data?.message ||
-        error.response?.data ||
-        "未知錯誤，請稍後再試。";
-      addToastMessage("結帳失敗：" + msg);
+      addToastMessage("結帳失敗：" + error.message);
     } finally {
       setLoading(false);
     }

@@ -8,6 +8,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -27,10 +28,6 @@ public class SecurityConfig {
 	@Autowired
 	private JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    public SecurityConfig(CustomUserDetailsService customUserDetailsService,JwtAuthenticationFilter jwtAuthenticationFilter) {
-        this.customUserDetailsService = customUserDetailsService;
-        this.jwtAuthenticationFilter = jwtAuthenticationFilter;
-    }
      
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {		//filter
@@ -41,17 +38,15 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
             	.requestMatchers("/uploads/**").permitAll() //
             	.requestMatchers("/api/admin/login").permitAll()//
-                .requestMatchers("/api/login", "/api/auth-code", "/api/register","/api/recommend/products").permitAll() // login, captcha, register 放行
-                .requestMatchers("/api/").authenticated()
+                .requestMatchers("/api/login", "/api/auth-code", "/api/register").permitAll() // login, captcha, register 放行  
+                .requestMatchers("/api/recommend/products","/api/products/**","/api/categories/**").permitAll()
                 .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
+                .requestMatchers("/api/**").authenticated()
                 .anyRequest().permitAll()														//最後全通過 暫時這樣
             )
             .formLogin(form -> form.disable()) 			// 禁用 formLogin，改用 API 登入
-	        .sessionManagement(session -> session 		// ✅ 加上 session 保留機制
-	                .maximumSessions(1)
-	                .maxSessionsPreventsLogin(false)
-	            )
+            .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 	        .addFilterBefore(jwtAuthenticationFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);;
         return http.build();
     }

@@ -10,7 +10,7 @@ import java.security.KeyPair;
 @Component
 public class KeyInitializer {
 
-    public static KeyPair keyPair;
+    public KeyPair keyPair;
 
     @PostConstruct
     public void init() {
@@ -21,5 +21,9 @@ public class KeyInitializer {
             System.err.println("❌ Failed to generate KeyPair: " + e.getMessage());
             throw new RuntimeException("Key initialization failed", e);
         }
+    }
+    
+    public KeyPair getKeyPair() {
+        return keyPair;
     }
 }

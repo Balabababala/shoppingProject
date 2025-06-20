@@ -57,13 +57,16 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 		""")
 	Optional<Product> findByIdWithCategoryAndProductImage(@Param("id") Long id);
 	
-	@Query(value ="""
+	@Query(value = """
 			SELECT DISTINCT p FROM Product p 
 			JOIN FETCH p.category 
 			LEFT JOIN FETCH p.productImages 
 			WHERE p.category.id IN :categoryIds
+			  AND p.isDeleted = false
+			  AND p.status = 'ACTIVE'
 		""")
-	List<Product> findAllByCategoryIdsWithCategoryAndProductImage(@Param("categoryIds") List<Long> categoryIds);
+		List<Product> findAllByCategoryIdsWithCategoryAndProductImage(@Param("categoryIds") List<Long> categoryIds);
+
 	
 	@Transactional(readOnly = true)
 	List<Product> findByCategoryId(Long categoryId);

@@ -1,6 +1,7 @@
 package com.example.demo.secure;
-import java.security.KeyPair;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,23 +16,29 @@ public class JwtService {
 
 	@Autowired
 	private KeyInitializer keyInitializer;
-	
-	public JwtService(KeyInitializer keyInitializer) {
-        this.keyInitializer = keyInitializer;
-    }
 
     public String generateJwtToken(UserDto userDto) {
-        long now = System.currentTimeMillis();
+    	Date now = new Date();
+        Date expiryDate = new Date(now.getTime() + 1000 * 60 * 60 * 24); // 24小時
+        
         return Jwts.builder()
-                .setSubject(userDto.getUsername())
-                .claim("userId", userDto.getUserId())
-                .claim("role", userDto.getRole())
-                .claim("isActive", userDto.getIsActive())
-                .claim("isEmailVerified", userDto.getIsEmailVerified())
-                .setIssuedAt(new Date(now))
-                .setExpiration(new Date(now + 1000 * 60 * 60 * 24)) // 24小時過期
-                .signWith(keyInitializer.keyPair.getPrivate(), SignatureAlgorithm.RS256)
+                .setClaims(buildClaims(userDto))
+//              .claim("userId", userDto.getUserId()) 另種放法 
+                .setSubject(String.valueOf(userDto.getUserId()))
+                .setIssuedAt(now)
+                .setExpiration(expiryDate)
+                .signWith(keyInitializer.getKeyPair().getPrivate(), SignatureAlgorithm.RS256)
                 .compact();
+    }
+    
+    // ✅ 可放為 private 或 public 根據你是否需要外部使用
+    private Map<String, Object> buildClaims(UserDto dto) {
+        Map<String, Object> claims = new HashMap<>();
+        claims.put("userId", dto.getUserId());
+        claims.put("role", dto.getRole());
+        claims.put("isActive", dto.getIsActive());
+        claims.put("isEmailVerified", dto.getIsEmailVerified());
+        return claims;
     }
     
 }

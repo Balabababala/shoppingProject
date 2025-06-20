@@ -23,7 +23,9 @@ public interface ProductReviewRepository extends JpaRepository<ProductReview, Lo
 	@Query("SELECT pr FROM ProductReview pr JOIN FETCH pr.user WHERE pr.product.id = :productId AND pr.isVisible = true")
 	List<ProductReview> findByProductIdAndIsVisibleTrue(Long productId);
 
-
+	
+	@Transactional
+	Optional<ProductReview> findByUserIdAndProductId(Long userId,Long productId);
 	
 	@Transactional
 	List<ProductReview> findByUserId(Long userId);

@@ -41,9 +41,13 @@ public class UserController {
     /** 🔍 取得登入者資料 */
     @GetMapping("/user/me")
     public ResponseEntity<ApiResponse<UserDto>> getUserInfo() {
+    	CustomUserDetails userDetails = getCurrentUserDetails();
+    	if (userDetails == null) {
+    	    throw new ShoppingException("尚未登入");
+    	}
+    	
         try {
-            CustomUserDetails userDetails = getCurrentUserDetails();
-            UserDto userDto = userService.handleSuccessfulLogin(userDetails.getUser());
+            UserDto userDto = userService.getUserDtoByUser(userDetails.getUser());
             return ResponseEntity.ok(ApiResponse.success("取得使用者資料成功", userDto));
         } catch (ShoppingException e) {
             logger.error("取得使用者資料失敗: {}", e.getMessage());

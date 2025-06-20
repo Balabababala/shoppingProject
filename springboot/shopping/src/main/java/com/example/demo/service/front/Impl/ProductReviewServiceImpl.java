@@ -36,12 +36,6 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         User user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException("找不到使用者"));
         Product product = productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("找不到產品"));
 
-        
-        // 防止同一用戶重複評論同產品 (可選，依需求調整)
-        if (productReviewRepository.existsByUserAndProduct(user, product)) {
-            throw new IllegalStateException("已經評論過此商品");
-        }
-
         ProductReview review = new ProductReview();
         review.setUser(user);
         review.setProduct(product);
@@ -49,11 +43,22 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         review.setComment(comment);
         review.setIsVisible(false);  // 預設未顯示，需管理員審核
         review.setIsApproved(false);
-
+        
+        if (productReviewRepository.existsByUserAndProduct(user, product)) {
+        	review.setId(productReviewRepository.findByUserIdAndProductId(userId,productId).get().getId());
+        }
+ 
         ProductReview saved = productReviewRepository.save(review);
         return ProductReviewMapper.toDto(saved);
     }
 
+    
+    public boolean existsByUserAndProduct(Long userId, Long productId) {
+        User user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException("找不到使用者"));
+        Product product = productRepository.findById(productId).orElseThrow(() -> new NoSuchElementException("找不到產品"));
+        return productReviewRepository.existsByUserAndProduct(user, product);
+    }
+    
     @Override
     @Transactional(readOnly = true)
     public List<ProductReviewDto> getReviewsByProduct(Long productId) {

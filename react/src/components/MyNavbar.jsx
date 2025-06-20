@@ -20,6 +20,7 @@ function MyNavbar({ onChangeContent }) {
     addToastMessage,
     API_BASE,
   } = useContext(AppContext);
+
   const [showCart, setShowCart] = useState(false);
 
   const handleMouseEnter = () => setShowCart(true);
@@ -27,28 +28,21 @@ function MyNavbar({ onChangeContent }) {
     setTimeout(() => setShowCart(false), 200);
   };
 
+  // 改成純前端登出
   const logout = () => {
-    fetch(`${API_BASE}/logout`, {
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Cache-Control': 'no-cache' },
-    })
-      .then((response) => {
-        if (response.ok) {
-          setUserData(null);
-          window.location.href = '/';
-        } else {
-          addToastMessage('登出失敗');
-        }
-      })
-      .catch((error) => {
-        addToastMessage('登出時發生錯誤', error);
-      });
+    setUserData(null);
+    localStorage.removeItem('token');
+    localStorage.removeItem('userData');
+    addToastMessage('已成功登出');
+    window.location.href = '/';
   };
 
-  // 角色判斷用字串比對
-  const isBuyer = userData?.role === 'ROLE_BUYER';
-  const isSeller = userData?.role === 'ROLE_SELLER';
+  // 先判斷 userData 是否存在，再取 user
+  const user = userData?.user;
+
+  // 角色判斷
+  const isBuyer = user?.role === 'ROLE_BUYER';
+  const isSeller = user?.role === 'ROLE_SELLER';
 
   return (
     <>
@@ -64,7 +58,7 @@ function MyNavbar({ onChangeContent }) {
                 <MyNavbarCategories categories={categories} />
               </NavDropdown>
 
-              {userData?.username && (
+              {user?.username && (
                 <Nav.Link as={Link} to="/myrecent">
                   最近看過
                 </Nav.Link>
@@ -80,7 +74,7 @@ function MyNavbar({ onChangeContent }) {
                   <Nav.Link
                     className="cart-link"
                     as={Link}
-                    to={userData?.userId ? '/mycart' : '/userlogin'}
+                    to={user?.userId ? '/mycart' : '/userlogin'}
                   >
                     購物車
                   </Nav.Link>
@@ -113,8 +107,8 @@ function MyNavbar({ onChangeContent }) {
               )}
 
               {/* 登入後功能選單 */}
-              {userData?.username && (
-                <NavDropdown title={userData.username} id="basic-nav-dropdown">
+              {user?.username ? (
+                <NavDropdown title={user.username} id="basic-nav-dropdown">
                   {isBuyer ? (
                     <>
                       <NavDropdown.Item as={Link} to="/notifications">
@@ -149,10 +143,8 @@ function MyNavbar({ onChangeContent }) {
                     </>
                   ) : null}
                 </NavDropdown>
-              )}
-
-              {/* 未登入顯示登入/註冊 */}
-              {!userData?.username && (
+              ) : (
+                // 未登入顯示登入/註冊
                 <Nav.Link as={Link} to="/userlogin">
                   登錄/註冊
                 </Nav.Link>

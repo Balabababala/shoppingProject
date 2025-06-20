@@ -13,7 +13,7 @@ function MyRecentlyViewedPage() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    if (!userData?.userId) {
+    if (!userData?.user?.userId) {
       setRecentlyViewedProducts([]);
       return;
     }
@@ -22,7 +22,7 @@ function MyRecentlyViewedPage() {
       setLoading(true);
       setError(null);
       try {
-        const data = await fetchWithAuthCheck(`${BASE_API}/recent/buyer/${userData.userId}`);
+        const data = await fetchWithAuthCheck(`${BASE_API}/recent`);
 
         if (data?.data) {
           const products = data.data.map((item) => ({

@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -116,14 +117,10 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Override
 	@Transactional
-	public void cancelOrder(Long orderId, Long buyerId) {
+	public void cancelOrder(Long orderId) {
 	    Order order = orderRepository.findById(orderId)
 	        .orElseThrow(() -> new ShoppingException("訂單不存在"));
-
-	    if (!order.getBuyer().getId().equals(buyerId)) {
-	        throw new ShoppingException("無權限取消此訂單");
-	    }
-
+	    
 	    if (!isCancellable(order)) {
 	        throw new IllegalStateException("該訂單無法取消");
 	    }
@@ -137,6 +134,16 @@ public class OrderServiceImpl implements OrderService{
 	    // TODO: 發送通知（待補）
 	}
 
+	
+	@Override
+	public boolean isOrderOwnedByUser(Long orderId, Long userId) {
+	    Optional<Order> orderOpt = orderRepository.findById(orderId);
+	    if (orderOpt.isEmpty()) return false;
+
+	    Order order = orderOpt.get();
+	    // 假設訂單有 buyerId 欄位，你判斷買家是不是當前使用者
+	    return order.getBuyer().getId().equals(userId);
+	}
 
 	@Override
 	public List<OrderResponse> getOrderBySellerId(Long userId) {
@@ -145,6 +152,44 @@ public class OrderServiceImpl implements OrderService{
 																   .toList();
 	}
 
-	
-	
+	@Override
+	@Transactional
+	public void shipOrder(Long orderId, Long sellerId) {
+	    Order order = orderRepository.findByIdWithItemsAndSeller(orderId)
+	        .orElseThrow(() -> new ShoppingException("找不到訂單 ID：" + orderId));
+
+	    // 驗證這筆訂單是否屬於該賣家
+	    boolean sellerOwnsOrder = order.getOrderItems().stream()
+	        .anyMatch(item -> item.getProduct().getSeller().getId().equals(sellerId));
+
+	    if (!sellerOwnsOrder) {
+	        throw new ShoppingException("無權限標記此訂單為出貨");
+	    }
+
+	    if (!order.getOrderStatus().equals(OrderStatus.PAID)) {
+	        throw new ShoppingException("只有已付款的訂單才能出貨");
+	    }
+
+	    order.setOrderStatus(OrderStatus.SHIPPED);
+	    orderRepository.save(order);
+	}
+
+	@Override
+	public String getOrderStatus(Long orderId) throws ShoppingException {
+	    Order order = orderRepository.findById(orderId)
+	        .orElseThrow(() -> new ShoppingException("訂單不存在"));
+	    
+	    return order.getOrderStatus().toString();
+	}
+
+	@Override
+	public boolean isOrderOwnedBySeller(Long orderId, Long currentUserId) {
+		 Optional<Order> orderOpt = orderRepository.findById(orderId);
+		    if (orderOpt.isEmpty()) return false;
+
+		    Order order = orderOpt.get();
+		    // 假設訂單有 buyerId 欄位，你判斷買家是不是當前使用者
+		    return order.getSeller().getId().equals(currentUserId);
+	}
+
 }

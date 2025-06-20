@@ -5,14 +5,12 @@ import { Link } from "react-router-dom";
 import "../css/CartPage.css";
 
 function MyCartPage() {
-  const {BASE_URL , API_BASE ,cartItems, setCartItems, clearCart ,addToastMessage} = useContext(AppContext);
+  const { BASE_URL, API_BASE, cartItems, setCartItems, clearCart, addToastMessage, userData } = useContext(AppContext);
   const [loadingClear, setLoadingClear] = useState(false);
 
   // 分頁狀態
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 5;
-
-
 
   const totalPrice = cartItems.reduce(
     (total, item) => total + item.price * item.quantity,
@@ -20,15 +18,23 @@ function MyCartPage() {
   );
 
   const removeItem = async (productId) => {
+    if (!userData?.token) {
+      addToastMessage("請先登入");
+      return;
+    }
     try {
       const response = await fetch(`${API_BASE}/cart/${productId}`, {
-        credentials: 'include',
         method: 'DELETE',
+        headers: {
+          'Cache-Control': 'no-cache',
+          Authorization: `Bearer ${userData.token}`,
+        },
       });
 
       if (!response.ok) throw new Error('刪除失敗');
 
-      setCartItems(cartItems.filter((item) => item.productId !== productId));
+      setCartItems((prev) => prev.filter((item) => item.productId !== productId));
+      addToastMessage('商品已從購物車移除');
     } catch (error) {
       console.error('刪除商品錯誤:', error);
       addToastMessage('刪除商品失敗，請稍後再試');

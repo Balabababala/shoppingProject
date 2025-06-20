@@ -27,7 +27,10 @@ public class NotificationServiceImpl implements NotificationService{
 	
 	@Override
 	public void markNotificationAsReadByNotificationId(Long notificationId,Long userId) { //+判斷 是否是使用者的通知 雖然不太可能發生
+		
 		Optional<Notification> opt= notificationRepository.findByNotificationId(notificationId);
+		Notification n = opt.orElseThrow(() -> new ShoppingException("通知不存在"));
+		
 		if(opt.get().getUser().getId().equals(userId)) {
 			if(opt.get().getStatus()!=NotificationStatus.ARCHIVED) {
 				notificationRepository.markAsReadByNotificationId(notificationId);
@@ -39,9 +42,10 @@ public class NotificationServiceImpl implements NotificationService{
 	
 	@Override
 	public List<NotificationDto> findNotificationsByUsertiNotificationResponse(Long userId) {
-		return notificationRepository.findByUserId(userId).stream()
-								   .map(NotificationMapper::toDto)
-								   .toList();
-	};
+	    List<Notification> notifications = notificationRepository.findByUserIdOrGlobalWithUser(userId);
+	    return notifications.stream()
+	                        .map(NotificationMapper::toDto)
+	                        .toList();
+	}
 	
 }

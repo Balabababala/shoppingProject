@@ -11,6 +11,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import com.example.demo.model.entity.Order;
+import com.example.demo.model.entity.User;
 
 @Repository
 public interface OrderRepository extends JpaRepository<Order, Long>{
@@ -41,6 +42,9 @@ public interface OrderRepository extends JpaRepository<Order, Long>{
 		    @Param("orderNumber") String orderNumber,
 		    @Param("userName") String userName
 		);
+
+	@Query("SELECT o FROM Order o JOIN FETCH o.seller s WHERE o.id = :id")
+	Optional<Order> findByIdWithItemsAndSeller(@Param("id") Long orderId);
 
 
 	// 你可以加自訂的方法，像是：

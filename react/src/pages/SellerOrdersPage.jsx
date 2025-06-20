@@ -2,8 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import { AppContext } from "../contexts/AppContext";
 
 function SellerOrdersPage() {
-  const BASE_API = "http://localhost:8080/api";
-  const { userData, fetchWithAuthCheck, addToastMessage } = useContext(AppContext);
+  const { userData, fetchWithAuthCheck, addToastMessage, API_BASE } = useContext(AppContext);
 
   const [orders, setOrders] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -11,52 +10,129 @@ function SellerOrdersPage() {
   const [searchKeyword, setSearchKeyword] = useState('');
   const pageSize = 5;
 
+  // 取得訂單資料
+  async function fetchOrders() {
+    if (!userData || !userData.user?.userId) {
+      console.log("No userData or userId, clearing orders");
+      addToastMessage("請先登入以查看訂單");
+      setOrders([]);
+      return;
+    }
+
+    try {
+      console.log("Fetching orders for userId:", userData.user.userId);
+      const data = await fetchWithAuthCheck(`${API_BASE}/seller/orders/${userData.user.userId}`);
+      console.log("Fetch orders response:", data);
+      if (data?.data && Array.isArray(data.data)) {
+        const newOrders = data.data.map(o => ({ ...o, items: [...o.items] })); // 深拷貝訂單和項目
+        console.log("New orders:", newOrders);
+        setOrders(newOrders);
+        setCurrentPage(1);
+      } else {
+        console.error("Invalid data structure:", data);
+        addToastMessage(data?.message || "取得訂單失敗");
+        setOrders([]);
+      }
+    } catch (error) {
+      console.error('fetchOrders 發生錯誤:', error);
+      addToastMessage("取得訂單發生錯誤");
+      setOrders([]);
+    }
+  }
+
+  useEffect(() => {
+    console.log("Initial fetchOrders on mount");
+    fetchOrders();
+  }, []);
+
+  useEffect(() => {
+    console.log("userData changed:", userData);
+    if (userData) {
+      fetchOrders();
+    } else {
+      setOrders([]);
+    }
+  }, [userData]);
+
   const filteredOrders = orders.filter(order => {
     const keyword = searchKeyword.trim().toLowerCase();
     if (!keyword) return true;
-    if (String(order.id).toLowerCase().includes(keyword)) return true;
-    if (order.buyerName && order.buyerName.toLowerCase().includes(keyword)) return true;
-    if (order.items.some(item =>
-      item.productName && item.productName.toLowerCase().includes(keyword)
-    )) return true;
-
-    const orderDateStr = new Date(order.orderDate).toLocaleDateString();
-    return orderDateStr.toLowerCase().includes(keyword);
+    if (String(order.id).includes(keyword)) return true;
+    if (order.buyerName?.toLowerCase().includes(keyword)) return true;
+    if (order.items.some(item => item.productName?.toLowerCase().includes(keyword))) return true;
+    if (order.orderDate && new Date(order.orderDate).toLocaleDateString().toLowerCase().includes(keyword)) return true;
+    return false;
   });
 
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   useEffect(() => {
-    const fetchOrders = async () => {
-      if (!userData) {
-        addToastMessage("請先登入以查看訂單");
-        setOrders([]);
-        return;
-      }
-
-      const data = await fetchWithAuthCheck(`${BASE_API}/orders/seller/${userData.userId}`);
-      if (data?.data) {
-        setOrders(data.data);
-        setCurrentPage(1);
-      } else {
-        addToastMessage(data?.message || "取得訂單失敗");
-        setOrders([]);
-      }
-    };
-
-    fetchOrders();
-  }, [userData, fetchWithAuthCheck, addToastMessage]);
+    console.log("Orders updated:", orders);
+    console.log("Filtered orders:", filteredOrders);
+    console.log("Paged orders:", pagedOrders);
+    // 檢查特定訂單的狀態（例如 ID 57）
+    const order57 = orders.find(o => o.id === 57);
+    console.log("Order 57 status:", order57 ? order57.orderStatus : "Not found");
+  }, [orders, filteredOrders, pagedOrders]);
 
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
+    console.log("Changing page to:", pageNum);
     setCurrentPage(pageNum);
     setInputPage('');
   };
 
   useEffect(() => {
+    console.log("Search keyword changed, resetting to page 1");
     setCurrentPage(1);
   }, [searchKeyword]);
+
+  const handleMarkShipped = async (orderId) => {
+    try {
+      console.log("Marking order as shipped:", orderId);
+      const res = await fetchWithAuthCheck(`${API_BASE}/seller/orders/${orderId}/ship`, { method: 'PUT' });
+      console.log("Mark shipped response:", res);
+      if (res?.data) {
+        addToastMessage("已標記出貨");
+        await fetchOrders(); // 重新獲取訂單資料
+      } else {
+        addToastMessage(res?.message || "標記出貨失敗");
+      }
+    } catch (error) {
+      console.error("標記出貨發生錯誤:", error);
+      addToastMessage("標記出貨發生錯誤");
+    }
+  };
+
+  const handleCancelOrder = async (orderId) => {
+    const confirmCancel = window.confirm("你確定要取消這筆訂單嗎？取消後將不可復原！");
+    if (!confirmCancel) return;
+
+    try {
+      console.log("Cancelling order:", orderId);
+      const res = await fetchWithAuthCheck(`${API_BASE}/seller/orders/${orderId}/cancel`, { method: 'PUT' });
+      console.log("Cancel order response:", res);
+      if (res?.message === "訂單已成功取消") {
+        addToastMessage("訂單已取消");
+        // 臨時本地更新，立即反映取消狀態
+        setOrders(prev =>
+          prev.map(order =>
+            order.id === orderId
+              ? { ...order, orderStatus: "CANCELLED", paymentStatus: "REFUNDED", shipmentStatus: "NOT_SHIPPED" }
+              : { ...order }
+          )
+        );
+        // 重新獲取訂單資料，確保與後端同步
+        await fetchOrders();
+      } else {
+        addToastMessage(res?.message || "取消訂單失敗");
+      }
+    } catch (error) {
+      console.error("取消訂單發生錯誤:", error);
+      addToastMessage("取消訂單發生錯誤");
+    }
+  };
 
   return (
     <div className="container mt-4" style={{ maxWidth: 960 }}>
@@ -82,58 +158,39 @@ function SellerOrdersPage() {
                 <div>
                   <div>訂單編號 <strong>#{order.id}</strong></div>
                   <div style={{ fontSize: '0.9rem' }}>
-                    買家：{order.receiverName}
+                    買家：{order.buyerName || order.receiverName || ''}
                   </div>
                 </div>
-                <span style={{ fontSize: '0.9rem' }}>{new Date(order.orderDate).toLocaleString()}</span>
+                <span style={{ fontSize: '0.9rem' }}>
+                  {order.orderDate ? new Date(order.orderDate).toLocaleString() : '未知日期'}
+                </span>
               </div>
 
               <div className="card-body">
                 <div className="row mb-2">
-                  <div className="col-md-4">
-                    <strong>訂單狀態：</strong> {order.orderStatus}
-                  </div>
-                  <div className="col-md-4">
-                    <strong>付款狀態：</strong> {order.paymentStatus}
-                  </div>
-                  <div className="col-md-4">
-                    <strong>出貨狀態：</strong> {order.shipmentStatus}
-                  </div>
+                  <div className="col-md-4"><strong>訂單狀態：</strong>{order.orderStatus}</div>
+                  <div className="col-md-4"><strong>付款狀態：</strong>{order.paymentStatus}</div>
+                  <div className="col-md-4"><strong>出貨狀態：</strong>{order.shipmentStatus}</div>
                 </div>
 
                 <div className="row mb-2">
-                  <div className="col-md-4">
-                    <strong>付款方式：</strong> {order.paymentMethod}
-                  </div>
-                  <div className="col-md-4">
-                    <strong>運送方式：</strong> {order.shippingMethod}
-                  </div>
+                  <div className="col-md-4"><strong>付款方式：</strong>{order.paymentMethod}</div>
+                  <div className="col-md-4"><strong>運送方式：</strong>{order.shippingMethod}</div>
                 </div>
 
                 <div className="row mb-3">
-                  <div className="col-md-6">
-                    <strong>收件人：</strong> {order.receiverName}（{order.receiverPhone}）
-                  </div>
-                  <div className="col-md-6">
-                    <strong>地址：</strong> {order.shippingAddress}
-                  </div>
+                  <div className="col-md-6"><strong>收件人：</strong>{order.receiverName}（{order.receiverPhone}）</div>
+                  <div className="col-md-6"><strong>地址：</strong>{order.shippingAddress}</div>
                 </div>
 
                 {order.notes && (
-                  <div className="mb-3">
-                    <strong>備註：</strong> {order.notes}
-                  </div>
+                  <div className="mb-3"><strong>備註：</strong>{order.notes}</div>
                 )}
 
                 <h5 className="mb-3">商品明細</h5>
                 <table className="table table-bordered table-sm">
                   <thead className="table-light">
-                    <tr>
-                      <th>商品名稱</th>
-                      <th>數量</th>
-                      <th>單價</th>
-                      <th>小計</th>
-                    </tr>
+                    <tr><th>商品名稱</th><th>數量</th><th>單價</th><th>小計</th></tr>
                   </thead>
                   <tbody>
                     {order.items.map((item, index) => (
@@ -150,6 +207,25 @@ function SellerOrdersPage() {
                 <div className="text-end mt-3">
                   <strong>訂單總金額：</strong>
                   <span className="fs-5 text-danger"> ${order.totalAmount}</span>
+                </div>
+
+                <div className="d-flex justify-content-end gap-2 mt-3">
+                  {(order.orderStatus !== "SHIPPED" && order.orderStatus !== "CANCELLED") && (
+                    <button
+                      className="btn btn-sm btn-primary"
+                      onClick={() => handleMarkShipped(order.id)}
+                    >
+                      標記出貨
+                    </button>
+                  )}
+                  {order.orderStatus !== "CANCELLED" && (
+                    <button
+                      className="btn btn-sm btn-danger"
+                      onClick={() => handleCancelOrder(order.id)}
+                    >
+                      取消訂單
+                    </button>
+                  )}
                 </div>
               </div>
             </div>
@@ -169,23 +245,18 @@ function SellerOrdersPage() {
               min="1"
               max={totalPages}
               value={inputPage}
-              placeholder={currentPage}
-              style={{
-                width: '4.5rem',
-                textAlign: 'center',
-                borderRadius: '0.375rem',
-                border: '1px solid #ced4da',
-              }}
+              placeholder={String(currentPage)}
+              style={{ width: '4.5rem', textAlign: 'center' }}
               onChange={e => setInputPage(e.target.value)}
               onKeyDown={e => {
                 if (e.key === 'Enter') {
-                  const pageNum = Number(inputPage);
+                  const pageNum = parseInt(inputPage);
                   if (!isNaN(pageNum)) changePage(pageNum);
                 }
               }}
             />
 
-            <span style={{ userSelect: 'none' }}> / {totalPages} 頁</span>
+            <span style={{ userSelect: 'none' }}>/ {totalPages} 頁</span>
 
             <button
               className="btn btn-outline-success"

@@ -41,7 +41,7 @@ function CategoryPage() {
 
   const { slug } = useParams();
 
-  const { userData, addToastMessage, setCartItems ,API_BASE} = useContext(AppContext);
+  const { userData, addToastMessage, addToCart ,API_BASE} = useContext(AppContext);
 
   const [categoriesTree, setCategoriesTree] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(slug || null);
@@ -91,39 +91,11 @@ function CategoryPage() {
 
   // 加入購物車事件
   const handleAddToCart = (productId, quantity) => {
-    if (!userData) {
-      addToastMessage('請先登入才能加入購物車！');
-      return;
-    }
-    let qty = quantity;
-    if (isNaN(qty) || qty < 1) qty = 1;
-
-    fetch(`${API_BASE}/cart/add`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      credentials: 'include',
-      body: JSON.stringify({
-        userId: userData.userId,
-        productId,
-        quantity: qty,
-      }),
-    })
-      .then(res => {
-        if (!res.ok) throw new Error(`加入購物車失敗，狀態碼:${res.status}`);
-        return res.json();
-      })
-      .then(() => {
-        addToastMessage(`已加入購物車：商品ID ${productId} x ${qty}`);
-        return fetch(`${API_BASE}/cart`, { credentials: 'include' });
-      })
-      .then(res => res.json())
-      .then(data => {
-        if (!data || !data.data) throw new Error('購物車資料格式錯誤');
-        setCartItems(data.data);
-      })
-      .catch(err => {
-        addToastMessage(err.message);
-      });
+  if (!userData) {
+    addToastMessage('請先登入才能加入購物車！');
+    return;
+  }
+  addToCart(productId, quantity); // ✅ 呼叫 AppContext 中的封裝方法
   };
 
   return (

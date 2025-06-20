@@ -10,7 +10,7 @@ public interface ProductReviewService {
 		ProductReviewDto addReview(Long userId, Long productId, int rating, String comment); //新增評論
 	    List<ProductReviewDto> getReviewsByProduct(Long productId);							 //該商品的可見評論列表
 	    List<ProductReviewDto> getReviewsByUser(Long userId);								 //該使用者的評論列表
-	    
+	    boolean existsByUserAndProduct(Long userId, Long productId);						 //判斷是否以評論用
 	    
 	    													 
 	    
@@ -19,5 +19,6 @@ public interface ProductReviewService {
 	    ProductReviewDto approveReview(Long reviewId, boolean approved);					 //審核評論通過與否
 	    void deleteReview(Long reviewId);													 //刪除評論
 	    List<ProductReviewDto> getAllReviews();												 //取得全部評論（含隱藏、未審核）
+		
 	
 }

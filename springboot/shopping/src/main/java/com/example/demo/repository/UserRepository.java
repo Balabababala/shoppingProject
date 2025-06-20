@@ -29,6 +29,13 @@ public interface UserRepository extends JpaRepository<User, Long>{
 	@Transactional(readOnly = true)
 	Optional<User> findByEmail(String email);
 	
+	@Transactional(readOnly = true)
+	@Query("SELECT u FROM User u JOIN FETCH u.role r WHERE u.id = :id")
+	Optional<User> findByIdWithRole(@Param("id") Long id);
+	
+	@Transactional(readOnly = true)
+	@Query("SELECT u FROM User u JOIN FETCH u.role r WHERE u.username = :username")
+	Optional<User> findByUsernameWithRole(@Param("username") String username);
 	
 	@Transactional(readOnly = true)
 	@Query("SELECT u FROM User u JOIN FETCH u.role r WHERE r = :role")

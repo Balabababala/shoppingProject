@@ -155,12 +155,19 @@ public class UserServiceImpl implements UserService{
 		return userRepository.findById(id)
 	            .orElseThrow(() -> new EntityNotFoundException("User not found with id: " + id));
 	}
+	
 	@Override
 	public UserDto handleSuccessfulLogin(User user) {
 		user.setLastLoginAt(LocalDateTime.now());     //更新 最近登入時間
 		userRepository.save(user);
 		UserDto userDto=UserMapper.toDto(user);
 		return userDto;
+	}
+	
+
+	@Override
+	public UserDto getUserDtoByUser(User user) {
+		return UserMapper.toDto(user);
 	}
 
 	@Override

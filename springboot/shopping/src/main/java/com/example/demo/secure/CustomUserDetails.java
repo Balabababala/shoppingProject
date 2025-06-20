@@ -26,8 +26,6 @@ public class CustomUserDetails implements UserDetails {
         return Collections.singletonList(new SimpleGrantedAuthority(user.getRole().getName()));
     }
     
-    
-
     @Override
     public String getPassword() {
         return user.getPasswordHash();

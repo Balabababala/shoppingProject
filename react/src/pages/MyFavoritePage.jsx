@@ -3,7 +3,7 @@ import { AppContext } from '../contexts/AppContext';
 import ModernProductCard from '../components/ModernProductCard';
 
 function MyFavorite() {
-  const BASE_API="http://localhost:8080/api";
+  const BASE_API = "http://localhost:8080/api";
   const { userData, addToastMessage } = useContext(AppContext);
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -17,21 +17,24 @@ function MyFavorite() {
   const pagedFavorites = favorites.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const fetchFavorites = async () => {
-    if (!userData?.userId) {
+    if (!userData?.user?.userId) {
+      console.log('userData:', userData);
       setFavorites([]);
       setError("尚未登入，無法取得收藏清單");
       setLoading(false);
       return;
     }
     try {
-      const resp = await fetch(`${BASE_API}/favorites/${userData.userId}/favorites`, {
-        credentials: 'include',
-        headers: { 'Cache-Control': 'no-cache' }
+      const resp = await fetch(`${BASE_API}/favorites`, {
+        headers: {
+          'Cache-Control': 'no-cache',
+          Authorization: `Bearer ${userData.token}`
+        }
       });
       if (!resp.ok) throw new Error('取得收藏失敗');
       const data = await resp.json();
 
-      if (data.message && data.message.includes("成功")) {
+      if (data.message?.includes("成功")) {
         setFavorites(data.data || []);
         setError(null);
         setCurrentPage(1);
@@ -47,17 +50,20 @@ function MyFavorite() {
 
   useEffect(() => {
     fetchFavorites();
-  }, [userData?.userId]);
+  }, [userData?.user?.id]);
 
-   const handleDelete = async (productId) => {
+  const handleDelete = async (productId) => {
     try {
       const resp = await fetch(`${BASE_API}/favorites/${productId}`, {
         method: 'DELETE',
-        credentials: 'include',
+        headers: {
+          'Cache-Control': 'no-cache',
+          Authorization: `Bearer ${userData.token}`
+        }
       });
       const data = await resp.json();
 
-      if (data.message && data.message.includes("成功")) {
+      if (data.message?.includes("成功")) {
         setFavorites((prev) => prev.filter(item => item.productId !== productId));
         if ((pagedFavorites.length === 1) && (currentPage > 1)) {
           setCurrentPage(currentPage - 1);

@@ -13,5 +13,6 @@ public class NotificationDto {
 	private Long id;	
 	private String type;
 	private String message; 
+	private Boolean isGlobal;
 	private NotificationStatus status;
 }

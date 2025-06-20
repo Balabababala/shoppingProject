@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
@@ -28,13 +29,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtAuthenticationFilter.class);
 
-    private final KeyInitializer keyInitializer;
-    private final UserRepository userRepository;
+    @Autowired
+    private KeyInitializer keyInitializer;
+    
+    @Autowired
+    private UserRepository userRepository;
 
-    public JwtAuthenticationFilter(KeyInitializer keyInitializer, UserRepository userRepository) {
-        this.keyInitializer = keyInitializer;
-        this.userRepository = userRepository;
-    }
+  
 
     @Override
     protected void doFilterInternal(HttpServletRequest request, 
@@ -55,27 +56,30 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         logger.debug("解析的 JWT token: {}", token);
 
         try {
-            if (keyInitializer.keyPair == null) {
+            if (keyInitializer.getKeyPair() == null) {
                 logger.error("KeyInitializer.keyPair 為 null");
                 response.setStatus(HttpServletResponse.SC_INTERNAL_SERVER_ERROR);
                 response.getWriter().write("伺服器錯誤：金鑰對未初始化");
                 return;
             }
-            Key publicKey = keyInitializer.keyPair.getPublic();
+            Key publicKey = keyInitializer.getKeyPair().getPublic();
             logger.debug("使用公鑰驗證 token");
 
+            
+            // 解析 JWT
             Claims claims = Jwts.parserBuilder()
                     .setSigningKey(publicKey)
                     .build()
                     .parseClaimsJws(token)
                     .getBody();
 
-            String username = claims.getSubject();
-            logger.debug("解析的 username: {}", username);
+            String userIdStr  = claims.getSubject();
+            Long userId = Long.parseLong(userIdStr);
 
-            if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-                User user = userRepository.findByUsername(username)
-                        .orElseThrow(() -> new ShoppingException("用戶不存在: " + username));
+
+            if (userIdStr != null && SecurityContextHolder.getContext().getAuthentication() == null) {
+                User user = userRepository.findByIdWithRole(userId)
+                        .orElseThrow(() -> new ShoppingException("用戶不存在: " + userId));
                 logger.debug("找到用戶: {}", user.getUsername());
 
                 CustomUserDetails userDetails = new CustomUserDetails(user);
@@ -83,7 +87,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
                         new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
-                logger.debug("設置 SecurityContext 認證: {}", username);
+                logger.debug("設置 SecurityContext 認證: {}", userId);
             }
             filterChain.doFilter(request, response);
         } catch (io.jsonwebtoken.ExpiredJwtException e) {

@@ -6,7 +6,21 @@ export function AppProvider({ children }) {
   const BASE_URL = 'http://localhost:8080';
   const API_BASE = 'http://localhost:8080/api';
 
-  const [userData, setUserData] = useState(null);
+  const [userData, setUserData] = useState(() => {
+  const token = localStorage.getItem('token');
+  const userDataStr = localStorage.getItem('userData');
+  if (token && userDataStr) {
+    try {
+      const parsed = JSON.parse(userDataStr);
+      if (parsed.token && parsed.user) {
+        return parsed;
+      }
+    } catch (e) {
+      console.warn('localStorage userData 解析錯誤');
+    }
+  }
+  return null;
+  });
   const [loadingAuth, setLoadingAuth] = useState(true);
   const [cartItems, setCartItems] = useState([]);
   const [categories, setCategories] = useState([]);
@@ -14,7 +28,12 @@ export function AppProvider({ children }) {
 
   const initialUserCheckDone = useRef(false);
 
-  // fetchWithAuthCheck 定義
+  // ★ 建議先定義 addToastMessage，方便後面函式使用
+  const addToastMessage = useCallback((text) => {
+    const id = Date.now() + Math.random();
+    setToastMessages((prev) => [...prev, { id, text }]);
+  }, []);
+
   const fetchWithAuthCheck = useCallback(async (url, options = {}) => {
     try {
       const token = localStorage.getItem('token');
@@ -31,32 +50,7 @@ export function AppProvider({ children }) {
     }
   }, []);
 
-  const addToastMessage = useCallback((text) => {
-    const id = Date.now() + Math.random();
-    setToastMessages((prev) => [...prev, { id, text }]);
-  }, []);
-
-  const handleLogout = useCallback((msg = '您已登出') => {
-    console.log('handleLogout called, 清空 userData');
-    setUserData(null);
-    setCartItems([]);
-    localStorage.removeItem('userData');
-    localStorage.removeItem('token');
-    addToastMessage(msg);
-  }, [addToastMessage]);
-
-  // 同步 localStorage
-  useEffect(() => {
-    if (userData) {
-      localStorage.setItem('userData', JSON.stringify(userData));
-      if (userData.token) localStorage.setItem('token', userData.token);
-    } else {
-      localStorage.removeItem('userData');
-      localStorage.removeItem('token');
-    }
-  }, [userData]);
-
-  // 抓購物車
+  
   const fetchCart = useCallback(async () => {
     if (!userData) {
       setCartItems([]);
@@ -78,15 +72,67 @@ export function AppProvider({ children }) {
     }
   }, [userData]);
 
+  const clearCart = useCallback(async () => {
+    if (!userData) return;
+    try {
+      const resp = await fetch(`${API_BASE}/cart/clear`, {
+        method: 'DELETE',
+        headers: {
+          'Cache-Control': 'no-cache',
+          Authorization: `Bearer ${userData.token}`,
+        },
+      });
+      if (!resp.ok) throw new Error('清空購物車失敗');
+      setCartItems([]);
+      addToastMessage('購物車已清空');
+    } catch (err) {
+      console.error('清空購物車錯誤:', err);
+      addToastMessage('清空購物車失敗，請稍後再試');
+      throw err;
+    }
+  }, [API_BASE, userData, addToastMessage]);
+
+  const addToCart = useCallback(async (productId, quantity) => {
+    if (!userData) return;
+    try {
+      const resp = await fetch(`${API_BASE}/cart/add`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache',
+          Authorization: `Bearer ${userData.token}`,
+        },
+        body: JSON.stringify({ productId, quantity }),
+      });
+      if (!resp.ok) throw new Error('加入購物車失敗');
+      await fetchCart();
+      addToastMessage('已加入購物車');
+    } catch (err) {
+      console.error('加入購物車錯誤:', err);
+      addToastMessage('加入購物車失敗，請稍後再試');
+      throw err;
+    }
+  }, [API_BASE, userData, addToastMessage, fetchCart]);
+
+  const handleLogout = useCallback((msg = '您已登出') => {
+    
+    setUserData(null);
+    setCartItems([]);
+    localStorage.removeItem('userData');
+    localStorage.removeItem('token');
+    addToastMessage(msg);
+  }, [addToastMessage]);
+
+  // 同步 localStorage
   useEffect(() => {
     if (userData) {
-      console.log('userData 有變動，開始抓購物車');
-      fetchCart();
+      localStorage.setItem('userData', JSON.stringify(userData));
+      if (userData.token) localStorage.setItem('token', userData.token);
     } else {
-      console.log('userData 是 null，清空購物車');
-      setCartItems([]);
+      localStorage.removeItem('userData');
+      localStorage.removeItem('token');
     }
-  }, [userData, fetchCart]);
+  }, [userData]);
 
   // 抓分類
   useEffect(() => {
@@ -101,10 +147,9 @@ export function AppProvider({ children }) {
     if (initialUserCheckDone.current) return;
 
     const token = localStorage.getItem('token');
-    console.log('初次驗證：localStorage token:', token);
+    
 
     if (!token) {
-      console.log('沒有 token，直接設定 loadingAuth false');
       setLoadingAuth(false);
       initialUserCheckDone.current = true;
       return;
@@ -112,14 +157,17 @@ export function AppProvider({ children }) {
 
     (async () => {
       const res = await fetchWithAuthCheck(`${API_BASE}/user/me`);
-      console.log('初次驗證：fetchUserData 結果:', res);
+      
       if (res?.authError) {
         handleLogout('您尚未登入，請重新登入');
-      } else if (res?.data) {
-        // 建議這邊明確包成 user: {...}
-        setUserData({ token, user: res.data });
+      } else if (res) {
+        const userObj = res.data ?? res;
+        if (userObj && userObj.username) {
+          setUserData({ token, user: userObj });
+        } else {
+          setUserData(null);
+        }
       } else {
-        console.warn('fetchUserData 無效回應，將清空 userData');
         setUserData(null);
       }
       initialUserCheckDone.current = true;
@@ -139,10 +187,14 @@ export function AppProvider({ children }) {
     return () => clearInterval(interval);
   }, [fetchWithAuthCheck, handleLogout]);
 
-  // 輸出除錯資訊
+  // userData 改變時抓購物車
   useEffect(() => {
-    console.log('userData updated:', userData);
-  }, [userData]);
+    if (userData) {
+      fetchCart();
+    } else {
+      setCartItems([]);
+    }
+  }, [userData, fetchCart]);
 
   return (
     <AppContext.Provider
@@ -155,9 +207,9 @@ export function AppProvider({ children }) {
         toastMessages,
         addToastMessage,
         removeToastMessage: (id) => setToastMessages((prev) => prev.filter((msg) => msg.id !== id)),
-        clearCart: async () => { /* 依你需求自行實作 */ },
+        clearCart,
         fetchCart,
-        addToCart: async () => { /* 依你需求自行實作 */ },
+        addToCart,
         fetchWithAuthCheck,
         API_BASE,
         BASE_URL,

@@ -25,6 +25,7 @@ public interface UserService {
 	Optional <User> checkUser(String username);																	//登入驗證使用者名稱用  (之後可能+email findUserByEmail)
 	User findUserById(Long id);																					//給別人用的 轉換用	(要優化的話可以 試試)
 	UserDto handleSuccessfulLogin(User user);															 		//如果登入成功 生userDto + 更新 最近登入時間 
+	UserDto getUserDtoByUser(User user);																		//單純取 userDto
 	UserProfileDto getProfileDto(Long id); 																		//取Profile
 	
 	

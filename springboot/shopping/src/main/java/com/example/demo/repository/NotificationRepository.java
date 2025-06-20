@@ -17,6 +17,10 @@ import com.example.demo.model.entity.Notification;
 public interface NotificationRepository extends JpaRepository<Notification, Long>{
 	//已有方法 find.... save delete find 要用還是要寫 只是不用Query
 	
+	
+	@Query("SELECT n FROM Notification n LEFT JOIN FETCH n.user u WHERE u.id = :userId OR u IS NULL")
+	List<Notification> findByUserIdOrGlobalWithUser(@Param("userId") Long userId);
+	
 	//0 1 2 ('PENDING', 'READ', 'ARCHIVED')
 	@Modifying
 	@Transactional

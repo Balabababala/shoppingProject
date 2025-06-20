@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useContext,
-  useRef,
-  useLayoutEffect,
-} from "react";
+import React, { useState, useEffect, useContext, useRef, useLayoutEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import {
   Container,
@@ -27,8 +21,15 @@ import "slick-carousel/slick/slick-theme.css";
 function ProductDetailPage() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const { userData, setCartItems, addToastMessage, API_BASE, BASE_URL } =
-    useContext(AppContext);
+  const {
+    userData,
+    setCartItems,
+    addToastMessage,
+    API_BASE,
+    BASE_URL,
+    fetchWithAuthCheck,
+    handleLogout,
+  } = useContext(AppContext);
 
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -36,83 +37,85 @@ function ProductDetailPage() {
   const [quantity, setQuantity] = useState(1);
   const [isFavorite, setIsFavorite] = useState(false);
 
-  // slick slider refs and nav syncing state
   const sliderMain = useRef(null);
   const sliderThumbs = useRef(null);
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
 
-  // --- 新增評論區 state ---
+  // 評論相關
   const [reviews, setReviews] = useState([]);
   const [reviewLoading, setReviewLoading] = useState(false);
   const [reviewError, setReviewError] = useState(null);
   const [newRating, setNewRating] = useState(5);
   const [newComment, setNewComment] = useState("");
   const [submittingReview, setSubmittingReview] = useState(false);
+  const [hasReviewed, setHasReviewed] = useState(false); // 是否已評論過
 
+  const placeholderLarge = "https://dummyimage.com/600x600/ccc/fff&text=No+Image";
+
+  // 設定 slick slider 的控制
   useLayoutEffect(() => {
     setNav1(sliderMain.current);
     setNav2(sliderThumbs.current);
   }, []);
 
-  // 取得商品資料
+  // 載入商品資料
   useEffect(() => {
     setLoading(true);
     setError(null);
-    fetch(`${API_BASE}/products/${id}`, { credentials: "include" })
-      .then((res) => {
-        if (!res.ok) throw new Error("找不到商品");
-        return res.json();
-      })
+    fetchWithAuthCheck(`${API_BASE}/products/${id}`)
       .then((data) => {
+        if (!data) throw new Error("找不到商品");
         setProduct(data.data);
         setQuantity(1);
-        setLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [id, API_BASE]);
+      .catch((err) => setError(err.message))
+      .finally(() => setLoading(false));
+  }, [id, API_BASE, fetchWithAuthCheck]);
 
-  // 取得評論列表
+  // 載入評論列表
   useEffect(() => {
     if (!product) return;
 
     setReviewLoading(true);
     setReviewError(null);
 
-    fetch(`${API_BASE}/reviews/product/${product.id}`, {
-      credentials: "include",
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("無法取得評論");
-        return res.json();
-      })
+    fetchWithAuthCheck(`${API_BASE}/reviews/product/${product.id}`)
       .then((data) => {
-        setReviews(data.data || []);
-        setReviewLoading(false);
+        setReviews(data?.data || []);
       })
-      .catch((err) => {
-        setReviewError(err.message);
-        setReviewLoading(false);
-      });
-  }, [product, API_BASE]);
+      .catch((err) => setReviewError(err.message))
+      .finally(() => setReviewLoading(false));
+  }, [product, API_BASE, fetchWithAuthCheck]);
 
   // 檢查收藏狀態
   useEffect(() => {
     if (!userData || !product) return;
-    fetch(
-      `${API_BASE}/favorites/check?userId=${userData.userId}&productId=${product.id}`,
-      { credentials: "include" }
-    )
-      .then((res) => res.json())
-      .then((data) => setIsFavorite(data.data))
-      .catch(() => setIsFavorite(false));
-  }, [userData, product, API_BASE]);
 
-  // 加入購物車處理（不動）
-  const handleAddToCart = () => {
+    fetchWithAuthCheck(
+      `${API_BASE}/favorites/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
+    )
+      .then((data) => setIsFavorite(Boolean(data?.data)))
+      .catch(() => setIsFavorite(false));
+  }, [userData, product, API_BASE, fetchWithAuthCheck]);
+
+  // 檢查是否已評論過
+  useEffect(() => {
+    if (!userData || !product) {
+      setHasReviewed(false);
+      return;
+    }
+    fetchWithAuthCheck(
+  `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
+)
+  .then((res) => {
+    console.log("check review data:", res);
+    setHasReviewed(Boolean(res.data));
+  })
+  }, [userData, product, API_BASE, fetchWithAuthCheck]);
+
+  // 加入購物車
+  const handleAddToCart = async () => {
     if (!userData) {
       addToastMessage("請先登入才能加入購物車！");
       navigate("/userlogin");
@@ -123,38 +126,44 @@ function ProductDetailPage() {
     if (isNaN(qty) || qty < 1) qty = 1;
     if (product.stock && qty > product.stock) qty = product.stock;
 
-    fetch(`${API_BASE}/cart/add`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({
-        userId: userData.userId,
-        productId: product.id,
-        quantity: qty,
-      }),
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error(`加入購物車失敗，狀態碼:${res.status}`);
-        return res.json();
-      })
-      .then(() => {
-        addToastMessage(`已加入購物車：${product.name} x ${qty}`);
-        return fetch(`${API_BASE}/cart`, { credentials: "include" });
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        if (!data || !data.data) {
-          throw new Error("購物車資料格式錯誤");
-        }
-        setCartItems(data.data);
-      })
-      .catch((err) => {
-        addToastMessage(err.message);
+    try {
+      const res = await fetch(`${API_BASE}/cart/add`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userData.token}`,
+        },
+        body: JSON.stringify({
+          userId: userData.user.userId || userData.user.id,
+          productId: product.id,
+          quantity: qty,
+        }),
       });
+
+      if (res.status === 403) {
+        handleLogout("權限不足，請重新登入");
+        return;
+      }
+
+      if (!res.ok) throw new Error(`加入購物車失敗，狀態碼: ${res.status}`);
+
+      addToastMessage(`已加入購物車：${product.name} x ${qty}`);
+
+      // 重新抓購物車資料
+      const cartRes = await fetch(`${API_BASE}/cart`, {
+        headers: { Authorization: `Bearer ${userData.token}` },
+      });
+      const cartData = await cartRes.json();
+
+      if (!cartData || !cartData.data) throw new Error("購物車資料格式錯誤");
+      setCartItems(cartData.data);
+    } catch (err) {
+      addToastMessage(err.message);
+    }
   };
 
-  // 收藏切換（不動）
-  const handleToggleFavorite = () => {
+  // 收藏切換
+  const handleToggleFavorite = async () => {
     if (!userData) {
       addToastMessage("請先登入才能收藏商品！");
       navigate("/userlogin");
@@ -162,40 +171,40 @@ function ProductDetailPage() {
     }
 
     const method = isFavorite ? "DELETE" : "POST";
-    const url = isFavorite
-      ? `${API_BASE}/favorites/${product.id}`
-      : `${API_BASE}/favorites`;
+    const url = isFavorite ? `${API_BASE}/favorites/${product.id}` : `${API_BASE}/favorites`;
 
-    const options = {
-      method,
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      ...(method === "POST" && {
-        body: JSON.stringify({
-          userId: userData.userId,
-          productId: product.id,
-        }),
-      }),
-    };
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${userData.token}`,
+        },
+        body:
+          method === "POST"
+            ? JSON.stringify({
+                userId: userData.user.userId || userData.user.id,
+                productId: product.id,
+              })
+            : undefined,
+      });
 
-    fetch(url, options)
-      .then((res) => {
-        if (!res.ok) throw new Error("收藏操作失敗");
-        return res.json();
-      })
-      .then(() => {
-        setIsFavorite(!isFavorite);
-        addToastMessage(isFavorite ? "已移除收藏" : "已加入收藏");
-      })
-      .catch((err) => addToastMessage(err.message));
+      if (res.status === 403) {
+        handleLogout("權限不足，請重新登入");
+        return;
+      }
+
+      if (!res.ok) throw new Error("收藏操作失敗");
+
+      setIsFavorite(!isFavorite);
+      addToastMessage(isFavorite ? "已移除收藏" : "已加入收藏");
+    } catch (err) {
+      addToastMessage(err.message);
+    }
   };
 
-  const handleBack = () => {
-    navigate(-1);
-  };
-
-  // 新增評論送出
-  const handleSubmitReview = () => {
+  // 送出評論
+  const handleSubmitReview = async () => {
     if (!userData) {
       addToastMessage("請先登入才能評論");
       navigate("/userlogin");
@@ -208,41 +217,47 @@ function ProductDetailPage() {
 
     setSubmittingReview(true);
 
-    fetch(`${API_BASE}/reviews`, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      credentials: "include",
-      body: JSON.stringify({
-        userId: userData.userId,
-        productId: product.id,
-        rating: newRating,
-        comment: newComment.trim(),
-      }),
-    })
-      .then((res) => {
-        if (!res.ok) throw new Error("送出評論失敗");
-        return res.json();
-      })
-      .then((data) => {
-        // 新增評論後，重新抓一次評論列表
-        setNewRating(5);
-        setNewComment("");
-        addToastMessage("評論送出成功");
-        // 手動重新抓取評論
-        return fetch(`${API_BASE}/reviews?productId=${product.id}`, {
-          credentials: "include",
-        });
-      })
-      .then((res) => res.json())
-      .then((data) => {
-        setReviews(data.data || []);
-        setSubmittingReview(false);
-      })
-      .catch((err) => {
-        addToastMessage(err.message);
-        setSubmittingReview(false);
+    try {
+      await fetchWithAuthCheck(`${API_BASE}/reviews`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          productId: product.id,
+          rating: newRating,
+          comment: newComment.trim(),
+        }),
       });
+
+      addToastMessage(hasReviewed ? "評論更新成功" : "評論送出成功");
+      setNewRating(5);
+      setNewComment("");
+
+      // 重新抓評論列表
+      const reviewRes = await fetch(`${API_BASE}/reviews/product/${product.id}`, {
+        headers: { Authorization: `Bearer ${userData.token}` },
+      });
+      const reviewData = await reviewRes.json();
+      setReviews(reviewData.data || []);
+
+      // 重新檢查是否已評論過
+      const checkData = await fetchWithAuthCheck(
+        `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
+      );
+      setHasReviewed(Boolean(checkData));
+    } catch (err) {
+      if (err.message.includes("403")) {
+        handleLogout("權限不足，請重新登入");
+      } else {
+        addToastMessage(err.message);
+      }
+    } finally {
+      setSubmittingReview(false);
+    }
   };
+
+  const handleBack = () => navigate(-1);
 
   if (loading) {
     return (
@@ -263,13 +278,14 @@ function ProductDetailPage() {
     );
   }
 
-  const isUnavailable =
-    product.status !== "ACTIVE" || product.isDeleted === true;
+  const isUnavailable = product.status !== "ACTIVE" || product.isDeleted === true;
 
   const images =
     product.productImageDtos && product.productImageDtos.length > 0
-      ? product.productImageDtos.map((img) => BASE_URL + img.imageUrl)
-      : ["https://via.placeholder.com/600x600.png?text=No+Image"];
+      ? product.productImageDtos.map((img) =>
+          img.imageUrl.startsWith("http") ? img.imageUrl : BASE_URL + img.imageUrl
+        )
+      : [placeholderLarge];
 
   const mainSettings = {
     asNavFor: nav2,
@@ -311,6 +327,10 @@ function ProductDetailPage() {
                     src={img}
                     alt={`商品主圖 ${idx + 1}`}
                     style={{ width: "100%", height: "auto", borderRadius: 8 }}
+                    onError={(e) => {
+                      e.target.src =
+                        "https://via.placeholder.com/600x600.png?text=No+Image";
+                    }}
                   />
                 </div>
               ))}
@@ -337,6 +357,10 @@ function ProductDetailPage() {
                       border: "2px solid transparent",
                     }}
                     className="slick-thumb-img"
+                    onError={(e) => {
+                      e.target.src =
+                        "https://via.placeholder.com/80x80.png?text=No+Image";
+                    }}
                   />
                 </div>
               ))}
@@ -441,7 +465,7 @@ function ProductDetailPage() {
         </Col>
       </Row>
 
-      {/* ======== 新增評論區開始 ======== */}
+      {/* 新增評論區 */}
       <Row className="mt-5">
         <Col md={8} className="mx-auto">
           <h3>商品評論</h3>
@@ -476,7 +500,7 @@ function ProductDetailPage() {
           {/* 新增評論表單 */}
           <Card>
             <Card.Body>
-              <h5>我要評論</h5>
+              <h5>{hasReviewed ? "更新評論" : "我要評論"}</h5>
 
               <Form.Group className="mb-3" controlId="ratingSelect">
                 <Form.Label>評分</Form.Label>
@@ -508,13 +532,16 @@ function ProductDetailPage() {
                 onClick={handleSubmitReview}
                 disabled={submittingReview}
               >
-                {submittingReview ? "送出中..." : "送出評論"}
+                {submittingReview
+                  ? "送出中..."
+                  : hasReviewed
+                  ? "更新評論"
+                  : "送出評論"}
               </Button>
             </Card.Body>
           </Card>
         </Col>
       </Row>
-      {/* ======== 新增評論區結束 ======== */}
 
       <style>{`
         .slick-thumb-img.slick-current {
