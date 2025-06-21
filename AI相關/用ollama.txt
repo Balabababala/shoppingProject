@@ -1,0 +1,73 @@
+ollama pull qwen2:7b or qwen2:1.5b
+
+ollama serve
+
+
+test 他的能力
+
+curl -X POST http://localhost:11434/api/generate \
+-H "Content-Type: application/json" \
+-d '{
+  "model": "qwen2:7b",
+  "prompt": "審核以下評論：『這產品很棒，值得購買！』返回 JSON，包含 status (APPROVED/REJECTED)、reason 和 sentiment (POSITIVE/NEGATIVE/NEUTRAL)。",
+  "format": "json"
+}'
+
+
+spring AI 的
+dependcy
+
+<dependency>
+    <groupId>org.springframework.ai</groupId>
+    <artifactId>spring-ai-ollama-spring-boot-starter</artifactId>
+    <version>1.0.0</version>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-data-jpa</artifactId>
+</dependency>
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-databind</artifactId>
+</dependency>
+
+application.properties
+
+spring.ai.ollama.base-url=http://localhost:11434
+spring.ai.ollama.chat.model=qwen2:7b							//看情況改
+spring.ai.ollama.chat.options.temperature=0.7
+spring.ai.ollama.chat.options.top-p=0.9
+
+
+
+程式碼 實現
+
+package com.example.demo.config;
+
+import org.springframework.ai.prompt.PromptTemplate;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+public class AiConfig {
+
+    @Bean
+    public PromptTemplate reviewCommentPrompt() {
+        String template = """
+            審核以下中文評論：'{comment}'。
+            檢查是否包含不當內容（例如辱罵、廣告、敏感詞）。
+            返回 JSON 格式，包含：
+            - status: "APPROVED" 或 "REJECTED"
+            - reason: 簡短原因
+            - sentiment: "POSITIVE", "NEGATIVE" 或 "NEUTRAL"
+            示例：{"status": "APPROVED", "reason": "正面評論", "sentiment": "POSITIVE"}
+            確保輸出為有效 JSON。
+            """;
+        return new PromptTemplate(template);
+    }
+}
+

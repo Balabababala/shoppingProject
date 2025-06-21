@@ -10,36 +10,47 @@ export default function AdminNotificationsPage() {
   const [notifications, setNotifications] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [searchKeyword, setSearchKeyword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
 
-  useEffect(() => {
-    
-    async function fetchNotifications() {
-      if (!adminUserData?.user) return;
-      setLoading(true);
-      setError(null);
-      try {
-        const resp = await fetchWithAuthCheck(`${API_BASE}/admin/notifications/user`);
-        if (resp?.data) {
-          setNotifications(resp.data);
-        } else {
-          setNotifications([]);
-          addToastMessage('取得通知失敗');
-        }
-      } catch (err) {
-        setError(err.message);
-        addToastMessage(`通知資料錯誤：${err.message}`);
+  const fetchNotifications = async () => {
+    if (!adminUserData?.user) return;
+    setLoading(true);
+    setError(null);
+    try {
+      const resp = await fetchWithAuthCheck(`${API_BASE}/admin/notifications/user`);
+      if (resp?.data) {
+        setNotifications(resp.data);
+      } else {
         setNotifications([]);
-      } finally {
-        setLoading(false);
+        addToastMessage('取得通知失敗');
       }
+    } catch (err) {
+      setError(err.message);
+      addToastMessage(`通知資料錯誤：${err.message}`);
+      setNotifications([]);
+    } finally {
+      setLoading(false);
     }
+  };
 
+  useEffect(() => {
     fetchNotifications();
   }, [API_BASE, fetchWithAuthCheck, addToastMessage, adminUserData]);
+
+  const handleDelete = async (id) => {
+    if (!window.confirm('確定要刪除此通知嗎？')) return;
+    try {
+      await fetchWithAuthCheck(`${API_BASE}/admin/notifications/${id}`, {
+        method: 'DELETE',
+      });
+      addToastMessage('刪除成功');
+      fetchNotifications();
+    } catch (err) {
+      addToastMessage(`刪除失敗：${err.message}`);
+    }
+  };
 
   const filteredNotifications = notifications.filter(n => {
     const kw = searchKeyword.trim().toLowerCase();
@@ -94,15 +105,16 @@ export default function AdminNotificationsPage() {
                 <th>#</th>
                 <th>類型</th>
                 <th>訊息</th>
-                <th>通知對象</th> 
+                <th>通知對象</th>
                 <th>狀態</th>
                 <th>建立時間</th>
+                <th>操作</th>
               </tr>
             </thead>
             <tbody>
               {pageNotifications.length === 0 ? (
                 <tr>
-                  <td colSpan="5" className="text-center">
+                  <td colSpan="7" className="text-center">
                     目前尚無符合條件的通知
                   </td>
                 </tr>
@@ -112,19 +124,25 @@ export default function AdminNotificationsPage() {
                     <td>{(currentPage - 1) * PAGE_SIZE + index + 1}</td>
                     <td>{n.type}</td>
                     <td>{n.message}</td>
-                    <td>{n.userName || "全站通知"}</td>
+                    <td>{n.userName || '全站通知'}</td>
                     <td>{n.status}</td>
                     <td>{new Date(n.createdAt).toLocaleString()}</td>
+                    <td>
+                      <Button
+                        variant="outline-danger"
+                        size="sm"
+                        onClick={() => handleDelete(n.id)}
+                      >
+                        刪除
+                      </Button>
+                    </td>
                   </tr>
                 ))
               )}
             </tbody>
           </Table>
 
-          <div
-            className="d-flex justify-content-center align-items-center gap-3 mt-3"
-            aria-label="通知紀錄分頁"
-          >
+          <div className="d-flex justify-content-center align-items-center gap-3 mt-3" aria-label="通知紀錄分頁">
             <Button
               variant="outline-primary"
               disabled={currentPage === 1}
