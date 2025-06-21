@@ -59,12 +59,11 @@ public class AdminNotificationServiceImpl implements AdminNotificationService {
 
 
     @Override
-    public void deleteNotification(Long id, Long userId) {
+    public void deleteNotification(Long id) {
+    	
         Notification notification = notificationRepository.findById(id)
                 .orElseThrow(() -> new IllegalArgumentException("Notification not found"));
-        if (!notification.getUser().getId().equals(userId)) {
-            throw new SecurityException("No permission to delete this notification");
-        }
+       
         notificationRepository.delete(notification);
     }
 }

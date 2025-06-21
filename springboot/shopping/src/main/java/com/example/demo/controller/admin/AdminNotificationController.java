@@ -37,9 +37,9 @@ public class AdminNotificationController {
     }
 
     // 刪除通知
-    @DeleteMapping("/{id}/user/{userId}")
-    public ResponseEntity<ApiResponse<Void>> deleteNotification(@PathVariable Long id, @PathVariable Long userId) {
-    	adminNotificationService.deleteNotification(id, userId);
+    @DeleteMapping("/{id}")
+    public ResponseEntity<ApiResponse<Void>> deleteNotification(@PathVariable Long id) {
+    	adminNotificationService.deleteNotification(id);
         return ResponseEntity.ok(ApiResponse.success("刪除通知成功", null));
     }
 }
