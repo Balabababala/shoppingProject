@@ -30,21 +30,15 @@ public class RecommendProductServiceImpl implements RecommendProductService {
     public List<ProductResponse> getRecommendedProducts(Long userId) {
         List<RecommendRule> activeRules = recommendRuleRepository.findByActiveTrueOrderByWeightDesc();
 
-        boolean allowPersonal = activeRules.stream()
-                .anyMatch(r -> r.getType().equalsIgnoreCase("PERSONAL") && r.getWeight() > 0);
-
-        boolean allowGeneric = activeRules.stream()
-                .anyMatch(r -> r.getType().equalsIgnoreCase("GENERIC") && r.getWeight() > 0);
-
         List<RecommendedProduct> recommendedProducts = List.of();
 
-        if (userId != null && allowPersonal) {
+        if (userId != null ) {
             // 優先個人化
             recommendedProducts = recommendedProductRepository
                     .findByUserIdAndActiveTrueOrderByScoreDesc(userId);
         }
 
-        if ((recommendedProducts == null || recommendedProducts.isEmpty()) && allowGeneric) {
+        if ((recommendedProducts == null || recommendedProducts.isEmpty()) ) {
             // 通用推薦作為備案
             recommendedProducts = recommendedProductRepository
                     .findByUserIsNullAndActiveTrueOrderByScoreDesc();
