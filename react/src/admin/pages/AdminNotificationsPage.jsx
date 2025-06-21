@@ -18,7 +18,7 @@ export default function AdminNotificationsPage() {
   useEffect(() => {
     
     async function fetchNotifications() {
-      if (!adminUserData?.userId) return;
+      if (!adminUserData?.user) return;
       setLoading(true);
       setError(null);
       try {

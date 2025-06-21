@@ -1,101 +1,137 @@
-  // admin/LoginPage.jsx
-  import React, { useState, useContext, useEffect } from 'react';
-  import { Form, Button, Col, Row, Container } from 'react-bootstrap';
-  import { useNavigate } from 'react-router-dom';
-  import { AdminAppContext } from '../contexts/AdminAppContext';
+import React, { useState, useContext, useEffect } from 'react';
+import { Form, Button, Container } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { AdminAppContext } from '../contexts/AdminAppContext';
 
-  function AdminLoginPage() {
-    const {API_BASE, setAdminUserData, addToastMessage } = useContext(AdminAppContext);
-    const [captchaCode, setCaptchaCode] = useState('');
-    const [captchaImage, setCaptchaImage] = useState(null);
-    const navigate = useNavigate();
+function AdminLoginPage() {
+  const { API_BASE, setAdminUserData, addToastMessage, fetchWithAuthCheck } = useContext(AdminAppContext);
+  const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
-      e.preventDefault();
-      const data = {
-        username: e.target.username.value,
-        password: e.target.password.value,
-        captchaCode,
-      };
+  // 表單欄位狀態
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [captchaCode, setCaptchaCode] = useState('');
+  const [captchaImage, setCaptchaImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
-      try {
-        const url = `${API_BASE}/admin/login`;
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          credentials: 'include',
-          body: JSON.stringify(data),
-        });
-        const result = await response.json();
-       
+  useEffect(() => {
+    loadCaptcha();
+  }, []);
 
-        if (result.message === '登入成功') {
-          addToastMessage('登入成功');
-          setAdminUserData(result.data);
-          
-          navigate('/admin/dashboard');  // 後台首頁路由
-        } else {
-          addToastMessage('登入失敗：' + result.message);
-          // 驗證碼失敗或其他錯誤時可以刷新驗證碼
-          loadCaptcha();
+  // 重新載入驗證碼
+  const loadCaptcha = () => {
+    setCaptchaImage(`${API_BASE}/auth-code?${Date.now()}`);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    try {
+      // 送出登入請求，回傳 { message, data: token }
+      const res = await fetch(`${API_BASE}/admin/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ username, password, captchaCode }),
+      });
+
+      const result = await res.json();
+
+      if (res.ok && result.message === '登入成功' && typeof result.data === 'string') {
+        const token = result.data;
+
+        // 存 JWT token
+        localStorage.setItem('adminToken', token);
+
+        // 用 token 取得使用者資料 /api/admin/me
+        const meResult = await fetchWithAuthCheck(`${API_BASE}/admin/me`);
+        if (!meResult || meResult.authError) {
+          addToastMessage('無法取得使用者資訊，請重新登入');
+          setLoading(false);
+          return;
         }
-      } catch (error) {
-        console.error('表單提交時出現錯誤', error);
-        addToastMessage('提交失敗，請稍後再試');
+
+        if (meResult.message === '取得後台使用者資料成功' && meResult.data) {
+          // 存 user 資料
+          localStorage.setItem('adminUserData', JSON.stringify(meResult.data));
+          setAdminUserData({ token, user: meResult.data });
+
+          addToastMessage('登入成功');
+          navigate('/admin/dashboard');
+        } else {
+          addToastMessage('無法取得使用者資訊，請重新登入');
+        }
+      } else {
+        addToastMessage(`登入失敗：${result.message || '請確認資料正確'}`);
         loadCaptcha();
       }
-    };
-
-    const loadCaptcha = () => {
-      setCaptchaImage(`${API_BASE}/auth-code?${new Date().getTime()}`);
-    };
-
-    useEffect(() => {
+    } catch (error) {
+      console.error('登入請求錯誤：', error);
+      addToastMessage('登入時發生錯誤，請稍後再試');
       loadCaptcha();
-    }, []);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-    return (
-    <Container className="d-flex justify-content-center ">
-        <div style={{ maxWidth: '400px', width: '100%' }}>
-          <h2 className="text-center mb-4 ">後台登入</h2>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group controlId="username" className="mb-3">
-              <Form.Label>用戶名</Form.Label>
-              <Form.Control type="text" placeholder="請輸入用戶名" required />
-            </Form.Group>
+  return (
+    <Container className="d-flex justify-content-center py-5">
+      <div style={{ maxWidth: '400px', width: '100%' }}>
+        <h2 className="text-center mb-4">後台登入</h2>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="username" className="mb-3">
+            <Form.Label>用戶名</Form.Label>
+            <Form.Control
+              type="text"
+              placeholder="請輸入用戶名"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              required
+              autoFocus
+            />
+          </Form.Group>
 
-            <Form.Group controlId="password" className="mb-3">
-              <Form.Label>密碼</Form.Label>
-              <Form.Control type="password" placeholder="請輸入密碼" required />
-            </Form.Group>
+          <Form.Group controlId="password" className="mb-3">
+            <Form.Label>密碼</Form.Label>
+            <Form.Control
+              type="password"
+              placeholder="請輸入密碼"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              required
+            />
+          </Form.Group>
 
-            <Form.Group controlId="captcha" className="mb-3">
-              <Form.Label>驗證碼</Form.Label>
-              <div>
+          <Form.Group controlId="captcha" className="mb-3">
+            <Form.Label>驗證碼</Form.Label>
+            <div className="mb-2">
+              {captchaImage && (
                 <img
                   src={captchaImage}
                   alt="驗證碼"
                   style={{ width: '100px', height: '40px', cursor: 'pointer' }}
-                  onClick={loadCaptcha} // 點圖片重新載入
+                  onClick={loadCaptcha}
                   title="點擊重新載入驗證碼"
                 />
-              </div>
-              <Form.Control
-                type="text"
-                placeholder="請輸入驗證碼"
-                value={captchaCode}
-                onChange={(e) => setCaptchaCode(e.target.value)}
-                required
-              />
-            </Form.Group>
+              )}
+            </div>
+            <Form.Control
+              type="text"
+              placeholder="請輸入驗證碼"
+              value={captchaCode}
+              onChange={(e) => setCaptchaCode(e.target.value)}
+              required
+            />
+          </Form.Group>
 
-            <Button type="submit" className="w-100 mt-3" variant="primary">
-              登入
-            </Button>
-          </Form>
-        </div>
-      </Container>
-    );
-  }
+          <Button type="submit" className="w-100 mt-3" variant="primary" disabled={loading}>
+            {loading ? '登入中...' : '登入'}
+          </Button>
+        </Form>
+      </div>
+    </Container>
+  );
+}
 
-  export default AdminLoginPage;
+export default AdminLoginPage;

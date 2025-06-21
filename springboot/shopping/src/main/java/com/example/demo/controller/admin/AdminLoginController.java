@@ -1,14 +1,13 @@
 package com.example.demo.controller.admin;
 
-
 import com.example.demo.model.dto.LoginRequest;
 import com.example.demo.model.dto.UserDto;
 import com.example.demo.model.entity.User;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.secure.CustomUserDetails;
+import com.example.demo.secure.JwtService;
 import com.example.demo.service.admin.AdminLoginLogService;
 import com.example.demo.service.admin.AdminUserService;
-
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
@@ -30,64 +29,55 @@ public class AdminLoginController {
 
     @Autowired
     private AuthenticationManager authenticationManager;
-    
-    @Autowired
-    private AdminUserService adminuserService;
-    
-    @Autowired
-    private AdminLoginLogService adminloginLogService;
 
-    
-    
+    @Autowired
+    private AdminUserService adminUserService;
+
+    @Autowired
+    private AdminLoginLogService adminLoginLogService;
+
+    @Autowired
+    private JwtService jwtService;
+
     @PostMapping("/login")
-    public ResponseEntity<ApiResponse<UserDto>> login(@RequestBody LoginRequest loginRequest, HttpServletRequest request) {
-    	// 先取得 session 裡的驗證碼（authCode）
+    public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequest loginRequest, HttpServletRequest request) {
         HttpSession session = request.getSession();
         String sessionCaptcha = (String) session.getAttribute("authCode");
 
-        // 比對前端傳過來的驗證碼，忽略大小寫
+        // 驗證驗證碼
         if (loginRequest.getCaptchaCode() == null || !loginRequest.getCaptchaCode().equalsIgnoreCase(sessionCaptcha)) {
-        	
-        	Optional<User> opt = adminuserService.checkUser(loginRequest.getUsername());     //如果有該使用者
-        	if(opt.isPresent()) {
-        		adminloginLogService.createLoginLog(opt.get(), request, false); 			 //直接記錄登入失敗記錄
-        	}
-        	session.removeAttribute("authCode");
+            Optional<User> opt = adminUserService.checkUser(loginRequest.getUsername());
+            opt.ifPresent(user -> adminLoginLogService.createLoginLog(user, request, false));
+
+            session.removeAttribute("authCode");
             return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼錯誤"));
         }
 
         try {
-            // 驗證帳密
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
             );
-            
-            // 把認證結果放入 SecurityContext
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
-            
-            // Spring Secure 看session 有沒有登入 是看 SPRING_SECURITY_CONTEXT 有沒有 SecurityContextHolder 如果你用 他自帶的登入器 它會自動設
-            session.setAttribute("SPRING_SECURITY_CONTEXT", SecurityContextHolder.getContext());
-            
-            // 認證成功後，取得 CustomUserDetails
+
             CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+            UserDto adminUserDto = adminUserService.handleSuccessfulLogin(userDetails.getUser());
 
-            // 轉成 UserDto
-            UserDto adminUserDto = adminuserService.handleSuccessfulLogin(userDetails.getUser());
+            // 產生 JWT token 並回傳
+            String token = jwtService.generateJwtToken(adminUserDto);
 
-            // 把 UserDto 放入 session
-            session.setAttribute("adminUserDto", adminUserDto);
+            // 記錄成功登入
+            adminLoginLogService.createLoginLog(userDetails.getUser(), request, true);
 
-            adminloginLogService.createLoginLog(userDetails.getUser(), request, true);//直接記錄登入成功記錄
-            return ResponseEntity.ok(ApiResponse.success("登入成功", adminUserDto));
+            return ResponseEntity.ok(ApiResponse.success("登入成功", token));
+
         } catch (AuthenticationException e) {
-        	Optional<User> opt=adminuserService.checkUser(loginRequest.getUsername());  //如果有該使用者
-        	if(opt.isPresent()) {
-        		adminloginLogService.createLoginLog(opt.get(), request, false); 				//直接記錄登入失敗記錄
-        	}
+            Optional<User> opt = adminUserService.checkUser(loginRequest.getUsername());
+            opt.ifPresent(user -> adminLoginLogService.createLoginLog(user, request, false));
+
             return ResponseEntity.badRequest().body(ApiResponse.error("帳號或密碼錯誤"));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(ApiResponse.error("伺服器錯誤"));
         }
     }
-
 }

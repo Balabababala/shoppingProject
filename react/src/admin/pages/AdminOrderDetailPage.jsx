@@ -21,7 +21,7 @@ export default function AdminOrderDetailPage() {
         });
         if (res?.authError) {
           addToastMessage('身份驗證失效，請重新登入');
-          navigate('/login');
+          navigate('/admin/');
           return;
         }
         if (res?.data) {
@@ -86,7 +86,7 @@ export default function AdminOrderDetailPage() {
       </Table>
 
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Button variant="secondary" onClick={() => navigate(-1)}>
+        <Button variant="secondary" onClick={() => navigate('/admin/order')}>
           返回訂單列表
         </Button>
         <Button variant="primary" onClick={() => navigate(`/admin/order-edit/${order.id}`)}>

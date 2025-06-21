@@ -80,13 +80,18 @@ function ProductDetailPage() {
     setReviewLoading(true);
     setReviewError(null);
 
-    fetchWithAuthCheck(`${API_BASE}/reviews/product/${product.id}`)
+    fetch(`${API_BASE}/reviews/product/${product.id}`)
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        return res.json();
+      })
       .then((data) => {
         setReviews(data?.data || []);
       })
       .catch((err) => setReviewError(err.message))
       .finally(() => setReviewLoading(false));
-  }, [product, API_BASE, fetchWithAuthCheck]);
+  }, [product, API_BASE]);
+
 
   // 檢查收藏狀態
   useEffect(() => {

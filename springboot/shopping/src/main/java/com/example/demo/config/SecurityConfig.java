@@ -38,7 +38,8 @@ public class SecurityConfig {
             .authorizeHttpRequests(auth -> auth
             	.requestMatchers("/uploads/**").permitAll() //
             	.requestMatchers("/api/admin/login").permitAll()//
-                .requestMatchers("/api/login", "/api/auth-code", "/api/register").permitAll() // login, captcha, register 放行  
+            	.requestMatchers("/api/reviews/product/**").permitAll()
+                .requestMatchers("/api/login", "/api/auth-code", "/api/register","/api/search").permitAll() // login, captcha, register search 放行  
                 .requestMatchers("/api/recommend/products","/api/products/**","/api/categories/**").permitAll()
                 .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
@@ -47,7 +48,7 @@ public class SecurityConfig {
             )
             .formLogin(form -> form.disable()) 			// 禁用 formLogin，改用 API 登入
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-	        .addFilterBefore(jwtAuthenticationFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);;
+	        .addFilterBefore(jwtAuthenticationFilter, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 

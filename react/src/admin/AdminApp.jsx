@@ -39,9 +39,7 @@ function AdminApp() {
   return (
     
      <div style={{ height: '100vh' }}>
-
-      {/* 如果有登入資料就顯示 NavBar */}
-      {adminUserData?.roleId === 3 && <AdminNavbar />}
+      <AdminNavbar />
       <main className="main-content animated-bg">
       <Routes>
         {/* 這裡放後台路由設定 */}

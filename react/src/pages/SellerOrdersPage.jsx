@@ -67,15 +67,6 @@ function SellerOrdersPage() {
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
-  useEffect(() => {
-    console.log("Orders updated:", orders);
-    console.log("Filtered orders:", filteredOrders);
-    console.log("Paged orders:", pagedOrders);
-    // 檢查特定訂單的狀態（例如 ID 57）
-    const order57 = orders.find(o => o.id === 57);
-    console.log("Order 57 status:", order57 ? order57.orderStatus : "Not found");
-  }, [orders, filteredOrders, pagedOrders]);
-
   const changePage = (page) => {
     const pageNum = Math.max(1, Math.min(totalPages, page));
     console.log("Changing page to:", pageNum);
@@ -83,10 +74,6 @@ function SellerOrdersPage() {
     setInputPage('');
   };
 
-  useEffect(() => {
-    console.log("Search keyword changed, resetting to page 1");
-    setCurrentPage(1);
-  }, [searchKeyword]);
 
   const handleMarkShipped = async (orderId) => {
     try {
@@ -116,13 +103,13 @@ function SellerOrdersPage() {
       if (res?.message === "訂單已成功取消") {
         addToastMessage("訂單已取消");
         // 臨時本地更新，立即反映取消狀態
-        setOrders(prev =>
-          prev.map(order =>
-            order.id === orderId
-              ? { ...order, orderStatus: "CANCELLED", paymentStatus: "REFUNDED", shipmentStatus: "NOT_SHIPPED" }
-              : { ...order }
-          )
-        );
+        // setOrders(prev =>
+        //   prev.map(order =>
+        //     order.id === orderId
+        //       ? { ...order, orderStatus: "CANCELLED", paymentStatus: "REFUNDED", shipmentStatus: "NOT_SHIPPED" }
+        //       : { ...order }
+        //   )
+        // );
         // 重新獲取訂單資料，確保與後端同步
         await fetchOrders();
       } else {

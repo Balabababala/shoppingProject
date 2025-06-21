@@ -8,6 +8,7 @@ import com.example.demo.repository.SearchHistoryRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.admin.AdminSearchHistoryService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,22 +17,22 @@ import java.util.stream.Collectors;
 @Service
 public class AdminSearchHistoryServiceImpl implements AdminSearchHistoryService {
 
-    private final SearchHistoryRepository searchHistoryRepository;
-    private final UserRepository userRepository;
+	@Autowired
+    private SearchHistoryRepository searchHistoryRepository;
+	
+	@Autowired
+    private UserRepository userRepository;
 
-    public AdminSearchHistoryServiceImpl(SearchHistoryRepository searchHistoryRepository, UserRepository userRepository) {
-        this.searchHistoryRepository = searchHistoryRepository;
-        this.userRepository = userRepository;
-    }
+  
 
     @Override
     public List<SearchHistoryDto> getAllSearchHistories() {
-        List<SearchHistory> entities = searchHistoryRepository.findAll();
+        List<SearchHistory> searchHistories = searchHistoryRepository.findAll();
 
-        return entities.stream()
-                .map(entity -> {
-                    User user = userRepository.findById(entity.getUserId()).orElse(null);
-                    return SearchHistoryMapper.toDto(entity, user);
+        return searchHistories.stream()
+                .map(searchHistory -> {
+                    User user = userRepository.findById(searchHistory.getUserId()).orElse(null);
+                    return SearchHistoryMapper.toDto(searchHistory, user);
                 })
                 .toList();
     }

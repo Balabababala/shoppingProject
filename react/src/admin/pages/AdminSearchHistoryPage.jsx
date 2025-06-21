@@ -5,15 +5,16 @@ import { AdminAppContext } from '../contexts/AdminAppContext';
 const PAGE_SIZE = 20;
 
 export default function AdminSearchHistoryPage() {
-  const { API_BASE, fetchWithAuthCheck, addToastMessage } = useContext(AdminAppContext);
+  const { API_BASE, fetchWithAuthCheck, addToastMessage, adminUserData } = useContext(AdminAppContext);
   const [searchHistories, setSearchHistories] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
   const [searchKeyword, setSearchKeyword] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [inputPage, setInputPage] = useState(''); // 新增輸入框用
+  const [inputPage, setInputPage] = useState('');
 
   useEffect(() => {
+    if (!adminUserData) return;
     const fetchSearchHistory = async () => {
       setLoading(true);
       try {
@@ -28,7 +29,7 @@ export default function AdminSearchHistoryPage() {
         if (res?.data) {
           setSearchHistories(res.data);
           setError('');
-          setCurrentPage(1); // 重置頁碼
+          setCurrentPage(1);
         } else {
           setError(res?.message || '讀取搜尋歷史資料失敗');
           addToastMessage(res?.message || '讀取搜尋歷史資料失敗');
@@ -42,9 +43,8 @@ export default function AdminSearchHistoryPage() {
     };
 
     fetchSearchHistory();
-  }, [API_BASE, fetchWithAuthCheck, addToastMessage]);
+  }, [API_BASE, fetchWithAuthCheck, addToastMessage, adminUserData]);
 
-  // 過濾搜尋紀錄
   const filteredHistories = searchHistories.filter(record => {
     const kw = searchKeyword.trim().toLowerCase();
     if (!kw) return true;
@@ -54,18 +54,20 @@ export default function AdminSearchHistoryPage() {
     );
   });
 
-  // 計算分頁資料
   const totalPage = Math.max(1, Math.ceil(filteredHistories.length / PAGE_SIZE));
   const pageHistories = filteredHistories.slice(
     (currentPage - 1) * PAGE_SIZE,
     currentPage * PAGE_SIZE
   );
 
-  // 清除搜尋關鍵字
   const clearSearch = () => {
     setSearchKeyword('');
     setCurrentPage(1);
   };
+
+  if (!adminUserData) {
+    return <div className="text-center py-5">請先登入後台以查詢紀錄。</div>;
+  }
 
   return (
     <Container className="mt-4" style={{ maxWidth: 900 }}>
@@ -125,7 +127,6 @@ export default function AdminSearchHistoryPage() {
             </tbody>
           </Table>
 
-          {/* 分頁控制 */}
           <div
             className="d-flex justify-content-center align-items-center gap-3 mt-3"
             aria-label="搜尋紀錄分頁"

@@ -21,8 +21,16 @@ function SearchPage() {
   const pagedProducts = products.slice((currentPage - 1) * pageSize, currentPage * pageSize);
 
   const fetchProducts = (searchKeyword) => {
+  const headers = {
+    'Content-Type': 'application/json',
+  };
+
+  if (userData?.token) {
+    headers['Authorization'] = `Bearer ${userData.token}`;
+  }
+
   fetch(`${BASE_API}/products/search?keyword=${encodeURIComponent(searchKeyword)}`, {
-    credentials: 'include', // 帶上 cookie
+    headers,
   })
     .then(res => res.json())
     .then(data => {
@@ -34,6 +42,7 @@ function SearchPage() {
       setProducts([]);
     });
 };
+
 
 
   // 加入購物車事件

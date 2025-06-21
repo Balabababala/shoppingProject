@@ -7,9 +7,9 @@ const PAGE_SIZE = 5;
 
 export default function AdminUserListPage() {
   const ROLE_MAP = {
-    1: '買家',
-    2: '賣家',
-    3: '管理員',
+    ROLE_BUYER: '買家',
+    ROLE_SELLER: '賣家',
+    ROLE_ADMIN: '管理員',
   };
   const { API_BASE, adminUserData, fetchWithAuthCheck, addToastMessage } = useContext(AdminAppContext);
   const [users, setUsers] = useState([]);
@@ -191,8 +191,8 @@ export default function AdminUserListPage() {
       valB = b.username.toLowerCase();
       break;
     case 'roles':
-      valA = ROLE_MAP[a.roleId] || '';
-      valB = ROLE_MAP[b.roleId] || '';
+      valA = ROLE_MAP[a.role] || '';
+      valB = ROLE_MAP[b.role] || '';
       break;
     case 'status':
       valA = a.isActive ? 1 : 0;
@@ -212,7 +212,7 @@ export default function AdminUserListPage() {
 
   // 使用者列（改成角色下拉選單 + 變更按鈕）
   const renderUserRow = (u) => {
-  const selectedRole = roleChanges[u.userId] ?? u.roleId;
+  const selectedRole = roleChanges[u.userId] ?? u.role;
 
   return (
     <div key={u.userId} className="user-row">
