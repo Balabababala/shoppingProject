@@ -23,6 +23,7 @@ export default function AdminNotificationNewPage() {
       try {
         const resp = await fetchWithAuthCheck(`${API_BASE}/admin/users`);
         if (resp?.data) {
+          // 確保 users 有 id 和 username
           setUsers(resp.data);
         } else {
           addToastMessage('取得使用者清單失敗');
@@ -34,21 +35,29 @@ export default function AdminNotificationNewPage() {
     fetchUsers();
   }, [API_BASE, fetchWithAuthCheck, addToastMessage]);
 
+  // 確保 select 的 value 不是 null，react-select 要用 null 或 undefined 代表沒選擇。
+  // 這裡也可以用空字串，但 react-select 用 null 比較安全。
+  const handleUserChange = (selectedOption) => {
+    // console.log('selected user:', selectedOption);
+    setSelectedUser(selectedOption);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
 
-    if (!type || !message || selectedUser === null) {
+    if (!type.trim() || !message.trim() || selectedUser === null) {
       setError('請輸入完整欄位並選擇使用者或全站通知');
       return;
     }
 
     const payload = {
-      type,
-      message,
+      type: type.trim(),
+      message: message.trim(),
       status,
       userId: selectedUser.value, // null 表示全站通知
     };
+    console.log('送出 payload:', payload);
 
     try {
       setSubmitting(true);
@@ -73,8 +82,8 @@ export default function AdminNotificationNewPage() {
   };
 
   const userOptions = [ALL_USERS_OPTION, ...users.map(u => ({
-    value: u.userId,
-    label: u.username,
+    value: u.userId,     // 確保這是 Number 或 String，不要是 null 或 undefined
+    label: u.username || `使用者#${u.userId}`,
   }))];
 
   return (
@@ -120,9 +129,10 @@ export default function AdminNotificationNewPage() {
           <Select
             options={userOptions}
             value={selectedUser}
-            onChange={setSelectedUser}
+            onChange={handleUserChange}
             placeholder="請選擇使用者或全站通知"
             isSearchable
+            // 你也可以加 key 屬性，但 react-select 本身會處理
           />
         </Form.Group>
 

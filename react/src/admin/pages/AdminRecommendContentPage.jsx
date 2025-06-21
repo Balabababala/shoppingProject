@@ -6,7 +6,7 @@ import Select from 'react-select';
 const PAGE_SIZE = 20;
 
 function AdminRecommendContentPage() {
-  const { API_BASE, adminUserData, fetchWithAuthCheck, addToastMessage } = useContext(AdminAppContext);
+  const { API_BASE, adminUserData, fetchWithAuthCheck, addToastMessage, handleLogout } = useContext(AdminAppContext);
   const [contents, setContents] = useState([]);
   const [products, setProducts] = useState([]);
   const [rules, setRules] = useState([]);
@@ -20,7 +20,7 @@ function AdminRecommendContentPage() {
   const [showModal, setShowModal] = useState(false);
   const [currentContent, setCurrentContent] = useState({
     id: null,
-    product: null, // 用於 react-select
+    product: null,
     userId: null,
     ruleId: null,
     reason: '',
@@ -28,7 +28,6 @@ function AdminRecommendContentPage() {
     active: false,
   });
 
-  // 取得推薦內容、產品、規則和用戶列表
   const fetchData = async () => {
     if (!adminUserData) {
       setError('請先登入');
@@ -38,41 +37,41 @@ function AdminRecommendContentPage() {
     setLoading(true);
     setError(null);
     try {
-      // 獲取推薦內容
       const contentRes = await fetchWithAuthCheck(`${API_BASE}/admin/recommend/content`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
-      // 獲取產品列表
       const productRes = await fetchWithAuthCheck(`${API_BASE}/admin/products`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
-      // 獲取規則列表
       const ruleRes = await fetchWithAuthCheck(`${API_BASE}/admin/recommend/rules`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
-      // 獲取用戶列表
       const userRes = await fetchWithAuthCheck(`${API_BASE}/admin/users`, {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
       });
 
       if (contentRes?.authError || productRes?.authError || ruleRes?.authError || userRes?.authError) {
-        addToastMessage('身份驗證失效，請重新登入');
+        handleLogout('身份驗證失效，請重新登入');
         setError('身份驗證失效');
-      } else if (contentRes?.data && productRes?.data && ruleRes?.data && userRes?.data) {
+        return;
+      }
+
+      if (contentRes?.data && productRes?.data && ruleRes?.data && userRes?.data) {
         setContents(contentRes.data);
         setProducts(productRes.data);
         setRules(ruleRes.data);
         setUsers(userRes.data);
         setCurrentPage(1);
       } else {
-        addToastMessage('取得數據失敗');
         setError('取得數據失敗');
+        addToastMessage('取得數據失敗');
       }
     } catch (e) {
+      console.error('Fetch data error:', e);
       setError('取得數據時發生錯誤');
       addToastMessage('取得數據時發生錯誤');
     } finally {
@@ -84,13 +83,11 @@ function AdminRecommendContentPage() {
     fetchData();
   }, [adminUserData]);
 
-  // 產品選項 for react-select
   const productOptions = products.map(product => ({
     value: product.id,
     label: product.name,
   }));
 
-  // 排序處理
   const sortedContents = [...contents];
   if (sortBy) {
     sortedContents.sort((a, b) => {
@@ -111,7 +108,6 @@ function AdminRecommendContentPage() {
     });
   }
 
-  // 搜尋過濾（恢復原始邏輯）
   const filteredContents = sortedContents.filter(c => {
     const kw = searchKeyword.trim().toLowerCase();
     return (
@@ -136,8 +132,7 @@ function AdminRecommendContentPage() {
     setCurrentPage(1);
   };
 
-  // 開啟模態框（新增或編輯）
-  const handleOpenModal = (content = {
+  const handleOpenModal = (contentInput = {
     id: null,
     product: null,
     userId: null,
@@ -146,20 +141,25 @@ function AdminRecommendContentPage() {
     score: 0.0,
     active: false,
   }) => {
-    // 將 content.productId 轉為 react-select 的選項物件
-    if (content.productId) {
-      const selectedProduct = productOptions.find(opt => opt.value === content.productId);
-      content.product = selectedProduct || null;
-    }
-    setCurrentContent(content);
+    const productId = contentInput.productId ?? contentInput.product?.value;
+    const selectedProduct = productOptions.find(opt => opt.value === productId) || null;
+    const newContent = {
+      ...contentInput,
+      product: selectedProduct,
+      userId: contentInput.userId ? String(contentInput.userId) : '', // 確保與 Form.Select 一致
+    };
+    setCurrentContent(newContent);
     setShowModal(true);
   };
 
-  // 處理表單提交（新增或編輯）
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!adminUserData) {
       addToastMessage('請先登入');
+      return;
+    }
+    if (!currentContent.product?.value || !currentContent.ruleId || currentContent.score < 0 || currentContent.score > 1) {
+      addToastMessage('請選擇產品、規則，並確保分數在 0-1 之間');
       return;
     }
     const method = currentContent.id ? 'PUT' : 'POST';
@@ -169,13 +169,15 @@ function AdminRecommendContentPage() {
 
     try {
       const payload = {
-        userId: currentContent.userId ? parseInt(currentContent.userId) : null,
-        productId: currentContent.product ? parseInt(currentContent.product.value) : null,
-        ruleId: currentContent.ruleId ? parseInt(currentContent.ruleId) : null,
-        reason: currentContent.reason || null,
-        score: parseFloat(currentContent.score),
-        active: currentContent.active,
+        id: currentContent.id ?? null,
+        userId: currentContent.userId ? Number(currentContent.userId) : null, // 允許 null
+        productId: currentContent.product?.value ? Number(currentContent.product.value) : null,
+        ruleId: currentContent.ruleId ? Number(currentContent.ruleId) : null,
+        reason: currentContent.reason?.trim() || null,
+        score: Number(currentContent.score),
+        active: Boolean(currentContent.active),
       };
+      console.log('Sending payload:', payload); // 除錯用
       const res = await fetchWithAuthCheck(url, {
         method,
         headers: { 'Content-Type': 'application/json' },
@@ -183,7 +185,7 @@ function AdminRecommendContentPage() {
       });
 
       if (res?.authError) {
-        addToastMessage('身份驗證失效，請重新登入');
+        handleLogout('身份驗證失效，請重新登入');
         return;
       }
 
@@ -201,14 +203,14 @@ function AdminRecommendContentPage() {
           active: false,
         });
       } else {
-        addToastMessage('操作失敗，請重試');
+        addToastMessage(res?.error || '操作失敗，請重試');
       }
     } catch (error) {
+      console.error('Submit error:', error);
       addToastMessage('操作失敗：' + error.message);
     }
   };
 
-  // 刪除推薦內容
   const deleteContent = async (id) => {
     if (!window.confirm('確定要刪除此推薦內容？')) return;
     if (!adminUserData) {
@@ -222,7 +224,7 @@ function AdminRecommendContentPage() {
       });
 
       if (res?.authError) {
-        addToastMessage('身份驗證失效，請重新登入');
+        handleLogout('身份驗證失效，請重新登入');
         return;
       }
 
@@ -230,9 +232,10 @@ function AdminRecommendContentPage() {
         addToastMessage(res.message);
         fetchData();
       } else {
-        addToastMessage('刪除推薦內容失敗，請重試');
+        addToastMessage(res?.error || '刪除推薦內容失敗，請重試');
       }
     } catch (error) {
+      console.error('Delete error:', error);
       addToastMessage('刪除推薦內容失敗：' + error.message);
     }
   };
@@ -268,7 +271,6 @@ function AdminRecommendContentPage() {
         />
       </div>
 
-      {/* 表格標題列 */}
       <div
         style={{
           display: 'grid',
@@ -343,7 +345,6 @@ function AdminRecommendContentPage() {
         <div>操作</div>
       </div>
 
-      {/* 推薦內容列表 */}
       {pageContents.length === 0 ? (
         <div style={{ textAlign: 'center', padding: 20, color: '#666' }}>尚無符合條件的推薦內容</div>
       ) : (
@@ -380,7 +381,6 @@ function AdminRecommendContentPage() {
         ))
       )}
 
-      {/* 分頁控制 */}
       <div
         style={{
           marginTop: 20,
@@ -426,7 +426,6 @@ function AdminRecommendContentPage() {
         </Button>
       </div>
 
-      {/* 新增/編輯模態框 */}
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
           <Modal.Title>{currentContent.id ? '編輯推薦內容' : '新增推薦內容'}</Modal.Title>
@@ -442,7 +441,17 @@ function AdminRecommendContentPage() {
                 isClearable
                 placeholder="請選擇或搜尋產品"
                 required
+                styles={{
+                  control: (base, state) => ({
+                    ...base,
+                    borderColor: !currentContent.product && state.isFocused ? '#dc3545' : base.borderColor,
+                    '&:hover': { borderColor: !currentContent.product ? '#dc3545' : base.borderColor },
+                  }),
+                }}
               />
+              {!currentContent.product && (
+                <div className="invalid-feedback d-block">請選擇產品</div>
+              )}
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>選擇用戶（可選）</Form.Label>
@@ -452,7 +461,7 @@ function AdminRecommendContentPage() {
               >
                 <option value="">無用戶</option>
                 {users.map(u => (
-                  <option key={u.id} value={u.id}>{u.username}</option>
+                  <option key={u.userId} value={u.userId}>{u.username}</option>
                 ))}
               </Form.Select>
             </Form.Group>
@@ -462,12 +471,16 @@ function AdminRecommendContentPage() {
                 value={currentContent.ruleId || ''}
                 onChange={(e) => setCurrentContent({ ...currentContent, ruleId: e.target.value })}
                 required
+                isInvalid={!currentContent.ruleId}
               >
                 <option value="">選擇規則</option>
                 {rules.map(r => (
                   <option key={r.id} value={r.id}>{r.name}</option>
                 ))}
               </Form.Select>
+              <Form.Control.Feedback type="invalid">
+                請選擇規則
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>推薦原因（可選）</Form.Label>
@@ -486,9 +499,13 @@ function AdminRecommendContentPage() {
                 min="0"
                 max="1"
                 value={currentContent.score}
-                onChange={(e) => setCurrentContent({ ...currentContent, score: parseFloat(e.target.value) })}
+                onChange={(e) => setCurrentContent({ ...currentContent, score: parseFloat(e.target.value) || 0 })}
                 required
+                isInvalid={currentContent.score < 0 || currentContent.score > 1}
               />
+              <Form.Control.Feedback type="invalid">
+                分數必須在 0-1 之間
+              </Form.Control.Feedback>
             </Form.Group>
             <Form.Group className="mb-3">
               <Form.Check
