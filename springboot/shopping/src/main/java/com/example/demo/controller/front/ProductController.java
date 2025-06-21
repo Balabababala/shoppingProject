@@ -19,7 +19,7 @@ import com.example.demo.response.ApiResponse;
 import com.example.demo.secure.CustomUserDetails;
 import com.example.demo.service.front.CartItemService;
 import com.example.demo.service.front.ProductService;
-import com.example.demo.service.front.RecentlyViewedService;
+
 
 
 
@@ -32,13 +32,9 @@ public class ProductController {
 	@Autowired
 	private ProductService productService;
 	
-	@Autowired
-    private CartItemService cartItemService;
 
-    private CustomUserDetails getCurrentUserDetails() {
-        return (CustomUserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-    }
-	
+
+  	
 	//?category=xxx categoryPage 用
 	@GetMapping		
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findCategoryById(@RequestParam(defaultValue = "") String category){
@@ -53,8 +49,15 @@ public class ProductController {
 	//productPage 用
 	@GetMapping("/{productId}")
 	public ResponseEntity<ApiResponse<ProductResponse>> findById(@PathVariable Long productId){
-		
-		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductByIdToProductResponse(productId)));
+		 Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		    Long userId = null;
+
+		    if (authentication != null && authentication.isAuthenticated() && !(authentication instanceof AnonymousAuthenticationToken)) {
+		        CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
+		        userId = userDetails.getUser().getId();
+		    }
+	
+		return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findProductByIdToProductResponse(productId,userId)));
 	}
 	
 	//searchPage 用

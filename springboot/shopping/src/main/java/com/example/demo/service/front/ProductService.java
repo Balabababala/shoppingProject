@@ -29,7 +29,7 @@ public interface ProductService {
 	//買家 一般使用者
 	void minusProductByid(Long id ,Integer integer);													//依 productId -quantity 
 	SellerProductResponse findProductByIdToSellerProductDto(Long productId,Long userId);				//依 productId 找 產品轉SellerProductResponse	  更新 產品用 (查資料庫同時 也驗證了身分 其實不用 但我想共用一樣的方法)
-	ProductResponse findProductByIdToProductResponse(Long id);											//依 productId 找 產品轉DTO  				  產品卡用
+	ProductResponse findProductByIdToProductResponse(Long id,Long userId);											//依 productId 找 產品轉DTO  				  產品卡用
 	List<ProductResponse> findAllProductsToProductResponse();											//找全部			 產品轉DTO  				  分類頁面用
 	List<ProductResponse> findAllProductsByCategorySlugToProductResponses(String slug);					//依 slug(分類別稱)找分類(含子分類)下的所有產品 轉DTO  分類頁面用     
 //	List<ProductResponse> findByKeyword(String keyword); 	 	

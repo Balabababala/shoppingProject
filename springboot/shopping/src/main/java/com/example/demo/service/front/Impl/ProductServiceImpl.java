@@ -13,10 +13,12 @@ import com.example.demo.model.entity.User;
 import com.example.demo.model.enums.ProductStatus;
 import com.example.demo.repository.CategoryRepository;
 import com.example.demo.repository.ProductRepository;
+import com.example.demo.repository.RecentlyViewedRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.service.front.CategoryService;
 import com.example.demo.service.front.ProductImageService;
 import com.example.demo.service.front.ProductService;
+import com.example.demo.service.front.RecentlyViewedService;
 import com.example.demo.service.front.SearchHistoryService;
 
 import jakarta.validation.Valid;
@@ -31,6 +33,12 @@ import java.util.Optional;
 @Service
 public class ProductServiceImpl implements ProductService {
 
+
+
+    
+
+    @Autowired
+    private RecentlyViewedService recentlyViewedService;
     @Autowired
     private ProductRepository productRepository;
     @Autowired
@@ -43,6 +51,8 @@ public class ProductServiceImpl implements ProductService {
     private CategoryService categoryService;
     @Autowired
     private SearchHistoryService searchHistorySerivce;
+
+
 
     @Override
     public void addProduct(SellerProductCreateRequest request, Long userId) {
@@ -141,9 +151,14 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public ProductResponse findProductByIdToProductResponse(Long id) {
-        return ProductMapper.toDto(productRepository.findByIdWithCategoryAndProductImage(id)
+    public ProductResponse findProductByIdToProductResponse(Long id,Long userId) {
+    	ProductResponse productResponse =ProductMapper.toDto(productRepository.findByIdWithCategoryAndProductImage(id)
                 .orElseThrow(() -> new ShoppingException("查無商品")));
+    	
+    	if(userId!=null)
+    	recentlyViewedService.addRecentlyViewed(id,userId);
+    	
+        return productResponse;
     }
 
     @Override
