@@ -18,9 +18,9 @@ public class ProductReviewMapper {
 	    dto.setComment(review.getComment());
 	    dto.setCreatedAt(review.getCreatedAt());
 	    dto.setUpdatedAt(review.getUpdatedAt());
+	    dto.setApprovedByAi(review.getApprovedByAi());
 	    dto.setIsVisible(review.getIsVisible());
 	    dto.setIsApproved(review.getIsApproved());
-
 	    return dto;
 	}
 

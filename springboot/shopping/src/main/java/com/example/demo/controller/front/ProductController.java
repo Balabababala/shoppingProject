@@ -39,7 +39,7 @@ public class ProductController {
 	@GetMapping		
 	public ResponseEntity<ApiResponse<List<ProductResponse>>> findCategoryById(@RequestParam(defaultValue = "") String category){
 		
-		if(category.isEmpty()) {
+		if(category == null ||category.isEmpty()) {
 			return ResponseEntity.ok(ApiResponse.success("獲取資料正確", productService.findAllProductsToProductResponse()));//空字串
 		}
 		

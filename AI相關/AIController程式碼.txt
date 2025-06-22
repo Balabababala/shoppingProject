@@ -1,0 +1,20 @@
+package com.example.shopping.controller;
+
+import com.example.shopping.service.ReviewService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@RequestMapping("/api/reviews")
+public class ReviewController {
+    @Autowired
+    private ReviewService reviewService;
+
+    @PostMapping("/review-all")
+    public String reviewAllComments() {
+        reviewService.reviewAllComments();
+        return "所有評論已審核完成！";
+    }
+}

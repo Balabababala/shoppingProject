@@ -21,6 +21,7 @@ public class ProductReviewDto {
     private String comment;
     private Boolean isVisible;
     private Boolean isApproved;
+    private Boolean approvedByAi;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     

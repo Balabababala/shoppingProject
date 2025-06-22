@@ -14,11 +14,10 @@ import {
 } from 'react-bootstrap';
 
 
-const API_BASE = 'http://localhost:8080/api';
 
 export default function SellerProductEditPage() {
   const { id } = useParams();
-  const { fetchWithAuthCheck, addToastMessage, userData } = useContext(AppContext);
+  const { fetchWithAuthCheck, addToastMessage, userData ,API_BASE} = useContext(AppContext);
   const [categories, setCategories] = useState([]);
   const navigate = useNavigate();
 
@@ -42,13 +41,20 @@ export default function SellerProductEditPage() {
 
   // 取分類葉 給下拉用
   useEffect(() => {
-    fetch(`${API_BASE}/categories/leaf`)
-      .then((res) => res.json())
-      .then((data) => {
-        if (data) setCategories(data);
-      })
-      .catch(() => addToastMessage('分類資料載入失敗'));
-  }, []);
+  fetch(`${API_BASE}/categories/leaf`)
+    .then(res => res.json())
+    .then(data => {
+      if (data?.data) {
+        setCategories(data.data);
+      } else {
+        setCategories([]);
+      }
+    })
+    .catch(() => {
+      setCategories([]);
+      addToastMessage('分類資料載入失敗');
+    });
+}, [API_BASE, addToastMessage]);
 
   useEffect(() => {
     if (!userData) {

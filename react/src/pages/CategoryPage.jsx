@@ -37,40 +37,65 @@ function CategoryTree({ categories, selectedSlug, onSelect }) {
   );
 }
 
+function findCategoryName(tree, slug) {
+  for (const category of tree) {
+    if (category.slug === slug) {
+      return category.name;
+    }
+    if (category.children && category.children.length > 0) {
+      const name = findCategoryName(category.children, slug);
+      if (name) return name;
+    }
+  }
+  return null;
+}
+
 function CategoryPage() {
-
   const { slug } = useParams();
-
-  const { userData, addToastMessage, addToCart ,API_BASE} = useContext(AppContext);
+  const { userData, addToastMessage, addToCart, API_BASE } = useContext(AppContext);
 
   const [categoriesTree, setCategoriesTree] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(slug || null);
+  const [selectedCategoryName, setSelectedCategoryName] = useState('全部商品');
   const [products, setProducts] = useState([]);
-
-  // 分頁相關
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
   const pageSize = 12;
 
-  // 載入分類樹
   useEffect(() => {
     fetch(`${API_BASE}/categories/${slug || ''}/tree`)
-      .then(res => res.json())
-      .then(data => setCategoriesTree(data.data))
-      .catch(err => console.error('取得分類樹失敗', err));
-  }, [slug]);
-
-  // 載入商品（依分類）
-  useEffect(() => {
-    const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '?category=';
-    fetch(`${API_BASE}/products${categoryQuery}`)
-      .then(res => res.json())
-      .then(data => {
-        setProducts(data.data);
-        setCurrentPage(1); // 回到第一頁
+      .then(res => {
+        if (!res.ok) throw new Error('無法載入分類樹');
+        return res.json();
       })
-      .catch(err => console.error('取得商品失敗', err));
-  }, [selectedCategory]);
+      .then(data => setCategoriesTree(data.data))
+      .catch(err => {
+        console.error('取得分類樹失敗', err);
+        addToastMessage('無法載入分類，請稍後再試！');
+      });
+  }, [slug, API_BASE, addToastMessage]);
+
+  useEffect(() => {
+    const categoryQuery = selectedCategory ? `?category=${selectedCategory}` : '';
+    fetch(`${API_BASE}/products${categoryQuery}`, {
+      headers: {
+        'Authorization': `Bearer ${userData?.token || ''}` // 若需要 JWT
+      }
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`無法載入商品: ${res.status}`);
+        return res.json();
+      })
+      .then(data => {
+        setProducts(data.data || []);
+        setCurrentPage(1);
+      })
+      .catch(err => {
+        console.error('取得商品失敗', err);
+        addToastMessage('無法載入商品，請稍後再試！');
+        setProducts([]);
+      });
+  }, [selectedCategory, API_BASE, userData, addToastMessage]);
 
   const totalPages = products ? Math.ceil(products.length / pageSize) : 0;
   const pagedProducts = products
@@ -79,9 +104,8 @@ function CategoryPage() {
 
   const handleSelectCategory = (categorySlug) => {
     setSelectedCategory(categorySlug);
-
     const name = findCategoryName(categoriesTree, categorySlug);
-  setSelectedCategoryName(name || '全部商品');
+    setSelectedCategoryName(name || '全部商品');
   };
 
   const changePage = (page) => {
@@ -89,18 +113,17 @@ function CategoryPage() {
     setCurrentPage(pageNum);
   };
 
-  // 加入購物車事件
   const handleAddToCart = (productId, quantity) => {
-  if (!userData) {
-    addToastMessage('請先登入才能加入購物車！');
-    return;
-  }
-  addToCart(productId, quantity); // ✅ 呼叫 AppContext 中的封裝方法
+    if (!userData) {
+      addToastMessage('請先登入才能加入購物車！');
+      return;
+    }
+    addToCart(productId, quantity);
   };
 
   return (
     <div className="container mt-4">
-      <h1 className="mb-4">分類：{selectedCategory || "全部商品"}</h1>
+      <h1 className="mb-4">分類：{selectedCategoryName}</h1>
       <div className="row">
         <aside className="col-md-3 border-end pe-3">
           <h5>所有分類</h5>
@@ -135,7 +158,6 @@ function CategoryPage() {
                 ))}
               </div>
 
-              {/* 分頁區塊 */}
               <nav aria-label="Page navigation" className="mt-4">
                 <ul className="pagination justify-content-center">
                   <li className={`page-item ${currentPage === 1 ? 'disabled' : ''}`}>

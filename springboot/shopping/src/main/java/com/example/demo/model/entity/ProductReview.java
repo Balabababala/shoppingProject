@@ -7,7 +7,6 @@ import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
-
 @Entity
 @Table(name = "product_reviews", uniqueConstraints = {
     @UniqueConstraint(columnNames = {"user_id", "product_id"})
@@ -16,35 +15,33 @@ import org.hibernate.annotations.UpdateTimestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ProductReview {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // 評論者
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(name = "fk_review_user"))
     private User user;
 
-    // 評論的商品
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "product_id", nullable = false, foreignKey = @ForeignKey(name = "fk_review_product"))
     private Product product;
 
-    // 評分：1~5
-    @Column(nullable = false)
-    private Integer rating;
+    @Column(name = "approved_by_ai")
+    private Boolean approvedByAi; // AI 是否審核過
 
-    // 留言內容
+    @Column(nullable = false)
+    private Integer rating; // 評分 1-5
+
     @Column(columnDefinition = "TEXT")
-    private String comment;
+    private String comment; // 評論內容
 
     @Column(name = "is_visible")
-    private Boolean isVisible;
+    private Boolean isVisible; // 是否通過審核（公開顯示）
 
     @Column(name = "is_approved")
-    private Boolean isApproved;
-    
+    private Boolean isApproved; // 管理員是否審核過
+
     @CreationTimestamp
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
@@ -52,5 +49,4 @@ public class ProductReview {
     @UpdateTimestamp
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
-
 }

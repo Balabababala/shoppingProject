@@ -1,62 +1,76 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Form, Button, Alert, Container } from "react-bootstrap";
+import { AppContext } from "../contexts/AppContext";
 
 export default function EmailVerificationPage() {
+  const { addToastMessage, API_BASE } = useContext(AppContext);
+
   const [formData, setFormData] = useState({
     email: "",
-    verificationCode: "",
+    code: "",
   });
 
   const [errors, setErrors] = useState({});
   const [message, setMessage] = useState("");
+  const [messageVariant, setMessageVariant] = useState("danger");
 
-  const validEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
+  // 驗證 email 格式
+  const validEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+  // 處理輸入變化
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
+  // 表單驗證
   const validate = () => {
     const newErrors = {};
     if (!formData.email) newErrors.email = "Email is required";
     else if (!validEmail(formData.email)) newErrors.email = "Invalid email format";
-
-    if (!formData.verificationCode.trim())
-      newErrors.verificationCode = "Verification code is required";
-
+    if (!formData.code.trim()) newErrors.code = "Verification code is required";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
 
+  // 提交處理
   const handleSubmit = async (e) => {
     e.preventDefault();
     setMessage("");
+    setMessageVariant("danger");
+    setErrors({});
     if (!validate()) return;
 
     try {
-      const res = await fetch("/api/verify-email", {
+      const res = await fetch(`${API_BASE}/verify-email`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          email: formData.email,
-          code: formData.verificationCode, // 這裡改成後端需要的 code key
-        }),
+        body: JSON.stringify(formData),
       });
 
-      if (!res.ok) {
-        const errorData = await res.json();
-        setMessage(errorData.message || "Verification failed");
-      } else {
+      const data = await res.json();
+      const success =
+        res.ok &&
+        (data.status === "success" || data.message?.includes("成功"));
+
+      if (success) {
         setMessage("Email verified successfully! You can now login.");
-        setFormData({ email: "", verificationCode: "" });
+        setMessageVariant("success");
+        addToastMessage("Email verified successfully!");
+        setFormData({ email: "", code: "" });
         setErrors({});
+      } else {
+        const errorMsg = data.message || "Verification failed";
+        setMessage(errorMsg);
+        setMessageVariant("danger");
+        addToastMessage(errorMsg);
       }
-    } catch {
-      setMessage("Network error");
+    } catch (err) {
+      const errorMsg = "Network error, please try again later.";
+      setMessage(errorMsg);
+      setMessageVariant("danger");
+      addToastMessage(errorMsg);
+      console.error("Email verification error:", err);
     }
   };
 
@@ -64,13 +78,7 @@ export default function EmailVerificationPage() {
     <Container style={{ maxWidth: 480 }} className="mt-5">
       <h2 className="mb-4 text-center">Email Verification</h2>
 
-      {message && (
-        <Alert
-          variant={message.toLowerCase().includes("success") ? "success" : "danger"}
-        >
-          {message}
-        </Alert>
-      )}
+      {message && <Alert variant={messageVariant}>{message}</Alert>}
 
       <Form onSubmit={handleSubmit} noValidate>
         <Form.Group className="mb-3" controlId="email">
@@ -89,19 +97,19 @@ export default function EmailVerificationPage() {
           </Form.Control.Feedback>
         </Form.Group>
 
-        <Form.Group className="mb-3" controlId="verificationCode">
+        <Form.Group className="mb-3" controlId="code">
           <Form.Label>
             Verification Code <span className="text-danger">*</span>
           </Form.Label>
           <Form.Control
             type="text"
-            name="verificationCode"
-            value={formData.verificationCode}
+            name="code"
+            value={formData.code}
             onChange={handleChange}
-            isInvalid={!!errors.verificationCode}
+            isInvalid={!!errors.code}
           />
           <Form.Control.Feedback type="invalid">
-            {errors.verificationCode}
+            {errors.code}
           </Form.Control.Feedback>
         </Form.Group>
 

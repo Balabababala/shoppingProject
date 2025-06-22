@@ -28,7 +28,9 @@ public interface ProductReviewRepository extends JpaRepository<ProductReview, Lo
 	Optional<ProductReview> findByUserIdAndProductId(Long userId,Long productId);
 	
 	@Transactional
-	List<ProductReview> findByUserId(Long userId);
+	List<ProductReview> findByApprovedByAiFalse();
 	
+	@Transactional
+	List<ProductReview> findByUserId(Long userId);
 
 }

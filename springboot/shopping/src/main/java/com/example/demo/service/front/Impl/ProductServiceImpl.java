@@ -156,7 +156,7 @@ public class ProductServiceImpl implements ProductService {
                 .orElseThrow(() -> new ShoppingException("查無商品")));
     	
     	if(userId!=null)
-    	recentlyViewedService.addRecentlyViewed(id,userId);
+    	recentlyViewedService.addRecentlyViewed(userId,id);
     	
         return productResponse;
     }

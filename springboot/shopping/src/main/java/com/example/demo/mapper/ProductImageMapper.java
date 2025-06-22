@@ -9,7 +9,7 @@ public class ProductImageMapper {
 		productImageDto.setId(productImage.getId());
 		productImageDto.setImageUrl(productImage.getImageUrl());
 		productImageDto.setNumber(productImage.getNumber());
-		productImageDto.setProductId(productImage.getId());
+		productImageDto.setProductId(productImage.getProduct().getId());
 		return productImageDto;
    }
 }

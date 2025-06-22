@@ -14,7 +14,7 @@ import Select from 'react-select';
 import { AppContext } from '../contexts/AppContext';
 
 function SellerProductNewPage() {
-  const { addToastMessage, API_BASE } = useContext(AppContext);
+  const { addToastMessage, API_BASE ,fetchWithAuthCheck} = useContext(AppContext);
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -77,38 +77,36 @@ function SellerProductNewPage() {
 
   // 表單送出
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setUploading(true);
-    try {
-      const formData = new FormData();
-      // 產品基本資訊
-      Object.entries(product).forEach(([key, val]) => formData.append(key, val));
-      // 主圖片
-      if (mainImage) formData.append('thumbnail', mainImage);
-      // 其他圖片
-      extraImages.forEach((file) => {
-        formData.append('extraImages', file);
-      });
+  e.preventDefault();
+  setUploading(true);
+  try {
+    const formData = new FormData();
+    Object.entries(product).forEach(([key, val]) => formData.append(key, val));
+    if (mainImage) formData.append('thumbnail', mainImage);
+    extraImages.forEach((file) => formData.append('extraImages', file));
 
-      const res = await fetch(`${API_BASE}/seller/products`, {
-        method: 'POST',
-        credentials: 'include',
-        body: formData,
-      });
+    // 這裡用 fetchWithAuthCheck，fetchWithAuthCheck 預設 header 有帶 token
+    const res = await fetchWithAuthCheck(`${API_BASE}/seller/products`, {
+      method: 'POST',
+      body: formData,
+      // 注意：不能再加 'Content-Type': multipart/form-data，瀏覽器會自動設定 boundary
+    });
 
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.message || '新增商品失敗');
-      }
-
-      addToastMessage('新增商品及圖片成功');
-      navigate('/seller/products');
-    } catch (error) {
-      addToastMessage(error.message);
-    } finally {
-      setUploading(false);
+    if (!res || res.authError) {
+      throw new Error('請先登入');
     }
-  };
+    if (res.status && res.status !== 'success') {
+      throw new Error(res.message || '新增商品失敗');
+    }
+
+    addToastMessage('新增商品及圖片成功');
+    navigate('/seller/products');
+  } catch (error) {
+    addToastMessage(error.message);
+  } finally {
+    setUploading(false);
+  }
+};
 
   // 轉換分類為 react-select 格式
   const categoryOptions = categories.map((cat) => ({

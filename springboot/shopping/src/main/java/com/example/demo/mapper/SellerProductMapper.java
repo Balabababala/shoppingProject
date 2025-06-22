@@ -20,6 +20,7 @@ public class SellerProductMapper {
 		product.setDescription(sellerProductCreateRequest.getDescription());
 		product.setPrice(sellerProductCreateRequest.getPrice());
 		product.setStock(sellerProductCreateRequest.getStock());
+		product.setIsDeleted(false);
 		product.setStatus(sellerProductCreateRequest.getStatus());
 		product.setCategory(category);
 		product.setSeller(seller);

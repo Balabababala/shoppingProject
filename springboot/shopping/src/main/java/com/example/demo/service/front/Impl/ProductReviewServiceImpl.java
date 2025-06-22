@@ -41,6 +41,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         review.setProduct(product);
         review.setRating(rating);
         review.setComment(comment);
+        review.setApprovedByAi(false);
         review.setIsVisible(false);  // 預設未顯示，需管理員審核
         review.setIsApproved(false);
         

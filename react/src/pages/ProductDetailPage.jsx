@@ -42,81 +42,72 @@ function ProductDetailPage() {
   const [nav1, setNav1] = useState(null);
   const [nav2, setNav2] = useState(null);
 
-  // 評論相關
+  // 評論相關狀態
   const [reviews, setReviews] = useState([]);
   const [reviewLoading, setReviewLoading] = useState(false);
   const [reviewError, setReviewError] = useState(null);
   const [newRating, setNewRating] = useState(5);
   const [newComment, setNewComment] = useState("");
   const [submittingReview, setSubmittingReview] = useState(false);
-  const [hasReviewed, setHasReviewed] = useState(false); // 是否已評論過
+  const [hasReviewed, setHasReviewed] = useState(false);
 
   const placeholderLarge = "https://dummyimage.com/600x600/ccc/fff&text=No+Image";
 
-  // 設定 slick slider 的控制
   useLayoutEffect(() => {
     setNav1(sliderMain.current);
     setNav2(sliderThumbs.current);
   }, []);
 
-  // 載入商品資料
+  // 載入商品
   useEffect(() => {
     setLoading(true);
     setError(null);
     fetchWithAuthCheck(`${API_BASE}/products/${id}`)
       .then((data) => {
         if (!data) throw new Error("找不到商品");
-        setProduct(data.data);
+        setProduct(data.data || data);
         setQuantity(1);
       })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
   }, [id, API_BASE, fetchWithAuthCheck]);
 
-  // 載入評論列表
+  // 載入評論
   useEffect(() => {
-    if (!product) return;
+    if (!product || !product.id) return;
 
     setReviewLoading(true);
     setReviewError(null);
 
-    fetch(`${API_BASE}/reviews/product/${product.id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.json();
-      })
-      .then((data) => {
-        setReviews(data?.data || []);
-      })
+    fetchWithAuthCheck(`${API_BASE}/reviews/product/${product.id}`)
+      .then((data) => setReviews(data?.data || []))
       .catch((err) => setReviewError(err.message))
       .finally(() => setReviewLoading(false));
-  }, [product, API_BASE]);
+  }, [product, API_BASE, fetchWithAuthCheck]);
 
-
-  // 檢查收藏狀態
+  // 收藏狀態檢查
   useEffect(() => {
-    if (!userData || !product) return;
+    if (!userData || !product || !product.id) return;
 
-    fetchWithAuthCheck(
-      `${API_BASE}/favorites/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
-    )
-      .then((data) => setIsFavorite(Boolean(data?.data)))
+    fetchWithAuthCheck(`${API_BASE}/favorites/check?productId=${product.id}`)
+      .then((res) => {
+        const isFav = res?.data ?? false;
+        setIsFavorite(Boolean(isFav));
+      })
       .catch(() => setIsFavorite(false));
   }, [userData, product, API_BASE, fetchWithAuthCheck]);
 
-  // 檢查是否已評論過
+  // 已評論檢查
   useEffect(() => {
-    if (!userData || !product) {
+    if (!userData || !product || !product.id) {
       setHasReviewed(false);
       return;
     }
     fetchWithAuthCheck(
-  `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
-)
-  .then((res) => {
-    console.log("check review data:", res);
-    setHasReviewed(Boolean(res.data));
-  })
+      `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
+    )
+      .then((res) => setHasReviewed(Boolean(res?.data || res)))
+      .catch(() => setHasReviewed(false));
   }, [userData, product, API_BASE, fetchWithAuthCheck]);
 
   // 加入購物車
@@ -132,12 +123,9 @@ function ProductDetailPage() {
     if (product.stock && qty > product.stock) qty = product.stock;
 
     try {
-      const res = await fetch(`${API_BASE}/cart/add`, {
+      const res = await fetchWithAuthCheck(`${API_BASE}/cart/add`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userData.token}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           userId: userData.user.userId || userData.user.id,
           productId: product.id,
@@ -145,21 +133,19 @@ function ProductDetailPage() {
         }),
       });
 
-      if (res.status === 403) {
+      if (res?.authError) {
         handleLogout("權限不足，請重新登入");
         return;
       }
 
-      if (!res.ok) throw new Error(`加入購物車失敗，狀態碼: ${res.status}`);
+      if (!res || (res.message && res.message.toLowerCase().includes("失敗"))) {
+        throw new Error(res.message || "加入購物車失敗");
+      }
 
       addToastMessage(`已加入購物車：${product.name} x ${qty}`);
 
-      // 重新抓購物車資料
-      const cartRes = await fetch(`${API_BASE}/cart`, {
-        headers: { Authorization: `Bearer ${userData.token}` },
-      });
-      const cartData = await cartRes.json();
-
+      // 重新取得購物車
+      const cartData = await fetchWithAuthCheck(`${API_BASE}/cart`);
       if (!cartData || !cartData.data) throw new Error("購物車資料格式錯誤");
       setCartItems(cartData.data);
     } catch (err) {
@@ -174,17 +160,13 @@ function ProductDetailPage() {
       navigate("/userlogin");
       return;
     }
-
     const method = isFavorite ? "DELETE" : "POST";
     const url = isFavorite ? `${API_BASE}/favorites/${product.id}` : `${API_BASE}/favorites`;
 
     try {
-      const res = await fetch(url, {
+      const res = await fetchWithAuthCheck(url, {
         method,
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${userData.token}`,
-        },
+        headers: { "Content-Type": "application/json" },
         body:
           method === "POST"
             ? JSON.stringify({
@@ -194,12 +176,16 @@ function ProductDetailPage() {
             : undefined,
       });
 
-      if (res.status === 403) {
+      // 假設你的 fetchWithAuthCheck 如果 403 會回 { authError: true } 或類似結構
+      if (res.authError) {
         handleLogout("權限不足，請重新登入");
         return;
       }
 
-      if (!res.ok) throw new Error("收藏操作失敗");
+      // 假設成功會回 { success: true } 或 { data: ... }，失敗會回 message
+      if (!res || (res.success === false) || (res.message && res.message.includes("失敗"))) {
+        throw new Error(res.message || "收藏操作失敗");
+      }
 
       setIsFavorite(!isFavorite);
       addToastMessage(isFavorite ? "已移除收藏" : "已加入收藏");
@@ -225,9 +211,7 @@ function ProductDetailPage() {
     try {
       await fetchWithAuthCheck(`${API_BASE}/reviews`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           productId: product.id,
           rating: newRating,
@@ -239,18 +223,16 @@ function ProductDetailPage() {
       setNewRating(5);
       setNewComment("");
 
-      // 重新抓評論列表
-      const reviewRes = await fetch(`${API_BASE}/reviews/product/${product.id}`, {
-        headers: { Authorization: `Bearer ${userData.token}` },
-      });
-      const reviewData = await reviewRes.json();
-      setReviews(reviewData.data || []);
+      // 重新載入評論
+      const reviewRes = await fetchWithAuthCheck(`${API_BASE}/reviews/product/${product.id}`);
+      if (!reviewRes) throw new Error("評論載入失敗");
+      setReviews(reviewRes.data || []);
 
-      // 重新檢查是否已評論過
+      // 重新檢查是否已評論
       const checkData = await fetchWithAuthCheck(
         `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
       );
-      setHasReviewed(Boolean(checkData));
+      setHasReviewed(Boolean(checkData?.data || checkData));
     } catch (err) {
       if (err.message.includes("403")) {
         handleLogout("權限不足，請重新登入");
@@ -264,7 +246,7 @@ function ProductDetailPage() {
 
   const handleBack = () => navigate(-1);
 
-  if (loading) {
+  if (loading || (!product && !error)) {
     return (
       <Container className="mt-5 text-center">
         <Spinner animation="border" variant="primary" />
@@ -286,9 +268,11 @@ function ProductDetailPage() {
   const isUnavailable = product.status !== "ACTIVE" || product.isDeleted === true;
 
   const images =
-    product.productImageDtos && product.productImageDtos.length > 0
+    product?.productImageDtos?.length > 0
       ? product.productImageDtos.map((img) =>
-          img.imageUrl.startsWith("http") ? img.imageUrl : BASE_URL + img.imageUrl
+          img.imageUrl?.startsWith("http")
+            ? img.imageUrl
+            : BASE_URL + img.imageUrl
         )
       : [placeholderLarge];
 
@@ -376,7 +360,7 @@ function ProductDetailPage() {
         <Col md={6}>
           <Card className="shadow-sm border-0">
             <Card.Body>
-              <h2 className="fw-bold mb-3">{product.name}</h2>
+              <h2 className="fw-bold mb-3">{product.name || "無商品名稱"}</h2>
 
               {product.sellerUserDto?.username && (
                 <div className="mb-3">
@@ -388,13 +372,15 @@ function ProductDetailPage() {
               )}
 
               <h4 className="text-danger fw-semibold mb-3">
-                NT$ {product.price.toLocaleString()}
+                {typeof product.price === "number"
+                  ? `NT$ ${product.price.toLocaleString()}`
+                  : "無價格資訊"}
               </h4>
 
               <div className="mb-3">
                 <span className="me-2">庫存：</span>
-                <Badge bg={product.stock > 0 ? "success" : "danger"}>
-                  {product.stock === undefined
+                <Badge bg={product?.stock > 0 ? "success" : "danger"}>
+                  {product?.stock === undefined
                     ? "無庫存資訊"
                     : product.stock > 0
                     ? `有貨（${product.stock}）`
@@ -463,7 +449,7 @@ function ProductDetailPage() {
                 }}
                 className="mt-4"
               >
-                {product.description}
+                {product.description || "無商品描述"}
               </Card.Text>
             </Card.Body>
           </Card>
@@ -496,7 +482,9 @@ function ProductDetailPage() {
                 </span>
                 <p>{r.comment}</p>
                 <small className="text-muted">
-                  {new Date(r.createdAt).toLocaleString()}
+                  {r.createdAt
+                    ? new Date(r.createdAt).toLocaleString()
+                    : "未知時間"}
                 </small>
               </ListGroup.Item>
             ))}

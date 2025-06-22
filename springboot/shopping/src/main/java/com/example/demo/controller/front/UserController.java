@@ -102,7 +102,7 @@ public class UserController {
 
     /** 📧 信箱驗證 */
     @PostMapping("/verify-email")
-    public ResponseEntity<ApiResponse<Void>> verifyEmail(@RequestBody EmailVerificationRequest req) {
+    public ResponseEntity<ApiResponse<Void>> verifyEmail( @RequestBody EmailVerificationRequest req) {
         try {
             userService.verifyEmail(req.getEmail(), req.getCode());
             return ResponseEntity.ok(ApiResponse.success("驗證成功", null));

@@ -1,0 +1,72 @@
+package com.example.shopping.service;
+
+import com.example.shopping.entity.ProductReview;
+import com.example.shopping.repository.ProductReviewRepository;
+import org.json.JSONObject;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
+import java.time.LocalDateTime;
+import java.util.List;
+
+@Service
+public class ReviewService {
+    private static final String OLLAMA_API_URL = "http://localhost:11434/api/generate";
+    private static final String MODEL_NAME = "qwen2:7b";
+
+    @Autowired
+    private ProductReviewRepository reviewRepository;
+
+    public void reviewAllComments() {
+        List<ProductReview> reviews = reviewRepository.findAll();
+        for (ProductReview review : reviews) {
+            if (review.getComment() != null && !review.getComment().isEmpty()) {
+                JSONObject result = reviewComment(review.getComment());
+                review.setIsApproved("APPROVED".equals(result.getString("status")));
+                review.setUpdatedAt(LocalDateTime.now());
+                reviewRepository.save(review);
+                System.out.println("評論: " + review.getComment());
+                System.out.println("狀態: " + result.getString("status"));
+                System.out.println("原因: " + result.getString("reason"));
+                System.out.println("情感: " + result.getString("sentiment"));
+                System.out.println("-----------------------------------");
+            }
+        }
+    }
+
+    private JSONObject reviewComment(String comment) {
+        String prompt = "審核以下評論：『" + comment + "』請返回 JSON 格式，包含 status (APPROVED 或 REJECTED)、reason (原因，使用繁體中文，必須提供具體說明，例如為何批准或拒絕，檢查是否有辱罵或垃圾訊息) 和 sentiment (POSITIVE、NEGATIVE 或 NEUTRAL)。確保回應為有效的 JSON 格式。";
+        JSONObject payload = new JSONObject();
+        payload.put("model", MODEL_NAME);
+        payload.put("prompt", prompt);
+        payload.put("stream", false);
+
+        try {
+            HttpClient client = HttpClient.newHttpClient();
+            HttpRequest request = HttpRequest.newBuilder()
+                    .uri(URI.create(OLLAMA_API_URL))
+                    .header("Content-Type", "application/json")
+                    .POST(HttpRequest.BodyPublishers.ofString(payload.toString()))
+                    .build();
+
+            HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+            if (response.statusCode() == 200) {
+                JSONObject json = new JSONObject(response.body());
+                return new JSONObject(json.getString("response"));
+            } else {
+                return new JSONObject()
+                        .put("status", "ERROR")
+                        .put("reason", "API 錯誤: " + response.statusCode())
+                        .put("sentiment", "UNKNOWN");
+            }
+        } catch (Exception e) {
+            return new JSONObject()
+                    .put("status", "ERROR")
+                    .put("reason", "API 呼叫失敗: " + e.getMessage())
+                    .put("sentiment", "UNKNOWN");
+        }
+    }
+}

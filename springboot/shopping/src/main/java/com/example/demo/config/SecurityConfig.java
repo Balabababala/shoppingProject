@@ -36,10 +36,12 @@ public class SecurityConfig {
             .csrf(csrf -> csrf.disable()) // 若要保留 CSRF，要配合 CSRF token 寫法
             .securityContext(context -> context.requireExplicitSave(false))
             .authorizeHttpRequests(auth -> auth
-            	.requestMatchers("/uploads/**").permitAll() //
-            	.requestMatchers("/api/admin/login").permitAll()//
-            	.requestMatchers("/api/reviews/product/**").permitAll()
-                .requestMatchers("/api/login", "/api/auth-code", "/api/register","/api/search").permitAll() // login, captcha, register search 放行  
+            	.requestMatchers("/uploads/**").permitAll() //	圖庫
+            	.requestMatchers("/api/admin/login").permitAll() // admin login
+            	.requestMatchers("/api/reviews/product/**","/api/reviews/review-all").permitAll()//ai 用
+            	.requestMatchers("/api/search").permitAll()//search 用
+                .requestMatchers("/api/login", "/api/auth-code").permitAll()//loggin captcha
+                .requestMatchers("/api/register","/api/verify-email").permitAll() // register search 放行  
                 .requestMatchers("/api/recommend/products","/api/products/**","/api/categories/**").permitAll()
                 .requestMatchers("/api/seller/**").hasAuthority("ROLE_SELLER")
                 .requestMatchers("/api/admin/**").hasAuthority("ROLE_ADMIN")
