@@ -49,7 +49,7 @@ function MyNavbar({ onChangeContent }) {
       <Navbar expand="lg" fixed="top" className="mynavbar">
         <Container>
           <Navbar.Brand as={Link} to="/">
-            左上角的
+            ShopVerse
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav" className="justify-content-between">
