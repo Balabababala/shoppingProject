@@ -1,5 +1,6 @@
 package com.example.demo.service.admin;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -17,6 +18,10 @@ public interface AdminOrderService {
 	AdminOrderEditDto getOrderById(Long orderId);
 
 	AdminOrderEditDto updateOrder(Long orderId, AdminOrderEditDto dto);
+
+	long count();
+
+	BigDecimal calculateTotalSales();
 	
 	
 }

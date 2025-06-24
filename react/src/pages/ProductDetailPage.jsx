@@ -65,7 +65,7 @@ function ProductDetailPage() {
     fetchWithAuthCheck(`${API_BASE}/products/${id}`)
       .then((data) => {
         if (!data) throw new Error("找不到商品");
-        setProduct(data.data || data);
+        setProduct(data.data);
         setQuantity(1);
       })
       .catch((err) => setError(err.message))
@@ -99,16 +99,21 @@ function ProductDetailPage() {
 
   // 已評論檢查
   useEffect(() => {
-    if (!userData || !product || !product.id) {
-      setHasReviewed(false);
-      return;
-    }
-    fetchWithAuthCheck(
-      `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
-    )
-      .then((res) => setHasReviewed(Boolean(res?.data || res)))
-      .catch(() => setHasReviewed(false));
-  }, [userData, product, API_BASE, fetchWithAuthCheck]);
+    const userId = userData?.user?.userId || userData?.user?.id;
+    const productId = product?.id;
+
+    if (!userId || !productId) return;
+
+    fetchWithAuthCheck(`${API_BASE}/reviews/check?userId=${userId}&productId=${productId}`)
+      .then((res) => {
+        setHasReviewed(Boolean(res?.data));
+        console.log("✅ 已評論狀態：", res?.data);
+      })
+      .catch((err) => {
+        console.warn("❌ 檢查已評論失敗", err);
+        setHasReviewed(false);
+      });
+  }, [userData?.user?.userId, product?.id]);
 
   // 加入購物車
   const handleAddToCart = async () => {
@@ -196,6 +201,7 @@ function ProductDetailPage() {
 
   // 送出評論
   const handleSubmitReview = async () => {
+    
     if (!userData) {
       addToastMessage("請先登入才能評論");
       navigate("/userlogin");
@@ -230,9 +236,10 @@ function ProductDetailPage() {
 
       // 重新檢查是否已評論
       const checkData = await fetchWithAuthCheck(
-        `${API_BASE}/reviews/check?userId=${userData.user.userId || userData.user.id}&productId=${product.id}`
+        `${API_BASE}/reviews/check?userId=${userData.user.userId}&productId=${product.id}`
       );
-      setHasReviewed(Boolean(checkData?.data || checkData));
+      
+      setHasReviewed(Boolean(checkData?.data));
     } catch (err) {
       if (err.message.includes("403")) {
         handleLogout("權限不足，請重新登入");
@@ -476,7 +483,7 @@ function ProductDetailPage() {
           <ListGroup className="mb-4">
             {reviews.map((r) => (
               <ListGroup.Item key={r.id}>
-                <strong>{r.userDto?.username || "匿名"}</strong>{" "}
+                <strong>{r.username || "匿名"}</strong>{" "}
                 <span style={{ color: "#f39c12" }}>
                   {"★".repeat(r.rating) + "☆".repeat(5 - r.rating)}
                 </span>

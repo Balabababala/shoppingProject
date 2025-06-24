@@ -1,4 +1,5 @@
 package com.example.demo.service.admin.impl;
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,4 +54,17 @@ public class AdminOrderServiceImpl implements AdminOrderService{
         // 回傳更新後的 DTO
         return AdminOrderEditDtoMapper.toDto(updatedOrder);
     }
+
+	@Override
+	public long count() {
+		 return orderRepository.count();
+	}
+
+	 @Override
+	    public BigDecimal calculateTotalSales() {
+	        return orderRepository.sumTotalSalesOfCompletedOrders()
+	                .orElse(BigDecimal.ZERO); // 防止 null 回傳
+	    }
+ 
+    
 }

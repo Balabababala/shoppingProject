@@ -28,6 +28,7 @@ import com.example.demo.repository.OrderRepository;
 import com.example.demo.repository.UserRepository;
 import com.example.demo.response.ApiResponse;
 import com.example.demo.service.front.CartItemService;
+import com.example.demo.service.front.NotificationService;
 import com.example.demo.service.front.OrderService;
 import com.example.demo.service.front.ProductService;
 
@@ -39,6 +40,9 @@ public class OrderServiceImpl implements OrderService{
 	
 	@Autowired
 	private UserRepository userRepository;
+	
+	@Autowired
+	private NotificationService notification;
 	
 	@Autowired
 	private OrderItemRepository orderItemRepository;
@@ -77,6 +81,7 @@ public class OrderServiceImpl implements OrderService{
 			
 			//order的部分
 			Order order=CreateOrderMapper.toEntity(orderRequest, Buyer, Seller, total);
+			notification.createNotification(Seller.getId(), String.format("已建立訂單 買家:%s", Buyer.getUsername()),"訂單提醒");
 			orderRepository.save(order);
 			
 			//orderItems的部分
@@ -124,10 +129,12 @@ public class OrderServiceImpl implements OrderService{
 	    if (!isCancellable(order)) {
 	        throw new IllegalStateException("該訂單無法取消");
 	    }
-
+	    
+	    
 	    order.setOrderStatus(OrderStatus.CANCELLED);
 	    order.setPaymentStatus(PaymentStatus.REFUNDED); // 如果未付款可保留為 PENDING
-
+	    notification.createNotification(orderRepository.findById(orderId).get().getBuyer().getId(), String.format("已取消訂單 訂單編號:ORD-%06d", orderId),"訂單提醒");
+	    notification.createNotification(orderRepository.findById(orderId).get().getSeller().getId(), String.format("已取消訂單 訂單編號:ORD-%06d", orderId),"訂單提醒");
 	    orderRepository.save(order);
 
 	    // TODO: 如有付款，進行退款流程（例如呼叫支付 API）
@@ -170,6 +177,7 @@ public class OrderServiceImpl implements OrderService{
 	        throw new ShoppingException("只有已付款的訂單才能出貨");
 	    }
 
+	    notification.createNotification(orderRepository.findById(orderId).get().getBuyer().getId(), String.format("訂單已出貨 Ord-%06d", orderId),"訂單提醒");
 	    order.setOrderStatus(OrderStatus.SHIPPED);
 	    orderRepository.save(order);
 	}

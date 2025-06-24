@@ -16,7 +16,7 @@ public interface OrderService {
 	
 	//買家用
 	List<OrderResponse> getOrderByBuyerId(Long userId);				 	//看使用者(買方)訂單							
-	void cancelOrder(Long orderId);										//取消訂單
+	
 	boolean isOrderOwnedByUser(Long orderId, Long currentUserId);		//判斷該orderId 是否屬於買家
 	
 	//賣家
@@ -25,4 +25,6 @@ public interface OrderService {
 	String getOrderStatus(Long orderId);								//
 	boolean isOrderOwnedBySeller(Long orderId, Long currentUserId);		//判斷該orderId 是否屬於賣加
 	
+	//共用
+	void cancelOrder(Long orderId);										//取消訂單
 }
