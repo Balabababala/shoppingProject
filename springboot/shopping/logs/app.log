@@ -10703,3 +10703,28 @@ Unconditional classes:
 2025-06-23T22:56:29.524+08:00 DEBUG 10800 --- [shopping] [http-nio-8080-exec-8] o.j.s.OpenEntityManagerInViewInterceptor : Closing JPA EntityManager in OpenEntityManagerInViewInterceptor
 2025-06-23T22:56:29.524+08:00 DEBUG 10800 --- [shopping] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
 2025-06-23T22:56:29.525+08:00 DEBUG 10800 --- [shopping] [http-nio-8080-exec-8] s.s.w.c.SecurityContextPersistenceFilter : Cleared SecurityContextHolder to complete request
+2025-06-23T23:01:22.949+08:00  INFO 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] inMXBeanRegistrar$SpringApplicationAdmin : Application shutdown requested.
+2025-06-23T23:01:22.949+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
+2025-06-23T23:01:22.951+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@6475472c, started on Mon Jun 23 10:50:25 CST 2025
+2025-06-23T23:01:22.956+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147483647
+2025-06-23T23:01:22.958+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.d.r.l.RedisMessageListenerContainer  : Stopped RedisMessageListenerContainer
+2025-06-23T23:01:22.958+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Bean 'redisKeyValueAdapter' completed its stop procedure
+2025-06-23T23:01:22.958+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147482623
+2025-06-23T23:01:22.961+08:00  INFO 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-06-23T23:01:22.964+08:00  INFO 10800 --- [shopping] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-06-23T23:01:22.965+08:00 DEBUG 10800 --- [shopping] [tomcat-shutdown] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerGracefulShutdown' completed its stop procedure
+2025-06-23T23:01:22.965+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 2147481599
+2025-06-23T23:01:22.968+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Bean 'webServerStartStop' completed its stop procedure
+2025-06-23T23:01:22.968+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 1073741823
+2025-06-23T23:01:22.968+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Bean 'applicationTaskExecutor' completed its stop procedure
+2025-06-23T23:01:22.968+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase 0
+2025-06-23T23:01:22.985+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Bean 'redisConnectionFactory' completed its stop procedure
+2025-06-23T23:01:22.985+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Stopping beans in phase -2147483647
+2025-06-23T23:01:22.986+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.c.support.DefaultLifecycleProcessor  : Bean 'springBootLoggingLifecycle' completed its stop procedure
+2025-06-23T23:01:22.996+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.b.f.support.DisposableBeanAdapter    : Custom destroy method 'shutdown' on bean with name 'lettuceClientResources' completed asynchronously
+2025-06-23T23:01:22.997+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans on shutdown
+2025-06-23T23:01:22.997+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.j.e.a.AnnotationMBeanExporter        : Unregistering JMX-exposed beans
+2025-06-23T23:01:22.998+08:00 DEBUG 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2025-06-23T23:01:23.001+08:00  INFO 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-06-23T23:01:23.007+08:00  INFO 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-06-23T23:01:23.010+08:00  INFO 10800 --- [shopping] [RMI TCP Connection(740)-127.0.0.1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
