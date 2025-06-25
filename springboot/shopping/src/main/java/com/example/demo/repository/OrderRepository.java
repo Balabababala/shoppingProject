@@ -1,5 +1,6 @@
 package com.example.demo.repository;
 
+import java.math.BigDecimal;
 import java.util.List;
 import java.util.Optional;
 
@@ -45,6 +46,10 @@ public interface OrderRepository extends JpaRepository<Order, Long>{
 
 	@Query("SELECT o FROM Order o JOIN FETCH o.seller s WHERE o.id = :id")
 	Optional<Order> findByIdWithItemsAndSeller(@Param("id") Long orderId);
+
+	
+	@Query("SELECT SUM(o.totalAmount) FROM Order o WHERE o.orderStatus = 'COMPLETED'")
+	Optional<BigDecimal> sumTotalSalesOfCompletedOrders();
 
 
 	// 你可以加自訂的方法，像是：

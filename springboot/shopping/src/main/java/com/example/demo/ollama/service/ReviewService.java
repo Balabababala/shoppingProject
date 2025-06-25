@@ -70,15 +70,31 @@ public class ReviewService {
     }
 
     private JSONObject reviewComment(String comment) {
-        String prompt = "審核以下產品評論：『" + comment + "』。請確認評論是否與產品的使用體驗、品質或服務相關，且不包含程式碼、純數字、SQL 語法或其他無意義內容。請返回 JSON 格式，包含以下字段：\n" +
-                        "- status: 'APPROVED'（評論與產品相關且適當）或 'REJECTED'（無效或不相關）。\n" +
-                        "- reason: 具體原因（使用繁體中文，詳細說明為何通過或拒絕）。\n" +
-                        "- sentiment: 'POSITIVE'（積極評價，如滿意或推薦）、'NEGATIVE'（負面評價，如不滿或批評）或 'NEUTRAL'（中立評價，無明顯情感或無效內容）。\n" +
-                        "範例：\n" +
-                        "有效評論：『產品很好用，值得購買！』 -> {'status': 'APPROVED', 'reason': '評論與產品使用體驗相關，內容積極。', 'sentiment': 'POSITIVE'}\n" +
-                        "無效評論：『123』 -> {'status': 'REJECTED', 'reason': '評論僅包含數字，無產品相關內容。', 'sentiment': 'NEUTRAL'}\n" +
-                        "無效評論：『CREATE TABLE ...』 -> {'status': 'REJECTED', 'reason': '評論包含 SQL 語法，與產品使用體驗無關。', 'sentiment': 'NEUTRAL'}\n" +
-                        "注意：評論應反映用戶對產品的真實意見，任何非產品相關內容（如程式碼、技術語法）均應拒絕。";
+    	String prompt = String.format("""
+    			請審查下列產品評論是否與產品的使用體驗、品質或服務相關，並判定其是否為有效評論（排除程式碼、純數字、SQL 語法或無意義內容）。
+
+    			評論如下：
+    			『%s』
+
+    			請只回傳 JSON 格式結果，格式如下：
+
+    			{
+    			  "status": "APPROVED" 或 "REJECTED",
+    			  "reason": "使用繁體中文說明為何通過或拒絕",
+    			  "sentiment": "POSITIVE"、"NEGATIVE" 或 "NEUTRAL"
+    			}
+
+    			✅ 判斷標準：
+    			- 如果評論內容是 JSON 格式字串，請判定為 REJECTED，理由為「評論內容非自然語言，疑似系統或程式碼輸入」。
+				- 評論可為正面、負面或中立，只要與產品相關，即可視為有效（status: APPROVED）。
+				- 「太爛了」、「難用」、「壞掉了」等負面回饋，只要反映產品缺點，應標記為 status: APPROVED 且 sentiment: NEGATIVE。
+				- 僅在評論與產品無關、無意義、或為技術語法時，才應設為 status: REJECTED。
+
+    			⚠️ 注意事項：
+    			- 請勿回傳文字說明或註解
+    			- 請勿換行或加上多餘說明
+    			- 僅回傳符合格式的 JSON 字串
+    			""", comment);
         JSONObject payload = new JSONObject();
         payload.put("model", MODEL_NAME);
         payload.put("prompt", prompt);

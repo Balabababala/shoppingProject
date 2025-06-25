@@ -11,7 +11,9 @@ public interface NotificationService {
 
 	//邏輯
 	
-	void markNotificationAsReadByNotificationId(Long notificationId,Long userId);//改已讀
+	void markNotificationAsReadByNotificationId(Long notificationId,Long userId);    //改已讀
 	
 	List<NotificationDto> findNotificationsByUsertiNotificationResponse(Long userId);//看通知訊息 by usrId
+	
+	void createNotification(Long userId,String message,String title); 							 //創造對某人的通知
 }

@@ -10,9 +10,13 @@ import com.example.demo.exception.ShoppingException;
 import com.example.demo.mapper.*;
 import com.example.demo.model.dto.NotificationDto;
 import com.example.demo.model.entity.Notification;
+import com.example.demo.model.entity.User;
 import com.example.demo.model.enums.NotificationStatus;
 import com.example.demo.repository.NotificationRepository;
+import com.example.demo.repository.UserRepository;
 import com.example.demo.service.front.NotificationService;
+
+import jakarta.transaction.Transactional;
 
 
 @Service
@@ -21,6 +25,8 @@ public class NotificationServiceImpl implements NotificationService{
 	@Autowired
 	private NotificationRepository notificationRepository;
 	
+	@Autowired
+	private UserRepository userRepository;
 	
 	//邏輯
 	
@@ -47,5 +53,17 @@ public class NotificationServiceImpl implements NotificationService{
 	                        .map(NotificationMapper::toDto)
 	                        .toList();
 	}
-	
+
+	@Transactional
+	@Override
+	public void createNotification(Long userId, String message ,String title) {
+		 Notification notification = new Notification();
+		 notification.setMessage(message);
+		 notification.setStatus(NotificationStatus.PENDING);
+		 notification.setType(title);
+	     User user = userRepository.findById(userId)
+	                .orElseThrow(() -> new IllegalArgumentException("User not found"));
+	     notification.setUser(user);
+	     notificationRepository.save(notification);
+	}	
 }

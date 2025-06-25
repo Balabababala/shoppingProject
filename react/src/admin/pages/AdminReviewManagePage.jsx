@@ -48,7 +48,7 @@ export default function AdminReviewManagePage() {
   const triggerAiReview = async () => {
     setLoading(true);
     try {
-      const result = await fetchWithAuthCheck(`${API_BASE}/api/reviews/review-all`, {
+      const result = await fetchWithAuthCheck(`${API_BASE}/reviews/review-all`, {
         method: 'POST',
       });
       console.log('AI review result:', JSON.stringify(result, null, 2));

@@ -13,24 +13,12 @@ function AdminNavbar() {
   const handleMouseLeave = () => setTimeout(() => setShowCart(false), 200);
  const { API_BASE, setAdminUserData,addToastMessage } = useContext(AdminAppContext);
 
-   const logout = () =>{
-    fetch(`${API_BASE}/admin/logout`,{
-      method: 'POST',
-      credentials: 'include',
-      headers: { 'Cache-Control': 'no-cache' },
-    })
-    .then(response => {
-      if (response.ok) {
-        setAdminUserData(null); // 清空前端 adminUserData
-        window.location.href = '/admin';
-      } else {
-        addToastMessage('登出失敗');
-      }
-    })
-    .catch(error => {
-      addToastMessage('登出時發生錯誤', error);
-    });
-  }
+   const logout = () => {
+    setAdminUserData(null);
+    localStorage.removeItem('adminToken');
+    localStorage.removeItem('adminUserData');
+    window.location.href = '/admin'; // 導回登入頁
+  };
 
   return (
     <Navbar expand="lg" fixed="top" className="mynavbar">

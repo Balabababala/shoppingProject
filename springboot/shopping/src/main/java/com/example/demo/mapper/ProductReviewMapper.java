@@ -13,6 +13,7 @@ public class ProductReviewMapper {
 	    ProductReviewDto dto = new ProductReviewDto();
 	    dto.setId(review.getId());
 	    dto.setUserId(review.getUser() != null ? review.getUser().getId() : null);
+	    dto.setUsername(review.getUser()!= null ? review.getUser().getUsername() : null);
 	    dto.setProductId(review.getProduct() != null ? review.getProduct().getId() : null);
 	    dto.setRating(review.getRating());
 	    dto.setComment(review.getComment());
