@@ -19,29 +19,23 @@ function MyRecentlyViewedPage() {
     }
 
     const fetchRecentlyViewed = async () => {
-      setLoading(true);
-      setError(null);
-      try {
-        const data = await fetchWithAuthCheck(`${BASE_API}/recent`);
+  setLoading(true);
+  setError(null);
+  try {
+    const data = await fetchWithAuthCheck(`${BASE_API}/recent`);
 
-        if (data?.data) {
-          const products = data.data.map((item) => ({
-            id: item.productId,
-            productName: item.productName,
-            productImageDtos: Array.isArray(item.productImageDtos) ? item.productImageDtos : [],
-            viewedAt: item.viewedAt,
-          }));
-          setRecentlyViewedProducts(products);
-        } else {
-          setRecentlyViewedProducts([]);
-        }
-      } catch (err) {
-        setError(err.message || '載入錯誤');
-        addToastMessage('取得最近看過商品失敗');
-      } finally {
-        setLoading(false);
-      }
-    };
+    if (data?.data) {
+      setRecentlyViewedProducts(data?.data);
+    } else {
+      setRecentlyViewedProducts([]);
+    }
+  } catch (err) {
+    setError(err.message || '載入錯誤');
+    addToastMessage('取得最近看過商品失敗');
+  } finally {
+    setLoading(false);
+  }
+};
 
     fetchRecentlyViewed();
   }, [userData, fetchWithAuthCheck, addToastMessage]);

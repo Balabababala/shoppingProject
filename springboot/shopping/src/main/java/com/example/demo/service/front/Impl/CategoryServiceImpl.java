@@ -106,14 +106,23 @@ public class CategoryServiceImpl implements CategoryService{
     @Override
     public AdminCategoryDto create(AdminCategoryDto dto) {
         Category entity = AdminCategoryDtoMapper.toEntity(dto);
-        // 若有 parentId，先查詢並設定 parent
+
         if (dto.getParentId() != null) {
-            categoryRepository.findById(dto.getParentId())
-                .ifPresent(entity::setParent);
+            categoryRepository.findById(dto.getParentId()).ifPresent(parent -> {
+                entity.setParent(parent);
+                // 設定層級 = 父分類層級 + 1
+                entity.setLevel(parent.getLevel() + 1);
+            });
+        } else {
+            // 頂層分類層級為 0
+            entity.setLevel(0);
+            entity.setParent(null);
         }
+
         Category saved = categoryRepository.save(entity);
         return AdminCategoryDtoMapper.toDto(saved);
     }
+
 
     @Override
     public AdminCategoryDto update(Long id, AdminCategoryDto dto) {

@@ -3,8 +3,8 @@ import { AppContext } from '../contexts/AppContext';
 import ModernProductCard from '../components/ModernProductCard';
 
 function MyFavorite() {
-  const BASE_API = "http://localhost:8080/api";
-  const { userData, addToastMessage } = useContext(AppContext);
+  const { userData, addToastMessage, fetchWithAuthCheck, API_BASE } = useContext(AppContext);
+
   const [favorites, setFavorites] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -18,21 +18,16 @@ function MyFavorite() {
 
   const fetchFavorites = async () => {
     if (!userData?.user?.userId) {
-      console.log('userData:', userData);
       setFavorites([]);
       setError("尚未登入，無法取得收藏清單");
       setLoading(false);
       return;
     }
+    setLoading(true);
+    setError(null);
     try {
-      const resp = await fetch(`${BASE_API}/favorites`, {
-        headers: {
-          'Cache-Control': 'no-cache',
-          Authorization: `Bearer ${userData.token}`
-        }
-      });
-      if (!resp.ok) throw new Error('取得收藏失敗');
-      const data = await resp.json();
+      const data = await fetchWithAuthCheck(`${API_BASE}/favorites`);
+      if (!data) throw new Error('無法取得資料');
 
       if (data.message?.includes("成功")) {
         setFavorites(data.data || []);
@@ -40,9 +35,11 @@ function MyFavorite() {
         setCurrentPage(1);
       } else {
         setError(data.message || '取得收藏失敗');
+        addToastMessage(data.message || '取得收藏失敗');
       }
     } catch (err) {
-      setError(err.message);
+      setError(err.message || '取得收藏失敗');
+      addToastMessage(err.message || '取得收藏失敗');
     } finally {
       setLoading(false);
     }
@@ -50,20 +47,15 @@ function MyFavorite() {
 
   useEffect(() => {
     fetchFavorites();
-  }, [userData?.user?.id]);
+  }, [userData?.user?.userId]); // 依 userId 變化重新載入
 
   const handleDelete = async (productId) => {
     try {
-      const resp = await fetch(`${BASE_API}/favorites/${productId}`, {
+      const data = await fetchWithAuthCheck(`${API_BASE}/favorites/${productId}`, {
         method: 'DELETE',
-        headers: {
-          'Cache-Control': 'no-cache',
-          Authorization: `Bearer ${userData.token}`
-        }
       });
-      const data = await resp.json();
 
-      if (data.message?.includes("成功")) {
+      if (data?.message?.includes("成功")) {
         setFavorites((prev) => prev.filter(item => item.productId !== productId));
         if ((pagedFavorites.length === 1) && (currentPage > 1)) {
           setCurrentPage(currentPage - 1);

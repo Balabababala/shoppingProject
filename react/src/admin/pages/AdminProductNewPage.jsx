@@ -14,7 +14,7 @@ import { AdminAppContext } from '../contexts/AdminAppContext';
 import Select from 'react-select';
 
 function AdminProductNewPage() {
-  const { addToastMessage, API_BASE } = useContext(AdminAppContext);
+  const { addToastMessage, API_BASE,fetchWithAuthCheck } = useContext(AdminAppContext);
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({
@@ -40,11 +40,12 @@ function AdminProductNewPage() {
   useEffect(() => {
     Promise.all([
       fetch(`${API_BASE}/categories/leaf`, { credentials: 'include' }).then((res) => res.json()),
-      fetch(`${API_BASE}/admin/sellers`, { credentials: 'include' }).then((res) => res.json()),
+      fetchWithAuthCheck(`${API_BASE}/admin/sellers`),
     ])
       .then(([categoriesData, sellersData]) => {
         setCategories(categoriesData.data || []);
         setSellers(sellersData.data || []);
+        console.log(sellers);
       })
       .catch(() => addToastMessage('分類或賣家資料載入失敗'));
   }, [API_BASE, addToastMessage]);
@@ -106,15 +107,22 @@ function AdminProductNewPage() {
         formData.append('extraImages', file);
       });
 
-      const res = await fetch(`${API_BASE}/admin/products`, {
+      const res = await fetchWithAuthCheck(`${API_BASE}/admin/products`, {
         method: 'POST',
-        credentials: 'include',
         body: formData,
       });
 
-      if (!res.ok) {
-        const err = await res.json();
-        throw new Error(err.message || '新增商品失敗');
+      // fetchWithAuthCheck 會直接回傳 JSON 物件，所以這裡改成判斷 message 或其他欄位
+      if (!res) {
+        throw new Error('伺服器無回應');
+      }
+
+      if (res.authError) {
+        throw new Error('請先登入');
+      }
+
+      if (res.message.includes("失敗")) {
+        throw new Error(res.message);
       }
 
       addToastMessage('新增商品成功');

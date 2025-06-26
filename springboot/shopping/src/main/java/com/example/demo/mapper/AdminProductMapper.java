@@ -19,6 +19,7 @@ public class AdminProductMapper {
 		product.setStatus(adminProductCreateRequest.getStatus());
 		product.setCategory(category);
 		product.setSeller(seller);
+		product.setIsDeleted(false);
 		return product;
     }
 	

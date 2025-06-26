@@ -56,7 +56,7 @@ export default function AdminReviewManagePage() {
         addToastMessage('請重新登入後台', 'danger');
         return;
       }
-      if (result.message && result.message.includes('成功')) {
+      if (result.message && result.message.includes('所有評論已審核')) {
         await fetchReviews(currentPage);
         result.data.forEach((review) => {
           addToastMessage(

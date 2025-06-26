@@ -26,6 +26,8 @@ public class Notification {
 	
 	private String type; 
 	private String message;
+	
+	@Enumerated(EnumType.STRING)
 	private NotificationStatus status;
 
 	@CreationTimestamp

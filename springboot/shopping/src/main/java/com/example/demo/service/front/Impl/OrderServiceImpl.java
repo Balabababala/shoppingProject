@@ -178,6 +178,7 @@ public class OrderServiceImpl implements OrderService{
 	    }
 
 	    notification.createNotification(orderRepository.findById(orderId).get().getBuyer().getId(), String.format("訂單已出貨 Ord-%06d", orderId),"訂單提醒");
+	    order.setShipmentStatus(ShipmentStatus.SHIPPED);
 	    order.setOrderStatus(OrderStatus.SHIPPED);
 	    orderRepository.save(order);
 	}

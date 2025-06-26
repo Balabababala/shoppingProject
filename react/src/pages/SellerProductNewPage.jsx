@@ -76,37 +76,48 @@ function SellerProductNewPage() {
   };
 
   // 表單送出
-  const handleSubmit = async (e) => {
+  // 表單送出
+const handleSubmit = async (e) => {
   e.preventDefault();
   setUploading(true);
+
   try {
     const formData = new FormData();
-    Object.entries(product).forEach(([key, val]) => formData.append(key, val));
+    Object.entries(product).forEach(([key, val]) => {
+      // 防止空字串或空值轉成 string "undefined"
+      if (val !== undefined && val !== null) formData.append(key, val);
+    });
+
     if (mainImage) formData.append('thumbnail', mainImage);
     extraImages.forEach((file) => formData.append('extraImages', file));
 
-    // 這裡用 fetchWithAuthCheck，fetchWithAuthCheck 預設 header 有帶 token
     const res = await fetchWithAuthCheck(`${API_BASE}/seller/products`, {
       method: 'POST',
       body: formData,
-      // 注意：不能再加 'Content-Type': multipart/form-data，瀏覽器會自動設定 boundary
+      // 不要手動設定 Content-Type，瀏覽器會自動設定 boundary
     });
 
-    if (!res || res.authError) {
+    if (!res) {
+      throw new Error('伺服器無回應');
+    }
+
+    if (res.authError) {
       throw new Error('請先登入');
     }
-    if (res.status && res.status !== 'success') {
-      throw new Error(res.message || '新增商品失敗');
+
+    if (res.message.includes("失敗")) {
+      throw new Error(res.message);
     }
 
     addToastMessage('新增商品及圖片成功');
     navigate('/seller/products');
   } catch (error) {
-    addToastMessage(error.message);
+    addToastMessage(error.message || '新增商品失敗');
   } finally {
     setUploading(false);
   }
 };
+
 
   // 轉換分類為 react-select 格式
   const categoryOptions = categories.map((cat) => ({

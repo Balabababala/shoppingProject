@@ -6,11 +6,17 @@ import '../css/AdminUserListPage.css';
 const PAGE_SIZE = 5;
 
 export default function AdminUserListPage() {
+  const ROLE_ID_MAP = {
+    ROLE_BUYER: 1,
+    ROLE_SELLER: 2,
+    ROLE_ADMIN: 3,
+  };
   const ROLE_MAP = {
     ROLE_BUYER: '買家',
     ROLE_SELLER: '賣家',
     ROLE_ADMIN: '管理員',
   };
+
   const { API_BASE, adminUserData, fetchWithAuthCheck, addToastMessage } = useContext(AdminAppContext);
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -18,17 +24,12 @@ export default function AdminUserListPage() {
   const [searchKeyword, setSearchKeyword] = useState('');
   const [sortBy, setSortBy] = useState(null);
   const [sortAsc, setSortAsc] = useState(true);
-
-  // 角色變更暫存狀態：{ userId: roleId, ... }
   const [roleChanges, setRoleChanges] = useState({});
-
-  // 重設密碼 Modal 狀態
   const [showResetModal, setShowResetModal] = useState(false);
   const [resetUser, setResetUser] = useState(null);
   const [newPassword, setNewPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  // 取得使用者列表
   const fetchUsers = async () => {
     if (!adminUserData) {
       addToastMessage('請先登入');
@@ -43,7 +44,7 @@ export default function AdminUserListPage() {
       } else if (res?.data) {
         setUsers(res.data);
         setCurrentPage(1);
-        setRoleChanges({});  // 重置角色暫存
+        setRoleChanges({});
       } else {
         addToastMessage('取得使用者列表失敗');
       }
@@ -58,7 +59,6 @@ export default function AdminUserListPage() {
     fetchUsers();
   }, [adminUserData]);
 
-  // 排序切換
   const handleSort = (field) => {
     if (sortBy === field) {
       setSortAsc(!sortAsc);
@@ -87,7 +87,6 @@ export default function AdminUserListPage() {
     }
   };
 
-  // 刪除使用者
   const deleteUser = async (userId) => {
     if (!window.confirm('確定要刪除這位使用者嗎？此動作無法復原。')) return;
     try {
@@ -105,7 +104,6 @@ export default function AdminUserListPage() {
     }
   };
 
-  // 打開重設密碼 Modal
   const openResetModal = (user) => {
     setResetUser(user);
     setNewPassword('');
@@ -118,7 +116,6 @@ export default function AdminUserListPage() {
     setResetUser(null);
   };
 
-  // 送出重設密碼
   const submitResetPassword = async () => {
     if (!resetUser) return;
     if (!newPassword) {
@@ -148,13 +145,16 @@ export default function AdminUserListPage() {
     }
   };
 
-  // 變更角色
+ 
   const updateUserRole = async (userId) => {
-    const newRoleId = roleChanges[userId];
+    const newRoleStr = roleChanges[userId];
+    const newRoleId = ROLE_ID_MAP[newRoleStr];
+
     if (!newRoleId) {
-      addToastMessage('請先選擇角色');
+      addToastMessage('請先選擇有效的角色');
       return;
     }
+
     try {
       const res = await fetchWithAuthCheck(`${API_BASE}/admin/users/${userId}/role`, {
         method: 'PUT',
@@ -165,6 +165,9 @@ export default function AdminUserListPage() {
         addToastMessage('身份驗證失效，請重新登入');
       } else if (res?.message?.includes('成功')) {
         addToastMessage('角色更新成功');
+        const updated = { ...roleChanges };
+        delete updated[userId];
+        setRoleChanges(updated);
         fetchUsers();
       } else {
         addToastMessage('角色更新失敗');
@@ -173,86 +176,78 @@ export default function AdminUserListPage() {
       addToastMessage('更新角色時發生錯誤');
     }
   };
-
-  // 搜尋過濾
   const filteredUsers = users.filter(u => {
-  const kw = searchKeyword.trim().toLowerCase();
-  if (!kw) return true;
-  return u.username.toLowerCase().includes(kw);
-});
+    const kw = searchKeyword.trim().toLowerCase();
+    return !kw || u.username.toLowerCase().includes(kw);
+  });
 
-  // 排序
   const sortedUsers = [...filteredUsers].sort((a, b) => {
-  if (!sortBy) return 0;
-  let valA, valB;
-  switch (sortBy) {
-    case 'username':
-      valA = a.username.toLowerCase();
-      valB = b.username.toLowerCase();
-      break;
-    case 'roles':
-      valA = ROLE_MAP[a.role] || '';
-      valB = ROLE_MAP[b.role] || '';
-      break;
-    case 'status':
-      valA = a.isActive ? 1 : 0;
-      valB = b.isActive ? 1 : 0;
-      break;
-    default:
-      return 0;
-  }
-  if (valA < valB) return sortAsc ? -1 : 1;
-  if (valA > valB) return sortAsc ? 1 : -1;
-  return 0;
-});
+    if (!sortBy) return 0;
+    let valA, valB;
+    switch (sortBy) {
+      case 'username':
+        valA = a.username.toLowerCase();
+        valB = b.username.toLowerCase();
+        break;
+      case 'roles':
+        valA = ROLE_MAP[a.role] || '';
+        valB = ROLE_MAP[b.role] || '';
+        break;
+      case 'status':
+        valA = a.isActive ? 1 : 0;
+        valB = b.isActive ? 1 : 0;
+        break;
+      default:
+        return 0;
+    }
+    return sortAsc ? valA.localeCompare(valB) : valB.localeCompare(valA);
+  });
 
-  // 分頁計算
   const totalPage = Math.max(1, Math.ceil(sortedUsers.length / PAGE_SIZE));
   const pageUsers = sortedUsers.slice((currentPage - 1) * PAGE_SIZE, currentPage * PAGE_SIZE);
 
-  // 使用者列（改成角色下拉選單 + 變更按鈕）
   const renderUserRow = (u) => {
-  const selectedRole = roleChanges[u.userId] ?? u.role;
+    const selectedRole = roleChanges[u.userId] ?? u.role;
 
-  return (
-    <div key={u.userId} className="user-row">
-      <div>{u.username}</div>
-      <div>
-        <select
-          value={selectedRole}
-          onChange={(e) => setRoleChanges({
-            ...roleChanges,
-            [u.userId]: Number(e.target.value),
-          })}
-        >
-          {Object.entries(ROLE_MAP).map(([id, name]) => (
-            <option key={id} value={id}>{name}</option>
-          ))}
-        </select>
-        <button
-          className="btn-change-role"
-          onClick={() => updateUserRole(u.userId)}
-          disabled={selectedRole === u.roleId}
-        >
-          變更角色
-        </button>
+    return (
+      <div key={u.userId} className="user-row">
+        <div>{u.username}</div>
+        <div>
+          <select
+            value={selectedRole}
+            onChange={(e) => setRoleChanges({
+              ...roleChanges,
+              [u.userId]: e.target.value,
+            })}
+          >
+            {Object.entries(ROLE_MAP).map(([id, name]) => (
+              <option key={id} value={id}>{name}</option>
+            ))}
+          </select>
+          <button
+            className="btn-change-role"
+            onClick={() => updateUserRole(u.userId)}
+            disabled={selectedRole === u.role}
+          >
+            變更角色
+          </button>
+        </div>
+        <div className={u.isActive ? 'status-active' : 'status-inactive'}>
+          {u.isActive ? '啟用中' : '停用中'}
+        </div>
+        <div className="action-buttons">
+          <button
+            className={u.isActive ? 'btn-off' : 'btn-on'}
+            onClick={() => toggleStatus(u.userId, u.isActive)}
+          >
+            {u.isActive ? '停用' : '啟用'}
+          </button>
+          <button className="btn-delete" onClick={() => deleteUser(u.userId)}>刪除</button>
+          <button className="btn-reset-password" onClick={() => openResetModal(u)}>重設密碼</button>
+        </div>
       </div>
-      <div className={u.isActive ? 'status-active' : 'status-inactive'}>
-        {u.isActive ? '啟用中' : '停用中'}
-      </div>
-      <div className="action-buttons">
-        <button
-          className={u.isActive ? 'btn-off' : 'btn-on'}
-          onClick={() => toggleStatus(u.userId, u.isActive)}
-        >
-          {u.isActive ? '停用' : '啟用'}
-        </button>
-        <button className="btn-delete" onClick={() => deleteUser(u.userId)}>刪除</button>
-        <button className="btn-reset-password" onClick={() => openResetModal(u)}>重設密碼</button>
-      </div>
-    </div>
-  );
- };
+    );
+  };
 
   if (loading) return <div className="loading">載入中...</div>;
   if (!adminUserData) return <div className="not-logged-in">請先登入才能管理使用者。</div>;

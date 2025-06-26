@@ -10,11 +10,11 @@ public class CartItemMapper {
 	public static CartItemResponse toDto(CartItem cartItem) {
 		Product product = cartItem.getProduct();
 
-        // 安全取得第一張圖片 URL
-        String imageUrl = product.getProductImages().stream()
-                .findFirst()
-                .map(ProductImage::getImageUrl)
-                .orElse(null); // 
+		String imageUrl = product.getProductImages().stream()
+		        .filter(img -> img.getNumber() == -1)
+		        .findFirst()
+		        .map(ProductImage::getImageUrl)
+		        .orElse(null);
 		
         return new CartItemResponse(
         		cartItem.getProduct().getId(),

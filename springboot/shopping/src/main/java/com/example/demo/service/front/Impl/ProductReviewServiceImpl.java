@@ -97,8 +97,7 @@ public class ProductReviewServiceImpl implements ProductReviewService {
         ProductReview review = productReviewRepository.findById(reviewId)
             .orElseThrow(() -> new NoSuchElementException("找不到評論"));
         review.setIsApproved(approved);
-        // 可能同時設定 visible = true (視系統流程)
-        if (approved) review.setIsVisible(true);
+
         ProductReview updated = productReviewRepository.save(review);
         return ProductReviewMapper.toDto(updated);
     }

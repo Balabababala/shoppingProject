@@ -19,6 +19,7 @@ public class AdminCategoryDtoMapper {
 	    if (adminCategoryDto.getParentId() != null) {
 	        Category parent = new Category();
 	        parent.setId(adminCategoryDto.getParentId());
+	        
 	        category.setParent(parent);
 	        category.setParentId(adminCategoryDto.getParentId());
 	    } else {

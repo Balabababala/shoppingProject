@@ -207,6 +207,7 @@ public class ProductServiceImpl implements ProductService {
         User seller = userRepository.findById(adminProductCreateRequest.getSellerId())
                 .orElseThrow(() -> new ShoppingException("找不到賣家 ID：" + adminProductCreateRequest.getSellerId()));
         Product product = AdminProductMapper.toEntity(adminProductCreateRequest, category, seller);
+        
         product = productRepository.save(product);
 
         List<MultipartFile> allFiles = new ArrayList<>();
