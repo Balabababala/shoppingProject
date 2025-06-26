@@ -24,7 +24,7 @@ public class AdminUserController {
     @Autowired
     private AdminUserService adminUserService;
 
-    // ✅ 改用 JWT 從 SecurityContextHolder 取得後台管理員資訊
+    // ✅ 改用 JWT 從 SecurityContextHolder 取得後台管理員資訊	9
     @GetMapping("/me")
     public ResponseEntity<ApiResponse<UserDto>> getAdminInfo() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
