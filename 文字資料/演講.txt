@@ -28,3 +28,74 @@ product_reviews 與 notifications：支援評論審核（包含 AI 輔助）和�
 未來展望與總結（1 分鐘）
 
 未來，我們計劃整合真實的物流和支付系統，例如對接順豐物流和 Stripe 支付 API，提升交易真實性。同時，我們將完善推薦系統，引入基於機器學習的個性化推薦，並優化通知和訂單物流追蹤功能。這個專題展示了我們對 C2C 電子商務平台的完整構想，從前台購物到後台管理，結合現代化技術棧，實現高效且用戶友好的體驗。感謝大家的聆聽，歡迎提問！
+
+Spring Boot 全端架構介紹
+整體架構概述
+這是一個典型的前後端分離架構，採用 React + Spring Boot 的技術棧組合。
+前端 (Frontend)
+
+React：主要 UI 框架，負責頁面渲染和用戶交互
+Bootstrap：CSS 框架，提供響應式設計和 UI 組件
+HTML/CSS/JavaScript：基礎 Web 技術
+
+後端 (Backend)
+採用 Spring Boot 生態系統，具備完整的企業級功能：
+核心框架
+
+Spring Boot：應用程序基礎框架
+Spring Security：安全認證和授權
+Spring AI：人工智能功能集成
+
+安全機制
+
+JWT 驗證：使用自定義 JwtAuthenticationFilter
+BCrypt 加密：密碼加密存儲
+Spring Security Filter Chain：在 UsernamePasswordAuthenticationFilter 之前插入 JWT 過濾器
+
+應用層架構 (MVC Pattern)
+Controller 層
+
+處理 HTTP 請求和響應
+API 端點定義
+全局異常處理 (@ControllerAdvice + @ExceptionHandler)
+
+Service 層
+
+業務邏輯處理
+事務管理
+與 Repository 層交互
+
+Repository 層
+
+數據持久化操作
+JPA/Hibernate ORM 映射
+數據庫 CRUD 操作
+
+數據模型 (Model)
+
+Entity：數據庫實體映射
+DTO：數據傳輸對象
+DAO：數據訪問對象
+
+數據庫層
+
+MySQL：主要數據存儲
+HikariCP：高性能連接池（Spring Boot 默認）
+JPA/Hibernate：ORM 框架，簡化數據庫操作
+
+開發工具
+
+Hibernate：ORM 框架和對象持久化
+Ollama：本地 AI 模型運行環境
+
+數據流向
+React 前端 ↔ JWT Filter ↔ Controller ↔ Service ↔ Repository ↔ JPA/Hibernate ↔ MySQL
+架構優勢
+
+前後端分離：開發和部署獨立
+分層清晰：職責分工明確
+安全完善：JWT + Spring Security 雙重保護
+性能優化：HikariCP 連接池管理
+擴展性好：模組化設計，易於維護和擴展
+
+這是一個成熟的企業級應用架構，適合中小型到大型的 Web 應用開發。
