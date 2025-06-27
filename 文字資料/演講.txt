@@ -99,3 +99,64 @@ React 前端 ↔ JWT Filter ↔ Controller ↔ Service ↔ Repository ↔ JPA/Hi
 擴展性好：模組化設計，易於維護和擴展
 
 這是一個成熟的企業級應用架構，適合中小型到大型的 Web 應用開發。
+
+在安全機制部分，我們使用 Spring Security Filter Chain，並在 UsernamePasswordAuthenticationFilter 之前插入自定義的 JwtAuthenticationFilter，確保 JWT 驗證優先執行...
+
+# 系統架構介紹稿
+
+## 開場
+大家好，今天要為大家介紹我們這個全端 Web 應用的系統架構。這是一個採用前後端分離設計的現代化應用程式。
+
+## 整體架構概述
+我們的系統主要分為三個部分：前端、後端，以及數據存儲層。讓我逐一為大家說明。
+
+## 前端架構
+前端我們選用了 React 作為主要的 UI 框架，搭配 Bootstrap 來處理響應式設計和 UI 組件。當然，基礎的 HTML、CSS、JavaScript 也是不可缺少的。React 讓我們能夠建立動態且互動性強的用戶介面。
+
+## 後端架構
+後端是我們的核心，採用 Spring Boot 生態系統。這裡包含了 Spring Boot 本身、Spring Security 負責安全控制，還有 Spring AI 來集成人工智能功能。
+
+### 安全機制
+在安全方面，我們實作了一套完整的認證授權機制。首先是 JWT Token 驗證，我們使用自定義的 JwtAuthenticationFilter，並透過 Spring Security Filter Chain 將它插入在 UsernamePasswordAuthenticationFilter 之前，這樣確保 JWT 驗證能夠優先執行。
+
+同時，我們使用 BCrypt 來加密用戶密碼，確保即使數據庫被入侵，密碼也不會以明文方式洩露。
+
+### 應用分層架構
+我們採用標準的 MVC 架構模式：
+
+**Controller 層**負責處理所有的 HTTP 請求和響應，定義 API 端點。特別值得一提的是，我們實作了全局異常處理機制，使用 @ControllerAdvice 和 @ExceptionHandler 來統一處理系統中的各種異常。
+
+**Service 層**是我們的業務邏輯核心，處理所有的商業規則和流程，同時管理事務。
+
+**Repository 層**負責數據持久化操作，透過 JPA 和 Hibernate ORM 來簡化數據庫操作。
+
+## 數據模型設計
+在數據處理上，我們定義了清楚的數據模型：
+- Entity 用於數據庫實體映射
+- DTO 作為數據傳輸對象
+- DAO 處理數據訪問邏輯
+
+## 數據庫層
+數據存儲我們選用 MySQL 作為主要數據庫。值得一提的是，Spring Boot 預設使用 HikariCP 作為連接池，這是一個高性能的數據庫連接池，能夠有效管理數據庫連接，提升系統性能。
+
+JPA 和 Hibernate 作為我們的 ORM 框架，大大簡化了數據庫操作的複雜度。
+
+## 數據流向
+整個系統的數據流向是這樣的：React 前端發送請求，經過 JWT Filter 驗證，到達 Controller，再通過 Service 處理業務邏輯，最後透過 Repository 和 JPA/Hibernate 與 MySQL 數據庫交互。這是一個完整的雙向數據流。
+
+## 開發工具整合
+我們還整合了 Ollama 作為本地 AI 模型運行環境，這讓我們能夠在本地開發和測試 AI 功能，無需依賴外部 API。
+
+## 架構優勢
+這個架構設計有幾個主要優勢：
+
+1. **前後端分離**：讓前端和後端團隊可以獨立開發和部署
+2. **分層清晰**：每一層都有明確的職責，易於維護
+3. **安全完善**：JWT 加上 Spring Security 提供雙重安全保護
+4. **性能優化**：HikariCP 連接池確保數據庫操作的高效性
+5. **擴展性好**：模組化設計讓未來的功能擴展變得容易
+
+## 結語
+這是一個成熟的企業級應用架構，適合中小型到大型的 Web 應用開發。整個設計考慮了安全性、性能、可維護性和擴展性，是一個相當完整的解決方案。
+
+謝謝大家！有任何問題歡迎提出討論。
