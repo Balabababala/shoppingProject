@@ -136,9 +136,6 @@ function MyNavbar({ onChangeContent }) {
                       <NavDropdown.Item as={Link} to="/seller/orders">
                         我的訂單
                       </NavDropdown.Item>
-                      <NavDropdown.Item as={Link} to="/memberInfo">
-                        我的資料
-                      </NavDropdown.Item>
                       <NavDropdown.Item onClick={logout}>登出</NavDropdown.Item>
                     </>
                   ) : null}

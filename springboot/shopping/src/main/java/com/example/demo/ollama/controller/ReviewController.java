@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.ollama.dto.ReviewResult;
-import com.example.demo.ollama.service.ReviewService;
+import com.example.demo.ollama.service.AiReviewService;
 import com.example.demo.response.ApiResponse;
 
 import java.util.List;
@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping("/api/reviews")
 public class ReviewController {
     @Autowired
-    private ReviewService reviewService;
+    private AiReviewService aiReviewService;
 
     @PostMapping("/review-all")
     public ResponseEntity<ApiResponse<List<ReviewResult>>> reviewAllComments() {
-        List<ReviewResult> results = reviewService.reviewAllComments();
+        List<ReviewResult> results = aiReviewService.reviewAllComments();
         return ResponseEntity.ok(ApiResponse.success("所有評論已審核", results));
     }
 }

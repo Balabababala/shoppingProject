@@ -124,7 +124,7 @@ export default function RegisterPage() {
 
         <Form.Group className="mb-3" controlId="roleId">
           <Form.Label>
-            Role ID (1 買家 or 2 賣家) <span className="text-danger">*</span>
+            身分 <span className="text-danger">*</span>
           </Form.Label>
           <Form.Select
             name="roleId"
