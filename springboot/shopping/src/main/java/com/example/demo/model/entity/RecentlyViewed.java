@@ -19,7 +19,7 @@ public class RecentlyViewed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @CurrentTimestamp
+
     @Column(name = "viewed_at", nullable = false)
     private LocalDateTime viewedAt;
     

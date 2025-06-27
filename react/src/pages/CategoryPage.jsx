@@ -1,7 +1,10 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { useParams } from 'react-router-dom';
 import ModernProductCard from '../components/ModernProductCard';
 import { AppContext } from '../contexts/AppContext';
+import { useParams, useLocation } from 'react-router-dom';
+
+
+
 
 function CategoryTree({ categories, selectedSlug, onSelect }) {
   if (!categories || categories.length === 0) return null;
@@ -56,11 +59,27 @@ function CategoryPage() {
 
   const [categoriesTree, setCategoriesTree] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(slug || null);
-  const [selectedCategoryName, setSelectedCategoryName] = useState('全部商品');
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [inputPage, setInputPage] = useState('');
   const pageSize = 12;
+
+  const location = useLocation();
+  const passedName = location.state?.name;
+  const [selectedCategoryName, setSelectedCategoryName] = useState(passedName || '全部商品');
+
+  useEffect(() => {
+    setSelectedCategory(slug || null);
+  }, [slug]);
+
+  useEffect(() => {
+  const name = findCategoryName(categoriesTree, slug);
+  if (location.state?.name) {
+    setSelectedCategoryName(location.state.name);
+  } else {
+    setSelectedCategoryName(name || '全部商品');
+  }
+}, [categoriesTree, slug, location.state]);
 
   useEffect(() => {
     fetch(`${API_BASE}/categories/${slug || ''}/tree`)

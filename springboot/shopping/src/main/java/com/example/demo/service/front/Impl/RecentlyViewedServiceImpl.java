@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.example.demo.exception.ShoppingException;
 import com.example.demo.mapper.*;
@@ -40,6 +41,7 @@ public class RecentlyViewedServiceImpl implements RecentlyViewedService{
 																				.toList();
 	}
 
+	@Transactional
 	@Override
 	public void addRecentlyViewed(Long userId, Long productId) {
 		Optional<RecentlyViewed> opt = recentlyViewedRepository.findByUserIdAndProductId(userId, productId);

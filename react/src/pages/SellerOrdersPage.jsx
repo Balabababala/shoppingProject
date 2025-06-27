@@ -55,14 +55,20 @@ function SellerOrdersPage() {
   }, [userData]);
 
   const filteredOrders = orders.filter(order => {
-    const keyword = searchKeyword.trim().toLowerCase();
-    if (!keyword) return true;
-    if (String(order.id).includes(keyword)) return true;
-    if (order.buyerName?.toLowerCase().includes(keyword)) return true;
-    if (order.items.some(item => item.productName?.toLowerCase().includes(keyword))) return true;
-    if (order.orderDate && new Date(order.orderDate).toLocaleDateString().toLowerCase().includes(keyword)) return true;
-    return false;
-  });
+  const keyword = searchKeyword.trim().toLowerCase();
+  if (!keyword) return true;
+  if (String(order.id).includes(keyword)) return true;
+  if (order.buyerName?.toLowerCase().includes(keyword)) return true;
+  if (order.items.some(item => item.productName?.toLowerCase().includes(keyword))) return true;
+  if (order.orderDate && new Date(order.orderDate).toLocaleDateString().toLowerCase().includes(keyword)) return true;
+
+  // 新增訂單狀態、付款狀態、出貨狀態的搜尋
+  if (order.orderStatus?.toLowerCase().includes(keyword)) return true;
+  if (order.paymentStatus?.toLowerCase().includes(keyword)) return true;
+  if (order.shipmentStatus?.toLowerCase().includes(keyword)) return true;
+
+  return false;
+});
 
   const totalPages = Math.ceil(filteredOrders.length / pageSize);
   const pagedOrders = filteredOrders.slice((currentPage - 1) * pageSize, currentPage * pageSize);
