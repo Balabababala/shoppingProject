@@ -1,0 +1,56 @@
+ p1
+ 各位好，我是張允豪，今天很高興為大家介紹我做 C2C 電子商務平台專題。
+ 這是我在 Java 全端課程中完成的專題，我希望打造一個功能完善的 C2C 電子商務平台。
+
+p2
+ 這是一個整合買家、賣家和管理員功能的購物網站。
+
+p3
+  架構
+
+  整體採用 mvc 架構做出來的 並實作了前後端分離設計。
+
+前端使用 React 作為主要 UI 框架，搭配 Bootstrap 完成頁面設計，並使用 HTML、CSS、JavaScript 等基本 Web 技術。
+
+後端則以 Spring Boot 為主，整合以下核心模組：
+
+- Spring Security：負責登入驗證與權限控管
+- Spring AI：初步整合 AI 功能（應用於評論審核）
+- JWT 驗證機制：使用自定義 JwtAuthenticationFilter 插入於 Security Filter Chain 中
+- BCrypt：用於密碼加密
+
+系統設計上，我們劃分成多層結構：
+
+- Controller：處理 HTTP 請求與 API 定義，並整合全域錯誤處理  (@ControllerAdvice + @ExceptionHandler)
+- Service：負責業務邏輯與交易控制
+- Repository：採用 Spring Data JPA 進行資料存取
+- Model：包含 Entity、DTO 與 DAO，便於資料傳輸與操作
+
+資料庫方面，使用 MySQL 搭配 Hibernate 作為 ORM，並採用 HikariCP 作為連接池（Spring Boot 預設）。資料查詢透過 JPA 實作 CRUD。
+
+p4 p5 說之後會做詳細介紹
+
+p6
+  這是我的er圖
+  每個表都經過正規化處理，滿足第三正規化
+  比較重要的表有 users roles orders products 這三個表
+  其他的表是依功能做出來的
+  
+  users 與 roles：管理用戶帳號與角色權限，支援買家、賣家和管理員的區分。
+  products 與 categories：支援商品和分類管理，包含價格、庫存和圖片，並使用全文索引優化搜尋效率。
+  orders 與 order_items：記錄訂單詳情，支援多種訂單狀態和物流追蹤。
+  recommended_products 與 recommend_rules：實現基於規則的商品推薦，未來可擴展至機器學習模型。
+  product_reviews 與 notifications：支援評論審核（包含 AI 輔助）和通知管理，提升用戶體驗。
+
+
+p7 後面 到 demo 前 稍微帶過
+
+demo時間
+
+未來展望與總結
+
+我計劃整合真實的物流和支付系，並優化通知和訂單物流追蹤功能。
+同時，完善推薦系統，個性化推薦，所以才有瀏覽和關鍵字搜尋紀錄
+
+
+
