@@ -50,7 +50,7 @@ public class ProductServiceImpl implements ProductService {
     @Autowired
     private CategoryService categoryService;
     @Autowired
-    private SearchHistoryService searchHistorySerivce;
+    private SearchHistoryService searchHistoryService;
 
 
 
@@ -179,9 +179,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public List<ProductResponse> findProductsByKeywordFullTextBooleanToProductResponses(Long userId, String keyword) {
-        searchHistorySerivce.createSearchHistory(userId, keyword);
-        return productRepository.findByKeywordFullTextBoolean(keyword + "*")
-                .stream().map(ProductMapper::toDto).toList();
+    	searchHistoryService.createSearchHistory(userId, keyword);
+//        return productRepository.findByKeywordFullTextBoolean(keyword + "*")
+//                .stream().map(ProductMapper::toDto).toList();
+        return productRepository.findByKeywordFullTextPostgres(keyword)
+              		.stream().map(ProductMapper::toDto).toList();
     }
 
     @Override

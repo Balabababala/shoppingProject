@@ -90,15 +90,27 @@ public interface ProductRepository extends JpaRepository <Product, Long>{
 //	List<Product> findByKeywordFullText(String keyword);
 
 	//MySQL 內建的相似度比較 ver2
+//	@Transactional(readOnly = true)
+//	@Query(value = "SELECT p.*, MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) AS score " +
+//	               "FROM products p " +
+//	               "WHERE MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) " +
+//	               "AND p.is_deleted = FALSE " +
+//	               "AND p.status = 'ACTIVE' " +
+//	               "ORDER BY score DESC, p.updated_at DESC",
+//	       nativeQuery = true)
+//	List<Product> findByKeywordFullTextBoolean(@Param("keyword") String keyword);
+
+	
 	@Transactional(readOnly = true)
-	@Query(value = "SELECT p.*, MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) AS score " +
-	               "FROM products p " +
-	               "WHERE MATCH(p.name, p.description) AGAINST (:keyword IN BOOLEAN MODE) " +
-	               "AND p.is_deleted = FALSE " +
-	               "AND p.status = 'ACTIVE' " +
-	               "ORDER BY score DESC, p.updated_at DESC",
-	       nativeQuery = true)
-	List<Product> findByKeywordFullTextBoolean(@Param("keyword") String keyword);
+	@Query(value = """
+	    SELECT DISTINCT p.*
+	    FROM products p
+	    WHERE to_tsvector('english', coalesce(p.name,'') || ' ' || coalesce(p.description,'')) @@ plainto_tsquery('english', :keyword)
+	      AND p.is_deleted = FALSE
+	      AND p.status = 'ACTIVE'
+	    ORDER BY p.updated_at DESC
+	    """, nativeQuery = true)
+	List<Product> findByKeywordFullTextPostgres(@Param("keyword") String keyword);
 
 	
 	@Transactional(readOnly = true)
