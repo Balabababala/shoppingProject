@@ -1,14 +1,23 @@
-# 使用官方 OpenJDK 17 作為基底映像
+# 第一階段：用 Maven 編譯打包
+FROM maven:3.9.0-eclipse-temurin-17 AS builder
+
+WORKDIR /app
+
+# 複製 pom.xml 和 src 目錄
+COPY pom.xml .
+COPY src ./src
+
+# 打包跳過測試，加快速度
+RUN mvn clean package -DskipTests
+
+# 第二階段：用 OpenJDK 執行 jar
 FROM openjdk:17-slim
 
-# 設定工作目錄
-WORKDIR app
+WORKDIR /app
 
-# 複製打包好的 jar 到容器中
-COPY target/shopping.jar shopping.jar
+# 從 builder 階段複製打包好的 jar
+COPY --from=builder /app/target/shopping.jar ./shopping.jar
 
-# 對外暴露 8080 端口（Spring Boot 預設端口）
 EXPOSE 8080
 
-# 執行 Spring Boot jar
-ENTRYPOINT [java, -jar, shopping.jar]
+ENTRYPOINT ["java", "-jar", "shopping.jar"]
