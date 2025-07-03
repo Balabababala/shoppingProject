@@ -61,8 +61,8 @@ public class AuthcodeController {
 
     private String generateAuthCode() {
         // 修正字符集，增加隨機性
-//        String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    	String chars = "0";
+        String chars = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+//    	String chars = "0";
         Random random = new Random();
         StringBuilder authcode = new StringBuilder();
         for (int i = 0; i < 4; i++) {
