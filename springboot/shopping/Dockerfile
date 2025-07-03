@@ -16,7 +16,7 @@ FROM openjdk:17-slim
 WORKDIR /app
 
 # 從 builder 階段複製打包好的 jar
-COPY --from=builder /app/target/shopping.jar ./shopping.jar
+COPY --from=builder /app/target/shopping-0.0.1-SNAPSHOT.jar ./shopping.jar
 
 EXPOSE 8080
 
