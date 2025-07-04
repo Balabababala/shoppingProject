@@ -11,7 +11,7 @@ function AdminLoginPage() {
   const [password, setPassword] = useState('');
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
-  const [captchaJwtToken, setCaptchaJwtToken] = useState(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function AdminLoginPage() {
       const result = await res.json();
       if (res.ok && result.data) {
         setCaptchaImage(`data:image/png;base64,${result.data.image}`);
-        setCaptchaJwtToken(result.data.token);
+        setCaptchaToken(result.data.token);
         setCaptchaCode('');
       } else {
         addToastMessage('無法載入驗證碼，請稍後再試');
@@ -48,7 +48,7 @@ function AdminLoginPage() {
           username,
           password,
           captchaCode,
-          captchaJwtToken,  // 一定要帶上這個，後端才知道驗證碼的 JWT
+          captchaToken,  // 一定要帶上這個，後端才知道驗證碼的 JWT
         }),
       });
 
