@@ -8,19 +8,40 @@ function LoginPage() {
   const { setUserData, addToastMessage, API_BASE } = useContext(AppContext);
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
+  const [captchaToken, setCaptchaToken] = useState(null);
   const navigate = useNavigate();
 
-  const loadCaptcha = () => {
-    setCaptchaImage(`${API_BASE}/auth-code?${Date.now()}`);
-    setCaptchaCode(''); // 清空驗證碼輸入
+  // 取得驗證碼圖片跟 JWT token
+  const loadCaptcha = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/auth-code`);
+      const result = await res.json();
+      if (result?.data?.image && result?.data?.token) {
+        setCaptchaImage(`data:image/png;base64,${result.data.image}`);
+        setCaptchaToken(result.data.token);
+        setCaptchaCode('');
+      } else {
+        addToastMessage('載入驗證碼失敗');
+      }
+    } catch (error) {
+      addToastMessage('載入驗證碼錯誤');
+      console.error(error);
+    }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      addToastMessage('驗證碼尚未載入，請稍後再試');
+      return;
+    }
+
     const data = {
       username: e.target.username.value,
       password: e.target.password.value,
       captchaCode,
+      captchaToken,  // 一定要帶給後端解析
     };
 
     try {
@@ -35,17 +56,16 @@ function LoginPage() {
       console.log('🔑 登入回應:', result);
 
       if (result.message === '登入成功') {
-        const token = result.data?.trim(); // 去除可能的空白
+        const token = result.data?.trim(); // 去除可能空白
         if (!token) {
           addToastMessage('登入失敗：無效的 token');
-          loadCaptcha();
+          await loadCaptcha();
           return;
         }
-        console.log('✅ 成功登入，JWT token:', token);
+
         localStorage.setItem('token', token);
 
         // 取得使用者資訊
-        console.log('📤 發送 Authorization 頭:', `Bearer ${token}`);
         const userResp = await fetch(`${API_BASE}/user/me`, {
           headers: {
             'Content-Type': 'application/json',
@@ -53,18 +73,14 @@ function LoginPage() {
           },
         });
 
-        console.log('📡 /user/me response status:', userResp.status);
-
         if (!userResp.ok) {
           const errData = await userResp.json();
-          console.error('❌ 取得使用者資料錯誤:', errData);
           addToastMessage(`登入成功但取得使用者資料失敗: ${errData.message || '未知錯誤'}`);
-          loadCaptcha();
+          await loadCaptcha();
           return;
         }
 
         const userResult = await userResp.json();
-        console.log('👤 使用者資料:', userResult);
 
         if (userResult?.data) {
           setUserData({
@@ -74,18 +90,17 @@ function LoginPage() {
           addToastMessage('登入成功');
           navigate('/');
         } else {
-          console.warn('⚠️ /user/me 沒有包含 data 欄位:', userResult);
           addToastMessage('登入成功但使用者資料格式錯誤');
-          loadCaptcha();
+          await loadCaptcha();
         }
       } else {
         addToastMessage('登入失敗：' + result.message);
-        loadCaptcha();
+        await loadCaptcha();
       }
     } catch (error) {
-      console.error('⚠️ 登入時發生錯誤:', error);
       addToastMessage('登入失敗，請稍後再試');
-      loadCaptcha();
+      await loadCaptcha();
+      console.error(error);
     }
   };
 
@@ -103,21 +118,25 @@ function LoginPage() {
             <Form.Control type="text" placeholder="請輸入用戶名" required />
           </Form.Group>
 
-          <Form.Group controlId="password">
+          <Form.Group controlId="password" className="mt-3">
             <Form.Label>密碼</Form.Label>
             <Form.Control type="password" placeholder="請輸入密碼" required />
           </Form.Group>
 
-          <Form.Group controlId="captcha">
+          <Form.Group controlId="captcha" className="mt-3">
             <Form.Label>驗證碼</Form.Label>
             <div className="mb-2">
-              <img
-                src={captchaImage}
-                alt="驗證碼"
-                style={{ width: '100px', height: '40px', cursor: 'pointer' }}
-                onClick={loadCaptcha}
-                title="點擊刷新驗證碼"
-              />
+              {captchaImage ? (
+                <img
+                  src={captchaImage}
+                  alt="驗證碼"
+                  style={{ width: '100px', height: '40px', cursor: 'pointer' }}
+                  onClick={loadCaptcha}
+                  title="點擊刷新驗證碼"
+                />
+              ) : (
+                <div>載入中...</div>
+              )}
             </div>
             <Form.Control
               type="text"
@@ -128,7 +147,7 @@ function LoginPage() {
             />
           </Form.Group>
 
-          <Button type="submit" className="w-100 mt-3" variant="primary">
+          <Button type="submit" className="w-100 mt-4" variant="primary">
             登入
           </Button>
 
