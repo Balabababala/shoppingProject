@@ -3,8 +3,10 @@ import React, { createContext, useState, useEffect, useCallback, useRef } from '
 export const AdminAppContext = createContext();
 
 export function AdminAppProvider({ children }) {
-  const API_BASE = 'http://localhost:8080/api';
-  const BASE_URL = 'http://localhost:8080';
+  // const BASE_URL = 'http://localhost:8080';
+  const BASE_URL = 'https://shoppingproject.onrender.com';
+  // const API_BASE = 'http://localhost:8080/api';
+  const API_BASE = 'https://shoppingproject.onrender.com/api';
 
   // 1. 從 localStorage 初始化 token 和 adminUser
   const [adminUserData, setAdminUserData] = useState(() => {

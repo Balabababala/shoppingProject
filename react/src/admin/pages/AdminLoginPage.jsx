@@ -7,20 +7,32 @@ function AdminLoginPage() {
   const { API_BASE, setAdminUserData, addToastMessage, fetchWithAuthCheck } = useContext(AdminAppContext);
   const navigate = useNavigate();
 
-  // 表單欄位狀態
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [captchaCode, setCaptchaCode] = useState('');
   const [captchaImage, setCaptchaImage] = useState(null);
+  const [captchaJwtToken, setCaptchaJwtToken] = useState(null);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     loadCaptcha();
   }, []);
 
-  // 重新載入驗證碼
-  const loadCaptcha = () => {
-    setCaptchaImage(`${API_BASE}/auth-code?${Date.now()}`);
+  const loadCaptcha = async () => {
+    try {
+      const res = await fetch(`${API_BASE}/auth-code`);
+      const result = await res.json();
+      if (res.ok && result.data) {
+        setCaptchaImage(`data:image/png;base64,${result.data.image}`);
+        setCaptchaJwtToken(result.data.token);
+        setCaptchaCode('');
+      } else {
+        addToastMessage('無法載入驗證碼，請稍後再試');
+      }
+    } catch (error) {
+      console.error('載入驗證碼錯誤:', error);
+      addToastMessage('載入驗證碼失敗，請稍後再試');
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -28,23 +40,24 @@ function AdminLoginPage() {
     setLoading(true);
 
     try {
-      // 送出登入請求，回傳 { message, data: token }
       const res = await fetch(`${API_BASE}/admin/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ username, password, captchaCode }),
+        body: JSON.stringify({
+          username,
+          password,
+          captchaCode,
+          captchaJwtToken,  // 一定要帶上這個，後端才知道驗證碼的 JWT
+        }),
       });
 
       const result = await res.json();
 
       if (res.ok && result.message === '登入成功' && typeof result.data === 'string') {
         const token = result.data;
-
-        // 存 JWT token
         localStorage.setItem('adminToken', token);
 
-        // 用 token 取得使用者資料 /api/admin/me
         const meResult = await fetchWithAuthCheck(`${API_BASE}/admin/me`);
         if (!meResult || meResult.authError) {
           addToastMessage('無法取得使用者資訊，請重新登入');
@@ -53,10 +66,8 @@ function AdminLoginPage() {
         }
 
         if (meResult.message === '取得後台使用者資料成功' && meResult.data) {
-          // 存 user 資料
           localStorage.setItem('adminUserData', JSON.stringify(meResult.data));
           setAdminUserData({ token, user: meResult.data });
-
           addToastMessage('登入成功');
           navigate('/admin/dashboard');
         } else {
@@ -106,7 +117,7 @@ function AdminLoginPage() {
           <Form.Group controlId="captcha" className="mb-3">
             <Form.Label>驗證碼</Form.Label>
             <div className="mb-2">
-              {captchaImage && (
+              {captchaImage ? (
                 <img
                   src={captchaImage}
                   alt="驗證碼"
@@ -114,6 +125,8 @@ function AdminLoginPage() {
                   onClick={loadCaptcha}
                   title="點擊重新載入驗證碼"
                 />
+              ) : (
+                <span>載入中...</span>
               )}
             </div>
             <Form.Control

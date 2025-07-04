@@ -1,15 +1,13 @@
 package com.example.demo.controller.front;
 
-import java.awt.Color;
-import java.awt.Font;
-import java.awt.Graphics;
+
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Base64;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
+
 
 import javax.imageio.ImageIO;
 
@@ -29,8 +27,6 @@ import com.example.demo.response.ApiResponse;
 import com.example.demo.secure.JwtService;
 import com.google.code.kaptcha.Producer;
 
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
 
 @RestController
 @RequestMapping("/api")
