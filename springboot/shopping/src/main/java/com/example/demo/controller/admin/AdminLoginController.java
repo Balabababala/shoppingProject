@@ -10,10 +10,6 @@ import com.example.demo.service.admin.AdminLoginLogService;
 import com.example.demo.service.admin.AdminUserService;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpSession;
-
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -22,6 +18,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/admin")
@@ -41,18 +39,26 @@ public class AdminLoginController {
 
     @PostMapping("/login")
     public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequest loginRequest, HttpServletRequest request) {
-        HttpSession session = request.getSession();
-        String sessionCaptcha = (String) session.getAttribute("authCode");
+        // 1. 從前端接收驗證碼輸入與驗證碼 JWT token
+        String userInputCaptcha = loginRequest.getCaptchaCode();
+        String captchaToken = loginRequest.getCaptchaToken();
 
-        // 驗證驗證碼
-        if (loginRequest.getCaptchaCode() == null || !loginRequest.getCaptchaCode().equalsIgnoreCase(sessionCaptcha)) {
+        // 2. 用 jwtService 解碼 captchaToken 拿原始驗證碼文字
+        String originalCaptcha;
+        try {
+            originalCaptcha = jwtService.parseCaptchaJwtToken(captchaToken);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼無效或過期"));
+        }
+
+        // 3. 比對使用者輸入的驗證碼 (忽略大小寫)
+        if (originalCaptcha == null || !originalCaptcha.equalsIgnoreCase(userInputCaptcha)) {
             Optional<User> opt = adminUserService.checkUser(loginRequest.getUsername());
             opt.ifPresent(user -> adminLoginLogService.createLoginLog(user, request, false));
-
-            session.removeAttribute("authCode");
             return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼錯誤"));
         }
 
+        // 4. 驗證帳密
         try {
             Authentication authentication = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
@@ -63,18 +69,15 @@ public class AdminLoginController {
             CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
             UserDto adminUserDto = adminUserService.handleSuccessfulLogin(userDetails.getUser());
 
-            // 產生 JWT token 並回傳
             String token = jwtService.generateJwtToken(adminUserDto);
 
-            // 記錄成功登入
+            // 記錄登入成功
             adminLoginLogService.createLoginLog(userDetails.getUser(), request, true);
 
             return ResponseEntity.ok(ApiResponse.success("登入成功", token));
-
         } catch (AuthenticationException e) {
             Optional<User> opt = adminUserService.checkUser(loginRequest.getUsername());
             opt.ifPresent(user -> adminLoginLogService.createLoginLog(user, request, false));
-
             return ResponseEntity.badRequest().body(ApiResponse.error("帳號或密碼錯誤"));
         } catch (Exception e) {
             return ResponseEntity.internalServerError().body(ApiResponse.error("伺服器錯誤"));
