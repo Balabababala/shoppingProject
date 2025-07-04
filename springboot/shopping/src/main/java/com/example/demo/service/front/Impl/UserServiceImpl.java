@@ -18,7 +18,7 @@ import com.example.demo.model.entity.Role;
 import com.example.demo.model.entity.User;
 import com.example.demo.repository.RoleRepository;
 import com.example.demo.repository.UserRepository;
-import com.example.demo.security.PasswordHash;
+
 import com.example.demo.service.front.EmailService;
 import com.example.demo.service.front.LoginLogService;
 import com.example.demo.service.front.RoleService;

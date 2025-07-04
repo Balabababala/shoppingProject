@@ -10,5 +10,6 @@ import lombok.NoArgsConstructor;
 public class LoginRequest {
 	private String username;
 	private String password;
-	private String captchaCode;
+	private String captchaCode;   // 使用者輸入的驗證碼
+    private String captchaToken;  // 從 /auth-code 取得的 JWT token
 }

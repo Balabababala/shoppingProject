@@ -1,4 +1,5 @@
 package com.example.demo.secure;
+import java.security.Key;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
@@ -8,12 +9,15 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.model.dto.UserDto;
 
+import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 
 @Service
 public class JwtService {
 
+	private final String SECRET_KEY = "your-very-secure-secret-key";  // 請換成安全字串
+	
 	@Autowired
 	private KeyInitializer keyInitializer;
 
@@ -41,4 +45,29 @@ public class JwtService {
         return claims;
     }
     
+    public String generateAuthJwtToken(String code) {
+    	
+    	Date now = new Date();
+        Date expiryDate = new Date(System.currentTimeMillis() + 60 * 1000); // 1 min
+        
+        return  Jwts.builder()
+				                .setSubject("captcha")
+				                .claim("code", code)
+				                .setExpiration(expiryDate)
+				                .signWith(keyInitializer.getKeyPair().getPrivate(), SignatureAlgorithm.RS256)
+				                .compact();
+    }
+    
+    public String parseCaptchaJwtToken(String token) {
+    	Key publicKey = keyInitializer.getKeyPair().getPublic();
+
+    	Claims claims = Jwts.parserBuilder()
+                .setSigningKey(publicKey)
+                .build()
+                .parseClaimsJws(token)
+                .getBody();
+
+        return claims.get("code", String.class);
+    }
+   
 }

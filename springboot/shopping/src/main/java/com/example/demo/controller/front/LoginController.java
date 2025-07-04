@@ -41,22 +41,11 @@ public class LoginController {
     private JwtService jwtService;
     
     @PostMapping("/login")
-    public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequest loginRequest, HttpServletRequest request) {
+    public ResponseEntity<ApiResponse<String>> login(@RequestBody LoginRequest loginRequest) {
     	
-    	// 先取得 session 裡的驗證碼（authCode）
-        HttpSession session = request.getSession();
-        String sessionCaptcha = (String) session.getAttribute("authCode");
-
-        // 比對前端傳過來的驗證碼，忽略大小寫
-        if (loginRequest.getCaptchaCode() == null || !loginRequest.getCaptchaCode().equalsIgnoreCase(sessionCaptcha)) {
-        	
-        	Optional<User> opt = userService.checkUser(loginRequest.getUsername());     //如果有該使用者
-        	if(opt.isPresent()) {
-        		loginLogService.createLoginLog(opt.get(), request, false); 				//直接記錄登入失敗記錄
-        	}
-        	session.removeAttribute("authCode");
-            return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼錯誤"));
-        }
+    	
+    	
+    	
 //		 session 版
 //        try {
 //            // 驗證帳密
@@ -91,6 +80,26 @@ public class LoginController {
 //            return ResponseEntity.internalServerError().body(ApiResponse.error("伺服器錯誤"));
 //        }
     	
+    	// 1. 從前端接收驗證碼輸入與驗證碼 JWT token
+        String userInputCaptcha = loginRequest.getCaptchaCode();
+        String captchaToken = loginRequest.getCaptchaToken();
+    	
+
+        // 2. 用 jwtService 解析 token，拿到原本產生的驗證碼文字
+        String originalCaptcha;
+        try {
+            originalCaptcha = jwtService.parseCaptchaJwtToken(captchaToken);
+        } catch (Exception e) {
+            return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼無效或過期"));
+        }
+
+        // 3. 比對使用者輸入的驗證碼 (忽略大小寫)
+        if (originalCaptcha == null || !originalCaptcha.equalsIgnoreCase(userInputCaptcha)) {
+            return ResponseEntity.badRequest().body(ApiResponse.error("驗證碼錯誤"));
+        }
+
+        // 4. 驗證帳密流程 (維持原本流程)
+        
     	 try {
     	        Authentication authentication = authenticationManager.authenticate(
     	            new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword())
