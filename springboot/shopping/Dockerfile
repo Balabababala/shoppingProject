@@ -7,7 +7,7 @@ COPY src ./src
 RUN mvn clean package -DskipTests
 
 # 第二階段：用完整 OpenJDK
-openjdk17-jdk-slim
+FROM openjdk:17-slim
 
 WORKDIR /app
 
