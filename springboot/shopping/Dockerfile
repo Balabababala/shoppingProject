@@ -3,11 +3,9 @@ FROM maven:3.9.0-eclipse-temurin-17 AS builder
 
 WORKDIR /app
 
-# 複製 pom.xml 和 src 目錄
 COPY pom.xml .
 COPY src ./src
 
-# 打包跳過測試，加快速度
 RUN mvn clean package -DskipTests
 
 # 第二階段：用 OpenJDK 執行 jar
@@ -15,9 +13,13 @@ FROM openjdk:17-slim
 
 WORKDIR /app
 
-# 從 builder 階段複製打包好的 jar
+# 安裝字型，Debian/Ubuntu 系統用 fonts-dejavu
+RUN apt-get update && apt-get install -y fonts-dejavu && rm -rf /var/lib/apt/lists/*
+
+ENV JAVA_OPTS="-Djava.awt.headless=true"
+
 COPY --from=builder /app/target/shopping-0.0.1-SNAPSHOT.jar ./shopping.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "shopping.jar"]
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar shopping.jar"]
