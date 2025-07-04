@@ -3,8 +3,10 @@ import React, { createContext, useState, useEffect, useCallback, useRef } from '
 export const AppContext = createContext();
 
 export function AppProvider({ children }) {
-  const BASE_URL = 'http://localhost:8080';
-  const API_BASE = 'http://localhost:8080/api';
+  // const BASE_URL = 'http://localhost:8080';
+  const BASE_URL = 'https://api.render.com/deploy/srv-d1j7b0mmcj7s73aanp8g?key=LPDAdmNnv60';
+  // const API_BASE = 'http://localhost:8080/api';
+  const API_BASE = 'https://api.render.com/deploy/srv-d1j7b0mmcj7s73aanp8g?key=LPDAdmNnv60/api';
 
   const [userData, setUserData] = useState(() => {
   const token = localStorage.getItem('token');
