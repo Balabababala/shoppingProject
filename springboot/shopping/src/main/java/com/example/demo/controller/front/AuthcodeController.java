@@ -11,11 +11,14 @@ import javax.imageio.ImageIO;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.google.code.kaptcha.Producer;
 
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
@@ -24,40 +27,65 @@ import jakarta.servlet.http.HttpSession;
 @RequestMapping("/api")
 public class AuthcodeController {
 
+	private Producer captchaProducer;
+
+	
     private static final Logger logger = LoggerFactory.getLogger(AuthcodeController.class);
 
+//    @GetMapping("/auth-code")
+//    public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
+//        logger.debug("開始生成驗證碼，session ID: {}", session.getId());
+//        String code = generateAuthCode();
+//        session.setAttribute("authCode", code);
+//        logger.debug("生成驗證碼: {}", code);
+//        BufferedImage image = getAuthCodeImage(code);
+//        response.setContentType("image/png");
+//        try {
+//            ImageIO.write(image, "png", response.getOutputStream());
+//            logger.debug("驗證碼圖片生成成功");
+//        } catch (IOException e) {
+//            logger.error("生成驗證碼圖片失敗: {}", e.getMessage(), e);
+//            throw e;
+//        }
+//    }
+    
     @GetMapping("/auth-code")
     public void getAuthCode(HttpSession session, HttpServletResponse response) throws IOException {
-        logger.debug("開始生成驗證碼，session ID: {}", session.getId());
-        String code = generateAuthCode();
+        String code = captchaProducer.createText();
         session.setAttribute("authCode", code);
-        logger.debug("生成驗證碼: {}", code);
-        BufferedImage image = getAuthCodeImage(code);
+
+        BufferedImage image = captchaProducer.createImage(code);
+
         response.setContentType("image/png");
-        try {
-            ImageIO.write(image, "png", response.getOutputStream());
-            logger.debug("驗證碼圖片生成成功");
-        } catch (IOException e) {
-            logger.error("生成驗證碼圖片失敗: {}", e.getMessage(), e);
-            throw e;
-        }
+        ImageIO.write(image, "png", response.getOutputStream());
     }
 
+//    @PostMapping("/verify-code")
+//    public String verifyCode(@RequestParam String codeInput, HttpSession session) {
+//        logger.debug("驗證碼輸入: {}, session ID: {}", codeInput, session.getId());
+//        String savedCode = (String) session.getAttribute("authCode");
+//        logger.debug("Session 中儲存的驗證碼: {}", savedCode);
+//
+//        if (savedCode != null && savedCode.equalsIgnoreCase(codeInput)) {
+//            session.removeAttribute("authCode");
+//            logger.info("驗證碼驗證成功");
+//            return "驗證成功";
+//        } else {
+//            logger.warn("驗證碼驗證失敗，輸入: {}, 預期: {}", codeInput, savedCode);
+//            return "驗證失敗";
+//        }
+//    }
     @PostMapping("/verify-code")
     public String verifyCode(@RequestParam String codeInput, HttpSession session) {
-        logger.debug("驗證碼輸入: {}, session ID: {}", codeInput, session.getId());
         String savedCode = (String) session.getAttribute("authCode");
-        logger.debug("Session 中儲存的驗證碼: {}", savedCode);
-
         if (savedCode != null && savedCode.equalsIgnoreCase(codeInput)) {
             session.removeAttribute("authCode");
-            logger.info("驗證碼驗證成功");
             return "驗證成功";
         } else {
-            logger.warn("驗證碼驗證失敗，輸入: {}, 預期: {}", codeInput, savedCode);
             return "驗證失敗";
         }
     }
+
 
     private String generateAuthCode() {
         // 修正字符集，增加隨機性
