@@ -11,6 +11,10 @@ openjdk17-jdk-slim
 
 WORKDIR /app
 
+# 安裝最基本的字型與 fontconfig，Kaptcha 需要
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends fonts-dejavu fontconfig && \
+    rm -rf /var/lib/apt/lists/*
 
 
 # 環境變數
