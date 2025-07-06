@@ -58,7 +58,7 @@ public interface CartItemRepository extends JpaRepository<CartItem, Long>{
 	@Modifying
 	@Transactional
 	@Query(value="INSERT INTO cart_items(user_id,product_id,quantity,added_at) "
-			   + "VALUES(:userId,:productId,:quantity,curdate())",nativeQuery = true)		
+			   + "VALUES(:userId,:productId,:quantity,CURRENT_DATE)",nativeQuery = true)		
 	void addCartItem(@Param("userId") Long userId,@Param("productId") Long productId ,@Param("quantity") Integer quantity);
 	
 	//加入購物車 如果已存在用這
