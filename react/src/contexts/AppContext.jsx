@@ -37,31 +37,20 @@ export function AppProvider({ children }) {
   }, []);
 
   const fetchWithAuthCheck = useCallback(async (url, options = {}) => {
-  try {
-    const token = userData?.token || localStorage.getItem('token');
-    const headers = {
-      'Cache-Control': 'no-cache',
-      ...(options.headers || {}),
-    };
-    if (token) headers['Authorization'] = `Bearer ${token}`;
+    try {
+      const token = localStorage.getItem('token');
+      const headers = { 'Cache-Control': 'no-cache', ...(options.headers || {}) };
+      if (token) headers['Authorization'] = `Bearer ${token}`;
 
-    const resp = await fetch(url, { ...options, headers });
+      const resp = await fetch(url, { ...options, headers });
+      if (resp.status === 401 || resp.status === 403) return { authError: true };
 
-    if (resp.status === 401 || resp.status === 403) {
-      return { authError: true };
-    }
-
-    if (!resp.ok) {
-      console.warn('API 錯誤狀態碼:', resp.status);
+      return await resp.json();
+    } catch (err) {
+      console.error('API 呼叫失敗:', err);
       return null;
     }
-
-    return await resp.json();
-  } catch (err) {
-    console.error('API 呼叫失敗:', err);
-    return null;
-  }
-}, [userData]);
+  }, []);
 
   
   const fetchCart = useCallback(async () => {
