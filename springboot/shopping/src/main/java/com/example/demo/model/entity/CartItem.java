@@ -10,6 +10,9 @@ import lombok.NoArgsConstructor;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
+
 @Entity
 @Data
 @NoArgsConstructor
@@ -34,9 +37,11 @@ public class CartItem {
     @Min(1)
     private Integer quantity;
 
+    @CreationTimestamp
     @Column(name = "added_at", nullable = false)
     private LocalDateTime addedAt;
 
+    @UpdateTimestamp
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
 

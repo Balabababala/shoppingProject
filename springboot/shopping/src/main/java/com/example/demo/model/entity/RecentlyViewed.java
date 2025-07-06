@@ -6,6 +6,7 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.CurrentTimestamp;
 
 @Entity
@@ -19,7 +20,7 @@ public class RecentlyViewed {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-
+    @CreationTimestamp
     @Column(name = "viewed_at", nullable = false)
     private LocalDateTime viewedAt;
     
