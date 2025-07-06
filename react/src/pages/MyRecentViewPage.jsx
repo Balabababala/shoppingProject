@@ -3,10 +3,8 @@ import { Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 import { AppContext } from '../contexts/AppContext.jsx';
 import ModernProductCard from '../components/ModernProductCard.jsx';
 
-const BASE_API = 'http://localhost:8080/api';
-
 function MyRecentlyViewedPage() {
-  const { userData, addToastMessage, fetchWithAuthCheck } = useContext(AppContext);
+  const { userData, addToastMessage, fetchWithAuthCheck ,BASE_API} = useContext(AppContext);
 
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
   const [loading, setLoading] = useState(false);
