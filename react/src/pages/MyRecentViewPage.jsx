@@ -4,7 +4,7 @@ import { AppContext } from '../contexts/AppContext.jsx';
 import ModernProductCard from '../components/ModernProductCard.jsx';
 
 function MyRecentlyViewedPage() {
-  const { userData, addToastMessage, fetchWithAuthCheck ,BASE_API} = useContext(AppContext);
+  const { userData, addToastMessage, fetchWithAuthCheck ,API_BASE} = useContext(AppContext);
 
   const [recentlyViewedProducts, setRecentlyViewedProducts] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -20,7 +20,7 @@ function MyRecentlyViewedPage() {
   setLoading(true);
   setError(null);
   try {
-    const data = await fetchWithAuthCheck(`${BASE_API}/recent`);
+    const data = await fetchWithAuthCheck(`${API_BASE}/recent`);
 
     if (data?.data) {
       setRecentlyViewedProducts(data?.data);
