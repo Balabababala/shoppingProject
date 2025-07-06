@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { AppContext } from "../contexts/AppContext";
 
 export default function CheckoutPage() {
-  const { setCartItems, addToastMessage, userData } = useContext(AppContext);
+  const { setCartItems, addToastMessage, userData ,API_BASE} = useContext(AppContext);
   const navigate = useNavigate();
 
   const [form, setForm] = useState({
@@ -26,7 +26,7 @@ export default function CheckoutPage() {
         return;
       }
       try {
-        const res = await fetch("/api/user/default-order-info", {
+        const res = await fetch(`${API_BASE}/user/default-order-info`, {
           headers: {
             "Cache-Control": "no-cache",
             Authorization: `Bearer ${userData.token}`,
@@ -85,7 +85,7 @@ export default function CheckoutPage() {
     setLoading(true);
 
     try {
-      const res = await fetch("/api/buyer/order/create", {
+      const res = await fetch(`${API_BASE}/buyer/order/create`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
